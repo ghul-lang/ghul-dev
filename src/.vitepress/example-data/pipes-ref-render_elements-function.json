@@ -9,9 +9,9 @@
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "text": "render_elements[T](source: Iterable[T]) -> string", "signature": "render_elements[T](source: Iterable[T]) -> string", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "text": "render_elements[T](source: T{}) -> string", "signature": "render_elements[T](source: T{}) -> string", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 17, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 37, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 35, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 1, "startColumn": 44, "endLine": 1, "endColumn": 49, "text": "class string", "signature": "class string", "kindLabel": "class" }

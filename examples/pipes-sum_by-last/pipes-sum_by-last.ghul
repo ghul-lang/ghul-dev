@@ -1,0 +1,13 @@
+use IO.Std.write_line
+use Ghul.Pipes
+
+// >>>
+let words = ["pipe", "stage", "terminal"]
+
+// sum_by totals what the function returns for each element
+write_line("letters: {words |> sum_by(w => w.length)}")
+
+// last is absent when the source is empty
+write_line("last:    {words |> last() ?? "none"}")
+write_line("long:    {words |> filter(w => w.length > 10) |> last() ?? "none"}")
+// <<<

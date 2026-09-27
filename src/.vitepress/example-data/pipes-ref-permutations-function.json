@@ -1,0 +1,34 @@
+{
+  "name": "pipes-ref-permutations-function",
+  "snippet": false,
+  "code": "permutations[T](source: Iterable[T]) -> Pipe[List[T]]",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\npermutations[T](source: Iterable[T]) -> Pipe[List[T]]\n\nentry() is si\n",
+  "hiddenBefore": true,
+  "hiddenAfter": true,
+  "hiddenGapsAfterLine": [],
+  "output": "",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 12, "text": "permutations[T](source: T{}) -> Pipe[List[T]]", "signature": "permutations[T](source: T{}) -> Pipe[List[T]]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 14, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 22, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 34, "endLine": 1, "endColumn": 34, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 32, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 51, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 46, "endLine": 1, "endColumn": 49, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 41, "endLine": 1, "endColumn": 44, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+  ],
+  "inlayHints": [
+    { "line": 1, "column": 1, "label": "◆", "detail": "permutations\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 12, "tokenType": "function" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 14, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 22, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 32, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 34, "endLine": 1, "endColumn": 34, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 41, "endLine": 1, "endColumn": 44, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 46, "endLine": 1, "endColumn": 49, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 51, "tokenType": "typeParameter" }
+  ]
+}

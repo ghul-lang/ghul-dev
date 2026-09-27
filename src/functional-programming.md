@@ -170,6 +170,12 @@ They produce new sequences and leave their source as it was:
 
 <GhulExample name="functional-programming-2" />
 
+To keep a sequence's elements, construct a collection from it. `ARRAY(p)`, `LIST(p)` and `SET(p)` take any sequence, and `MAP(p)` takes a sequence of key and value pairs, throwing on a repeated key. `string(p)` puts the elements' text together with nothing between them, and `string(p, separator)` puts `separator` between each pair. The element types come from the sequence, so a constructor can end a `|>` chain, and `_(p)` constructs whichever of these the context expects:
+
+<GhulExample name="pipes-constructors" />
+
+The [collecting functions](/runtime-library.html#collect) do the same job written as functions.
+
 ### list comprehensions
 
 A list comprehension makes an array from one or more sequences. Write it in square brackets: the element first, then a `for` clause for each sequence, and optionally `if` clauses to keep only the elements you want:

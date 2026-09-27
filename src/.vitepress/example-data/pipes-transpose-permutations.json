@@ -1,0 +1,40 @@
+{
+  "name": "pipes-transpose-permutations",
+  "snippet": false,
+  "code": "let rows = [[1, 2, 3], [4, 5, 6]]\n\n// transpose: the columns of rows, each as a list\nfor column in rows |> transpose() do\n    write_line(\"column: {column |> join(\", \")}\")\nod\n\n// permutations: every ordering of the elements\nfor ordering in [\"a\", \"b\", \"c\"] |> permutations() do\n    write_line(\"ordering: {ordering |> join(\"\")}\")\nod",
+  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet rows = [[1, 2, 3], [4, 5, 6]]\n\n// transpose: the columns of rows, each as a list\nfor column in rows |> transpose() do\n    write_line(\"column: {column |> join(\", \")}\")\nod\n\n// permutations: every ordering of the elements\nfor ordering in [\"a\", \"b\", \"c\"] |> permutations() do\n    write_line(\"ordering: {ordering |> join(\"\")}\")\nod\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "column: 1, 4\ncolumn: 2, 5\ncolumn: 3, 6\nordering: abc\nordering: acb\nordering: bac\nordering: bca\nordering: cab\nordering: cba\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "text": "rows: int[][]", "signature": "rows: int[][]", "kindLabel": "global variable" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 10, "text": "column: Collections.List[int]", "signature": "column: Collections.List[int]", "kindLabel": "local value" },
+    { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 31, "text": "Ghul.Pipes.transpose[int](\n    rows: int{}{}\n) -> Pipe[Collections.List[int]]", "signature": "Ghul.Pipes.transpose[int](\n    rows: int{}{}\n) -> Pipe[Collections.List[int]]", "kindLabel": "global function" },
+    { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 18, "text": "rows: int[][]", "signature": "rows: int[][]", "kindLabel": "global variable" },
+    { "startLine": 9, "startColumn": 5, "endLine": 9, "endColumn": 12, "text": "ordering: Collections.List[string]", "signature": "ordering: Collections.List[string]", "kindLabel": "local value" },
+    { "startLine": 9, "startColumn": 36, "endLine": 9, "endColumn": 47, "text": "Ghul.Pipes.permutations[string](\n    source: string{}\n) -> Pipe[Collections.List[string]]", "signature": "Ghul.Pipes.permutations[string](\n    source: string{}\n) -> Pipe[Collections.List[string]]", "kindLabel": "global function" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 5, "startColumn": 36, "endLine": 5, "endColumn": 39, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 5, "startColumn": 26, "endLine": 5, "endColumn": 31, "text": "column: Collections.List[int]", "signature": "column: Collections.List[int]", "kindLabel": "local value" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 10, "startColumn": 40, "endLine": 10, "endColumn": 43, "text": "Ghul.Pipes.join[string](\n    source: string{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[string](\n    source: string{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 10, "startColumn": 28, "endLine": 10, "endColumn": 35, "text": "ordering: Collections.List[string]", "signature": "ordering: Collections.List[string]", "kindLabel": "local value" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "tokenType": "property" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 10, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 18, "tokenType": "property" },
+    { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 31, "tokenType": "function" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 14, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 5, "startColumn": 26, "endLine": 5, "endColumn": 31, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 5, "startColumn": 36, "endLine": 5, "endColumn": 39, "tokenType": "function" },
+    { "startLine": 9, "startColumn": 5, "endLine": 9, "endColumn": 12, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 9, "startColumn": 36, "endLine": 9, "endColumn": 47, "tokenType": "function" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 14, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 10, "startColumn": 28, "endLine": 10, "endColumn": 35, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 10, "startColumn": 40, "endLine": 10, "endColumn": 43, "tokenType": "function" }
+  ]
+}

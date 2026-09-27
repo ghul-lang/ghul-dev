@@ -1,0 +1,30 @@
+{
+  "name": "pipes-group",
+  "snippet": false,
+  "code": "let readings = [1, 1, 2, 3, 3, 3, 1]\n\n// group: runs of neighbouring equal elements, so the final 1\n// starts a run of its own\nfor span in readings |> group() do\n    write_line(\"run: {span |> join(\", \")}\")\nod",
+  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet readings = [1, 1, 2, 3, 3, 3, 1]\n\n// group: runs of neighbouring equal elements, so the final 1\n// starts a run of its own\nfor span in readings |> group() do\n    write_line(\"run: {span |> join(\", \")}\")\nod\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "run: 1, 1\nrun: 2\nrun: 3, 3, 3\nrun: 1\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 12, "text": "readings: int[]", "signature": "readings: int[]", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 8, "text": "span: Collections.List[int]", "signature": "span: Collections.List[int]", "kindLabel": "local value" },
+    { "startLine": 5, "startColumn": 25, "endLine": 5, "endColumn": 29, "text": "Ghul.Pipes.group[int](\n    source: int{}\n) -> Collections.List[int]{}", "signature": "Ghul.Pipes.group[int](\n    source: int{}\n) -> Collections.List[int]{}", "kindLabel": "pure global function" },
+    { "startLine": 5, "startColumn": 13, "endLine": 5, "endColumn": 20, "text": "readings: int[]", "signature": "readings: int[]", "kindLabel": "global variable" },
+    { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 6, "startColumn": 31, "endLine": 6, "endColumn": 34, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 6, "startColumn": 23, "endLine": 6, "endColumn": 26, "text": "span: Collections.List[int]", "signature": "span: Collections.List[int]", "kindLabel": "local value" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 12, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 8, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 5, "startColumn": 13, "endLine": 5, "endColumn": 20, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 25, "endLine": 5, "endColumn": 29, "tokenType": "function" },
+    { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 14, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 6, "startColumn": 23, "endLine": 6, "endColumn": 26, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 6, "startColumn": 31, "endLine": 6, "endColumn": 34, "tokenType": "function" }
+  ]
+}
