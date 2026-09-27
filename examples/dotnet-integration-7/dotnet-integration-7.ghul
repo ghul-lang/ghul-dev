@@ -7,7 +7,7 @@ use Ghul.Pipes.Pipe
 class COUNTDOWN(from: int): Iterable[int] is
     iterator: Iterator[int] => _counting().iterator
 
-    _counting() -> Pipe[int] is
+    _counting() -> int{} is
         let i mut = from
         while i > 0 do
             yield i

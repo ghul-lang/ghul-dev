@@ -1,11 +1,11 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-// a generator: a function returning Pipe[T] that yields.
+// a generator: a function returning T{} that yields.
 // each yield produces the next value and pauses until the
 // caller asks for another, so this sequence is infinite
 // but only ever computed as far as it is consumed
-fibonacci() -> Pipe[int] is
+fibonacci() -> int{} is
     let prev mut = 0
     let current mut = 1
     do
@@ -16,7 +16,7 @@ fibonacci() -> Pipe[int] is
     od
 si
 
-factorial() -> Pipe[int] is
+factorial() -> int{} is
     let n mut = 0
     let current mut = 1
     do

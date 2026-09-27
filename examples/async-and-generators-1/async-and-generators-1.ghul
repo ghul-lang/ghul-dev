@@ -11,7 +11,7 @@ use Tree.NODE
 
 // >>>
 // yield in yields every element of the iterable after it
-in_order(tree: Tree) -> Pipe[int] is
+in_order(tree: Tree) -> int{} is
     if let (left, value, right): NODE = tree then
         yield in in_order(left)
         yield value

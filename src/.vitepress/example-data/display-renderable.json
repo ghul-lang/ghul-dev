@@ -18,8 +18,8 @@
     { "startLine": 9, "startColumn": 6, "endLine": 9, "endColumn": 9, "text": "mime: string", "signature": "mime: string", "kindLabel": "local value" },
     { "startLine": 9, "startColumn": 12, "endLine": 9, "endColumn": 18, "text": "content: ubyte[]", "signature": "content: ubyte[]", "kindLabel": "local value" },
     { "startLine": 9, "startColumn": 24, "endLine": 9, "endColumn": 31, "text": "GREETING.init(name: string)", "signature": "GREETING.init(name: string)", "kindLabel": "constructor" },
-    { "startLine": 9, "startColumn": 42, "endLine": 9, "endColumn": 56, "text": "GREETING.representations() -> Collections.Iterable[(mime: string, content: ubyte[])]", "signature": "GREETING.representations() -> Collections.Iterable[(mime: string, content: ubyte[])]", "kindLabel": "pure method" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 19, "text": "GREETING.representations() -> Collections.Iterable[(mime: string, content: ubyte[])]", "signature": "GREETING.representations() -> Collections.Iterable[(mime: string, content: ubyte[])]", "kindLabel": "pure method" },
+    { "startLine": 9, "startColumn": 42, "endLine": 9, "endColumn": 56, "text": "GREETING.representations() -> (mime: string, content: ubyte[]){}", "signature": "GREETING.representations() -> (mime: string, content: ubyte[]){}", "kindLabel": "pure method" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 19, "text": "GREETING.representations() -> (mime: string, content: ubyte[]){}", "signature": "GREETING.representations() -> (mime: string, content: ubyte[]){}", "kindLabel": "pure method" },
     { "startLine": 2, "startColumn": 54, "endLine": 2, "endColumn": 59, "text": "class string", "signature": "class string", "kindLabel": "class" },
     { "startLine": 2, "startColumn": 71, "endLine": 2, "endColumn": 75, "text": "struct ubyte", "signature": "struct ubyte", "kindLabel": "struct" },
     { "startLine": 2, "startColumn": 38, "endLine": 2, "endColumn": 45, "text": "trait Collections.Iterable[T]", "signature": "trait Collections.Iterable[T]", "kindLabel": "trait" },
@@ -41,7 +41,7 @@
     { "startLine": 5, "startColumn": 89, "endLine": 5, "endColumn": 92, "text": "name: string", "signature": "name: string", "kindLabel": "pure instance property" }
   ],
   "inlayHints": [
-    { "line": 2, "column": 5, "label": "▲", "detail": "representations\n\n- ▲ overrides `Renderable.representations() -> Collections.Iterable[(mime: string, content: ubyte[])]`", "code": "definition-virtuality" }
+    { "line": 2, "column": 5, "label": "▲", "detail": "representations\n\n- ▲ overrides `Renderable.representations() -> (mime: string, content: ubyte[]){}`", "code": "definition-virtuality" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 14, "tokenType": "class" },

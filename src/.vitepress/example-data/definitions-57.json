@@ -24,7 +24,7 @@
     { "startLine": 10, "startColumn": 31, "endLine": 10, "endColumn": 35, "text": "class POINT(x: int, y: int)", "signature": "class POINT(x: int, y: int)", "kindLabel": "class" },
     { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 10, "startColumn": 14, "endLine": 10, "endColumn": 24, "text": "namespace Collections", "signature": "namespace Collections", "kindLabel": "" },
-    { "startLine": 10, "startColumn": 26, "endLine": 10, "endColumn": 29, "text": "Collections.LIST[POINT].init(\n    collection: Collections.Iterable[POINT]\n)", "signature": "Collections.LIST[POINT].init(\n    collection: Collections.Iterable[POINT]\n)", "kindLabel": "constructor" },
+    { "startLine": 10, "startColumn": 26, "endLine": 10, "endColumn": 29, "text": "Collections.LIST[POINT].init(collection: POINT{})", "signature": "Collections.LIST[POINT].init(collection: POINT{})", "kindLabel": "constructor" },
     { "startLine": 10, "startColumn": 39, "endLine": 10, "endColumn": 39, "text": "a: POINT", "signature": "a: POINT", "kindLabel": "global variable" },
     { "startLine": 10, "startColumn": 43, "endLine": 10, "endColumn": 50, "text": "Collections.LIST[POINT].contains(item: POINT) -> bool", "signature": "Collections.LIST[POINT].contains(item: POINT) -> bool", "kindLabel": "method" },
     { "startLine": 10, "startColumn": 52, "endLine": 10, "endColumn": 52, "text": "b: POINT", "signature": "b: POINT", "kindLabel": "global variable" },

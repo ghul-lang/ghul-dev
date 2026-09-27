@@ -206,7 +206,7 @@ sits relative to its target.
 
 While declaring each function the pass scans its body for `yield` and
 `await` expressions and classifies the function accordingly: plain,
-generator (returns `Ghul.Pipes.Pipe[T]` and contains `yield`), or
+generator (returns `T{}`, `Iterator[T]` or `Ghul.Pipes.Pipe[T]` and contains `yield`), or
 asynchronous (contains `await`). The classification is what later tells
 the IL pass to emit a generator or async state machine for the function
 instead of a straight method body.

@@ -5,7 +5,7 @@ use Ghul.Pipes
 let zero_to_four = 0..5
 let five_to_nine = 5..10
 
-let zero_to_nine = zero_to_four |> cat(five_to_nine)
+let zero_to_nine = (zero_to_four |> cat(five_to_nine)).iterator
 
 while zero_to_nine.move_next() do
     write_line(zero_to_nine.current)

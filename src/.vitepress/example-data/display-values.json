@@ -24,9 +24,9 @@
     { "startLine": 11, "startColumn": 25, "endLine": 11, "endColumn": 28, "text": "Collections.LIST[object].init()", "signature": "Collections.LIST[object].init()", "kindLabel": "constructor" },
     { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 5, "startColumn": 14, "endLine": 5, "endColumn": 18, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" },
-    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 12, "text": "Ghul.Intrinsics.$[string](\n    values: Collections.Iterable[string]\n) -> string", "signature": "Ghul.Intrinsics.$[string](\n    values: Collections.Iterable[string]\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 12, "text": "Ghul.Intrinsics.$[string](values: string{}) -> string", "signature": "Ghul.Intrinsics.$[string](values: string{}) -> string", "kindLabel": "pure global function" },
     { "startLine": 6, "startColumn": 1, "endLine": 6, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 6, "startColumn": 12, "endLine": 6, "endColumn": 18, "text": "Ghul.inspect[string](\n    values: Collections.Iterable[string]\n) -> string", "signature": "Ghul.inspect[string](\n    values: Collections.Iterable[string]\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 6, "startColumn": 12, "endLine": 6, "endColumn": 18, "text": "Ghul.inspect[string](values: string{}) -> string", "signature": "Ghul.inspect[string](values: string{}) -> string", "kindLabel": "pure global function" },
     { "startLine": 6, "startColumn": 20, "endLine": 6, "endColumn": 24, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 7, "startColumn": 12, "endLine": 7, "endColumn": 18, "text": "Ghul.inspect(value: string) -> string", "signature": "Ghul.inspect(value: string) -> string", "kindLabel": "pure global function" },
@@ -40,7 +40,7 @@
     { "startLine": 12, "startColumn": 11, "endLine": 12, "endColumn": 15, "text": "cycle: Collections.LIST[object]", "signature": "cycle: Collections.LIST[object]", "kindLabel": "global variable" },
     { "startLine": 14, "startColumn": 1, "endLine": 14, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 14, "startColumn": 14, "endLine": 14, "endColumn": 18, "text": "cycle: Collections.LIST[object]", "signature": "cycle: Collections.LIST[object]", "kindLabel": "global variable" },
-    { "startLine": 14, "startColumn": 12, "endLine": 14, "endColumn": 12, "text": "Ghul.Intrinsics.$[object](\n    values: Collections.Iterable[object]\n) -> string", "signature": "Ghul.Intrinsics.$[object](\n    values: Collections.Iterable[object]\n) -> string", "kindLabel": "pure global function" }
+    { "startLine": 14, "startColumn": 12, "endLine": 14, "endColumn": 12, "text": "Ghul.Intrinsics.$[object](values: object{}) -> string", "signature": "Ghul.Intrinsics.$[object](values: object{}) -> string", "kindLabel": "pure global function" }
   ],
   "inlayHints": [],
   "semanticTokens": [
