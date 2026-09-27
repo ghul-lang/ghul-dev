@@ -1,13 +1,15 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-// >>>
-// don't write a comprehension over a sequence that never ends: it would
-// never finish. Use a pipe, and take the elements you need
-let squares = from(1) |> map(n => n * n) |> take(5)
-write_line("squares: {squares}")
+is_prime(n: int) -> bool =>
+    n > 1 /\ !(2::n - 1 |> any(d => d * d <= n /\ n % d == 0))
 
-// keep the odd ones from the five squares the pipe produced
-let odd_squares = [s for s in squares if s % 2 == 1]
-write_line("odd squares: {odd_squares}")
+// >>>
+// braces make a pipe, so the source can be one that never ends
+let primes = {n for n in from(2) if is_prime(n)}
+
+write_line("first ten primes: {primes |> take(10)}")
+
+// reading it again runs the clauses again
+write_line("first three: {primes |> take(3)}")
 // <<<
