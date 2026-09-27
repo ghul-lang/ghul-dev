@@ -184,9 +184,13 @@ The result is an array. Its element type is the type of the element expression, 
 
 A comprehension's loops are its own. You can't `break` or `continue` out of one, and it can't contain a `yield`, an `await` or a `try`. A function literal inside a comprehension is a separate function body, so these restrictions don't apply inside it.
 
-Don't write a comprehension over a sequence that never ends. A comprehension makes its whole array before you can use any of it, so it would never finish. Use a pipe instead: a pipe produces its elements one at a time, and `take` stops it after the elements you need. A search that should stop at the first match is also better as a pipe, for the same reason. The compiler warns with `unbounded-comprehension-source` when a comprehension's source is one of the runtime's sequences that never ends, such as `from(1)`:
+The same clauses written in braces make a lazy comprehension. Its result is a `Pipe[T]` rather than an array, and it produces its elements one at a time as the pipe is read, so its source can be a sequence that never ends, and nothing is computed for elements that are never read:
 
 <GhulExample name="functional-programming-34" />
+
+A lazy comprehension is a [generator](#generators) literal. It captures the variables it reads as any function literal does, and reading the pipe again runs its clauses again. Inside an interpolated string, <code v-pre>{{</code> is an escaped brace, so leave a space between the interpolation's brace and the comprehension's: `"{ {x * 2 for x in xs} }"`.
+
+Don't write an array comprehension over a sequence that never ends: it makes its whole array before you can use any of it, so it would never finish. Use the lazy form instead. The compiler warns with `unbounded-comprehension-source` when an array comprehension's source is one of the runtime's sequences that never ends, such as `from(1)`.
 
 ### generators
 
@@ -198,7 +202,8 @@ another sequence, which suits a recursive generator:
 <GhulExample name="functional-programming-36" />
 
 A generator's result is an ordinary `Pipe[T]`, so the pipe combinators chain
-onto it. [Generators](/async-and-generators.html) have more detail.
+onto it. A function literal that contains `yield` is a generator too, and captures
+the variables around it as any function literal does. [Generators](/async-and-generators.html) have more detail.
 
 ### streams
 
