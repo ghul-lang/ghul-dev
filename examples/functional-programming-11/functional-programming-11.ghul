@@ -1,8 +1,26 @@
+use IO.Std.write_line
+use Collections.List
+
 // >>>
-apply[T](f: T -> T, x: T) -> T =>
-    f(x)
+// takes a function
+apply_twice[T](f: T -> T, x: T) -> T => f(f(x))
 
-apply_if[T](f: T -> T, x: T, predicate: T -> bool) -> T =>
-    if predicate(x) then f(x) else x fi
+// returns a function
+twice[T](f: T -> T) -> T -> T => x => f(f(x))
+
+// a generic method that takes a function
+class SHELF[T](items: List[T]) is
+    map_all[U](f: T -> U) -> List[U] => [f(item) for item in items]
+si
+
+let times_2 = (x: int) => x * 2
+
+write_line("apply_twice(times_2, 5): {apply_twice(times_2, 5)}")
+write_line("apply_twice on text: {apply_twice(s => "<{s}>", "x")}")
+
+let quadruple = twice(times_2)
+write_line("quadruple(5): {quadruple(5)}")
+
+let lengths = SHELF(["one", "three", "seven"]).map_all(s => s.length)
+write_line("lengths: {lengths}")
 // <<<
-

@@ -6,40 +6,171 @@ Every example on this page can be edited and run here: click the pencil to open 
 The [ghul-examples repository](https://github.com/ghul-lang/ghul-examples/tree/main/examples/functional) has fuller functional-programming examples to build and run locally, in a GitHub Codespace or a dev container.
 :::
 
-ghūl supports a functional style of programming: functions are first-class
-values, the common data types are read-only by default, unions and pattern
-matching model data by cases, and pipes transform sequences without mutating
-them.
+ghūl supports a functional style of programming. Functions are values, and
+they capture the variables around them. Local variables are immutable
+unless declared `mut`, arrays and tuples can't be changed, and `List`, `Map`
+and `Set` are read-only views. Unions with an exhaustive `case` model data
+by cases. Pipes, generators and list comprehensions process sequences
+without changing them. The compiler proves most functions store-free, and
+takes a `pure` declaration on trust where the proof falls short.
 
-## first-class functions
+Mutable state is there when a program needs it: a `let mut` variable, a
+`LIST`, a `public` property. A few things work differently from ML-family
+languages: functions are not curried, function literals are not generic, and
+a function is not defined clause by clause. Each has a substitute: `curry`,
+a generic named function, and a function whose body is a `case`.
 
-Functions are values. A function literal constructs one, and the result can
-be called, assigned to a variable, passed to another function, or stored in
-a data structure, like any other value:
+## functions as values
+
+A function literal, a named function and an operator are all values. Each
+can be held in a variable, passed to another function, or returned from
+one:
 
 <GhulExample name="functional-programming-1" />
 
+A function named with an operator is written with a backtick, since an
+operator is not an identifier. A static member operator is named through its
+type, as in ``V.`+``. The built-in operators on `int`, `double` and the other
+scalar types are instructions rather than functions, so they can't be passed
+as values; write a function literal such as `(a, b) => a + b` instead.
+
 ## closures
 
-A function literal captures the variables of its enclosing scope. An
-immutable `let` is captured by value - a snapshot taken when the literal is
-constructed - and a `let mut` is captured by reference, so the function and
-the enclosing scope share one live variable that either side can read or
-reassign:
+A function literal captures the variables of the scope it is written in. An
+immutable `let` variable is captured by value, as it stood when the literal
+was constructed. A `let mut` variable is captured by reference: the function
+and the enclosing scope share one variable, and either can read or assign it:
 
 <GhulExample name="functional-programming-25" />
 
-## filter, map, reduce
+## higher-order functions
 
-ghūl pipes provide filter, map and reduce as well as other ways to
-work with sequences of values. Each is a global function in
-`Ghul.Pipes` taking the sequence as its first argument, so the
-[thread-first operator](/expressions#thread-first-calls) `|>` feeds one
-into the next:
+A higher-order function takes a function as an argument, or returns one.
+Global functions and methods can do both, and can be generic:
+
+<GhulExample name="functional-programming-11" />
+
+A function literal has one type, taken from its context, so it can't be
+generic. Where the same code has to work for several types, write it as a
+generic global function or method.
+
+## data by cases
+
+A union holds one of several variants, and `case` and `if let` take a union
+value apart. The compiler checks a `case` over a union for exhaustiveness, so
+a `case` that covers every variant doesn't need an `else` arm:
+
+<GhulExample name="functional-programming-23" />
+
+Guards, destructuring and nested patterns are covered in
+[unions and pattern matching](/unions-and-pattern-matching.html).
+
+An optional type `T?` holds a value that may be absent. It does the job an
+`Option` or `Maybe` type does in other languages. `??` supplies a fallback,
+`?.` reads a member only when the value is present, and `if let` tests and
+unwraps in one step:
+
+<GhulExample name="optional-types-1" />
+
+Optional types have [their own page](/optional-types.html).
+
+`~>` is the thread-first operator `|>` for a value that may be absent. When
+the value on its left is present, `~>` passes it, unwrapped, to the call on
+its right. When the value is absent, the call is skipped, its arguments are
+not evaluated, and the result is absent. The result is always optional, so a
+chain of `~>` stages usually ends with `??`:
+
+<GhulExample name="functional-programming-28" />
+
+`|>` and `~>` can be mixed in one chain: a `|>` stage always runs, and a `~>`
+stage runs only when the value before it is present.
+
+## defining functions by cases
+
+ghūl doesn't define a function clause by clause. Two things do that job.
+Overloads choose between functions by the types of the arguments. A `case`
+as the body of a function chooses between arms by the values of the
+arguments; over several arguments, the `case` is over a tuple of them. The
+compiler checks the arms for exhaustiveness as it does any other `case`:
+
+<GhulExample name="functional-programming-35" />
+
+A named function calls itself by name. A function literal has no name, so
+it calls itself with `rec`:
+
+<GhulExample name="functional-programming-3" />
+
+A function literal can't refer to a variable that is defined after it. For
+two function literals that call each other, declare one as a `let mut`
+variable and assign the literal to it afterwards. Global functions and
+methods can refer to each other in either order, so mutually recursive
+functions are simpler to write as those:
+
+<GhulExample name="functional-programming-5" />
+
+## immutability by default
+
+A value that nothing can change is safe to share. The compiler reports an
+error for each of these assignments:
+
+<GhulExample name="functional-programming-6" />
+
+- A `let` variable can't be reassigned. Declare it `let mut` to allow
+  reassignment.
+- An array's elements can be read but not replaced, and an array literal
+  constructs a plain array.
+- A tuple's elements can't be assigned. A tuple is a value type, so code you
+  pass a tuple to gets a copy.
+- A property can be assigned only inside the type that declares it, unless it
+  is declared `public`. The members a primary constructor synthesises are
+  properties too, so the same applies to them.
+- `List[T]`, `Map[K, V]` and `Set[T]` have no members that change the
+  collection. The mutable `LIST`, `MAP` and `SET` implement them, so a
+  function that takes a `List[T]` can read the list it is given but not
+  change it.
+- A union value is fixed when it is constructed: its variant and its fields
+  can't be changed. A method added to a union with [`partial` and `impl`
+  blocks](/definitions.html#partial-and-impl-blocks) can store to the heap,
+  but the compiler reports an `impure-union-method` warning for it.
+
+These guarantees are shallow: a read-only structure can hold references to
+objects that are themselves mutable. They also apply only to ghūl code, so
+code written in another .NET language can change a value ghūl treats as
+read-only.
+
+## pure functions
+
+A postfix `pure` modifier declares that a function stores nothing on the
+heap, and calls nothing that does. The compiler proves most functions
+store-free without it. Where the proof falls short, write `pure`: the
+compiler takes the declaration on trust. What it does check is that every
+override or implementation of a pure member is pure too.
+
+A function type can be pure, so a function can require that the function it
+is given is pure:
+
+<GhulExample name="functional-programming-27" />
+
+Declaring a class, struct or trait `pure` applies the same rule to every
+instance member. What purity means for [type narrowing](/type-narrowing.html)
+is covered under [methods](/definitions.html#methods).
+
+Expression bodies, and the values an `if`, a `case` or a parenthesised block
+produces, make functions without assignments easier to write; see
+[expression-oriented programming](/expression-oriented-programming).
+
+## sequences
+
+### filter, map, reduce
+
+The pipe combinators are global functions in `Ghul.Pipes`. Each takes the
+sequence as its first argument, so the
+[thread-first operator](/expressions#thread-first-calls) `|>` chains them.
+They produce new sequences and leave their source as it was:
 
 <GhulExample name="functional-programming-2" />
 
-## list comprehensions
+### list comprehensions
 
 A list comprehension makes an array from one or more sequences. Write it in square brackets: the element first, then a `for` clause for each sequence, and optionally `if` clauses to keep only the elements you want:
 
@@ -57,218 +188,24 @@ Don't write a comprehension over a sequence that never ends. A comprehension mak
 
 <GhulExample name="functional-programming-34" />
 
-## recursion
+### generators
 
-Methods, global functions and anonymous functions can all call themselves
-recursively. A named function calls itself by name; an anonymous function
-has no name, so the `rec` keyword refers to
-the function itself:
+A function that returns `Pipe[T]` and contains `yield` is a generator. It
+produces its elements one at a time, as the consumer asks for them, so it can
+describe a sequence that never ends. `yield in` produces every element of
+another sequence, which suits a recursive generator:
 
-<GhulExample name="functional-programming-3" />
+<GhulExample name="functional-programming-36" />
 
-An anonymous function cannot refer to a variable that is not yet defined, so
-there is no direct way to write two anonymous functions that call each
-other. Write mutually recursive functions as global functions or methods,
-which can refer to each other whatever order they are defined in:
+A generator's result is an ordinary `Pipe[T]`, so the pipe combinators chain
+onto it. [Generators](/async-and-generators.html) have more detail.
 
-<GhulExample name="functional-programming-5" />
+### streams
 
-## read-only by default
-
-The types and traits below expose no way to change a value after it is
-constructed. The guarantee has two limits.
-It is shallow: a read-only structure can still hold references to objects
-that are themselves mutable. And it binds only ghūl code: code written in
-another .NET language is not required to honour it. Within those limits,
-data shared through these types cannot be changed by the code you pass it
-to.
-
-### lists and maps are read-only views
-
-The standard traits `Collections.List[T]` and `Collections.Map[K, V]` expose
-no mutating members. The mutable `LIST` and `MAP` implement them, so a
-function that accepts `List[T]` can read the list it is given but cannot
-change it.
-
-### arrays are read-only
-
-The ghūl array type `T[]` has no assign indexer: elements can be read but not
-replaced. An array literal constructs a plain array, so the same applies to it.
-
-<GhulExample name="functional-programming-6" />
-
-### tuples are immutable
-
-Tuple elements have no assign accessors, and tuples are value types. A
-tuple passed to other code is a copy, so other code can't change a tuple you hold.
-
-<GhulExample name="functional-programming-7" />
-
-### unions are read-only
-
-A union value is fixed at construction: variant fields cannot be assigned,
-and the variant a value holds can't be changed. Methods can be added to
-a union with [`partial` and `impl`
-blocks](/definitions.html#partial-and-impl-blocks), but each must be pure: a
-union method that assigns a field of any object is reported.
-
-### properties are not publicly assignable by default
-
-A property is readable from anywhere but assignable only within its defining
-type, unless it is declared `public`:
-
-<GhulExample name="functional-programming-8" />
-
-The members a primary constructor generates are ordinary properties, so the
-same applies to them: they are set at construction and cannot be publicly
-assigned afterwards unless the parameter has the `public` modifier.
-
-### pipe operations build new sequences
-
-Pipe operations do not mutate their source: `map`, `filter` and the rest
-produce a new sequence and leave the input as it was:
-
-<GhulExample name="functional-programming-9" />
-
-## pure functions
-
-A function or method can be declared with a postfix `pure` modifier, which
-says that it assigns no field, property, or array element of any object. Most function
-bodies are proven pure with no modifier needed; the declaration covers the
-rest, and every override of a pure member must itself be pure. A function
-*type* can be pure too, so a signature can require that only pure functions
-are passed to it:
-
-<GhulExample name="functional-programming-27" />
-
-A class or struct can opt in to the same discipline for the whole type:
-when its header is declared `pure`, every member must be proven or declared not
-to assign any field, property, or array element after construction. The
-details, including what purity means to [type
-narrowing](/type-narrowing.html), are under
-[methods](/definitions.html#methods).
-
-Expression bodies and value-producing `if`, `case`, and parenthesised blocks
-help in writing pure functions; see
-[expression-oriented programming](/expression-oriented-programming).
-
-## higher-order functions
-
-A higher-order function takes another function as an argument, or returns
-one. Global functions and methods can do this generically:
-
-### higher-order generic global functions
-
-<GhulExample name="functional-programming-11" />
-
-### higher-order generic methods
-
-<GhulExample name="functional-programming-12" />
-
-### higher-order anonymous functions
-
-<GhulExample name="functional-programming-13" />
-
-Anonymous functions take a single concrete type from context; there is no generic equivalent to the two preceding forms. For polymorphic behaviour, declare a generic global function or method.
-
-## function composition
-
-The runtime supplies composition in both reading orders, as `Ghul.>>` and
-`Ghul.<<`. They are library globals rather than operators the language itself
-owns, so a file that composes functions brings them into scope with `use Ghul`.
-`f >> g` applies `f` and then `g`, matching the thread-first operator's
-direction; `f << g` applies `g` and then `f`, the mathematical reading:
-
-<GhulExample name="functional-programming-26" />
-
-## function combinators
-
-The runtime also supplies the common function combinators in namespace
-`Ghul`, next to `>>` and `<<`. `curry` turns a two-argument function into
-one that takes its arguments one at a time, and `uncurry` turns it back.
-`apply` calls a function with the rest of its own arguments. `memoize`
-returns a function that computes its result once for each distinct set of
-arguments and answers repeated calls from a cache, and `retry` returns one
-that calls the function again, up to a given number of attempts, when it
-throws:
-
-<GhulExample name="functional-programming-31" />
-
-## argument packs
-
-A type parameter written with a trailing `..`, as in `[T..]`, is an
-argument pack: it stands for however many arguments a call supplies,
-collected into a tuple. A formal typed `T.. -> U` takes a function of that
-many parameters, and a formal typed `T..` takes the call's remaining
-arguments. Together they let one function accept a function of any arity
-and the arguments to call it with:
-
-<GhulExample name="functional-programming-32" />
-
-A pack holds at most seven arguments, the size of the largest tuple.
-Declare the spread formal `v: T..` last, since it takes every argument
-after it. A caller that already holds the tuple can pass it in place of
-the separate arguments. The runtime's `apply`, `memoize` and `retry` are
-written this way, and so are the pipe stages that take a function.
-
-## currying
-
-A curried function takes its arguments one at a time: each call takes one
-argument and returns a function that takes the next. In ghūl that is an
-anonymous function that returns another:
-
-<GhulExample name="functional-programming-19" />
-
-## partial application
-
-Partial application fixes some of a function's arguments and leaves the rest
-open. Write it as an anonymous function that supplies the fixed arguments:
-
-<GhulExample name="functional-programming-20" />
-
-## union types and pattern matching
-
-A union holds one of several variants, and the `if let` and `case` patterns
-take one apart; they are how functional ghūl code models data. A `case` over
-a union is checked for exhaustiveness, so covering every variant means it
-doesn't need an `else` arm:
-
-<GhulExample name="functional-programming-23" />
-
-The full construct - guards, destructuring, nesting - has its own page:
-[unions and pattern matching](/unions-and-pattern-matching.html).
-
-## optional types
-
-An optional type `T?` holds a value that may be absent - the role `Option`
-and `Maybe` types play in other languages, built into the type system. `??`
-supplies a fallback value, `?.` reads a member only when the receiver is
-present, and `if let` tests and unwraps in one step:
-
-<GhulExample name="optional-types-1" />
-
-Optional types have [their own page](/optional-types.html).
-
-## the propagating thread-first operator
-
-`~>` is the thread-first operator `|>` for a value that might be absent. If
-the value on its left is present, it is passed to the call on its right,
-unwrapped. If it is absent, the call is skipped, its arguments are not
-evaluated, and the result is absent. The result is always optional, so a
-chain of `~>` stages usually ends with `??`:
-
-<GhulExample name="functional-programming-28" />
-
-`|>` and `~>` mix freely in one chain: a `|>` stage runs whatever it is
-given, and a `~>` stage runs only when there is something to run on.
-
-## lazy sequences
-
-Lazy infinite and finite sequences are expressed with the
-`Ghul.Pipes.STREAM[T, S]` union and the `stream(initial, advance)`
-factory. State type `S` and output type `T` are independent, so the
-state of a stream is hidden from its consumers; `stream()` returns a
-plain `Pipe[T]`.
+`stream(initial, advance)` in `Ghul.Pipes` builds a sequence from a state and
+a step function. The state type `S` and the element type `T` are separate
+type parameters, and the result is a `Pipe[T]`, so the state is hidden from
+whatever reads the sequence:
 
 ```ghul
 union STREAM[T, S] is
@@ -276,40 +213,84 @@ union STREAM[T, S] is
     YIELD(value: T, state: S)
 si
 
-stream[T, S](
+stream[T, S..](
     initial: S,
-    advance: S -> STREAM[T, S]
+    advance: S.. -> STREAM[T, S]
 ) -> Pipe[T]
 ```
 
-`advance` is a step function: it receives the current state and returns
-either `DONE` (the sequence is over) or `YIELD(value, next_state)`, the
-yielded element and the state to feed back in on the next step. The `||`
-infix constructs `YIELD(value, next_state)`, so a step body usually reads
-`value || next_state`.
+`S..` makes `S` an [argument pack](#argument-packs), so when the state is a
+tuple, the step function can take its elements as separate parameters.
+
+`advance` takes the current state and returns either `DONE`, which ends the
+sequence, or `YIELD(value, next_state)`, which produces an element and the
+state for the next step. The `||` infix constructs a `YIELD`, so a step
+usually reads `value || next_state`:
 
 <GhulExample name="functional-programming-22" />
 
-Type arguments to `stream` are inferred from the initial-state value
-and the anonymous function's yield expression.
+The type arguments to `stream` are inferred from the initial state and from
+what the step function yields.
 
-The factory returns `Pipe[T]`, so combinators like `take`, `filter`,
-`map`, `zip`, and `index` chain straight onto it. The state type does not
-appear in that result, so consumers never see how a stream is stepped.
+### seeds and caching
 
-Two simpler seeds start a pipe with no source to draw from. `from(start)`
-counts upwards from `start` without end, and `from(start, step)` counts
-in steps of `step`. `repeat(value)` yields the same value without end, and
-`repeat(value, count)` yields it `count` times. An unbounded seed needs a
-stage that stops pulling, such as `take`:
+`from(start)` counts upwards from `start` without end, and
+`from(start, step)` counts in steps of `step`. `repeat(value)` produces the
+same value without end, and `repeat(value, count)` produces it `count` times.
+A sequence that never ends needs a stage that stops reading it, such as
+`take`:
 
 <GhulExample name="functional-programming-29" />
 
-A pipe normally recomputes its elements each time it is read. `memo` reads
-its source once, keeps what it read, and replays it on every later read:
+A pipe computes its elements again each time it is read. `memo` reads its
+source once, keeps the elements, and replays them on every later read:
 
 <GhulExample name="functional-programming-30" />
 
-[Generators](/async-and-generators.html) are the other way to a lazy
-sequence: a function containing `yield` produces its elements on demand,
-and its result is a `Pipe[T]` too.
+## combining functions
+
+### composition
+
+The runtime supplies function composition in both reading orders, as `>>`
+and `<<` in namespace `Ghul`, so a file that composes functions needs
+`use Ghul`. `f >> g` applies `f` and then `g`, in the same direction as `|>`.
+`f << g` applies `g` and then `f`, the order used in mathematics:
+
+<GhulExample name="functional-programming-26" />
+
+### combinators
+
+Namespace `Ghul` also has the common function combinators. `curry` turns a
+two-argument function into one that takes its arguments one at a time, and
+`uncurry` turns it back. `apply` calls a function with the rest of its own
+arguments. `memoize` returns a function that computes its result once for
+each distinct set of arguments and returns the stored result for repeated
+calls. `retry` returns a function that calls the original again when it
+throws, up to a given number of attempts:
+
+<GhulExample name="functional-programming-31" />
+
+### partial application
+
+Partial application fixes some of a function's arguments and leaves the rest
+open. ghūl doesn't have a partial application operator; write a function
+literal that supplies the fixed arguments:
+
+<GhulExample name="functional-programming-20" />
+
+### argument packs
+
+A type parameter written with a trailing `..`, as in `[T..]`, is an argument
+pack: it stands for however many arguments a call supplies, held as a tuple.
+A formal typed `T.. -> U` takes a function of that many parameters, and a
+formal typed `T..` takes the rest of the call's arguments. Together they let
+one function take a function of any number of parameters, and the arguments
+to call it with:
+
+<GhulExample name="functional-programming-32" />
+
+A pack holds at most seven arguments, the size of the largest tuple. Declare
+the `T..` formal last, since it takes every argument after it. A caller that
+already holds the tuple can pass it in place of the separate arguments. The
+runtime's `apply`, `memoize` and `retry` take their functions this way, and
+so do the pipe stages that take a function.

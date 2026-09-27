@@ -1,8 +1,22 @@
 // expect: error
+use Collections.List
+
+struct THING(name: string)
+
 // >>>
-let numbers = [1, 2, 3, 4, 5]
+let total = 10
+total = 11
 
-let element = numbers[3] // elements can be read
+let numbers = [1, 2, 3]
+numbers[0] = 6
 
-numbers[3] = 6
+let pair = (1, "one")
+pair.`0 = 2
+
+let thing = THING("a thing")
+thing.name = "another thing"
+
+add_one(names: List[string]) is
+    names.add("one")
+si
 // <<<

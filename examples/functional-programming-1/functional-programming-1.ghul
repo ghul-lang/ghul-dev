@@ -1,14 +1,18 @@
 use IO.Std.write_line
+use Ghul.Pipes
 
 // >>>
-let f = i => i * 2
-write_line("f(123): {f(123)}")
+// a function literal, held in a variable
+let triple = (n: int) => n * 3
+write_line("triple(5): {triple(5)}")
 
-// assigned to another variable
-let g = f
-write_line("g(456): {g(456)}")
+// a named function, passed by name
+double(n: int) -> int => n * 2
 
-// passed to another function
-let apply_twice = (f, i) => f(f(i))
-write_line("apply_twice(f, 7): {apply_twice(f, 7)}")
+write_line("doubled: {[1, 2, 3] |> map(double)}")
+
+// an operator, passed as a value
+⊕(total: int, digit: int) -> int => total * 10 + digit
+
+write_line("digits: {[4, 0, 2] |> reduce(0, `⊕)}")
 // <<<

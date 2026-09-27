@@ -1,8 +1,0 @@
-// expect: error
-// >>>
-let tuple = (1, 2, 3, 4, 5)
-
-let element = tuple.`3 // elements can be read
-
-tuple.`3 = 6
-// <<<

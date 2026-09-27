@@ -2,15 +2,20 @@ use IO.Std.write_line
 use Ghul.Pipes
 
 // >>>
+let numbers = [1, 2, 3, 4, 5]
+
 // map
-let doubled = [1, 2, 3, 4, 5] |> map(x => x * 2)
+let doubled = numbers |> map(x => x * 2)
 write_line("doubled: {doubled}")
 
 // filter
-let evens = [1, 2, 3, 4, 5] |> filter(x => x % 2 == 0)
+let evens = numbers |> filter(x => x % 2 == 0)
 write_line("evens: {evens}")
 
 // reduce
-let sum = [1, 2, 3, 4, 5] |> reduce(0, (acc, x) => acc + x)
+let sum = numbers |> reduce(0, (acc, x) => acc + x)
 write_line("sum: {sum}")
+
+// the source is left as it was
+write_line("numbers: {numbers}")
 // <<<

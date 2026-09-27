@@ -1,0 +1,4 @@
+apply_twice(times_2, 5): 20
+apply_twice on text: <<x>>
+quadruple(5): 20
+lengths: [3, 5, 5]

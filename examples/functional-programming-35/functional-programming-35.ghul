@@ -1,0 +1,38 @@
+use IO.Std.write_line
+
+union Shape is
+    CIRCLE(radius: double)
+    RECTANGLE(width: double, height: double)
+si
+
+use Shape.CIRCLE
+use Shape.RECTANGLE
+
+// >>>
+// one arm for each case of the arguments
+gcd(a: int, b: int) -> int =>
+    case (a, b)
+    when (_, 0) then a
+    else gcd(b, a % b)
+    esac
+
+// one overload for each argument type, and within the Shape
+// overload one arm for each variant
+describe(n: int) -> string => "the number {n}"
+
+describe(s: string) -> string => "the text '{s}'"
+
+describe(s: Shape) -> string =>
+    case s
+    when (r): CIRCLE then "a circle of radius {r}"
+    when (w, h): RECTANGLE /\ w == h then "a square of side {w}"
+    when (w, h): RECTANGLE then "a {w} by {h} rectangle"
+    esac
+
+write_line("gcd(48, 18): {gcd(48, 18)}")
+write_line(describe(42))
+write_line(describe("forty-two"))
+write_line(describe(CIRCLE(1.5)))
+write_line(describe(RECTANGLE(2.0, 2.0)))
+write_line(describe(RECTANGLE(2.0, 3.0)))
+// <<<

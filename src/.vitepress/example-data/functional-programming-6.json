@@ -1,28 +1,54 @@
 {
   "name": "functional-programming-6",
   "snippet": false,
-  "code": "let numbers = [1, 2, 3, 4, 5]\n\nlet element = numbers[3] // elements can be read\n\nnumbers[3] = 6",
-  "fullSource": "// expect: error\nlet numbers = [1, 2, 3, 4, 5]\n\nlet element = numbers[3] // elements can be read\n\nnumbers[3] = 6\n",
+  "code": "let total = 10\ntotal = 11\n\nlet numbers = [1, 2, 3]\nnumbers[0] = 6\n\nlet pair = (1, \"one\")\npair.`0 = 2\n\nlet thing = THING(\"a thing\")\nthing.name = \"another thing\"\n\nadd_one(names: List[string]) is\n    names.add(\"one\")\nsi",
+  "fullSource": "// expect: error\nuse Collections.List\n\nstruct THING(name: string)\n\nlet total = 10\ntotal = 11\n\nlet numbers = [1, 2, 3]\nnumbers[0] = 6\n\nlet pair = (1, \"one\")\npair.`0 = 2\n\nlet thing = THING(\"a thing\")\nthing.name = \"another thing\"\n\nadd_one(names: List[string]) is\n    names.add(\"one\")\nsi\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 11, "severity": "error", "message": "indexer is read-only in int[]" }
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 6, "severity": "error", "message": "top-level value cannot be reassigned" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 11, "severity": "error", "message": "indexer is read-only in int[]" },
+    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 8, "severity": "error", "message": "0: int is not publicly assignable" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 11, "severity": "error", "message": "THING.name: string is not publicly assignable" },
+    { "startLine": 14, "startColumn": 11, "endLine": 14, "endColumn": 14, "severity": "error", "message": "member add not found in List[string]" }
   ],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 11, "text": "element: int", "signature": "element: int", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 15, "endLine": 3, "endColumn": 21, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 22, "endLine": 3, "endColumn": 24, "text": "Collections.List[int].get_Item(index: int) -> int", "signature": "Collections.List[int].get_Item(index: int) -> int", "kindLabel": "pure abstract method" },
-    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 7, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 9, "text": "total: int", "signature": "total: int", "kindLabel": "global variable" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 11, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 8, "text": "pair: (int, string)", "signature": "pair: (int, string)", "kindLabel": "global variable" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 9, "text": "thing: THING", "signature": "thing: THING", "kindLabel": "global variable" },
+    { "startLine": 10, "startColumn": 13, "endLine": 10, "endColumn": 17, "text": "THING.init(name: string)", "signature": "THING.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 13, "startColumn": 1, "endLine": 13, "endColumn": 7, "text": "add_one(names: List[string]) -> void", "signature": "add_one(names: List[string]) -> void", "kindLabel": "global function" },
+    { "startLine": 13, "startColumn": 9, "endLine": 13, "endColumn": 13, "text": "names: List[string]", "signature": "names: List[string]", "kindLabel": "local argument" },
+    { "startLine": 13, "startColumn": 21, "endLine": 13, "endColumn": 26, "text": "class string", "signature": "class string", "kindLabel": "class" },
+    { "startLine": 13, "startColumn": 16, "endLine": 13, "endColumn": 19, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 5, "text": "total: int", "signature": "total: int", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 7, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
+    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 4, "text": "pair: (int, string)", "signature": "pair: (int, string)", "kindLabel": "global variable" },
+    { "startLine": 8, "startColumn": 6, "endLine": 8, "endColumn": 7, "text": "TUPLE_2[int,string].0: int", "signature": "TUPLE_2[int,string].0: int", "kindLabel": "field" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 5, "text": "thing: THING", "signature": "thing: THING", "kindLabel": "global variable" },
+    { "startLine": 11, "startColumn": 7, "endLine": 11, "endColumn": 10, "text": "THING.name: string", "signature": "THING.name: string", "kindLabel": "pure instance property" },
+    { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 9, "text": "names: List[string]", "signature": "names: List[string]", "kindLabel": "local argument" }
   ],
   "inlayHints": [],
   "semanticTokens": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "tokenType": "property" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 11, "tokenType": "property" },
-    { "startLine": 3, "startColumn": 15, "endLine": 3, "endColumn": 21, "tokenType": "property" },
-    { "startLine": 3, "startColumn": 22, "endLine": 3, "endColumn": 24, "tokenType": "method" },
-    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 7, "tokenType": "property" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 11, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 7, "tokenType": "property" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 8, "tokenType": "property" },
+    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 4, "tokenType": "property" },
+    { "startLine": 8, "startColumn": 6, "endLine": 8, "endColumn": 7, "tokenType": "property" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 10, "startColumn": 13, "endLine": 10, "endColumn": 17, "tokenType": "method" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 11, "startColumn": 7, "endLine": 11, "endColumn": 10, "tokenType": "property" },
+    { "startLine": 13, "startColumn": 1, "endLine": 13, "endColumn": 7, "tokenType": "function" },
+    { "startLine": 13, "startColumn": 9, "endLine": 13, "endColumn": 13, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 13, "startColumn": 16, "endLine": 13, "endColumn": 19, "tokenType": "interface" },
+    { "startLine": 13, "startColumn": 21, "endLine": 13, "endColumn": 26, "tokenType": "class" },
+    { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 9, "tokenType": "variable", "modifiers": "readonly" }
   ]
 }

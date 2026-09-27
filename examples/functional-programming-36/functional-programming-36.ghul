@@ -1,0 +1,36 @@
+use IO.Std.write_line
+use Ghul.Pipes
+
+union Tree is
+    NODE(left: Tree, value: int, right: Tree)
+    LEAF
+si
+
+use Tree.NODE
+use Tree.LEAF
+
+// >>>
+// each yield hands the consumer one element
+countdown(start: int) -> Pipe[int] is
+    let n mut = start
+
+    while n > 0 do
+        yield n
+        n = n - 1
+    od
+si
+
+// yield in hands over every element of another sequence
+in_order(tree: Tree) -> Pipe[int] is
+    if let (left, value, right): NODE = tree then
+        yield in in_order(left)
+        yield value
+        yield in in_order(right)
+    fi
+si
+
+write_line("countdown: {countdown(5)}")
+
+let tree = NODE(NODE(LEAF, 1, LEAF), 2, NODE(LEAF, 3, LEAF))
+write_line("in order, times ten: {in_order(tree) |> map(x => x * 10)}")
+// <<<

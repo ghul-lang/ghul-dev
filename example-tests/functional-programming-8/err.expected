@@ -1,1 +1,0 @@
-test.ghul: 9,1..9,11: error: THING.name: string is not publicly assignable

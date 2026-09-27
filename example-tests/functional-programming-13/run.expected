@@ -1,4 +1,0 @@
-invoke(times_2, 5): 10
-invoke(square, 5): 25
-apply_twice(times_2, 5): 20
-apply_twice_times_2(5): 20
