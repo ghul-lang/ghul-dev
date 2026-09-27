@@ -1,14 +1,16 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-min_by[T,K: Ghul.Comparable[K]](
+min_by[T..,K: Ghul.Comparable[K]](
     source: Iterable[T],
-    key_selector: (T) -> K pure
+    key_selector: T.. -> K pure
 ) -> T? pure
 // <<<
 

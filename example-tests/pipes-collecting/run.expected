@@ -4,3 +4,4 @@ collect_set:     3, 1, 4, 5, 9, 2, 6
 partition:       even 4, 2, 6, odd 3, 1, 1, 5, 9
 group_by:        small 3, 1, 4, 1, 2
 group_by:        large 5, 9, 6
+collect_mutable_map: 8 entries

@@ -1,26 +1,26 @@
 {
   "name": "pipes-ref-partition-function",
   "snippet": false,
-  "code": "partition[T](\n    source: Iterable[T],\n    predicate: (T) -> bool pure\n) -> (LIST[T], LIST[T]) pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\npartition[T](\n    source: Iterable[T],\n    predicate: (T) -> bool pure\n) -> (LIST[T], LIST[T]) pure\n\nentry() is si\n",
+  "code": "partition[T..](\n    source: Iterable[T],\n    predicate: T.. -> bool pure\n) -> (List[T], List[T]) pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\npartition[T..](\n    source: Iterable[T],\n    predicate: T.. -> bool pure\n) -> (List[T], List[T]) pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "text": "partition[T](\n    source: Iterable[T],\n    predicate: T -> bool pure\n) -> (LIST[T], LIST[T])", "signature": "partition[T](\n    source: Iterable[T],\n    predicate: T -> bool pure\n) -> (LIST[T], LIST[T])", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "text": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (List[T], List[T])", "signature": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (List[T], List[T])", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 11, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 20, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 13, "text": "predicate: T -> bool pure", "signature": "predicate: T -> bool pure", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 23, "endLine": 3, "endColumn": 26, "text": "struct bool", "signature": "struct bool", "kindLabel": "struct" },
-    { "startLine": 3, "startColumn": 17, "endLine": 3, "endColumn": 17, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 16, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 12, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 4, "startColumn": 7, "endLine": 4, "endColumn": 10, "text": "class LIST[T]", "signature": "class LIST[T]", "kindLabel": "class" },
+    { "startLine": 4, "startColumn": 7, "endLine": 4, "endColumn": 10, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
     { "startLine": 4, "startColumn": 21, "endLine": 4, "endColumn": 21, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 19, "text": "class LIST[T]", "signature": "class LIST[T]", "kindLabel": "class" }
+    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 19, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "partition\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -32,11 +32,11 @@
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 20, "tokenType": "interface" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "tokenType": "typeParameter" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 13, "tokenType": "variable", "modifiers": "readonly" },
-    { "startLine": 3, "startColumn": 17, "endLine": 3, "endColumn": 17, "tokenType": "typeParameter" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 16, "tokenType": "typeParameter" },
     { "startLine": 3, "startColumn": 23, "endLine": 3, "endColumn": 26, "tokenType": "struct" },
-    { "startLine": 4, "startColumn": 7, "endLine": 4, "endColumn": 10, "tokenType": "class" },
+    { "startLine": 4, "startColumn": 7, "endLine": 4, "endColumn": 10, "tokenType": "interface" },
     { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 12, "tokenType": "typeParameter" },
-    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 19, "tokenType": "class" },
+    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 19, "tokenType": "interface" },
     { "startLine": 4, "startColumn": 21, "endLine": 4, "endColumn": 21, "tokenType": "typeParameter" }
   ]
 }

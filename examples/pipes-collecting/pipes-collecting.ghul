@@ -20,4 +20,11 @@ let by_size = numbers |> group_by(x => if x < 5 then "small" else "large" fi)
 
 write_line("group_by:        small {by_size["small"] |> join(", ")}")
 write_line("group_by:        large {by_size["large"] |> join(", ")}")
+
+// collect_mutable_map gives back a map that can be added to
+let squares = numbers |> distinct() |> collect_mutable_map(x => x, x => x * x)
+
+squares[10] = 100
+
+write_line("collect_mutable_map: {squares.count} entries")
 // <<<

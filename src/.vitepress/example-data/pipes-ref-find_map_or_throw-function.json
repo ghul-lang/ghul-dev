@@ -1,23 +1,23 @@
 {
   "name": "pipes-ref-find_map_or_throw-function",
   "snippet": false,
-  "code": "find_map_or_throw[T,U](\n    source: Iterable[T],\n    mapper: (T) -> U? pure\n) -> U pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nfind_map_or_throw[T,U](\n    source: Iterable[T],\n    mapper: (T) -> U? pure\n) -> U pure\n\nentry() is si\n",
+  "code": "find_map_or_throw[T..,U](\n    source: Iterable[T],\n    mapper: T.. -> U? pure\n) -> U pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nfind_map_or_throw[T..,U](\n    source: Iterable[T],\n    mapper: T.. -> U? pure\n) -> U pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 17, "text": "find_map_or_throw[T,U](\n    source: Iterable[T],\n    mapper: T -> U? pure\n) -> U", "signature": "find_map_or_throw[T,U](\n    source: Iterable[T],\n    mapper: T -> U? pure\n) -> U", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 17, "text": "find_map_or_throw[T..,U](\n    source: T{},\n    mapper: T.. -> U? pure\n) -> U", "signature": "find_map_or_throw[T..,U](\n    source: T{},\n    mapper: T.. -> U? pure\n) -> U", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 19, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 21, "endLine": 1, "endColumn": 21, "text": "U", "signature": "U", "kindLabel": "type variable" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 23, "text": "U", "signature": "U", "kindLabel": "type variable" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 20, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 10, "text": "mapper: T -> U? pure", "signature": "mapper: T -> U? pure", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 20, "endLine": 3, "endColumn": 20, "text": "U", "signature": "U", "kindLabel": "type variable" },
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 3, "startColumn": 13, "endLine": 3, "endColumn": 13, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 6, "text": "U", "signature": "U", "kindLabel": "type variable" }
   ],
   "inlayHints": [
@@ -26,12 +26,12 @@
   "semanticTokens": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 17, "tokenType": "function" },
     { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 19, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 21, "endLine": 1, "endColumn": 21, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 23, "tokenType": "typeParameter" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "tokenType": "variable", "modifiers": "readonly" },
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 20, "tokenType": "interface" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "tokenType": "typeParameter" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 10, "tokenType": "variable", "modifiers": "readonly" },
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "tokenType": "typeParameter" },
+    { "startLine": 3, "startColumn": 13, "endLine": 3, "endColumn": 13, "tokenType": "typeParameter" },
     { "startLine": 3, "startColumn": 20, "endLine": 3, "endColumn": 20, "tokenType": "typeParameter" },
     { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 6, "tokenType": "typeParameter" }
   ]

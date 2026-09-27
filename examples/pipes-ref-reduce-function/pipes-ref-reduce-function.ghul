@@ -1,21 +1,23 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-reduce[T,TRunning](
+reduce[T..,TRunning](
     source: Iterable[T],
     seed: TRunning,
-    accumulator: (TRunning,T) -> TRunning pure
+    accumulator: (TRunning,T..) -> TRunning pure
 ) -> TRunning pure
 
-reduce[T,TRunning,TOut](
+reduce[T..,TRunning,TOut](
     source: Iterable[T],
     seed: TRunning,
-    accumulator: (TRunning,T) -> TRunning pure,
+    accumulator: (TRunning,T..) -> TRunning pure,
     mapper: (TRunning) -> TOut pure
 ) -> TOut pure
 // <<<

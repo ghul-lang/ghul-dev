@@ -1,15 +1,17 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-group_by[T,K](
+group_by[T..,K](
     source: Iterable[T],
-    key_selector: (T) -> K pure
-) -> MAP[K, LIST[T]] pure
+    key_selector: T.. -> K pure
+) -> Map[K, List[T]] pure
 // <<<
 
 entry() is si

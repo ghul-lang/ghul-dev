@@ -1,24 +1,24 @@
 {
   "name": "pipes-ref-peek-function",
   "snippet": false,
-  "code": "peek[T](source: Iterable[T], action: T -> void) -> Pipe[T] pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\npeek[T](source: Iterable[T], action: T -> void) -> Pipe[T] pure\n\nentry() is si\n",
+  "code": "peek[T..](source: Iterable[T], action: T.. -> void) -> Iterable[T] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\npeek[T..](source: Iterable[T], action: T.. -> void) -> Iterable[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 4, "text": "peek[T](source: Iterable[T], action: T -> void) -> Pipe[T]", "signature": "peek[T](source: Iterable[T], action: T -> void) -> Pipe[T]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 4, "text": "peek[T..](source: T{}, action: T.. -> void) -> T{}", "signature": "peek[T..](source: T{}, action: T.. -> void) -> T{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 6, "endLine": 1, "endColumn": 6, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 14, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
-    { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 35, "text": "action: T -> void", "signature": "action: T -> void", "kindLabel": "local argument" },
-    { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 26, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 24, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
-    { "startLine": 1, "startColumn": 43, "endLine": 1, "endColumn": 46, "text": "struct void", "signature": "struct void", "kindLabel": "struct" },
-    { "startLine": 1, "startColumn": 38, "endLine": 1, "endColumn": 38, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 57, "endLine": 1, "endColumn": 57, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 52, "endLine": 1, "endColumn": 55, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 16, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 32, "endLine": 1, "endColumn": 37, "text": "action: T -> void", "signature": "action: T -> void", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 28, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 26, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 47, "endLine": 1, "endColumn": 50, "text": "struct void", "signature": "struct void", "kindLabel": "struct" },
+    { "startLine": 1, "startColumn": 40, "endLine": 1, "endColumn": 40, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 65, "endLine": 1, "endColumn": 65, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 63, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "peek\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -26,13 +26,13 @@
   "semanticTokens": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 4, "tokenType": "function" },
     { "startLine": 1, "startColumn": 6, "endLine": 1, "endColumn": 6, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 14, "tokenType": "variable", "modifiers": "readonly" },
-    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 24, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 26, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 35, "tokenType": "variable", "modifiers": "readonly" },
-    { "startLine": 1, "startColumn": 38, "endLine": 1, "endColumn": 38, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 43, "endLine": 1, "endColumn": 46, "tokenType": "struct" },
-    { "startLine": 1, "startColumn": 52, "endLine": 1, "endColumn": 55, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 57, "endLine": 1, "endColumn": 57, "tokenType": "typeParameter" }
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 16, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 26, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 28, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 32, "endLine": 1, "endColumn": 37, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 40, "endLine": 1, "endColumn": 40, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 47, "endLine": 1, "endColumn": 50, "tokenType": "struct" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 63, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 65, "endLine": 1, "endColumn": 65, "tokenType": "typeParameter" }
   ]
 }

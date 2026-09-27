@@ -1,21 +1,23 @@
 {
   "name": "pipes-ref-sort_descending-function",
   "snippet": false,
-  "code": "sort_descending[T](source: Iterable[T]) -> Pipe[T] pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nsort_descending[T](source: Iterable[T]) -> Pipe[T] pure\n\nentry() is si\n",
+  "code": "sort_descending[T: Ghul.Comparable[T]](source: Iterable[T]) -> Iterable[T] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nsort_descending[T: Ghul.Comparable[T]](source: Iterable[T]) -> Iterable[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "text": "sort_descending[T](source: Iterable[T]) -> Pipe[T]", "signature": "sort_descending[T](source: Iterable[T]) -> Pipe[T]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "text": "sort_descending[T](source: T{}) -> T{}", "signature": "sort_descending[T](source: T{}) -> T{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 17, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
-    { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 37, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 35, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
-    { "startLine": 1, "startColumn": 49, "endLine": 1, "endColumn": 49, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 44, "endLine": 1, "endColumn": 47, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+    { "startLine": 1, "startColumn": 40, "endLine": 1, "endColumn": 45, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 36, "endLine": 1, "endColumn": 36, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 34, "text": "trait Ghul.Comparable[T]", "signature": "trait Ghul.Comparable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 57, "endLine": 1, "endColumn": 57, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 48, "endLine": 1, "endColumn": 55, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 73, "endLine": 1, "endColumn": 73, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 64, "endLine": 1, "endColumn": 71, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "sort_descending\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -23,10 +25,12 @@
   "semanticTokens": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "tokenType": "function" },
     { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 17, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "tokenType": "variable", "modifiers": "readonly" },
-    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 35, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 37, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 44, "endLine": 1, "endColumn": 47, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 49, "endLine": 1, "endColumn": 49, "tokenType": "typeParameter" }
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 34, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 36, "endLine": 1, "endColumn": 36, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 40, "endLine": 1, "endColumn": 45, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 48, "endLine": 1, "endColumn": 55, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 57, "endLine": 1, "endColumn": 57, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 64, "endLine": 1, "endColumn": 71, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 73, "endLine": 1, "endColumn": 73, "tokenType": "typeParameter" }
   ]
 }

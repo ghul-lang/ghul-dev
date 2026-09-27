@@ -1,12 +1,14 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-each[T](source: Iterable[T], action: T -> void) -> void
+each[T..](source: Iterable[T], action: T.. -> void) -> void
 // <<<
 
 entry() is si

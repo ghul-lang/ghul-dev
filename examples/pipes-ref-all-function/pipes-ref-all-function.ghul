@@ -1,14 +1,16 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-all[T](
+all[T..](
     source: Iterable[T],
-    predicate: (T) -> bool pure
+    predicate: T.. -> bool pure
 ) -> bool pure
 // <<<
 

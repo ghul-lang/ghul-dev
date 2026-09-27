@@ -1,23 +1,23 @@
 {
   "name": "pipes-ref-skip-function",
   "snippet": false,
-  "code": "skip[T](source: Iterable[T], count: int) -> Pipe[T] pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nskip[T](source: Iterable[T], count: int) -> Pipe[T] pure\n\nentry() is si\n",
+  "code": "skip[T](source: Iterable[T], count: int) -> Iterable[T] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nskip[T](source: Iterable[T], count: int) -> Iterable[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 4, "text": "skip[T](source: Iterable[T], count: int) -> Pipe[T]", "signature": "skip[T](source: Iterable[T], count: int) -> Pipe[T]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 4, "text": "skip[T](source: T{}, count: int) -> T{}", "signature": "skip[T](source: T{}, count: int) -> T{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 6, "endLine": 1, "endColumn": 6, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 14, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 14, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 34, "text": "count: int", "signature": "count: int", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 26, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 24, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 39, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
-    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 50, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 48, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+    { "startLine": 1, "startColumn": 54, "endLine": 1, "endColumn": 54, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 52, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "skip\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -30,7 +30,7 @@
     { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 26, "tokenType": "typeParameter" },
     { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 34, "tokenType": "variable", "modifiers": "readonly" },
     { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 39, "tokenType": "struct" },
-    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 48, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 50, "tokenType": "typeParameter" }
+    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 52, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 54, "endLine": 1, "endColumn": 54, "tokenType": "typeParameter" }
   ]
 }

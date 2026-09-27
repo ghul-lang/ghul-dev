@@ -1,24 +1,24 @@
 {
   "name": "pipes-ref-chunk-function",
   "snippet": false,
-  "code": "chunk[T](source: Iterable[T], size: int) -> Pipe[LIST[T]] pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nchunk[T](source: Iterable[T], size: int) -> Pipe[LIST[T]] pure\n\nentry() is si\n",
+  "code": "chunk[T](source: Iterable[T], size: int) -> Iterable[List[T]] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nchunk[T](source: Iterable[T], size: int) -> Iterable[List[T]] pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 5, "text": "chunk[T](source: Iterable[T], size: int) -> Pipe[LIST[T]]", "signature": "chunk[T](source: Iterable[T], size: int) -> Pipe[LIST[T]]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 5, "text": "chunk[T](source: T{}, size: int) -> List[T]{}", "signature": "chunk[T](source: T{}, size: int) -> List[T]{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 7, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 10, "endLine": 1, "endColumn": 15, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 10, "endLine": 1, "endColumn": 15, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 34, "text": "size: int", "signature": "size: int", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 27, "endLine": 1, "endColumn": 27, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 1, "startColumn": 18, "endLine": 1, "endColumn": 25, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 39, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
-    { "startLine": 1, "startColumn": 55, "endLine": 1, "endColumn": 55, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 53, "text": "class LIST[T]", "signature": "class LIST[T]", "kindLabel": "class" },
-    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 48, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+    { "startLine": 1, "startColumn": 59, "endLine": 1, "endColumn": 59, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 54, "endLine": 1, "endColumn": 57, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 52, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "chunk\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -31,8 +31,8 @@
     { "startLine": 1, "startColumn": 27, "endLine": 1, "endColumn": 27, "tokenType": "typeParameter" },
     { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 34, "tokenType": "variable", "modifiers": "readonly" },
     { "startLine": 1, "startColumn": 37, "endLine": 1, "endColumn": 39, "tokenType": "struct" },
-    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 48, "tokenType": "interface" },
-    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 53, "tokenType": "class" },
-    { "startLine": 1, "startColumn": 55, "endLine": 1, "endColumn": 55, "tokenType": "typeParameter" }
+    { "startLine": 1, "startColumn": 45, "endLine": 1, "endColumn": 52, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 54, "endLine": 1, "endColumn": 57, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 59, "endLine": 1, "endColumn": 59, "tokenType": "typeParameter" }
   ]
 }

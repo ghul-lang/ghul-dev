@@ -1,0 +1,11 @@
+// expect: warning
+use IO.Std.write_line
+
+// >>>
+@System.Obsolete("use scaled instead")
+doubled(x: int) -> int => x * 2
+
+scaled(x: int, by: int) -> int => x * by
+
+write_line("{doubled(21)} {scaled(21, 2)}")
+// <<<

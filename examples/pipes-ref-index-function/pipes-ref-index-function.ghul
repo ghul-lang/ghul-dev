@@ -1,17 +1,19 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-index[T](source: Iterable[T]) -> Pipe[INDEXED_VALUE[T]] pure
+index[T](source: Iterable[T]) -> Iterable[INDEXED_VALUE[T]] pure
 
 index[T](
     source: Iterable[T],
     index: int
-) -> Pipe[INDEXED_VALUE[T]] pure
+) -> Iterable[INDEXED_VALUE[T]] pure
 // <<<
 
 entry() is si

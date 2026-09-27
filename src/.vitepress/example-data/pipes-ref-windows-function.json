@@ -1,24 +1,24 @@
 {
   "name": "pipes-ref-windows-function",
   "snippet": false,
-  "code": "windows[T](\n    source: Iterable[T],\n    size: int\n) -> Pipe[LIST[T]] pure",
-  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.MAP\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nwindows[T](\n    source: Iterable[T],\n    size: int\n) -> Pipe[LIST[T]] pure\n\nentry() is si\n",
+  "code": "windows[T](\n    source: Iterable[T],\n    size: int\n) -> Iterable[List[T]] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nwindows[T](\n    source: Iterable[T],\n    size: int\n) -> Iterable[List[T]] pure\n\nentry() is si\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 7, "text": "windows[T](source: Iterable[T], size: int) -> Pipe[LIST[T]]", "signature": "windows[T](source: Iterable[T], size: int) -> Pipe[LIST[T]]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 7, "text": "windows[T](source: T{}, size: int) -> List[T]{}", "signature": "windows[T](source: T{}, size: int) -> List[T]{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 9, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: Iterable[T]", "signature": "source: Iterable[T]", "kindLabel": "local argument" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 20, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "size: int", "signature": "size: int", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 13, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
-    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 16, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 14, "text": "class LIST[T]", "signature": "class LIST[T]", "kindLabel": "class" },
-    { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 9, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+    { "startLine": 4, "startColumn": 20, "endLine": 4, "endColumn": 20, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 18, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
+    { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 13, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
   ],
   "inlayHints": [
     { "line": 1, "column": 1, "label": "◆", "detail": "windows\n\n- ◆ abstract", "code": "definition-virtuality" }
@@ -31,8 +31,8 @@
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "tokenType": "typeParameter" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "tokenType": "variable", "modifiers": "readonly" },
     { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 13, "tokenType": "struct" },
-    { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 9, "tokenType": "interface" },
-    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 14, "tokenType": "class" },
-    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 16, "tokenType": "typeParameter" }
+    { "startLine": 4, "startColumn": 6, "endLine": 4, "endColumn": 13, "tokenType": "interface" },
+    { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 18, "tokenType": "interface" },
+    { "startLine": 4, "startColumn": 20, "endLine": 4, "endColumn": 20, "tokenType": "typeParameter" }
   ]
 }

@@ -1,6 +1,8 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
@@ -9,7 +11,7 @@ use Ghul.Pipes.Pipe
 windows[T](
     source: Iterable[T],
     size: int
-) -> Pipe[LIST[T]] pure
+) -> Iterable[List[T]] pure
 // <<<
 
 entry() is si

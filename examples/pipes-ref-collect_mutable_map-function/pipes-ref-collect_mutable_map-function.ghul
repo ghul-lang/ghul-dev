@@ -1,0 +1,20 @@
+use Collections.Iterable
+use Collections.LIST
+use Collections.List
+use Collections.MAP
+use Collections.Map
+use Collections.SET
+use Ghul.Pipes.INDEXED_VALUE
+use Ghul.Pipes.Pipe
+
+// >>>
+collect_mutable_map[T..,K,V](
+    source: Iterable[T],
+    key_selector: T.. -> K pure,
+    value_selector: T.. -> V pure
+) -> MAP[K,V] pure
+
+collect_mutable_map[K,V](source: Iterable[(K, V)]) -> MAP[K,V] pure
+// <<<
+
+entry() is si

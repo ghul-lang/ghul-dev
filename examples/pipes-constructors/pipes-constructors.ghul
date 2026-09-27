@@ -1,0 +1,17 @@
+use IO.Std.write_line
+use Ghul.Pipes
+use Collections
+
+// >>>
+let people = [("ada", 36), ("alan", 41), ("grace", 85)]
+
+// a constructor ends a chain as a collecting function does
+let names = people |> map(((name, _)) => name) |> ARRAY()
+let ages = MAP(people)
+let seen: SET[string] = _(names)
+
+write_line("names: {names |> string(", ")}")
+write_line("alan:  {ages["alan"]}")
+write_line("seen:  {seen.contains("grace")}")
+write_line("word:  {"stressed" |> reverse() |> string()}")
+// <<<

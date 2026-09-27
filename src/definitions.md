@@ -46,6 +46,8 @@ A function can also be written among the statements of a body, with a name. It i
 
 <GhulExample name="definitions-54" />
 
+A function declared at namespace scope can be overloaded on its argument types, and each call goes to the overload whose parameters fit its arguments best. Where a generic and a non-generic overload fit equally well, the compiler chooses the non-generic one if each of its parameters is at least as specific as the generic's, once the generic's type arguments are known: `f(items: List[string])` is chosen over `f[T](items: Iterable[T])` for a `string[]`, and `f(items: object)` is not.
+
 Functions can be generic, which will be covered later. Function names should be in `snake_case`.
 
 ### the entry point
@@ -338,6 +340,8 @@ Symbols can be brought into the current namespace instance's scope using the use
 
 `use` applied to a namespace imports all symbols from that namespace:
 <GhulExample name="definitions-32" />
+
+A function you declare and an imported function of the same name form one overload group, and the compiler resolves each call between them as it does [any overloads](#functions).
 
 The other forms of `use` - `use default`, wildcard imports and type aliases - are covered under [imports](/syntax.html#imports).
 

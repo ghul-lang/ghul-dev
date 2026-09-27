@@ -1,14 +1,16 @@
 use Collections.Iterable
 use Collections.LIST
+use Collections.List
 use Collections.MAP
+use Collections.Map
 use Collections.SET
 use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-first_map[T,U](
+first_map[T..,U](
     source: Iterable[T],
-    mapper: (T) -> U? pure
+    mapper: T.. -> U? pure
 ) -> U? pure
 // <<<
 

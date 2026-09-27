@@ -14,9 +14,9 @@ free functions, which pass the sequence in as the first argument:
 
 ## how a pipe runs
 
-The combinators come in two kinds. A **stage** returns a new `Pipe[T]`, which is
-what lets stages chain: `map` returns a pipe that maps, `filter` returns a pipe
-that filters. A **terminal** returns something else - a value, a list, a count -
+The combinators come in two kinds. A **stage** returns a new sequence, a `T{}`,
+which is what lets stages chain: `map` returns a sequence that maps, `filter`
+returns one that filters. A **terminal** returns something else - a value, a list, a count -
 so it is where a pipe ends.
 
 Elements travel through a pipe one at a time, and the terminal is what pulls
@@ -47,9 +47,9 @@ This combines neatly with infinite generators - a
 [generator](/async-and-generators.html#generators) can yield indefinitely,
 leaving it to the pipe downstream to decide when to stop consuming.
 
-`reverse` and the `sort` family are the exceptions, listed separately below:
-they need to see the whole sequence of elements before they can start producing
-results, and so they buffer the whole source as soon as they are called.
+`reverse`, the `sort` family, `transpose` and `permutations` are the exceptions,
+listed separately below: they need to see the whole sequence of elements before
+they can start producing results, and so they buffer the whole source.
 
 ## reading the signatures
 
@@ -74,7 +74,7 @@ itself.
 
 ## stages
 
-A stage returns a new pipe, so stages chain onto one another.
+A stage returns a new sequence, so stages chain onto one another.
 
 ### filter
 
@@ -156,6 +156,14 @@ Every run of `size` neighbouring elements: the first `size`, then the same run m
 
 <GhulExample name="pipes-ref-windows-function" signature />
 
+### group
+
+Runs of neighbouring equal elements, each a read-only list, compared with `=~`. A new run starts wherever an element differs from the one before it, so equal elements that are not neighbours go into separate runs. Compare `group_by`, below, which gathers every element with the same key wherever it appears.
+
+<GhulExample name="pipes-group" />
+
+<GhulExample name="pipes-ref-group-function" signature />
+
 ### cat
 
 Concatenation: every element of the left source, then every element of the right.
@@ -176,9 +184,11 @@ Pairs elements of the source with elements of `other`, stopping when either side
 
 ## stages that buffer
 
-These return a pipe, like any other stage, but they cannot work out their first
-element without having seen the last one. So they buffer the whole source the
-moment they are called, rather than passing elements along one at a time.
+These return a sequence, like any other stage, but they cannot work out their
+first element without having seen the last one. So they buffer the whole source
+before producing anything, rather than passing elements along one at a time.
+`reverse` and the `sort` family read the source the moment they are called, and
+`transpose` and `permutations` read it each time their result is read.
 
 ### reverse
 
@@ -203,6 +213,22 @@ Yields the source's elements in order. The first form uses the element type's ow
 ### sort_by_descending
 
 <GhulExample name="pipes-ref-sort_by_descending-function" signature />
+
+`transpose` and `permutations` both produce read-only lists built from the whole source:
+
+<GhulExample name="pipes-transpose-permutations" />
+
+### transpose
+
+The source's rows and columns exchanged, each column a read-only list: the first column holds the first element of each row, in row order, and so on. Transposing stops at the shortest row, so a ragged source is read as its rectangular part.
+
+<GhulExample name="pipes-ref-transpose-function" signature />
+
+### permutations
+
+Every ordering of the source's elements, each a read-only list. The orderings come in the order of the source's own positions, which is sorted order when the source is sorted.
+
+<GhulExample name="pipes-ref-permutations-function" signature />
 
 ## terminals
 
@@ -265,6 +291,12 @@ As `first_map`, throwing instead of returning absent.
 
 <GhulExample name="pipes-ref-first_map_or_throw-function" signature />
 
+### last
+
+The final element, absent when the source is empty. `last` reads the whole source to find it.
+
+<GhulExample name="pipes-ref-last-function" signature />
+
 ### only
 
 The single element the source holds, throwing when it is empty or holds more than one.
@@ -290,6 +322,14 @@ The first form counts every element. The second counts the elements the predicat
 Every element added together. An empty source sums to zero.
 
 <GhulExample name="pipes-ref-sum-function" signature />
+
+### sum_by
+
+The total of what `selector` returns for each element, zero for an empty source. `sum_by(f)` gives the same total as `map(f) |> sum()`:
+
+<GhulExample name="pipes-sum_by-last" />
+
+<GhulExample name="pipes-ref-sum_by-function" signature />
 
 ### product
 
@@ -323,6 +363,8 @@ The collecting combinators differ in what they hand back:
 
 Collects into an array, `T[]`, which is a read-only `Collections.List[T]`. `collect_mutable` gives back the mutable `LIST[T]` instead, and the others collect into a set or a map.
 
+Each collecting function is a [collection constructor](/functional-programming.html#filter-map-reduce) written as a function: `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)`, `collect_set` is `SET(p)`, `collect_mutable_map` is `MAP(p)`, and `join` is `string(p, separator)`. `collect_map` has no constructor of its own, because it gives back the read-only `Map[K, V]`.
+
 <GhulExample name="pipes-ref-collect-function" signature />
 
 ### collect_mutable
@@ -338,6 +380,12 @@ Collects into an array, `T[]`, which is a read-only `Collections.List[T]`. `coll
 The first form takes each element's key and value from two functions. The second collects a sequence of key and value pairs, which is how a map with fixed contents is written: `[("a", 1), ("b", 2)] |> collect_map()`.
 
 <GhulExample name="pipes-ref-collect_map-function" signature />
+
+### collect_mutable_map
+
+As `collect_map`, giving back the mutable `MAP[K, V]` rather than the read-only `Map[K, V]`, so entries can be added to it afterwards.
+
+<GhulExample name="pipes-ref-collect_mutable_map-function" signature />
 
 ### partition
 

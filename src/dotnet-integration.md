@@ -146,6 +146,18 @@ A type implementing `Collections.Iterable[T]` is a .NET `IEnumerable<T>`, so it 
 
 An auto-property's backing field is named `$` followed by the property name, and reflection sees it alongside the property itself. A reflection-based serializer told to include fields will therefore emit everything twice. With `System.Text.Json`, leave `include_fields` alone unless the type genuinely has fields to serialize.
 
+## attributes
+
+A pragma whose name isn't one of the compiler's own names a .NET attribute, and the compiler emits that attribute on the definition the pragma is written before: a type, a function or method, or a single parameter. `@Foo(...)` finds `FooAttribute` when there is no plain `Foo`, as C# does. The arguments can be positional, named (`name = value`), arrays, or `typeof`.
+
+### deprecation
+
+`System.Obsolete` marks a declaration as deprecated. The compiler reports every use of the declaration as a `deprecated` warning, with the attribute's message when it has one:
+
+<GhulExample name="dotnet-integration-deprecated" />
+
+With `true` as its second argument, `@System.Obsolete("removed", true)`, the attribute makes each use an error instead. The compiler reads the attribute on a declaration from another assembly too, whichever language it was written in, and a call to a class's constructor counts as a use of the class. A use written inside a declaration that is itself deprecated is not reported, so an old member can go on calling another. Where a use is deliberate, `@suppress("deprecated")` silences the warning like any other. In the editor, hover shows the message under the signature and completion marks the item as deprecated.
+
 ## ASP.NET Core
 
 ASP.NET Core minimal APIs work from ghūl. Extension methods aren't exposed as members, so the fluent builder calls go through the `|>` thread-first operator, which passes the left-hand side as the called method's first argument:

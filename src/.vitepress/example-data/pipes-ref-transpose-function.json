@@ -1,0 +1,36 @@
+{
+  "name": "pipes-ref-transpose-function",
+  "snippet": false,
+  "code": "transpose[T](rows: Iterable[Iterable[T]]) -> Pipe[List[T]]",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\ntranspose[T](rows: Iterable[Iterable[T]]) -> Pipe[List[T]]\n\nentry() is si\n",
+  "hiddenBefore": true,
+  "hiddenAfter": true,
+  "hiddenGapsAfterLine": [],
+  "output": "",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "text": "transpose[T](rows: T{}{}) -> Pipe[List[T]]", "signature": "transpose[T](rows: T{}{}) -> Pipe[List[T]]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 11, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 17, "text": "rows: T{}{}", "signature": "rows: T{}{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 38, "endLine": 1, "endColumn": 38, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 29, "endLine": 1, "endColumn": 36, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 27, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 56, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 54, "text": "trait List[T]", "signature": "trait List[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 46, "endLine": 1, "endColumn": 49, "text": "trait Pipe[T]", "signature": "trait Pipe[T]", "kindLabel": "trait" }
+  ],
+  "inlayHints": [
+    { "line": 1, "column": 1, "label": "◆", "detail": "transpose\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "tokenType": "function" },
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 11, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 17, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 27, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 29, "endLine": 1, "endColumn": 36, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 38, "endLine": 1, "endColumn": 38, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 46, "endLine": 1, "endColumn": 49, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 54, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 56, "tokenType": "typeParameter" }
+  ]
+}
