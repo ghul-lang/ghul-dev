@@ -30,7 +30,7 @@
     { "startLine": 8, "startColumn": 18, "endLine": 8, "endColumn": 18, "text": "b: int", "signature": "b: int", "kindLabel": "local value" },
     { "startLine": 12, "startColumn": 27, "endLine": 12, "endColumn": 27, "text": "w: string", "signature": "w: string", "kindLabel": "local value" },
     { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 9, "text": "total: int", "signature": "total: int", "kindLabel": "global variable" },
-    { "startLine": 12, "startColumn": 42, "endLine": 12, "endColumn": 44, "text": "Ghul.Pipes.sum[int](\n    source: Collections.Iterable[int]\n) -> int", "signature": "Ghul.Pipes.sum[int](\n    source: Collections.Iterable[int]\n) -> int", "kindLabel": "pure global function" },
+    { "startLine": 12, "startColumn": 42, "endLine": 12, "endColumn": 44, "text": "Ghul.Pipes.sum[int](source: int{}) -> int", "signature": "Ghul.Pipes.sum[int](source: int{}) -> int", "kindLabel": "pure global function" },
     { "startLine": 12, "startColumn": 32, "endLine": 12, "endColumn": 36, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" },
     { "startLine": 12, "startColumn": 14, "endLine": 12, "endColumn": 14, "text": "w: string", "signature": "w: string", "kindLabel": "local value" },
     { "startLine": 12, "startColumn": 16, "endLine": 12, "endColumn": 21, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },

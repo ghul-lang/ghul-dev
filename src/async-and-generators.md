@@ -60,11 +60,11 @@ resumes it on its own thread when the task completes.
 
 ## generators
 
-A function is a generator when its declared return type is `Pipe[T]` (`Ghul.Pipes.Pipe[T]`) and its body contains `yield E;`. Each `yield` produces the next value in the sequence; execution suspends until the caller asks for another value, then resumes from the statement after the `yield`:
+A function is a generator when its declared return type is `T{}`, the sequence type `Iterable[T]`, and its body contains `yield E;`. `Iterator[T]` and `Ghul.Pipes.Pipe[T]` are accepted as well. Each `yield` produces the next value in the sequence; execution suspends until the caller asks for another value, then resumes from the statement after the `yield`:
 
 <GhulExample name="control-flow-49" />
 
-A generator *is* a [pipe](/runtime-library.html#stages), so it can be looped over directly and composed with `map` / `filter` / `take` and the other pipe stages:
+A generator is a sequence, so it can be looped over directly and composed with `map` / `filter` / `take` and the other [pipe stages](/runtime-library.html#stages). Each read of it runs the body from the start, with the arguments it was called with, and two reads in progress at once are independent:
 
 <GhulExample name="control-flow-50" />
 

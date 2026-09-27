@@ -416,7 +416,7 @@ statement. The `assert … in …` tail behaves the same way: a passing assert y
 the trailing expression, a failing one throws.
 
 `yield` is permitted only inside a [generator function](/async-and-generators.html#generators),
-one whose return type is `Ghul.Pipes.Pipe[T]`.
+one whose return type is `T{}`, `Iterator[T]` or `Ghul.Pipes.Pipe[T]`.
 
 ### if
 

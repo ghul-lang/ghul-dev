@@ -11,7 +11,7 @@ use Tree.LEAF
 
 // >>>
 // each yield hands the consumer one element
-countdown(start: int) -> Pipe[int] is
+countdown(start: int) -> int{} is
     let n mut = start
 
     while n > 0 do
@@ -21,7 +21,7 @@ countdown(start: int) -> Pipe[int] is
 si
 
 // yield in hands over every element of another sequence
-in_order(tree: Tree) -> Pipe[int] is
+in_order(tree: Tree) -> int{} is
     if let (left, value, right): NODE = tree then
         yield in in_order(left)
         yield value

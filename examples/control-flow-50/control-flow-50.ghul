@@ -1,7 +1,7 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-fibs() -> Ghul.Pipes.Pipe[int] is
+fibs() -> int{} is
     let a mut = 0
     let b mut = 1
     do

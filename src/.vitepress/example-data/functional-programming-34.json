@@ -11,15 +11,15 @@
   "hovers": [
     { "startLine": 2, "startColumn": 21, "endLine": 2, "endColumn": 21, "text": "n: int", "signature": "n: int", "kindLabel": "local value" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "primes: Pipe[int]", "signature": "primes: Pipe[int]", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 26, "endLine": 2, "endColumn": 29, "text": "Ghul.Pipes.from(start: int) -> Pipe[int]", "signature": "Ghul.Pipes.from(start: int) -> Pipe[int]", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 26, "endLine": 2, "endColumn": 29, "text": "Ghul.Pipes.from(start: int) -> int{}", "signature": "Ghul.Pipes.from(start: int) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 2, "startColumn": 37, "endLine": 2, "endColumn": 44, "text": "is_prime(n: int) -> bool", "signature": "is_prime(n: int) -> bool", "kindLabel": "pure global function" },
     { "startLine": 2, "startColumn": 46, "endLine": 2, "endColumn": 46, "text": "n: int", "signature": "n: int", "kindLabel": "local value" },
     { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "n: int", "signature": "n: int", "kindLabel": "local value" },
     { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 4, "startColumn": 42, "endLine": 4, "endColumn": 45, "text": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "signature": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "kindLabel": "pure global function" },
+    { "startLine": 4, "startColumn": 42, "endLine": 4, "endColumn": 45, "text": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "signature": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 4, "startColumn": 32, "endLine": 4, "endColumn": 37, "text": "primes: Pipe[int]", "signature": "primes: Pipe[int]", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 7, "startColumn": 37, "endLine": 7, "endColumn": 40, "text": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "signature": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "kindLabel": "pure global function" },
+    { "startLine": 7, "startColumn": 37, "endLine": 7, "endColumn": 40, "text": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "signature": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 7, "startColumn": 27, "endLine": 7, "endColumn": 32, "text": "primes: Pipe[int]", "signature": "primes: Pipe[int]", "kindLabel": "global variable" }
   ],
   "inlayHints": [],

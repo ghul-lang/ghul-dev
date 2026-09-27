@@ -42,7 +42,7 @@ let factorial = stream(
 // chars of a string: state is an int cursor,
 // output is char. The input string is captured by
 // the anonymous function; the integer state is hidden inside
-// the resulting Pipe[char].
+// the resulting char{} sequence.
 let chars_of = (s: string) =>
     let xs = s.to_char_array() in
     stream(

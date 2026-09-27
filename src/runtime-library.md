@@ -30,9 +30,9 @@ doesn't construct a million-element list.
 Pipes are lazy: until something - a terminal - asks a pipe for elements, no
 stage runs. An inert pipe can be held or passed around until it's needed. And if
 the consumer stops pulling elements from the pipe, the pipe will stop pulling
-elements from its source iterator. If and when the consumer starts up again, the
-pipe will begin producing elements again, pulling them through its chain of
-stages from the source.
+elements from its source iterator. Every read of a pipe starts from the
+beginning, pulling elements through its chain of stages from the source again,
+and two reads in progress at once are independent of each other.
 
 <GhulExample name="pipes-lazy-chain" />
 
@@ -399,7 +399,7 @@ At the top, a string or character is the whole answer, so both functions write i
 - They write a class, struct or union variant with no `to_string` of its own as its type and members, such as `POINT(x = 3, y = 4)`.
 - They write a value of a type from another language with no `to_string` of its own as its .NET type name. They do not read its properties, because a property getter can run any code: reading a task's result waits for the task.
 
-They stop a sequence after 100 elements and end it with `, ...]`, so they can write an unbounded pipe. They rewind a pipe the limit stops part way through, as reading it to the end would have left it. Where a value contains itself, they write `<cycle>` at the point it recurs. The same value appearing in two places is not a cycle, and they write it in full both times.
+They stop a sequence after 100 elements and end it with `, ...]`, so they can write an unbounded pipe. Stopping there leaves nothing behind for the next read of the pipe. Where a value contains itself, they write `<cycle>` at the point it recurs. The same value appearing in two places is not a cycle, and they write it in full both times.
 
 A type chooses how it is displayed by implementing `Displayable`. Its one method writes the value through a `DISPLAY_STATE`. Write each child value with `state.render(child)` rather than `$(child)`: the state carries the element limit and the values already being written, and a fresh call to `$` starts without them. `state.mode` says whether the text is for `$`, `DisplayMode.CLEAN`, or for `inspect`, `DisplayMode.DETAILED`:
 

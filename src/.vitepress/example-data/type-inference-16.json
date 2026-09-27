@@ -10,7 +10,7 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 27, "endLine": 1, "endColumn": 27, "text": "i: int", "signature": "i: int", "kindLabel": "local argument" },
-    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "text": "Ghul.Pipes.filter[int](\n    source: Collections.Iterable[int],\n    predicate: int.. -> bool pure\n) -> Pipe[int]", "signature": "Ghul.Pipes.filter[int](\n    source: Collections.Iterable[int],\n    predicate: int.. -> bool pure\n) -> Pipe[int]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 20, "endLine": 1, "endColumn": 25, "text": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "signature": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 32, "endLine": 1, "endColumn": 32, "text": "i: int", "signature": "i: int", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 34, "endLine": 1, "endColumn": 34, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" }
   ],

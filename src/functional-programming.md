@@ -194,22 +194,23 @@ Don't write an array comprehension over a sequence that never ends: it makes its
 
 ### generators
 
-A function that returns `Pipe[T]` and contains `yield` is a generator. It
+A function that returns `T{}` - a sequence, `Iterable[T]` - and contains `yield`
+is a generator. It
 produces its elements one at a time, as the consumer asks for them, so it can
 describe a sequence that never ends. `yield in` produces every element of
 another sequence, which suits a recursive generator:
 
 <GhulExample name="functional-programming-36" />
 
-A generator's result is an ordinary `Pipe[T]`, so the pipe combinators chain
-onto it. A function literal that contains `yield` is a generator too, and captures
+A generator's result is an ordinary sequence, so the pipe combinators chain
+onto it, and each read of it runs the body from the start. A function literal that contains `yield` is a generator too, and captures
 the variables around it as any function literal does. [Generators](/async-and-generators.html) have more detail.
 
 ### streams
 
 `stream(initial, advance)` in `Ghul.Pipes` builds a sequence from a state and
 a step function. The state type `S` and the element type `T` are separate
-type parameters, and the result is a `Pipe[T]`, so the state is hidden from
+type parameters, and the result is a `T{}`, so the state is hidden from
 whatever reads the sequence:
 
 ```ghul
@@ -221,7 +222,7 @@ si
 stream[T, S..](
     initial: S,
     advance: S.. -> STREAM[T, S]
-) -> Pipe[T]
+) -> T{}
 ```
 
 `S..` makes `S` an [argument pack](#argument-packs), so when the state is a

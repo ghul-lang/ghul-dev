@@ -2,7 +2,7 @@
   "name": "control-flow-50",
   "snippet": false,
   "code": "// fibs() is an infinite generator; take(8) bounds it\nfor f in fibs() |> take(8) do\n    write_line(f)\nod",
-  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nfibs() -> Ghul.Pipes.Pipe[int] is\n    let a mut = 0\n    let b mut = 1\n    do\n        yield a\n        let next = a + b\n        a = b\n        b = next\n    od\nsi\n\n// fibs() is an infinite generator; take(8) bounds it\nfor f in fibs() |> take(8) do\n    write_line(f)\nod\n",
+  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nfibs() -> int{} is\n    let a mut = 0\n    let b mut = 1\n    do\n        yield a\n        let next = a + b\n        a = b\n        b = next\n    od\nsi\n\n// fibs() is an infinite generator; take(8) bounds it\nfor f in fibs() |> take(8) do\n    write_line(f)\nod\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -10,8 +10,8 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 5, "text": "f: int", "signature": "f: int", "kindLabel": "local value" },
-    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 23, "text": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "signature": "Ghul.Pipes.take[int](\n    source: Collections.Iterable[int],\n    count: int\n) -> Pipe[int]", "kindLabel": "pure global function" },
-    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 13, "text": "fibs() -> Pipe[int]", "signature": "fibs() -> Pipe[int]", "kindLabel": "global generator" },
+    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 23, "text": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "signature": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 13, "text": "fibs() -> int{}", "signature": "fibs() -> int{}", "kindLabel": "global generator" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 14, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
     { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 16, "text": "f: int", "signature": "f: int", "kindLabel": "local value" }
   ],
