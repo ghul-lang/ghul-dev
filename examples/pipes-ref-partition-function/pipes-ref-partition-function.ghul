@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 partition[T..](
     source: Iterable[T],
     predicate: T.. -> bool pure
-) -> (LIST[T], LIST[T]) pure
+) -> (List[T], List[T]) pure
 // <<<
 
 entry() is si

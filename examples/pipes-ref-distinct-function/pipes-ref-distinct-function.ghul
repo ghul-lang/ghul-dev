@@ -6,7 +6,7 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-distinct[T](source: Iterable[T]) -> Pipe[T] pure
+distinct[T](source: Iterable[T]) -> Iterable[T] pure
 // <<<
 
 entry() is si

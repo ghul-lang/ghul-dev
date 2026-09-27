@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 map[T..,U](
     source: Iterable[T],
     mapper: T.. -> U pure
-) -> Pipe[U] pure
+) -> Iterable[U] pure
 // <<<
 
 entry() is si

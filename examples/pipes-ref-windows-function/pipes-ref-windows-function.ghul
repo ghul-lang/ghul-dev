@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 windows[T](
     source: Iterable[T],
     size: int
-) -> Pipe[LIST[T]] pure
+) -> Iterable[List[T]] pure
 // <<<
 
 entry() is si

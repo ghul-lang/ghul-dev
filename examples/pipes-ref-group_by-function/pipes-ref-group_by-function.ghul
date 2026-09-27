@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 group_by[T..,K](
     source: Iterable[T],
     key_selector: T.. -> K pure
-) -> MAP[K, LIST[T]] pure
+) -> Map[K, List[T]] pure
 // <<<
 
 entry() is si

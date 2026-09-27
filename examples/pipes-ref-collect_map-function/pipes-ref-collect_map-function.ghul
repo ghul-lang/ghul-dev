@@ -10,9 +10,9 @@ collect_map[T..,K,V](
     source: Iterable[T],
     key_selector: T.. -> K pure,
     value_selector: T.. -> V pure
-) -> MAP[K,V] pure
+) -> Map[K,V] pure
 
-collect_map[K,V](source: Iterable[(K, V)]) -> MAP[K,V] pure
+collect_map[K,V](source: Iterable[(K, V)]) -> Map[K,V] pure
 // <<<
 
 entry() is si

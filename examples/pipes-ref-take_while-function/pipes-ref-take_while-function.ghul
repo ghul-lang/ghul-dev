@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 take_while[T..](
     source: Iterable[T],
     predicate: T.. -> bool pure
-) -> Pipe[T] pure
+) -> Iterable[T] pure
 // <<<
 
 entry() is si

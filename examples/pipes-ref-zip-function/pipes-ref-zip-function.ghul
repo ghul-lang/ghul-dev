@@ -9,13 +9,13 @@ use Ghul.Pipes.Pipe
 zip[T,U](
     source: Iterable[T],
     other: Iterable[U]
-) -> Pipe[(T,U)] pure
+) -> Iterable[(T,U)] pure
 
 zip[T,U,TOut](
     source: Iterable[T],
     other: Iterable[U],
     mapper: (T,U) -> TOut pure
-) -> Pipe[TOut] pure
+) -> Iterable[TOut] pure
 // <<<
 
 entry() is si

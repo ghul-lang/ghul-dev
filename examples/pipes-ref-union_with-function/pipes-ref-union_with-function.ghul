@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 union_with[T](
     source: Iterable[T],
     right: Iterable[T]
-) -> Pipe[T] pure
+) -> Iterable[T] pure
 // <<<
 
 entry() is si
