@@ -1,0 +1,18 @@
+use Collections.Iterable
+use Collections.LIST
+use Collections.List
+use Collections.MAP
+use Collections.Map
+use Collections.SET
+use Ghul.Pipes.INDEXED_VALUE
+use Ghul.Pipes.Pipe
+use System.Numerics.INumber
+
+// >>>
+sum_by[T..,N: INumber[N]](
+    source: Iterable[T],
+    selector: T.. -> N pure
+) -> N pure
+// <<<
+
+entry() is si
