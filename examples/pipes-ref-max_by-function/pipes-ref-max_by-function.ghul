@@ -6,9 +6,9 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-max_by[T,K: Ghul.Comparable[K]](
+max_by[T..,K: Ghul.Comparable[K]](
     source: Iterable[T],
-    key_selector: (T) -> K pure
+    key_selector: T.. -> K pure
 ) -> T? pure
 // <<<
 

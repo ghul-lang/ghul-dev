@@ -6,7 +6,7 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-sort[T](source: Iterable[T]) -> Pipe[T] pure
+sort[T: Ghul.Comparable[T]](source: Iterable[T]) -> Pipe[T] pure
 
 sort[T](
     source: Iterable[T],

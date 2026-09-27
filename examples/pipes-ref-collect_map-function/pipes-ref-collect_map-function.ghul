@@ -6,10 +6,10 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-collect_map[T,K,V](
+collect_map[T..,K,V](
     source: Iterable[T],
-    key_selector: (T) -> K pure,
-    value_selector: (T) -> V pure
+    key_selector: T.. -> K pure,
+    value_selector: T.. -> V pure
 ) -> MAP[K,V] pure
 
 collect_map[K,V](source: Iterable[(K, V)]) -> MAP[K,V] pure

@@ -6,9 +6,9 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-find_map_or_throw[T,U](
+find_map_or_throw[T..,U](
     source: Iterable[T],
-    mapper: (T) -> U? pure
+    mapper: T.. -> U? pure
 ) -> U pure
 // <<<
 
