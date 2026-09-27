@@ -64,7 +64,7 @@ A function is a generator when its declared return type is `T{}`, the sequence t
 
 <GhulExample name="control-flow-49" />
 
-A generator is a sequence, so it can be looped over directly and composed with `map` / `filter` / `take` and the other [pipe stages](/runtime-library.html#stages). Each read of it runs the body from the start, with the arguments it was called with, and two reads in progress at once are independent:
+A generator returning `T{}` or `Pipe[T]` is a sequence, so it can be looped over directly and composed with `map` / `filter` / `take` and the other [pipe stages](/runtime-library.html#stages). Each read of it runs the body from the start, with the arguments it was called with, and two reads in progress at once are independent. One returning `Iterator[T]` is read once: the iterator it returns is the one read.
 
 <GhulExample name="control-flow-50" />
 
