@@ -9,17 +9,7 @@ class SCOPE(name: string): Ghul.Disposable is
 si
 
 // >>>
-open(name: string) -> string is
-    let scope = use SCOPE(name)
+let length = (let use scope = SCOPE("second") in scope.read().length)
 
-    write_line(scope.read())
-
-    return "done with {name}"
-si
-
-write_line(open("first"))
-
-let length = (let use second = SCOPE("second") in second.read().length)
-
-write_line("{length}")
+write_line("length {length}")
 // <<<

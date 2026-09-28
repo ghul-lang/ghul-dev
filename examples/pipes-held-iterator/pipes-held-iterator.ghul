@@ -1,9 +1,14 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-// >>>
-first_long_word(words: string[]) -> string? =>
-    cursor(use words.iterator) |> find(word => word.length > 4)
+let path = IO.Path.get_temp_file_name()
+IO.File.write_all_lines(path, ["a", "few", "longer", "lines"])
 
-write_line(first_long_word(["a", "few", "longer", "words"]) ?? "none")
+// >>>
+first_long_line(path: string) -> string? =>
+    cursor(use IO.File.read_lines(path).iterator) |> find(line => line.length > 4)
+
+write_line(first_long_line(path) ?? "none")
 // <<<
+
+IO.File.delete(path)

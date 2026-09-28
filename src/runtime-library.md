@@ -39,29 +39,28 @@ and two reads in progress at once are independent of each other.
 Because pipes are lazy, they can consume a source with an infinite number of
 elements. The consumer can stop pulling and discard the pipe.
 
-Neither a `for` loop nor a terminal disposes the iterator it reads, which
-matters only for a source holding a resource: the lines of a file, a directory
-listing, a database reader. Such a source is disposed by taking its iterator
-with `use`, and `cursor` builds a pipe over that held iterator rather than
-asking the source for a new one, so an early-exit terminal such as `first` or
-`find` leaves the resource to `use`. The shape is the same for
-`IO.File.read_lines(path).iterator` as for the array here:
+`take(n)` bounds how much of the source is read: it stops pulling after `n`
+elements have passed through it. An infinite
+[generator](/async-and-generators.html#generators) works the same way: it can
+yield indefinitely, and the pipe downstream decides when to stop.
+
+`reverse`, the `sort` family, `transpose` and `permutations` do buffer: they
+need the whole sequence before they can produce anything, so they read the
+whole source first. They are listed separately below.
+
+A source that holds a resource has to be disposed: the lines of a file, a
+directory listing, a database reader. Take its iterator with `use`, and build
+the pipe over that iterator with `cursor`:
 
 <GhulExample name="pipes-held-iterator" />
 
-The `undisposed-source` warning reports a read of one of those sources that can
-stop before the end with nothing holding it.
+`cursor` reads the iterator it is given, rather than asking the source for a
+new one. `use` disposes that iterator when the function returns. Without
+`use` the file would stay open: `find` stops at the first long line, and a
+terminal never disposes the iterator it reads.
 
-One way to bound consumption is to use a stage like `take(...)`, which stops
-pulling after a given number of elements have passed through it.
-
-This combines neatly with infinite generators - a
-[generator](/async-and-generators.html#generators) can yield indefinitely,
-leaving it to the pipe downstream to decide when to stop consuming.
-
-`reverse`, the `sort` family, `transpose` and `permutations` are the exceptions,
-listed separately below: they need to see the whole sequence of elements before
-they can start producing results, and so they buffer the whole source.
+The compiler reports an `undisposed-source` warning where a read of one of these
+sources can stop early with nothing to dispose it.
 
 ## reading the signatures
 
