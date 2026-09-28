@@ -1,0 +1,14 @@
+use IO.Std.write_line
+use System.Runtime.CompilerServices.MethodImplOptions
+
+// >>>
+class TIMING is
+    @System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.NO_INLINING)
+    measured(x: int) -> int static => x + 1
+si
+
+let method = (typeof TIMING).get_method("measured")!
+
+write_line("{TIMING.measured(41)}")
+write_line("{method.get_method_implementation_flags()}")
+// <<<
