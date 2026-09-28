@@ -37,8 +37,20 @@ and two reads in progress at once are independent of each other.
 <GhulExample name="pipes-lazy-chain" />
 
 Because pipes are lazy, they can consume a source with an infinite number of
-elements. The consumer can stop pulling and discard the pipe. Calling `dispose()` on a
-pipe disposes the iterators its stages hold, back to the source iterator.
+elements. The consumer can stop pulling and discard the pipe.
+
+Neither a `for` loop nor a terminal disposes the iterator it reads, which
+matters only for a source holding a resource: the lines of a file, a directory
+listing, a database reader. Such a source is disposed by taking its iterator
+with `use`, and `cursor` builds a pipe over that held iterator rather than
+asking the source for a new one, so an early-exit terminal such as `first` or
+`find` leaves the resource to `use`. The shape is the same for
+`IO.File.read_lines(path).iterator` as for the array here:
+
+<GhulExample name="pipes-held-iterator" />
+
+The `undisposed-source` warning reports a read of one of those sources that can
+stop before the end with nothing holding it.
 
 One way to bound consumption is to use a stage like `take(...)`, which stops
 pulling after a given number of elements have passed through it.

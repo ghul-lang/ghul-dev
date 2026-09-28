@@ -1,0 +1,25 @@
+use IO.Std.write_line
+
+class SCOPE(name: string): Ghul.Disposable is
+    dispose() is
+        write_line("closing {name}")
+    si
+
+    read() -> string => "read from {name}"
+si
+
+// >>>
+open(name: string) -> string is
+    let scope = use SCOPE(name)
+
+    write_line(scope.read())
+
+    return "done with {name}"
+si
+
+write_line(open("first"))
+
+let length = (let use second = SCOPE("second") in second.read().length)
+
+write_line("{length}")
+// <<<

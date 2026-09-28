@@ -1,0 +1,9 @@
+use IO.Std.write_line
+use Ghul.Pipes
+
+// >>>
+first_long_word(words: string[]) -> string? =>
+    cursor(use words.iterator) |> find(word => word.length > 4)
+
+write_line(first_long_word(["a", "few", "longer", "words"]) ?? "none")
+// <<<

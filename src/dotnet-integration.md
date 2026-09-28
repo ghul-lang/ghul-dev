@@ -136,6 +136,10 @@ A type holding something that has to be released implements `Ghul.Disposable`, w
 
 <GhulExample name="dotnet-integration-6" />
 
+`use E` is the same disposal written as an operator. It evaluates `E`, gives back its value, and disposes it when the enclosing block ends, so it can stand wherever `E` could: as an initializer, an argument or an operand. `let use x = E` is the older spelling of `let x = use E`. `let use ... in` is the expression form, disposing its local once the expression holding it has been evaluated, which suits a place where there is no block to end:
+
+<GhulExample name="dotnet-integration-use-operator" />
+
 ### iteration
 
 A type implementing `Collections.Iterable[T]` is a .NET `IEnumerable<T>`, so it works with `for`, with the pipe combinators, and with any .NET API taking a sequence. The requirement is an `iterator` property, and a [generator](/async-and-generators.html#generators) is usually the shortest way to supply one:
