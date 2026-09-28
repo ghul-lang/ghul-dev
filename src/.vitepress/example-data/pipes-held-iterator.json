@@ -1,0 +1,38 @@
+{
+  "name": "pipes-held-iterator",
+  "snippet": false,
+  "code": "first_long_line() -> string? =>\n    cursor(use open_lines()) |> find(line => line.length > 4)\n\nwrite_line(first_long_line() ?? \"none\")",
+  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nclass LINES(lines: string[]): Collections.Iterator[string] is\n    _index: int field\n\n    init(..) is\n        _index = -1\n    si\n\n    current: string => lines[_index]\n\n    move_next() -> bool is\n        _index = _index + 1\n        return _index < lines.count\n    si\n\n    dispose() is\n        write_line(\"closing the lines\")\n    si\nsi\n\nopen_lines() -> Collections.Iterator[string] => LINES([\"a\", \"few\", \"longer\", \"lines\"])\n\nfirst_long_line() -> string? =>\n    cursor(use open_lines()) |> find(line => line.length > 4)\n\nwrite_line(first_long_line() ?? \"none\")\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "closing the lines\nlonger\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "text": "first_long_line() -> string?", "signature": "first_long_line() -> string?", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 27, "text": "class string", "signature": "class string", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 38, "endLine": 2, "endColumn": 41, "text": "line: string", "signature": "line: string", "kindLabel": "local argument" },
+    { "startLine": 2, "startColumn": 33, "endLine": 2, "endColumn": 36, "text": "Ghul.Pipes.find[string](\n    source: string{},\n    predicate: string.. -> bool pure\n) -> string?", "signature": "Ghul.Pipes.find[string](\n    source: string{},\n    predicate: string.. -> bool pure\n) -> string?", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "Ghul.Pipes.cursor[string](\n    source: Collections.Iterator[string]\n) -> Pipe[string]", "signature": "Ghul.Pipes.cursor[string](\n    source: Collections.Iterator[string]\n) -> Pipe[string]", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 25, "text": "open_lines() -> Collections.Iterator[string]", "signature": "open_lines() -> Collections.Iterator[string]", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 46, "endLine": 2, "endColumn": 49, "text": "line: string", "signature": "line: string", "kindLabel": "local argument" },
+    { "startLine": 2, "startColumn": 51, "endLine": 2, "endColumn": 56, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },
+    { "startLine": 2, "startColumn": 58, "endLine": 2, "endColumn": 58, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 26, "text": "first_long_line() -> string?", "signature": "first_long_line() -> string?", "kindLabel": "pure global function" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 15, "tokenType": "function" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 27, "tokenType": "class" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "tokenType": "function" },
+    { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 25, "tokenType": "function" },
+    { "startLine": 2, "startColumn": 33, "endLine": 2, "endColumn": 36, "tokenType": "function" },
+    { "startLine": 2, "startColumn": 38, "endLine": 2, "endColumn": 41, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 2, "startColumn": 46, "endLine": 2, "endColumn": 49, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 2, "startColumn": 51, "endLine": 2, "endColumn": 56, "tokenType": "property" },
+    { "startLine": 2, "startColumn": 58, "endLine": 2, "endColumn": 58, "tokenType": "operator" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 26, "tokenType": "function" }
+  ]
+}

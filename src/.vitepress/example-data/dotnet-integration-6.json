@@ -1,8 +1,8 @@
 {
   "name": "dotnet-integration-6",
   "snippet": false,
-  "code": "class SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet use s = SCOPE(\"file\")\n\nwrite_line(\"inside the scope\")",
-  "fullSource": "use IO.Std.write_line\n\nclass SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet use s = SCOPE(\"file\")\n\nwrite_line(\"inside the scope\")\n",
+  "code": "class SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet scope = use SCOPE(\"file\")\n\nwrite_line(\"inside the scope\")",
+  "fullSource": "use IO.Std.write_line\n\nclass SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet scope = use SCOPE(\"file\")\n\nwrite_line(\"inside the scope\")\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -15,8 +15,8 @@
     { "startLine": 1, "startColumn": 13, "endLine": 1, "endColumn": 24, "text": "$$value: string", "signature": "$$value: string", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 33, "endLine": 1, "endColumn": 42, "text": "trait Ghul.Disposable", "signature": "trait Ghul.Disposable", "kindLabel": "trait" },
     { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 24, "text": "class string", "signature": "class string", "kindLabel": "class" },
-    { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 9, "text": "s: SCOPE", "signature": "s: SCOPE", "kindLabel": "global variable" },
-    { "startLine": 7, "startColumn": 13, "endLine": 7, "endColumn": 17, "text": "SCOPE.init(name: string)", "signature": "SCOPE.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 9, "text": "scope: SCOPE", "signature": "scope: SCOPE", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 17, "endLine": 7, "endColumn": 21, "text": "SCOPE.init(name: string)", "signature": "SCOPE.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 11, "text": "SCOPE.dispose() -> void", "signature": "SCOPE.dispose() -> void", "kindLabel": "pure method" },
     { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 18, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
@@ -33,8 +33,8 @@
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 11, "tokenType": "method" },
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 18, "tokenType": "method", "modifiers": "static" },
     { "startLine": 3, "startColumn": 30, "endLine": 3, "endColumn": 33, "tokenType": "property" },
-    { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 9, "tokenType": "property" },
-    { "startLine": 7, "startColumn": 13, "endLine": 7, "endColumn": 17, "tokenType": "method" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 7, "startColumn": 17, "endLine": 7, "endColumn": 21, "tokenType": "method" },
     { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "tokenType": "method", "modifiers": "static" }
   ]
 }

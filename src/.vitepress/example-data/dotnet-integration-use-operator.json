@@ -1,0 +1,32 @@
+{
+  "name": "dotnet-integration-use-operator",
+  "snippet": false,
+  "code": "let length = (let use scope = SCOPE(\"second\") in scope.read().length)\n\nwrite_line(\"length {length}\")",
+  "fullSource": "use IO.Std.write_line\n\nclass SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\n\n    read() -> string => \"read from {name}\"\nsi\n\nlet length = (let use scope = SCOPE(\"second\") in scope.read().length)\n\nwrite_line(\"length {length}\")\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "closing second\nlength 16\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 27, "text": "scope: SCOPE", "signature": "scope: SCOPE", "kindLabel": "scoped disposal value" },
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 10, "text": "length: int", "signature": "length: int", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 35, "text": "SCOPE.init(name: string)", "signature": "SCOPE.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 54, "text": "scope: SCOPE", "signature": "scope: SCOPE", "kindLabel": "scoped disposal value" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 59, "text": "SCOPE.read() -> string", "signature": "SCOPE.read() -> string", "kindLabel": "pure method" },
+    { "startLine": 1, "startColumn": 63, "endLine": 1, "endColumn": 68, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },
+    { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 3, "startColumn": 21, "endLine": 3, "endColumn": 26, "text": "length: int", "signature": "length: int", "kindLabel": "global variable" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 10, "tokenType": "property" },
+    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 27, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 35, "tokenType": "method" },
+    { "startLine": 1, "startColumn": 50, "endLine": 1, "endColumn": 54, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 56, "endLine": 1, "endColumn": 59, "tokenType": "method" },
+    { "startLine": 1, "startColumn": 63, "endLine": 1, "endColumn": 68, "tokenType": "property" },
+    { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 3, "startColumn": 21, "endLine": 3, "endColumn": 26, "tokenType": "property" }
+  ]
+}

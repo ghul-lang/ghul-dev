@@ -7,7 +7,7 @@ class SCOPE(name: string): Ghul.Disposable is
     si
 si
 
-let use s = SCOPE("file")
+let scope = use SCOPE("file")
 
 write_line("inside the scope")
 // <<<

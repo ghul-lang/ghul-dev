@@ -132,9 +132,15 @@ A .NET user-defined conversion operator (`op_Implicit` / `op_Explicit`) declared
 
 ### disposal
 
-A type holding something that has to be released implements `Ghul.Disposable`, which is .NET's `IDisposable`, by defining `dispose`. `let use` then releases it at the end of the enclosing block, however the block is left:
+A type that holds something to release implements `Ghul.Disposable`, which is .NET's `IDisposable`, by defining `dispose`. Write `use` in front of an expression that creates one, and the value is disposed when the enclosing block ends, however the block is left:
 
 <GhulExample name="dotnet-integration-6" />
+
+`use` gives back the value it disposes, so it can go wherever the expression could: an initializer, an argument, an operand. `let use x = E` is the older spelling of `let x = use E`.
+
+`let use x = E in` disposes its local sooner: once the statement holding it has run, rather than when the block ends:
+
+<GhulExample name="dotnet-integration-use-operator" />
 
 ### iteration
 

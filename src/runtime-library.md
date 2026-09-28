@@ -36,20 +36,30 @@ and two reads in progress at once are independent of each other.
 
 <GhulExample name="pipes-lazy-chain" />
 
-Because pipes are lazy, they can consume a source with an infinite number of
-elements. The consumer can stop pulling and discard the pipe. Calling `dispose()` on a
-pipe disposes the iterators its stages hold, back to the source iterator.
+Because pipes are lazy, a source can have an infinite number of elements, such
+as a [generator](/async-and-generators.html#generators) that yields
+indefinitely. Something downstream decides when to stop reading it: `take(n)`
+stops pulling after `n` elements have passed through it, and a terminal such as
+`find` stops at the first match.
 
-One way to bound consumption is to use a stage like `take(...)`, which stops
-pulling after a given number of elements have passed through it.
+`reverse`, the `sort` family, `transpose` and `permutations` do buffer: they
+need the whole sequence before they can produce anything, so they read the
+whole source first. They are listed separately below.
 
-This combines neatly with infinite generators - a
-[generator](/async-and-generators.html#generators) can yield indefinitely,
-leaving it to the pipe downstream to decide when to stop consuming.
+A source that holds a resource has to be disposed: the lines of a file, a
+directory listing, a database reader. Take its iterator with `use`, and build
+the pipe over that iterator with `cursor`. Here `open_lines` stands in for
+`IO.File.read_lines(path).iterator`, and prints a line when it is disposed:
 
-`reverse`, the `sort` family, `transpose` and `permutations` are the exceptions,
-listed separately below: they need to see the whole sequence of elements before
-they can start producing results, and so they buffer the whole source.
+<GhulExample name="pipes-held-iterator" />
+
+`cursor` reads the iterator it is given, rather than asking the source for a
+new one. `use` disposes that iterator when the function returns, before its
+result is printed. Without `use` the lines would stay open: `find` stops at the
+first long line, and a terminal never disposes the iterator it reads.
+
+The compiler reports an `undisposed-source` warning where a read of one of these
+sources can stop early with nothing to dispose it.
 
 ## reading the signatures
 
