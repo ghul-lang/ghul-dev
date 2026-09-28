@@ -17,6 +17,7 @@
 import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { PAGES, pageSlug } from './pages'
+import { EXAMPLE_PAGES, exampleMarkdown } from './examples'
 
 const SITE = 'https://ghul.dev'
 
@@ -169,13 +170,22 @@ export function renderText(srcDir: string, outDir: string) {
         + ' https://github.com/ghul-lang/ghul-rosetta-code',
     )
 
+  // An examples page is generated from ghul-examples' index when the site is built, so it has no
+  // Markdown file of its own; its text comes from the same function as the page.
   const rendered = PAGES.map(page => {
     const slug = pageSlug(page.link)
+    const example = EXAMPLE_PAGES.find(candidate => candidate.link === page.link)
+
+    if (example) {
+      return { ...page, slug, body: exampleMarkdown(example, false) }
+    }
+
     const source = readFileSync(join(srcDir, `${slug}.md`), 'utf-8')
     return { ...page, slug, body: expandRosetta(renderPage(source, dataDir)) }
   })
 
   mkdirSync(join(textDir, 'rosetta'), { recursive: true })
+  mkdirSync(join(textDir, 'examples'), { recursive: true })
 
   for (const page of rendered) {
     writeFileSync(join(textDir, `${page.slug}.md`), page.body)

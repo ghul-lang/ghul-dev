@@ -3,7 +3,7 @@
 ::: tip editable examples
 Every example on this page can be edited and run here: click the pencil to open it in an editor, change it, and run it in your browser. Errors, hovers and completions come from the ghūl compiler as you type.
 
-The [ghul-examples repository](https://github.com/ghul-lang/ghul-examples/tree/main/examples/object-oriented) has fuller object-oriented examples to build and run locally, in a GitHub Codespace or a dev container.
+The [object-oriented examples](/examples/object-oriented) are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
 ghūl is a class-based object-oriented language. Classes and structs hold state and behaviour, traits describe shared behaviour, and a value can be used at the type of any ancestor class or trait it satisfies. The [definitions](/definitions.html#types) page has the syntax for each in isolation.

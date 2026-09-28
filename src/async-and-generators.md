@@ -3,7 +3,7 @@
 ::: tip editable examples
 Every example on this page can be edited and run here: click the pencil to open it in an editor, change it, and run it in your browser. Errors, hovers and completions come from the ghūl compiler as you type.
 
-The ghul-examples repository has fuller [async-await](https://github.com/ghul-lang/ghul-examples/tree/main/examples/async-await) and [generators](https://github.com/ghul-lang/ghul-examples/tree/main/examples/generators) examples to build and run locally, in a GitHub Codespace or a dev container.
+The [async-await](/examples/async-await) and [generators](/examples/generators) examples are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
 Two kinds of ghūl function can return control to their caller partway through and later carry on from the same point: an asynchronous function does so at an `await` whose task hasn't completed, so the thread isn't blocked while it waits, and a generator does so at each `yield`, producing its sequence one element per request. An asynchronous function is marked by its return type, `Tasks.TASK[T]`, and a generator by returning `Pipe[T]` and containing `yield`; the body reads top to bottom either way.
