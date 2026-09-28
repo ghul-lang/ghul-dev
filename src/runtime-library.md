@@ -50,14 +50,15 @@ whole source first. They are listed separately below.
 
 A source that holds a resource has to be disposed: the lines of a file, a
 directory listing, a database reader. Take its iterator with `use`, and build
-the pipe over that iterator with `cursor`:
+the pipe over that iterator with `cursor`. Here `open_lines` stands in for
+`IO.File.read_lines(path).iterator`, and prints a line when it is disposed:
 
 <GhulExample name="pipes-held-iterator" />
 
 `cursor` reads the iterator it is given, rather than asking the source for a
-new one. `use` disposes that iterator when the function returns. Without
-`use` the file would stay open: `find` stops at the first long line, and a
-terminal never disposes the iterator it reads.
+new one. `use` disposes that iterator when the function returns, before its
+result is printed. Without `use` the lines would stay open: `find` stops at the
+first long line, and a terminal never disposes the iterator it reads.
 
 The compiler reports an `undisposed-source` warning where a read of one of these
 sources can stop early with nothing to dispose it.

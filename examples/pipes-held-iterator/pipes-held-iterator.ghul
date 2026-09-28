@@ -1,14 +1,30 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-let path = IO.Path.get_temp_file_name()
-IO.File.write_all_lines(path, ["a", "few", "longer", "lines"])
+class LINES(lines: string[]): Collections.Iterator[string] is
+    _index: int field
+
+    init(..) is
+        _index = -1
+    si
+
+    current: string => lines[_index]
+
+    move_next() -> bool is
+        _index = _index + 1
+        return _index < lines.count
+    si
+
+    dispose() is
+        write_line("closing the lines")
+    si
+si
+
+open_lines() -> Collections.Iterator[string] => LINES(["a", "few", "longer", "lines"])
 
 // >>>
-first_long_line(path: string) -> string? =>
-    cursor(use IO.File.read_lines(path).iterator) |> find(line => line.length > 4)
+first_long_line() -> string? =>
+    cursor(use open_lines()) |> find(line => line.length > 4)
 
-write_line(first_long_line(path) ?? "none")
+write_line(first_long_line() ?? "none")
 // <<<
-
-IO.File.delete(path)
