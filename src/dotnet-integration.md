@@ -148,7 +148,7 @@ An auto-property's backing field is named `$` followed by the property name, and
 
 ## attributes
 
-A pragma whose name isn't one of the compiler's own names a .NET attribute, and the compiler emits that attribute on the definition the pragma is written before: a type, a function or method, or a single parameter. `@Foo(...)` finds `FooAttribute` when there is no plain `Foo`, as C# does. The arguments can be positional, named (`name = value`), arrays, or `typeof`.
+A pragma whose name isn't one of the compiler's own names a .NET attribute, and the compiler emits that attribute on the definition the pragma is written before: a type, a function or method, a field or property, or a single parameter. `@Foo(...)` finds `FooAttribute` when there is no plain `Foo`, as C# does. The arguments can be positional, named (`name = value`), arrays, or `typeof`.
 
 ### deprecation
 
@@ -160,7 +160,7 @@ With `true` as its second argument, `@System.Obsolete("removed", true)`, the att
 
 ### method implementation flags
 
-`System.Runtime.CompilerServices.MethodImpl` tells the runtime how to treat the method it is written on. Its options become the method's implementation flags rather than an attribute the method carries, because the flags are where the runtime reads them: `NO_INLINING` keeps the method out of the inliner, and `SYNCHRONIZED` takes a lock around it. Reflection reads them back with `get_method_implementation_flags`:
+`System.Runtime.CompilerServices.MethodImpl` tells the runtime how to treat the method it is written on. Its options become the method's implementation flags rather than an attribute the method has, because the flags are where the runtime reads them: `NO_INLINING` keeps the method out of the inliner, and `SYNCHRONIZED` takes a lock around it. Reflection reads them back with `get_method_implementation_flags`:
 
 <GhulExample name="dotnet-integration-method-impl" />
 
