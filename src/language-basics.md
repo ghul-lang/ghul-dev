@@ -131,6 +131,10 @@ ghūl does not perform implicit type conversion (coercion) between scalar types;
 
 <GhulExample name="language-basics-20" />
 
+A scalar type is also a constructor from any other scalar, converting exactly as a cast to it does: `double(n)` is `cast double(n)`, and `int(x)` truncates as `cast int(x)` does. Where the context already fixes the type, `_(n)` converts to it. The source has to be a scalar, so `int("42")` is not a parse:
+
+<GhulExample name="language-basics-scalar-constructors" />
+
 ## variables
 
 ghūl has three kinds of variables: locals declared within the body of a function or method, function or method arguments and variables captured by a function literal.
