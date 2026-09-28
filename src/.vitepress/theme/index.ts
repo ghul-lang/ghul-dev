@@ -4,6 +4,7 @@ import { nextTick, onMounted, watch } from 'vue'
 import GhulExample from './components/GhulExample.vue'
 import GhulExampleSwitcher from './components/GhulExampleSwitcher.vue'
 import RosettaExplorer from './components/RosettaExplorer.vue'
+import ExampleRun from './components/ExampleRun.vue'
 import Layout from './Layout.vue'
 import { installRosettaRouting } from './rosetta-route'
 import { refreshPackageVersions } from './package-versions'
@@ -45,5 +46,6 @@ export default {
     app.component('GhulExample', GhulExample)
     app.component('GhulExampleSwitcher', GhulExampleSwitcher)
     app.component('RosettaExplorer', RosettaExplorer)
+    app.component('ExampleRun', ExampleRun)
   },
 }

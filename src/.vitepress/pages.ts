@@ -1,3 +1,5 @@
+import { EXAMPLES_SECTION } from './examples'
+
 // The site's pages, grouped into sidebar sections and in reading order
 // within each. The sidebar is built from SECTIONS, and the plain-text
 // rendering under /text from the flattened PAGES, so the two can't drift
@@ -5,7 +7,8 @@
 //
 // The groups separate the site's registers: "ghūl" is the front door
 // (the overview and how to install), "tour" shows what the language can
-// express - one page per paradigm, read in order or dipped into - "guides"
+// express - one page per paradigm, read in order or dipped into - "examples"
+// are whole programs from ghul-examples, one per page, "guides"
 // are practical how-tos, "reference" is for looking things up, and "about"
 // is the story of the project itself.
 export const SECTIONS = [
@@ -29,6 +32,7 @@ export const SECTIONS = [
       { text: '.NET integration', link: '/dotnet-integration' },
     ],
   },
+  EXAMPLES_SECTION,
   {
     text: 'guides',
     items: [
@@ -69,8 +73,13 @@ export const SECTIONS = [
 ]
 
 // Every page in sidebar order, ignoring the grouping - the reading order the
-// /text rendering follows.
-export const PAGES = SECTIONS.flatMap(section => section.items)
+// /text rendering follows. A group can hold groups, as the examples section does.
+type Entry = { text: string, link?: string, items?: Entry[] }
+
+const pagesOf = (entries: Entry[]): { text: string, link: string }[] =>
+  entries.flatMap(entry => entry.items ? pagesOf(entry.items) : entry.link ? [{ text: entry.text, link: entry.link }] : [])
+
+export const PAGES = pagesOf(SECTIONS)
 
 // The markdown file backing a page, without its extension. A link ending in a
 // slash is a directory's index, so `/rosetta/` is backed by `rosetta/index.md`.

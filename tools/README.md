@@ -25,3 +25,16 @@ npm test
 
 Node's own test runner, no dependency to install. The module it tests imports nothing, which is
 what lets the runner load it directly.
+
+## pull-examples.mjs
+
+Refreshes `src/.vitepress/examples-index.json`, the copy of
+[ghul-examples](https://github.com/ghul-lang/ghul-examples)' index that the examples section is
+built from: one page per program, with its source and what it prints. The copy is committed, so a
+build doesn't depend on reaching GitHub, and a change to the examples arrives as a diff of this
+file.
+
+```sh
+npm run pull-examples                  # the index ghul-examples publishes
+npm run pull-examples -- index.json    # an index generated locally
+```

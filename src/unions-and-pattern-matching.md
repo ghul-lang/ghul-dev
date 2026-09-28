@@ -3,7 +3,7 @@
 ::: tip editable examples
 Every example on this page can be edited and run here: click the pencil to open it in an editor, change it, and run it in your browser. Errors, hovers and completions come from the ghūl compiler as you type.
 
-The ghul-examples repository has fuller [unions](https://github.com/ghul-lang/ghul-examples/tree/main/examples/unions) and [pattern-matching](https://github.com/ghul-lang/ghul-examples/tree/main/examples/pattern-matching) examples to build and run locally, in a GitHub Codespace or a dev container.
+The [unions](/examples/unions) and [pattern-matching](/examples/pattern-matching) examples are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
 A union is a type whose values each hold one of a fixed set of variants. Each variant has a name and its own fields, or no fields at all. A `Shape` below is always either a `CIRCLE` or a `SQUARE`:

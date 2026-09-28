@@ -3,7 +3,7 @@
 ::: tip editable examples
 Every example on this page can be edited and run here: click the pencil to open it in an editor, change it, and run it in your browser. Errors, hovers and completions come from the ghūl compiler as you type.
 
-The [ghul-examples repository](https://github.com/ghul-lang/ghul-examples/tree/main/examples/control-flow) has fuller control-flow examples to build and run locally, in a GitHub Codespace or a dev container.
+The [control-flow examples](/examples/control-flow) are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
 ## block scope

@@ -10,6 +10,7 @@
     "build": "vitepress build src",
     "preview": "vitepress preview src",
     "serve": "node tools/serve.mjs",
+    "pull-examples": "node tools/pull-examples.mjs",
     "test": "node --test tools/*.test.mjs"
   },
   "devDependencies": {
