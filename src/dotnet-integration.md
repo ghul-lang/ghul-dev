@@ -148,7 +148,7 @@ An auto-property's backing field is named `$` followed by the property name, and
 
 ## attributes
 
-A pragma whose name isn't one of the compiler's own names a .NET attribute, and the compiler emits that attribute on the definition the pragma is written before: a type, a function or method, or a single parameter. `@Foo(...)` finds `FooAttribute` when there is no plain `Foo`, as C# does. The arguments can be positional, named (`name = value`), arrays, or `typeof`.
+A pragma whose name isn't one of the compiler's own names a .NET attribute, and the compiler emits that attribute on the definition the pragma is written before: a type, a function or method, a field or property, or a single parameter. `@Foo(...)` finds `FooAttribute` when there is no plain `Foo`, as C# does. The arguments can be positional, named (`name = value`), arrays, or `typeof`.
 
 ### deprecation
 
@@ -157,6 +157,18 @@ A pragma whose name isn't one of the compiler's own names a .NET attribute, and 
 <GhulExample name="dotnet-integration-deprecated" />
 
 With `true` as its second argument, `@System.Obsolete("removed", true)`, the attribute makes each use an error instead. The compiler reads the attribute on a declaration from another assembly too, whichever language it was written in, and a call to a class's constructor counts as a use of the class. A use written inside a declaration that is itself deprecated is not reported, so an old member can go on calling another. Where a use is deliberate, `@suppress("deprecated")` silences the warning like any other. In the editor, hover shows the message under the signature and completion marks the item as deprecated.
+
+### method implementation flags
+
+`System.Runtime.CompilerServices.MethodImpl` tells the runtime how to treat the method it is written on. Its options become the method's implementation flags rather than an attribute the method has, because the flags are where the runtime reads them: `NO_INLINING` keeps the method out of the inliner, and `SYNCHRONIZED` takes a lock around it. Reflection reads them back with `get_method_implementation_flags`:
+
+<GhulExample name="dotnet-integration-method-impl" />
+
+### struct layout
+
+`System.Runtime.InteropServices.StructLayout` on a class or struct sets how its fields are laid out in memory, which is what a native structure the type stands for has to match. A struct is laid out sequentially, in the order its members are declared, unless it asks otherwise. `EXPLICIT` places each field where a `FieldOffset` on it says, so two fields can share the same bytes. Every instance field of such a type needs a `FieldOffset`, and so it has to be a `field` rather than an auto-property. On a little-endian machine the low byte of a `ushort` comes first:
+
+<GhulExample name="dotnet-integration-struct-layout" />
 
 ## ASP.NET Core
 

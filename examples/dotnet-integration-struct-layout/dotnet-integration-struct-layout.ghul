@@ -1,0 +1,21 @@
+use IO.Std.write_line
+use System.Runtime.InteropServices.LayoutKind
+
+// >>>
+@System.Runtime.InteropServices.StructLayout(LayoutKind.EXPLICIT)
+struct WORD_BYTES is
+    @System.Runtime.InteropServices.FieldOffset(0)
+    word: ushort field
+
+    @System.Runtime.InteropServices.FieldOffset(0)
+    low: ubyte field
+
+    init(value: ushort) is
+        word = value
+    si
+si
+
+let bytes = WORD_BYTES(0x1234us)
+
+write_line("{bytes.low:X2}")
+// <<<
