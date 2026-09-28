@@ -1,0 +1,14 @@
+# The playground compiles and analyses what it is sent, so a crawler that
+# renders one of its pages costs a compile and an analyser session for a
+# visitor who will never read the output. The pages are an editor around a
+# program that is already on the site, so there is nothing here a search
+# engine needs.
+#
+# The Rosetta Code explorer is the content those links point into, and stays
+# crawlable.
+
+User-agent: *
+Disallow: /playground/
+Disallow: /playground/compile
+Disallow: /playground/compile/cell
+Disallow: /playground/analyse
