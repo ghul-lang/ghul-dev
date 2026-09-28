@@ -37,6 +37,7 @@ const index = {
       input: false,
       images: ['tasks/goldbachs-comet/02-the-comet/comet.png.expected'],
       lines: 60,
+      ahead_of_wiki: true,
       parts: [
         { id: 'goldbachs-comet/01-the-g-numbers', heading: 'The g numbers', source: 'tasks/goldbachs-comet/01-the-g-numbers/01-the-g-numbers.ghul', playground: true },
         { id: 'goldbachs-comet/02-the-comet', heading: 'The comet', source: 'tasks/goldbachs-comet/02-the-comet/02-the-comet.ghul', playground: true },
@@ -89,6 +90,11 @@ test('a task that draws or reads input says so, whatever shape the index gives i
   assert.equal(taskBySlug(corpus, '100-doors').images, false)
   assert.equal(taskBySlug(corpus, 'read-a-file').input, true)
   assert.equal(taskBySlug(corpus, 'read-a-file').playground, false)
+})
+
+test('only a task the index marks as ahead of the wiki says so', () => {
+  assert.equal(taskBySlug(corpus, 'goldbachs-comet').aheadOfWiki, true)
+  assert.equal(taskBySlug(corpus, '100-doors').aheadOfWiki, false)
 })
 
 test('a search matches a title or a tag, and every word has to match', () => {

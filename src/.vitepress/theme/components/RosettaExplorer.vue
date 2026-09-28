@@ -339,6 +339,8 @@ function browse() {
           <a class="rosetta-wiki" :href="shown.url" target="_blank" rel="noreferrer">on Rosetta Code</a>
         </header>
 
+        <p v-if="shown.aheadOfWiki" class="rosetta-newer">The solution here is newer than the one on Rosetta Code.</p>
+
         <p class="rosetta-featured-tags">
           <button
             v-for="tag in shown.tags"
@@ -478,6 +480,12 @@ function browse() {
 .rosetta-browse {
   margin: 0.25rem 0 0.75rem;
   font-size: 0.8rem;
+}
+
+.rosetta-newer {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
 }
 
 .rosetta-featured-tags {

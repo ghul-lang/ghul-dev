@@ -58,6 +58,8 @@ function task(raw) {
     input: raw.input === true,
     images: (raw.images ?? []).length > 0,
     lines: raw.lines ?? 0,
+    // The solution in the repository has changed since its section was last posted to the wiki.
+    aheadOfWiki: raw.ahead_of_wiki === true,
     parts: (raw.parts ?? []).map(part => ({
       id: part.id,
       name: exampleName(part.id),
