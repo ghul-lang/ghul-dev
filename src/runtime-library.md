@@ -36,13 +36,11 @@ and two reads in progress at once are independent of each other.
 
 <GhulExample name="pipes-lazy-chain" />
 
-Because pipes are lazy, they can consume a source with an infinite number of
-elements. The consumer can stop pulling and discard the pipe.
-
-`take(n)` bounds how much of the source is read: it stops pulling after `n`
-elements have passed through it. An infinite
-[generator](/async-and-generators.html#generators) works the same way: it can
-yield indefinitely, and the pipe downstream decides when to stop.
+Because pipes are lazy, a source can have an infinite number of elements, such
+as a [generator](/async-and-generators.html#generators) that yields
+indefinitely. Something downstream decides when to stop reading it: `take(n)`
+stops pulling after `n` elements have passed through it, and a terminal such as
+`find` stops at the first match.
 
 `reverse`, the `sort` family, `transpose` and `permutations` do buffer: they
 need the whole sequence before they can produce anything, so they read the
