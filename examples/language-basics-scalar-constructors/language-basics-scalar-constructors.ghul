@@ -1,0 +1,11 @@
+use IO.Std.write_line
+
+// >>>
+let n = 7
+
+let half = double(n) / 2.0
+let code = int('A')
+let wide: long = _(n)
+
+write_line("{half} {code} {wide}")
+// <<<
