@@ -133,15 +133,17 @@ watch(shown, async task => {
   }
 }, { immediate: true })
 
-// Each task used to be a page, and a page was counted. They are shown in place now, so the count
-// is made here or the section reads as one visit however many tasks somebody works through.
+// Each task used to be a page, and a page was counted. They are shown in place now, so a task
+// chosen on the page is counted here, or the section reads as one visit however many tasks
+// somebody works through. The task a reader arrived at is the page load's own count, which
+// records its address rather than the section's.
 watch([() => shownSlug.value, shown], ([slug, task], previous) => {
   if (!slug) return
 
   document.title = `${task?.title ?? 'Rosetta Code'} | ghūl programming language`
 
   if (slug !== previous?.[0]) {
-    window.goatcounter?.count?.()
+    if (previous) window.goatcounter?.count?.()
 
     // The task as well as the pageview: every task answers from this one page,
     // and the slug is the only thing that says which one a reader was shown.
