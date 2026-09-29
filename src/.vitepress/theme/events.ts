@@ -9,6 +9,8 @@
 // there is no window at all, when the counter did not load, which includes every
 // local build, and when the reader has opted out.
 
+import { pageTimer } from './time-on-page.js'
+
 // Two ways to not be counted, and both are the reader's rather than ours.
 //
 // `skipgc` is the counter's own opt-out, set by visiting #toggle-goatcounter, and
@@ -42,6 +44,56 @@ export function countEvent(path: string, title = path) {
   } catch {
     // A counter that fails is not a reason for the page to.
   }
+}
+
+// An event sent as the page may be going away, which the counter's own script
+// cannot carry: it sends an image request, and a browser tearing a page down
+// abandons those. sendBeacon is the one request a browser promises to finish,
+// and the counter accepts a POST to its endpoint for exactly this.
+function beacon(path: string, title: string) {
+  if (suppressed() || !navigator.sendBeacon) return
+
+  const endpoint = document.querySelector<HTMLElement>('script[data-goatcounter]')?.dataset.goatcounter
+
+  if (!endpoint) return
+
+  try {
+    const url = new URL(endpoint, location.href)
+
+    url.searchParams.set('p', path)
+    url.searchParams.set('e', 'true')
+    url.searchParams.set('t', title)
+
+    navigator.sendBeacon(url.toString())
+  } catch {
+    // A page on its way out is not a place to report anything.
+  }
+}
+
+// Visible time on each page a reader views, as `site-time`, `rosetta-time` or
+// `examples-time` and a band - see time-on-page.js. Answers the function to
+// call when the reader moves to another page.
+export function countTimeOnPages(path: string): (path: string) => void {
+  if (typeof document === 'undefined' || suppressed()) return () => {}
+
+  const timer = pageTimer({
+    now: () => performance.now(),
+    visible: () => document.visibilityState === 'visible',
+    send: (event: string) => beacon(event, event.slice(0, event.indexOf('/'))),
+  })
+
+  timer.start(path)
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') timer.shown()
+    else timer.hidden()
+  })
+
+  // Both, because neither fires everywhere: a tab being closed may only report
+  // pagehide, and a phone switching away may only report the other.
+  window.addEventListener('pagehide', () => timer.hidden())
+
+  return next => timer.start(next)
 }
 
 // Where a link goes, for the handful of destinations worth knowing about. The
