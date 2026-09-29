@@ -22,6 +22,11 @@ export const shownSlug = ref(null)
 
 export const shownFilter = ref('')
 
+// The task address a reader arrived at, while the section's address stands in for it. The page
+// view is counted when the page has loaded, which can fall in that window, and it has to record
+// the task rather than the section.
+let arrival = null
+
 const within = pathname => pathname.startsWith(SECTION)
 
 function adopt(target) {
@@ -40,6 +45,11 @@ export function installRosettaRouting(router) {
   // linkable.
   if (taskSlugFromPath(location.pathname)) {
     adopt(new URL(location.href))
+
+    arrival = location.pathname + location.search
+
+    window.goatcounter = window.goatcounter ?? {}
+    window.goatcounter.path = path => (arrival && location.pathname === SECTION ? arrival : path)
 
     history.replaceState(history.state ?? {}, '', SECTION + location.search + location.hash)
   }
@@ -102,6 +112,8 @@ export function installRosettaRouting(router) {
 // carries the view so that it can be linked to, and nothing is loaded either way. A move the
 // reader made is somewhere to go back to; one the page made on their behalf is not.
 export function showAt(address, keep = true) {
+  arrival = null
+
   const target = new URL(address, location.origin)
   const here = location.pathname + location.search
 
