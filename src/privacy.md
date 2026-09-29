@@ -24,7 +24,7 @@ The playground, the REPL and the example editors load their font from [jsDelivr]
 
 ## what your browser keeps
 
-The playground keeps what is in its editor, so that it is still there when you come back, and remembers an access token if you enter one. The site remembers whether you chose the light or dark theme.
+The playground keeps what is in its editor, so that it is still there when you come back. The site remembers whether you chose the light or dark theme.
 
 ## not being counted
 
