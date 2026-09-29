@@ -10,7 +10,7 @@ import { EXAMPLES_SECTION } from './examples'
 // express - one page per paradigm, read in order or dipped into - "guides"
 // are practical how-tos, "reference" is for looking things up, "examples"
 // are whole programs from ghul-examples, one per page, and "about"
-// is the story of the project itself.
+// is the project itself: its story, and how the site treats its readers.
 export const SECTIONS = [
   {
     text: 'ghūl',
@@ -68,6 +68,7 @@ export const SECTIONS = [
       { text: 'implementation', link: '/implementation' },
       { text: 'history', link: '/history' },
       { text: 'resources', link: '/resources' },
+      { text: 'privacy', link: '/privacy' },
     ],
   },
 ]
