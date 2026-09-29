@@ -7,9 +7,9 @@ import { EXAMPLES_SECTION } from './examples'
 //
 // The groups separate the site's registers: "ghūl" is the front door
 // (the overview and how to install), "tour" shows what the language can
-// express - one page per paradigm, read in order or dipped into - "examples"
-// are whole programs from ghul-examples, one per page, "guides"
-// are practical how-tos, "reference" is for looking things up, and "about"
+// express - one page per paradigm, read in order or dipped into - "guides"
+// are practical how-tos, "reference" is for looking things up, "examples"
+// are whole programs from ghul-examples, one per page, and "about"
 // is the story of the project itself.
 export const SECTIONS = [
   {
@@ -32,7 +32,6 @@ export const SECTIONS = [
       { text: '.NET integration', link: '/dotnet-integration' },
     ],
   },
-  EXAMPLES_SECTION,
   {
     text: 'guides',
     items: [
@@ -56,6 +55,7 @@ export const SECTIONS = [
       { text: 'known issues', link: '/known-issues' },
     ],
   },
+  EXAMPLES_SECTION,
   {
     text: 'rosetta code',
     items: [

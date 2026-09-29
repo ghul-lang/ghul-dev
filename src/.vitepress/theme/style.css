@@ -91,3 +91,34 @@ body.ghul-example-expanded-open {
 .VPDoc.has-aside .content-container {
   max-width: min(100%, 108ch) !important;
 }
+
+/* An example page's heading, set like a Rosetta Code task's: the program's name at the size of a
+   section heading, with the link to its source on the same line at the right. */
+.vp-doc .example-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vp-doc .example-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc .example-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.vp-doc .example-header p {
+  margin: 0;
+}

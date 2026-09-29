@@ -101,11 +101,33 @@ export function examplesAside(page: ExamplePage) {
 }
 
 // A page's Markdown. On the site the program is shown in the playground, framed on the page and
-// running from the start; the plain-text rendering, which has no playground, shows the source.
+// running from the start, with a link to its source beside the heading. The plain-text rendering,
+// which has no playground, shows the source and what it prints instead.
 export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
   const { piece, topic } = page
   const source = `${REPOSITORY}/blob/${EXAMPLES_REF}/${piece.path}`
   const output = piece.output.trimEnd()
+
+  if (framed) {
+    const lines = [
+      '<header class="example-header">',
+      '',
+      `# ${page.heading}`,
+      '',
+      `<a class="example-source" href="${source}" target="_blank" rel="noreferrer"><span class="vpi-social-github" aria-hidden="true"></span>open on GitHub</a>`,
+      '',
+      '</header>',
+      '',
+    ]
+
+    if (page.first && topic.intro) {
+      lines.push(topic.intro.trim(), '')
+    }
+
+    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
+
+    return lines.join('\n')
+  }
 
   const lines = [`# ${page.heading}`, '']
 
@@ -113,11 +135,7 @@ export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
     lines.push(topic.intro.trim(), '')
   }
 
-  if (framed) {
-    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
-  } else {
-    lines.push('```ghul', piece.source.trimEnd(), '```', '')
-  }
+  lines.push('```ghul', piece.source.trimEnd(), '```', '')
 
   if (output) {
     lines.push('It prints:', '', '```plaintext', output, '```', '')
