@@ -36,13 +36,56 @@ function suppressed() {
   }
 }
 
-export function countEvent(path: string, title = path) {
-  if (suppressed()) return
+// Events sent before the counter's script has loaded, which is common early in a
+// page load: the script is fetched asynchronously, and a page can know what it
+// is showing first. They are held until the script's element reports that it
+// has loaded or failed, then sent or dropped, so a counter that never arrives -
+// blocked by an extension, say - leaves nothing waiting. The cap bounds what one
+// page can hold before then.
+const HELD_LIMIT = 20
 
+let held: { path: string, title: string }[] | null = null
+
+function send(path: string, title: string) {
   try {
     ;(window as any).goatcounter?.count?.({ path, title, event: true })
   } catch {
     // A counter that fails is not a reason for the page to.
+  }
+}
+
+function hold(path: string, title: string) {
+  if (held) {
+    if (held.length < HELD_LIMIT) held.push({ path, title })
+
+    return
+  }
+
+  const script = document.querySelector<HTMLScriptElement>('script[data-goatcounter]')
+
+  if (!script) return
+
+  held = [{ path, title }]
+
+  const settle = (loaded: boolean) => {
+    const waiting = held ?? []
+
+    held = null
+
+    if (loaded) for (const event of waiting) send(event.path, event.title)
+  }
+
+  script.addEventListener('load', () => settle(true), { once: true })
+  script.addEventListener('error', () => settle(false), { once: true })
+}
+
+export function countEvent(path: string, title = path) {
+  if (suppressed()) return
+
+  if ((window as any).goatcounter?.count) {
+    send(path, title)
+  } else {
+    hold(path, title)
   }
 }
 
