@@ -85,9 +85,24 @@ export const EXAMPLES_SECTION = {
   }),
 }
 
-// A page's Markdown. `runnable` adds the button that opens the program in the playground, which
-// only the site has; the plain-text rendering leaves it out.
-export function exampleMarkdown(page: ExamplePage, runnable: boolean): string {
+// The pages an example page's aside lists: the other programs in its topic, and every topic.
+export function examplesAside(page: ExamplePage) {
+  return {
+    topic: page.topic.title,
+    pieces: EXAMPLE_PAGES
+      .filter(other => other.topic === page.topic)
+      .map(other => ({ text: other.sidebarText, link: other.link, current: other === page })),
+    topics: EXAMPLE_TOPICS.map(topic => ({
+      text: topic.title,
+      link: EXAMPLE_PAGES.find(other => other.topic === topic)!.link,
+      current: topic === page.topic,
+    })),
+  }
+}
+
+// A page's Markdown. On the site the program is shown in the playground, framed on the page and
+// running from the start; the plain-text rendering, which has no playground, shows the source.
+export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
   const { piece, topic } = page
   const source = `${REPOSITORY}/blob/${EXAMPLES_REF}/${piece.path}`
   const output = piece.output.trimEnd()
@@ -98,11 +113,11 @@ export function exampleMarkdown(page: ExamplePage, runnable: boolean): string {
     lines.push(topic.intro.trim(), '')
   }
 
-  if (runnable) {
-    lines.push(`<ExampleRun id="${piece.id}" />`, '')
+  if (framed) {
+    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
+  } else {
+    lines.push('```ghul', piece.source.trimEnd(), '```', '')
   }
-
-  lines.push('```ghul', piece.source.trimEnd(), '```', '')
 
   if (output) {
     lines.push('It prints:', '', '```plaintext', output, '```', '')

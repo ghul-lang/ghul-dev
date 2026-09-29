@@ -1,6 +1,7 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import RosettaAside from './components/RosettaAside.vue'
+import ExamplesAside from './components/ExamplesAside.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -9,6 +10,7 @@ const { Layout } = DefaultTheme
   <Layout>
     <template #aside-outline-before>
       <RosettaAside />
+      <ExamplesAside />
     </template>
   </Layout>
 </template>
