@@ -46,6 +46,11 @@ const HELD_LIMIT = 20
 
 let held: { path: string, title: string }[] | null = null
 
+// Whether the script has settled. Its element fires load or error once, so once
+// it has, an event that still finds no counter is dropped at once rather than
+// held for an element that will fire nothing more.
+let counter: 'pending' | 'waiting' | 'settled' = 'pending'
+
 function send(path: string, title: string) {
   try {
     ;(window as any).goatcounter?.count?.({ path, title, event: true })
@@ -55,6 +60,8 @@ function send(path: string, title: string) {
 }
 
 function hold(path: string, title: string) {
+  if (counter === 'settled') return
+
   if (held) {
     if (held.length < HELD_LIMIT) held.push({ path, title })
 
@@ -66,11 +73,13 @@ function hold(path: string, title: string) {
   if (!script) return
 
   held = [{ path, title }]
+  counter = 'waiting'
 
   const settle = (loaded: boolean) => {
     const waiting = held ?? []
 
     held = null
+    counter = 'settled'
 
     if (loaded) for (const event of waiting) send(event.path, event.title)
   }
