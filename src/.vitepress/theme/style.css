@@ -91,3 +91,71 @@ body.ghul-example-expanded-open {
 .VPDoc.has-aside .content-container {
   max-width: min(100%, 108ch) !important;
 }
+
+/* An example page's heading, set like a Rosetta Code task's: the program's name at the size of a
+   section heading, with the link to its source on the same line at the right. */
+.vp-doc .example-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vp-doc .example-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc .example-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.vp-doc .example-header p {
+  margin: 0;
+}
+
+/* Under an example page's playground, the programs before and after it. */
+.vp-doc .example-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.vp-doc .example-pager-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.vp-doc .example-pager-link:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.vp-doc .example-pager-link.next {
+  text-align: right;
+}
+
+.vp-doc .example-pager-label {
+  display: block;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .example-pager-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}

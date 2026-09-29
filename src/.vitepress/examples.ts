@@ -85,27 +85,56 @@ export const EXAMPLES_SECTION = {
   }),
 }
 
-// The pages an example page's aside lists: the other programs in its topic, and every topic.
-export function examplesAside(page: ExamplePage) {
-  return {
-    topic: page.topic.title,
-    pieces: EXAMPLE_PAGES
-      .filter(other => other.topic === page.topic)
-      .map(other => ({ text: other.sidebarText, link: other.link, current: other === page })),
-    topics: EXAMPLE_TOPICS.map(topic => ({
-      text: topic.title,
-      link: EXAMPLE_PAGES.find(other => other.topic === topic)!.link,
-      current: topic === page.topic,
-    })),
-  }
+// The links under an example page's playground to the programs before and after it, in the order
+// the sidebar lists them. The sidebar is the one list of every program; these step through it.
+function pager(page: ExamplePage): string[] {
+  const position = EXAMPLE_PAGES.indexOf(page)
+  const previous = EXAMPLE_PAGES[position - 1]
+  const next = EXAMPLE_PAGES[position + 1]
+
+  const link = (other: ExamplePage | undefined, rel: string, label: string) =>
+    other
+      ? `<a class="example-pager-link ${rel}" href="${other.link}" rel="${rel}"><span class="example-pager-label">${label}</span><span class="example-pager-title">${other.heading}</span></a>`
+      : '<span></span>'
+
+  return [
+    '<nav class="example-pager" aria-label="examples">',
+    link(previous, 'prev', 'previous'),
+    link(next, 'next', 'next'),
+    '</nav>',
+    '',
+  ]
 }
 
 // A page's Markdown. On the site the program is shown in the playground, framed on the page and
-// running from the start; the plain-text rendering, which has no playground, shows the source.
+// running from the start, with a link to its source beside the heading. The plain-text rendering,
+// which has no playground, shows the source and what it prints instead.
 export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
   const { piece, topic } = page
   const source = `${REPOSITORY}/blob/${EXAMPLES_REF}/${piece.path}`
   const output = piece.output.trimEnd()
+
+  if (framed) {
+    const lines = [
+      '<header class="example-header">',
+      '',
+      `# ${page.heading}`,
+      '',
+      `<a class="example-source" href="${source}" target="_blank" rel="noreferrer"><span class="vpi-social-github" aria-hidden="true"></span>open on GitHub</a>`,
+      '',
+      '</header>',
+      '',
+    ]
+
+    if (page.first && topic.intro) {
+      lines.push(topic.intro.trim(), '')
+    }
+
+    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
+    lines.push(...pager(page))
+
+    return lines.join('\n')
+  }
 
   const lines = [`# ${page.heading}`, '']
 
@@ -113,11 +142,7 @@ export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
     lines.push(topic.intro.trim(), '')
   }
 
-  if (framed) {
-    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
-  } else {
-    lines.push('```ghul', piece.source.trimEnd(), '```', '')
-  }
+  lines.push('```ghul', piece.source.trimEnd(), '```', '')
 
   if (output) {
     lines.push('It prints:', '', '```plaintext', output, '```', '')
