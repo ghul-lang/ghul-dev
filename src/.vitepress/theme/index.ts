@@ -8,7 +8,7 @@ import PlaygroundFrame from './components/PlaygroundFrame.vue'
 import Layout from './Layout.vue'
 import { installRosettaRouting } from './rosetta-route'
 import { refreshPackageVersions } from './package-versions'
-import { countOutboundLinks } from './events'
+import { countOutboundLinks, countTimeOnPages } from './events'
 import './style.css'
 
 export default {
@@ -30,11 +30,16 @@ export default {
     // as a single-page one. The dedupe keeps a hash-only move on the same
     // page from counting as a pageview.
     let counted_path = typeof location !== 'undefined' ? location.pathname : ''
+    let page_changed = (_path: string) => {}
+
+    onMounted(() => { page_changed = countTimeOnPages(location.pathname) })
+
     watch(() => route.path, () =>
       nextTick(() => {
         if (location.pathname === counted_path) return
         counted_path = location.pathname
         window.goatcounter?.count?.()
+        page_changed(location.pathname)
       }))
   },
   enhanceApp({ app, router }) {
