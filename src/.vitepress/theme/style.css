@@ -122,3 +122,40 @@ body.ghul-example-expanded-open {
 .vp-doc .example-header p {
   margin: 0;
 }
+
+/* Under an example page's playground, the programs before and after it. */
+.vp-doc .example-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.vp-doc .example-pager-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.vp-doc .example-pager-link:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.vp-doc .example-pager-link.next {
+  text-align: right;
+}
+
+.vp-doc .example-pager-label {
+  display: block;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .example-pager-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}
