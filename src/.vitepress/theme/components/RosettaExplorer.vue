@@ -1,12 +1,12 @@
 <script setup>
-import { ref, computed, shallowRef, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { ref, computed, shallowRef, watch, onMounted } from 'vue'
 import GhulExample from './GhulExample.vue'
+import PlaygroundFrame from './PlaygroundFrame.vue'
 import RosettaControls from './RosettaControls.vue'
 import RosettaOnward from './RosettaOnward.vue'
 import RosettaList from './RosettaList.vue'
 import { countEvent } from '../events'
 import { tokenise } from '../rosetta-highlight'
-import { PLAYGROUND_BASE, PLAYGROUND_ORIGIN } from '../playground'
 import { shownSlug, shownFilter, showAt, replaceAt } from '../rosetta-route'
 import { corpus, query, chosen, toggleTag } from '../rosetta-filter'
 import { loadCorpus, taskBySlug, matching, draw, addressOf, filterFromSearch } from '../rosetta-corpus'
@@ -78,17 +78,6 @@ async function part(entry) {
   }
 }
 
-// The playground's own page for a part, which runs the program on arrival and has the editor,
-// the output pane and the pictures a drawing produces. The task page frames that page rather than
-// rebuilding any of it, so there is one playground and it is the one a reader reaches by any other
-// route too. Same origin as the site, which is what lets the page be framed at all.
-// `panel` tells the playground it is on a page that already names the task and offers the others,
-// so it leaves out the links that would say so again.
-// The theme goes in the address too, so the panel paints in it first time rather than switching
-// to it once its script has asked.
-const playgroundUrl = entry => `${PLAYGROUND_BASE}rosetta-code/${entry.id}?panel&theme=${
-  typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'}`
-
 // The part shown, one at a time: framing every part would start a run per part against a service
 // that admits six at once. The first runnable one on arrival, and any other when chosen from the
 // strip above the panel, which replaces the panel where it stands.
@@ -101,24 +90,6 @@ watch(parts, list => {
 const current = computed(() => parts.value.find(entry => entry.id === selected.value) ?? null)
 
 const framed = computed(() => current.value?.playground ? current.value : null)
-
-// As tall as the window has room for below the frame's top, so that the whole playground is on
-// the screen on arrival rather than its output pane below the fold; never shorter than an editor
-// is worth, never taller than a program's output needs. Measured, because what sits above the
-// frame - the site's header, the task's title, its tags - is not a fixed height.
-const frameHeight = ref('clamp(28rem, calc(100vh - 14rem), 60rem)')
-
-function sizeFrame() {
-  const frame = root.value?.querySelector('.rosetta-playground')
-
-  if (!frame) return
-
-  const top = frame.getBoundingClientRect().top + window.scrollY
-
-  frameHeight.value = `clamp(28rem, calc(100vh - ${Math.round(top) + 24}px), 60rem)`
-}
-
-watch(framed, () => nextTick(sizeFrame))
 
 // The section's own introduction sits above the explorer, in the page's markdown, and it is what a
 // reader of the section reads first. A task's page is the task: the introduction stands down
@@ -228,45 +199,6 @@ function anotherOnward() {
 
   another()
 }
-
-// Escape reaches the framed playground only once the reader has clicked into it; until then the
-// key is this page's, and the playground is told so that it can close its pictures.
-function forwardEscape(event) {
-  if (event.key !== 'Escape') return
-
-  root.value?.querySelector('.rosetta-playground')?.contentWindow
-    ?.postMessage({ ghul: 'escape' }, PLAYGROUND_ORIGIN)
-}
-
-// The site's light or dark setting, which the framed playground cannot see: it is told on
-// asking, once its page has loaded, and again whenever the switch moves.
-const frameWindow = () => root.value?.querySelector('.rosetta-playground')?.contentWindow
-
-function sendTheme() {
-  frameWindow()?.postMessage(
-    { ghul: 'theme', dark: document.documentElement.classList.contains('dark') },
-    PLAYGROUND_ORIGIN)
-}
-
-function onFrameMessage(event) {
-  if (event.origin === PLAYGROUND_ORIGIN && event.data?.ghul === 'theme?') sendTheme()
-}
-
-const themeWatch = typeof MutationObserver === 'undefined' ? null : new MutationObserver(sendTheme)
-
-onMounted(() => {
-  window.addEventListener('resize', sizeFrame)
-  window.addEventListener('keydown', forwardEscape)
-  window.addEventListener('message', onFrameMessage)
-  themeWatch?.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', sizeFrame)
-  window.removeEventListener('keydown', forwardEscape)
-  window.removeEventListener('message', onFrameMessage)
-  themeWatch?.disconnect()
-})
 
 onMounted(async () => {
   showIntroduction(shownSlug.value === null)
@@ -378,16 +310,12 @@ function browse() {
           <!-- The playground itself, as a panel on the page; keyed on the part, so choosing
                another loads its page in place. A part that cannot run in a browser is shown as
                it is recorded. -->
-          <iframe
+          <PlaygroundFrame
             v-if="framed"
             :key="framed.id"
-            class="rosetta-playground"
-            :src="playgroundUrl(framed)"
+            :path="`rosetta-code/${framed.id}`"
             :title="`${shown.title} in the playground`"
-            :style="{ height: frameHeight }"
-            loading="eager"
-            allow="clipboard-write"
-          ></iframe>
+          />
 
           <GhulExample v-else :key="current.id" :name="current.name" :data="current.data" />
         </template>
@@ -548,15 +476,5 @@ function browse() {
   margin: 0.5rem 0 1rem;
 }
 
-/* The playground fills whatever it is given, so the frame decides the panel: tall enough to hold
-   an editor over its output pane, bounded by the viewport so the whole of it is on the first
-   screen, and never so tall that a wide window turns it into a wall. */
-.rosetta-playground {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  background: var(--vp-c-bg);
-}
 
 </style>
