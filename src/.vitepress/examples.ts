@@ -130,7 +130,7 @@ export function exampleMarkdown(page: ExamplePage, framed: boolean): string {
       lines.push(topic.intro.trim(), '')
     }
 
-    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" title="${page.heading} in the playground" />`, '')
+    lines.push(`<PlaygroundFrame path="ghul-examples/${piece.id}" host="example-page" title="${page.heading} in the playground" />`, '')
     lines.push(...pager(page))
 
     return lines.join('\n')

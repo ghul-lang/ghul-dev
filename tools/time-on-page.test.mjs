@@ -44,7 +44,7 @@ test('the family a page is counted under', () => {
   assert.equal(timeFamily('/rosetta'), 'rosetta-time')
   assert.equal(timeFamily('/rosetta/100-doors'), 'rosetta-time')
   assert.equal(timeFamily('/rosetta-code-notes'), 'site-time')
-  assert.equal(timeFamily('/examples/control-flow-04-while'), 'examples-time')
+  assert.equal(timeFamily('/examples/control-flow-04-while'), 'example-page-time')
 })
 
 function harness() {
@@ -84,7 +84,7 @@ test('hiding the page counts the view once, and coming back adds nothing', () =>
   h.advance(60000)
   h.hide()
 
-  assert.deepEqual(h.sent, ['examples-time/under-10s'])
+  assert.deepEqual(h.sent, ['example-page-time/under-10s'])
 })
 
 test('time hidden before the first look is not counted', () => {

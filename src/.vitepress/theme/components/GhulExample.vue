@@ -252,17 +252,29 @@ function onInlayLeave() {
 // into view is not one of them, and counting that would mostly measure how long
 // the page is. Silent and optional by design - `count` is absent whenever the
 // analytics script did not load, which includes every local build.
+//
+// A docs code example counts as the inline mini-IDE, under the host
+// docs-code-example: opening its editor is an open and running it a run, as in
+// the full mini-IDE. Copying is the code block's own and no part of the editor.
+const RECORDED = {
+  edit: name => `mini-ide-open/docs-code-example/${name}`,
+  run: name => `mini-ide-run/docs-code-example/manual/${name}`,
+  copy: name => `code-copy/${name}`,
+}
+
 function record(action) {
-  countEvent(`example-${action}/${props.name}`, `example ${action}`)
+  const path = RECORDED[action](props.name)
+
+  countEvent(path, path.slice(0, path.indexOf('/')))
 }
 
 // How the run ended, one event per run, named by outcome rather than by example:
 // which example was run is already the run event's business, and a path per
 // example per outcome would multiply the two for nothing.
 function recordResult(state, detail) {
-  if (state === 'done') countEvent(`example-result/${detail?.threw ? 'threw' : 'ok'}`, 'example result')
-  else if (state === 'failed') countEvent(`example-result/${detail?.timedOut ? 'timeout' : detail?.tooBig ? 'too-big' : 'compile-error'}`, 'example result')
-  else if (state === 'error') countEvent('example-result/error', 'example result')
+  if (state === 'done') countEvent(`mini-ide-result/docs-code-example/${detail?.threw ? 'threw' : 'ok'}`, 'mini-ide-result')
+  else if (state === 'failed') countEvent(`mini-ide-result/docs-code-example/${detail?.timedOut ? 'timeout' : detail?.tooBig ? 'too-big' : 'compile-error'}`, 'mini-ide-result')
+  else if (state === 'error') countEvent('mini-ide-result/docs-code-example/error', 'mini-ide-result')
 }
 
 const copied = ref(false)

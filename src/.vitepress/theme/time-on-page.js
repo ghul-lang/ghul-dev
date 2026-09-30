@@ -21,7 +21,7 @@ export function timeBand(ms) {
 // The family a page's time is counted under.
 export function timeFamily(path) {
   if (path === '/rosetta' || path.startsWith('/rosetta/')) return 'rosetta-time'
-  if (path.startsWith('/examples/')) return 'examples-time'
+  if (path.startsWith('/examples/')) return 'example-page-time'
   return 'site-time'
 }
 
