@@ -5,13 +5,15 @@
 // takes to it. Same origin as the site, which is what lets the page be framed at all.
 //
 // `path` names the program the way the playground's own address does: rosetta-code/<task>, or
-// ghul-examples/<topic>/<part>.
+// ghul-examples/<topic>/<part>. `host` names the page it is framed on, example-page or
+// rosetta-task-page, which the playground's events carry.
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { PLAYGROUND_BASE, PLAYGROUND_ORIGIN } from '../playground'
 
 const props = defineProps({
   path: { type: String, required: true },
   title: { type: String, required: true },
+  host: { type: String, required: true },
 })
 
 const frame = ref(null)
@@ -19,7 +21,7 @@ const frame = ref(null)
 // `panel` tells the playground it is on a page that already names the program, so it leaves out
 // the links that would say so again. The theme goes in the address too, so the panel paints in it
 // first time rather than switching to it once its script has asked.
-const url = `${PLAYGROUND_BASE}${props.path}?panel&theme=${
+const url = `${PLAYGROUND_BASE}${props.path}?panel&host=${props.host}&theme=${
   typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'}`
 
 // As tall as the window has room for below the frame's top, so that the whole playground is on the

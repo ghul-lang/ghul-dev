@@ -123,7 +123,7 @@ function beacon(path: string, title: string) {
 }
 
 // Visible time on each page a reader views, as `site-time`, `rosetta-time` or
-// `examples-time` and a band - see time-on-page.js. Answers the function to
+// `example-page-time` and a band - see time-on-page.js. Answers the function to
 // call when the reader moves to another page.
 export function countTimeOnPages(path: string): (path: string) => void {
   if (typeof document === 'undefined' || suppressed()) return () => {}

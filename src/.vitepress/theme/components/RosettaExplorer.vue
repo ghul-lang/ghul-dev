@@ -316,6 +316,7 @@ function browse() {
             v-if="framed"
             :key="framed.id"
             :path="`rosetta-code/${framed.id}`"
+            host="rosetta-task-page"
             :title="`${shown.title} in the playground`"
           />
 
