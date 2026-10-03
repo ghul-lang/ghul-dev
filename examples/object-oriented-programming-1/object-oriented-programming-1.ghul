@@ -1,5 +1,6 @@
 use IO.Std.write_line
 use Ghul.Pipes
+use Collections
 
 let int_calculator = CALCULATOR(
     [
@@ -53,26 +54,16 @@ trait Operation[T] is
 si
 
 class CALCULATOR[T] is
-    _operations: Collections.MAP[string, Operation[T]]
+    _operations: MAP[string, Operation[T]]
 
     memory: T
 
     init(
-        operations: Collections.Iterable[
+        operations: Iterable[
             (name: string, operation: Operation[T])
         ]
     ) is
-        _operations =
-            Collections.MAP(
-                operations
-                    |> map(
-                        on =>
-                            let (name, operation) = on in
-                            Collections.KeyValuePair(
-                                name, operation
-                            )
-                    )
-            )
+        _operations = MAP(operations)
     si
 
     calculate(
