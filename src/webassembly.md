@@ -19,7 +19,14 @@ ghul install-compiler
 
 ## hello world
 
-A WebAssembly program is a project: a directory holding a `ghul-project.json`{:text} manifest that names the project, its targets and its sources. In an empty directory, write the manifest:
+A WebAssembly program is a project: a directory holding a `ghul-project.json`{:text} manifest that names the project, its targets and its sources. `ghul new`{:sh} creates one, here for both targets:
+
+```sh
+ghul new hello --target dotnet,wasm
+cd hello
+```
+
+`--target`{:sh} takes `dotnet`{:text}, `wasm`{:text} or `dotnet,wasm`{:text}, and is `dotnet`{:text} when it is left out. The new directory holds the manifest:
 
 ```json
 {
@@ -30,7 +37,7 @@ A WebAssembly program is a project: a directory holding a `ghul-project.json`{:t
 }
 ```
 
-and the program, as `src/hello.ghul`{:text}:
+a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
 
 ```ghul
 use IO.Std.write_line
