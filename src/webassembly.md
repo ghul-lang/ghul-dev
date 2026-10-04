@@ -58,6 +58,20 @@ The first build installs the compiler if there isn't one, and fetches the librar
 
 `ghul build`{:sh} builds without running. The [ghul-cli README](https://github.com/ghul-lang/ghul-cli#projects) covers the manifest in full.
 
+## what works today
+
+With the latest compiler, a WebAssembly build compiles classes, structs, traits and unions, with virtual and trait calls, `case` over a union, generics, arrays, tuples, function values and closures, strings and string interpolation, `throw`, `try`, `catch` and `finally`, generators, and `for` loops over `0..n` and `1::n`.
+
+Not yet:
+
+- asynchronous functions and `await`
+- `decimal`
+- interpolating a value whose type has no `to_string` of its own, such as a tuple or an array
+- slicing with the from-the-end ranges `..<` and `..<<`
+- files and directories, and the rest of `IO` beyond writing to standard output
+
+The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks each of these. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
+
 ## the same program on .NET
 
 The program above is ordinary ghūl, and the `dotnet` target builds it into an ordinary .NET executable. On WebAssembly there is no .NET base class library, so the members of the built-in types and the rest of `Ghul`{:text} come from libraries compiled into the module from source: [ghul-core](https://github.com/ghul-lang/ghul-core) and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime). A program that calls .NET APIs directly builds only for the `dotnet` target.
