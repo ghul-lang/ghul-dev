@@ -37,6 +37,7 @@ export const SECTIONS = [
     items: [
       { text: 'runtime library', link: '/runtime-library' },
       { text: 'scripts, the REPL and notebooks', link: '/scripts-and-repl' },
+      { text: 'WebAssembly', link: '/webassembly' },
       { text: 'tooling', link: '/tooling' },
     ],
   },

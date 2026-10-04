@@ -27,6 +27,8 @@ dotnet tool install -g ghul.cli
 ghul repl
 ```
 
+The same command builds a ghūl program for [WebAssembly](/webassembly), to run under Node.js.
+
 [Visual Studio Code](https://code.visualstudio.com) with the [ghūl language extension](https://marketplace.visualstudio.com/items?itemName=degory.ghul) gives you errors and warnings as you type, completion, hover, go to definition, rename and formatting. Any editor that can install VS Code extensions gets the same support; other editors can drive the underlying language server directly - see [other editors](/tooling.html#other-editors) on the tooling page.
 
 ::: info the first few seconds
