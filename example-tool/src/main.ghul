@@ -103,10 +103,7 @@ namespace ExampleTool is
         Std.out.write_line("snippet {name}")
     si
 
-    // Whether example-tests/wasm-capable.txt, beside the examples, lists the
-    // example as running on WebAssembly. tools/wasm-examples.sh writes the
-    // list; the example data carries it so the page can tell the embedded
-    // editor.
+    // whether example-tests/wasm-capable.txt lists the example as running on WebAssembly
     _runs_on_wasm(example_dir: string, name: string) -> bool is
         let examples_root = Path.get_directory_name(example_dir)
 
