@@ -1,6 +1,7 @@
 {
   "name": "definitions-12",
   "snippet": false,
+  "wasm": true,
   "code": "struct COUNTER is\n    _n: int field\n\n    init(n: int) is _n = n; si\n\n    bump() is _n = _n + 1; si\n\n    value: int => _n\nsi\n\nlet original = COUNTER(0)\nlet copy mut = original\n\ncopy.bump()\n\nwrite_line(\"original {original.value}, copy {copy.value}\")",
   "fullSource": "use IO.Std.write_line\n\nstruct COUNTER is\n    _n: int field\n\n    init(n: int) is _n = n; si\n\n    bump() is _n = _n + 1; si\n\n    value: int => _n\nsi\n\nlet original = COUNTER(0)\nlet copy mut = original\n\ncopy.bump()\n\nwrite_line(\"original {original.value}, copy {copy.value}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-10",
   "snippet": false,
+  "wasm": false,
   "code": "struct POINT(x: double, y: double) is\nsi",
   "fullSource": "struct POINT(x: double, y: double) is\nsi\n\n",
   "hiddenBefore": false,

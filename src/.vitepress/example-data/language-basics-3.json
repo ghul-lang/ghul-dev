@@ -1,6 +1,7 @@
 {
   "name": "language-basics-3",
   "snippet": false,
+  "wasm": false,
   "code": "greet(name: string) -> void is\n    write_line(\"Hello, {name}!\")\nsi",
   "fullSource": "use IO.Std.write_line\n\ngreet(name: string) -> void is\n    write_line(\"Hello, {name}!\")\nsi\n\n",
   "hiddenBefore": true,

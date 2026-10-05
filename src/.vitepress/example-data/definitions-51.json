@@ -1,6 +1,7 @@
 {
   "name": "definitions-51",
   "snippet": false,
+  "wasm": true,
   "code": "// one parameter at the tuple type, unpacked into a and b\nadd_pair((a: int, b: int): (int, int)) -> int => a + b\n\nwrite_line(add_pair((3, 4)))\n\n// anonymous functions take the same form, element types\n// inferred from the sequence\nlet pairs = [(1, 2), (3, 4)]\nlet total = pairs |> map(((a, b)) => a + b) |> sum()\n\nwrite_line(\"{total}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\n// one parameter at the tuple type, unpacked into a and b\nadd_pair((a: int, b: int): (int, int)) -> int => a + b\n\nwrite_line(add_pair((3, 4)))\n\n// anonymous functions take the same form, element types\n// inferred from the sequence\nlet pairs = [(1, 2), (3, 4)]\nlet total = pairs |> map(((a, b)) => a + b) |> sum()\n\nwrite_line(\"{total}\")\n",
   "hiddenBefore": true,

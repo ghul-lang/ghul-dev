@@ -1,6 +1,7 @@
 {
   "name": "definitions-47",
   "snippet": false,
+  "wasm": false,
   "code": "// three-way ordering returning int; '<', '<=', '>', '>=' all derive from it:\n<>(other: BOX) -> int => value - other.value",
   "fullSource": "class BOX is\n    value: int\n\n    init(value: int) is\n        self.value = value\n    si\n    // three-way ordering returning int; '<', '<=', '>', '>=' all derive from it:\n    <>(other: BOX) -> int => value - other.value\nsi\n\nlet a = BOX(5)\nlet b = BOX(10)\n\nassert a < b\nassert b >= a\n",
   "hiddenBefore": true,

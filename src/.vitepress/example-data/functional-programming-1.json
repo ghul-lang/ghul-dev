@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-1",
   "snippet": false,
+  "wasm": true,
   "code": "// a function literal, held in a variable\nlet triple = (n: int) => n * 3\nwrite_line(\"triple(5): {triple(5)}\")\n\n// a named function, passed by name\ndouble(n: int) -> int => n * 2\n\nwrite_line(\"doubled: {[1, 2, 3] |> map(double)}\")\n\n// an operator, passed as a value\n⊕(total: int, digit: int) -> int => total * 10 + digit\n\nwrite_line(\"digits: {[4, 0, 2] |> reduce(0, `⊕)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\n// a function literal, held in a variable\nlet triple = (n: int) => n * 3\nwrite_line(\"triple(5): {triple(5)}\")\n\n// a named function, passed by name\ndouble(n: int) -> int => n * 2\n\nwrite_line(\"doubled: {[1, 2, 3] |> map(double)}\")\n\n// an operator, passed as a value\n⊕(total: int, digit: int) -> int => total * 10 + digit\n\nwrite_line(\"digits: {[4, 0, 2] |> reduce(0, `⊕)}\")\n",
   "hiddenBefore": true,

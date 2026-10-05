@@ -1,6 +1,7 @@
 {
   "name": "expressions-16",
   "snippet": false,
+  "wasm": false,
   "code": "let equal = 5 == 5 // Equality\nlet not_equal = 5 != 10 // Inequality\nlet less_than = 5 < 10 // Less than\nlet greater_than = 10 > 5 // Greater than\nlet less_than_or_equal = 5 <= 5 // Less or equal\nlet greater_than_or_equal = 10 >= 10 // Greater or equal",
   "fullSource": "let equal = 5 == 5 // Equality\nlet not_equal = 5 != 10 // Inequality\nlet less_than = 5 < 10 // Less than\nlet greater_than = 10 > 5 // Greater than\nlet less_than_or_equal = 5 <= 5 // Less or equal\nlet greater_than_or_equal = 10 >= 10 // Greater or equal\n",
   "hiddenBefore": false,

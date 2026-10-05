@@ -1,6 +1,7 @@
 {
   "name": "async-and-generators-3",
   "snippet": false,
+  "wasm": false,
   "code": "// a coroutine is an asynchronous function returning COROUTINE\nworker(name: string, steps: int) -> COROUTINE is\n    for step in 1::steps do\n        write_line(\"{name} step {step}\")\n\n        // give the other coroutines a turn\n        await pause()\n    od\nsi\n\nworker(\"a\", 3)\nworker(\"b\", 2)\n\n// resume parked coroutines until none remain\nrun()",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Coroutines\n\n// a coroutine is an asynchronous function returning COROUTINE\nworker(name: string, steps: int) -> COROUTINE is\n    for step in 1::steps do\n        write_line(\"{name} step {step}\")\n\n        // give the other coroutines a turn\n        await pause()\n    od\nsi\n\nworker(\"a\", 3)\nworker(\"b\", 2)\n\n// resume parked coroutines until none remain\nrun()\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-36",
   "snippet": false,
+  "wasm": false,
   "code": "struct VALUE is\n    public_property: int\n\n    _private_property: string\n\n    init(value: int) is\n        public_property = value\n        _private_property = \"value is {value}\"\n    si\nsi\nlet v = VALUE(1234)\n\n// OK: public_property is publicly readable\nwrite_line(v.public_property)\n\nwrite_line(v._private_property)\n\nv.public_property = 5678",
   "fullSource": "// expect: error\nuse IO.Std.write_line\n\nstruct VALUE is\n    public_property: int\n\n    _private_property: string\n\n    init(value: int) is\n        public_property = value\n        _private_property = \"value is {value}\"\n    si\nsi\n\nlet v = VALUE(1234)\n\n// OK: public_property is publicly readable\nwrite_line(v.public_property)\n\nwrite_line(v._private_property)\n\nv.public_property = 5678\n",
   "hiddenBefore": true,

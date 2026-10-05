@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-25",
   "snippet": false,
+  "wasm": false,
   "code": "// an immutable let is captured by value\nlet base = 10\nlet add_base = n => n + base\nwrite_line(\"add_base(5): {add_base(5)}\")\n\n// a mut variable is captured by reference: the function and\n// the enclosing scope share it\nlet count mut = 0\nlet next = () => ( count = count + 1; count )\n\nwrite_line(\"next(): {next()}\")\nwrite_line(\"next(): {next()}\")\nwrite_line(\"count: {count}\")",
   "fullSource": "use IO.Std.write_line\n\n// an immutable let is captured by value\nlet base = 10\nlet add_base = n => n + base\nwrite_line(\"add_base(5): {add_base(5)}\")\n\n// a mut variable is captured by reference: the function and\n// the enclosing scope share it\nlet count mut = 0\nlet next = () => ( count = count + 1; count )\n\nwrite_line(\"next(): {next()}\")\nwrite_line(\"next(): {next()}\")\nwrite_line(\"count: {count}\")\n",
   "hiddenBefore": true,

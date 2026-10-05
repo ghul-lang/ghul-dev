@@ -1,6 +1,7 @@
 {
   "name": "syntax-5",
   "snippet": false,
+  "wasm": true,
   "code": "use default\n\nlet totals = LIST[int]([1, 2, 3, 4, 5, 6])\n\nwrite_line(\"{totals |> filter(x => x % 2 == 0) |> sum()}\")",
   "fullSource": "use default\n\nlet totals = LIST[int]([1, 2, 3, 4, 5, 6])\n\nwrite_line(\"{totals |> filter(x => x % 2 == 0) |> sum()}\")\n",
   "hiddenBefore": false,

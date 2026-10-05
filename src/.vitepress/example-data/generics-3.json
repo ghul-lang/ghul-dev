@@ -1,6 +1,7 @@
 {
   "name": "generics-3",
   "snippet": false,
+  "wasm": false,
   "code": "struct HOLD_SOMETHING[T](value: T)",
   "fullSource": "struct HOLD_SOMETHING[T](value: T)\n\n",
   "hiddenBefore": false,

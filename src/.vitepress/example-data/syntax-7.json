@@ -1,6 +1,7 @@
 {
   "name": "syntax-7",
   "snippet": false,
+  "wasm": true,
   "code": "use IndexedName = (index: int, name: string)\nuse Pair[A, B] = (first: A, second: B)\n\nswap[A, B](p: Pair[A, B]) -> Pair[B, A] => (first = p.second, second = p.first)\n\nlet item: IndexedName = (index = 2, name = \"two\")\nlet swapped = swap((first = 1, second = \"one\"))\n\nwrite_line(\"{item.index} {item.name}\")\nwrite_line(\"{swapped.first} {swapped.second}\")",
   "fullSource": "use IO.Std.write_line\n\nuse IndexedName = (index: int, name: string)\nuse Pair[A, B] = (first: A, second: B)\n\nswap[A, B](p: Pair[A, B]) -> Pair[B, A] => (first = p.second, second = p.first)\n\nlet item: IndexedName = (index = 2, name = \"two\")\nlet swapped = swap((first = 1, second = \"one\"))\n\nwrite_line(\"{item.index} {item.name}\")\nwrite_line(\"{swapped.first} {swapped.second}\")\n",
   "hiddenBefore": true,

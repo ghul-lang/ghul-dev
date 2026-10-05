@@ -1,6 +1,7 @@
 {
   "name": "expressions-3",
   "snippet": false,
+  "wasm": false,
   "code": "let d = 123.456 // double\nlet e = 123.456E5 // double\nlet f = 123_456_789_000.0 // double\n\nlet s = 123.456s // single\nlet t = 123.456E5s // single",
   "fullSource": "let d = 123.456 // double\nlet e = 123.456E5 // double\nlet f = 123_456_789_000.0 // double\n\nlet s = 123.456s // single\nlet t = 123.456E5s // single\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "control-flow-9",
   "snippet": false,
+  "wasm": true,
   "code": "let name: string? = lookup()\n\nif name? then\n    // name is narrowed to non-optional string\n    // here, no ! needed\n    write_line(\"hello, {name}\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nlookup() -> string? => \"world\"\n\nlet name: string? = lookup()\n\nif name? then\n    // name is narrowed to non-optional string\n    // here, no ! needed\n    write_line(\"hello, {name}\")\nfi\n",
   "hiddenBefore": true,

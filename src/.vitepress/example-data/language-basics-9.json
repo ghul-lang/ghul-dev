@@ -1,6 +1,7 @@
 {
   "name": "language-basics-9",
   "snippet": false,
+  "wasm": false,
   "code": "let primes = [2, 3, 5, 7, 11]",
   "fullSource": "let primes = [2, 3, 5, 7, 11]\n",
   "hiddenBefore": false,

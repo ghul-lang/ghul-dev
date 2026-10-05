@@ -1,6 +1,7 @@
 {
   "name": "type-inference-22",
   "snippet": false,
+  "wasm": false,
   "code": "describe(carrier: CARRIER, other: Animal) is\n    if isa CAT(carrier.occupant) then\n        carrier.swap(other)\n        // the narrowing ends at the call: swap() can change\n        // occupant, so it reads as an Animal from here on\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(CARRIER(CAT()), CAT())",
   "fullSource": "// expect: error\nuse IO.Std.write_line\n\nclass Animal abstract is\n    init() is si\nsi\n\nclass CAT: Animal is\n    init() is super.init(); si\n    purr() -> string => \"purr\"\nsi\n\nclass CARRIER(occupant: Animal) is\n    swap(a: Animal) is\n        occupant = a\n    si\nsi\n\ndescribe(carrier: CARRIER, other: Animal) is\n    if isa CAT(carrier.occupant) then\n        carrier.swap(other)\n        // the narrowing ends at the call: swap() can change\n        // occupant, so it reads as an Animal from here on\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(CARRIER(CAT()), CAT())\n",
   "hiddenBefore": true,

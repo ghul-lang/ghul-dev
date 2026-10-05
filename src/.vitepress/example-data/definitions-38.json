@@ -1,6 +1,7 @@
 {
   "name": "definitions-38",
   "snippet": false,
+  "wasm": true,
   "code": "class POINT(x: int, y: int) is\n    // capture the primary parameters as renamed private fields\n    _x\n    _y\n\n    show() is\n        write_line(\"({_x}, {_y})\")\n    si\nsi\n\nclass BOX(width: int public, height: int field, _depth: int) is\n    // width is a public read-write property\n    // height is a plain field\n    // _depth is a private field\nsi\n\nPOINT(10, 20).show()",
   "fullSource": "use IO.Std.write_line\n\nclass POINT(x: int, y: int) is\n    // capture the primary parameters as renamed private fields\n    _x\n    _y\n\n    show() is\n        write_line(\"({_x}, {_y})\")\n    si\nsi\n\nclass BOX(width: int public, height: int field, _depth: int) is\n    // width is a public read-write property\n    // height is a plain field\n    // _depth is a private field\nsi\n\nPOINT(10, 20).show()\n",
   "hiddenBefore": true,

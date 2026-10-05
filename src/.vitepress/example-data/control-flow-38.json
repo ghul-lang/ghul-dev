@@ -1,6 +1,7 @@
 {
   "name": "control-flow-38",
   "snippet": true,
+  "wasm": false,
   "code": "try\n    // Code that might throw an exception\ncatch e: SomeExceptionType\n    // Exception handling code\nyrt",
   "fullSource": "try\n    // Code that might throw an exception\ncatch e: SomeExceptionType\n    // Exception handling code\nyrt\n",
   "hiddenBefore": false,

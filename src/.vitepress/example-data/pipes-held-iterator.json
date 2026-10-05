@@ -1,6 +1,7 @@
 {
   "name": "pipes-held-iterator",
   "snippet": false,
+  "wasm": false,
   "code": "first_long_line() -> string? =>\n    cursor(use open_lines()) |> find(line => line.length > 4)\n\nwrite_line(first_long_line() ?? \"none\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nclass LINES(lines: string[]): Collections.Iterator[string] is\n    _index: int field\n\n    init(..) is\n        _index = -1\n    si\n\n    current: string => lines[_index]\n\n    move_next() -> bool is\n        _index = _index + 1\n        return _index < lines.count\n    si\n\n    dispose() is\n        write_line(\"closing the lines\")\n    si\nsi\n\nopen_lines() -> Collections.Iterator[string] => LINES([\"a\", \"few\", \"longer\", \"lines\"])\n\nfirst_long_line() -> string? =>\n    cursor(use open_lines()) |> find(line => line.length > 4)\n\nwrite_line(first_long_line() ?? \"none\")\n",
   "hiddenBefore": true,

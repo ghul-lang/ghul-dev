@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-each-function",
   "snippet": false,
+  "wasm": false,
   "code": "each[T..](source: Iterable[T], action: T.. -> void) -> void",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\neach[T..](source: Iterable[T], action: T.. -> void) -> void\n\nentry() is si\n",
   "hiddenBefore": true,

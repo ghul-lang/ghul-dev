@@ -1,6 +1,7 @@
 {
   "name": "expressions-8",
   "snippet": false,
+  "wasm": false,
   "code": "let simple_add = (x: int, y: int) -> int => x + y",
   "fullSource": "let simple_add = (x: int, y: int) -> int => x + y\n",
   "hiddenBefore": false,

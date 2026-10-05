@@ -96,11 +96,43 @@ namespace ExampleTool is
             region.hidden_before, region.hidden_after, region.hidden_gaps_after_line,
             Collections.LIST[HOVER](), "", Collections.LIST[DIAGNOSTIC](),
             Collections.LIST[SEMANTIC_TOKEN](), Collections.LIST[INLAY_HINT](),
-            true
+            true, false
         )
         File.write_all_text(Path.combine(output_dir, "{name}.json"), json)
 
         Std.out.write_line("snippet {name}")
+    si
+
+    // Whether example-tests/wasm-capable.txt, beside the examples, lists the
+    // example as running on WebAssembly. tools/wasm-examples.sh writes the
+    // list; the example data carries it so the page can tell the embedded
+    // editor.
+    _runs_on_wasm(example_dir: string, name: string) -> bool is
+        let examples_root = Path.get_directory_name(example_dir)
+
+        if !examples_root? then
+            return false
+        fi
+
+        let repository = Path.get_directory_name(examples_root)
+
+        if !repository? then
+            return false
+        fi
+
+        let list = Path.combine(repository, "example-tests", "wasm-capable.txt")
+
+        if !File.exists(list) then
+            return false
+        fi
+
+        for line in File.read_all_lines(list) do
+            if line.trim() =~ name then
+                return true
+            fi
+        od
+
+        return false
     si
 
     // An example declares its intended compile outcome with a scaffold
@@ -346,7 +378,7 @@ namespace ExampleTool is
             collected.region.hidden_before, collected.region.hidden_after,
             collected.region.hidden_gaps_after_line,
             collected.hovers, output, diagnostics, collected.semantic_tokens,
-            collected.inlay_hints, false
+            collected.inlay_hints, false, _runs_on_wasm(example_dir, name)
         )
         File.write_all_text(Path.combine(output_dir, "{name}.json"), json)
 

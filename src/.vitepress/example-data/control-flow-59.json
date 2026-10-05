@@ -1,6 +1,7 @@
 {
   "name": "control-flow-59",
   "snippet": false,
+  "wasm": true,
   "code": "let rows = [(\"apples\", 3), (\"pears\", 1), (\"plums\", 0)]\nlet wanted = \"pears\"\n\nfor row in rows do\n    // ~wanted matches where the first element equals the\n    // value wanted already holds; count binds as usual\n    if let (~wanted, count) = row then\n        write_line(\"found {count} {wanted}\")\n    fi\nod",
   "fullSource": "use IO.Std.write_line\n\nlet rows = [(\"apples\", 3), (\"pears\", 1), (\"plums\", 0)]\nlet wanted = \"pears\"\n\nfor row in rows do\n    // ~wanted matches where the first element equals the\n    // value wanted already holds; count binds as usual\n    if let (~wanted, count) = row then\n        write_line(\"found {count} {wanted}\")\n    fi\nod\n",
   "hiddenBefore": true,

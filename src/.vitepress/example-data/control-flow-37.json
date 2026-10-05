@@ -1,6 +1,7 @@
 {
   "name": "control-flow-37",
   "snippet": true,
+  "wasm": false,
   "code": "let reader mut: StreamReader\n\ntry\n    reader = StreamReader(\"file.txt\")\n    let content = reader.read_to_end()\n\n    write_line(content)\n\ncatch e: FileNotFoundException\n    // Handle the case where the file is not found\n    write_line(\"Error: file not found: {e.message}\")\ncatch e: IOException\n    // Handle errors during file reading\n    write_line(\"Error: reading file: {e.message}\")\nfinally\n    // Close the file and clean up resources\n    if reader? then\n        reader.close()\n    fi\n\n    write_line(\"File processing completed, file closed.\")\nyrt",
   "fullSource": "let reader mut: StreamReader\n\ntry\n    reader = StreamReader(\"file.txt\")\n    let content = reader.read_to_end()\n\n    write_line(content)\n\ncatch e: FileNotFoundException\n    // Handle the case where the file is not found\n    write_line(\"Error: file not found: {e.message}\")\ncatch e: IOException\n    // Handle errors during file reading\n    write_line(\"Error: reading file: {e.message}\")\nfinally\n    // Close the file and clean up resources\n    if reader? then\n        reader.close()\n    fi\n\n    write_line(\"File processing completed, file closed.\")\nyrt\n",
   "hiddenBefore": false,

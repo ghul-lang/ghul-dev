@@ -1,6 +1,7 @@
 {
   "name": "language-basics-34",
   "snippet": false,
+  "wasm": true,
   "code": "let xs = [10, 20, 30, 40, 50]\n\nwrite_line(xs[1..3] |> join())     // 20, 30\nwrite_line(xs[1..<1] |> join())    // up to one back from the end\nwrite_line(xs[1..<0] |> join())    // to the end\nwrite_line(xs[3..<<0] |> join())   // the last three\n\nwrite_line(\"hello, world\"[7..<0])      // a string gives back a string",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes.join\n\nlet xs = [10, 20, 30, 40, 50]\n\nwrite_line(xs[1..3] |> join())     // 20, 30\nwrite_line(xs[1..<1] |> join())    // up to one back from the end\nwrite_line(xs[1..<0] |> join())    // to the end\nwrite_line(xs[3..<<0] |> join())   // the last three\n\nwrite_line(\"hello, world\"[7..<0])      // a string gives back a string\n",
   "hiddenBefore": true,

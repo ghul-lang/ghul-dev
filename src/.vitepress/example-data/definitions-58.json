@@ -1,6 +1,7 @@
 {
   "name": "definitions-58",
   "snippet": false,
+  "wasm": true,
   "code": "struct MONEY(amount: int, currency: string)\n\nlet price = MONEY(10, \"EUR\")\n\nwrite_line(\"{price =~ MONEY(10, \"EUR\")} {price =~ MONEY(10, \"GBP\")}\")",
   "fullSource": "use IO.Std.write_line\n\nstruct MONEY(amount: int, currency: string)\n\nlet price = MONEY(10, \"EUR\")\n\nwrite_line(\"{price =~ MONEY(10, \"EUR\")} {price =~ MONEY(10, \"GBP\")}\")\n",
   "hiddenBefore": true,

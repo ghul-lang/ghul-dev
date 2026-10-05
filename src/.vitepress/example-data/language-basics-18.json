@@ -1,6 +1,7 @@
 {
   "name": "language-basics-18",
   "snippet": false,
+  "wasm": false,
   "code": "// rejected: a string? is not assignable to a string\nlet title: string = maybe",
   "fullSource": "// expect: error\nlookup() -> string? => null\n\nlet maybe = lookup()\n// rejected: a string? is not assignable to a string\nlet title: string = maybe\n",
   "hiddenBefore": true,

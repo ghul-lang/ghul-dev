@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-2",
   "snippet": false,
+  "wasm": true,
   "code": "day_kind(day: int) -> string =>\n    // days run Monday (0) to Sunday (6)\n    case day\n    when 5, 6 then \"weekend\"\n    else \"weekday\"\n    esac\n\nwrite_line(day_kind(5))\nwrite_line(day_kind(3))\nwrite_line(day_kind(6))",
   "fullSource": "use IO.Std.write_line\n\nday_kind(day: int) -> string =>\n    // days run Monday (0) to Sunday (6)\n    case day\n    when 5, 6 then \"weekend\"\n    else \"weekday\"\n    esac\n\nwrite_line(day_kind(5))\nwrite_line(day_kind(3))\nwrite_line(day_kind(6))\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "expressions-7",
   "snippet": false,
+  "wasm": false,
   "code": "let things = (\"thing\", 12.34)\n\nlet name = things.`0\nlet weight = things.`1",
   "fullSource": "let things = (\"thing\", 12.34)\n\nlet name = things.`0\nlet weight = things.`1\n",
   "hiddenBefore": false,

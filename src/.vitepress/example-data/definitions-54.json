@@ -1,6 +1,7 @@
 {
   "name": "definitions-54",
   "snippet": false,
+  "wasm": true,
   "code": "total_score(scores: int[]) -> int is\n    // a named function among the statements of a body:\n    bonus(score: int) -> int => if score > 90 then 5 else 0 fi\n\n    let total mut = 0\n\n    for score in scores do\n        total = total + score + bonus(score)\n    od\n\n    total\nsi",
   "fullSource": "use IO.Std.write_line\n\ntotal_score(scores: int[]) -> int is\n    // a named function among the statements of a body:\n    bonus(score: int) -> int => if score > 90 then 5 else 0 fi\n\n    let total mut = 0\n\n    for score in scores do\n        total = total + score + bonus(score)\n    od\n\n    total\nsi\n\nwrite_line(\"{total_score([95, 80, 91])}\")\n",
   "hiddenBefore": true,

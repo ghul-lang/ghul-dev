@@ -1,6 +1,7 @@
 {
   "name": "language-basics-24",
   "snippet": false,
+  "wasm": false,
   "code": "let add = 1 + 2\nlet sub = 3 - 1\nlet mul = 3 * 3\nlet div = 12 / 3\nlet mod = 13 % 4",
   "fullSource": "let add = 1 + 2\nlet sub = 3 - 1\nlet mul = 3 * 3\nlet div = 12 / 3\nlet mod = 13 % 4\n",
   "hiddenBefore": false,

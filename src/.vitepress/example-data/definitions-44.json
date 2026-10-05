@@ -1,6 +1,7 @@
 {
   "name": "definitions-44",
   "snippet": false,
+  "wasm": true,
   "code": "union List is\n    NIL\n    CONS(head: int, tail: List)\nsi\n\nimpl Printer for List is\n    print() -> string =>\n        if let (head, tail): CONS = self then \"{head} {tail.print()}\"\n        else \"nil\"\n        fi\nsi\n\nlet xs: Printer = List.CONS(1, List.CONS(2, List.NIL))\nwrite_line(xs.print())",
   "fullSource": "use IO.Std.write_line\n\ntrait Printer is\n    print() -> string\nsi\n\nunion List is\n    NIL\n    CONS(head: int, tail: List)\nsi\n\nimpl Printer for List is\n    print() -> string =>\n        if let (head, tail): CONS = self then \"{head} {tail.print()}\"\n        else \"nil\"\n        fi\nsi\n\nlet xs: Printer = List.CONS(1, List.CONS(2, List.NIL))\nwrite_line(xs.print())\n",
   "hiddenBefore": true,

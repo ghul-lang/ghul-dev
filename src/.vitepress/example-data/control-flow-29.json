@@ -1,6 +1,7 @@
 {
   "name": "control-flow-29",
   "snippet": true,
+  "wasm": false,
   "code": "do\n    // code to execute indefinitely\n    // break statement to exit loop\nod",
   "fullSource": "do\n    // code to execute indefinitely\n    // break statement to exit loop\nod\n",
   "hiddenBefore": false,

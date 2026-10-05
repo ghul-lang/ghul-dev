@@ -1,6 +1,7 @@
 {
   "name": "type-inference-9",
   "snippet": false,
+  "wasm": true,
   "code": "for i in 1::10 do\n    write_line(\"{i}\")\nod\n\nlet pairs = [(\"a\", 1), (\"b\", 2)]\n\nfor (name, count) in pairs do\n    write_line(\"{name}: {count}\")\nod",
   "fullSource": "use IO.Std.write_line\n\nfor i in 1::10 do\n    write_line(\"{i}\")\nod\n\nlet pairs = [(\"a\", 1), (\"b\", 2)]\n\nfor (name, count) in pairs do\n    write_line(\"{name}: {count}\")\nod\n",
   "hiddenBefore": true,

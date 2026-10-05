@@ -1,6 +1,7 @@
 {
   "name": "syntax-1",
   "snippet": false,
+  "wasm": true,
   "code": "if x > y then\n    write_line(\"x > y\")\nelse\n    write_line(\"x <= y\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nlet x = 3\nlet y = 7\n\nif x > y then\n    write_line(\"x > y\")\nelse\n    write_line(\"x <= y\")\nfi\n",
   "hiddenBefore": true,

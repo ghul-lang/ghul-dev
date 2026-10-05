@@ -1,6 +1,7 @@
 {
   "name": "control-flow-48",
   "snippet": false,
+  "wasm": false,
   "code": "sum_of_squares(xs: Collections.List[int]) -> Tasks.TASK[int] is\n    let total mut = 0\n\n    for x in xs do\n        let y = await fetch_async(x)\n        total = total + y\n    od\n\n    return total\nsi\n\nlet result = sum_of_squares([1, 2, 3, 4]).result\n\nwrite_line(\"sum_of_squares = {result}\")",
   "fullSource": "use IO.Std.write_line\n\nfetch_async(x: int) -> Tasks.TASK[int] => x * x\n\nsum_of_squares(xs: Collections.List[int]) -> Tasks.TASK[int] is\n    let total mut = 0\n\n    for x in xs do\n        let y = await fetch_async(x)\n        total = total + y\n    od\n\n    return total\nsi\n\nlet result = sum_of_squares([1, 2, 3, 4]).result\n\nwrite_line(\"sum_of_squares = {result}\")\n",
   "hiddenBefore": true,

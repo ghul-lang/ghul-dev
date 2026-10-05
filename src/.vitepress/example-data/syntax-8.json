@@ -1,6 +1,7 @@
 {
   "name": "syntax-8",
   "snippet": false,
+  "wasm": true,
   "code": "use IO.Std.write_line\nuse Ghul.Pipes\n\n/// Repeats `text`, putting `separator` between the copies.\n///\n/// - text: the string to repeat\n/// - times: how many copies to make\n/// - separator: placed between adjacent copies, not at either end\nrepeat_with(text: string, times: int, separator: string) -> string =>\n    string.join(separator, repeat(text, times))\n\nwrite_line(repeat_with(\"ab\", 3, \"-\"))",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\n/// Repeats `text`, putting `separator` between the copies.\n///\n/// - text: the string to repeat\n/// - times: how many copies to make\n/// - separator: placed between adjacent copies, not at either end\nrepeat_with(text: string, times: int, separator: string) -> string =>\n    string.join(separator, repeat(text, times))\n\nwrite_line(repeat_with(\"ab\", 3, \"-\"))\n",
   "hiddenBefore": false,

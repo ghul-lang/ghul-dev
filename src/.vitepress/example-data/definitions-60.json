@@ -1,6 +1,7 @@
 {
   "name": "definitions-60",
   "snippet": false,
+  "wasm": true,
   "code": "⊕(a: N, b: N) -> N => N(a.v + b.v)\n⊗(a: N, b: N) -> N => N(a.v * b.v)\n\n// ⊗ binds tighter than ⊕, as * binds tighter than +\nwrite_line(\"{N(1) ⊕ N(2) ⊗ N(3)}\")",
   "fullSource": "use IO.Std.write_line\n\nstruct N(v: int) is\n    to_string() -> string => \"{v}\"\nsi\n\n⊕(a: N, b: N) -> N => N(a.v + b.v)\n⊗(a: N, b: N) -> N => N(a.v * b.v)\n\n// ⊗ binds tighter than ⊕, as * binds tighter than +\nwrite_line(\"{N(1) ⊕ N(2) ⊗ N(3)}\")\n",
   "hiddenBefore": true,

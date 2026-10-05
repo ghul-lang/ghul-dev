@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-36",
   "snippet": false,
+  "wasm": true,
   "code": "// each yield hands the consumer one element\ncountdown(start: int) -> int{} is\n    let n mut = start\n\n    while n > 0 do\n        yield n\n        n = n - 1\n    od\nsi\n\n// yield in hands over every element of another sequence\nin_order(tree: Tree) -> int{} is\n    if let (left, value, right): NODE = tree then\n        yield in in_order(left)\n        yield value\n        yield in in_order(right)\n    fi\nsi\n\nwrite_line(\"countdown: {countdown(5)}\")\n\nlet tree = NODE(NODE(LEAF, 1, LEAF), 2, NODE(LEAF, 3, LEAF))\nwrite_line(\"in order, times ten: {in_order(tree) |> map(x => x * 10)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nunion Tree is\n    NODE(left: Tree, value: int, right: Tree)\n    LEAF\nsi\n\nuse Tree.NODE\nuse Tree.LEAF\n\n// each yield hands the consumer one element\ncountdown(start: int) -> int{} is\n    let n mut = start\n\n    while n > 0 do\n        yield n\n        n = n - 1\n    od\nsi\n\n// yield in hands over every element of another sequence\nin_order(tree: Tree) -> int{} is\n    if let (left, value, right): NODE = tree then\n        yield in in_order(left)\n        yield value\n        yield in in_order(right)\n    fi\nsi\n\nwrite_line(\"countdown: {countdown(5)}\")\n\nlet tree = NODE(NODE(LEAF, 1, LEAF), 2, NODE(LEAF, 3, LEAF))\nwrite_line(\"in order, times ten: {in_order(tree) |> map(x => x * 10)}\")\n",
   "hiddenBefore": true,

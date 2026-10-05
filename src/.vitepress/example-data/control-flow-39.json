@@ -1,6 +1,7 @@
 {
   "name": "control-flow-39",
   "snippet": true,
+  "wasm": false,
   "code": "try\n    let content = File.read_all_text(\"file.txt\")\n    write_line(content)\n\n    write_line(\"File processing completed.\")\ncatch e: FileNotFoundException\n    // Handle the case where the file is not found\n    write_line(\"Error: file not found: {e.message}\")\ncatch e: IOException\n    // Handle errors during file reading\n    write_line(\"Error: reading file: {e.message}\")\nyrt",
   "fullSource": "try\n    let content = File.read_all_text(\"file.txt\")\n    write_line(content)\n\n    write_line(\"File processing completed.\")\ncatch e: FileNotFoundException\n    // Handle the case where the file is not found\n    write_line(\"Error: file not found: {e.message}\")\ncatch e: IOException\n    // Handle errors during file reading\n    write_line(\"Error: reading file: {e.message}\")\nyrt\n",
   "hiddenBefore": false,

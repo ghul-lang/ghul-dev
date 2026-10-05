@@ -1,6 +1,7 @@
 {
   "name": "type-inference-2",
   "snippet": false,
+  "wasm": false,
   "code": "class COUNTER is\n    count: int // a property - its type is declared\n\n    init() is\n        count = 0\n    si\n\n    tick() is\n        // a local - its type is inferred from the\n        // initializer\n        let step = 1\n        count = count + step\n    si\nsi",
   "fullSource": "class COUNTER is\n    count: int // a property - its type is declared\n\n    init() is\n        count = 0\n    si\n\n    tick() is\n        // a local - its type is inferred from the\n        // initializer\n        let step = 1\n        count = count + step\n    si\nsi\n\nCOUNTER().tick()\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-27",
   "snippet": false,
+  "wasm": true,
   "code": "let i mut = 0\nlet j = 10\nlet s mut = \"Hello\"\n\ni = i + j\ns = \"{s} World!\"\n\nthing.property = i + j\n\nwrite_line(\"i = {i}, s = {s}, thing.property = {thing.property}\")",
   "fullSource": "use IO.Std.write_line\n\nclass BOX is\n    property: int public\n\n    init() is si\nsi\n\nlet thing = BOX()\nlet i mut = 0\nlet j = 10\nlet s mut = \"Hello\"\n\ni = i + j\ns = \"{s} World!\"\n\nthing.property = i + j\n\nwrite_line(\"i = {i}, s = {s}, thing.property = {thing.property}\")\n",
   "hiddenBefore": true,

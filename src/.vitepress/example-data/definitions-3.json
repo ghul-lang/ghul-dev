@@ -1,6 +1,7 @@
 {
   "name": "definitions-3",
   "snippet": false,
+  "wasm": false,
   "code": "let o: object = \"a string\"",
   "fullSource": "let o: object = \"a string\"\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-19",
   "snippet": false,
+  "wasm": false,
   "code": "let leaf1 = Tree.LEAF(123)\nlet leaf2 = Tree.LEAF(123)\nlet leaf3 = Tree.LEAF(456)\n\nassert leaf1 =~ leaf2\nassert !(leaf1 =~ leaf3)",
   "fullSource": "union Tree is\n    NODE(left: Tree, right: Tree)\n    LEAF(value: int)\nsi\n\nlet leaf1 = Tree.LEAF(123)\nlet leaf2 = Tree.LEAF(123)\nlet leaf3 = Tree.LEAF(456)\n\nassert leaf1 =~ leaf2\nassert !(leaf1 =~ leaf3)\n",
   "hiddenBefore": true,

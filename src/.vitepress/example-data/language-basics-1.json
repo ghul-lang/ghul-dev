@@ -1,6 +1,7 @@
 {
   "name": "language-basics-1",
   "snippet": false,
+  "wasm": true,
   "code": "let my_variable = 42\n\nprint_something(thing: string) is\n    write_line(\"The thing is: {thing}\")\nsi\n\nprint_something(\"a hello\")\n\nclass PERSON is\n    name: string\n    age: int\nsi",
   "fullSource": "use IO.Std.write_line\n\nlet my_variable = 42\n\nprint_something(thing: string) is\n    write_line(\"The thing is: {thing}\")\nsi\n\nprint_something(\"a hello\")\n\nclass PERSON is\n    name: string\n    age: int\nsi\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-flat_map-function",
   "snippet": false,
+  "wasm": false,
   "code": "flat_map[T..,U](\n    source: Iterable[T],\n    mapper: T.. -> Iterable[U] pure\n) -> Iterable[U] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nflat_map[T..,U](\n    source: Iterable[T],\n    mapper: T.. -> Iterable[U] pure\n) -> Iterable[U] pure\n\nentry() is si\n",
   "hiddenBefore": true,

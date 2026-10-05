@@ -1,6 +1,7 @@
 {
   "name": "control-flow-42",
   "snippet": true,
+  "wasm": false,
   "code": "read_file(path: string) -> string is\n    let reader = StreamReader(path)\n\n    try\n        return reader.read_to_end()\n    finally\n        reader.close() // runs before the function returns\n    yrt\nsi",
   "fullSource": "read_file(path: string) -> string is\n    let reader = StreamReader(path)\n\n    try\n        return reader.read_to_end()\n    finally\n        reader.close() // runs before the function returns\n    yrt\nsi\n",
   "hiddenBefore": false,

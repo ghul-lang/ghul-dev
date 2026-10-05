@@ -1,6 +1,7 @@
 {
   "name": "definitions-2",
   "snippet": false,
+  "wasm": false,
   "code": "let x: int = 42",
   "fullSource": "let x: int = 42\n",
   "hiddenBefore": false,

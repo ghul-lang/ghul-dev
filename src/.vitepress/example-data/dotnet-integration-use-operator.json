@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-use-operator",
   "snippet": false,
+  "wasm": false,
   "code": "let length = (let use scope = SCOPE(\"second\") in scope.read().length)\n\nwrite_line(\"length {length}\")",
   "fullSource": "use IO.Std.write_line\n\nclass SCOPE(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\n\n    read() -> string => \"read from {name}\"\nsi\n\nlet length = (let use scope = SCOPE(\"second\") in scope.read().length)\n\nwrite_line(\"length {length}\")\n",
   "hiddenBefore": true,

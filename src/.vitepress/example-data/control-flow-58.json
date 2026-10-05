@@ -1,6 +1,7 @@
 {
   "name": "control-flow-58",
   "snippet": false,
+  "wasm": true,
   "code": "if let order.customer then\n    write_line(customer.name)\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass CUSTOMER is\n    name: string\n    init(name: string) is self.name = name; si\nsi\n\nclass ORDER is\n    customer: CUSTOMER?\n    init(customer: CUSTOMER?) is self.customer = customer; si\nsi\n\nlet order = ORDER(CUSTOMER(\"mimi\"))\nif let order.customer then\n    write_line(customer.name)\nfi\n",
   "hiddenBefore": true,

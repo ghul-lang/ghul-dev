@@ -1,6 +1,7 @@
 {
   "name": "type-inference-4",
   "snippet": false,
+  "wasm": true,
   "code": "class CARRIER(occupant: Animal)\ndescribe(carrier: CARRIER) is\n    if isa CAT(carrier.occupant) then\n        // carrier.occupant is a CAT within this branch,\n        // so its purr() is reachable directly\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(CARRIER(CAT()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(): Animal is\n    purr() -> string => \"purr\"\nsi\n\nclass CARRIER(occupant: Animal)\ndescribe(carrier: CARRIER) is\n    if isa CAT(carrier.occupant) then\n        // carrier.occupant is a CAT within this branch,\n        // so its purr() is reachable directly\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(CARRIER(CAT()))\n",
   "hiddenBefore": true,

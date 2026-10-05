@@ -1,6 +1,7 @@
 {
   "name": "definitions-23",
   "snippet": false,
+  "wasm": false,
   "code": "class COUNTER is\n    count: int\n\n    init() is\n        count = 0\n    si\n\n    init(initial_count: int) is\n        count = initial_count\n    si\nsi\n// calls the parameterless overload of init()\nlet c = COUNTER()\n\n// calls init(initial_count: int)\nlet d = COUNTER(50)",
   "fullSource": "class COUNTER is\n    count: int\n\n    init() is\n        count = 0\n    si\n\n    init(initial_count: int) is\n        count = initial_count\n    si\nsi\n\n// calls the parameterless overload of init()\nlet c = COUNTER()\n\n// calls init(initial_count: int)\nlet d = COUNTER(50)\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-method-impl",
   "snippet": false,
+  "wasm": false,
   "code": "class TIMING is\n    @System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.NO_INLINING)\n    measured(x: int) -> int static => x + 1\nsi\n\nlet method = (typeof TIMING).get_method(\"measured\")!\n\nwrite_line(\"{TIMING.measured(41)}\")\nwrite_line(\"{method.get_method_implementation_flags()}\")",
   "fullSource": "use IO.Std.write_line\nuse System.Runtime.CompilerServices.MethodImplOptions\n\nclass TIMING is\n    @System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.NO_INLINING)\n    measured(x: int) -> int static => x + 1\nsi\n\nlet method = (typeof TIMING).get_method(\"measured\")!\n\nwrite_line(\"{TIMING.measured(41)}\")\nwrite_line(\"{method.get_method_implementation_flags()}\")\n",
   "hiddenBefore": true,

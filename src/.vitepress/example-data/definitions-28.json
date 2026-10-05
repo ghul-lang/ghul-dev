@@ -1,6 +1,7 @@
 {
   "name": "definitions-28",
   "snippet": false,
+  "wasm": false,
   "code": "// class TEST can implement the Test trait without having\n// to qualify the name Test:\nclass TEST: Test is\n    run() is si\nsi",
   "fullSource": "namespace Example is\n    trait Test is\n        run()\n    si\n\n    // class TEST can implement the Test trait without having\n    // to qualify the name Test:\n    class TEST: Test is\n        run() is si\n    si\nsi\n\nnamespace Demo is\n    entry() is si\nsi\n",
   "hiddenBefore": true,

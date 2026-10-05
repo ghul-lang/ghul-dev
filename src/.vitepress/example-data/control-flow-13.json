@@ -1,6 +1,7 @@
 {
   "name": "control-flow-13",
   "snippet": false,
+  "wasm": true,
   "code": "if let c: CAT = a then\n    // c has type CAT here; it is not in scope in\n    // the else branch, or after the fi\n    write_line(c.purr())\nelse\n    write_line(\"not a cat\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet a: Animal = CAT(\"whiskers\")\nif let c: CAT = a then\n    // c has type CAT here; it is not in scope in\n    // the else branch, or after the fi\n    write_line(c.purr())\nelse\n    write_line(\"not a cat\")\nfi\n",
   "hiddenBefore": true,

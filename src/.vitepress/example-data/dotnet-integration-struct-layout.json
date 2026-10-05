@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-struct-layout",
   "snippet": false,
+  "wasm": false,
   "code": "@System.Runtime.InteropServices.StructLayout(LayoutKind.EXPLICIT)\nstruct WORD_BYTES is\n    @System.Runtime.InteropServices.FieldOffset(0)\n    word: ushort field\n\n    @System.Runtime.InteropServices.FieldOffset(0)\n    low: ubyte field\n\n    init(value: ushort) is\n        word = value\n    si\nsi\n\nlet bytes = WORD_BYTES(0x1234us)\n\nwrite_line(\"{bytes.low:X2}\")",
   "fullSource": "use IO.Std.write_line\nuse System.Runtime.InteropServices.LayoutKind\n\n@System.Runtime.InteropServices.StructLayout(LayoutKind.EXPLICIT)\nstruct WORD_BYTES is\n    @System.Runtime.InteropServices.FieldOffset(0)\n    word: ushort field\n\n    @System.Runtime.InteropServices.FieldOffset(0)\n    low: ubyte field\n\n    init(value: ushort) is\n        word = value\n    si\nsi\n\nlet bytes = WORD_BYTES(0x1234us)\n\nwrite_line(\"{bytes.low:X2}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-41",
   "snippet": false,
+  "wasm": true,
   "code": "let c = Color.RED                   // unit variant, referenced without parentheses\nwrite_line(\"red: {c =~ Color.RED}\") // true\n\nlet r = lookup()\nwrite_line(\"present: {r?}\")         // true - r holds the default OK variant\nwrite_line(\"value: {r!}\")           // 42 - unwraps the OK payload",
   "fullSource": "use IO.Std.write_line\n\nunion Color is\n    RED\n    GREEN\n    BLUE\nsi\n\nunion Result[T, E] is\n    OK(value: T) default\n    ERROR(error: E)\nsi\n\nlookup() -> Result[int, string] => Result.OK(42)\n\nlet c = Color.RED                   // unit variant, referenced without parentheses\nwrite_line(\"red: {c =~ Color.RED}\") // true\n\nlet r = lookup()\nwrite_line(\"present: {r?}\")         // true - r holds the default OK variant\nwrite_line(\"value: {r!}\")           // 42 - unwraps the OK payload\n",
   "hiddenBefore": true,

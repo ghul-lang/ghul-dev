@@ -38,3 +38,11 @@ file.
 npm run pull-examples                  # the index ghul-examples publishes
 npm run pull-examples -- index.json    # an index generated locally
 ```
+
+## wasm-examples.sh, mark-wasm-examples.mjs, wasm-examples.test.mjs
+
+Which examples run on WebAssembly, and the `"wasm"` flag the example data
+carries for the embedded editor. `wasm-examples.sh` builds and runs each example
+test for `--target wasm` and writes `example-tests/wasm-capable.txt`;
+`mark-wasm-examples.mjs` records the list in the example data; the test checks
+that the two agree. See "running on WebAssembly" in `example-tests/README.md`.

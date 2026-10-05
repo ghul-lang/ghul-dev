@@ -1,6 +1,7 @@
 {
   "name": "control-flow-4",
   "snippet": true,
+  "wasm": false,
   "code": "if condition then\n    // code to execute if condition is true\nelse\n    // code to execute if condition is false\nfi",
   "fullSource": "if condition then\n    // code to execute if condition is true\nelse\n    // code to execute if condition is false\nfi\n",
   "hiddenBefore": false,

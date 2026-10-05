@@ -1,6 +1,7 @@
 {
   "name": "pipes-sum_by-last",
   "snippet": false,
+  "wasm": false,
   "code": "let words = [\"pipe\", \"stage\", \"terminal\"]\n\n// sum_by totals what the function returns for each element\nwrite_line(\"letters: {words |> sum_by(w => w.length)}\")\n\n// last is absent when the source is empty\nwrite_line(\"last:    {words |> last() ?? \"none\"}\")\nwrite_line(\"long:    {words |> filter(w => w.length > 10) |> last() ?? \"none\"}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet words = [\"pipe\", \"stage\", \"terminal\"]\n\n// sum_by totals what the function returns for each element\nwrite_line(\"letters: {words |> sum_by(w => w.length)}\")\n\n// last is absent when the source is empty\nwrite_line(\"last:    {words |> last() ?? \"none\"}\")\nwrite_line(\"long:    {words |> filter(w => w.length > 10) |> last() ?? \"none\"}\")\n",
   "hiddenBefore": true,

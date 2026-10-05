@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-find_or_throw-function",
   "snippet": false,
+  "wasm": false,
   "code": "find_or_throw[T](\n    source: Iterable[T],\n    predicate: T -> bool pure\n) -> T pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nfind_or_throw[T](\n    source: Iterable[T],\n    predicate: T -> bool pure\n) -> T pure\n\nentry() is si\n",
   "hiddenBefore": true,

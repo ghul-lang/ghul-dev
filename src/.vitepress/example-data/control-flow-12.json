@@ -1,6 +1,7 @@
 {
   "name": "control-flow-12",
   "snippet": false,
+  "wasm": true,
   "code": "let c = cast CAT?(a)\n\nif c? then\n    write_line(c.purr())\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet a: Animal = CAT(\"whiskers\")\nlet c = cast CAT?(a)\n\nif c? then\n    write_line(c.purr())\nfi\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-30",
   "snippet": false,
+  "wasm": true,
   "code": "let pulled mut = 0\n\nlet counted = (n: int) -> void is pulled = pulled + 1 si\nlet slow = from(1) |> take(3) |> peek(counted)\n\n// memo pulls its source once and replays what it cached\nlet cached = slow |> memo()\n\nwrite_line(\"first pass: {cached}\")\nwrite_line(\"second pass: {cached}\")\nwrite_line(\"elements pulled from the source: {pulled}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet pulled mut = 0\n\nlet counted = (n: int) -> void is pulled = pulled + 1 si\nlet slow = from(1) |> take(3) |> peek(counted)\n\n// memo pulls its source once and replays what it cached\nlet cached = slow |> memo()\n\nwrite_line(\"first pass: {cached}\")\nwrite_line(\"second pass: {cached}\")\nwrite_line(\"elements pulled from the source: {pulled}\")\n",
   "hiddenBefore": true,

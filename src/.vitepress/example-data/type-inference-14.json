@@ -1,6 +1,7 @@
 {
   "name": "type-inference-14",
   "snippet": false,
+  "wasm": false,
   "code": "class BASE()\n\nclass DERIVED(): BASE\n\ndo_something[T](a: T, b: T) -> T => a\nlet base = do_something(BASE(), DERIVED())\nlet derived = do_something(DERIVED(), DERIVED())\nlet obj = do_something(object(), DERIVED())",
   "fullSource": "class BASE()\n\nclass DERIVED(): BASE\n\ndo_something[T](a: T, b: T) -> T => a\nlet base = do_something(BASE(), DERIVED())\nlet derived = do_something(DERIVED(), DERIVED())\nlet obj = do_something(object(), DERIVED())\n",
   "hiddenBefore": false,

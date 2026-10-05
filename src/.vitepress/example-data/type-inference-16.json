@@ -1,6 +1,7 @@
 {
   "name": "type-inference-16",
   "snippet": false,
+  "wasm": false,
   "code": "[1, 2, 2, 4, 5] |> filter(i => i > 3)",
   "fullSource": "use Ghul.Pipes\n\n[1, 2, 2, 4, 5] |> filter(i => i > 3)\n",
   "hiddenBefore": true,

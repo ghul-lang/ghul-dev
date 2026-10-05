@@ -1,6 +1,7 @@
 {
   "name": "definitions-49",
   "snippet": false,
+  "wasm": false,
   "code": "class LABEL is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi",
   "fullSource": "// expect: warning\nclass LABEL is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi\n",
   "hiddenBefore": true,

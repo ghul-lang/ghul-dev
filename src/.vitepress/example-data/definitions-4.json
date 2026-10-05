@@ -1,6 +1,7 @@
 {
   "name": "definitions-4",
   "snippet": false,
+  "wasm": false,
   "code": "let\n    an_inferred_int = 123,\n    an_explicit_int: int = 456,\n    a_string = \"hello\"",
   "fullSource": "let\n    an_inferred_int = 123,\n    an_explicit_int: int = 456,\n    a_string = \"hello\"\n",
   "hiddenBefore": false,

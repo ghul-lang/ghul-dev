@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-2",
   "snippet": false,
+  "wasm": true,
   "code": "let numbers = [1, 2, 3, 4, 5]\n\n// map\nlet doubled = numbers |> map(x => x * 2)\nwrite_line(\"doubled: {doubled}\")\n\n// filter\nlet evens = numbers |> filter(x => x % 2 == 0)\nwrite_line(\"evens: {evens}\")\n\n// reduce\nlet sum = numbers |> reduce(0, (acc, x) => acc + x)\nwrite_line(\"sum: {sum}\")\n\n// the source is left as it was\nwrite_line(\"numbers: {numbers}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet numbers = [1, 2, 3, 4, 5]\n\n// map\nlet doubled = numbers |> map(x => x * 2)\nwrite_line(\"doubled: {doubled}\")\n\n// filter\nlet evens = numbers |> filter(x => x % 2 == 0)\nwrite_line(\"evens: {evens}\")\n\n// reduce\nlet sum = numbers |> reduce(0, (acc, x) => acc + x)\nwrite_line(\"sum: {sum}\")\n\n// the source is left as it was\nwrite_line(\"numbers: {numbers}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "control-flow-41",
   "snippet": true,
+  "wasm": false,
   "code": "let reader mut: StreamReader\n\ntry\n    reader = StreamReader(\"file.txt\")\n\n    let content = reader.read_to_end()\n    write_line(content)\n\n    write_line(\"File processing completed.\")\n\nfinally\n    if reader? then\n        reader.close()\n    fi\n\n    // Any exceptions will be thrown to the calling code\nyrt",
   "fullSource": "let reader mut: StreamReader\n\ntry\n    reader = StreamReader(\"file.txt\")\n\n    let content = reader.read_to_end()\n    write_line(content)\n\n    write_line(\"File processing completed.\")\n\nfinally\n    if reader? then\n        reader.close()\n    fi\n\n    // Any exceptions will be thrown to the calling code\nyrt\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-1",
   "snippet": false,
+  "wasm": true,
   "code": "sign(n: int) -> string =>\n    if n < 0 then \"negative\"\n    elif n == 0 then \"zero\"\n    else \"positive\"\n    fi\n\nwrite_line(sign(-4))\nwrite_line(sign(0))\nwrite_line(sign(7))",
   "fullSource": "use IO.Std.write_line\n\nsign(n: int) -> string =>\n    if n < 0 then \"negative\"\n    elif n == 0 then \"zero\"\n    else \"positive\"\n    fi\n\nwrite_line(sign(-4))\nwrite_line(sign(0))\nwrite_line(sign(7))\n",
   "hiddenBefore": true,

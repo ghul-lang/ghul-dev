@@ -1,6 +1,7 @@
 {
   "name": "generics-10",
   "snippet": false,
+  "wasm": false,
   "code": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass CAT: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\n// T is bounded by Animal, so a T value narrows through Animal with isa\ndescribe[T: Animal](x: T) -> string =>\n    if isa CAT(x) then x.purr()\n    else x.name()\n    fi\n\nwrite_line(describe(CAT()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass CAT: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\n// T is bounded by Animal, so a T value narrows through Animal with isa\ndescribe[T: Animal](x: T) -> string =>\n    if isa CAT(x) then x.purr()\n    else x.name()\n    fi\n\nwrite_line(describe(CAT()))\n",
   "hiddenBefore": false,

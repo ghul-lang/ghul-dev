@@ -1,6 +1,7 @@
 {
   "name": "definitions-33",
   "snippet": false,
+  "wasm": false,
   "code": "namespace UseExample is\n    use Example\n\n    class ANOTHER_TEST: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YET_ANOTHER_TEST: Example.Test is\n        run() is si\n    si\nsi",
   "fullSource": "namespace Example is\n    trait Test is\n        run()\n    si\nsi\n\nnamespace UseExample is\n    use Example\n\n    class ANOTHER_TEST: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YET_ANOTHER_TEST: Example.Test is\n        run() is si\n    si\nsi\n\nnamespace Demo is\n    entry() is si\nsi\n",
   "hiddenBefore": true,

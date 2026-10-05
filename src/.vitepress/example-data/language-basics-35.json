@@ -1,6 +1,7 @@
 {
   "name": "language-basics-35",
   "snippet": false,
+  "wasm": false,
   "code": "write_line(\"{a =~ b}\")    // true: compares element by element\n\nwrite_line(\"{a == b}\")    // rejected: == is not defined on tuples",
   "fullSource": "// expect: error\nuse IO.Std.write_line\n\nlet a = (1, \"one\")\nlet b = (1, \"one\")\n\nwrite_line(\"{a =~ b}\")    // true: compares element by element\n\nwrite_line(\"{a == b}\")    // rejected: == is not defined on tuples\n",
   "hiddenBefore": true,

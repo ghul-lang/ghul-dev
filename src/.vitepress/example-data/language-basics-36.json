@@ -1,6 +1,7 @@
 {
   "name": "language-basics-36",
   "snippet": false,
+  "wasm": true,
   "code": "let low_bits = 0x0F\n\nwrite_line(\"{\\low_bits}\")       // every bit flipped: -16\nwrite_line(\"{\\low_bits & 0xFF}\")  // 240",
   "fullSource": "use IO.Std.write_line\n\nlet low_bits = 0x0F\n\nwrite_line(\"{\\low_bits}\")       // every bit flipped: -16\nwrite_line(\"{\\low_bits & 0xFF}\")  // 240\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-15",
   "snippet": false,
+  "wasm": false,
   "code": "let name: string? = \"Alice\" // present\nlet nickname: string? = null // absent",
   "fullSource": "let name: string? = \"Alice\" // present\nlet nickname: string? = null // absent\n",
   "hiddenBefore": false,

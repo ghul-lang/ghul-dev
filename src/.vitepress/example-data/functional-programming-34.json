@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-34",
   "snippet": false,
+  "wasm": true,
   "code": "// braces make a pipe, so the source can be one that never ends\nlet primes = {n for n in from(2) if is_prime(n)}\n\nwrite_line(\"first ten primes: {primes |> take(10)}\")\n\n// reading it again runs the clauses again\nwrite_line(\"first three: {primes |> take(3)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nis_prime(n: int) -> bool =>\n    n > 1 /\\ !(2::n - 1 |> any(d => d * d <= n /\\ n % d == 0))\n\n// braces make a pipe, so the source can be one that never ends\nlet primes = {n for n in from(2) if is_prime(n)}\n\nwrite_line(\"first ten primes: {primes |> take(10)}\")\n\n// reading it again runs the clauses again\nwrite_line(\"first three: {primes |> take(3)}\")\n",
   "hiddenBefore": true,

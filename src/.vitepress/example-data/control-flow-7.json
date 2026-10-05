@@ -1,6 +1,7 @@
 {
   "name": "control-flow-7",
   "snippet": false,
+  "wasm": true,
   "code": "let list = [1, 2, 3, 4]\n\nif list.count == 0 then\n    write_line(\"list is empty\")\nfi\n\nif list.count > 0 then\n    write_line(\"list is not empty\")\nelse\n    write_line(\"list is empty\")\nfi\n\nif list.count > 10 then\n    write_line(\"list has lots of elements\")\nelif list.count > 5 then\n    write_line(\"list has some elements\")\nelif list.count > 0 then\n    write_line(\"list has a few elements\")\nelse\n    write_line(\"list is empty\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nlet list = [1, 2, 3, 4]\n\nif list.count == 0 then\n    write_line(\"list is empty\")\nfi\n\nif list.count > 0 then\n    write_line(\"list is not empty\")\nelse\n    write_line(\"list is empty\")\nfi\n\nif list.count > 10 then\n    write_line(\"list has lots of elements\")\nelif list.count > 5 then\n    write_line(\"list has some elements\")\nelif list.count > 0 then\n    write_line(\"list has a few elements\")\nelse\n    write_line(\"list is empty\")\nfi\n",
   "hiddenBefore": true,

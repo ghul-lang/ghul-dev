@@ -1,6 +1,7 @@
 {
   "name": "definitions-43",
   "snippet": false,
+  "wasm": true,
   "code": "union Shape is\n    CIRCLE(radius: int)\n    SQUARE(side: int)\nsi\n\npartial Shape is\n    describe() -> string =>\n        case self\n        when c: CIRCLE then \"circle r={c.radius}\"\n        when s: SQUARE then \"square s={s.side}\"\n        esac\nsi\n\nlet s: Shape = Shape.SQUARE(4)\nwrite_line(s.describe())",
   "fullSource": "use IO.Std.write_line\n\nunion Shape is\n    CIRCLE(radius: int)\n    SQUARE(side: int)\nsi\n\npartial Shape is\n    describe() -> string =>\n        case self\n        when c: CIRCLE then \"circle r={c.radius}\"\n        when s: SQUARE then \"square s={s.side}\"\n        esac\nsi\n\nlet s: Shape = Shape.SQUARE(4)\nwrite_line(s.describe())\n",
   "hiddenBefore": true,

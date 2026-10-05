@@ -1,6 +1,7 @@
 {
   "name": "expressions-24",
   "snippet": false,
+  "wasm": false,
   "code": "let a = _[int]   // 0\nlet b: string? = _   // null\nzero[T]() -> T => _",
   "fullSource": "let a = _[int]   // 0\nlet b: string? = _   // null\n\nzero[T]() -> T => _\n",
   "hiddenBefore": false,

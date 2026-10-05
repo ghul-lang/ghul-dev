@@ -1,6 +1,7 @@
 {
   "name": "definitions-53",
   "snippet": false,
+  "wasm": true,
   "code": "class RECTANGLE(width: int, height: int) is\n    // a method body ends the same way a function body does\n    area() -> int is\n        width * height\n    si\n\n    // return works in a body as well as a tail does\n    describe() -> string is\n        let label = \"{width}x{height}\"\n\n        return \"{label} = {area()}\"\n    si\nsi",
   "fullSource": "use IO.Std.write_line\n\nclass RECTANGLE(width: int, height: int) is\n    // a method body ends the same way a function body does\n    area() -> int is\n        width * height\n    si\n\n    // return works in a body as well as a tail does\n    describe() -> string is\n        let label = \"{width}x{height}\"\n\n        return \"{label} = {area()}\"\n    si\nsi\n\nwrite_line(RECTANGLE(3, 4).describe())\n",
   "hiddenBefore": true,

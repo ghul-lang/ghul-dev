@@ -1,6 +1,7 @@
 {
   "name": "language-basics-25",
   "snippet": false,
+  "wasm": false,
   "code": "let gt = 3 > 1 // true\nlet gte = 4 >= 4 // true\nlet lt = 3 < 1 // false\nlet lte = 4 <= 4 // true\nlet eq = 1 == 2 // false\nlet neq = 1 != 2 // true",
   "fullSource": "let gt = 3 > 1 // true\nlet gte = 4 >= 4 // true\nlet lt = 3 < 1 // false\nlet lte = 4 <= 4 // true\nlet eq = 1 == 2 // false\nlet neq = 1 != 2 // true\n",
   "hiddenBefore": false,

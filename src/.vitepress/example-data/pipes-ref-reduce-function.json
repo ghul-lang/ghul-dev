@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-reduce-function",
   "snippet": false,
+  "wasm": false,
   "code": "reduce[T..,TRunning](\n    source: Iterable[T],\n    seed: TRunning,\n    accumulator: (TRunning,T..) -> TRunning pure\n) -> TRunning pure\n\nreduce[T..,TRunning,TOut](\n    source: Iterable[T],\n    seed: TRunning,\n    accumulator: (TRunning,T..) -> TRunning pure,\n    mapper: (TRunning) -> TOut pure\n) -> TOut pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nreduce[T..,TRunning](\n    source: Iterable[T],\n    seed: TRunning,\n    accumulator: (TRunning,T..) -> TRunning pure\n) -> TRunning pure\n\nreduce[T..,TRunning,TOut](\n    source: Iterable[T],\n    seed: TRunning,\n    accumulator: (TRunning,T..) -> TRunning pure,\n    mapper: (TRunning) -> TOut pure\n) -> TOut pure\n\nentry() is si\n",
   "hiddenBefore": true,

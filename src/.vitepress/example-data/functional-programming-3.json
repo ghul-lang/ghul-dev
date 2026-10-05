@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-3",
   "snippet": false,
+  "wasm": false,
   "code": "// factorial\nlet factorial = n rec =>\n    if n == 0 then 1 else n * rec(n - 1) fi\nwrite_line(\"factorial(5): {factorial(5)}\")\n\n// fibonacci\nlet fibonacci = n rec =>\n    if n <= 1 then n else rec(n - 1) + rec(n - 2) fi\nwrite_line(\"fibonacci(10): {fibonacci(10)}\")",
   "fullSource": "use IO.Std.write_line\n\n// factorial\nlet factorial = n rec =>\n    if n == 0 then 1 else n * rec(n - 1) fi\nwrite_line(\"factorial(5): {factorial(5)}\")\n\n// fibonacci\nlet fibonacci = n rec =>\n    if n <= 1 then n else rec(n - 1) + rec(n - 2) fi\nwrite_line(\"fibonacci(10): {fibonacci(10)}\")\n",
   "hiddenBefore": true,

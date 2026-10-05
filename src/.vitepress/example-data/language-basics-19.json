@@ -1,6 +1,7 @@
 {
   "name": "language-basics-19",
   "snippet": false,
+  "wasm": true,
   "code": "if maybe? then\n    let narrowed: string = maybe // narrowed to string here\n    write_line(narrowed)\nfi\n\nlet forced: string = maybe!            // asserts present, throws if absent\nlet safe: string = maybe ?? \"fallback\" // falls back when absent",
   "fullSource": "use IO.Std.write_line\n\nlookup() -> string? => \"found\"\n\nlet maybe = lookup()\nif maybe? then\n    let narrowed: string = maybe // narrowed to string here\n    write_line(narrowed)\nfi\n\nlet forced: string = maybe!            // asserts present, throws if absent\nlet safe: string = maybe ?? \"fallback\" // falls back when absent\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "control-flow-23",
   "snippet": false,
+  "wasm": true,
   "code": "// i not in scope here\n// i defined here\nfor i in [1, 2, 3, 4, 5] do\n    // i in scope here:\n    write_line(i)\nod",
   "fullSource": "use IO.Std.write_line\n\n// i not in scope here\n// i defined here\nfor i in [1, 2, 3, 4, 5] do\n    // i in scope here:\n    write_line(i)\nod\n",
   "hiddenBefore": true,

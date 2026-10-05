@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-6",
   "snippet": false,
+  "wasm": true,
   "code": "hypotenuse_squared(a: int, b: int) -> int =>\n    let a2 = a * a, b2 = b * b in a2 + b2\n\nwrite_line(\"h2 = {hypotenuse_squared(3, 4)}\")",
   "fullSource": "use IO.Std.write_line\n\nhypotenuse_squared(a: int, b: int) -> int =>\n    let a2 = a * a, b2 = b * b in a2 + b2\n\nwrite_line(\"h2 = {hypotenuse_squared(3, 4)}\")\n",
   "hiddenBefore": true,

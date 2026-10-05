@@ -1,6 +1,7 @@
 {
   "name": "control-flow-16",
   "snippet": false,
+  "wasm": true,
   "code": "if let (name, _) = lookup(id) then\n    write_line(\"found {name}\")\nfi",
   "fullSource": "use IO.Std.write_line\nuse Collections.MAP\n\nlookup(id: int) -> (name: string, score: int)? is\n    let book = MAP[int, (name: string, score: int)]()\n    book[1] = (name = \"ada\",     score = 95)\n    book[2] = (name = \"grace\",   score = 88)\n\n    if book.contains_key(id) then\n        return book[id]\n    fi\n\n    return null\nsi\n\nlet id = 1\nif let (name, _) = lookup(id) then\n    write_line(\"found {name}\")\nfi\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-3",
   "snippet": false,
+  "wasm": true,
   "code": "// a block as a let initializer, with room for intermediate locals:\nlet midpoint = (\n    let lo = 10\n    let hi = 20\n    lo + (hi - lo) / 2\n)\nwrite_line(\"midpoint = {midpoint}\")\n\n// a block folding a loop, with a return that yields from the block:\nlet first_even = (\n    for x in [1, 3, 4, 7] do\n        if x % 2 == 0 then\n            return x\n        fi\n    od\n    -1\n)\nwrite_line(\"first_even = {first_even}\")\n\n// a block passed straight as a function argument:\nwrite_line(\n    (\n        let doubled = midpoint * 2\n        \"doubled = {doubled}\"\n    )\n)",
   "fullSource": "use IO.Std.write_line\n\n// a block as a let initializer, with room for intermediate locals:\nlet midpoint = (\n    let lo = 10\n    let hi = 20\n    lo + (hi - lo) / 2\n)\nwrite_line(\"midpoint = {midpoint}\")\n\n// a block folding a loop, with a return that yields from the block:\nlet first_even = (\n    for x in [1, 3, 4, 7] do\n        if x % 2 == 0 then\n            return x\n        fi\n    od\n    -1\n)\nwrite_line(\"first_even = {first_even}\")\n\n// a block passed straight as a function argument:\nwrite_line(\n    (\n        let doubled = midpoint * 2\n        \"doubled = {doubled}\"\n    )\n)\n",
   "hiddenBefore": true,

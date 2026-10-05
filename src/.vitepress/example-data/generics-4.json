@@ -1,6 +1,7 @@
 {
   "name": "generics-4",
   "snippet": false,
+  "wasm": false,
   "code": "let holds_int = HOLD_SOMETHING(1234)\nlet holds_string = HOLD_SOMETHING(\"hello\")",
   "fullSource": "struct HOLD_SOMETHING[T](value: T)\n\nlet holds_int = HOLD_SOMETHING(1234)\nlet holds_string = HOLD_SOMETHING(\"hello\")\n",
   "hiddenBefore": true,

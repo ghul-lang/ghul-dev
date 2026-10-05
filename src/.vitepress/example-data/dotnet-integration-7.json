@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-7",
   "snippet": false,
+  "wasm": false,
   "code": "class COUNTDOWN(from: int): Iterable[int] is\n    iterator: Iterator[int] => _counting().iterator\n\n    _counting() -> int{} is\n        let i mut = from\n        while i > 0 do\n            yield i\n            i = i - 1\n        od\n    si\nsi\n\nfor i in COUNTDOWN(3) do\n    write_line(\"tick {i}\")\nod",
   "fullSource": "use IO.Std.write_line\nuse Collections.Iterable\nuse Collections.Iterator\nuse Ghul.Pipes.Pipe\n\nclass COUNTDOWN(from: int): Iterable[int] is\n    iterator: Iterator[int] => _counting().iterator\n\n    _counting() -> int{} is\n        let i mut = from\n        while i > 0 do\n            yield i\n            i = i - 1\n        od\n    si\nsi\n\nfor i in COUNTDOWN(3) do\n    write_line(\"tick {i}\")\nod\n",
   "hiddenBefore": true,

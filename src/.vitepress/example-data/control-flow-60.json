@@ -1,6 +1,7 @@
 {
   "name": "control-flow-60",
   "snippet": false,
+  "wasm": true,
   "code": "// every loop form is an expression of optional type T?:\n// a valued break yields, falling off the end yields absence\nlet hit: int? = for x in [4, 9, 2, 7] do\n    if x > 5 then break x fi\nod\n\nlet miss: int? = for x in [1, 3] do\n    if x > 50 then break x fi\nod\n\nwrite_line(\"{hit ?? -1} {miss ?? -1}\")",
   "fullSource": "use IO.Std.write_line\n\n// every loop form is an expression of optional type T?:\n// a valued break yields, falling off the end yields absence\nlet hit: int? = for x in [4, 9, 2, 7] do\n    if x > 5 then break x fi\nod\n\nlet miss: int? = for x in [1, 3] do\n    if x > 50 then break x fi\nod\n\nwrite_line(\"{hit ?? -1} {miss ?? -1}\")\n",
   "hiddenBefore": true,

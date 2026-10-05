@@ -1,6 +1,7 @@
 {
   "name": "pipes-constructors",
   "snippet": false,
+  "wasm": false,
   "code": "let people = [(\"ada\", 36), (\"alan\", 41), (\"grace\", 85)]\n\n// a constructor ends a chain as a collecting function does\nlet names = people |> map(((name, _)) => name) |> ARRAY()\nlet ages = MAP(people)\nlet seen: SET[string] = _(names)\n\nwrite_line(\"names: {names |> string(\", \")}\")\nwrite_line(\"alan:  {ages[\"alan\"]}\")\nwrite_line(\"seen:  {seen.contains(\"grace\")}\")\nwrite_line(\"word:  {\"stressed\" |> reverse() |> string()}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\nuse Collections\n\nlet people = [(\"ada\", 36), (\"alan\", 41), (\"grace\", 85)]\n\n// a constructor ends a chain as a collecting function does\nlet names = people |> map(((name, _)) => name) |> ARRAY()\nlet ages = MAP(people)\nlet seen: SET[string] = _(names)\n\nwrite_line(\"names: {names |> string(\", \")}\")\nwrite_line(\"alan:  {ages[\"alan\"]}\")\nwrite_line(\"seen:  {seen.contains(\"grace\")}\")\nwrite_line(\"word:  {\"stressed\" |> reverse() |> string()}\")\n",
   "hiddenBefore": true,

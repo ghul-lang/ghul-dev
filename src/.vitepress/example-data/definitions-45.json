@@ -1,6 +1,7 @@
 {
   "name": "definitions-45",
   "snippet": false,
+  "wasm": true,
   "code": "// a pure method only reads: callers keep narrowing facts across a call to it\ndoubled() -> int pure => _count * 2",
   "fullSource": "use IO.Std.write_line\n\nclass COUNTER is\n    _count: int\n    init(count: int) is _count = count; si\n    // a pure method only reads: callers keep narrowing facts across a call to it\n    doubled() -> int pure => _count * 2\nsi\n\nlet c = COUNTER(21)\nwrite_line(c.doubled())\n",
   "hiddenBefore": true,

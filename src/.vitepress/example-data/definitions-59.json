@@ -1,6 +1,7 @@
 {
   "name": "definitions-59",
   "snippet": false,
+  "wasm": false,
   "code": "@System.Flags()\nenum Access is\n    READ = 1,\n    WRITE = 2,\n    EXECUTE = 4\nsi\n\nlet granted = Access.READ | Access.WRITE\n\nwrite_line(\"{granted}\")\nwrite_line(\"{granted & Access.WRITE == Access.WRITE}\")\nwrite_line(\"{granted & Access.EXECUTE == Access.EXECUTE}\")",
   "fullSource": "use IO.Std.write_line\n\n@System.Flags()\nenum Access is\n    READ = 1,\n    WRITE = 2,\n    EXECUTE = 4\nsi\n\nlet granted = Access.READ | Access.WRITE\n\nwrite_line(\"{granted}\")\nwrite_line(\"{granted & Access.WRITE == Access.WRITE}\")\nwrite_line(\"{granted & Access.EXECUTE == Access.EXECUTE}\")\n",
   "hiddenBefore": true,

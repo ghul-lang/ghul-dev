@@ -1,6 +1,7 @@
 {
   "name": "expressions-26",
   "snippet": false,
+  "wasm": true,
   "code": "let counter mut = 0\n\nlet bump = (n: int) is\n    counter = counter + n\nsi\n\nlet peek = () -> int => counter\n\nbump(10)\nbump(5)\n\nwrite_line(\"counter = {counter}, peek() = {peek()}\")",
   "fullSource": "use IO.Std.write_line\n\nlet counter mut = 0\n\nlet bump = (n: int) is\n    counter = counter + n\nsi\n\nlet peek = () -> int => counter\n\nbump(10)\nbump(5)\n\nwrite_line(\"counter = {counter}, peek() = {peek()}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "syntax-3",
   "snippet": false,
+  "wasm": true,
   "code": "@@suppress(\"definite-return\")\n\nuse IO.Std.write_line\n\n// would otherwise warn that it can fall off the end without a value\nfirst_even(xs: int[]) -> int is\n    for x in xs do\n        if x % 2 == 0 then\n            return x\n        fi\n    od\nsi\n\nwrite_line(\"{first_even([3, 5, 8, 9])}\")",
   "fullSource": "@@suppress(\"definite-return\")\n\nuse IO.Std.write_line\n\n// would otherwise warn that it can fall off the end without a value\nfirst_even(xs: int[]) -> int is\n    for x in xs do\n        if x % 2 == 0 then\n            return x\n        fi\n    od\nsi\n\nwrite_line(\"{first_even([3, 5, 8, 9])}\")\n",
   "hiddenBefore": false,

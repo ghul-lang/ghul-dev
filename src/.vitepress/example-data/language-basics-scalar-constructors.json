@@ -1,6 +1,7 @@
 {
   "name": "language-basics-scalar-constructors",
   "snippet": false,
+  "wasm": true,
   "code": "let n = 7\n\nlet half = double(n) / 2.0\nlet code = int('A')\nlet wide: long = _(n)\n\nwrite_line(\"{half} {code} {wide}\")",
   "fullSource": "use IO.Std.write_line\n\nlet n = 7\n\nlet half = double(n) / 2.0\nlet code = int('A')\nlet wide: long = _(n)\n\nwrite_line(\"{half} {code} {wide}\")\n",
   "hiddenBefore": true,

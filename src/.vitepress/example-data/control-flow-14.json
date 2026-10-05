@@ -1,6 +1,7 @@
 {
   "name": "control-flow-14",
   "snippet": false,
+  "wasm": true,
   "code": "if let c: CAT = a then\n    write_line(c.purr())\nelif let d: DOG = a then\n    write_line(d.bark())\nelse\n    write_line(\"some other animal\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nclass DOG(name: string): Animal is\n    bark() -> string => \"{name} barks\"\nsi\n\nlet a: Animal = DOG(\"rover\")\nif let c: CAT = a then\n    write_line(c.purr())\nelif let d: DOG = a then\n    write_line(d.bark())\nelse\n    write_line(\"some other animal\")\nfi\n",
   "hiddenBefore": true,

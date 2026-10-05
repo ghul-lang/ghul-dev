@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-sort_by_descending-function",
   "snippet": false,
+  "wasm": false,
   "code": "sort_by_descending[T..,K: Ghul.Comparable[K]](\n    source: Iterable[T],\n    key_selector: T.. -> K pure\n) -> Iterable[T] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nsort_by_descending[T..,K: Ghul.Comparable[K]](\n    source: Iterable[T],\n    key_selector: T.. -> K pure\n) -> Iterable[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,

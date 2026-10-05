@@ -1,6 +1,7 @@
 {
   "name": "expressions-29",
   "snippet": false,
+  "wasm": true,
   "code": "let n = 2\n\nlet size =\n    case n\n    when 0 then \"none\"\n    when 1, 2, 3 then \"small\"\n    else \"large\"\n    esac\n\nwrite_line(\"size = {size}\")",
   "fullSource": "use IO.Std.write_line\n\nlet n = 2\n\nlet size =\n    case n\n    when 0 then \"none\"\n    when 1, 2, 3 then \"small\"\n    else \"large\"\n    esac\n\nwrite_line(\"size = {size}\")\n",
   "hiddenBefore": true,

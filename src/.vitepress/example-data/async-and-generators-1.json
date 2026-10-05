@@ -1,6 +1,7 @@
 {
   "name": "async-and-generators-1",
   "snippet": false,
+  "wasm": true,
   "code": "// yield in yields every element of the iterable after it\nin_order(tree: Tree) -> int{} is\n    if let (left, value, right): NODE = tree then\n        yield in in_order(left)\n        yield value\n        yield in in_order(right)\n    fi\nsi\n\nlet tree = NODE(NODE(LEAF, 1, LEAF), 2, NODE(LEAF, 3, NODE(LEAF, 4, LEAF)))\n\nwrite_line(\"{in_order(tree)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nunion Tree is\n    LEAF\n    NODE(left: Tree, value: int, right: Tree)\nsi\n\nuse Tree.LEAF\nuse Tree.NODE\n\n// yield in yields every element of the iterable after it\nin_order(tree: Tree) -> int{} is\n    if let (left, value, right): NODE = tree then\n        yield in in_order(left)\n        yield value\n        yield in in_order(right)\n    fi\nsi\n\nlet tree = NODE(NODE(LEAF, 1, LEAF), 2, NODE(LEAF, 3, NODE(LEAF, 4, LEAF)))\n\nwrite_line(\"{in_order(tree)}\")\n",
   "hiddenBefore": true,

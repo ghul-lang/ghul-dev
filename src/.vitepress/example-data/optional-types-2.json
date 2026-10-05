@@ -1,6 +1,7 @@
 {
   "name": "optional-types-2",
   "snippet": false,
+  "wasm": false,
   "code": "class SLOT[T] is\n    _stored: T?\n\n    init() is si\n\n    put(value: T) is _stored = value; si\n\n    take() -> T? is\n        let result = _stored\n        _stored = null\n        return result\n    si\nsi\n\nlet s = SLOT[int]()\ns.put(42)\nwrite_line(\"{s.take() ?? -1}\")\nwrite_line(\"{s.take() ?? -1}\")",
   "fullSource": "use IO.Std.write_line\n\nclass SLOT[T] is\n    _stored: T?\n\n    init() is si\n\n    put(value: T) is _stored = value; si\n\n    take() -> T? is\n        let result = _stored\n        _stored = null\n        return result\n    si\nsi\n\nlet s = SLOT[int]()\ns.put(42)\nwrite_line(\"{s.take() ?? -1}\")\nwrite_line(\"{s.take() ?? -1}\")\n",
   "hiddenBefore": true,

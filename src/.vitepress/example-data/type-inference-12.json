@@ -1,6 +1,7 @@
 {
   "name": "type-inference-12",
   "snippet": false,
+  "wasm": false,
   "code": "class BASE()\n\nclass DERIVED(): BASE\n\nlet derived =\n    if true then\n        DERIVED()\n    else\n        DERIVED()\n    fi\n\nlet base =\n    if true then\n        DERIVED()\n    else\n        BASE()\n    fi",
   "fullSource": "class BASE()\n\nclass DERIVED(): BASE\n\nlet derived =\n    if true then\n        DERIVED()\n    else\n        DERIVED()\n    fi\n\nlet base =\n    if true then\n        DERIVED()\n    else\n        BASE()\n    fi\n",
   "hiddenBefore": false,

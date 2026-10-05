@@ -1,6 +1,7 @@
 {
   "name": "expressions-13",
   "snippet": false,
+  "wasm": true,
   "code": "// Define a list to hold the closures:\nlet closure_list = LIST()\n\n// Iterate over an integer range:\nfor i in 1::10 do\n    // Create a closure capturing i's current value\n    let closure = () => i\n\n    // Add the closure to the list:\n    closure_list.add(closure)\nod\n\n// Each closure captured the value of i at the\n// time of its creation:\nfor closure in closure_list do\n    write_line(\"Closure captured value: {closure()}\")\nod",
   "fullSource": "use IO.Std.write_line\nuse Collections.LIST\n\n// Define a list to hold the closures:\nlet closure_list = LIST()\n\n// Iterate over an integer range:\nfor i in 1::10 do\n    // Create a closure capturing i's current value\n    let closure = () => i\n\n    // Add the closure to the list:\n    closure_list.add(closure)\nod\n\n// Each closure captured the value of i at the\n// time of its creation:\nfor closure in closure_list do\n    write_line(\"Closure captured value: {closure()}\")\nod\n",
   "hiddenBefore": true,

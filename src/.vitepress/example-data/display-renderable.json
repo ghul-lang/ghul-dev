@@ -1,6 +1,7 @@
 {
   "name": "display-renderable",
   "snippet": false,
+  "wasm": false,
   "code": "class GREETING(name: string): Renderable is\n    representations() -> Collections.Iterable[(mime: string, content: ubyte[])] pure =>\n        [\n            (mime = \"text/markdown\", content = System.Text.Encoding.utf8.get_bytes(\"**hello** {name}\")),\n            (mime = \"text/plain\", content = System.Text.Encoding.utf8.get_bytes(\"hello {name}\"))\n        ]\nsi\n\nfor (mime, content) in GREETING(\"world\").representations() do\n    write_line(\"{mime}: {content.count} bytes\")\nod",
   "fullSource": "use IO.Std.write_line\nuse Ghul\n\nclass GREETING(name: string): Renderable is\n    representations() -> Collections.Iterable[(mime: string, content: ubyte[])] pure =>\n        [\n            (mime = \"text/markdown\", content = System.Text.Encoding.utf8.get_bytes(\"**hello** {name}\")),\n            (mime = \"text/plain\", content = System.Text.Encoding.utf8.get_bytes(\"hello {name}\"))\n        ]\nsi\n\nfor (mime, content) in GREETING(\"world\").representations() do\n    write_line(\"{mime}: {content.count} bytes\")\nod\n",
   "hiddenBefore": true,

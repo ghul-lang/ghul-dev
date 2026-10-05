@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-31",
   "snippet": false,
+  "wasm": false,
   "code": "// curry takes the arguments one at a time\nlet add_3 = curry(add)(3)\nwrite_line(\"add_3(4): {add_3(4)}\")\n\n// apply calls a function with the rest of its own arguments\nwrite_line(\"apply(add, 1, 2): {apply(add, 1, 2)}\")\n\n// memoize computes once per distinct argument\nlet calls mut = 0\nlet slow_square = (n: int) -> int => ( calls = calls + 1; n * n )\nlet square = memoize(slow_square)\n\nwrite_line(\"{square(9)} {square(9)} {square(3)}, computed {calls} times\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul\n\nadd(a: int, b: int) -> int => a + b\n\n// curry takes the arguments one at a time\nlet add_3 = curry(add)(3)\nwrite_line(\"add_3(4): {add_3(4)}\")\n\n// apply calls a function with the rest of its own arguments\nwrite_line(\"apply(add, 1, 2): {apply(add, 1, 2)}\")\n\n// memoize computes once per distinct argument\nlet calls mut = 0\nlet slow_square = (n: int) -> int => ( calls = calls + 1; n * n )\nlet square = memoize(slow_square)\n\nwrite_line(\"{square(9)} {square(9)} {square(3)}, computed {calls} times\")\n",
   "hiddenBefore": true,

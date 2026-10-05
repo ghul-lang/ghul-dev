@@ -1,6 +1,7 @@
 {
   "name": "language-basics-16",
   "snippet": false,
+  "wasm": true,
   "code": "if name? then\n    write_line(\"name is {name}\") // name is non-optional here\nfi",
   "fullSource": "use IO.Std.write_line\n\nlookup() -> string? => \"Alice\"\n\nlet name = lookup()\nif name? then\n    write_line(\"name is {name}\") // name is non-optional here\nfi\n",
   "hiddenBefore": true,

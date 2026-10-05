@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-all-function",
   "snippet": false,
+  "wasm": false,
   "code": "all[T..](\n    source: Iterable[T],\n    predicate: T.. -> bool pure\n) -> bool pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nall[T..](\n    source: Iterable[T],\n    predicate: T.. -> bool pure\n) -> bool pure\n\nentry() is si\n",
   "hiddenBefore": true,

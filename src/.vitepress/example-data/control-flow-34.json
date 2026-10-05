@@ -1,6 +1,7 @@
 {
   "name": "control-flow-34",
   "snippet": false,
+  "wasm": false,
   "code": "class INSUFFICIENT_FUNDS_EXCEPTION(message: string): System.Exception is\n    super(message)\nsi",
   "fullSource": "class INSUFFICIENT_FUNDS_EXCEPTION(message: string): System.Exception is\n    super(message)\nsi\n\n",
   "hiddenBefore": false,

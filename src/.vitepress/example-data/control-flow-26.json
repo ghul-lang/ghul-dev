@@ -1,6 +1,7 @@
 {
   "name": "control-flow-26",
   "snippet": false,
+  "wasm": true,
   "code": "let zero_to_four = 0..5\nlet five_to_nine = 5..10\n\nlet zero_to_nine = (zero_to_four |> cat(five_to_nine)).iterator\n\nwhile zero_to_nine.move_next() do\n    write_line(zero_to_nine.current)\nod",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet zero_to_four = 0..5\nlet five_to_nine = 5..10\n\nlet zero_to_nine = (zero_to_four |> cat(five_to_nine)).iterator\n\nwhile zero_to_nine.move_next() do\n    write_line(zero_to_nine.current)\nod\n",
   "hiddenBefore": true,

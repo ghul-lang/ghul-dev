@@ -1,6 +1,7 @@
 {
   "name": "definitions-55",
   "snippet": false,
+  "wasm": true,
   "code": "entry(args: string[], env: Ghul.Environment) -> int is\n    IO.Std.write_line(\"{args.count} argument(s)\")\n    IO.Std.write_line(env[\"GHUL_EXAMPLE_GREETING\"] ?? \"no greeting set\")\n\n    return 0\nsi",
   "fullSource": "entry(args: string[], env: Ghul.Environment) -> int is\n    IO.Std.write_line(\"{args.count} argument(s)\")\n    IO.Std.write_line(env[\"GHUL_EXAMPLE_GREETING\"] ?? \"no greeting set\")\n\n    return 0\nsi\n",
   "hiddenBefore": false,

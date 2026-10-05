@@ -1,6 +1,7 @@
 {
   "name": "expressions-18",
   "snippet": false,
+  "wasm": false,
   "code": "let max = if a > b then a else b fi",
   "fullSource": "let a = 10\nlet b = 5\nlet max = if a > b then a else b fi\n",
   "hiddenBefore": true,

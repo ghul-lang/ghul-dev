@@ -1,6 +1,7 @@
 {
   "name": "type-inference-17",
   "snippet": false,
+  "wasm": false,
   "code": "// m is BOX[?] here; the type argument is not\n// yet known\nlet m = BOX()\n\n// the set call takes an int, so m is BOX[int]\nm.set(42)\n\nlet x = m.get()",
   "fullSource": "class BOX[T] is\n    _value: T\n\n    init() is\n        _value = _\n    si\n\n    set(value: T) is\n        _value = value\n    si\n\n    get() -> T => _value\nsi\n\n// m is BOX[?] here; the type argument is not\n// yet known\nlet m = BOX()\n\n// the set call takes an int, so m is BOX[int]\nm.set(42)\n\nlet x = m.get()\n",
   "hiddenBefore": true,

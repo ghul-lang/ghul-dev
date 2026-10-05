@@ -1,6 +1,7 @@
 {
   "name": "definitions-5",
   "snippet": false,
+  "wasm": false,
   "code": "let _ = side_effect()\nlet (_, _, third) = (1, 2, 3)\nlet only_first = (x: int, _: int) => x\nfor _ in 1..10 do\n    counter = counter + 1\nod",
   "fullSource": "side_effect() -> int => 0\n\nlet counter mut = 0\nlet _ = side_effect()\nlet (_, _, third) = (1, 2, 3)\nlet only_first = (x: int, _: int) => x\nfor _ in 1..10 do\n    counter = counter + 1\nod\n",
   "hiddenBefore": true,

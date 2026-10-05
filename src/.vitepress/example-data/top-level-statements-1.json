@@ -1,6 +1,7 @@
 {
   "name": "top-level-statements-1",
   "snippet": false,
+  "wasm": true,
   "code": "use IO.Std.write_line\n\n// in a file with no namespace, statements at the top level run in\n// order as the program's entry point\nwrite_line(\"first\")\nwrite_line(\"second\")\n\n// definitions in the same file are still visible, wherever they sit\ngreet(name: string) is\n    write_line(\"hello, {name}\")\nsi\n\ngreet(\"ghūl\")",
   "fullSource": "use IO.Std.write_line\n\n// in a file with no namespace, statements at the top level run in\n// order as the program's entry point\nwrite_line(\"first\")\nwrite_line(\"second\")\n\n// definitions in the same file are still visible, wherever they sit\ngreet(name: string) is\n    write_line(\"hello, {name}\")\nsi\n\ngreet(\"ghūl\")\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-28",
   "snippet": false,
+  "wasm": true,
   "code": "for text in [\"8080\", \"99999\", \"http\"] do\n    // each '~>' stage runs only when the value before it is present\n    let shown = text |> parse_port() ~> in_range() ~> label() ?? \"no port\"\n    write_line(\"{text}: {shown}\")\nod",
   "fullSource": "use IO.Std.write_line\n\nparse_port(s: string) -> int? is\n    let port: int mut\n\n    return if int.try_parse(s, port ref) then port else null fi\nsi\n\nin_range(n: int) -> int? => if n > 0 /\\ n < 65536 then n else null fi\n\nlabel(n: int) -> string => \"port {n}\"\n\nfor text in [\"8080\", \"99999\", \"http\"] do\n    // each '~>' stage runs only when the value before it is present\n    let shown = text |> parse_port() ~> in_range() ~> label() ?? \"no port\"\n    write_line(\"{text}: {shown}\")\nod\n",
   "hiddenBefore": true,

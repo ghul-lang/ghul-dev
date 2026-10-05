@@ -1,6 +1,7 @@
 {
   "name": "definitions-32",
   "snippet": true,
+  "wasm": false,
   "code": "use Example // imports Example.TEST and Example.Test\n\n...\n\nlet t: Test",
   "fullSource": "use Example // imports Example.TEST and Example.Test\n\n...\n\nlet t: Test\n",
   "hiddenBefore": false,
