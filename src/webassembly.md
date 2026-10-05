@@ -108,14 +108,14 @@ A .NET API the core library doesn't declare doesn't exist on WebAssembly, so a c
 main.ghul: 11,23..11,34: error: member Environment not found in System
 ```
 
-Something the WebAssembly target can't carry at all is reported where it's written, such as a pointer type or an `IL.`{:text} pragma:
+Something the WebAssembly target can't support at all is reported where it's written, such as a pointer type or an `IL.`{:text} pragma:
 
 ```text
 main.ghul: 20,15..20,22: error: pointer types not supported on the wasm target
 main.ghul: 4,6..4,13: error: pragma IL.name not supported on the wasm target
 ```
 
-Something the target will carry but can't compile yet is reported at the function holding it:
+Something the target will support but can't compile yet is reported at the function holding it:
 
 ```text
 main.ghul: 3,1..3,6: error: code generation for a decimal literal is not supported on the wasm target
