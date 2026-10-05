@@ -1,6 +1,7 @@
 {
   "name": "type-inference-18",
   "snippet": false,
+  "wasm": false,
   "code": "let f = x => x + 1\nwrite_line(\"{f(42)}\")",
   "fullSource": "use IO.Std.write_line\n\nlet f = x => x + 1\nwrite_line(\"{f(42)}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-27",
   "snippet": false,
+  "wasm": true,
   "code": "// pure: square assigns no field, property, or array element\nsquare(x: int) -> int pure => x * x\n\n// a pure function type: this slot accepts only pure functions\napply(f: (int) -> int pure, x: int) -> int => f(x)\n\nwrite_line(\"apply(square, 5): {apply(square, 5)}\")\nwrite_line(\"apply(anonymous, 5): {apply(x => x + 1, 5)}\")",
   "fullSource": "use IO.Std.write_line\n\n// pure: square assigns no field, property, or array element\nsquare(x: int) -> int pure => x * x\n\n// a pure function type: this slot accepts only pure functions\napply(f: (int) -> int pure, x: int) -> int => f(x)\n\nwrite_line(\"apply(square, 5): {apply(square, 5)}\")\nwrite_line(\"apply(anonymous, 5): {apply(x => x + 1, 5)}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-6",
   "snippet": false,
+  "wasm": false,
   "code": "let x: int = 42\nlet y = \"Hello\"",
   "fullSource": "let x: int = 42\nlet y = \"Hello\"\n",
   "hiddenBefore": false,

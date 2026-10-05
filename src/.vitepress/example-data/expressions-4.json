@@ -1,6 +1,7 @@
 {
   "name": "expressions-4",
   "snippet": false,
+  "wasm": false,
   "code": "let hello_world = \"Hello World!\"\nlet unicode = \"ghūl programming language\"",
   "fullSource": "let hello_world = \"Hello World!\"\nlet unicode = \"ghūl programming language\"\n",
   "hiddenBefore": false,

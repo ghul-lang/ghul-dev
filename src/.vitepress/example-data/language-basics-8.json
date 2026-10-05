@@ -1,6 +1,7 @@
 {
   "name": "language-basics-8",
   "snippet": false,
+  "wasm": false,
   "code": "let numbers: int[] = [1, 2, 3]",
   "fullSource": "let numbers: int[] = [1, 2, 3]\n",
   "hiddenBefore": false,

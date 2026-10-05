@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-collect_set-function",
   "snippet": false,
+  "wasm": false,
   "code": "collect_set[T](source: Iterable[T]) -> SET[T] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\ncollect_set[T](source: Iterable[T]) -> SET[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,

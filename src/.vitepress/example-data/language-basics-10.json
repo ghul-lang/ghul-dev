@@ -1,6 +1,7 @@
 {
   "name": "language-basics-10",
   "snippet": false,
+  "wasm": false,
   "code": "let p = primes[i]",
   "fullSource": "let primes = [2, 3, 5, 7, 11]\nlet i = 2\nlet p = primes[i]\n",
   "hiddenBefore": true,

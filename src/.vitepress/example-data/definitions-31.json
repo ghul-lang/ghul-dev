@@ -1,6 +1,7 @@
 {
   "name": "definitions-31",
   "snippet": true,
+  "wasm": false,
   "code": "use Example.TEST\n\n...\n\nlet t = TEST()",
   "fullSource": "use Example.TEST\n\n...\n\nlet t = TEST()\n",
   "hiddenBefore": false,

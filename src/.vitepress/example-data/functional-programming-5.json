@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-5",
   "snippet": false,
+  "wasm": false,
   "code": "is_even(n: int) -> bool =>\n    if n == 0 then true else is_odd(n - 1) fi\n\nis_odd(n: int) -> bool =>\n    if n == 0 then false else is_even(n - 1) fi",
   "fullSource": "is_even(n: int) -> bool =>\n    if n == 0 then true else is_odd(n - 1) fi\n\nis_odd(n: int) -> bool =>\n    if n == 0 then false else is_even(n - 1) fi\n\n",
   "hiddenBefore": false,

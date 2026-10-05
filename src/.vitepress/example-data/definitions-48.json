@@ -1,6 +1,7 @@
 {
   "name": "definitions-48",
   "snippet": false,
+  "wasm": true,
   "code": "// a memoising getter stores, so it is not provably\n// stable - declare it with postfix stable instead\nsummary: string? stable is\n    if _summary? then\n        return _summary\n    fi\n    _summary = \"nothing to report\"\n    return _summary\nsi\n\ninit() is si\n\ndescribe() is\n    if summary? then\n        write_line(summary)\n    fi\nsi",
   "fullSource": "use IO.Std.write_line\n\nclass REPORT is\n    _summary: string?\n\n    // a memoising getter stores, so it is not provably\n    // stable - declare it with postfix stable instead\n    summary: string? stable is\n        if _summary? then\n            return _summary\n        fi\n        _summary = \"nothing to report\"\n        return _summary\n    si\n\n    init() is si\n\n    describe() is\n        if summary? then\n            write_line(summary)\n        fi\n    si\nsi\n\nREPORT().describe()\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-2",
   "snippet": false,
+  "wasm": true,
   "code": "// variable declaration statement\nlet x = 10\n\n// expression used as part of a declaration statement\nlet y = x * 2\n\n// 'if' is a statement, 'x > 5' is an expression\nif x > 5 then\n    write_line(\"x is greater than 5\")\nfi\n\n// 'if' can also be used as an expression\nlet z = if x > 5 then x else y fi",
   "fullSource": "use IO.Std.write_line\n\n// variable declaration statement\nlet x = 10\n\n// expression used as part of a declaration statement\nlet y = x * 2\n\n// 'if' is a statement, 'x > 5' is an expression\nif x > 5 then\n    write_line(\"x is greater than 5\")\nfi\n\n// 'if' can also be used as an expression\nlet z = if x > 5 then x else y fi\n",
   "hiddenBefore": true,

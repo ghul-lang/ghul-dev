@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-6",
   "snippet": false,
+  "wasm": false,
   "code": "let total = 10\ntotal = 11\n\nlet numbers = [1, 2, 3]\nnumbers[0] = 6\n\nlet pair = (1, \"one\")\npair.`0 = 2\n\nlet thing = THING(\"a thing\")\nthing.name = \"another thing\"\n\nadd_one(names: List[string]) is\n    names.add(\"one\")\nsi",
   "fullSource": "// expect: error\nuse Collections.List\n\nstruct THING(name: string)\n\nlet total = 10\ntotal = 11\n\nlet numbers = [1, 2, 3]\nnumbers[0] = 6\n\nlet pair = (1, \"one\")\npair.`0 = 2\n\nlet thing = THING(\"a thing\")\nthing.name = \"another thing\"\n\nadd_one(names: List[string]) is\n    names.add(\"one\")\nsi\n",
   "hiddenBefore": true,

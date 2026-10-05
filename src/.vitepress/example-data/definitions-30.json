@@ -1,6 +1,7 @@
 {
   "name": "definitions-30",
   "snippet": false,
+  "wasm": false,
   "code": "namespace Example is\n    entry() is\n        IO.Std.write_line(\"hello from a namespace\")\n    si\nsi\ngreet() is\n    IO.Std.write_line(\"not in a namespace\")\nsi",
   "fullSource": "// expect: error\nnamespace Example is\n    entry() is\n        IO.Std.write_line(\"hello from a namespace\")\n    si\nsi\n\ngreet() is\n    IO.Std.write_line(\"not in a namespace\")\nsi\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "control-flow-43",
   "snippet": false,
+  "wasm": false,
   "code": "tries: int\ntry_something(limit: int) is\n    if tries > limit then\n        return // give up\n    fi\n\n    tries = tries + 1\n\n    // do stuff\nsi",
   "fullSource": "tries: int\n\ntry_something(limit: int) is\n    if tries > limit then\n        return // give up\n    fi\n\n    tries = tries + 1\n\n    // do stuff\nsi\n\n",
   "hiddenBefore": false,

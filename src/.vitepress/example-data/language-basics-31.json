@@ -1,6 +1,7 @@
 {
   "name": "language-basics-31",
   "snippet": false,
+  "wasm": true,
   "code": "let factorial mut = 1n\n\nfor i in 1::30 do\n    factorial = factorial * bigint(i)\nod\n\nwrite_line(\"{factorial}\")",
   "fullSource": "use IO.Std.write_line\n\nlet factorial mut = 1n\n\nfor i in 1::30 do\n    factorial = factorial * bigint(i)\nod\n\nwrite_line(\"{factorial}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "syntax-4",
   "snippet": false,
+  "wasm": true,
   "code": "#!/usr/bin/env ghul\n\nIO.Std.write_line(\"hello from a script\")",
   "fullSource": "#!/usr/bin/env ghul\n\nIO.Std.write_line(\"hello from a script\")\n",
   "hiddenBefore": false,

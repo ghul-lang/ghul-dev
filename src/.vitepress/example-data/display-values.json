@@ -1,6 +1,7 @@
 {
   "name": "display-values",
   "snippet": false,
+  "wasm": true,
   "code": "struct POINT(x: int public, y: int public)\n\nlet words = [\"one\", \"two\"]\n\nwrite_line($(words))\nwrite_line(inspect(words))\nwrite_line(inspect(\"top\"))\nwrite_line($(POINT(3, 4)))\nwrite_line(inspect((1, \"one\", 'c', true)))\n\nlet cycle = Collections.LIST[object]()\ncycle.add(cycle)\n\nwrite_line($(cycle))",
   "fullSource": "use IO.Std.write_line\nuse Ghul.inspect\n\nstruct POINT(x: int public, y: int public)\n\nlet words = [\"one\", \"two\"]\n\nwrite_line($(words))\nwrite_line(inspect(words))\nwrite_line(inspect(\"top\"))\nwrite_line($(POINT(3, 4)))\nwrite_line(inspect((1, \"one\", 'c', true)))\n\nlet cycle = Collections.LIST[object]()\ncycle.add(cycle)\n\nwrite_line($(cycle))\n",
   "hiddenBefore": true,

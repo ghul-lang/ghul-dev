@@ -1,6 +1,7 @@
 {
   "name": "definitions-35",
   "snippet": false,
+  "wasm": false,
   "code": "class THING is\n    do_something_public() is\n    si\n\n    _do_something_private() is\n    si\nsi",
   "fullSource": "class THING is\n    do_something_public() is\n    si\n\n    _do_something_private() is\n    si\nsi\n\n",
   "hiddenBefore": false,

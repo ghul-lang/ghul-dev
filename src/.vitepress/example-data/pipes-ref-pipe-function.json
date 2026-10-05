@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-pipe-function",
   "snippet": false,
+  "wasm": false,
   "code": "pipe[T](source: Iterable[T]) -> Pipe[T] pure",
   "fullSource": "use Collections.Iterable\nuse Ghul.Pipes.Pipe\n\npipe[T](source: Iterable[T]) -> Pipe[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,

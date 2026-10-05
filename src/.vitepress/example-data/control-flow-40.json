@@ -1,6 +1,7 @@
 {
   "name": "control-flow-40",
   "snippet": true,
+  "wasm": false,
   "code": "try\n    // Code that might throw an exception\nfinally\n    // Clean-up code, always executed\nyrt",
   "fullSource": "try\n    // Code that might throw an exception\nfinally\n    // Clean-up code, always executed\nyrt\n",
   "hiddenBefore": false,

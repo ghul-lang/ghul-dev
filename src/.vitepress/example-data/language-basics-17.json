@@ -1,6 +1,7 @@
 {
   "name": "language-basics-17",
   "snippet": false,
+  "wasm": false,
   "code": "let here: int? = 42   // present\nlet gone: int? = null // absent",
   "fullSource": "let here: int? = 42   // present\nlet gone: int? = null // absent\n",
   "hiddenBefore": false,

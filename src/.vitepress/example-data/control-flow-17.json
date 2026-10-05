@@ -1,6 +1,7 @@
 {
   "name": "control-flow-17",
   "snippet": false,
+  "wasm": true,
   "code": "let a = 5\n\nif a > 0 then\n    // new scope - neither y nor z are in scope here\n    let x = 10\n    write_line(\"x is {x}\")\nelif a < 0 then\n    // new scope - neither x nor z are in scope here\n    let y = 20\n    write_line(\"y is {y}\")\nelse\n    // new scope - neither x nor y are in scope here\n    let z = 30\n    write_line(\"z is {z}\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nlet a = 5\n\nif a > 0 then\n    // new scope - neither y nor z are in scope here\n    let x = 10\n    write_line(\"x is {x}\")\nelif a < 0 then\n    // new scope - neither x nor z are in scope here\n    let y = 20\n    write_line(\"y is {y}\")\nelse\n    // new scope - neither x nor y are in scope here\n    let z = 30\n    write_line(\"z is {z}\")\nfi\n",
   "hiddenBefore": true,

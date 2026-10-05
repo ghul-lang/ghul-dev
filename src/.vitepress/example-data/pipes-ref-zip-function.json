@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-zip-function",
   "snippet": false,
+  "wasm": false,
   "code": "zip[T,U](\n    source: Iterable[T],\n    other: Iterable[U]\n) -> Iterable[(T,U)] pure\n\nzip[T,U,TOut](\n    source: Iterable[T],\n    other: Iterable[U],\n    mapper: (T,U) -> TOut pure\n) -> Iterable[TOut] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nzip[T,U](\n    source: Iterable[T],\n    other: Iterable[U]\n) -> Iterable[(T,U)] pure\n\nzip[T,U,TOut](\n    source: Iterable[T],\n    other: Iterable[U],\n    mapper: (T,U) -> TOut pure\n) -> Iterable[TOut] pure\n\nentry() is si\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-14",
   "snippet": false,
+  "wasm": false,
   "code": "class BOOK(title: string, author: string): Printable is\n    print() is\n        write_line(\"Title: {title}, Author: {author}\")\n    si\nsi",
   "fullSource": "use IO.Std.write_line\n\ntrait Printable is\n    print()\nsi\n\nclass BOOK(title: string, author: string): Printable is\n    print() is\n        write_line(\"Title: {title}, Author: {author}\")\n    si\nsi\n\n",
   "hiddenBefore": true,

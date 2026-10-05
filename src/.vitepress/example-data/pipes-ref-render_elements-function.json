@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-render_elements-function",
   "snippet": false,
+  "wasm": false,
   "code": "render_elements[T](source: Iterable[T]) -> string pure",
   "fullSource": "use Collections.Iterable\n\nrender_elements[T](source: Iterable[T]) -> string pure\n\nentry() is si\n",
   "hiddenBefore": true,

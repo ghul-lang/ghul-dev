@@ -1,6 +1,7 @@
 {
   "name": "control-flow-25",
   "snippet": false,
+  "wasm": true,
   "code": "for i in 1::5 do\n    // i will take values 1, 2, 3, 4, 5 in sequence\n    write_line(i)\nod",
   "fullSource": "use IO.Std.write_line\n\nfor i in 1::5 do\n    // i will take values 1, 2, 3, 4, 5 in sequence\n    write_line(i)\nod\n",
   "hiddenBefore": true,

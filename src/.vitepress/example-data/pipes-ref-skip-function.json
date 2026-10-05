@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-skip-function",
   "snippet": false,
+  "wasm": false,
   "code": "skip[T](source: Iterable[T], count: int) -> Iterable[T] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nskip[T](source: Iterable[T], count: int) -> Iterable[T] pure\n\nentry() is si\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-30",
   "snippet": false,
+  "wasm": true,
   "code": "bitwise(a: int, b: int) is\n    write_line(\"{a & b} {a | b} {a ^ b}\")\n\n    // shift counts are int, and '>>>' shifts zeros in\n    write_line(\"{1 << 4} {256 >> 3} {-16 >>> 2}\")\nsi\n\nbitwise(240, 60)",
   "fullSource": "use IO.Std.write_line\n\nbitwise(a: int, b: int) is\n    write_line(\"{a & b} {a | b} {a ^ b}\")\n\n    // shift counts are int, and '>>>' shifts zeros in\n    write_line(\"{1 << 4} {256 >> 3} {-16 >>> 2}\")\nsi\n\nbitwise(240, 60)\n",
   "hiddenBefore": true,

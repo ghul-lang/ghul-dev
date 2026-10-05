@@ -1,6 +1,7 @@
 {
   "name": "expressions-30",
   "snippet": false,
+  "wasm": true,
   "code": "average(count: int, total: double) -> double =>\n    total / cast(count)   // cast(v) takes its type from the formal\n\nwrite_line(\"{average(4, 10.0)}\")",
   "fullSource": "use IO.Std.write_line\n\naverage(count: int, total: double) -> double =>\n    total / cast(count)   // cast(v) takes its type from the formal\n\nwrite_line(\"{average(4, 10.0)}\")\n",
   "hiddenBefore": true,

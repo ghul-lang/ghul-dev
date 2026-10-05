@@ -15,6 +15,13 @@
         "ghul-test"
       ],
       "rollForward": false
+    },
+    "ghul.cli": {
+      "version": "0.47.5",
+      "commands": [
+        "ghul"
+      ],
+      "rollForward": false
     }
   }
 }

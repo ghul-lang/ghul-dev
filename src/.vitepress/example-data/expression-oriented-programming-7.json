@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-7",
   "snippet": false,
+  "wasm": true,
   "code": "// the last statement is not terminated, so it is the return value\narea(width: int, height: int) -> int is\n    let doubled = width * 2\n    let trimmed = height - 1\n\n    doubled * trimmed\nsi\n\nwrite_line(\"{area(3, 5)}\")",
   "fullSource": "use IO.Std.write_line\n\n// the last statement is not terminated, so it is the return value\narea(width: int, height: int) -> int is\n    let doubled = width * 2\n    let trimmed = height - 1\n\n    doubled * trimmed\nsi\n\nwrite_line(\"{area(3, 5)}\")\n",
   "hiddenBefore": true,

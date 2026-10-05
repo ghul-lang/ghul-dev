@@ -1,6 +1,7 @@
 {
   "name": "expressions-15",
   "snippet": false,
+  "wasm": false,
   "code": "let sum = 10 + 5           // Addition\nlet difference = 10 - 5    // Subtraction\nlet product = 10 * 5       // Multiplication\nlet quotient = 10 / 5      // Division\nlet remainder = 10 % 3     // Modulo (remainder)",
   "fullSource": "let sum = 10 + 5           // Addition\nlet difference = 10 - 5    // Subtraction\nlet product = 10 * 5       // Multiplication\nlet quotient = 10 / 5      // Division\nlet remainder = 10 % 3     // Modulo (remainder)\n",
   "hiddenBefore": false,

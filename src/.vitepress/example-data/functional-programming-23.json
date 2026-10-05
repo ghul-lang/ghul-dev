@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-23",
   "snippet": false,
+  "wasm": true,
   "code": "area(s: Shape) -> double =>\n    // case over a union is checked for exhaustiveness: every variant\n    // is covered here, so no else arm is needed\n    case s\n    when c: CIRCLE then 3.14159d * c.radius * c.radius\n    when q: SQUARE then q.side * q.side\n    esac\n\nwrite_line(\"{area(CIRCLE(2.0d))}\")\nwrite_line(\"{area(SQUARE(3.0d))}\")",
   "fullSource": "use IO.Std.write_line\n\nunion Shape is\n    CIRCLE(radius: double)\n    SQUARE(side: double)\nsi\n\nuse Shape.CIRCLE\nuse Shape.SQUARE\n\narea(s: Shape) -> double =>\n    // case over a union is checked for exhaustiveness: every variant\n    // is covered here, so no else arm is needed\n    case s\n    when c: CIRCLE then 3.14159d * c.radius * c.radius\n    when q: SQUARE then q.side * q.side\n    esac\n\nwrite_line(\"{area(CIRCLE(2.0d))}\")\nwrite_line(\"{area(SQUARE(3.0d))}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "generics-14",
   "snippet": false,
+  "wasm": false,
   "code": "// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[BOX]()",
   "fullSource": "// expect: error\nclass BOX[T](value: T)\n\n// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[BOX]()\n",
   "hiddenBefore": true,

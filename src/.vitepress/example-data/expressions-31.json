@@ -1,6 +1,7 @@
 {
   "name": "expressions-31",
   "snippet": false,
+  "wasm": true,
   "code": "// no else, so the if yields a string?\nlet parity = if n % 2 == 0 then \"even\" fi\n\nwrite_line(parity ?? \"odd\")",
   "fullSource": "use IO.Std.write_line\n\nlet n = 7\n// no else, so the if yields a string?\nlet parity = if n % 2 == 0 then \"even\" fi\n\nwrite_line(parity ?? \"odd\")\n",
   "hiddenBefore": true,

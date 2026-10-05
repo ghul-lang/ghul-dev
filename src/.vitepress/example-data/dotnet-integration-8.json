@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-8",
   "snippet": false,
+  "wasm": false,
   "code": "// System.Half declares an explicit conversion from double, and an implicit one to single\nconversions() is\n    let h = cast System.Half(1.5)\n    let f = cast single(h)\n\n    write_line(\"{h} {f}\")\nsi",
   "fullSource": "use IO.Std.write_line\n\n// System.Half declares an explicit conversion from double, and an implicit one to single\nconversions() is\n    let h = cast System.Half(1.5)\n    let f = cast single(h)\n\n    write_line(\"{h} {f}\")\nsi\n\nconversions()\n",
   "hiddenBefore": true,

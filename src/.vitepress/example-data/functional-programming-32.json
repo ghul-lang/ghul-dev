@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-32",
   "snippet": false,
+  "wasm": true,
   "code": "// T.. stands for however many arguments the call supplies\ntwice[T.., U](f: T.. -> U, v: T..) -> (U, U) => (f(v), f(v))\n\ngreet(name: string) -> string => \"hello {name}\"\njoin_words(a: string, b: string) -> string => \"{a} {b}\"\n\nwrite_line(\"{twice(greet, \"world\")}\")\nwrite_line(\"{twice(join_words, \"good\", \"morning\")}\")\nwrite_line(\"{twice((a, b, c) => a + b + c, 1, 2, 3)}\")",
   "fullSource": "use IO.Std.write_line\n\n// T.. stands for however many arguments the call supplies\ntwice[T.., U](f: T.. -> U, v: T..) -> (U, U) => (f(v), f(v))\n\ngreet(name: string) -> string => \"hello {name}\"\njoin_words(a: string, b: string) -> string => \"{a} {b}\"\n\nwrite_line(\"{twice(greet, \"world\")}\")\nwrite_line(\"{twice(join_words, \"good\", \"morning\")}\")\nwrite_line(\"{twice((a, b, c) => a + b + c, 1, 2, 3)}\")\n",
   "hiddenBefore": true,

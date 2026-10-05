@@ -1,6 +1,7 @@
 {
   "name": "unions-and-pattern-matching-1",
   "snippet": false,
+  "wasm": true,
   "code": "union Light is\n    RED\n    AMBER\n    GREEN\nsi\n\nnext(light: Light) -> Light =>\n    // naming each unit variant by value covers the union, so no else is needed\n    case light\n    when Light.RED then Light.GREEN\n    when Light.GREEN then Light.AMBER\n    when Light.AMBER then Light.RED\n    esac",
   "fullSource": "use IO.Std.write_line\n\nunion Light is\n    RED\n    AMBER\n    GREEN\nsi\n\nnext(light: Light) -> Light =>\n    // naming each unit variant by value covers the union, so no else is needed\n    case light\n    when Light.RED then Light.GREEN\n    when Light.GREEN then Light.AMBER\n    when Light.AMBER then Light.RED\n    esac\n\nwrite_line(\"{next(Light.RED) =~ Light.GREEN}\")\n",
   "hiddenBefore": true,

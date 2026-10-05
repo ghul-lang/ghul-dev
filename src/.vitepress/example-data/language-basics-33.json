@@ -1,6 +1,7 @@
 {
   "name": "language-basics-33",
   "snippet": false,
+  "wasm": true,
   "code": "let wide = 0x20AC       // int: the C is a hex digit\nlet euro = 0x20AC`c     // char: the backtick separates the suffix\nlet byte_max = 0xFF`ub  // ubyte\n\nwrite_line(\"{wide} {euro} {byte_max}\")",
   "fullSource": "use IO.Std.write_line\n\nlet wide = 0x20AC       // int: the C is a hex digit\nlet euro = 0x20AC`c     // char: the backtick separates the suffix\nlet byte_max = 0xFF`ub  // ubyte\n\nwrite_line(\"{wide} {euro} {byte_max}\")\n",
   "hiddenBefore": true,

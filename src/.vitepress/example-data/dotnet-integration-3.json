@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-3",
   "snippet": false,
+  "wasm": false,
   "code": "trait Clock is\n    now() -> System.DateTime\nsi\n\ntest_uses_a_stubbed_clock() static is\n    // Substitute.for takes the constructor arguments as an object[]; a\n    // trait has none, so pass an empty array.\n    let clock = Substitute.`for[Clock]([])\n\n    // stub a return value for a call:\n    clock.now() |> returns(System.DateTime(2020, 1, 1, 9, 0, 0), null)\n\n    IO.Std.write_line(\"stubbed hour is {clock.now().hour}\")\nsi",
   "fullSource": "use NSubstitute\nuse NSubstitute.SubstituteExtensions.returns\n\ntrait Clock is\n    now() -> System.DateTime\nsi\n\ntest_uses_a_stubbed_clock() static is\n    // Substitute.for takes the constructor arguments as an object[]; a\n    // trait has none, so pass an empty array.\n    let clock = Substitute.`for[Clock]([])\n\n    // stub a return value for a call:\n    clock.now() |> returns(System.DateTime(2020, 1, 1, 9, 0, 0), null)\n\n    IO.Std.write_line(\"stubbed hour is {clock.now().hour}\")\nsi\n\nentry() is\n    test_uses_a_stubbed_clock()\nsi\n",
   "hiddenBefore": true,

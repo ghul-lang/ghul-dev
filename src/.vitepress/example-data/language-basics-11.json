@@ -1,6 +1,7 @@
 {
   "name": "language-basics-11",
   "snippet": false,
+  "wasm": false,
   "code": "let point: (int, int) = (10, 20)\nlet person: (string, int) = (\"Alice\", 30)",
   "fullSource": "let point: (int, int) = (10, 20)\nlet person: (string, int) = (\"Alice\", 30)\n",
   "hiddenBefore": false,

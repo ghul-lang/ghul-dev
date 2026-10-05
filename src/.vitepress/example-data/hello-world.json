@@ -1,6 +1,7 @@
 {
   "name": "hello-world",
   "snippet": false,
+  "wasm": true,
   "code": "IO.Std.write_line(\"hello, world\")",
   "fullSource": "IO.Std.write_line(\"hello, world\")\n",
   "hiddenBefore": false,

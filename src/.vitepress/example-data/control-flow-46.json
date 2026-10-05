@@ -1,6 +1,7 @@
 {
   "name": "control-flow-46",
   "snippet": false,
+  "wasm": false,
   "code": "compute() -> Tasks.TASK[int] is\n    let a = await double_async(10)   // a = 20\n    let b = await double_async(a)    // b = 40\n    let c = await add_async(a, b)    // c = 60\n\n    return c\nsi\n\nwrite_line(\"{compute().result}\")",
   "fullSource": "use IO.Std.write_line\n\ndouble_async(x: int) -> Tasks.TASK[int] => x * 2\n\nadd_async(x: int, y: int) -> Tasks.TASK[int] => x + y\n\ncompute() -> Tasks.TASK[int] is\n    let a = await double_async(10)   // a = 20\n    let b = await double_async(a)    // b = 40\n    let c = await add_async(a, b)    // c = 60\n\n    return c\nsi\n\nwrite_line(\"{compute().result}\")\n",
   "hiddenBefore": true,

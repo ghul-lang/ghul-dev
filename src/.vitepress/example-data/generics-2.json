@@ -1,6 +1,7 @@
 {
   "name": "generics-2",
   "snippet": false,
+  "wasm": true,
   "code": "print_something[int](1234)\nprint_something[string](\"hello\")",
   "fullSource": "use IO.Std.write_line\n\nprint_something[T](t: T) => write_line(\"something is {t}\")\n\nprint_something[int](1234)\nprint_something[string](\"hello\")\n",
   "hiddenBefore": true,

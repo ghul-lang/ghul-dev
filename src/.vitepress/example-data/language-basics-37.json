@@ -1,6 +1,7 @@
 {
   "name": "language-basics-37",
   "snippet": false,
+  "wasm": true,
   "code": "struct POINT(x: int public, y: int public)\n\nlet name = \"world\"\nlet nickname: string? = null\nlet numbers = [1, 2, 3]\n\nwrite_line(\"hello {name}\")\nwrite_line(\"{true} {nickname}\")\nwrite_line(\"{numbers} {(1, \"one\")} {POINT(3, 4)}\")\nwrite_line(\"[{3.14159:F2}] [{42,6}]\")",
   "fullSource": "use IO.Std.write_line\n\nstruct POINT(x: int public, y: int public)\n\nlet name = \"world\"\nlet nickname: string? = null\nlet numbers = [1, 2, 3]\n\nwrite_line(\"hello {name}\")\nwrite_line(\"{true} {nickname}\")\nwrite_line(\"{numbers} {(1, \"one\")} {POINT(3, 4)}\")\nwrite_line(\"[{3.14159:F2}] [{42,6}]\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "control-flow-49",
   "snippet": false,
+  "wasm": true,
   "code": "squares(limit: int) -> int{} is\n    let i mut = 1\n    while i <= limit do\n        yield i * i\n        i = i + 1\n    od\nsi\n\nfor s in squares(4) do\n    write_line(s)\nod",
   "fullSource": "use IO.Std.write_line\n\nsquares(limit: int) -> int{} is\n    let i mut = 1\n    while i <= limit do\n        yield i * i\n        i = i + 1\n    od\nsi\n\nfor s in squares(4) do\n    write_line(s)\nod\n",
   "hiddenBefore": true,

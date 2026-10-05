@@ -1,6 +1,7 @@
 {
   "name": "generics-11",
   "snippet": false,
+  "wasm": true,
   "code": "trait Named is\n    name: string\nsi\n\ntrait Sized is\n    size: int\nsi\n\nclass CRATE: Named, Sized is\n    name: string\n    size: int\n\n    init(name: string, size: int) is\n        self.name = name\n        self.size = size\n    si\nsi\n\n// several bounds joined with '/\\'\nlabel[T: Named /\\ Sized](x: T) -> string =>\n    \"{x.name} holds {x.size}\"\n\nwrite_line(label(CRATE(\"bolts\", 500)))",
   "fullSource": "use IO.Std.write_line\n\ntrait Named is\n    name: string\nsi\n\ntrait Sized is\n    size: int\nsi\n\nclass CRATE: Named, Sized is\n    name: string\n    size: int\n\n    init(name: string, size: int) is\n        self.name = name\n        self.size = size\n    si\nsi\n\n// several bounds joined with '/\\'\nlabel[T: Named /\\ Sized](x: T) -> string =>\n    \"{x.name} holds {x.size}\"\n\nwrite_line(label(CRATE(\"bolts\", 500)))\n",
   "hiddenBefore": true,

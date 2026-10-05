@@ -1,6 +1,7 @@
 {
   "name": "optional-types-4",
   "snippet": false,
+  "wasm": false,
   "code": "union Result[T, E] is\n    OK(value: T) default\n    ERROR(error: E)\nsi\n\ndivide(a: int, b: int) -> Result[int, string] =>\n    if b == 0 then\n        Result.ERROR(\"division by zero\")\n    else\n        Result.OK(a / b)\n    fi\n\nlet good = divide(10, 2)\nlet bad = divide(10, 0)\n\nif good? then\n    write_line(\"10 / 2 = {good!}\")\nfi\n\nif !bad? then\n    write_line(\"10 / 0 failed\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nunion Result[T, E] is\n    OK(value: T) default\n    ERROR(error: E)\nsi\n\ndivide(a: int, b: int) -> Result[int, string] =>\n    if b == 0 then\n        Result.ERROR(\"division by zero\")\n    else\n        Result.OK(a / b)\n    fi\n\nlet good = divide(10, 2)\nlet bad = divide(10, 0)\n\nif good? then\n    write_line(\"10 / 2 = {good!}\")\nfi\n\nif !bad? then\n    write_line(\"10 / 0 failed\")\nfi\n",
   "hiddenBefore": true,

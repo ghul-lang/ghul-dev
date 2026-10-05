@@ -1,6 +1,7 @@
 {
   "name": "optional-types-3",
   "snippet": false,
+  "wasm": true,
   "code": "// no declared relationship to T? or Ghul.Maybe[T] - ghūl looks for\n// has_value and value structurally\nstruct PERCENTAGE is\n    has_value: bool\n    value: double\n\n    init() is\n        has_value = false\n        value = _\n    si\n\n    init(v: double) is\n        has_value = true\n        value = v\n    si\nsi\n\nlet full = PERCENTAGE(87.5d)\nlet empty = PERCENTAGE()\n\nif full? then\n    write_line(\"full: {full!}%\")\nfi\n\nif !empty? then\n    write_line(\"empty has no reading\")\nfi",
   "fullSource": "use IO.Std.write_line\n\n// no declared relationship to T? or Ghul.Maybe[T] - ghūl looks for\n// has_value and value structurally\nstruct PERCENTAGE is\n    has_value: bool\n    value: double\n\n    init() is\n        has_value = false\n        value = _\n    si\n\n    init(v: double) is\n        has_value = true\n        value = v\n    si\nsi\n\nlet full = PERCENTAGE(87.5d)\nlet empty = PERCENTAGE()\n\nif full? then\n    write_line(\"full: {full!}%\")\nfi\n\nif !empty? then\n    write_line(\"empty has no reading\")\nfi\n",
   "hiddenBefore": true,

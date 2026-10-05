@@ -1,6 +1,7 @@
 {
   "name": "control-flow-54",
   "snippet": false,
+  "wasm": true,
   "code": "    case a\n    when c: CAT then c.meow()\n    when d: DOG then d.bark()\n    esac\n\nwrite_line(describe(CAT()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    init() is si\nsi\n\nclass CAT: Animal is\n    init() is super.init(); si\n    meow() -> string => \"meow\"\nsi\n\nclass DOG: Animal is\n    init() is super.init(); si\n    bark() -> string => \"woof\"\nsi\n\ndescribe(a: Animal) -> string =>\n    case a\n    when c: CAT then c.meow()\n    when d: DOG then d.bark()\n    esac\n\nwrite_line(describe(CAT()))\n",
   "hiddenBefore": true,

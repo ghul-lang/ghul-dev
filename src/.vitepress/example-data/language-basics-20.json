@@ -1,6 +1,7 @@
 {
   "name": "language-basics-20",
   "snippet": true,
+  "wasm": false,
   "code": "// OK: both addends are type double\nlet d = 1.0d + 1.0d\n\n// compile time error: addends are mixed types\n// (double vs int)\nlet e = 1.0d + 1\n\n// OK with explicit cast\nlet e = 1.0d + cast double(1)\n\n// OK: \"hello\" is a string, and string derives\n// from object\nlet o: object = \"hello\"",
   "fullSource": "// OK: both addends are type double\nlet d = 1.0d + 1.0d\n\n// compile time error: addends are mixed types\n// (double vs int)\nlet e = 1.0d + 1\n\n// OK with explicit cast\nlet e = 1.0d + cast double(1)\n\n// OK: \"hello\" is a string, and string derives\n// from object\nlet o: object = \"hello\"\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-52",
   "snippet": false,
+  "wasm": true,
   "code": "// every instance member of a pure type must read and never\n// write; a bodiless member holds implementors to the same rule\ntrait NAMED pure is\n    name: string\n    label() -> string\nsi\n\nclass USER: NAMED is\n    name: string\n\n    init(name: string) is\n        self.name = name\n    si\n\n    label() -> string => \"<{name}>\"\nsi\n\nwrite_line(USER(\"ada\").label())",
   "fullSource": "use IO.Std.write_line\n\n// every instance member of a pure type must read and never\n// write; a bodiless member holds implementors to the same rule\ntrait NAMED pure is\n    name: string\n    label() -> string\nsi\n\nclass USER: NAMED is\n    name: string\n\n    init(name: string) is\n        self.name = name\n    si\n\n    label() -> string => \"<{name}>\"\nsi\n\nwrite_line(USER(\"ada\").label())\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "expressions-28",
   "snippet": false,
+  "wasm": true,
   "code": "let area = (\n    let width = 4\n    let height = 5\n    width * height\n)\n\nwrite_line(\"area = {area}\")",
   "fullSource": "use IO.Std.write_line\n\nlet area = (\n    let width = 4\n    let height = 5\n    width * height\n)\n\nwrite_line(\"area = {area}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-8a",
   "snippet": false,
+  "wasm": false,
   "code": "class POINT(x: int, y: int) is\nsi",
   "fullSource": "class POINT(x: int, y: int) is\nsi\n\n",
   "hiddenBefore": false,

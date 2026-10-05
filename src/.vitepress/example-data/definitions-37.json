@@ -1,6 +1,7 @@
 {
   "name": "definitions-37",
   "snippet": false,
+  "wasm": true,
   "code": "class PERSON(name: string, age: int) is\n    describe() is\n        write_line(\"{name} is {age} years old\")\n    si\nsi\n\nPERSON(\"alice\", 30).describe()",
   "fullSource": "use IO.Std.write_line\n\nclass PERSON(name: string, age: int) is\n    describe() is\n        write_line(\"{name} is {age} years old\")\n    si\nsi\n\nPERSON(\"alice\", 30).describe()\n",
   "hiddenBefore": true,

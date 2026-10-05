@@ -1,6 +1,7 @@
 {
   "name": "definitions-27",
   "snippet": false,
+  "wasm": false,
   "code": "namespace Example is\n    // this definition of Test is visible unqualified\n    // throughout the Example namespace:\n    trait Test is\n        run()\n    si\nsi",
   "fullSource": "namespace Example is\n    // this definition of Test is visible unqualified\n    // throughout the Example namespace:\n    trait Test is\n        run()\n    si\nsi\n\nnamespace Demo is\n    entry() is si\nsi\n",
   "hiddenBefore": false,

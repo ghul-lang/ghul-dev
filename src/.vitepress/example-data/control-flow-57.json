@@ -1,6 +1,7 @@
 {
   "name": "control-flow-57",
   "snippet": false,
+  "wasm": true,
   "code": "pet = CAT()\n// assigning a CAT narrows pet to CAT, so purr() is in reach\nwrite_line(pet.purr())",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass CAT: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\nany_animal() -> Animal => CAT()\n\nlet pet mut = any_animal()\npet = CAT()\n// assigning a CAT narrows pet to CAT, so purr() is in reach\nwrite_line(pet.purr())\n",
   "hiddenBefore": true,

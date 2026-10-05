@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-29",
   "snippet": false,
+  "wasm": true,
   "code": "// from counts upwards without end; take bounds it\nlet squares = from(1) |> map(n => n * n) |> take(5)\nwrite_line(\"squares: {squares}\")\n\n// from with a step, and repeat with a count\nwrite_line(\"evens: {from(0, 2) |> take(4)}\")\nwrite_line(\"dashes: {repeat(\"-\", 5) |> join(\"\")}\")\n\n// a list of a given size, filled with one value\nlet seen = repeat(false, 3) |> collect_mutable()\nwrite_line(\"seen: {seen.count} values, first {seen[0]}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\n// from counts upwards without end; take bounds it\nlet squares = from(1) |> map(n => n * n) |> take(5)\nwrite_line(\"squares: {squares}\")\n\n// from with a step, and repeat with a count\nwrite_line(\"evens: {from(0, 2) |> take(4)}\")\nwrite_line(\"dashes: {repeat(\"-\", 5) |> join(\"\")}\")\n\n// a list of a given size, filled with one value\nlet seen = repeat(false, 3) |> collect_mutable()\nwrite_line(\"seen: {seen.count} values, first {seen[0]}\")\n",
   "hiddenBefore": true,

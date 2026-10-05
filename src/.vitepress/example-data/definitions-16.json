@@ -1,6 +1,7 @@
 {
   "name": "definitions-16",
   "snippet": false,
+  "wasm": false,
   "code": "union Tree is\n    NODE(left: Tree, right: Tree)\n    LEAF(value: int)\nsi",
   "fullSource": "union Tree is\n    NODE(left: Tree, right: Tree)\n    LEAF(value: int)\nsi\n\n",
   "hiddenBefore": false,

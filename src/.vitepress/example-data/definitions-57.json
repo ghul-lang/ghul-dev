@@ -1,6 +1,7 @@
 {
   "name": "definitions-57",
   "snippet": false,
+  "wasm": true,
   "code": "@equality()\nclass POINT(x: int, y: int)\n\nlet a = POINT(1, 2)\nlet b = POINT(1, 2)\n\nwrite_line(\"{a =~ b} {a == b}\")\n\n// .NET finds an equal value, not only the same object\nwrite_line(\"{Collections.LIST[POINT]([a]).contains(b)}\")",
   "fullSource": "use IO.Std.write_line\n\n@equality()\nclass POINT(x: int, y: int)\n\nlet a = POINT(1, 2)\nlet b = POINT(1, 2)\n\nwrite_line(\"{a =~ b} {a == b}\")\n\n// .NET finds an equal value, not only the same object\nwrite_line(\"{Collections.LIST[POINT]([a]).contains(b)}\")\n",
   "hiddenBefore": true,

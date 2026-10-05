@@ -1,6 +1,7 @@
 {
   "name": "type-inference-21",
   "snippet": false,
+  "wasm": false,
   "code": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass CAT(): Animal\n\nclass DOG(): Animal\n\nmerge[T](a: T, b: T) -> T => a\nlet a = merge(CAT(), DOG())",
   "fullSource": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass CAT(): Animal\n\nclass DOG(): Animal\n\nmerge[T](a: T, b: T) -> T => a\n\nlet a = merge(CAT(), DOG())\n",
   "hiddenBefore": false,

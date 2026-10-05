@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-20",
   "snippet": false,
+  "wasm": false,
   "code": "let add = (x, y) => x + y\n\nlet add_5 = y => add(5, y)\nwrite_line(\"add_5(3): {add_5(3)}\")\n\nlet add_10 = y => add(10, y)\nwrite_line(\"add_10(3): {add_10(3)}\")",
   "fullSource": "use IO.Std.write_line\n\nlet add = (x, y) => x + y\n\nlet add_5 = y => add(5, y)\nwrite_line(\"add_5(3): {add_5(3)}\")\n\nlet add_10 = y => add(10, y)\nwrite_line(\"add_10(3): {add_10(3)}\")\n",
   "hiddenBefore": true,

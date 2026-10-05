@@ -1,6 +1,7 @@
 {
   "name": "optional-types-1",
   "snippet": false,
+  "wasm": false,
   "code": "find_first[T](xs: T[], predicate: T -> bool) -> T? is\n    for x in xs do\n        if predicate(x) then\n            return x\n        fi\n    od\n\n    return null\nsi\n\nlet first_even = find_first([1, 3, 4, 7, 8], n => n % 2 == 0)    // T = int, a value type\nlet first_long = find_first([\"a\", \"bb\", \"ccc\"], s => s.length > 2) // T = string, a reference type\n\nwrite_line(\"first even: {first_even ?? -1}\")\nwrite_line(\"first long: {first_long ?? \"none\"}\")",
   "fullSource": "use IO.Std.write_line\n\nfind_first[T](xs: T[], predicate: T -> bool) -> T? is\n    for x in xs do\n        if predicate(x) then\n            return x\n        fi\n    od\n\n    return null\nsi\n\nlet first_even = find_first([1, 3, 4, 7, 8], n => n % 2 == 0)    // T = int, a value type\nlet first_long = find_first([\"a\", \"bb\", \"ccc\"], s => s.length > 2) // T = string, a reference type\n\nwrite_line(\"first even: {first_even ?? -1}\")\nwrite_line(\"first long: {first_long ?? \"none\"}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-42",
   "snippet": false,
+  "wasm": true,
   "code": "let t = Token.IDENTIFIER(\"count\", \"identifier\")\nwrite_line(t.name)    // identifier - shared primary-header field\nwrite_line(t.label()) // [identifier] - inherited trait default",
   "fullSource": "use IO.Std.write_line\n\ntrait Named is\n    name: string\n    label() -> string => \"[{name}]\"\nsi\n\nunion Token(name: string): Named is\n    KEYWORD(..)\n    IDENTIFIER(text: string, ..)\nsi\n\nlet t = Token.IDENTIFIER(\"count\", \"identifier\")\nwrite_line(t.name)    // identifier - shared primary-header field\nwrite_line(t.label()) // [identifier] - inherited trait default\n",
   "hiddenBefore": true,

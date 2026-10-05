@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-4",
   "snippet": false,
+  "wasm": true,
   "code": "// expression-bodied free function:\nsquare(n: int) -> int => n * n\n\nclass COUNTER is\n    _count: int\n\n    init() is si\n\n    // an expression body can be a ( ... ) block:\n    bump() -> int => (\n        _count = _count + 1\n        _count\n    )\nsi\n\nwrite_line(\"square(6) = {square(6)}\")\n\nlet c = COUNTER()\nwrite_line(\"bump = {c.bump()}\")\nwrite_line(\"bump = {c.bump()}\")\n\n// expression-bodied anonymous function:\nlet twice = (n: int) => n * 2\nwrite_line(\"twice(21) = {twice(21)}\")",
   "fullSource": "use IO.Std.write_line\n\n// expression-bodied free function:\nsquare(n: int) -> int => n * n\n\nclass COUNTER is\n    _count: int\n\n    init() is si\n\n    // an expression body can be a ( ... ) block:\n    bump() -> int => (\n        _count = _count + 1\n        _count\n    )\nsi\n\nwrite_line(\"square(6) = {square(6)}\")\n\nlet c = COUNTER()\nwrite_line(\"bump = {c.bump()}\")\nwrite_line(\"bump = {c.bump()}\")\n\n// expression-bodied anonymous function:\nlet twice = (n: int) => n * 2\nwrite_line(\"twice(21) = {twice(21)}\")\n",
   "hiddenBefore": true,

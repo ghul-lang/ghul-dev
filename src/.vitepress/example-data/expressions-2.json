@@ -1,6 +1,7 @@
 {
   "name": "expressions-2",
   "snippet": false,
+  "wasm": false,
   "code": "let c = 'c'\nlet u_macron = 'ū'",
   "fullSource": "let c = 'c'\nlet u_macron = 'ū'\n",
   "hiddenBefore": false,

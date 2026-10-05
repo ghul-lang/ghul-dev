@@ -1,6 +1,7 @@
 {
   "name": "control-flow-47",
   "snippet": false,
+  "wasm": false,
   "code": "run_side_effects() -> Tasks.TASK is\n    await side_effect(\"first\")\n    await side_effect(\"second\")\n\n    return\nsi\n\nrun_side_effects().wait()",
   "fullSource": "use IO.Std.write_line\n\nside_effect(label: string) -> Tasks.TASK is\n    write_line(\"side effect: {label}\")\n\n    return Tasks.TASK.completed_task\nsi\n\nrun_side_effects() -> Tasks.TASK is\n    await side_effect(\"first\")\n    await side_effect(\"second\")\n\n    return\nsi\n\nrun_side_effects().wait()\n",
   "hiddenBefore": true,

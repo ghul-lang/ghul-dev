@@ -1,6 +1,7 @@
 {
   "name": "todo-1",
   "snippet": false,
+  "wasm": false,
   "code": "swallow(i: int) -> int is\n    try\n        return do_something_risky(i)\n    catch e: Exception\n        return 1234 // I'm sure it was fine\n    yrt\nsi",
   "fullSource": "use System.Exception\n\ndo_something_risky(i: int) -> int => i\n\nswallow(1)\n\nswallow(i: int) -> int is\n    try\n        return do_something_risky(i)\n    catch e: Exception\n        return 1234 // I'm sure it was fine\n    yrt\nsi\n",
   "hiddenBefore": true,

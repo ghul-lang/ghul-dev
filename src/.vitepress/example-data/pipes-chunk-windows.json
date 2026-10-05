@@ -1,6 +1,7 @@
 {
   "name": "pipes-chunk-windows",
   "snippet": false,
+  "wasm": true,
   "code": "let numbers = [1, 2, 3, 4, 5, 6, 7]\n\n// chunk: the first three elements, then the next three, and so\n// on. the last group is short when the source doesn't divide\n// evenly\nfor group in numbers |> chunk(3) do\n    write_line(\"chunk:  {group |> join(\", \")}\")\nod\n\n// windows: every run of three neighbouring elements, so each\n// group shares two elements with the one before it. a group is\n// always three long\nfor window in numbers |> windows(3) do\n    write_line(\"window: {window |> join(\", \")}\")\nod",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet numbers = [1, 2, 3, 4, 5, 6, 7]\n\n// chunk: the first three elements, then the next three, and so\n// on. the last group is short when the source doesn't divide\n// evenly\nfor group in numbers |> chunk(3) do\n    write_line(\"chunk:  {group |> join(\", \")}\")\nod\n\n// windows: every run of three neighbouring elements, so each\n// group shares two elements with the one before it. a group is\n// always three long\nfor window in numbers |> windows(3) do\n    write_line(\"window: {window |> join(\", \")}\")\nod\n",
   "hiddenBefore": true,

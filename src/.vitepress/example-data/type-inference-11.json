@@ -1,6 +1,7 @@
 {
   "name": "type-inference-11",
   "snippet": false,
+  "wasm": false,
   "code": "let int_string = [(123, \"hello\"), (456, \"goodbye\")]\n\nlet int_object = [(123, 456), (798, \"wibble\")]",
   "fullSource": "let int_string = [(123, \"hello\"), (456, \"goodbye\")]\n\nlet int_object = [(123, 456), (798, \"wibble\")]\n",
   "hiddenBefore": false,

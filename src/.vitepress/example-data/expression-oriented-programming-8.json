@@ -1,6 +1,7 @@
 {
   "name": "expression-oriented-programming-8",
   "snippet": false,
+  "wasm": true,
   "code": "// an if in tail position is the return value, so no branch needs its own return\nclassify(n: int) -> string is\n    if n < 0 then\n        \"negative\"\n    elif n == 0 then\n        \"zero\"\n    else\n        \"positive\"\n    fi\nsi\n\n// so is a case\nsign_word(n: int) -> string is\n    case n\n    when 0 then \"none\"\n    when 1 then \"one\"\n    else \"many\"\n    esac\nsi\n\nwrite_line(\"{classify(-4)} {classify(0)} {sign_word(1)}\")",
   "fullSource": "use IO.Std.write_line\n\n// an if in tail position is the return value, so no branch needs its own return\nclassify(n: int) -> string is\n    if n < 0 then\n        \"negative\"\n    elif n == 0 then\n        \"zero\"\n    else\n        \"positive\"\n    fi\nsi\n\n// so is a case\nsign_word(n: int) -> string is\n    case n\n    when 0 then \"none\"\n    when 1 then \"one\"\n    else \"many\"\n    esac\nsi\n\nwrite_line(\"{classify(-4)} {classify(0)} {sign_word(1)}\")\n",
   "hiddenBefore": true,

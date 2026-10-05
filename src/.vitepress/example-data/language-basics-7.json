@@ -1,6 +1,7 @@
 {
   "name": "language-basics-7",
   "snippet": false,
+  "wasm": false,
   "code": "let my_int: int = 42\nlet my_float: double = 3.14d\nlet my_decimal: decimal = 19.99m\nlet my_bool: bool = true\nlet my_char: char = 'A'",
   "fullSource": "let my_int: int = 42\nlet my_float: double = 3.14d\nlet my_decimal: decimal = 19.99m\nlet my_bool: bool = true\nlet my_char: char = 'A'\n",
   "hiddenBefore": false,

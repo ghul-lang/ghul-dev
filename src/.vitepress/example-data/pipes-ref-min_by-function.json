@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-min_by-function",
   "snippet": false,
+  "wasm": false,
   "code": "min_by[T..,K: Ghul.Comparable[K]](\n    source: Iterable[T],\n    key_selector: T.. -> K pure\n) -> T? pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\nmin_by[T..,K: Ghul.Comparable[K]](\n    source: Iterable[T],\n    key_selector: T.. -> K pure\n) -> T? pure\n\nentry() is si\n",
   "hiddenBefore": true,

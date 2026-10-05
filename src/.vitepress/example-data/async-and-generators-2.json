@@ -1,6 +1,7 @@
 {
   "name": "async-and-generators-2",
   "snippet": false,
+  "wasm": false,
   "code": "// ValueTask[T] and Task.yield() follow the awaiter pattern, so both can\n// be awaited like a Task\nhalf(n: int) -> Tasks.ValueTask[int] => Tasks.ValueTask[int](n / 2)\n\ncompute() -> Tasks.TASK[int] is\n    await Tasks.TASK.yield()\n\n    let a = await half(84)\n\n    return a\nsi\n\nwrite_line(\"{compute().result}\")",
   "fullSource": "use IO.Std.write_line\n\n// ValueTask[T] and Task.yield() follow the awaiter pattern, so both can\n// be awaited like a Task\nhalf(n: int) -> Tasks.ValueTask[int] => Tasks.ValueTask[int](n / 2)\n\ncompute() -> Tasks.TASK[int] is\n    await Tasks.TASK.yield()\n\n    let a = await half(84)\n\n    return a\nsi\n\nwrite_line(\"{compute().result}\")\n",
   "hiddenBefore": true,

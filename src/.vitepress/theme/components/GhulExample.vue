@@ -448,10 +448,13 @@ function onFrameMessage(event) {
   // postMessage is not queued, so the source cannot be sent until the frame
   // says it is listening.
   if (message.type === 'loaded') {
+    // `wasm` says the example is known to build for WebAssembly and to print
+    // there what it prints on .NET, so the embed may run it in the browser.
     post('init', {
       source: retainedEdit(props.name)
         ?? example.value?.fullSource ?? example.value?.code ?? '',
-      theme: currentTheme()
+      theme: currentTheme(),
+      wasm: example.value?.wasm === true
     })
     return
   }

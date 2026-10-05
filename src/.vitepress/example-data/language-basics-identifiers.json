@@ -1,6 +1,7 @@
 {
   "name": "language-basics-identifiers",
   "snippet": false,
+  "wasm": true,
   "code": "class TEMPERATURA is\n    grados: double\n\n    init(grados: double) is\n        self.grados = grados\n    si\n\n    en_fahrenheit() -> double => grados * 1.8 + 32.0\nsi\n\n面積(幅: double, 高さ: double) -> double => 幅 * 高さ\n\nlet máxima = TEMPERATURA(21.5)\n\nwrite_line(\"{máxima.en_fahrenheit()}\")\nwrite_line(\"{面積(3.0, 4.0)}\")",
   "fullSource": "use IO.Std.write_line\n\nclass TEMPERATURA is\n    grados: double\n\n    init(grados: double) is\n        self.grados = grados\n    si\n\n    en_fahrenheit() -> double => grados * 1.8 + 32.0\nsi\n\n面積(幅: double, 高さ: double) -> double => 幅 * 高さ\n\nlet máxima = TEMPERATURA(21.5)\n\nwrite_line(\"{máxima.en_fahrenheit()}\")\nwrite_line(\"{面積(3.0, 4.0)}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-29",
   "snippet": false,
+  "wasm": true,
   "code": "// the compiler places this in an auto-generated\n// namespace private to this source file\nIO.Std.write_line(\"Hello, world!\")",
   "fullSource": "// the compiler places this in an auto-generated\n// namespace private to this source file\nIO.Std.write_line(\"Hello, world!\")\n",
   "hiddenBefore": false,

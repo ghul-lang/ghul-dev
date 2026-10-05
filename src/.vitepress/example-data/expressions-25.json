@@ -1,6 +1,7 @@
 {
   "name": "expressions-25",
   "snippet": false,
+  "wasm": true,
   "code": "let x = 10\nlet y = 5\nlet sum = x + y\nlet product = x * y\nlet is_greater = x > y\n\nif is_greater then\n    IO.Std.write_line(\"x is greater than y\")\nelse\n    IO.Std.write_line(\"x is not greater than y\")\nfi\n\nlet numbers = [1, 2, 3, 4, 5]\nlet first_number = numbers[0]\n\nIO.Std.write_line(\n    \"The first number is: {first_number}\"\n)",
   "fullSource": "let x = 10\nlet y = 5\nlet sum = x + y\nlet product = x * y\nlet is_greater = x > y\n\nif is_greater then\n    IO.Std.write_line(\"x is greater than y\")\nelse\n    IO.Std.write_line(\"x is not greater than y\")\nfi\n\nlet numbers = [1, 2, 3, 4, 5]\nlet first_number = numbers[0]\n\nIO.Std.write_line(\n    \"The first number is: {first_number}\"\n)\n",
   "hiddenBefore": false,

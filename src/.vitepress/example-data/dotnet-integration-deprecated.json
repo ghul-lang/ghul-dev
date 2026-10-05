@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-deprecated",
   "snippet": false,
+  "wasm": false,
   "code": "@System.Obsolete(\"use scaled instead\")\ndoubled(x: int) -> int => x * 2\n\nscaled(x: int, by: int) -> int => x * by\n\nwrite_line(\"{doubled(21)} {scaled(21, 2)}\")",
   "fullSource": "// expect: warning\nuse IO.Std.write_line\n\n@System.Obsolete(\"use scaled instead\")\ndoubled(x: int) -> int => x * 2\n\nscaled(x: int, by: int) -> int => x * by\n\nwrite_line(\"{doubled(21)} {scaled(21, 2)}\")\n",
   "hiddenBefore": true,

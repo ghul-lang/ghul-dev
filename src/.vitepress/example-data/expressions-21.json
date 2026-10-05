@@ -1,6 +1,7 @@
 {
   "name": "expressions-21",
   "snippet": false,
+  "wasm": false,
   "code": "let first_element = [1, 2, 3][0]",
   "fullSource": "let first_element = [1, 2, 3][0]\n",
   "hiddenBefore": false,

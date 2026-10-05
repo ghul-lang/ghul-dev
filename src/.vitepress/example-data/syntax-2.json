@@ -1,6 +1,7 @@
 {
   "name": "syntax-2",
   "snippet": false,
+  "wasm": true,
   "code": "use IO.Std.write_line\n\ngreet(name: string) is\n    write_line(\"hello, {name}\")\nsi\n\ngreet(\"world\")",
   "fullSource": "use IO.Std.write_line\n\ngreet(name: string) is\n    write_line(\"hello, {name}\")\nsi\n\ngreet(\"world\")\n",
   "hiddenBefore": false,

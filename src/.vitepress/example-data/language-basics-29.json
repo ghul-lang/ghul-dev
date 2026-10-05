@@ -1,6 +1,7 @@
 {
   "name": "language-basics-29",
   "snippet": false,
+  "wasm": true,
   "code": "let p = find()\nlet name = p?.name // string? - absent when p is absent\nwrite_line(\"name: {name ?? \"unknown\"}\")",
   "fullSource": "use IO.Std.write_line\n\nclass PERSON is\n    name: string\n    init(name: string) is self.name = name; si\nsi\n\nfind() -> PERSON? => null\n\nlet p = find()\nlet name = p?.name // string? - absent when p is absent\nwrite_line(\"name: {name ?? \"unknown\"}\")\n",
   "hiddenBefore": true,

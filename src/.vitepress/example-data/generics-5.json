@@ -1,6 +1,7 @@
 {
   "name": "generics-5",
   "snippet": false,
+  "wasm": false,
   "code": "union Option[T] is\n    SOME(value: T)\n    NONE\nsi\nlet some_int = Option.SOME(1234)",
   "fullSource": "union Option[T] is\n    SOME(value: T)\n    NONE\nsi\n\nlet some_int = Option.SOME(1234)\n",
   "hiddenBefore": false,

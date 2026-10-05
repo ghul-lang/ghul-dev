@@ -1,6 +1,7 @@
 {
   "name": "language-basics-32",
   "snippet": false,
+  "wasm": true,
   "code": "write_line(\"€\")          // the euro sign\nwrite_line(\"😀\")    // one character above U+FFFF, as a surrogate pair\nwrite_line(\"Acat\")       // exactly four digits, so this is Acat",
   "fullSource": "use IO.Std.write_line\n\nwrite_line(\"€\")          // the euro sign\nwrite_line(\"😀\")    // one character above U+FFFF, as a surrogate pair\nwrite_line(\"Acat\")       // exactly four digits, so this is Acat\n",
   "hiddenBefore": true,

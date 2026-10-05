@@ -1,6 +1,7 @@
 {
   "name": "display-show",
   "snippet": false,
+  "wasm": false,
   "code": "display([1, 2, 3])\n\ndisplay(\"working\", \"status\")\nupdate_display(\"done\", \"status\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul\n\ndisplay([1, 2, 3])\n\ndisplay(\"working\", \"status\")\nupdate_display(\"done\", \"status\")\n",
   "hiddenBefore": true,

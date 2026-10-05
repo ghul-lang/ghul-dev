@@ -1,6 +1,7 @@
 {
   "name": "pipes-set-operations",
   "snippet": false,
+  "wasm": true,
   "code": "let left = [1, 2, 2, 3, 4]\nlet right = [3, 4, 5]\n\n// all four remove duplicates, keeping the first occurrence\n// of each element\nwrite_line(\"distinct:       {left |> distinct()}\")\nwrite_line(\"union_with:     {left |> union_with(right)}\")\nwrite_line(\"intersect_with: {left |> intersect_with(right)}\")\nwrite_line(\"except:         {left |> except(right)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet left = [1, 2, 2, 3, 4]\nlet right = [3, 4, 5]\n\n// all four remove duplicates, keeping the first occurrence\n// of each element\nwrite_line(\"distinct:       {left |> distinct()}\")\nwrite_line(\"union_with:     {left |> union_with(right)}\")\nwrite_line(\"intersect_with: {left |> intersect_with(right)}\")\nwrite_line(\"except:         {left |> except(right)}\")\n",
   "hiddenBefore": true,

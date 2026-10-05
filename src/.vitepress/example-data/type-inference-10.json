@@ -1,6 +1,7 @@
 {
   "name": "type-inference-10",
   "snippet": false,
+  "wasm": false,
   "code": "class BASE()\n\nclass DERIVED(): BASE\nlet array_of_base = [BASE(), DERIVED()]\nlet array_of_object = [BASE(), DERIVED(), object()]\nlet array_of_int = [1, 2, 3, 4, 5]",
   "fullSource": "class BASE()\n\nclass DERIVED(): BASE\n\nlet array_of_base = [BASE(), DERIVED()]\nlet array_of_object = [BASE(), DERIVED(), object()]\nlet array_of_int = [1, 2, 3, 4, 5]\n",
   "hiddenBefore": false,

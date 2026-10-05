@@ -1,6 +1,7 @@
 {
   "name": "definitions-11",
   "snippet": false,
+  "wasm": false,
   "code": "let origin = POINT(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = POINT(1.0D, 0.0D)",
   "fullSource": "struct POINT(x: double, y: double)\n\nlet origin = POINT(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = POINT(1.0D, 0.0D)\n",
   "hiddenBefore": true,

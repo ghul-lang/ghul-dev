@@ -1,6 +1,7 @@
 {
   "name": "generics-9",
   "snippet": false,
+  "wasm": true,
   "code": "// T: init requires the caller to pass a type with a parameterless constructor\necho[T: init](x: T) -> T => x\n\nclass WIDGET() is\n    describe() -> string => \"a widget\"\nsi\n\nlet w = echo(WIDGET())   // OK: WIDGET has init()\n\nwrite_line(w.describe())",
   "fullSource": "use IO.Std.write_line\n\n// T: init requires the caller to pass a type with a parameterless constructor\necho[T: init](x: T) -> T => x\n\nclass WIDGET() is\n    describe() -> string => \"a widget\"\nsi\n\nlet w = echo(WIDGET())   // OK: WIDGET has init()\n\nwrite_line(w.describe())\n",
   "hiddenBefore": true,

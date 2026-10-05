@@ -1,6 +1,7 @@
 {
   "name": "expressions-11",
   "snippet": false,
+  "wasm": false,
   "code": "let list = [1, 2, 3, 4, 5]\n\nlist |> filter(element => element < 3)",
   "fullSource": "use Ghul.Pipes\n\nlet list = [1, 2, 3, 4, 5]\n\nlist |> filter(element => element < 3)\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-collect_mutable_map-function",
   "snippet": false,
+  "wasm": false,
   "code": "collect_mutable_map[T..,K,V](\n    source: Iterable[T],\n    key_selector: T.. -> K pure,\n    value_selector: T.. -> V pure\n) -> MAP[K,V] pure\n\ncollect_mutable_map[K,V](source: Iterable[(K, V)]) -> MAP[K,V] pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\ncollect_mutable_map[T..,K,V](\n    source: Iterable[T],\n    key_selector: T.. -> K pure,\n    value_selector: T.. -> V pure\n) -> MAP[K,V] pure\n\ncollect_mutable_map[K,V](source: Iterable[(K, V)]) -> MAP[K,V] pure\n\nentry() is si\n",
   "hiddenBefore": true,

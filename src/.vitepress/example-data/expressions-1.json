@@ -1,6 +1,7 @@
 {
   "name": "expressions-1",
   "snippet": false,
+  "wasm": false,
   "code": "let i = 12_345_678 // int\nlet hex = 0x1234_ABCD // int\nlet long = 1_000_000_000_000_000L // long\n\nlet hex_unsigned_long = 0x1234_5678__9ABC_DEF0_UL // ulong\n\nlet b = 99b // byte",
   "fullSource": "let i = 12_345_678 // int\nlet hex = 0x1234_ABCD // int\nlet long = 1_000_000_000_000_000L // long\n\nlet hex_unsigned_long = 0x1234_5678__9ABC_DEF0_UL // ulong\n\nlet b = 99b // byte\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-34",
   "snippet": false,
+  "wasm": false,
   "code": "class PUBLIC is\nsi\n\npublic_function() -> int => 0\n\npublic_property: int\n\nclass _PRIVATE is\nsi\n\n_private_function() -> int => 0\n\n_private_property: int",
   "fullSource": "class PUBLIC is\nsi\n\npublic_function() -> int => 0\n\npublic_property: int\n\nclass _PRIVATE is\nsi\n\n_private_function() -> int => 0\n\n_private_property: int\n\n",
   "hiddenBefore": false,

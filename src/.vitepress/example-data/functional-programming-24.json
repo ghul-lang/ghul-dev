@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-24",
   "snippet": false,
+  "wasm": true,
   "code": "// labels match by content, the way '=~' compares\nwrite_line(respond(\"help\"))\nwrite_line(respond(\"run\"))",
   "fullSource": "use IO.Std.write_line\n\nrespond(line: string) -> string =>\n    case line\n    when \"help\" then \"commands: help, quit\"\n    when \"quit\" then \"bye\"\n    else \"unknown command\"\n    esac\n\n// labels match by content, the way '=~' compares\nwrite_line(respond(\"help\"))\nwrite_line(respond(\"run\"))\n",
   "hiddenBefore": true,

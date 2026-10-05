@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-11",
   "snippet": false,
+  "wasm": false,
   "code": "// takes a function\napply_twice[T](f: T -> T, x: T) -> T => f(f(x))\n\n// returns a function\ntwice[T](f: T -> T) -> T -> T => x => f(f(x))\n\n// a generic method that takes a function\nclass SHELF[T](items: List[T]) is\n    map_all[U](f: T -> U) -> List[U] => [f(item) for item in items]\nsi\n\nlet times_2 = (x: int) => x * 2\n\nwrite_line(\"apply_twice(times_2, 5): {apply_twice(times_2, 5)}\")\nwrite_line(\"apply_twice on text: {apply_twice(s => \"<{s}>\", \"x\")}\")\n\nlet quadruple = twice(times_2)\nwrite_line(\"quadruple(5): {quadruple(5)}\")\n\nlet lengths = SHELF([\"one\", \"three\", \"seven\"]).map_all(s => s.length)\nwrite_line(\"lengths: {lengths}\")",
   "fullSource": "use IO.Std.write_line\nuse Collections.List\n\n// takes a function\napply_twice[T](f: T -> T, x: T) -> T => f(f(x))\n\n// returns a function\ntwice[T](f: T -> T) -> T -> T => x => f(f(x))\n\n// a generic method that takes a function\nclass SHELF[T](items: List[T]) is\n    map_all[U](f: T -> U) -> List[U] => [f(item) for item in items]\nsi\n\nlet times_2 = (x: int) => x * 2\n\nwrite_line(\"apply_twice(times_2, 5): {apply_twice(times_2, 5)}\")\nwrite_line(\"apply_twice on text: {apply_twice(s => \"<{s}>\", \"x\")}\")\n\nlet quadruple = twice(times_2)\nwrite_line(\"quadruple(5): {quadruple(5)}\")\n\nlet lengths = SHELF([\"one\", \"three\", \"seven\"]).map_all(s => s.length)\nwrite_line(\"lengths: {lengths}\")\n",
   "hiddenBefore": true,

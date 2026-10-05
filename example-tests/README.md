@@ -85,3 +85,25 @@ beside the pinned `ghul.compiler` tool, and the compiler versions published so f
 runtime from before those operators existed, so the snippet does not compile in this suite.
 It is still compiled and run on every pull, by `example-tool`, against the runtime this
 repository pins.
+
+## running on WebAssembly
+
+The embedded editor runs an example on WebAssembly, in the browser, where the
+example is known to work there, and on .NET otherwise. `wasm-capable.txt` lists
+the examples that do: built with `--target wasm` and run under Node, each prints
+what its `run.expected` says it prints on .NET. The example data carries the
+answer as each example's `"wasm"` flag, which `npm test` checks against the list.
+
+The build uses the compiler `wasm-compiler` names, with the ghul-core and
+ghul-runtime ghul-cli pins for it, which is the toolchain the playground's
+compile service builds for WebAssembly with. When the playground's compiler
+moves, change `wasm-compiler` to match and run:
+
+```sh
+tools/wasm-examples.sh                  # rewrites wasm-capable.txt (about 20 minutes)
+node tools/mark-wasm-examples.mjs       # records it in the example data
+```
+
+`tools/wasm-examples.sh <name> ...` checks some examples without touching the
+list. The example tool reads the list too, so regenerating an example keeps its
+flag.

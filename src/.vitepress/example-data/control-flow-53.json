@@ -1,6 +1,7 @@
 {
   "name": "control-flow-53",
   "snippet": false,
+  "wasm": true,
   "code": "let label = case status\nwhen 200 then \"ok\"\nwhen 500, 501, 502 then \"server error\"\nelse \"other\"\nesac\n\nwrite_line(label)",
   "fullSource": "use IO.Std.write_line\n\nlet status = 500\nlet label = case status\nwhen 200 then \"ok\"\nwhen 500, 501, 502 then \"server error\"\nelse \"other\"\nesac\n\nwrite_line(label)\n",
   "hiddenBefore": true,

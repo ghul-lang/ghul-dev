@@ -1,6 +1,7 @@
 {
   "name": "control-flow-19",
   "snippet": false,
+  "wasm": true,
   "code": "let counter mut = 0\nwhile counter < 5 do\n    write_line(counter)\n    counter = counter + 1\nod",
   "fullSource": "use IO.Std.write_line\n\nlet counter mut = 0\nwhile counter < 5 do\n    write_line(counter)\n    counter = counter + 1\nod\n",
   "hiddenBefore": true,

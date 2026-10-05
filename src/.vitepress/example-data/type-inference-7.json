@@ -1,6 +1,7 @@
 {
   "name": "type-inference-7",
   "snippet": false,
+  "wasm": false,
   "code": "let a_string = \"12345\"\nlet an_int = 12345\nlet an_int_array = [1, 2, 3, 4, 5]",
   "fullSource": "let a_string = \"12345\"\nlet an_int = 12345\nlet an_int_array = [1, 2, 3, 4, 5]\n",
   "hiddenBefore": false,

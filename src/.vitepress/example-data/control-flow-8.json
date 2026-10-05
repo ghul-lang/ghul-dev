@@ -1,6 +1,7 @@
 {
   "name": "control-flow-8",
   "snippet": false,
+  "wasm": true,
   "code": "union Maybe[T] is\n    YES(value: T)\n    NO\nsi\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = CAT(\"whiskers\")\nif isa CAT(a) then\n    // a is narrowed to CAT inside the branch\n    write_line(a.purr())\nfi",
   "fullSource": "use IO.Std.write_line\n\nunion Maybe[T] is\n    YES(value: T)\n    NO\nsi\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = CAT(\"whiskers\")\nif isa CAT(a) then\n    // a is narrowed to CAT inside the branch\n    write_line(a.purr())\nfi\n",
   "hiddenBefore": true,

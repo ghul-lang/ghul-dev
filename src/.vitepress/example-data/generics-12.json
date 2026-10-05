@@ -1,6 +1,7 @@
 {
   "name": "generics-12",
   "snippet": false,
+  "wasm": false,
   "code": "// '+' resolves through the bound once it has been imported\ntotal[T: INumber[T]](a: T, b: T) -> T => a + b\n\nwrite_line(\"{total(2, 3)} {total(1.5, 2.5)}\")",
   "fullSource": "use IO.Std.write_line\n\nuse System.Numerics.INumber\nuse System.Numerics.IAdditionOperators.`+\n\n// '+' resolves through the bound once it has been imported\ntotal[T: INumber[T]](a: T, b: T) -> T => a + b\n\nwrite_line(\"{total(2, 3)} {total(1.5, 2.5)}\")\n",
   "hiddenBefore": true,

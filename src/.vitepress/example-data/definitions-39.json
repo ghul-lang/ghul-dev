@@ -1,6 +1,7 @@
 {
   "name": "definitions-39",
   "snippet": false,
+  "wasm": false,
   "code": "class DOG(name: string, breed: string): ANIMAL is\n    // forward name to the superclass; the local DOG keeps breed as a field\n    super(name)\n\n    init(.., trick: string) is\n        // .. expands to (name, breed); the primary init has already run\n        write_line(\"{name} the {breed} can {trick}\")\n    si\nsi\n\nDOG(\"rex\", \"labrador\", \"sit\")",
   "fullSource": "use IO.Std.write_line\n\nclass ANIMAL(name: string)\n\nclass DOG(name: string, breed: string): ANIMAL is\n    // forward name to the superclass; the local DOG keeps breed as a field\n    super(name)\n\n    init(.., trick: string) is\n        // .. expands to (name, breed); the primary init has already run\n        write_line(\"{name} the {breed} can {trick}\")\n    si\nsi\n\nDOG(\"rex\", \"labrador\", \"sit\")\n",
   "hiddenBefore": true,

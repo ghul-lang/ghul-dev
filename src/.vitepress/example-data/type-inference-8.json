@@ -1,6 +1,7 @@
 {
   "name": "type-inference-8",
   "snippet": false,
+  "wasm": false,
   "code": "let person = (\"alice\", 30)\nlet (name, age) = person\n\nlet ((first, second), third) = ((\"a\", \"b\"), \"c\")",
   "fullSource": "let person = (\"alice\", 30)\nlet (name, age) = person\n\nlet ((first, second), third) = ((\"a\", \"b\"), \"c\")\n",
   "hiddenBefore": false,

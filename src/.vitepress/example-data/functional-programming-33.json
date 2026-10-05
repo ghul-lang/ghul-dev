@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-33",
   "snippet": false,
+  "wasm": true,
   "code": "let words = [\"apple\", \"fig\", \"banana\", \"kiwi\"]\n\n// the words longer than three letters, in upper case\nlet long = [w.to_upper() for w in words if w.length > 3]\nwrite_line(\"long: {long}\")\n\n// every ordered pair of different numbers from 1 to 3\nlet pairs = [(a, b) for a in 1::3 for b in 1::3 if a != b]\nwrite_line(\"pairs: {pairs}\")\n\n// the result is an array, so you can pass it to a pipe\nlet total = [w.length for w in words] |> sum()\nwrite_line(\"total length: {total}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet words = [\"apple\", \"fig\", \"banana\", \"kiwi\"]\n\n// the words longer than three letters, in upper case\nlet long = [w.to_upper() for w in words if w.length > 3]\nwrite_line(\"long: {long}\")\n\n// every ordered pair of different numbers from 1 to 3\nlet pairs = [(a, b) for a in 1::3 for b in 1::3 if a != b]\nwrite_line(\"pairs: {pairs}\")\n\n// the result is an array, so you can pass it to a pipe\nlet total = [w.length for w in words] |> sum()\nwrite_line(\"total length: {total}\")\n",
   "hiddenBefore": true,

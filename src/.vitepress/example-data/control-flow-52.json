@@ -1,6 +1,7 @@
 {
   "name": "control-flow-52",
   "snippet": false,
+  "wasm": true,
   "code": "while let n = c.next() do\n    write_line(n)\nod",
   "fullSource": "use IO.Std.write_line\n\nclass COUNTDOWN is\n    _n: int\n    init(n: int) is _n = n; si\n\n    next() -> int? is\n        if _n <= 0 then\n            return null\n        fi\n        let v = _n\n        _n = _n - 1\n        return v\n    si\nsi\n\nlet c = COUNTDOWN(3)\nwhile let n = c.next() do\n    write_line(n)\nod\n",
   "hiddenBefore": true,

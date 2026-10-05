@@ -1,6 +1,7 @@
 {
   "name": "control-flow-50",
   "snippet": false,
+  "wasm": false,
   "code": "// fibs() is an infinite generator; take(8) bounds it\nfor f in fibs() |> take(8) do\n    write_line(f)\nod",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nfibs() -> int{} is\n    let a mut = 0\n    let b mut = 1\n    do\n        yield a\n        let next = a + b\n        a = b\n        b = next\n    od\nsi\n\n// fibs() is an infinite generator; take(8) bounds it\nfor f in fibs() |> take(8) do\n    write_line(f)\nod\n",
   "hiddenBefore": true,

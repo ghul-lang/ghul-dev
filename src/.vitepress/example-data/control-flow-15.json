@@ -1,6 +1,7 @@
 {
   "name": "control-flow-15",
   "snippet": false,
+  "wasm": true,
   "code": "if let line = reader.read_line() then\n    // reader.read_line() yields string?\n    // line is string here\n    write_line(\"read: {line}\")\nelse\n    write_line(\"end of input\")\nfi",
   "fullSource": "use IO.Std.write_line\nuse Collections\n\nclass STRING_READER is\n    _lines: List[string]\n    _index: int\n\n    init(lines: List[string]) is\n        _lines = lines\n    si\n\n    read_line() -> string? is\n        if _index < _lines.count then\n            let line = _lines[_index]\n            _index = _index + 1\n            return line\n        fi\n\n        return null\n    si\nsi\n\nlet reader = STRING_READER([\"the only line\"])\nif let line = reader.read_line() then\n    // reader.read_line() yields string?\n    // line is string here\n    write_line(\"read: {line}\")\nelse\n    write_line(\"end of input\")\nfi\n",
   "hiddenBefore": true,

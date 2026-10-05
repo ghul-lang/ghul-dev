@@ -1,6 +1,7 @@
 {
   "name": "expressions-17",
   "snippet": false,
+  "wasm": false,
   "code": "let logical_and = true /\\ false    // Logical AND\nlet logical_or = true \\/ false     // Logical OR\nlet logical_not = !true            // Logical NOT",
   "fullSource": "let logical_and = true /\\ false    // Logical AND\nlet logical_or = true \\/ false     // Logical OR\nlet logical_not = !true            // Logical NOT\n",
   "hiddenBefore": false,

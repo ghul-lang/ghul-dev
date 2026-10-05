@@ -1,6 +1,7 @@
 {
   "name": "control-flow-45",
   "snippet": false,
+  "wasm": true,
   "code": "default_return() -> int is\n    // do nothing, return 0\nsi\nlet i = default_return()\nassert i == 0\nwrite_line(\"default return value is {i}\")",
   "fullSource": "// expect: warning\nuse IO.Std.write_line\n\ndefault_return() -> int is\n    // do nothing, return 0\nsi\nlet i = default_return()\nassert i == 0\nwrite_line(\"default return value is {i}\")\n",
   "hiddenBefore": true,

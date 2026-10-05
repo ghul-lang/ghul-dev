@@ -1,6 +1,7 @@
 {
   "name": "type-inference-3",
   "snippet": false,
+  "wasm": true,
   "code": "greet(a: Animal) is\n    if isa CAT(a) then\n        // a is a parameter of greet, narrowed to CAT\n        // in this branch\n        write_line(a.purr())\n    fi\nsi\n\ngreet(CAT())",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(): Animal is\n    purr() -> string => \"purr\"\nsi\n\ngreet(a: Animal) is\n    if isa CAT(a) then\n        // a is a parameter of greet, narrowed to CAT\n        // in this branch\n        write_line(a.purr())\n    fi\nsi\n\ngreet(CAT())\n",
   "hiddenBefore": true,

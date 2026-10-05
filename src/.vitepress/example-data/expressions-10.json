@@ -1,6 +1,7 @@
 {
   "name": "expressions-10",
   "snippet": false,
+  "wasm": false,
   "code": "let simple_add = (x: int, y: int) => x + y\n\nlet complex_add = (x: int, y: int) is\n    let result = x + y\n    return result\nsi",
   "fullSource": "let simple_add = (x: int, y: int) => x + y\n\nlet complex_add = (x: int, y: int) is\n    let result = x + y\n    return result\nsi\n",
   "hiddenBefore": false,

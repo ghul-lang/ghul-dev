@@ -1,6 +1,7 @@
 {
   "name": "control-flow-44",
   "snippet": false,
+  "wasm": true,
   "code": "fib(n: int) -> int is\n    if n < 0 then\n        return 0\n    elif n == 1 then\n        return 1\n    else\n        return fib(n - 1) + fib(n - 2)\n    fi\nsi\n\nfor i in 0::10 do\n    write_line(\"fib({i}) = {fib(i)}\")\nod",
   "fullSource": "use IO.Std.write_line\n\nfib(n: int) -> int is\n    if n < 0 then\n        return 0\n    elif n == 1 then\n        return 1\n    else\n        return fib(n - 1) + fib(n - 2)\n    fi\nsi\n\nfor i in 0::10 do\n    write_line(\"fib({i}) = {fib(i)}\")\nod\n",
   "hiddenBefore": true,

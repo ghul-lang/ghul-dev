@@ -1,6 +1,7 @@
 {
   "name": "pipes-lazy-chain",
   "snippet": false,
+  "wasm": true,
   "code": "let numbers = [1, 2, 3, 4, 5, 6]\n\n// nothing has asked this pipe for elements yet, so peek's\n// action has not run\nlet stages = numbers\n    |> peek(x => write_line(\"  pulled {x}\"))\n    |> filter(x => x % 2 == 0)\n    |> map(x => x * 10)\n\nwrite_line(\"pipe built - nothing has run yet\")\n\n// collect_mutable is a terminal, so it asks for the elements\nlet result = stages |> collect_mutable()\n\nwrite_line(\"result: {result |> join(\", \")}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nlet numbers = [1, 2, 3, 4, 5, 6]\n\n// nothing has asked this pipe for elements yet, so peek's\n// action has not run\nlet stages = numbers\n    |> peek(x => write_line(\"  pulled {x}\"))\n    |> filter(x => x % 2 == 0)\n    |> map(x => x * 10)\n\nwrite_line(\"pipe built - nothing has run yet\")\n\n// collect_mutable is a terminal, so it asks for the elements\nlet result = stages |> collect_mutable()\n\nwrite_line(\"result: {result |> join(\", \")}\")\n",
   "hiddenBefore": true,

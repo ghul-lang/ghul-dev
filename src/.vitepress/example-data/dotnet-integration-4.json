@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-4",
   "snippet": false,
+  "wasm": false,
   "code": "class WITH_HASH(x: int) is\n    =~(other: WITH_HASH) -> bool => x == other.x\n\n    get_hash_code() -> int => x.get_hash_code()\nsi\n\n// only =~, so .NET keeps comparing by identity:\nclass NO_HASH(x: int) is\n    =~(other: NO_HASH) -> bool => x == other.x\nsi\n\nlet with_hash = SET[WITH_HASH]()\nwith_hash.add(WITH_HASH(1))\nwrite_line(\"with get_hash_code: {with_hash.contains(WITH_HASH(1))}\")\n\nlet no_hash = SET[NO_HASH]()\nno_hash.add(NO_HASH(1))\nwrite_line(\"without get_hash_code: {no_hash.contains(NO_HASH(1))}\")",
   "fullSource": "// expect: warning\nuse IO.Std.write_line\nuse Collections.SET\n\nclass WITH_HASH(x: int) is\n    =~(other: WITH_HASH) -> bool => x == other.x\n\n    get_hash_code() -> int => x.get_hash_code()\nsi\n\n// only =~, so .NET keeps comparing by identity:\nclass NO_HASH(x: int) is\n    =~(other: NO_HASH) -> bool => x == other.x\nsi\n\nlet with_hash = SET[WITH_HASH]()\nwith_hash.add(WITH_HASH(1))\nwrite_line(\"with get_hash_code: {with_hash.contains(WITH_HASH(1))}\")\n\nlet no_hash = SET[NO_HASH]()\nno_hash.add(NO_HASH(1))\nwrite_line(\"without get_hash_code: {no_hash.contains(NO_HASH(1))}\")\n",
   "hiddenBefore": true,

@@ -1,6 +1,7 @@
 {
   "name": "language-basics-21",
   "snippet": false,
+  "wasm": false,
   "code": "let i = 1234\nlet j: int = 0\nlet k: int = 5678",
   "fullSource": "let i = 1234\nlet j: int = 0\nlet k: int = 5678\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "definitions-17",
   "snippet": false,
+  "wasm": true,
   "code": "let tree: Tree = Tree.NODE(Tree.LEAF(123), Tree.LEAF(456))\nlet leaf = Tree.LEAF(123)\n\nif isa Tree.NODE(tree) then\n    write_line(\"have tree node\")\nelif isa Tree.LEAF(tree) then\n    write_line(\"have tree leaf\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nunion Tree is\n    NODE(left: Tree, right: Tree)\n    LEAF(value: int)\nsi\n\nlet tree: Tree = Tree.NODE(Tree.LEAF(123), Tree.LEAF(456))\nlet leaf = Tree.LEAF(123)\n\nif isa Tree.NODE(tree) then\n    write_line(\"have tree node\")\nelif isa Tree.LEAF(tree) then\n    write_line(\"have tree leaf\")\nfi\n",
   "hiddenBefore": true,

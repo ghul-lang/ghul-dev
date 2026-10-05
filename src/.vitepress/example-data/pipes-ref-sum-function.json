@@ -1,6 +1,7 @@
 {
   "name": "pipes-ref-sum-function",
   "snippet": false,
+  "wasm": false,
   "code": "sum[T: INumber[T]](\n    source: Iterable[T]\n) -> T pure",
   "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\nuse System.Numerics.INumber\n\nsum[T: INumber[T]](\n    source: Iterable[T]\n) -> T pure\n\nentry() is si\n",
   "hiddenBefore": true,

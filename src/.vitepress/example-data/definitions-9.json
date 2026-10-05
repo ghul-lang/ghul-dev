@@ -1,6 +1,7 @@
 {
   "name": "definitions-9",
   "snippet": false,
+  "wasm": false,
   "code": "let a_thing = THING()",
   "fullSource": "class THING()\n\nlet a_thing = THING()\n",
   "hiddenBefore": true,

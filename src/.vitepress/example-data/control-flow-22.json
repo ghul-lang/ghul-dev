@@ -1,6 +1,7 @@
 {
   "name": "control-flow-22",
   "snippet": true,
+  "wasm": false,
   "code": "for variable in iterable do\n    // variable is set to each element of iterator in turn\nod",
   "fullSource": "for variable in iterable do\n    // variable is set to each element of iterator in turn\nod\n",
   "hiddenBefore": false,

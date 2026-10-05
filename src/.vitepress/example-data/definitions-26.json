@@ -1,6 +1,7 @@
 {
   "name": "definitions-26",
   "snippet": false,
+  "wasm": true,
   "code": "namespace Outer.Inner is\n    do_something() is\n        IO.Std.write_line(\"did something\")\n    si\nsi\nOuter.Inner.do_something()",
   "fullSource": "namespace Outer.Inner is\n    do_something() is\n        IO.Std.write_line(\"did something\")\n    si\nsi\n\nnamespace Demo is\n    entry() is\n        Outer.Inner.do_something()\n    si\nsi\n",
   "hiddenBefore": false,

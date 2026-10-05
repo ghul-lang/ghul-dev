@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-15",
   "snippet": false,
+  "wasm": true,
   "code": "if isa Option.SOME(an_option) then\n    let value = an_option.value\n    write_line(\"the option holds {value}\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nunion Option[T] is\n    SOME(value: T)\n    NONE\nsi\n\nlet an_option: Option[int] = Option.SOME(42)\nif isa Option.SOME(an_option) then\n    let value = an_option.value\n    write_line(\"the option holds {value}\")\nfi\n",
   "hiddenBefore": true,

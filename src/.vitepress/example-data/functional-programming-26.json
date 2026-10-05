@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-26",
   "snippet": false,
+  "wasm": false,
   "code": "let times_2 = x => x * 2\nlet add_1 = x => x + 1\n\nlet times_2_then_add_1 = times_2 >> add_1\nwrite_line(\"times_2_then_add_1(5): {times_2_then_add_1(5)}\")\n\nlet pipeline = times_2 >> add_1 >> x => \"[{x}]\"\nwrite_line(\"pipeline(5): {pipeline(5)}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul\n\nlet times_2 = x => x * 2\nlet add_1 = x => x + 1\n\nlet times_2_then_add_1 = times_2 >> add_1\nwrite_line(\"times_2_then_add_1(5): {times_2_then_add_1(5)}\")\n\nlet pipeline = times_2 >> add_1 >> x => \"[{x}]\"\nwrite_line(\"pipeline(5): {pipeline(5)}\")\n",
   "hiddenBefore": true,

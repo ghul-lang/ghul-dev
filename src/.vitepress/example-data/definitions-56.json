@@ -1,6 +1,7 @@
 {
   "name": "definitions-56",
   "snippet": false,
+  "wasm": false,
   "code": "// an entry point cannot take an int\nentry(count: int) is\n    IO.Std.write_line(\"{count}\")\nsi",
   "fullSource": "// expect: error\n// an entry point cannot take an int\nentry(count: int) is\n    IO.Std.write_line(\"{count}\")\nsi\n",
   "hiddenBefore": true,

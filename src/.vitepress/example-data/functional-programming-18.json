@@ -1,6 +1,7 @@
 {
   "name": "functional-programming-18",
   "snippet": false,
+  "wasm": false,
   "code": "union Shape is\n    CIRCLE(radius: double)\n    SQUARE(side: double)\nsi\narea(s: Shape) -> double is\n    if let c: CIRCLE = s then\n        return 3.14159d * c.radius * c.radius\n    elif let q: SQUARE = s then\n        return q.side * q.side\n    fi\n\n    return 0.0d\nsi",
   "fullSource": "union Shape is\n    CIRCLE(radius: double)\n    SQUARE(side: double)\nsi\n\nuse Shape.CIRCLE\nuse Shape.SQUARE\n\narea(s: Shape) -> double is\n    if let c: CIRCLE = s then\n        return 3.14159d * c.radius * c.radius\n    elif let q: SQUARE = s then\n        return q.side * q.side\n    fi\n\n    return 0.0d\nsi\n\n",
   "hiddenBefore": false,

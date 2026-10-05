@@ -1,6 +1,7 @@
 {
   "name": "definitions-7",
   "snippet": true,
+  "wasm": false,
   "code": "do_something(what: string, why: string, to: int)",
   "fullSource": "do_something(what: string, why: string, to: int)\n",
   "hiddenBefore": false,

@@ -1,6 +1,7 @@
 {
   "name": "dotnet-integration-1",
   "snippet": false,
+  "wasm": false,
   "code": "entry(args: string[]) is\n    let builder = WebApplication.create_builder(args)\n\n    let app = builder.build()\n\n    // '|>' threads app in as map_get's first argument:\n    app |> map_get(\"/hello\", () => Results.ok(\"hello, world\"))\n\n    app.run(null)\nsi",
   "fullSource": "use Microsoft.AspNetCore.Builder\nuse Microsoft.AspNetCore.Http\n\n// map_get is an extension method, so use it and call it with '|>':\nuse Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.map_get\n\nentry(args: string[]) is\n    let builder = WebApplication.create_builder(args)\n\n    let app = builder.build()\n\n    // '|>' threads app in as map_get's first argument:\n    app |> map_get(\"/hello\", () => Results.ok(\"hello, world\"))\n\n    app.run(null)\nsi\n",
   "hiddenBefore": true,
