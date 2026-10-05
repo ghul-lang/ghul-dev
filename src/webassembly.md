@@ -60,15 +60,14 @@ The first build installs the compiler if there isn't one, and fetches the librar
 
 ## what works today
 
-With the latest compiler, a WebAssembly build compiles classes, structs, traits and unions, with virtual and trait calls, `case` over a union, generics, arrays, tuples, function values and closures, strings and string interpolation, `throw`, `try`, `catch` and `finally`, generators, and `for` loops over `0..n` and `1::n`.
+With the latest compiler, a WebAssembly build compiles classes, structs, traits and unions, with virtual and trait calls, `case` over a union, generics, arrays, tuples, function values and closures, strings and string interpolation with alignment and formats, `bigint`, the scalar conversions such as `double(n)`, list comprehensions, slicing, `throw`, `try`, `catch` and `finally`, generators, and `for` loops over `0..n` and `1::n`.
 
 Not yet:
 
 - asynchronous functions and `await`
 - `decimal`
-- interpolating a value whose type has no `to_string` of its own, such as a tuple or an array
-- slicing with the from-the-end ranges `..<` and `..<<`
-- files and directories, and the rest of `IO` beyond writing to standard output
+- an interpolated number formatted other than by the standard formats `D`, `E`, `F`, `G`, `N`, `R` and `X` or a custom pattern of `0`, `#`, `.` and `,`, and an interpolated enum given any format
+- reading standard input, files and directories, and the rest of `IO` beyond writing to standard output
 
 The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks each of these. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
 

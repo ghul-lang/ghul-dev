@@ -72,6 +72,10 @@ Some commonly used namespace and type names are re-mapped in line with ghūl con
 | `System.Collections.Generic.IReadOnlySet`            | `Collections.Set`                   |
 | `System.Collections.Generic.ISet`                    | `Collections.MutableSet`            |
 | `System.Collections.Generic.HashSet`                 | `Collections.SET`                   |
+| `System.Collections.Generic.IComparer`               | `Collections.Comparer`              |
+| `System.Collections.Generic.IEqualityComparer`       | `Collections.EqualityComparer`      |
+| `System.Collections.Generic.Comparer`                | `Collections.ComparerBase`          |
+| `System.Collections.Generic.EqualityComparer`        | `Collections.EqualityComparerBase`  |
 | `System.Collections.Generic.Stack`                   | `Collections.STACK`                 |
 | `System.Threading.Tasks.Task`                        | `Tasks.TASK`                        |
 | `System.Threading.Tasks.Task<T>`                     | `Tasks.TASK[T]`                     |
