@@ -130,7 +130,8 @@ A short overview of each:
 
 ghūl's conditional compilation is a pragma annotation: a `@IF.flag()`
 applied to a single definition or statement gates that item on whether
-`flag` was passed at compile time. There is no else/endif form; a
+`flag` is on: passed with `--define`, or the name of the target being
+built. There is no else/endif form; a
 disabled item is omitted. This pass walks the syntax tree and
 nullifies each disabled item - definitions are replaced by an empty
 definition list, statements by `null` - so subsequent passes can skip
