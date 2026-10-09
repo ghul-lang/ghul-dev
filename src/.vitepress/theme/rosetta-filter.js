@@ -4,7 +4,7 @@
 // changes the one filter, and the list under the task answers to it.
 
 import { ref, shallowRef, computed } from 'vue'
-import { tagCounts } from './rosetta-corpus'
+import { tagCounts, platformCounts } from './rosetta-corpus'
 
 // Set by the explorer once the corpus has loaded. Null until then, and the aside shows nothing.
 export const corpus = shallowRef(null)
@@ -13,6 +13,8 @@ export const query = ref('')
 export const chosen = ref(new Set())
 
 export const tags = computed(() => corpus.value ? tagCounts(corpus.value) : [])
+
+export const platforms = computed(() => corpus.value ? platformCounts(corpus.value) : [])
 
 export function toggleTag(tag) {
   const next = new Set(chosen.value)
