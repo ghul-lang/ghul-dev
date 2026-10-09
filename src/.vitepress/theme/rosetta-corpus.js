@@ -109,23 +109,44 @@ export function matching(corpus, { query = '', tags = [], runnableOnly = false }
   })
 }
 
-// Only the tags in use, most used first: a chip that matches nothing is noise.
-export function tagCounts(corpus) {
-  const counts = new Map()
-
-  for (const candidate of corpus.tasks) {
-    for (const tag of candidate.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1)
-  }
-
-  return [...counts.entries()].sort((a, b) => b[1] - a[1])
+// What choosing a chip would leave: the tasks the search and the chips already chosen leave, that
+// also have this one. For a chip already chosen that is simply what is left now.
+function leftBy(corpus, tag, { query, chosen, runnableOnly }) {
+  return matching(corpus, {
+    query,
+    tags: chosen.includes(tag) ? chosen : [...chosen, tag],
+    runnableOnly,
+  }).length
 }
 
-// The platforms the index names, in its order, each with how many tasks run on it: the choices a
-// reader has for where a solution runs.
-export function platformCounts(corpus) {
+// The tags in use, most used first, each with how many tasks choosing it would leave given the
+// search and the chips already chosen: a chip that would leave nothing is noise, so it is left
+// out, unless it is chosen and so has to stay where it can be put back.
+export function tagCounts(corpus, { query = '', chosen = [], runnableOnly = false } = {}) {
+  const used = new Set()
+
+  for (const candidate of corpus.tasks) {
+    for (const tag of candidate.tags) used.add(tag)
+  }
+
+  const counts = []
+
+  for (const tag of used) {
+    const count = leftBy(corpus, tag, { query, chosen, runnableOnly })
+
+    if (count > 0 || chosen.includes(tag)) counts.push([tag, count])
+  }
+
+  return counts.sort((a, b) => b[1] - a[1])
+}
+
+// The platforms the index names, in its order, each with how many tasks choosing it would leave:
+// the choices a reader has for where a solution runs. All of them stay, so the row does not change
+// shape under the reader's hand, whatever they leave.
+export function platformCounts(corpus, { query = '', chosen = [], runnableOnly = false } = {}) {
   return Object.keys(corpus.platforms).map(platform => [
     platform,
-    corpus.tasks.filter(candidate => candidate.runsOn.includes(platform)).length,
+    leftBy(corpus, platform, { query, chosen, runnableOnly }),
   ])
 }
 
