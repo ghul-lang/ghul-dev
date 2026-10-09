@@ -1,8 +1,10 @@
 <script setup>
-// The search box and the tag chips: the whole of the filter, drawn wherever there is room for it. `stacked` is the page's aside, a narrow column where the parts
+// The search box, the platform chips and the tag chips: the whole of the filter, drawn wherever there
+// is room for it. `stacked` is the page's aside, a narrow column where the parts
 // go one under another.
 import { ref, computed } from 'vue'
-import { corpus, query, chosen, tags, toggleTag } from '../rosetta-filter'
+import { corpus, query, chosen, tags, platforms, toggleTag } from '../rosetta-filter'
+import { platformLabel } from '../rosetta-corpus'
 
 const props = defineProps({ stacked: { type: Boolean, default: false } })
 
@@ -35,6 +37,21 @@ const hiddenTags = computed(() => tags.value.length - shownTags.value.length)
         placeholder="search by name or tag"
         aria-label="search tasks by name or tag"
       />
+    </div>
+
+    <!-- Where a solution runs, apart from what it is about. Choosing both leaves what runs on both. -->
+    <div v-if="platforms.length > 0" class="rosetta-platforms" role="group" aria-label="filter by where it runs">
+      <span class="rosetta-platforms-label">runs on</span>
+      <button
+        v-for="[platform, count] in platforms"
+        :key="platform"
+        type="button"
+        class="rosetta-tag"
+        :class="{ 'is-chosen': chosen.has(platform) }"
+        :aria-pressed="chosen.has(platform)"
+        :title="corpus?.platforms[platform]"
+        @click="toggleTag(platform)"
+      >{{ platformLabel(platform) }} <span>{{ count }}</span></button>
     </div>
 
     <div class="rosetta-tags" role="group" aria-label="filter by tag">
@@ -98,10 +115,25 @@ const hiddenTags = computed(() => tags.value.length - shownTags.value.length)
   outline: none;
 }
 
-.rosetta-tags {
+.rosetta-tags,
+.rosetta-platforms {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.35rem;
+}
+
+.rosetta-platforms {
+  margin-bottom: 0.6rem;
+}
+
+.rosetta-platforms-label {
+  color: var(--vp-c-text-3);
+  font-size: 0.8rem;
+}
+
+.is-stacked .rosetta-platforms-label {
+  font-size: 0.75rem;
 }
 
 .rosetta-tag {

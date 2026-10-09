@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, shallowRef, watch, onMounted } from 'vue'
+import { ref, computed, shallowRef, watch, onMounted, nextTick } from 'vue'
 import GhulExample from './GhulExample.vue'
 import PlaygroundFrame from './PlaygroundFrame.vue'
 import RosettaControls from './RosettaControls.vue'
@@ -9,7 +9,7 @@ import { countEvent } from '../events'
 import { tokenise } from '../rosetta-highlight'
 import { shownSlug, shownFilter, showAt, replaceAt } from '../rosetta-route'
 import { corpus, query, chosen, toggleTag } from '../rosetta-filter'
-import { loadCorpus, taskBySlug, matching, draw, addressOf, filterFromSearch } from '../rosetta-corpus'
+import { loadCorpus, taskBySlug, matching, draw, addressOf, filterFromSearch, platformLabel } from '../rosetta-corpus'
 
 // The whole Rosetta Code section. The section's own address is the corpus, searchable and
 // filterable; a task's address, /rosetta/<slug>, shows that task whole and ready to run, with the
@@ -158,11 +158,24 @@ watch([() => shownSlug.value, shown], ([slug, task], previous) => {
 function another() {
   const next = draw(matches.value, shown.value?.slug)
 
-  if (next) showAt(addressOf({ slug: next.slug }))
+  if (next) {
+    showAt(addressOf({ slug: next.slug }))
+    reveal()
+  }
 }
 
 function show(task) {
   showAt(addressOf({ slug: task.slug }))
+  reveal()
+}
+
+// A task is chosen from a list the reader may have scrolled a long way down, and what it shows is
+// at the top of the page: without this the task loads where nobody can see it. Once now, and again
+// when the page has been redrawn for it, since the page is shorter by then.
+function reveal() {
+  window.scrollTo({ top: 0, behavior: 'instant' })
+
+  nextTick(() => window.scrollTo({ top: 0, behavior: 'instant' }))
 }
 
 // Two or three tasks sharing a tag with this one, so somebody who liked what they just watched has
@@ -285,6 +298,16 @@ function browse() {
             :title="corpus.tags[tag]"
             @click="toggleTag(tag)"
           >{{ tag }}</button>
+
+          <button
+            v-for="platform in shown.runsOn"
+            :key="platform"
+            type="button"
+            class="rosetta-tag"
+            :class="{ 'is-chosen': chosen.has(platform) }"
+            :title="corpus.platforms[platform]"
+            @click="toggleTag(platform)"
+          >{{ platformLabel(platform) }}</button>
         </p>
 
         <p v-if="partsFailure" class="rosetta-failure">

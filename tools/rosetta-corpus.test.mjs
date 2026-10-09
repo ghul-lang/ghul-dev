@@ -8,18 +8,20 @@ import assert from 'node:assert/strict'
 
 import {
   taskSlugFromPath, corpusFromIndex, taskBySlug, matching, tagCounts, draw, addressOf,
-  filterFromSearch, exampleName,
+  filterFromSearch, exampleName, platformCounts, platformLabel,
 } from '../src/.vitepress/theme/rosetta-corpus.js'
 
 const index = {
   version: 1,
   tags: { primes: 'prime numbers', graphics: 'draws a picture' },
+  platforms: { dotnet: 'runs on .NET', wasm: 'runs on WebAssembly' },
   tasks: [
     {
       slug: '100-doors',
       title: '100 doors',
       url: 'https://rosettacode.org/wiki/100_doors',
       tags: ['puzzles'],
+      runs_on: ['dotnet', 'wasm'],
       interest: 2,
       playground: true,
       input: false,
@@ -32,6 +34,7 @@ const index = {
       title: "Goldbach's comet",
       url: 'https://rosettacode.org/wiki/Goldbach%27s_comet',
       tags: ['primes', 'graphics'],
+      runs_on: ['dotnet'],
       interest: 5,
       playground: true,
       input: false,
@@ -48,6 +51,7 @@ const index = {
       title: 'Read a file',
       url: 'https://rosettacode.org/wiki/Read_a_file',
       tags: ['files'],
+      runs_on: [],
       interest: 1,
       playground: false,
       input: true,
@@ -117,6 +121,35 @@ test('tags narrow together, and the runnable filter drops what a browser cannot 
 
 test('the tag chips count only the tags in use, most used first', () => {
   assert.deepEqual(tagCounts(corpus), [['puzzles', 1], ['primes', 1], ['graphics', 1], ['files', 1]])
+})
+
+test('a platform narrows like a tag, and choosing two leaves what runs on both', () => {
+  const slugs = tags => matching(corpus, { tags }).map(t => t.slug)
+
+  assert.deepEqual(slugs(['dotnet']), ['100-doors', 'goldbachs-comet'])
+  assert.deepEqual(slugs(['wasm']), ['100-doors'])
+  assert.deepEqual(slugs(['dotnet', 'wasm']), ['100-doors'])
+  assert.deepEqual(slugs(['wasm', 'primes']), [])
+  assert.deepEqual(slugs(['dotnet', 'primes']), ['goldbachs-comet'])
+})
+
+test('a platform is searched for by name, and is not one of the tag chips', () => {
+  assert.deepEqual(matching(corpus, { query: 'wasm' }).map(t => t.slug), ['100-doors'])
+  assert.equal(tagCounts(corpus).some(([tag]) => tag === 'wasm' || tag === 'dotnet'), false)
+})
+
+test('the platform chips are the index\'s, in its order, each with how many tasks run there', () => {
+  assert.deepEqual(platformCounts(corpus), [['dotnet', 2], ['wasm', 1]])
+  assert.equal(platformLabel('dotnet'), '.NET')
+  assert.equal(platformLabel('wasm'), 'wasm')
+})
+
+test('an index from before platforms existed has none to choose and every task still shows', () => {
+  const older = corpusFromIndex({ version: 1, tags: {}, tasks: [{ slug: 'a', title: 'A', parts: [] }] })
+
+  assert.deepEqual(platformCounts(older), [])
+  assert.equal(matching(older, {}).length, 1)
+  assert.deepEqual(matching(older, { tags: ['wasm'] }), [])
 })
 
 test('the random pick is weighted by interest and never repeats what is shown', () => {

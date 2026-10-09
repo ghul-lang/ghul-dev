@@ -7,9 +7,13 @@
 // this morning, nothing has to be re-pulled, and the site stops growing a page and a chunk per
 // task.
 //
-// index.json is the corpus description: every task with its title, tags, interest, whether it runs
-// in the playground, whether it reads input, whether it draws, and its parts. It also carries the
-// tag vocabulary, so the descriptions on the tag chips come from the same fetch.
+// index.json is the corpus description: every task with its title, tags, interest, where it runs,
+// whether it reads input, whether it draws, and its parts. It also carries the tag vocabulary, so
+// the descriptions on the tag chips come from the same fetch, and the platforms a task can run on.
+//
+// A platform is filtered like a tag but is not one: it says where a solution runs rather than what
+// it is about, and every task would be alike on the commonest of them. So it is kept apart in the
+// index, and drawn apart in the controls, while a chosen one narrows the list as a tag does.
 //
 // Everything here is plain data and plain functions: no framework, no fetch of its own beyond the
 // two below, so the filtering and the routing can be tested directly.
@@ -53,6 +57,7 @@ function task(raw) {
     title: raw.title,
     url: raw.url,
     tags: raw.tags ?? [],
+    runsOn: raw.runs_on ?? [],
     interest: raw.interest ?? 1,
     playground: raw.playground !== false,
     input: raw.input === true,
@@ -75,6 +80,7 @@ function task(raw) {
 export function corpusFromIndex(index) {
   return {
     tags: index.tags ?? {},
+    platforms: index.platforms ?? {},
     tasks: (index.tasks ?? []).map(task),
   }
 }
@@ -84,7 +90,9 @@ export function taskBySlug(corpus, slug) {
 }
 
 // Title and tags, because those are the two things a reader knows about a task they are looking
-// for. Every word has to match something, so two words narrow rather than widen.
+// for. Every word has to match something, so two words narrow rather than widen. A chosen tag can
+// be a platform too, and every one chosen has to hold, so choosing both platforms leaves the tasks
+// that run on both.
 export function matching(corpus, { query = '', tags = [], runnableOnly = false } = {}) {
   const wanted = query.trim().toLowerCase().split(/\s+/).filter(word => word !== '')
 
@@ -92,10 +100,10 @@ export function matching(corpus, { query = '', tags = [], runnableOnly = false }
     if (runnableOnly && !candidate.playground) return false
 
     for (const tag of tags) {
-      if (!candidate.tags.includes(tag)) return false
+      if (!candidate.tags.includes(tag) && !candidate.runsOn.includes(tag)) return false
     }
 
-    const text = `${candidate.title} ${candidate.tags.join(' ')}`.toLowerCase()
+    const text = `${candidate.title} ${candidate.tags.join(' ')} ${candidate.runsOn.join(' ')}`.toLowerCase()
 
     return wanted.every(word => text.includes(word))
   })
@@ -110,6 +118,20 @@ export function tagCounts(corpus) {
   }
 
   return [...counts.entries()].sort((a, b) => b[1] - a[1])
+}
+
+// The platforms the index names, in its order, each with how many tasks run on it: the choices a
+// reader has for where a solution runs.
+export function platformCounts(corpus) {
+  return Object.keys(corpus.platforms).map(platform => [
+    platform,
+    corpus.tasks.filter(candidate => candidate.runsOn.includes(platform)).length,
+  ])
+}
+
+// How a platform is written for a reader: the index names them as they are in its data.
+export function platformLabel(platform) {
+  return platform === 'dotnet' ? '.NET' : platform
 }
 
 // Interest squared: a 5 is drawn twenty-five times as often as a 1, without a 1 being impossible.
