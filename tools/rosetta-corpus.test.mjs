@@ -123,6 +123,30 @@ test('the tag chips count only the tags in use, most used first', () => {
   assert.deepEqual(tagCounts(corpus), [['puzzles', 1], ['primes', 1], ['graphics', 1], ['files', 1]])
 })
 
+test('a tag chip counts what choosing it would leave, and goes when that is nothing', () => {
+  const shown = filter => tagCounts(corpus, filter)
+
+  // Nothing chosen: every tag in use, as before, and the runnable rule drops what cannot run.
+  assert.deepEqual(shown({}).map(([tag]) => tag).sort(), ['files', 'graphics', 'primes', 'puzzles'])
+  assert.deepEqual(shown({ runnableOnly: true }).map(([tag]) => tag).sort(), ['graphics', 'primes', 'puzzles'])
+
+  // Only what runs on wasm is left, so only its tags are.
+  assert.deepEqual(shown({ chosen: ['wasm'] }), [['puzzles', 1]])
+  assert.deepEqual(shown({ chosen: ['dotnet'] }).map(([tag]) => tag).sort(), ['graphics', 'primes', 'puzzles'])
+
+  // A chosen tag stays, however little it leaves, so that it can be put back.
+  assert.deepEqual(shown({ chosen: ['primes', 'wasm'] }), [['primes', 0]])
+
+  // The search narrows the counts as it narrows the list.
+  assert.deepEqual(shown({ query: 'comet' }).map(([tag]) => tag).sort(), ['graphics', 'primes'])
+})
+
+test('the platform chips count what choosing them would leave, and all stay', () => {
+  assert.deepEqual(platformCounts(corpus, { chosen: ['wasm'] }), [['dotnet', 1], ['wasm', 1]])
+  assert.deepEqual(platformCounts(corpus, { chosen: ['primes'] }), [['dotnet', 1], ['wasm', 0]])
+  assert.deepEqual(platformCounts(corpus, { chosen: ['puzzles'], query: 'doors' }), [['dotnet', 1], ['wasm', 1]])
+})
+
 test('a platform narrows like a tag, and choosing two leaves what runs on both', () => {
   const slugs = tags => matching(corpus, { tags }).map(t => t.slug)
 

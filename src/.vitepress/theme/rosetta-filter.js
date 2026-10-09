@@ -12,9 +12,14 @@ export const corpus = shallowRef(null)
 export const query = ref('')
 export const chosen = ref(new Set())
 
-export const tags = computed(() => corpus.value ? tagCounts(corpus.value) : [])
+// What the chips show answers to the search and to the chips already chosen, and to the same
+// runnable-only rule the list is under, so a count is how many tasks choosing the chip would leave
+// in it.
+const state = () => ({ query: query.value, chosen: [...chosen.value], runnableOnly: true })
 
-export const platforms = computed(() => corpus.value ? platformCounts(corpus.value) : [])
+export const tags = computed(() => corpus.value ? tagCounts(corpus.value, state()) : [])
+
+export const platforms = computed(() => corpus.value ? platformCounts(corpus.value, state()) : [])
 
 export function toggleTag(tag) {
   const next = new Set(chosen.value)
