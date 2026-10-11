@@ -44,10 +44,9 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    # `CI` is set for the whole workflow, which is what makes ghul-test use the
-    # compiler pinned in the tool manifest rather than hunting for a publish
-    # directory. That is the version under test when a dependency update
-    # proposes a new one.
+    # --ci makes ghul-test use the compiler pinned in the tool manifest
+    # rather than hunting for a publish directory, whatever `CI` says. That
+    # is the version under test when a dependency update proposes a new one.
     - name: Restore .NET tools
       run: dotnet tool restore
 
@@ -82,7 +81,7 @@ jobs:
         echo "runtime:  $version"
 
     - name: Compile and run every example
-      run: dotnet ghul-test --runtime-dll '${{ steps.toolchain.outputs.runtime }}' example-tests
+      run: dotnet ghul-test --ci --runtime-dll '${{ steps.toolchain.outputs.runtime }}' example-tests
 
     # The examples are what the site teaches, so they are written in the
     # terminator-free style the compiler infers. A `;` a line break would
