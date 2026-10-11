@@ -2,7 +2,7 @@
 
 <img class="ghul-logo" src="/ghul-logo-draft.png" alt="ghūl programming language logo" />
 
-ghūl (pronounced 'ghoul') is a statically typed programming language for .NET 10. The [compiler](https://github.com/ghul-lang/ghul) is about 120,000 lines of ghūl, and compiles itself.
+ghūl (pronounced 'ghoul') is a statically typed programming language for .NET 10, with experimental [WebAssembly](/webassembly) and [native](/native) targets. The [compiler](https://github.com/ghul-lang/ghul) is about 120,000 lines of ghūl, and compiles itself.
 
 Every example on this site is a whole program. Press **edit & run**, change it, and run it in your browser.
 

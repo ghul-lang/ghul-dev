@@ -38,6 +38,7 @@ export const SECTIONS = [
       { text: 'runtime library', link: '/runtime-library' },
       { text: 'scripts, the REPL and notebooks', link: '/scripts-and-repl' },
       { text: 'WebAssembly', link: '/webassembly' },
+      { text: 'native executables', link: '/native' },
       { text: 'tooling', link: '/tooling' },
     ],
   },
