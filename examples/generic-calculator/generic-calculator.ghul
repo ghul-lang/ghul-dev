@@ -40,7 +40,6 @@ let ints = CALCULATOR([("+", INT_ADD()), ("*", INT_MULTIPLY())])
 write_line("3 + 4 = {ints.calculate("+", 3, 4)}")
 write_line("3 * 4 = {ints.calculate("*", 3, 4)}")
 
-let string_operations: (name: string, operation: Operation[string])[] = [("+", STRING_APPEND())]
-let strings = CALCULATOR(string_operations)
+let strings = CALCULATOR([("+", STRING_APPEND())])
 
 write_line("ghūl + lang = {strings.calculate("+", "ghūl", "lang")}")
