@@ -44,44 +44,18 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    # --ci makes ghul-test use the compiler pinned in the tool manifest
-    # rather than hunting for a publish directory, whatever `CI` says. That
-    # is the version under test when a dependency update proposes a new one.
     - name: Restore .NET tools
       run: dotnet tool restore
 
-    # The runtime the examples run against has to be the one this repository
-    # pins, not the copy that ships inside the ghul.test package. Left to
-    # itself ghul-test uses the latter, which would leave a ghul.runtime
-    # update tested against a runtime it did not update.
-    #
-    # This covers running, not compiling: --runtime-dll is what gets linked
-    # beside the binary, and the compiler resolves the runtime it compiles
-    # against itself. So an example that compiles against a newer runtime than
-    # it runs on is not something this catches - what it catches is an
-    # example that no longer runs on the runtime we ship.
-    - name: Resolve the pinned toolchain
-      id: toolchain
-      run: |
-        version=$(grep -oP 'ghul\.runtime"\s+Version="\K[^"]+' \
-            example-tool/Directory.Packages.props)
-
-        dotnet restore example-tool
-
-        runtime="$HOME/.nuget/packages/ghul.runtime/$version/lib/net10.0/ghul-runtime.dll"
-
-        test -f "$runtime" || {
-            echo "no ghul-runtime.dll for pinned version $version" >&2
-            exit 1
-        }
-
-        echo "runtime=$runtime" >> "$GITHUB_OUTPUT"
-
-        echo "compiler: $(dotnet ghul-compiler --version)"
-        echo "runtime:  $version"
+    # The default configuration in ghul-test.json runs the compiler the tool
+    # manifest pins, and the runtime example-tool pins, from the package cache:
+    # the versions under test when a dependency update proposes new ones. The
+    # restore puts that runtime in the cache.
+    - name: Restore the pinned runtime
+      run: dotnet restore example-tool
 
     - name: Compile and run every example
-      run: dotnet ghul-test --ci --runtime-dll '${{ steps.toolchain.outputs.runtime }}' example-tests
+      run: dotnet ghul-test example-tests
 
     # The examples are what the site teaches, so they are written in the
     # terminator-free style the compiler infers. A `;` a line break would

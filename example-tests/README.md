@@ -26,22 +26,19 @@ still runs, `run.expected` as well.
 
 ```sh
 dotnet tool restore
-CI=true dotnet ghul-test --runtime-dll "$HOME/.nuget/packages/ghul.runtime/<version>/lib/net10.0/ghul-runtime.dll" example-tests
-CI=true dotnet ghul-test example-tests/control-flow-8      # one example
+dotnet restore example-tool
+dotnet ghul-test example-tests
+dotnet ghul-test example-tests/control-flow-8      # one example
 ```
 
-`CI=true` picks the compiler this repository pins. Without it ghul-test looks
-for a locally built compiler in a `publish/` directory, which this repository
-has no reason to have, and fails at startup before it reads its arguments.
+The default configuration in `ghul-test.json` runs the compiler this repository
+pins in its tool manifest, against the runtime it pins in
+`example-tool/Directory.Packages.props`, which is the one the examples are
+documented against. `dotnet restore example-tool` puts that runtime in the
+package cache, where the run finds it.
 
-`--runtime-dll` names the runtime this repository pins, in
-`example-tool/Directory.Packages.props`. Without it ghul-test uses the copy
-inside the ghul.test package instead, which is a different version and is not
-the one the examples are documented against. CI resolves the path from the pin
-rather than spelling it out.
-
-It settles what the examples *run* on rather than what they compile against:
-the flag is what gets linked beside the binary, and the compiler resolves the
+That settles what the examples *run* on rather than what they compile against:
+the runtime is what gets linked beside the binary, and the compiler resolves the
 runtime it compiles against itself. An example compiled against one runtime and
 run on an older one is therefore not something these tests report, which is
 worth knowing when a runtime update is the thing under test.
