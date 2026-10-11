@@ -1,0 +1,15 @@
+{
+    // How the example tests are run: with the compiler the tool manifest pins,
+    // and against the runtime example-tool pins, which is the one the
+    // examples are documented against.
+    "default": "examples",
+    "configurations": {
+        "examples": {
+            "compiler": "tool",
+            "runtime": {
+                "package": "ghul.runtime",
+                "pinned_in": "example-tool/Directory.Packages.props"
+            }
+        }
+    }
+}
