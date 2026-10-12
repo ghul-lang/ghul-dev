@@ -194,6 +194,8 @@ A format or an alignment after the expression, as in `{value:F2}` or `{value,6}`
 
 <GhulExample name="language-basics-26" />
 
+Strings compare by their UTF-16 code units, one at a time, so upper case sorts before lower case and punctuation sorts by its code: `"Zebra" < "apple"` is true. The order is the same on every target, and it is the order `sort()`, `min`, `max` and their `_by` forms use for strings. To compare by a language's rules instead, call `string.compare(a, b, StringComparison.CURRENT_CULTURE)`; on the WebAssembly and native targets that compares by code unit too.
+
 ### bitwise and shift operators
 
 The integer types have the usual bitwise operators - `&`, `|`, `^` - and the shift operators `<<` and `>>`. A shift count is an `int`, and the result keeps the left operand's type. The count is taken modulo the operand's width, following .NET: shifting an `int` by 32 is the same as shifting it by 0. `>>>` is the unsigned right shift: it shifts zeros into the leftmost bits where `>>` keeps the sign:
