@@ -67,6 +67,8 @@ With the latest compiler, a native build compiles classes, structs, traits and u
 
 A native program fails the way a .NET one does: reading through a null reference throws `NullReferenceException`, a failed cast throws `InvalidCastException`, an array index out of range throws `IndexOutOfRangeException`, and an integer division by zero throws `DivideByZeroException`, each of which a `try` can catch.
 
+Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
+
 Not yet:
 
 - `decimal`
