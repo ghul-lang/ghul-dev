@@ -63,15 +63,15 @@ gdb out/llvm-debug/hello
 
 ## what works today
 
-With the latest compiler, a native build compiles classes, structs, traits and unions, with virtual and trait calls, type tests and casts, generics, arrays, tuples, optional value types, function values and closures, strings and string interpolation, `bigint`, generators, exceptions with `try`, `catch` and `finally`, loops, writing to the console, and an `entry` taking the command-line arguments.
+With the latest compiler, a native build compiles classes, structs, traits and unions, with virtual and trait calls, type tests and casts, generics, arrays, tuples, optional value types, function values and closures, strings and string interpolation, `bigint`, generators, asynchronous functions and `await`, exceptions with `try`, `catch` and `finally`, loops, writing to the console, reading and writing files, and an `entry` taking the command-line arguments.
+
+A native program fails the way a .NET one does: reading through a null reference throws `NullReferenceException`, a failed cast throws `InvalidCastException`, an array index out of range throws `IndexOutOfRangeException`, and an integer division by zero throws `DivideByZeroException`, each of which a `try` can catch.
 
 Not yet:
 
-- asynchronous functions and `await`
 - `decimal`
-- reading the text of a file
 
-The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks each of these. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
+The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks what is still to come. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
 
 ## code for one target
 
