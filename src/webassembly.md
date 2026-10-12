@@ -102,7 +102,7 @@ target_name() -> string => "wasm"
 
 The same pragma works with names of your own, which the compiler's `--define <name>`{:sh} option turns on. A name nothing turns on is off, and `dotnet` and `wasm` are always decided by the target being built.
 
-## errors you will see
+## errors you may see
 
 A .NET API the core library doesn't declare doesn't exist on WebAssembly, so a call to one is reported the way any other missing name is:
 
