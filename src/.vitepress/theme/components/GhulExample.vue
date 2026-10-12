@@ -361,6 +361,10 @@ const frameReady = ref(false)
 const analyser = ref('connecting')
 const runState = ref(null)
 const liveOutput = ref('')
+
+// Where the last run in the frame went, `wasm` or `dotnet`, for one quiet
+// line under the output: the frame decides, and says so after each run.
+const ranOn = ref(null)
 const liveDiagnostics = ref([])
 
 // What a running program drew, as { name, url } with a data URL each, and
@@ -477,6 +481,7 @@ function onFrameMessage(event) {
   if (message.type === 'analyser') { analyser.value = message.state; return }
   if (message.type === 'output') { liveOutput.value = message.text ?? ''; return }
   if (message.type === 'images') { liveImages.value = message.images ?? []; return }
+  if (message.type === 'ran') { ranOn.value = message.target ?? null; return }
   if (message.type === 'input-wanted') {
     inputWanted.value = true
     outputExpanded.value = true
@@ -494,6 +499,8 @@ function onFrameMessage(event) {
 
   if (message.type === 'status') {
     recordResult(message.state, message.detail)
+
+    if (message.state === 'compiling') ranOn.value = null
 
     runState.value = message.state
     if (message.state !== 'running') inputWanted.value = false
@@ -780,6 +787,9 @@ onBeforeUnmount(() => {
             <figcaption>{{ image.name }}</figcaption>
           </figure>
         </div>
+        <p v-if="editing && ranOn" class="ghul-example-ran-on">
+          {{ ranOn === 'wasm' ? 'ran on WebAssembly in your browser' : 'ran on .NET' }}
+        </p>
       </div>
     </div>
   </div>
@@ -1179,6 +1189,13 @@ onBeforeUnmount(() => {
 
 .ghul-example-chevron.is-open {
   transform: rotate(90deg);
+}
+
+.ghul-example-ran-on {
+  margin: 0;
+  padding: 0 1.25rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
 }
 
 .ghul-example-output-body pre {
