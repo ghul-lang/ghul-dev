@@ -95,7 +95,7 @@ target_name() -> string => "native"
 
 [Code for one target](/webassembly#code-for-one-target) on the WebAssembly page covers the pragma in full.
 
-## errors you will see
+## errors you may see
 
 A .NET API the core library doesn't declare doesn't exist in a native build, so a call to one is reported the way any other missing name is. Something the native target will support but can't compile yet is reported at the function holding it, but only in code the program reaches:
 

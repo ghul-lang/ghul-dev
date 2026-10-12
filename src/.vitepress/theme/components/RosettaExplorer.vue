@@ -303,7 +303,7 @@ function browse() {
             v-for="platform in shown.runsOn"
             :key="platform"
             type="button"
-            class="rosetta-tag"
+            class="rosetta-tag is-platform"
             :class="{ 'is-chosen': chosen.has(platform) }"
             :title="corpus.platforms[platform]"
             @click="toggleTag(platform)"
@@ -464,6 +464,12 @@ function browse() {
 .rosetta-tag:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-text-1);
+}
+
+/* Where a solution runs, tinted apart from what it is about. */
+.rosetta-tag.is-platform:not(.is-chosen) {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 40%, var(--vp-c-divider));
+  background: color-mix(in srgb, var(--vp-c-brand-1) 6%, transparent);
 }
 
 .rosetta-tag.is-chosen {

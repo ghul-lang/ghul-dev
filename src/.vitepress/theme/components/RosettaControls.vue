@@ -39,22 +39,20 @@ const hiddenTags = computed(() => tags.value.length - shownTags.value.length)
       />
     </div>
 
-    <!-- Where a solution runs, apart from what it is about. Choosing both leaves what runs on both. -->
-    <div v-if="platforms.length > 0" class="rosetta-platforms" role="group" aria-label="filter by where it runs">
-      <span class="rosetta-platforms-label">runs on</span>
+    <!-- Where a solution runs flows with what it is about, first and tinted
+         apart. Choosing two leaves what has both. -->
+    <div class="rosetta-tags" role="group" aria-label="filter by where it runs or by tag">
       <button
         v-for="[platform, count] in platforms"
         :key="platform"
         type="button"
-        class="rosetta-tag"
+        class="rosetta-tag is-platform"
         :class="{ 'is-chosen': chosen.has(platform) }"
         :aria-pressed="chosen.has(platform)"
         :title="corpus?.platforms[platform]"
         @click="toggleTag(platform)"
       >{{ platformLabel(platform) }} <span>{{ count }}</span></button>
-    </div>
 
-    <div class="rosetta-tags" role="group" aria-label="filter by tag">
       <button
         v-for="[tag, count] in shownTags"
         :key="tag"
@@ -115,25 +113,11 @@ const hiddenTags = computed(() => tags.value.length - shownTags.value.length)
   outline: none;
 }
 
-.rosetta-tags,
-.rosetta-platforms {
+.rosetta-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.35rem;
-}
-
-.rosetta-platforms {
-  margin-bottom: 0.6rem;
-}
-
-.rosetta-platforms-label {
-  color: var(--vp-c-text-3);
-  font-size: 0.8rem;
-}
-
-.is-stacked .rosetta-platforms-label {
-  font-size: 0.75rem;
 }
 
 .rosetta-tag {
@@ -164,6 +148,12 @@ const hiddenTags = computed(() => tags.value.length - shownTags.value.length)
 .rosetta-tag:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-text-1);
+}
+
+/* Where a solution runs, tinted apart from what it is about. */
+.rosetta-tag.is-platform:not(.is-chosen) {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 40%, var(--vp-c-divider));
+  background: color-mix(in srgb, var(--vp-c-brand-1) 6%, transparent);
 }
 
 .rosetta-tag.is-chosen {
