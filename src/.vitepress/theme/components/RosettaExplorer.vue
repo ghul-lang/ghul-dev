@@ -310,11 +310,6 @@ function browse() {
           >{{ platformLabel(platform) }}</button>
         </p>
 
-        <p v-if="shown.runsOn.includes('native')" class="rosetta-native">
-          This solution also builds as a native executable for Linux on x86-64.
-          <a href="/native">Native executables</a> says how to build and run it on your own machine.
-        </p>
-
         <p v-if="partsFailure" class="rosetta-failure">
           The solution itself did not load ({{ partsFailure }}).
         </p>
@@ -441,8 +436,7 @@ function browse() {
   font-size: 0.8rem;
 }
 
-.rosetta-newer,
-.rosetta-native {
+.rosetta-newer {
   margin: 0.25rem 0 0;
   font-size: 0.85rem;
   color: var(--vp-c-text-2);
