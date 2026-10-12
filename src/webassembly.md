@@ -75,6 +75,8 @@ The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks eac
 
 The program above is ordinary ghūl, and the `dotnet` target builds it into an ordinary .NET executable. On WebAssembly there is no .NET base class library. What it supplies comes from two libraries compiled into the module from source: [ghul-core](https://github.com/ghul-lang/ghul-core), which gives the built-in types their members and declares the collections, and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for the `dotnet` target, unless it keeps those calls to the `dotnet` build.
 
+Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
+
 ## code for one target
 
 `@IF.dotnet()` written before a definition or a statement keeps it only in a `dotnet` build, and `@IF.wasm()` keeps it only in a `wasm` build. That gives each target a version of its own where they need to differ:

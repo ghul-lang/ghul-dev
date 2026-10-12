@@ -194,7 +194,7 @@ A format or an alignment after the expression, as in `{value:F2}` or `{value,6}`
 
 <GhulExample name="language-basics-26" />
 
-Strings compare by their UTF-16 code units, one at a time, so upper case sorts before lower case and punctuation sorts by its code: `"Zebra" < "apple"` is true. The order is the same on every target, and it is the order `sort()`, `min`, `max` and their `_by` forms use for strings. To compare by a language's rules instead, call `string.compare(a, b, StringComparison.CURRENT_CULTURE)`; on the WebAssembly and native targets that compares by code unit too.
+On .NET, strings compare by the rules of the machine's current culture, as `String.CompareTo` does. The WebAssembly and native targets behave as a .NET program configured for invariant globalization, which compares strings by their UTF-16 code units: upper case sorts before lower case and punctuation by its code, so `"Zebra" < "apple"` is true. A .NET program gets that same order, whatever machine it runs on, by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project. To compare by code unit in any program, call `string.compare_ordinal(a, b)`.
 
 ### bitwise and shift operators
 
