@@ -1,6 +1,6 @@
 # WebAssembly
 
-A ghūl program can be compiled to WebAssembly as well as to .NET. The compiler writes a WasmGC module and a small JavaScript loader beside it, and the program runs under [Node.js](https://nodejs.org) 22 or newer. The same source builds for either target.
+A ghūl program can be compiled to WebAssembly as well as to .NET. The compiler writes a WasmGC module and a small JavaScript loader beside it, and the program runs under [Node.js](https://nodejs.org) 22.19 or later on the 22 line, 24.15 or later on the 24 line, or 25 or later. Node 23 cannot run it. The same source builds for either target.
 
 ::: warning work in progress
 The WebAssembly target is new and doesn't yet compile the whole language. Small programs work today; the [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) lists what is supported and what is still to come.
@@ -15,7 +15,7 @@ dotnet tool install -g ghul.cli
 ghul install-compiler
 ```
 
-`ghul`{:sh} builds with the newest compiler it has installed. Each compiler release adds to what the WebAssembly target compiles, so run `ghul install-compiler`{:sh} again to update. Running the result needs Node.js 22 or newer.
+`ghul`{:sh} builds with the newest compiler it has installed. Each compiler release adds to what the WebAssembly target compiles, so run `ghul install-compiler`{:sh} again to update. Running the result needs one of those Node.js releases, and `ghul run`{:sh} says so when the Node.js it finds is older.
 
 ## hello world
 
