@@ -71,6 +71,8 @@ Not yet:
 
 The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks each of these. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
 
+An exception nothing catches ends the program with `Unhandled exception.`, its type and its message. A build with `--debug` also lists the functions the exception was thrown through, innermost first, one per line: `ghul run --target wasm --debug`{:sh}. Without `--debug` a throw costs much less and the report has no frames. An error the WebAssembly engine raises itself, such as dividing an integer by zero, lists its frames either way.
+
 ## the same program on .NET
 
 The program above is ordinary ghūl, and the `dotnet` target builds it into an ordinary .NET executable. On WebAssembly there is no .NET base class library. What it supplies comes from two libraries compiled into the module from source: [ghul-core](https://github.com/ghul-lang/ghul-core), which gives the built-in types their members and declares the collections, and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for the `dotnet` target, unless it keeps those calls to the `dotnet` build.
