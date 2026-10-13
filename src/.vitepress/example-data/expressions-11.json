@@ -15,7 +15,7 @@
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 14, "text": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "signature": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 4, "text": "list: int[]", "signature": "list: int[]", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 27, "endLine": 3, "endColumn": 33, "text": "element: int", "signature": "element: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 35, "endLine": 3, "endColumn": 35, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" }
+    { "startLine": 3, "startColumn": 35, "endLine": 3, "endColumn": 35, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" }
   ],
   "inlayHints": [],
   "semanticTokens": [

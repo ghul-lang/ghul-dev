@@ -19,7 +19,7 @@
     { "startLine": 6, "startColumn": 17, "endLine": 6, "endColumn": 19, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 9, "startColumn": 16, "endLine": 9, "endColumn": 19, "text": "cell: int", "signature": "cell: int", "kindLabel": "local value" },
     { "startLine": 9, "startColumn": 21, "endLine": 9, "endColumn": 21, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 9, "startColumn": 25, "endLine": 9, "endColumn": 26, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 9, "startColumn": 25, "endLine": 9, "endColumn": 26, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 9, "startColumn": 41, "endLine": 9, "endColumn": 44, "text": "cell: int", "signature": "cell: int", "kindLabel": "local value" },
     { "startLine": 13, "startColumn": 1, "endLine": 13, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 13, "startColumn": 14, "endLine": 13, "endColumn": 23, "text": "first_even: int?", "signature": "first_even: int?", "kindLabel": "global variable" },

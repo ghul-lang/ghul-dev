@@ -18,9 +18,9 @@
     { "startLine": 1, "startColumn": 40, "endLine": 1, "endColumn": 42, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 13, "text": "amount: int", "signature": "amount: int", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 17, "endLine": 2, "endColumn": 23, "text": "balance: int", "signature": "balance: int", "kindLabel": "local argument" },
-    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 3, "startColumn": 15, "endLine": 3, "endColumn": 20, "text": "namespace System", "signature": "namespace System", "kindLabel": "" },
-    { "startLine": 3, "startColumn": 22, "endLine": 3, "endColumn": 46, "text": "System.InvalidOperationException.init(message: string?)", "signature": "System.InvalidOperationException.init(message: string?)", "kindLabel": "constructor" },
+    { "startLine": 3, "startColumn": 22, "endLine": 3, "endColumn": 46, "text": "Ghul.InvalidOperationException.init(message: string?)", "signature": "Ghul.InvalidOperationException.init(message: string?)", "kindLabel": "constructor" },
     { "startLine": 8, "startColumn": 12, "endLine": 8, "endColumn": 18, "text": "balance: int", "signature": "balance: int", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 22, "endLine": 8, "endColumn": 27, "text": "amount: int", "signature": "amount: int", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 20, "text": "int.-(a: int, b: int) -> int", "signature": "int.-(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.sub" }

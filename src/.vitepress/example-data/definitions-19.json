@@ -23,7 +23,7 @@
     { "startLine": 5, "startColumn": 17, "endLine": 5, "endColumn": 21, "text": "leaf2: Tree.LEAF", "signature": "leaf2: Tree.LEAF", "kindLabel": "global variable" },
     { "startLine": 6, "startColumn": 10, "endLine": 6, "endColumn": 14, "text": "leaf1: Tree.LEAF", "signature": "leaf1: Tree.LEAF", "kindLabel": "global variable" },
     { "startLine": 6, "startColumn": 19, "endLine": 6, "endColumn": 23, "text": "leaf3: Tree.LEAF", "signature": "leaf3: Tree.LEAF", "kindLabel": "global variable" },
-    { "startLine": 6, "startColumn": 8, "endLine": 6, "endColumn": 8, "text": "Ghul.Intrinsics.!(a: bool) -> bool", "signature": "Ghul.Intrinsics.!(a: bool) -> bool", "kindLabel": "innate function bool.not" }
+    { "startLine": 6, "startColumn": 8, "endLine": 6, "endColumn": 8, "text": "!(a: bool) -> bool", "signature": "!(a: bool) -> bool", "kindLabel": "innate function bool.not" }
   ],
   "inlayHints": [],
   "semanticTokens": [

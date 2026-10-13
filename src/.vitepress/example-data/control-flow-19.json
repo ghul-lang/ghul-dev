@@ -12,7 +12,7 @@
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 7, "endLine": 2, "endColumn": 13, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 14, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
     { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 22, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 21, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },

@@ -11,7 +11,7 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 5, "text": "i: int", "signature": "i: int", "kindLabel": "local value" },
-    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 12, "text": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "signature": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 12, "text": "..(from: int, to: int) -> Ghul.INT_RANGE", "signature": "..(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 14, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
     { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 16, "text": "i: int", "signature": "i: int", "kindLabel": "local value" }
   ],

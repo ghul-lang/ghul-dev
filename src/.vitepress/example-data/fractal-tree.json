@@ -7,1330 +7,171 @@
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
-  "output": "<<image tree.png>>\n",
+  "output": "",
   "diagnostics": [],
   "hovers": [
-    {
-      "startLine": 1,
-      "startColumn": 12,
-      "endLine": 1,
-      "endColumn": 15,
-      "text": "class Math",
-      "signature": "class Math",
-      "kindLabel": "class"
-    },
-    {
-      "startLine": 2,
-      "startColumn": 12,
-      "endLine": 2,
-      "endColumn": 16,
-      "text": "class IMAGE",
-      "signature": "class IMAGE",
-      "kindLabel": "class"
-    },
-    {
-      "startLine": 4,
-      "startColumn": 5,
-      "endLine": 4,
-      "endColumn": 10,
-      "text": "spread: double",
-      "signature": "spread: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 5,
-      "startColumn": 5,
-      "endLine": 5,
-      "endColumn": 10,
-      "text": "shrink: double",
-      "signature": "shrink: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 7,
-      "startColumn": 5,
-      "endLine": 7,
-      "endColumn": 9,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 7,
-      "startColumn": 13,
-      "endLine": 7,
-      "endColumn": 17,
-      "text": "IMAGE.init(width: int, height: int)",
-      "signature": "IMAGE.init(width: int, height: int)",
-      "kindLabel": "constructor"
-    },
-    {
-      "startLine": 9,
-      "startColumn": 1,
-      "endLine": 9,
-      "endColumn": 6,
-      "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "kindLabel": "global function"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 5,
-      "endLine": 10,
-      "endColumn": 5,
-      "text": "x: double",
-      "signature": "x: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 16,
-      "endLine": 10,
-      "endColumn": 16,
-      "text": "y: double",
-      "signature": "y: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 8,
-      "endLine": 10,
-      "endColumn": 13,
-      "text": "struct double",
-      "signature": "struct double",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 19,
-      "endLine": 10,
-      "endColumn": 24,
-      "text": "struct double",
-      "signature": "struct double",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 5,
-      "endLine": 11,
-      "endColumn": 9,
-      "text": "angle: double",
-      "signature": "angle: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 20,
-      "endLine": 11,
-      "endColumn": 25,
-      "text": "length: double",
-      "signature": "length: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 12,
-      "endLine": 11,
-      "endColumn": 17,
-      "text": "struct double",
-      "signature": "struct double",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 28,
-      "endLine": 11,
-      "endColumn": 33,
-      "text": "struct double",
-      "signature": "struct double",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 12,
-      "startColumn": 5,
-      "endLine": 12,
-      "endColumn": 9,
-      "text": "depth: int",
-      "signature": "depth: int",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 12,
-      "startColumn": 12,
-      "endLine": 12,
-      "endColumn": 14,
-      "text": "struct int",
-      "signature": "struct int",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 9,
-      "endLine": 18,
-      "endColumn": 13,
-      "text": "tip_x: double",
-      "signature": "tip_x: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 17,
-      "endLine": 18,
-      "endColumn": 17,
-      "text": "x: double",
-      "signature": "x: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 21,
-      "endLine": 18,
-      "endColumn": 26,
-      "text": "length: double",
-      "signature": "length: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 30,
-      "endLine": 18,
-      "endColumn": 33,
-      "text": "class Math",
-      "signature": "class Math",
-      "kindLabel": "class"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 35,
-      "endLine": 18,
-      "endColumn": 37,
-      "text": "Math.cos(d: double) -> double",
-      "signature": "Math.cos(d: double) -> double",
-      "kindLabel": "pure class method"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 39,
-      "endLine": 18,
-      "endColumn": 43,
-      "text": "angle: double",
-      "signature": "angle: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 28,
-      "endLine": 18,
-      "endColumn": 28,
-      "text": "double.*(a: double, b: double) -> double",
-      "signature": "double.*(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.mul"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 19,
-      "endLine": 18,
-      "endColumn": 19,
-      "text": "double.+(a: double, b: double) -> double",
-      "signature": "double.+(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.add"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 9,
-      "endLine": 19,
-      "endColumn": 13,
-      "text": "tip_y: double",
-      "signature": "tip_y: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 17,
-      "endLine": 19,
-      "endColumn": 17,
-      "text": "y: double",
-      "signature": "y: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 21,
-      "endLine": 19,
-      "endColumn": 26,
-      "text": "length: double",
-      "signature": "length: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 30,
-      "endLine": 19,
-      "endColumn": 33,
-      "text": "class Math",
-      "signature": "class Math",
-      "kindLabel": "class"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 35,
-      "endLine": 19,
-      "endColumn": 37,
-      "text": "Math.sin(a: double) -> double",
-      "signature": "Math.sin(a: double) -> double",
-      "kindLabel": "pure class method"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 39,
-      "endLine": 19,
-      "endColumn": 43,
-      "text": "angle: double",
-      "signature": "angle: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 28,
-      "endLine": 19,
-      "endColumn": 28,
-      "text": "double.*(a: double, b: double) -> double",
-      "signature": "double.*(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.mul"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 19,
-      "endLine": 19,
-      "endColumn": 19,
-      "text": "double.+(a: double, b: double) -> double",
-      "signature": "double.+(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.add"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 30,
-      "endLine": 21,
-      "endColumn": 35,
-      "text": "struct double",
-      "signature": "struct double",
-      "kindLabel": "struct"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 5,
-      "endLine": 21,
-      "endColumn": 9,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 11,
-      "endLine": 21,
-      "endColumn": 16,
-      "text": "IMAGE.stroke(width: double) -> void",
-      "signature": "IMAGE.stroke(width: double) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 37,
-      "endLine": 21,
-      "endColumn": 41,
-      "text": "depth: int",
-      "signature": "depth: int",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 23,
-      "endLine": 21,
-      "endColumn": 23,
-      "text": "double.*(a: double, b: double) -> double",
-      "signature": "double.*(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.mul"
-    },
-    {
-      "startLine": 28,
-      "startColumn": 1,
-      "endLine": 28,
-      "endColumn": 5,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 28,
-      "startColumn": 7,
-      "endLine": 28,
-      "endColumn": 10,
-      "text": "IMAGE.view(\n    left: double,\n    bottom: double,\n    right: double,\n    top: double\n) -> void",
-      "signature": "IMAGE.view(\n    left: double,\n    bottom: double,\n    right: double,\n    top: double\n) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 29,
-      "startColumn": 1,
-      "endLine": 29,
-      "endColumn": 5,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 29,
-      "startColumn": 7,
-      "endLine": 29,
-      "endColumn": 12,
-      "text": "IMAGE.colour(red: ubyte, green: ubyte, blue: ubyte) -> void",
-      "signature": "IMAGE.colour(red: ubyte, green: ubyte, blue: ubyte) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 1,
-      "endLine": 31,
-      "endColumn": 6,
-      "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "kindLabel": "global function"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 23,
-      "endLine": 31,
-      "endColumn": 26,
-      "text": "class Math",
-      "signature": "class Math",
-      "kindLabel": "class"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 28,
-      "endLine": 31,
-      "endColumn": 29,
-      "text": "Math.pi: double",
-      "signature": "Math.pi: double",
-      "kindLabel": "constant"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 31,
-      "endLine": 31,
-      "endColumn": 31,
-      "text": "double./(a: double, b: double) -> double",
-      "signature": "double./(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.div"
-    },
-    {
-      "startLine": 33,
-      "startColumn": 1,
-      "endLine": 33,
-      "endColumn": 5,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 33,
-      "startColumn": 7,
-      "endLine": 33,
-      "endColumn": 11,
-      "text": "IMAGE.write(path: string) -> void",
-      "signature": "IMAGE.write(path: string) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 35,
-      "startColumn": 1,
-      "endLine": 35,
-      "endColumn": 5,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 35,
-      "startColumn": 7,
-      "endLine": 35,
-      "endColumn": 10,
-      "text": "IMAGE.show(path: string) -> void",
-      "signature": "IMAGE.show(path: string) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 14,
-      "startColumn": 8,
-      "endLine": 14,
-      "endColumn": 12,
-      "text": "depth: int",
-      "signature": "depth: int",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 14,
-      "startColumn": 14,
-      "endLine": 14,
-      "endColumn": 15,
-      "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool",
-      "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool",
-      "kindLabel": "innate function compare.value"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 5,
-      "endLine": 22,
-      "endColumn": 9,
-      "text": "image: IMAGE",
-      "signature": "image: IMAGE",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 11,
-      "endLine": 22,
-      "endColumn": 14,
-      "text": "IMAGE.line(\n    x0: double,\n    y0: double,\n    x1: double,\n    y1: double\n) -> void",
-      "signature": "IMAGE.line(\n    x0: double,\n    y0: double,\n    x1: double,\n    y1: double\n) -> void",
-      "kindLabel": "method"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 16,
-      "endLine": 22,
-      "endColumn": 16,
-      "text": "x: double",
-      "signature": "x: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 19,
-      "endLine": 22,
-      "endColumn": 19,
-      "text": "y: double",
-      "signature": "y: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 22,
-      "endLine": 22,
-      "endColumn": 26,
-      "text": "tip_x: double",
-      "signature": "tip_x: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 29,
-      "endLine": 22,
-      "endColumn": 33,
-      "text": "tip_y: double",
-      "signature": "tip_y: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 5,
-      "endLine": 24,
-      "endColumn": 10,
-      "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "kindLabel": "global function"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 12,
-      "endLine": 24,
-      "endColumn": 16,
-      "text": "tip_x: double",
-      "signature": "tip_x: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 19,
-      "endLine": 24,
-      "endColumn": 23,
-      "text": "tip_y: double",
-      "signature": "tip_y: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 26,
-      "endLine": 24,
-      "endColumn": 30,
-      "text": "angle: double",
-      "signature": "angle: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 34,
-      "endLine": 24,
-      "endColumn": 39,
-      "text": "spread: double",
-      "signature": "spread: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 32,
-      "endLine": 24,
-      "endColumn": 32,
-      "text": "double.-(a: double, b: double) -> double",
-      "signature": "double.-(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.sub"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 42,
-      "endLine": 24,
-      "endColumn": 47,
-      "text": "length: double",
-      "signature": "length: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 51,
-      "endLine": 24,
-      "endColumn": 56,
-      "text": "shrink: double",
-      "signature": "shrink: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 49,
-      "endLine": 24,
-      "endColumn": 49,
-      "text": "double.*(a: double, b: double) -> double",
-      "signature": "double.*(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.mul"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 59,
-      "endLine": 24,
-      "endColumn": 63,
-      "text": "depth: int",
-      "signature": "depth: int",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 65,
-      "endLine": 24,
-      "endColumn": 65,
-      "text": "int.-(a: int, b: int) -> int",
-      "signature": "int.-(a: int, b: int) -> int",
-      "kindLabel": "innate function arithmetic.sub"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 5,
-      "endLine": 25,
-      "endColumn": 10,
-      "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void",
-      "kindLabel": "global function"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 12,
-      "endLine": 25,
-      "endColumn": 16,
-      "text": "tip_x: double",
-      "signature": "tip_x: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 19,
-      "endLine": 25,
-      "endColumn": 23,
-      "text": "tip_y: double",
-      "signature": "tip_y: double",
-      "kindLabel": "local value"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 26,
-      "endLine": 25,
-      "endColumn": 30,
-      "text": "angle: double",
-      "signature": "angle: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 34,
-      "endLine": 25,
-      "endColumn": 39,
-      "text": "spread: double",
-      "signature": "spread: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 32,
-      "endLine": 25,
-      "endColumn": 32,
-      "text": "double.+(a: double, b: double) -> double",
-      "signature": "double.+(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.add"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 42,
-      "endLine": 25,
-      "endColumn": 47,
-      "text": "length: double",
-      "signature": "length: double",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 51,
-      "endLine": 25,
-      "endColumn": 56,
-      "text": "shrink: double",
-      "signature": "shrink: double",
-      "kindLabel": "global variable"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 49,
-      "endLine": 25,
-      "endColumn": 49,
-      "text": "double.*(a: double, b: double) -> double",
-      "signature": "double.*(a: double, b: double) -> double",
-      "kindLabel": "innate function arithmetic.mul"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 59,
-      "endLine": 25,
-      "endColumn": 63,
-      "text": "depth: int",
-      "signature": "depth: int",
-      "kindLabel": "local argument"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 65,
-      "endLine": 25,
-      "endColumn": 65,
-      "text": "int.-(a: int, b: int) -> int",
-      "signature": "int.-(a: int, b: int) -> int",
-      "kindLabel": "innate function arithmetic.sub"
-    }
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 15, "text": "class Math", "signature": "class Math", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 12, "endLine": 2, "endColumn": 16, "text": "class IMAGE", "signature": "class IMAGE", "kindLabel": "class" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 10, "text": "spread: double", "signature": "spread: double", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 10, "text": "shrink: double", "signature": "shrink: double", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 9, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 13, "endLine": 7, "endColumn": 17, "text": "IMAGE.init(width: int, height: int)", "signature": "IMAGE.init(width: int, height: int)", "kindLabel": "constructor" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 6, "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "kindLabel": "global function" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 5, "text": "x: double", "signature": "x: double", "kindLabel": "local argument" },
+    { "startLine": 10, "startColumn": 16, "endLine": 10, "endColumn": 16, "text": "y: double", "signature": "y: double", "kindLabel": "local argument" },
+    { "startLine": 10, "startColumn": 8, "endLine": 10, "endColumn": 13, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },
+    { "startLine": 10, "startColumn": 19, "endLine": 10, "endColumn": 24, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },
+    { "startLine": 11, "startColumn": 5, "endLine": 11, "endColumn": 9, "text": "angle: double", "signature": "angle: double", "kindLabel": "local argument" },
+    { "startLine": 11, "startColumn": 20, "endLine": 11, "endColumn": 25, "text": "length: double", "signature": "length: double", "kindLabel": "local argument" },
+    { "startLine": 11, "startColumn": 12, "endLine": 11, "endColumn": 17, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },
+    { "startLine": 11, "startColumn": 28, "endLine": 11, "endColumn": 33, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },
+    { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 9, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
+    { "startLine": 12, "startColumn": 12, "endLine": 12, "endColumn": 14, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
+    { "startLine": 18, "startColumn": 9, "endLine": 18, "endColumn": 13, "text": "tip_x: double", "signature": "tip_x: double", "kindLabel": "local value" },
+    { "startLine": 18, "startColumn": 17, "endLine": 18, "endColumn": 17, "text": "x: double", "signature": "x: double", "kindLabel": "local argument" },
+    { "startLine": 18, "startColumn": 21, "endLine": 18, "endColumn": 26, "text": "length: double", "signature": "length: double", "kindLabel": "local argument" },
+    { "startLine": 18, "startColumn": 30, "endLine": 18, "endColumn": 33, "text": "class Math", "signature": "class Math", "kindLabel": "class" },
+    { "startLine": 18, "startColumn": 35, "endLine": 18, "endColumn": 37, "text": "Math.cos(d: double) -> double", "signature": "Math.cos(d: double) -> double", "kindLabel": "pure class method" },
+    { "startLine": 18, "startColumn": 39, "endLine": 18, "endColumn": 43, "text": "angle: double", "signature": "angle: double", "kindLabel": "local argument" },
+    { "startLine": 18, "startColumn": 28, "endLine": 18, "endColumn": 28, "text": "double.*(a: double, b: double) -> double", "signature": "double.*(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.mul" },
+    { "startLine": 18, "startColumn": 19, "endLine": 18, "endColumn": 19, "text": "double.+(a: double, b: double) -> double", "signature": "double.+(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.add" },
+    { "startLine": 19, "startColumn": 9, "endLine": 19, "endColumn": 13, "text": "tip_y: double", "signature": "tip_y: double", "kindLabel": "local value" },
+    { "startLine": 19, "startColumn": 17, "endLine": 19, "endColumn": 17, "text": "y: double", "signature": "y: double", "kindLabel": "local argument" },
+    { "startLine": 19, "startColumn": 21, "endLine": 19, "endColumn": 26, "text": "length: double", "signature": "length: double", "kindLabel": "local argument" },
+    { "startLine": 19, "startColumn": 30, "endLine": 19, "endColumn": 33, "text": "class Math", "signature": "class Math", "kindLabel": "class" },
+    { "startLine": 19, "startColumn": 35, "endLine": 19, "endColumn": 37, "text": "Math.sin(a: double) -> double", "signature": "Math.sin(a: double) -> double", "kindLabel": "pure class method" },
+    { "startLine": 19, "startColumn": 39, "endLine": 19, "endColumn": 43, "text": "angle: double", "signature": "angle: double", "kindLabel": "local argument" },
+    { "startLine": 19, "startColumn": 28, "endLine": 19, "endColumn": 28, "text": "double.*(a: double, b: double) -> double", "signature": "double.*(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.mul" },
+    { "startLine": 19, "startColumn": 19, "endLine": 19, "endColumn": 19, "text": "double.+(a: double, b: double) -> double", "signature": "double.+(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.add" },
+    { "startLine": 21, "startColumn": 30, "endLine": 21, "endColumn": 35, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },
+    { "startLine": 21, "startColumn": 5, "endLine": 21, "endColumn": 9, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 21, "startColumn": 11, "endLine": 21, "endColumn": 16, "text": "IMAGE.stroke(width: double) -> void", "signature": "IMAGE.stroke(width: double) -> void", "kindLabel": "method" },
+    { "startLine": 21, "startColumn": 37, "endLine": 21, "endColumn": 41, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
+    { "startLine": 21, "startColumn": 23, "endLine": 21, "endColumn": 23, "text": "double.*(a: double, b: double) -> double", "signature": "double.*(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.mul" },
+    { "startLine": 28, "startColumn": 1, "endLine": 28, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 28, "startColumn": 7, "endLine": 28, "endColumn": 10, "text": "IMAGE.view(\n    left: double,\n    bottom: double,\n    right: double,\n    top: double\n) -> void", "signature": "IMAGE.view(\n    left: double,\n    bottom: double,\n    right: double,\n    top: double\n) -> void", "kindLabel": "method" },
+    { "startLine": 29, "startColumn": 1, "endLine": 29, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 29, "startColumn": 7, "endLine": 29, "endColumn": 12, "text": "IMAGE.colour(red: ubyte, green: ubyte, blue: ubyte) -> void", "signature": "IMAGE.colour(red: ubyte, green: ubyte, blue: ubyte) -> void", "kindLabel": "method" },
+    { "startLine": 31, "startColumn": 1, "endLine": 31, "endColumn": 6, "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "kindLabel": "global function" },
+    { "startLine": 31, "startColumn": 23, "endLine": 31, "endColumn": 26, "text": "class Math", "signature": "class Math", "kindLabel": "class" },
+    { "startLine": 31, "startColumn": 28, "endLine": 31, "endColumn": 29, "text": "Math.pi: double", "signature": "Math.pi: double", "kindLabel": "constant" },
+    { "startLine": 31, "startColumn": 31, "endLine": 31, "endColumn": 31, "text": "double./(a: double, b: double) -> double", "signature": "double./(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.div" },
+    { "startLine": 33, "startColumn": 1, "endLine": 33, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 33, "startColumn": 7, "endLine": 33, "endColumn": 11, "text": "IMAGE.write(path: string) -> void", "signature": "IMAGE.write(path: string) -> void", "kindLabel": "method" },
+    { "startLine": 35, "startColumn": 1, "endLine": 35, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 35, "startColumn": 7, "endLine": 35, "endColumn": 10, "text": "IMAGE.show(path: string) -> void", "signature": "IMAGE.show(path: string) -> void", "kindLabel": "method" },
+    { "startLine": 14, "startColumn": 8, "endLine": 14, "endColumn": 12, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
+    { "startLine": 14, "startColumn": 14, "endLine": 14, "endColumn": 15, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 22, "startColumn": 5, "endLine": 22, "endColumn": 9, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
+    { "startLine": 22, "startColumn": 11, "endLine": 22, "endColumn": 14, "text": "IMAGE.line(\n    x0: double,\n    y0: double,\n    x1: double,\n    y1: double\n) -> void", "signature": "IMAGE.line(\n    x0: double,\n    y0: double,\n    x1: double,\n    y1: double\n) -> void", "kindLabel": "method" },
+    { "startLine": 22, "startColumn": 16, "endLine": 22, "endColumn": 16, "text": "x: double", "signature": "x: double", "kindLabel": "local argument" },
+    { "startLine": 22, "startColumn": 19, "endLine": 22, "endColumn": 19, "text": "y: double", "signature": "y: double", "kindLabel": "local argument" },
+    { "startLine": 22, "startColumn": 22, "endLine": 22, "endColumn": 26, "text": "tip_x: double", "signature": "tip_x: double", "kindLabel": "local value" },
+    { "startLine": 22, "startColumn": 29, "endLine": 22, "endColumn": 33, "text": "tip_y: double", "signature": "tip_y: double", "kindLabel": "local value" },
+    { "startLine": 24, "startColumn": 5, "endLine": 24, "endColumn": 10, "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "kindLabel": "global function" },
+    { "startLine": 24, "startColumn": 12, "endLine": 24, "endColumn": 16, "text": "tip_x: double", "signature": "tip_x: double", "kindLabel": "local value" },
+    { "startLine": 24, "startColumn": 19, "endLine": 24, "endColumn": 23, "text": "tip_y: double", "signature": "tip_y: double", "kindLabel": "local value" },
+    { "startLine": 24, "startColumn": 26, "endLine": 24, "endColumn": 30, "text": "angle: double", "signature": "angle: double", "kindLabel": "local argument" },
+    { "startLine": 24, "startColumn": 34, "endLine": 24, "endColumn": 39, "text": "spread: double", "signature": "spread: double", "kindLabel": "global variable" },
+    { "startLine": 24, "startColumn": 32, "endLine": 24, "endColumn": 32, "text": "double.-(a: double, b: double) -> double", "signature": "double.-(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.sub" },
+    { "startLine": 24, "startColumn": 42, "endLine": 24, "endColumn": 47, "text": "length: double", "signature": "length: double", "kindLabel": "local argument" },
+    { "startLine": 24, "startColumn": 51, "endLine": 24, "endColumn": 56, "text": "shrink: double", "signature": "shrink: double", "kindLabel": "global variable" },
+    { "startLine": 24, "startColumn": 49, "endLine": 24, "endColumn": 49, "text": "double.*(a: double, b: double) -> double", "signature": "double.*(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.mul" },
+    { "startLine": 24, "startColumn": 59, "endLine": 24, "endColumn": 63, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
+    { "startLine": 24, "startColumn": 65, "endLine": 24, "endColumn": 65, "text": "int.-(a: int, b: int) -> int", "signature": "int.-(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.sub" },
+    { "startLine": 25, "startColumn": 5, "endLine": 25, "endColumn": 10, "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "kindLabel": "global function" },
+    { "startLine": 25, "startColumn": 12, "endLine": 25, "endColumn": 16, "text": "tip_x: double", "signature": "tip_x: double", "kindLabel": "local value" },
+    { "startLine": 25, "startColumn": 19, "endLine": 25, "endColumn": 23, "text": "tip_y: double", "signature": "tip_y: double", "kindLabel": "local value" },
+    { "startLine": 25, "startColumn": 26, "endLine": 25, "endColumn": 30, "text": "angle: double", "signature": "angle: double", "kindLabel": "local argument" },
+    { "startLine": 25, "startColumn": 34, "endLine": 25, "endColumn": 39, "text": "spread: double", "signature": "spread: double", "kindLabel": "global variable" },
+    { "startLine": 25, "startColumn": 32, "endLine": 25, "endColumn": 32, "text": "double.+(a: double, b: double) -> double", "signature": "double.+(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.add" },
+    { "startLine": 25, "startColumn": 42, "endLine": 25, "endColumn": 47, "text": "length: double", "signature": "length: double", "kindLabel": "local argument" },
+    { "startLine": 25, "startColumn": 51, "endLine": 25, "endColumn": 56, "text": "shrink: double", "signature": "shrink: double", "kindLabel": "global variable" },
+    { "startLine": 25, "startColumn": 49, "endLine": 25, "endColumn": 49, "text": "double.*(a: double, b: double) -> double", "signature": "double.*(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.mul" },
+    { "startLine": 25, "startColumn": 59, "endLine": 25, "endColumn": 63, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
+    { "startLine": 25, "startColumn": 65, "endLine": 25, "endColumn": 65, "text": "int.-(a: int, b: int) -> int", "signature": "int.-(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.sub" }
   ],
   "inlayHints": [],
   "semanticTokens": [
-    {
-      "startLine": 1,
-      "startColumn": 12,
-      "endLine": 1,
-      "endColumn": 15,
-      "tokenType": "class"
-    },
-    {
-      "startLine": 2,
-      "startColumn": 12,
-      "endLine": 2,
-      "endColumn": 16,
-      "tokenType": "class"
-    },
-    {
-      "startLine": 4,
-      "startColumn": 5,
-      "endLine": 4,
-      "endColumn": 10,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 5,
-      "startColumn": 5,
-      "endLine": 5,
-      "endColumn": 10,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 7,
-      "startColumn": 5,
-      "endLine": 7,
-      "endColumn": 9,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 7,
-      "startColumn": 13,
-      "endLine": 7,
-      "endColumn": 17,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 9,
-      "startColumn": 1,
-      "endLine": 9,
-      "endColumn": 6,
-      "tokenType": "function"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 5,
-      "endLine": 10,
-      "endColumn": 5,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 8,
-      "endLine": 10,
-      "endColumn": 13,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 16,
-      "endLine": 10,
-      "endColumn": 16,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 10,
-      "startColumn": 19,
-      "endLine": 10,
-      "endColumn": 24,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 5,
-      "endLine": 11,
-      "endColumn": 9,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 12,
-      "endLine": 11,
-      "endColumn": 17,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 20,
-      "endLine": 11,
-      "endColumn": 25,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 11,
-      "startColumn": 28,
-      "endLine": 11,
-      "endColumn": 33,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 12,
-      "startColumn": 5,
-      "endLine": 12,
-      "endColumn": 9,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 12,
-      "startColumn": 12,
-      "endLine": 12,
-      "endColumn": 14,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 14,
-      "startColumn": 8,
-      "endLine": 14,
-      "endColumn": 12,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 14,
-      "startColumn": 14,
-      "endLine": 14,
-      "endColumn": 15,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 9,
-      "endLine": 18,
-      "endColumn": 13,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 17,
-      "endLine": 18,
-      "endColumn": 17,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 19,
-      "endLine": 18,
-      "endColumn": 19,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 21,
-      "endLine": 18,
-      "endColumn": 26,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 28,
-      "endLine": 18,
-      "endColumn": 28,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 30,
-      "endLine": 18,
-      "endColumn": 33,
-      "tokenType": "class"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 35,
-      "endLine": 18,
-      "endColumn": 37,
-      "tokenType": "method",
-      "modifiers": "static"
-    },
-    {
-      "startLine": 18,
-      "startColumn": 39,
-      "endLine": 18,
-      "endColumn": 43,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 9,
-      "endLine": 19,
-      "endColumn": 13,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 17,
-      "endLine": 19,
-      "endColumn": 17,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 19,
-      "endLine": 19,
-      "endColumn": 19,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 21,
-      "endLine": 19,
-      "endColumn": 26,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 28,
-      "endLine": 19,
-      "endColumn": 28,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 30,
-      "endLine": 19,
-      "endColumn": 33,
-      "tokenType": "class"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 35,
-      "endLine": 19,
-      "endColumn": 37,
-      "tokenType": "method",
-      "modifiers": "static"
-    },
-    {
-      "startLine": 19,
-      "startColumn": 39,
-      "endLine": 19,
-      "endColumn": 43,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 5,
-      "endLine": 21,
-      "endColumn": 9,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 11,
-      "endLine": 21,
-      "endColumn": 16,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 23,
-      "endLine": 21,
-      "endColumn": 23,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 30,
-      "endLine": 21,
-      "endColumn": 35,
-      "tokenType": "struct"
-    },
-    {
-      "startLine": 21,
-      "startColumn": 37,
-      "endLine": 21,
-      "endColumn": 41,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 5,
-      "endLine": 22,
-      "endColumn": 9,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 11,
-      "endLine": 22,
-      "endColumn": 14,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 16,
-      "endLine": 22,
-      "endColumn": 16,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 19,
-      "endLine": 22,
-      "endColumn": 19,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 22,
-      "endLine": 22,
-      "endColumn": 26,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 22,
-      "startColumn": 29,
-      "endLine": 22,
-      "endColumn": 33,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 5,
-      "endLine": 24,
-      "endColumn": 10,
-      "tokenType": "function"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 12,
-      "endLine": 24,
-      "endColumn": 16,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 19,
-      "endLine": 24,
-      "endColumn": 23,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 26,
-      "endLine": 24,
-      "endColumn": 30,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 32,
-      "endLine": 24,
-      "endColumn": 32,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 34,
-      "endLine": 24,
-      "endColumn": 39,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 42,
-      "endLine": 24,
-      "endColumn": 47,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 49,
-      "endLine": 24,
-      "endColumn": 49,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 51,
-      "endLine": 24,
-      "endColumn": 56,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 59,
-      "endLine": 24,
-      "endColumn": 63,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 24,
-      "startColumn": 65,
-      "endLine": 24,
-      "endColumn": 65,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 5,
-      "endLine": 25,
-      "endColumn": 10,
-      "tokenType": "function"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 12,
-      "endLine": 25,
-      "endColumn": 16,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 19,
-      "endLine": 25,
-      "endColumn": 23,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 26,
-      "endLine": 25,
-      "endColumn": 30,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 32,
-      "endLine": 25,
-      "endColumn": 32,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 34,
-      "endLine": 25,
-      "endColumn": 39,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 42,
-      "endLine": 25,
-      "endColumn": 47,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 49,
-      "endLine": 25,
-      "endColumn": 49,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 51,
-      "endLine": 25,
-      "endColumn": 56,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 59,
-      "endLine": 25,
-      "endColumn": 63,
-      "tokenType": "variable",
-      "modifiers": "readonly"
-    },
-    {
-      "startLine": 25,
-      "startColumn": 65,
-      "endLine": 25,
-      "endColumn": 65,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 28,
-      "startColumn": 1,
-      "endLine": 28,
-      "endColumn": 5,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 28,
-      "startColumn": 7,
-      "endLine": 28,
-      "endColumn": 10,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 29,
-      "startColumn": 1,
-      "endLine": 29,
-      "endColumn": 5,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 29,
-      "startColumn": 7,
-      "endLine": 29,
-      "endColumn": 12,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 1,
-      "endLine": 31,
-      "endColumn": 6,
-      "tokenType": "function"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 23,
-      "endLine": 31,
-      "endColumn": 26,
-      "tokenType": "class"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 28,
-      "endLine": 31,
-      "endColumn": 29,
-      "tokenType": "property",
-      "modifiers": "static"
-    },
-    {
-      "startLine": 31,
-      "startColumn": 31,
-      "endLine": 31,
-      "endColumn": 31,
-      "tokenType": "operator"
-    },
-    {
-      "startLine": 33,
-      "startColumn": 1,
-      "endLine": 33,
-      "endColumn": 5,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 33,
-      "startColumn": 7,
-      "endLine": 33,
-      "endColumn": 11,
-      "tokenType": "method"
-    },
-    {
-      "startLine": 35,
-      "startColumn": 1,
-      "endLine": 35,
-      "endColumn": 5,
-      "tokenType": "property"
-    },
-    {
-      "startLine": 35,
-      "startColumn": 7,
-      "endLine": 35,
-      "endColumn": 10,
-      "tokenType": "method"
-    }
-  ],
-  "images": [
-    {
-      "name": "tree.png",
-      "url": "/examples/fractal-tree/tree.png"
-    }
-  ],
-  "playground": true
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 15, "tokenType": "class" },
+    { "startLine": 2, "startColumn": 12, "endLine": 2, "endColumn": 16, "tokenType": "class" },
+    { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 10, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 10, "tokenType": "property" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 7, "startColumn": 13, "endLine": 7, "endColumn": 17, "tokenType": "method" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 6, "tokenType": "function" },
+    { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 5, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 10, "startColumn": 8, "endLine": 10, "endColumn": 13, "tokenType": "struct" },
+    { "startLine": 10, "startColumn": 16, "endLine": 10, "endColumn": 16, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 10, "startColumn": 19, "endLine": 10, "endColumn": 24, "tokenType": "struct" },
+    { "startLine": 11, "startColumn": 5, "endLine": 11, "endColumn": 9, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 11, "startColumn": 12, "endLine": 11, "endColumn": 17, "tokenType": "struct" },
+    { "startLine": 11, "startColumn": 20, "endLine": 11, "endColumn": 25, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 11, "startColumn": 28, "endLine": 11, "endColumn": 33, "tokenType": "struct" },
+    { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 9, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 12, "startColumn": 12, "endLine": 12, "endColumn": 14, "tokenType": "struct" },
+    { "startLine": 14, "startColumn": 8, "endLine": 14, "endColumn": 12, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 14, "startColumn": 14, "endLine": 14, "endColumn": 15, "tokenType": "operator" },
+    { "startLine": 18, "startColumn": 9, "endLine": 18, "endColumn": 13, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 18, "startColumn": 17, "endLine": 18, "endColumn": 17, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 18, "startColumn": 19, "endLine": 18, "endColumn": 19, "tokenType": "operator" },
+    { "startLine": 18, "startColumn": 21, "endLine": 18, "endColumn": 26, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 18, "startColumn": 28, "endLine": 18, "endColumn": 28, "tokenType": "operator" },
+    { "startLine": 18, "startColumn": 30, "endLine": 18, "endColumn": 33, "tokenType": "class" },
+    { "startLine": 18, "startColumn": 35, "endLine": 18, "endColumn": 37, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 18, "startColumn": 39, "endLine": 18, "endColumn": 43, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 19, "startColumn": 9, "endLine": 19, "endColumn": 13, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 19, "startColumn": 17, "endLine": 19, "endColumn": 17, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 19, "startColumn": 19, "endLine": 19, "endColumn": 19, "tokenType": "operator" },
+    { "startLine": 19, "startColumn": 21, "endLine": 19, "endColumn": 26, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 19, "startColumn": 28, "endLine": 19, "endColumn": 28, "tokenType": "operator" },
+    { "startLine": 19, "startColumn": 30, "endLine": 19, "endColumn": 33, "tokenType": "class" },
+    { "startLine": 19, "startColumn": 35, "endLine": 19, "endColumn": 37, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 19, "startColumn": 39, "endLine": 19, "endColumn": 43, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 21, "startColumn": 5, "endLine": 21, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 21, "startColumn": 11, "endLine": 21, "endColumn": 16, "tokenType": "method" },
+    { "startLine": 21, "startColumn": 23, "endLine": 21, "endColumn": 23, "tokenType": "operator" },
+    { "startLine": 21, "startColumn": 30, "endLine": 21, "endColumn": 35, "tokenType": "struct" },
+    { "startLine": 21, "startColumn": 37, "endLine": 21, "endColumn": 41, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 22, "startColumn": 5, "endLine": 22, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 22, "startColumn": 11, "endLine": 22, "endColumn": 14, "tokenType": "method" },
+    { "startLine": 22, "startColumn": 16, "endLine": 22, "endColumn": 16, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 22, "startColumn": 19, "endLine": 22, "endColumn": 19, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 22, "startColumn": 22, "endLine": 22, "endColumn": 26, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 22, "startColumn": 29, "endLine": 22, "endColumn": 33, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 5, "endLine": 24, "endColumn": 10, "tokenType": "function" },
+    { "startLine": 24, "startColumn": 12, "endLine": 24, "endColumn": 16, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 19, "endLine": 24, "endColumn": 23, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 26, "endLine": 24, "endColumn": 30, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 32, "endLine": 24, "endColumn": 32, "tokenType": "operator" },
+    { "startLine": 24, "startColumn": 34, "endLine": 24, "endColumn": 39, "tokenType": "property" },
+    { "startLine": 24, "startColumn": 42, "endLine": 24, "endColumn": 47, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 49, "endLine": 24, "endColumn": 49, "tokenType": "operator" },
+    { "startLine": 24, "startColumn": 51, "endLine": 24, "endColumn": 56, "tokenType": "property" },
+    { "startLine": 24, "startColumn": 59, "endLine": 24, "endColumn": 63, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 24, "startColumn": 65, "endLine": 24, "endColumn": 65, "tokenType": "operator" },
+    { "startLine": 25, "startColumn": 5, "endLine": 25, "endColumn": 10, "tokenType": "function" },
+    { "startLine": 25, "startColumn": 12, "endLine": 25, "endColumn": 16, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 25, "startColumn": 19, "endLine": 25, "endColumn": 23, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 25, "startColumn": 26, "endLine": 25, "endColumn": 30, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 25, "startColumn": 32, "endLine": 25, "endColumn": 32, "tokenType": "operator" },
+    { "startLine": 25, "startColumn": 34, "endLine": 25, "endColumn": 39, "tokenType": "property" },
+    { "startLine": 25, "startColumn": 42, "endLine": 25, "endColumn": 47, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 25, "startColumn": 49, "endLine": 25, "endColumn": 49, "tokenType": "operator" },
+    { "startLine": 25, "startColumn": 51, "endLine": 25, "endColumn": 56, "tokenType": "property" },
+    { "startLine": 25, "startColumn": 59, "endLine": 25, "endColumn": 63, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 25, "startColumn": 65, "endLine": 25, "endColumn": 65, "tokenType": "operator" },
+    { "startLine": 28, "startColumn": 1, "endLine": 28, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 28, "startColumn": 7, "endLine": 28, "endColumn": 10, "tokenType": "method" },
+    { "startLine": 29, "startColumn": 1, "endLine": 29, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 29, "startColumn": 7, "endLine": 29, "endColumn": 12, "tokenType": "method" },
+    { "startLine": 31, "startColumn": 1, "endLine": 31, "endColumn": 6, "tokenType": "function" },
+    { "startLine": 31, "startColumn": 23, "endLine": 31, "endColumn": 26, "tokenType": "class" },
+    { "startLine": 31, "startColumn": 28, "endLine": 31, "endColumn": 29, "tokenType": "property", "modifiers": "static" },
+    { "startLine": 31, "startColumn": 31, "endLine": 31, "endColumn": 31, "tokenType": "operator" },
+    { "startLine": 33, "startColumn": 1, "endLine": 33, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 33, "startColumn": 7, "endLine": 33, "endColumn": 11, "tokenType": "method" },
+    { "startLine": 35, "startColumn": 1, "endLine": 35, "endColumn": 5, "tokenType": "property" },
+    { "startLine": 35, "startColumn": 7, "endLine": 35, "endColumn": 10, "tokenType": "method" }
+  ]
 }

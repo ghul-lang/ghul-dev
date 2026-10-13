@@ -21,7 +21,7 @@
     { "startLine": 14, "startColumn": 14, "endLine": 14, "endColumn": 23, "text": "first_even(xs: int[]) -> int", "signature": "first_even(xs: int[]) -> int", "kindLabel": "global function" },
     { "startLine": 8, "startColumn": 12, "endLine": 8, "endColumn": 12, "text": "x: int", "signature": "x: int", "kindLabel": "local value" },
     { "startLine": 8, "startColumn": 14, "endLine": 8, "endColumn": 14, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 8, "startColumn": 18, "endLine": 8, "endColumn": 19, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 8, "startColumn": 18, "endLine": 8, "endColumn": 19, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 9, "startColumn": 20, "endLine": 9, "endColumn": 20, "text": "x: int", "signature": "x: int", "kindLabel": "local value" }
   ],
   "inlayHints": [],

@@ -21,7 +21,7 @@
     { "startLine": 10, "startColumn": 16, "endLine": 10, "endColumn": 16, "text": "s: int", "signature": "s: int", "kindLabel": "local value" },
     { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 11, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
     { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 20, "text": "limit: int", "signature": "limit: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 13, "endLine": 3, "endColumn": 14, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 3, "startColumn": 13, "endLine": 3, "endColumn": 14, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 15, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
     { "startLine": 4, "startColumn": 19, "endLine": 4, "endColumn": 19, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
     { "startLine": 4, "startColumn": 17, "endLine": 4, "endColumn": 17, "text": "int.*(a: int, b: int) -> int", "signature": "int.*(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.mul" },

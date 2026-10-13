@@ -11,9 +11,9 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 16, "text": "zero_to_four: Ghul.INT_RANGE", "signature": "zero_to_four: Ghul.INT_RANGE", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 22, "text": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "signature": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 22, "text": "..(from: int, to: int) -> Ghul.INT_RANGE", "signature": "..(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 16, "text": "five_to_nine: Ghul.INT_RANGE", "signature": "five_to_nine: Ghul.INT_RANGE", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "signature": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
+    { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "..(from: int, to: int) -> Ghul.INT_RANGE", "signature": "..(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 16, "text": "zero_to_nine: Collections.Iterator[int]", "signature": "zero_to_nine: Collections.Iterator[int]", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 37, "endLine": 4, "endColumn": 39, "text": "Ghul.Pipes.cat[int](source: int{}, right: int{}) -> int{}", "signature": "Ghul.Pipes.cat[int](source: int{}, right: int{}) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 4, "startColumn": 21, "endLine": 4, "endColumn": 32, "text": "zero_to_four: Ghul.INT_RANGE", "signature": "zero_to_four: Ghul.INT_RANGE", "kindLabel": "global variable" },

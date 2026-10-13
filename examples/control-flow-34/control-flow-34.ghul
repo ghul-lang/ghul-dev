@@ -1,5 +1,5 @@
 // >>>
-class INSUFFICIENT_FUNDS_EXCEPTION(message: string): System.Exception is
+class InsufficientFundsException(message: string): System.Exception is
     super(message)
 si
 // <<<

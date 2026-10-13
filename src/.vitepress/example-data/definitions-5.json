@@ -22,7 +22,7 @@
     { "startLine": 3, "startColumn": 30, "endLine": 3, "endColumn": 32, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 3, "startColumn": 38, "endLine": 3, "endColumn": 38, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 5, "text": "$discard_5: int", "signature": "$discard_5: int", "kindLabel": "local value" },
-    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 12, "text": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "signature": "Ghul.Intrinsics...(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 12, "text": "..(from: int, to: int) -> Ghul.INT_RANGE", "signature": "..(from: int, to: int) -> Ghul.INT_RANGE", "kindLabel": "innate function range.exclusive" },
     { "startLine": 5, "startColumn": 15, "endLine": 5, "endColumn": 21, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 23, "endLine": 5, "endColumn": 23, "text": "int.+(a: int, b: int) -> int", "signature": "int.+(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.add" },
     { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 11, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" }

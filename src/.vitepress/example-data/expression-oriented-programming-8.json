@@ -24,9 +24,9 @@
     { "startLine": 21, "startColumn": 29, "endLine": 21, "endColumn": 36, "text": "classify(n: int) -> string", "signature": "classify(n: int) -> string", "kindLabel": "pure global function" },
     { "startLine": 21, "startColumn": 43, "endLine": 21, "endColumn": 51, "text": "sign_word(n: int) -> string", "signature": "sign_word(n: int) -> string", "kindLabel": "pure global function" },
     { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 8, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 10, "endLine": 3, "endColumn": 10, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 3, "startColumn": 10, "endLine": 3, "endColumn": 10, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 5, "startColumn": 10, "endLine": 5, "endColumn": 10, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
-    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 13, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 13, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 14, "startColumn": 10, "endLine": 14, "endColumn": 10, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" }
   ],
   "inlayHints": [],

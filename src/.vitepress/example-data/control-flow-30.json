@@ -17,7 +17,7 @@
     { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 23, "text": "int.+(a: int, b: int) -> int", "signature": "int.+(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.add" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 11, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 8, "endLine": 5, "endColumn": 14, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
-    { "startLine": 5, "startColumn": 16, "endLine": 5, "endColumn": 17, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 5, "startColumn": 16, "endLine": 5, "endColumn": 17, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

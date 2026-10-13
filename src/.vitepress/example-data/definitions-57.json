@@ -34,7 +34,7 @@
     { "startLine": 7, "startColumn": 19, "endLine": 7, "endColumn": 19, "text": "b: POINT", "signature": "b: POINT", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 23, "endLine": 7, "endColumn": 23, "text": "a: POINT", "signature": "a: POINT", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 28, "endLine": 7, "endColumn": 28, "text": "b: POINT", "signature": "b: POINT", "kindLabel": "global variable" },
-    { "startLine": 7, "startColumn": 25, "endLine": 7, "endColumn": 26, "text": "Ghul.Intrinsics.==[POINT](a: POINT, b: POINT) -> bool", "signature": "Ghul.Intrinsics.==[POINT](a: POINT, b: POINT) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 7, "startColumn": 25, "endLine": 7, "endColumn": 26, "text": "==[POINT](a: POINT, b: POINT) -> bool", "signature": "==[POINT](a: POINT, b: POINT) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

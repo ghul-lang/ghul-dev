@@ -31,7 +31,7 @@
     { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 14, "startColumn": 23, "endLine": 14, "endColumn": 23, "text": "i: int", "signature": "i: int", "kindLabel": "local value" },
     { "startLine": 6, "startColumn": 15, "endLine": 6, "endColumn": 15, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
-    { "startLine": 6, "startColumn": 17, "endLine": 6, "endColumn": 17, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 6, "startColumn": 17, "endLine": 6, "endColumn": 17, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 7, "startColumn": 19, "endLine": 7, "endColumn": 19, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
     { "startLine": 8, "startColumn": 17, "endLine": 8, "endColumn": 17, "text": "i: int", "signature": "i: int", "kindLabel": "local variable" },
     { "startLine": 8, "startColumn": 19, "endLine": 8, "endColumn": 19, "text": "int.-(a: int, b: int) -> int", "signature": "int.-(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.sub" },

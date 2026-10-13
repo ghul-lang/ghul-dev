@@ -29,7 +29,7 @@
     { "startLine": 8, "startColumn": 31, "endLine": 8, "endColumn": 36, "text": "closed: System.Type", "signature": "closed: System.Type", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 38, "endLine": 8, "endColumn": 64, "text": "System.Type.get_generic_type_definition() -> System.Type", "signature": "System.Type.get_generic_type_definition() -> System.Type", "kindLabel": "method" },
     { "startLine": 8, "startColumn": 71, "endLine": 8, "endColumn": 74, "text": "open: System.Type", "signature": "open: System.Type", "kindLabel": "global variable" },
-    { "startLine": 8, "startColumn": 68, "endLine": 8, "endColumn": 69, "text": "Ghul.Intrinsics.==[System.Type](\n    a: System.Type,\n    b: System.Type\n) -> bool", "signature": "Ghul.Intrinsics.==[System.Type](\n    a: System.Type,\n    b: System.Type\n) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 8, "startColumn": 68, "endLine": 8, "endColumn": 69, "text": "==[System.Type](a: System.Type, b: System.Type) -> bool", "signature": "==[System.Type](a: System.Type, b: System.Type) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

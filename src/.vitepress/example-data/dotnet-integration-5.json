@@ -53,7 +53,7 @@
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 16, "text": "major: int", "signature": "major: int", "kindLabel": "pure instance property" },
     { "startLine": 3, "startColumn": 21, "endLine": 3, "endColumn": 25, "text": "other: VERSION", "signature": "other: VERSION", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 27, "endLine": 3, "endColumn": 31, "text": "major: int", "signature": "major: int", "kindLabel": "pure instance property" },
-    { "startLine": 3, "startColumn": 18, "endLine": 3, "endColumn": 19, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 3, "startColumn": 18, "endLine": 3, "endColumn": 19, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 3, "startColumn": 38, "endLine": 3, "endColumn": 42, "text": "major: int", "signature": "major: int", "kindLabel": "pure instance property" },
     { "startLine": 3, "startColumn": 46, "endLine": 3, "endColumn": 50, "text": "other: VERSION", "signature": "other: VERSION", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 52, "endLine": 3, "endColumn": 56, "text": "major: int", "signature": "major: int", "kindLabel": "pure instance property" },

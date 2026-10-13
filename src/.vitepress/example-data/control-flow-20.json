@@ -12,9 +12,9 @@
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 7, "endLine": 2, "endColumn": 13, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 15, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 14, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 17, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 17, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 14, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
     { "startLine": 6, "startColumn": 16, "endLine": 6, "endColumn": 22, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 15, "endLine": 7, "endColumn": 21, "text": "counter: int", "signature": "counter: int", "kindLabel": "global variable" },

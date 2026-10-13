@@ -12,7 +12,7 @@
   "hovers": [
     { "startLine": 1, "startColumn": 4, "endLine": 1, "endColumn": 4, "text": "x: int", "signature": "x: int", "kindLabel": "global variable" },
     { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 8, "text": "y: int", "signature": "y: int", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 6, "endLine": 1, "endColumn": 6, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 1, "startColumn": 6, "endLine": 1, "endColumn": 6, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" }
   ],

@@ -40,7 +40,7 @@
     { "startLine": 17, "startColumn": 18, "endLine": 17, "endColumn": 26, "text": "RECTANGLE(width: double, height: double)", "signature": "RECTANGLE(width: double, height: double)", "kindLabel": "variant" },
     { "startLine": 17, "startColumn": 31, "endLine": 17, "endColumn": 31, "text": "w: double", "signature": "w: double", "kindLabel": "local value" },
     { "startLine": 17, "startColumn": 36, "endLine": 17, "endColumn": 36, "text": "h: double", "signature": "h: double", "kindLabel": "local value" },
-    { "startLine": 17, "startColumn": 33, "endLine": 17, "endColumn": 34, "text": "Ghul.Intrinsics.==[double](a: double, b: double) -> bool", "signature": "Ghul.Intrinsics.==[double](a: double, b: double) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 17, "startColumn": 33, "endLine": 17, "endColumn": 34, "text": "==[double](a: double, b: double) -> bool", "signature": "==[double](a: double, b: double) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 17, "startColumn": 62, "endLine": 17, "endColumn": 62, "text": "w: double", "signature": "w: double", "kindLabel": "local value" },
     { "startLine": 18, "startColumn": 11, "endLine": 18, "endColumn": 11, "text": "w: double", "signature": "w: double", "kindLabel": "local value" },
     { "startLine": 18, "startColumn": 14, "endLine": 18, "endColumn": 14, "text": "h: double", "signature": "h: double", "kindLabel": "local value" },

@@ -18,7 +18,7 @@
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 24, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 12, "text": "tries: int", "signature": "tries: int", "kindLabel": "pure global property" },
     { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 20, "text": "limit: int", "signature": "limit: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 7, "startColumn": 13, "endLine": 7, "endColumn": 17, "text": "tries: int", "signature": "tries: int", "kindLabel": "pure global property" },
     { "startLine": 7, "startColumn": 19, "endLine": 7, "endColumn": 19, "text": "int.+(a: int, b: int) -> int", "signature": "int.+(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.add" },
     { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 9, "text": "tries: int", "signature": "tries: int", "kindLabel": "pure global property" }
