@@ -23,7 +23,7 @@
     { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 14, "text": "is_greater: bool", "signature": "is_greater: bool", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 18, "endLine": 5, "endColumn": 18, "text": "x: int", "signature": "x: int", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 22, "endLine": 5, "endColumn": 22, "text": "y: int", "signature": "y: int", "kindLabel": "global variable" },
-    { "startLine": 5, "startColumn": 20, "endLine": 5, "endColumn": 20, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 5, "startColumn": 20, "endLine": 5, "endColumn": 20, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 13, "startColumn": 5, "endLine": 13, "endColumn": 11, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
     { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 16, "text": "first_number: int", "signature": "first_number: int", "kindLabel": "global variable" },
     { "startLine": 14, "startColumn": 20, "endLine": 14, "endColumn": 26, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },

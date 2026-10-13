@@ -24,7 +24,7 @@
     { "startLine": 8, "startColumn": 23, "endLine": 8, "endColumn": 27, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 44, "endLine": 8, "endColumn": 44, "text": "w: string", "signature": "w: string", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 46, "endLine": 8, "endColumn": 51, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },
-    { "startLine": 8, "startColumn": 53, "endLine": 8, "endColumn": 53, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 8, "startColumn": 53, "endLine": 8, "endColumn": 53, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 7, "startColumn": 32, "endLine": 7, "endColumn": 35, "text": "Ghul.Pipes.last[string](source: string{}) -> string?", "signature": "Ghul.Pipes.last[string](source: string{}) -> string?", "kindLabel": "pure global function" },
     { "startLine": 7, "startColumn": 23, "endLine": 7, "endColumn": 27, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" }

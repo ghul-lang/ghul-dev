@@ -20,7 +20,7 @@
     { "startLine": 5, "startColumn": 14, "endLine": 5, "endColumn": 19, "text": "totals: LIST[int]", "signature": "totals: LIST[int]", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 36, "endLine": 5, "endColumn": 36, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 5, "startColumn": 38, "endLine": 5, "endColumn": 38, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 5, "startColumn": 42, "endLine": 5, "endColumn": 43, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 5, "startColumn": 42, "endLine": 5, "endColumn": 43, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

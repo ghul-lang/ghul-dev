@@ -13,7 +13,7 @@
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 16, "text": "closure_list: LIST[() -> int pure]", "signature": "closure_list: LIST[() -> int pure]", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 23, "text": "LIST[() -> int pure].init()", "signature": "LIST[() -> int pure].init()", "kindLabel": "constructor" },
     { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 5, "text": "i: int", "signature": "i: int", "kindLabel": "captured value" },
-    { "startLine": 5, "startColumn": 11, "endLine": 5, "endColumn": 12, "text": "Ghul.Intrinsics.::(\n    from: int,\n    to: int\n) -> Ghul.INT_RANGE_INCLUSIVE", "signature": "Ghul.Intrinsics.::(\n    from: int,\n    to: int\n) -> Ghul.INT_RANGE_INCLUSIVE", "kindLabel": "innate function range.inclusive" },
+    { "startLine": 5, "startColumn": 11, "endLine": 5, "endColumn": 12, "text": "::(from: int, to: int) -> Ghul.INT_RANGE_INCLUSIVE", "signature": "::(from: int, to: int) -> Ghul.INT_RANGE_INCLUSIVE", "kindLabel": "innate function range.inclusive" },
     { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 15, "text": "closure: () -> int pure", "signature": "closure: () -> int pure", "kindLabel": "local value" },
     { "startLine": 7, "startColumn": 25, "endLine": 7, "endColumn": 25, "text": "i: int", "signature": "i: int", "kindLabel": "captured value" },
     { "startLine": 15, "startColumn": 5, "endLine": 15, "endColumn": 11, "text": "closure: () -> int pure", "signature": "closure: () -> int pure", "kindLabel": "local value" },

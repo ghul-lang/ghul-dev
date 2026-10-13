@@ -19,7 +19,7 @@
     { "startLine": 7, "startColumn": 8, "endLine": 7, "endColumn": 13, "text": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "signature": "Ghul.Pipes.filter[int](\n    source: int{},\n    predicate: int.. -> bool pure\n) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 7, "startColumn": 20, "endLine": 7, "endColumn": 20, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 7, "startColumn": 22, "endLine": 7, "endColumn": 22, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 7, "startColumn": 26, "endLine": 7, "endColumn": 27, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 7, "startColumn": 26, "endLine": 7, "endColumn": 27, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 8, "startColumn": 12, "endLine": 8, "endColumn": 12, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 8, "endLine": 8, "endColumn": 10, "text": "Ghul.Pipes.map[int,int](\n    source: int{},\n    mapper: int.. -> int pure\n) -> int{}", "signature": "Ghul.Pipes.map[int,int](\n    source: int{},\n    mapper: int.. -> int pure\n) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 8, "startColumn": 17, "endLine": 8, "endColumn": 17, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },

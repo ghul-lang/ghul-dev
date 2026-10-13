@@ -28,7 +28,7 @@
     { "startLine": 7, "startColumn": 25, "endLine": 7, "endColumn": 32, "text": "midpoint: int", "signature": "midpoint: int", "kindLabel": "global variable" },
     { "startLine": 12, "startColumn": 12, "endLine": 12, "endColumn": 12, "text": "x: int", "signature": "x: int", "kindLabel": "local value" },
     { "startLine": 12, "startColumn": 14, "endLine": 12, "endColumn": 14, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 12, "startColumn": 18, "endLine": 12, "endColumn": 19, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 12, "startColumn": 18, "endLine": 12, "endColumn": 19, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 13, "startColumn": 20, "endLine": 13, "endColumn": 20, "text": "x: int", "signature": "x: int", "kindLabel": "local value" },
     { "startLine": 16, "startColumn": 5, "endLine": 16, "endColumn": 5, "text": "int.-(a: int) -> int", "signature": "int.-(a: int) -> int", "kindLabel": "innate function arithmetic.neg" },
     { "startLine": 18, "startColumn": 1, "endLine": 18, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },

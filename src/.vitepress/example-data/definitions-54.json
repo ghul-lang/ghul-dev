@@ -19,7 +19,7 @@
     { "startLine": 3, "startColumn": 26, "endLine": 3, "endColumn": 28, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 3, "startColumn": 18, "endLine": 3, "endColumn": 20, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 3, "startColumn": 36, "endLine": 3, "endColumn": 40, "text": "score: int", "signature": "score: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 42, "endLine": 3, "endColumn": 42, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 3, "startColumn": 42, "endLine": 3, "endColumn": 42, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 5, "startColumn": 9, "endLine": 5, "endColumn": 13, "text": "total: int", "signature": "total: int", "kindLabel": "local variable" },
     { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 13, "text": "score: int", "signature": "score: int", "kindLabel": "local value" },
     { "startLine": 7, "startColumn": 18, "endLine": 7, "endColumn": 23, "text": "scores: int[]", "signature": "scores: int[]", "kindLabel": "local argument" },

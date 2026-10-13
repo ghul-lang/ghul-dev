@@ -15,7 +15,7 @@
     { "startLine": 1, "startColumn": 13, "endLine": 1, "endColumn": 18, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
     { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 15, "text": "class CAT(name: string)", "signature": "class CAT(name: string)", "kindLabel": "class" },
     { "startLine": 2, "startColumn": 17, "endLine": 2, "endColumn": 17, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "local argument" },
-    { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 8, "text": "Ghul.Intrinsics.!(a: bool) -> bool", "signature": "Ghul.Intrinsics.!(a: bool) -> bool", "kindLabel": "innate function bool.not" },
+    { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 8, "text": "!(a: bool) -> bool", "signature": "!(a: bool) -> bool", "kindLabel": "innate function bool.not" },
     { "startLine": 12, "startColumn": 1, "endLine": 12, "endColumn": 8, "text": "classify(a: Animal) -> void", "signature": "classify(a: Animal) -> void", "kindLabel": "pure global function" },
     { "startLine": 12, "startColumn": 10, "endLine": 12, "endColumn": 12, "text": "CAT.init(name: string)", "signature": "CAT.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 13, "startColumn": 1, "endLine": 13, "endColumn": 8, "text": "classify(a: Animal) -> void", "signature": "classify(a: Animal) -> void", "kindLabel": "pure global function" },

@@ -25,7 +25,7 @@
     { "startLine": 5, "startColumn": 18, "endLine": 5, "endColumn": 22, "text": "score: int", "signature": "score: int", "kindLabel": "local argument" },
     { "startLine": 5, "startColumn": 24, "endLine": 5, "endColumn": 24, "text": "int./(a: int, b: int) -> int", "signature": "int./(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.div" },
     { "startLine": 12, "startColumn": 12, "endLine": 12, "endColumn": 15, "text": "band: string", "signature": "band: string", "kindLabel": "local value" },
-    { "startLine": 12, "startColumn": 17, "endLine": 12, "endColumn": 18, "text": "Ghul.Intrinsics.==[string](a: string, b: string) -> bool", "signature": "Ghul.Intrinsics.==[string](a: string, b: string) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 12, "startColumn": 17, "endLine": 12, "endColumn": 18, "text": "==[string](a: string, b: string) -> bool", "signature": "==[string](a: string, b: string) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 12, "startColumn": 49, "endLine": 12, "endColumn": 52, "text": "band: string", "signature": "band: string", "kindLabel": "local value" },
     { "startLine": 15, "startColumn": 12, "endLine": 15, "endColumn": 16, "text": "label: string", "signature": "label: string", "kindLabel": "local value" }
   ],

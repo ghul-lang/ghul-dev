@@ -23,7 +23,7 @@
     { "startLine": 8, "startColumn": 13, "endLine": 8, "endColumn": 19, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 36, "endLine": 8, "endColumn": 36, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 38, "endLine": 8, "endColumn": 38, "text": "int.%(a: int, b: int) -> int", "signature": "int.%(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.rem" },
-    { "startLine": 8, "startColumn": 42, "endLine": 8, "endColumn": 43, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 8, "startColumn": 42, "endLine": 8, "endColumn": 43, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 12, "startColumn": 33, "endLine": 12, "endColumn": 35, "text": "acc: int", "signature": "acc: int", "kindLabel": "local argument" },
     { "startLine": 12, "startColumn": 38, "endLine": 12, "endColumn": 38, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 7, "text": "sum: int", "signature": "sum: int", "kindLabel": "global variable" },

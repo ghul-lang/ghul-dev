@@ -11,11 +11,11 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 15, "text": "logical_and: bool", "signature": "logical_and: bool", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 25, "text": "Ghul.Intrinsics./\\(a: bool, b: bool) -> bool", "signature": "Ghul.Intrinsics./\\(a: bool, b: bool) -> bool", "kindLabel": "innate function bool.and_then" },
+    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 25, "text": "/\\(a: bool, b: bool) -> bool", "signature": "/\\(a: bool, b: bool) -> bool", "kindLabel": "innate function bool.and_then" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 14, "text": "logical_or: bool", "signature": "logical_or: bool", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 24, "text": "Ghul.Intrinsics.\\/(a: bool, b: bool) -> bool", "signature": "Ghul.Intrinsics.\\/(a: bool, b: bool) -> bool", "kindLabel": "innate function bool.or_else" },
+    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 24, "text": "\\/(a: bool, b: bool) -> bool", "signature": "\\/(a: bool, b: bool) -> bool", "kindLabel": "innate function bool.or_else" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 15, "text": "logical_not: bool", "signature": "logical_not: bool", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 19, "text": "Ghul.Intrinsics.!(a: bool) -> bool", "signature": "Ghul.Intrinsics.!(a: bool) -> bool", "kindLabel": "innate function bool.not" }
+    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 19, "text": "!(a: bool) -> bool", "signature": "!(a: bool) -> bool", "kindLabel": "innate function bool.not" }
   ],
   "inlayHints": [],
   "semanticTokens": [

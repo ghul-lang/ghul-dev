@@ -29,7 +29,7 @@
     { "startLine": 22, "startColumn": 5, "endLine": 22, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 22, "startColumn": 24, "endLine": 22, "endColumn": 27, "text": "full: PERCENTAGE", "signature": "full: PERCENTAGE", "kindLabel": "global variable" },
     { "startLine": 25, "startColumn": 5, "endLine": 25, "endColumn": 9, "text": "empty: PERCENTAGE", "signature": "empty: PERCENTAGE", "kindLabel": "global variable" },
-    { "startLine": 25, "startColumn": 4, "endLine": 25, "endColumn": 4, "text": "Ghul.Intrinsics.!(a: bool) -> bool", "signature": "Ghul.Intrinsics.!(a: bool) -> bool", "kindLabel": "innate function bool.not" },
+    { "startLine": 25, "startColumn": 4, "endLine": 25, "endColumn": 4, "text": "!(a: bool) -> bool", "signature": "!(a: bool) -> bool", "kindLabel": "innate function bool.not" },
     { "startLine": 26, "startColumn": 5, "endLine": 26, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 8, "startColumn": 9, "endLine": 8, "endColumn": 17, "text": "has_value: bool", "signature": "has_value: bool", "kindLabel": "pure instance property" },
     { "startLine": 9, "startColumn": 17, "endLine": 10, "endColumn": 6, "text": "struct double", "signature": "struct double", "kindLabel": "struct" },

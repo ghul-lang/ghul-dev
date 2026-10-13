@@ -29,7 +29,7 @@
     { "startLine": 11, "startColumn": 22, "endLine": 11, "endColumn": 22, "text": "Access.&(other: Access) -> Access", "signature": "Access.&(other: Access) -> Access", "kindLabel": "innate function arithmetic.and" },
     { "startLine": 11, "startColumn": 40, "endLine": 11, "endColumn": 45, "text": "enum Access", "signature": "enum Access", "kindLabel": "enum" },
     { "startLine": 11, "startColumn": 47, "endLine": 11, "endColumn": 51, "text": "Access.WRITE = 2", "signature": "Access.WRITE = 2", "kindLabel": "enum member" },
-    { "startLine": 11, "startColumn": 37, "endLine": 11, "endColumn": 38, "text": "Ghul.Intrinsics.==[Access](a: Access, b: Access) -> bool", "signature": "Ghul.Intrinsics.==[Access](a: Access, b: Access) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 11, "startColumn": 37, "endLine": 11, "endColumn": 38, "text": "==[Access](a: Access, b: Access) -> bool", "signature": "==[Access](a: Access, b: Access) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 12, "startColumn": 1, "endLine": 12, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 12, "startColumn": 14, "endLine": 12, "endColumn": 20, "text": "granted: Access", "signature": "granted: Access", "kindLabel": "global variable" },
     { "startLine": 12, "startColumn": 24, "endLine": 12, "endColumn": 29, "text": "enum Access", "signature": "enum Access", "kindLabel": "enum" },
@@ -37,7 +37,7 @@
     { "startLine": 12, "startColumn": 22, "endLine": 12, "endColumn": 22, "text": "Access.&(other: Access) -> Access", "signature": "Access.&(other: Access) -> Access", "kindLabel": "innate function arithmetic.and" },
     { "startLine": 12, "startColumn": 42, "endLine": 12, "endColumn": 47, "text": "enum Access", "signature": "enum Access", "kindLabel": "enum" },
     { "startLine": 12, "startColumn": 49, "endLine": 12, "endColumn": 55, "text": "Access.EXECUTE = 4", "signature": "Access.EXECUTE = 4", "kindLabel": "enum member" },
-    { "startLine": 12, "startColumn": 39, "endLine": 12, "endColumn": 40, "text": "Ghul.Intrinsics.==[Access](a: Access, b: Access) -> bool", "signature": "Ghul.Intrinsics.==[Access](a: Access, b: Access) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 12, "startColumn": 39, "endLine": 12, "endColumn": 40, "text": "==[Access](a: Access, b: Access) -> bool", "signature": "==[Access](a: Access, b: Access) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

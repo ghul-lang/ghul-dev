@@ -22,9 +22,9 @@
     { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 9, "startColumn": 12, "endLine": 9, "endColumn": 15, "text": "sign(n: int) -> string", "signature": "sign(n: int) -> string", "kindLabel": "pure global function" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 8, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
-    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 10, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 10, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 3, "startColumn": 10, "endLine": 3, "endColumn": 10, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
-    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 13, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 13, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

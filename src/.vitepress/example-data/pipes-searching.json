@@ -17,7 +17,7 @@
     { "startLine": 5, "startColumn": 25, "endLine": 5, "endColumn": 29, "text": "words: string[]", "signature": "words: string[]", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 44, "endLine": 5, "endColumn": 44, "text": "w: string", "signature": "w: string", "kindLabel": "local argument" },
     { "startLine": 5, "startColumn": 46, "endLine": 5, "endColumn": 51, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },
-    { "startLine": 5, "startColumn": 53, "endLine": 5, "endColumn": 54, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 5, "startColumn": 53, "endLine": 5, "endColumn": 54, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 24, "startColumn": 5, "endLine": 24, "endColumn": 14, "text": "beta_first: string[]", "signature": "beta_first: string[]", "kindLabel": "global variable" },
     { "startLine": 14, "startColumn": 1, "endLine": 14, "endColumn": 5, "text": "shout(w: string) -> string?", "signature": "shout(w: string) -> string?", "kindLabel": "pure global function" },
     { "startLine": 14, "startColumn": 7, "endLine": 14, "endColumn": 7, "text": "w: string", "signature": "w: string", "kindLabel": "local argument" },
@@ -46,7 +46,7 @@
     { "startLine": 27, "startColumn": 49, "endLine": 27, "endColumn": 53, "text": "shout(w: string) -> string?", "signature": "shout(w: string) -> string?", "kindLabel": "pure global function" },
     { "startLine": 15, "startColumn": 8, "endLine": 15, "endColumn": 8, "text": "w: string", "signature": "w: string", "kindLabel": "local argument" },
     { "startLine": 15, "startColumn": 10, "endLine": 15, "endColumn": 15, "text": "string.length: int", "signature": "string.length: int", "kindLabel": "pure instance property" },
-    { "startLine": 15, "startColumn": 17, "endLine": 15, "endColumn": 17, "text": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "signature": "Ghul.Intrinsics.<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
+    { "startLine": 15, "startColumn": 17, "endLine": 15, "endColumn": 17, "text": "<>(a: int, b: int) -> int", "signature": "<>(a: int, b: int) -> int", "kindLabel": "innate function compare.order" },
     { "startLine": 15, "startColumn": 26, "endLine": 15, "endColumn": 26, "text": "w: string", "signature": "w: string", "kindLabel": "local argument" },
     { "startLine": 15, "startColumn": 28, "endLine": 15, "endColumn": 35, "text": "string.to_upper() -> string", "signature": "string.to_upper() -> string", "kindLabel": "pure method" }
   ],

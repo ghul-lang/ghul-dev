@@ -13,7 +13,7 @@
     { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 17, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 13, "text": "factorial: int -> int", "signature": "factorial: int -> int", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 8, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
-    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 11, "text": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "signature": "Ghul.Intrinsics.==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
+    { "startLine": 2, "startColumn": 10, "endLine": 2, "endColumn": 11, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 2, "startColumn": 27, "endLine": 2, "endColumn": 27, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 35, "endLine": 2, "endColumn": 35, "text": "n: int", "signature": "n: int", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 37, "endLine": 2, "endColumn": 37, "text": "int.-(a: int, b: int) -> int", "signature": "int.-(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.sub" },
