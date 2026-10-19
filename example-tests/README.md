@@ -91,10 +91,9 @@ the examples that do: built with `--target wasm` and run under Node, each prints
 what its `run.expected` says it prints on .NET. The example data carries the
 answer as each example's `"wasm"` flag, which `npm test` checks against the list.
 
-The build uses the compiler `wasm-compiler` names, with the ghul-core and
-ghul-runtime ghul-cli pins for it, which is the toolchain the playground's
-compile service builds for WebAssembly with. When the playground's compiler
-moves, change `wasm-compiler` to match and run:
+The build uses the newest compiler, ghul-core and ghul-runtime, as ghul-cli
+always does. The playground's compile service builds with its own compiler,
+which can be older, so run this again when that moves:
 
 ```sh
 tools/wasm-examples.sh                  # rewrites wasm-capable.txt (about 20 minutes)
