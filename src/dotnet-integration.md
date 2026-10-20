@@ -2,6 +2,20 @@
 
 ghūl is hosted on and targets .NET 10 and can consume most types in .NET assemblies built with C#.
 
+## available on .NET only
+
+The WebAssembly and native targets compile against ghūl's own libraries, [ghul-core](https://github.com/ghul-lang/ghul-core) and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), in place of the .NET base class library. These are available on .NET only:
+
+- any .NET API outside the ones ghul-core declares, such as regular expressions, HTTP and sockets, and culture-aware formatting
+- NuGet packages, and `PackageReference`{:text} and `ProjectReference`{:text} in a project file
+- `decimal`{:text}, which neither of the other targets compiles yet
+- reflection: WebAssembly supports a subset in a build with `--rtti`{:sh}, and native doesn't support it yet
+- the `IL.`{:text} pragmas and pointer types, which a WebAssembly build rejects
+- `DllImport`{:text}, where the other targets use `@extern`{:text}. A pointer or a `ref` argument crosses `@extern`{:text} on .NET only
+- the REPL's .NET session and the Jupyter kernel, which load each submission into the running process. `ghul repl --target llvm`{:sh} is the [native REPL](/native#the-repl)
+
+The [WebAssembly](/webassembly#what-works-today) and [native](/native#what-works-today) pages list what each of them compiles.
+
 ## projects
 
 The ghūl compiler is driven by MSBuild and uses the .NET SDK targets for most of the build process. Provided you reference the ghūl runtime library package, things should work as you'd expect for any other .NET SDK project. You can add package references, build assemblies and pack NuGet packages etc. all using the normal `dotnet`{:text} command line tools.
