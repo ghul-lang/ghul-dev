@@ -1,6 +1,6 @@
 # WebAssembly
 
-A ghūl program can be compiled to WebAssembly as well as to .NET. The compiler writes a WasmGC module and a small JavaScript loader beside it. The program runs under [Node.js](https://nodejs.org) 22.19 or later on the 22 line, 24.15 or later on the 24 line, or 25 or later, or in a browser that supports WasmGC. Node 23 cannot run it. The same source builds for the [native target](/native) as well.
+A ghūl program can be compiled to WebAssembly as well as to .NET. The compiler writes a WasmGC module and a small JavaScript loader beside it. The program runs under [Node.js](https://nodejs.org) 22.19 or later on the 22 line, 24.15 or later on the 24 line, or 25 or later, or in a browser that supports WasmGC. Node 23 can't run it. The same source builds for the [native target](/native) as well.
 
 ::: warning work in progress
 The WebAssembly target doesn't yet compile the whole language, and it has ghūl's own libraries in place of .NET's. [What works today](#what-works-today) lists what is missing. The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks it.
@@ -8,13 +8,13 @@ The WebAssembly target doesn't yet compile the whole language, and it has ghūl'
 
 ## installing
 
-A WebAssembly build is driven by the `ghul`{:sh} command. On Linux, x64 or arm64, it installs without .NET:
+The `ghul`{:sh} command builds WebAssembly programs. On Linux, x64 or arm64, it installs without .NET:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
 ```
 
-Anywhere the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed, it is also the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool, and macOS and Windows need that route:
+Where the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed, `ghul`{:sh} is also available as the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool, which is the install route on macOS and Windows:
 
 ```sh
 dotnet tool install -g ghul.cli
@@ -65,7 +65,7 @@ The manifest declares the two libraries a WebAssembly build compiles in. Each ta
 ghul run      # runs out/wasm/hello.mjs under Node.js
 ```
 
-The first build installs the compiler if there isn't one, and fetches the libraries. Later builds reuse them. A project's sources don't get any implicit imports: each file uses what it calls, or starts with `use default` for `write_line`, the pipes and the collections.
+The first build installs the compiler if there isn't one, and fetches the libraries. Later builds reuse them. Each file in a project imports what it calls with `use`{:text}, or starts with `use default`{:text} for `write_line`, the pipes and the collections.
 
 `ghul build`{:sh} builds without running. The [ghul-cli README](https://github.com/ghul-lang/ghul-cli#projects) covers the manifest in full.
 
@@ -79,15 +79,15 @@ Not yet:
 - an interpolated number formatted other than by the standard formats `D`, `E`, `F`, `G`, `N`, `R` and `X` or a custom pattern of `0`, `#`, `.` and `,`, and an interpolated enum given any format
 - reflection beyond a subset: a program that reflects on its types is built with `--rtti`{:sh}, and without it reflection throws `NotSupportedException`
 
-There are no .NET libraries: no regular expressions, no HTTP or sockets, no culture-aware formatting. The libraries are ghūl's own, and a program can't call another library that already exists. A program run by Node reads and writes the real file system. In a browser there is no file system to reach, so `File` and `Directory` work on one held in memory, which starts empty. A program can call JavaScript only through `@extern`{:text}: each function it declares is looked up in the `externs`{:text} object the script that loads the module passes to the loader's `run`{:text}, and a program that declares one the script doesn't supply fails to start.
+A WebAssembly program uses ghūl's own libraries, and the .NET libraries aren't available: there are no regular expressions, HTTP, sockets or culture-aware formatting, and a program can't call a library that already exists. A program run by Node reads and writes the real file system. In a browser there is no file system to reach, so `File` and `Directory` work on one held in memory, which starts empty. A program can call JavaScript only through `@extern`{:text}: each function it declares is looked up in the `externs`{:text} object the script that loads the module passes to the loader's `run`{:text}, and a program that declares one the script doesn't supply fails to start.
 
 The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks what is still to come. Run `ghul update`{:sh} to pick up each release as it adds to the list.
 
-An exception nothing catches ends the program with `Unhandled exception.`, its type and its message. A build with `--debug` also lists the functions the exception was thrown through, innermost first, one per line: `ghul run --target wasm --debug`{:sh}. Without `--debug` a throw costs much less and the report has no frames. An error the WebAssembly engine raises itself, such as dividing an integer by zero, lists its frames either way.
+An exception nothing catches ends the program with `Unhandled exception.`, its type and its message. A build with `--debug` also lists the functions the exception was thrown through, innermost first, one per line: `ghul run --target wasm --debug`{:sh}. A build without `--debug` throws more cheaply, and its report lists no frames. An error the WebAssembly engine raises itself, such as dividing an integer by zero, lists its frames either way.
 
 ## the same program on .NET
 
-The program above is ordinary ghūl, and the .NET target builds it into an ordinary .NET executable, with the .NET SDK and a `.ghulproj`{:text} project rather than `ghul`{:sh}. On WebAssembly there is no .NET base class library. What it supplies comes from two libraries compiled into the module from source: [ghul-core](https://github.com/ghul-lang/ghul-core), which gives the built-in types their members and declares the collections, and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for .NET, unless it keeps those calls to the .NET build.
+The program above is ordinary ghūl, and the .NET target builds it into an ordinary .NET executable, with the .NET SDK and a `.ghulproj`{:text} project rather than `ghul`{:sh}. WebAssembly has no .NET base class library. Two libraries compiled into the module from source take its place: [ghul-core](https://github.com/ghul-lang/ghul-core), which gives the built-in types their members and declares the collections, and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for .NET, unless it keeps those calls to the .NET build.
 
 Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
 
@@ -116,9 +116,9 @@ target_name() -> string => "wasm"
 
 The same pragma works with names of your own, which the compiler's `--define <name>`{:sh} option turns on. A name nothing turns on is off, and `dotnet`, `wasm` and `llvm` are always decided by the target being built.
 
-## errors you may see
+## errors
 
-A .NET API the core library doesn't declare doesn't exist on WebAssembly, so a call to one is reported the way any other missing name is:
+A call to a .NET API that the core library doesn't declare is reported the way any other missing name is:
 
 ```text
 main.ghul: 11,23..11,34: error: member Environment not found in System

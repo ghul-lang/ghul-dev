@@ -13,9 +13,9 @@ Every example on this site is a whole program. Press **edit & run**, change it, 
 
 ## choosing a target
 
-The .NET target is the full one. A ghūl project is an ordinary .NET SDK project, ghūl code can use any .NET library and NuGet package, and other .NET languages can call it. It is the best choice for a real project today.
+The .NET target is the full one. A ghūl project is an ordinary .NET SDK project, ghūl code can use any .NET library and NuGet package, and other .NET languages can call it. Use it for a real project today.
 
-The WebAssembly and native targets need no .NET SDK. A WebAssembly program runs under Node.js, or in a browser that supports WasmGC, which is how the examples on this site run. A native program is a single statically linked executable for Linux on x64 or arm64. Both are built with the `ghul`{:sh} command, which installs without .NET on those two Linux platforms.
+The `ghul`{:sh} command builds the WebAssembly and native targets and doesn't need the .NET SDK. It installs without .NET on Linux, x64 and arm64. A WebAssembly program runs under Node.js, or in a browser that supports WasmGC, which is how the examples on this site run. A native program is a single statically linked executable for Linux on x64 or arm64.
 
 | | .NET | WebAssembly | native |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ The WebAssembly and native targets need no .NET SDK. A WebAssembly program runs 
 | libraries | all of .NET and NuGet | ghūl's own libraries | ghūl's own libraries |
 | calls into | any .NET API | functions the loading script supplies, with `@extern`{:text} | C, with `@extern`{:text} |
 
-WebAssembly and native programs use ghūl's own libraries, [ghul-core](https://github.com/ghul-lang/ghul-core) and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), about 22,000 lines of ghūl, in place of .NET's. They build the compiler and run most of the [Rosetta Code](/rosetta/) solutions on this site, but they don't have everything. There are no regular expressions, no HTTP or sockets, no culture-aware formatting, and no `decimal`{:text} on WebAssembly, and a program can't call a library that already exists. A WebAssembly program can call JavaScript only through the functions the script that loads it supplies for its `@extern`{:text} declarations. [WebAssembly](/webassembly) and [native executables](/native) list what each target supports.
+WebAssembly and native programs use ghūl's own libraries, [ghul-core](https://github.com/ghul-lang/ghul-core) and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), about 22,000 lines of ghūl, in place of .NET's. They build the compiler and run most of the [Rosetta Code](/rosetta/) solutions on this site. They don't include regular expressions, HTTP, sockets or culture-aware formatting, `decimal`{:text} isn't supported on WebAssembly, and a program can't call a library that already exists. A WebAssembly program calls JavaScript through its `@extern`{:text} declarations, and the functions available are the ones the script that loads it supplies. [WebAssembly](/webassembly) and [native executables](/native) list what each target supports.
 
 ## where to go next
 
@@ -32,7 +32,7 @@ WebAssembly and native programs use ghūl's own libraries, [ghul-core](https://g
 - [the tour](/expression-oriented-programming) - the language a topic at a time, every example editable.
 - [the online REPL](https://ghul.dev/repl/) - type ghūl a submission at a time and see each result, in your browser.
 - [scripts, the REPL and notebooks](/scripts-and-repl) - run a `.ghul`{:text} file directly, or type ghūl into an interactive session or a notebook. No project needed.
-- [getting started](/getting-started) - ghūl on your own machine, with the .NET SDK or without it.
+- [getting started](/getting-started) - ghūl on your own machine, with the .NET SDK or with the `ghul`{:sh} command alone.
 
 ## what is distinctive
 

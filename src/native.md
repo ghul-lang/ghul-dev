@@ -1,6 +1,6 @@
 # native executables
 
-A ghūl program can be compiled to a native executable for Linux on x64 or arm64, as well as to .NET and WebAssembly. The compiler writes an LLVM module and links it into a single statically linked file, which runs on its own with nothing else installed.
+A ghūl program can be compiled to a native executable for Linux on x64 or arm64, as well as to .NET and WebAssembly. The compiler writes an LLVM module and links it into a single statically linked file, which runs on its own.
 
 ::: warning work in progress
 The native target doesn't yet compile the whole language, and it has ghūl's own libraries in place of .NET's. [What works today](#what-works-today) lists what is missing. The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks it.
@@ -8,13 +8,13 @@ The native target doesn't yet compile the whole language, and it has ghūl's own
 
 ## installing
 
-A native build is driven by the `ghul`{:sh} command. On Linux, x64 or arm64, it installs without .NET:
+The `ghul`{:sh} command builds native programs. On Linux, x64 or arm64, it installs without .NET:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
 ```
 
-Where the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed, it is also the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool. The native target is released for Linux only, so macOS and Windows can't build for it.
+Where the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed, `ghul`{:sh} is also available as the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool. The native target is released for Linux only, so macOS and Windows can't build native programs.
 
 The first native build fetches the compiler, and `ghul-llvm`{:text}, the linker and runtime library a native program links against, into `~/.cache/ghul-cli`{:text}. `ghul install llvm`{:sh} fetches `ghul-llvm`{:text} ahead of time, and `ghul update`{:sh} keeps the tools at their newest releases. On x64 the executables need an x86-64-v3 processor (AVX2 and BMI2, from about 2013 on).
 
@@ -65,7 +65,7 @@ ghul repl --target llvm
 ghul build --debug
 ```
 
-A debug build is unoptimised and carries line tables and variables, so a debugger and a crash's backtrace name ghūl files, lines and variables. `objdump`{:sh} shows the source beside the machine code, and `gdb`{:sh} steps through it:
+A debug build is unoptimised and has line tables and variables, so a debugger and a crash's backtrace name ghūl files, lines and variables. `objdump`{:sh} shows the source beside the machine code, and `gdb`{:sh} steps through it:
 
 ```sh
 objdump -d -S out/llvm-debug/hello
@@ -85,7 +85,7 @@ Strings, numbers and dates behave as they do in a .NET program configured for in
 Not yet:
 
 - `decimal`
-- reflection beyond a subset, and any .NET library: there are no regular expressions, no HTTP or sockets and no culture-aware formatting, and a program can't call a library written in ghūl or C# that already exists. Only C can be called, with `@extern`{:text}
+- reflection beyond a subset, and the .NET libraries: a native program has no regular expressions, HTTP, sockets or culture-aware formatting, and can't call a library written in ghūl or C# that already exists. It can call C with `@extern`{:text}
 
 The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks what is still to come. Run `ghul update`{:sh} to pick up each release as it adds to the list.
 
@@ -109,9 +109,9 @@ target_name() -> string => "native"
 
 [Code for one target](/webassembly#code-for-one-target) on the WebAssembly page covers the pragma in full.
 
-## errors you may see
+## errors
 
-A .NET API the core library doesn't declare doesn't exist in a native build, so a call to one is reported the way any other missing name is. Something the native target will support but can't compile yet is reported at the function holding it, but only in code the program reaches:
+A call to a .NET API that the core library doesn't declare is reported the way any other missing name is. Something the native target will support but can't compile yet is reported at the function holding it, but only in code the program reaches:
 
 ```text
 main.ghul: 3,1..3,6: error: code generation for a decimal literal is not supported on the llvm target

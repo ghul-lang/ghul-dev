@@ -18,7 +18,7 @@ Both repositories are configured as [dev containers](https://containers.dev), so
 
 ## on your own machine
 
-There are two ways to work locally, and they match the targets. With the .NET SDK you build for .NET. Without it you build for WebAssembly or native executables with the `ghul`{:sh} command.
+There are two ways to work locally, and they match the targets. The .NET SDK builds for .NET. The `ghul`{:sh} command builds for WebAssembly and native executables and doesn't need the .NET SDK.
 
 ### with the .NET SDK
 
@@ -31,9 +31,9 @@ dotnet tool install -g ghul.cli
 ghul repl
 ```
 
-### without the .NET SDK
+### with the ghul command
 
-On Linux, x64 or arm64, a Raspberry Pi among them, one command installs `ghul`{:sh} as a native executable that needs nothing else:
+On Linux, x64 or arm64, a Raspberry Pi among them, one command installs `ghul`{:sh} as a native executable that runs on its own:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
@@ -59,9 +59,9 @@ ghūl reads best in a font with programming ligatures, which draw operators such
 ```
 :::
 
-## it's all ordinary .NET
+## .NET projects
 
-A ghūl project is a normal .NET SDK project. In each repository above you'll find a `.ghulproj`{:text} - an MSBuild project file with the usual things in it - and the normal `dotnet`{:text} commands work as you'd expect:
+A ghūl project built with the .NET SDK is a normal .NET SDK project. In each repository above you'll find a `.ghulproj`{:text} - an MSBuild project file with the usual things in it - and the normal `dotnet`{:text} commands work as you'd expect:
 
 ```sh
 dotnet build
