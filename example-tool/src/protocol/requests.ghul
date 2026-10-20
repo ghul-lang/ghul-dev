@@ -2,7 +2,7 @@ namespace Analysis.Protocol is
     use Collections.LIST
 
     // Client-side request DTOs for the JSON analysis protocol. Mirrors the
-    // compiler-side Request union; the wire `command` discriminator selects
+    // compiler-side Request union; the wire `kind` discriminator selects
     // the variant.
 
     class EDIT_FILE is
@@ -20,7 +20,7 @@ namespace Analysis.Protocol is
         si
     si
 
-    @System.Text.Json.Serialization.JsonPolymorphic(type_discriminator_property_name = "command")
+    @System.Text.Json.Serialization.JsonPolymorphic(type_discriminator_property_name = "kind")
     @System.Text.Json.Serialization.JsonDerivedType(typeof Request.EDIT, "edit")
     @System.Text.Json.Serialization.JsonDerivedType(typeof Request.SET_OPEN_FILES, "set_open_files")
     @System.Text.Json.Serialization.JsonDerivedType(typeof Request.HOVER_MAP, "hover_map")
