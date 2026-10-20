@@ -1,0 +1,39 @@
+{
+  "name": "pipes-ref-concat-operator-function",
+  "snippet": false,
+  "wasm": false,
+  "code": "++[T](source: Iterable[T], right: Iterable[T]) -> Iterable[T] pure",
+  "fullSource": "use Collections.Iterable\nuse Collections.LIST\nuse Collections.List\nuse Collections.MAP\nuse Collections.Map\nuse Collections.SET\nuse Ghul.Pipes.INDEXED_VALUE\nuse Ghul.Pipes.Pipe\n\n++[T](source: Iterable[T], right: Iterable[T]) -> Iterable[T] pure\n\nentry() is si\n",
+  "hiddenBefore": true,
+  "hiddenAfter": true,
+  "hiddenGapsAfterLine": [],
+  "output": "",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 2, "text": "++[T](source: T{}, right: T{}) -> T{}", "signature": "++[T](source: T{}, right: T{}) -> T{}", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 4, "endLine": 1, "endColumn": 4, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 32, "text": "right: T{}", "signature": "right: T{}", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 24, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 22, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 44, "endLine": 1, "endColumn": 44, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 35, "endLine": 1, "endColumn": 42, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" },
+    { "startLine": 1, "startColumn": 60, "endLine": 1, "endColumn": 60, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 58, "text": "trait Iterable[T]", "signature": "trait Iterable[T]", "kindLabel": "trait" }
+  ],
+  "inlayHints": [
+    { "line": 1, "column": 1, "label": "◆", "detail": "++\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 2, "tokenType": "function" },
+    { "startLine": 1, "startColumn": 4, "endLine": 1, "endColumn": 4, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 22, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 24, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 32, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 35, "endLine": 1, "endColumn": 42, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 44, "endLine": 1, "endColumn": 44, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 51, "endLine": 1, "endColumn": 58, "tokenType": "interface" },
+    { "startLine": 1, "startColumn": 60, "endLine": 1, "endColumn": 60, "tokenType": "typeParameter" }
+  ]
+}

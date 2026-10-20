@@ -42,7 +42,7 @@ The new directory holds the manifest:
     "tools": { "compiler": ">=66.11.0" },
     "dependencies": {
         "ghul-core": { "version": ">=1.0.0" },
-        "ghul-runtime": { "version": ">=29.1.1" }
+        "ghul-runtime": { "version": ">=29.2.0" }
     }
 }
 ```
