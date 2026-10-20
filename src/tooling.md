@@ -1,6 +1,6 @@
 # tooling
 
-The ghūl compiler is a .NET tool, and ghūl projects are ordinary .NET SDK projects. This means most of the tooling you already use for .NET applies directly, with a language extension on top for editing.
+ghūl has tooling for each of its three targets. For the .NET target the compiler is a .NET tool and a ghūl project is an ordinary .NET SDK project, so most of the tooling you already use for .NET applies directly, with a language extension on top for editing. For the WebAssembly and native targets, the `ghul`{:sh} command builds, runs and updates projects; the sections below that name MSBuild, `dotnet`{:sh} or NuGet are about the .NET target.
 
 ## the compiler
 
