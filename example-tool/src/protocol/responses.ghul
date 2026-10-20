@@ -116,6 +116,7 @@ namespace Analysis.Protocol is
     @System.Text.Json.Serialization.JsonDerivedType(typeof Response.HOVER_MAP, "hover_map")
     @System.Text.Json.Serialization.JsonDerivedType(typeof Response.SEMANTIC_TOKENS, "semantic_tokens")
     @System.Text.Json.Serialization.JsonDerivedType(typeof Response.INLAY_HINTS, "inlay_hints")
+    @System.Text.Json.Serialization.JsonDerivedType(typeof Response.ERROR, "error")
     union Response is
         LISTEN(capabilities: LIST[string])
 
@@ -130,5 +131,6 @@ namespace Analysis.Protocol is
         HOVER_MAP(entries: LIST[WIRE_HOVER_ENTRY])
         SEMANTIC_TOKENS(tokens: LIST[WIRE_SEMANTIC_TOKEN])
         INLAY_HINTS(hints: LIST[WIRE_INLAY_HINT])
+        ERROR(error_kind: string, message: string, command: string)
     si
 si
