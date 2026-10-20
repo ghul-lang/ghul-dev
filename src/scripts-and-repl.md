@@ -22,15 +22,23 @@ dotnet tool install -g ghul.cli
 
 .NET installs global tools in `~/.dotnet/tools`{:text}, which has to be on your `PATH`{:text}; the first `dotnet tool install -g`{:sh} says how to add it if it isn't.
 
-`ghul`{:sh} installs its own copy of the compiler the first time it needs one. `ghul install-compiler`{:sh} installs it ahead of time, or updates it to the latest release; `ghul install-compiler 60.2.0`{:sh} installs that version instead. `ghul version`{:sh} shows both versions:
+On Linux, x64 or arm64, `ghul`{:sh} also installs without .NET, as a native executable:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
+```
+
+Scripts and projects work with either install. The .NET REPL and the Jupyter kernel need the .NET SDK, and `ghul repl --target llvm`{:sh} is the [native REPL](/native#the-repl).
+
+`ghul`{:sh} installs its own copy of the compiler the first time it needs one. `ghul install compiler`{:sh} installs it ahead of time, and `ghul update`{:sh} brings `ghul`{:sh} and the compiler to the newest release; the compiler is always the newest. `ghul version`{:sh} shows both versions:
 
 ```plaintext
 $ ghul version
-ghul 0.31.0
-ghul.compiler 60.2.0
+ghul 9.2.0
+ghul.compiler 66.11.0
 ```
 
-`dotnet tool update -g ghul.cli`{:sh} updates `ghul`{:sh} itself.
+`dotnet tool update -g ghul.cli`{:sh} updates a `ghul`{:sh} installed as a .NET tool.
 
 ## running a script
 

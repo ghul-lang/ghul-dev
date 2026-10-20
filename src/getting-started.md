@@ -18,16 +18,31 @@ Both repositories are configured as [dev containers](https://containers.dev), so
 
 ## on your own machine
 
-To work locally you need the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and an editor, and some ghūl code to start from - clone the scratchpad or the examples repository above, or start a project of your own from the [repository template](https://github.com/ghul-lang/ghul-repository-template). The compiler is pinned in each repository as a local .NET tool, so it arrives with the code: `dotnet tool restore`{:sh} fetches it.
+There are two ways to work locally, and they match the targets. With the .NET SDK you build for .NET. Without it you build for WebAssembly or native executables with the `ghul`{:sh} command.
 
-The quickest way to run ghūl locally doesn't need a project at all. With the .NET SDK installed, the `ghul`{:sh} command runs a single `.ghul`{:text} file directly, or starts an interactive session, as [scripts, the REPL and notebooks](/scripts-and-repl) describes:
+### with the .NET SDK
+
+Install the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and an editor, and get some ghūl code to start from: clone the scratchpad or the examples repository above, or start a project of your own from the [repository template](https://github.com/ghul-lang/ghul-repository-template). The compiler is pinned in each repository as a local .NET tool, so it arrives with the code: `dotnet tool restore`{:sh} fetches it. A ghūl project is a `.ghulproj`{:text} file built with `dotnet build`{:sh}.
+
+The `ghul`{:sh} command runs a single `.ghul`{:text} file directly, or starts an interactive session, as [scripts, the REPL and notebooks](/scripts-and-repl) describes:
 
 ```sh
 dotnet tool install -g ghul.cli
 ghul repl
 ```
 
-The same command builds a ghūl program for [WebAssembly](/webassembly), to run under Node.js, and as a [native executable](/native) for Linux.
+### without the .NET SDK
+
+On Linux, x64 or arm64, a Raspberry Pi among them, one command installs `ghul`{:sh} as a native executable that needs nothing else:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
+ghul new hello
+cd hello
+ghul run
+```
+
+The first build fetches the compiler and ghūl's libraries, and a Node.js to run the program if the machine has none. `ghul new --target llvm`{:sh} makes a project that builds a [native executable](/native) instead of a [WebAssembly](/webassembly) program. On macOS and Windows `ghul`{:sh} is installed as a .NET tool, so those need the SDK.
 
 [Visual Studio Code](https://code.visualstudio.com) with the [ghūl language extension](https://marketplace.visualstudio.com/items?itemName=degory.ghul) gives you errors and warnings as you type, completion, hover, go to definition, rename and formatting. Any editor that can install VS Code extensions gets the same support; other editors can drive the underlying language server directly - see [other editors](/tooling.html#other-editors) on the tooling page.
 
