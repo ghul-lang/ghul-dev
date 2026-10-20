@@ -180,6 +180,12 @@ Concatenation: every element of the left source, then every element of the right
 
 <GhulExample name="pipes-ref-cat-function" signature />
 
+### ++
+
+`++` is `cat` written as an operator: `[1, 2] ++ [3] ++ [4, 5]` reads 1, 2, 3, 4, 5 in order. Like `cat` it is lazy, and it groups to the left. It binds more tightly than `|>`, so `xs |> map(f) ++ ys` appends `ys` to the mapped sequence. Both operands are sequences: put a single element in an array literal, as in `[x] ++ xs`.
+
+<GhulExample name="pipes-ref-concat-operator-function" signature />
+
 ### index
 
 Pairs each element with its index. `INDEXED_VALUE[T]` has `index` and `value`, and destructures positionally, so `for (i, x) in xs |> index() do` reads the pair apart. The second form starts the index at a given number rather than at 0.
