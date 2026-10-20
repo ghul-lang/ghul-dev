@@ -182,7 +182,7 @@ Concatenation: every element of the left source, then every element of the right
 
 ### ++
 
-`++` is `cat` written as an operator: `[1, 2] ++ [3] ++ [4, 5]` reads 1, 2, 3, 4, 5 in order. Like `cat` it is lazy, and it groups to the left. An operator written after a `|>` call applies to the whole chain, so `xs |> map(f) ++ ys` appends `ys` to the mapped sequence. Both operands are sequences: put a single element in an array literal, as in `[x] ++ xs`.
+`++` is `cat` written as an operator: `[1, 2] ++ [3] ++ [4, 5]` reads 1, 2, 3, 4, 5 in order. Like `cat` it is lazy, and it has the same precedence as `+`. Both operands are sequences: put a single element in an array literal, as in `[x] ++ xs`.
 
 <GhulExample name="pipes-ref-concat-operator-function" signature />
 
