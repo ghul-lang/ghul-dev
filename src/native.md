@@ -1,21 +1,22 @@
 # native executables
 
-A ghūl program can be compiled to a native executable for Linux on x86-64, as well as to .NET and WebAssembly. The compiler writes an LLVM module and links it into a single statically linked file, which runs on its own with nothing else installed.
+A ghūl program can be compiled to a native executable for Linux on x64 or arm64, as well as to .NET and WebAssembly. The compiler writes an LLVM module and links it into a single statically linked file, which runs on its own with nothing else installed.
 
 ::: warning work in progress
-The native target is new and doesn't yet compile the whole language. Small programs work today; the [native target epic](https://github.com/ghul-lang/ghul/issues/3454) lists what is supported and what is still to come.
+The native target doesn't yet compile the whole language, and it has ghūl's own libraries in place of .NET's. [What works today](#what-works-today) lists what is missing. The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks it.
 :::
 
 ## installing
 
-A native build is driven by the `ghul`{:sh} command, the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool, which needs the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) to install and run. Install it, then bring its compiler up to the latest release:
+A native build is driven by the `ghul`{:sh} command. On Linux, x64 or arm64, it installs without .NET:
 
 ```sh
-dotnet tool install -g ghul.cli
-ghul install-compiler
+curl -fsSL https://raw.githubusercontent.com/ghul-lang/ghul-cli/main/install.sh | sh
 ```
 
-The first native build also fetches `ghul-llvm`{:text}, the linker and the runtime library a native program links against, into `~/.cache/ghul-cli`{:text}. The executables it builds need an x86-64-v3 processor (AVX2 and BMI2, from about 2013 on).
+Where the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed, it is also the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool. The native target is released for Linux only, so macOS and Windows can't build for it.
+
+The first native build fetches the compiler, and `ghul-llvm`{:text}, the linker and runtime library a native program links against, into `~/.cache/ghul-cli`{:text}. `ghul install llvm`{:sh} fetches `ghul-llvm`{:text} ahead of time, and `ghul update`{:sh} keeps the tools at their newest releases. On x64 the executables need an x86-64-v3 processor (AVX2 and BMI2, from about 2013 on).
 
 ## hello world
 
@@ -26,7 +27,7 @@ ghul new hello --target llvm
 cd hello
 ```
 
-The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
+The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target and declaring ghul-core and ghul-runtime, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
 
 ```ghul
 use IO.Std.write_line
@@ -42,7 +43,19 @@ si
 ghul run
 ```
 
-`ghul build`{:sh} builds without running, and `out/llvm/hello`{:text} is then an ordinary executable that can be copied to another Linux machine and run there. A project can list more than one target, as in `ghul new hello --target dotnet,llvm`{:sh}; name the one to build with `--target`{:sh}.
+`ghul build`{:sh} builds without running, and `out/llvm/hello`{:text} is then an ordinary executable that can be copied to another Linux machine of the same architecture and run there. A project can list more than one target, as in `ghul new hello --target wasm,llvm`{:sh}; name the one to build with `--target`{:sh}.
+
+## the REPL
+
+`ghul repl --target llvm`{:sh} starts an interactive session that compiles each submission natively and runs it in a process that keeps every earlier one loaded, in about a second a submission. Ctrl-C ends a running submission and keeps the session, and completion and hover work as they do in the [.NET session](/scripts-and-repl#the-repl).
+
+```sh
+ghul repl --target llvm
+```
+
+## calling C
+
+`@extern("libc", "abs")`{:text} before a function with no body declares a C function the program is linked with, and the ghūl signature is the whole declaration. The scalar types cross as the C types of the same width, and a string argument crosses as a NUL-terminated UTF-8 copy. Pointers and `ref` arguments don't cross on this target. The program links statically against musl, so a library it names has to be available as a static archive built for musl, which `--native-library <name>`{:sh} and `--native-library-path <dir>`{:sh} point at. The [language reference](https://github.com/ghul-lang/ghul/blob/main/GHUL.md) describes `@extern`{:text} for each target.
 
 ## debugging
 
@@ -63,7 +76,7 @@ gdb out/llvm-debug/hello
 
 ## what works today
 
-With the latest compiler, a native build compiles classes, structs, traits and unions, with virtual and trait calls, type tests and casts, generics, arrays, tuples, optional value types, function values and closures, strings and string interpolation, `bigint`, generators, asynchronous functions and `await`, exceptions with `try`, `catch` and `finally`, loops, writing to the console, reading and writing files, and an `entry` taking the command-line arguments.
+With the latest compiler, a native build compiles classes, structs, traits and unions, with virtual and trait calls, type tests and casts, generics, arrays, tuples, optional value types, function values and closures, strings and string interpolation, `bigint`, generators, asynchronous functions and `await`, exceptions with `try`, `catch` and `finally`, loops, writing to the console, reading and writing files, calls into C with `@extern`{:text}, and an `entry` taking the command-line arguments.
 
 A native program fails the way a .NET one does: reading through a null reference throws `NullReferenceException`, a failed cast throws `InvalidCastException`, an array index out of range throws `IndexOutOfRangeException`, and an integer division by zero throws `DivideByZeroException`, each of which a `try` can catch.
 
@@ -72,8 +85,9 @@ Strings, numbers and dates behave as they do in a .NET program configured for in
 Not yet:
 
 - `decimal`
+- reflection beyond a subset, and any .NET library: there are no regular expressions, no HTTP or sockets and no culture-aware formatting, and a program can't call a library written in ghūl or C# that already exists. Only C can be called, with `@extern`{:text}
 
-The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks what is still to come. Run `ghul install-compiler`{:sh} to pick up each release as it adds to the list.
+The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks what is still to come. Run `ghul update`{:sh} to pick up each release as it adds to the list.
 
 ## code for one target
 
