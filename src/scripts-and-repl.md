@@ -14,7 +14,7 @@ ghūl repl. :help for commands.
 
 ## installing
 
-`ghul`{:sh} is the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool. It needs the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0):
+`ghul`{:sh} installs as the [`ghul.cli`{:text}](https://www.nuget.org/packages/ghul.cli) .NET tool, which needs the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0):
 
 ```sh
 dotnet tool install -g ghul.cli
