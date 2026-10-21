@@ -16,7 +16,7 @@ namespace ExampleTool is
     // onto. The install root comes from `dotnet --list-sdks`; we take the
     // highest ref pack matching the target framework's major.minor.
     //
-    // Mirrors the discovery logic in degory/ghul-test's compiler-under-test.
+    // Mirrors the discovery logic in ghul-lang/ghul-test's compiler-under-test.
     discover_sdk_reference_path() -> string is
         let target_framework = _get_target_framework()
         // "net8.0" -> "8.0", to match ref-pack directory names like "8.0.27".
