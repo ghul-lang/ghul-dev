@@ -12,7 +12,7 @@ Not loaded by local Claude Code; only the cloud reviewer reads this.
 
 `ghul-dev` is the ghul.dev website: a VitePress site whose pages are the
 language's public documentation, with runnable ghūl in `<GhulExample/>` blocks.
-`STYLE.md`, fetched from `degory/ghul-style`, is authoritative for prose here and
+`STYLE.md`, fetched from `ghul-lang/ghul-style`, is authoritative for prose here and
 does most of the work for this brief - this is a prose-heavy repo.
 
 The audience is someone deciding whether to use ghūl, so register matters as much
