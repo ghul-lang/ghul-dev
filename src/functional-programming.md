@@ -194,7 +194,7 @@ The same clauses written in braces make a lazy comprehension. Its result is a `P
 
 <GhulExample name="functional-programming-34" />
 
-A lazy comprehension is a [generator](#generators) literal. It captures the variables it reads as any function literal does, and reading the pipe again runs its clauses again. Inside an interpolated string, <code v-pre>{{</code> is an escaped brace, so leave a space between the interpolation's brace and the comprehension's: `"{ {x * 2 for x in xs} }"`.
+A lazy comprehension is a [generator](#generators) literal. It captures the variables it reads as any function literal does, and reading the pipe again runs its clauses again.
 
 Don't write an array comprehension over a sequence that never ends: it makes its whole array before you can use any of it, so it would never finish. Use the lazy form instead. The compiler warns with `unbounded-comprehension-source` when an array comprehension's source is one of the runtime's sequences that never ends, such as `from(1)`.
 
