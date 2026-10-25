@@ -1,11 +1,16 @@
 use IO.Std.write_line
+use Ghul.Pipes
+
+add(x: int, y: int) -> int => x + y
 
 // >>>
-let add = (x, y) => x + y
-
-let add_5 = y => add(5, y)
+// * stands for the argument the new function takes
+let add_5 = add(5, *)
 write_line("add_5(3): {add_5(3)}")
 
-let add_10 = y => add(10, y)
-write_line("add_10(3): {add_10(3)}")
+// the fixed arguments are evaluated once, here
+write_line("add 10 to each: {[1, 2, 3] |> map(add(10, *))}")
+
+// a built-in operator, with both operands open
+write_line("product: {[2, 3, 4] |> reduce(1, int.`*(*, *))}")
 // <<<

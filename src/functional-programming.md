@@ -30,9 +30,8 @@ one:
 
 A function named with an operator is written with a backtick, since an
 operator is not an identifier. A static member operator is named through its
-type, as in ``V.`+``. The built-in operators on `int`, `double` and the other
-scalar types are instructions rather than functions, so they can't be passed
-as values; write a function literal such as `(a, b) => a + b` instead.
+type, as in ``V.`+``, and so is a built-in operator on a scalar type, as in
+``int.`+``.
 
 ## closures
 
@@ -285,10 +284,16 @@ throws, up to a given number of attempts:
 ### partial application
 
 Partial application fixes some of a function's arguments and leaves the rest
-open. ghūl doesn't have a partial application operator; write a function
-literal that supplies the fixed arguments:
+open. A call with `*` in place of an argument is a function of that argument:
+the compiler evaluates the other arguments once, where the call is written, and
+the function value supplies the `*` positions on each call. A `*` can stand for
+any argument of a function, a method, a constructor or an operator, and a call
+can have more than one:
 
 <GhulExample name="functional-programming-20" />
+
+Each `*` takes the type of the parameter it stands in, so `add(5, *)` is an
+`int -> int` without an annotation.
 
 ### argument packs
 
