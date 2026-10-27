@@ -12,3 +12,5 @@ Disallow: /playground/
 Disallow: /playground/compile
 Disallow: /playground/compile/cell
 Disallow: /playground/analyse
+
+Sitemap: https://ghul.dev/sitemap.xml

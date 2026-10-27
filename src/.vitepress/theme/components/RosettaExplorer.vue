@@ -142,6 +142,12 @@ watch([() => shownSlug.value, shown], ([slug, task], previous) => {
 
   document.title = `${task?.title ?? 'Rosetta Code'} | ghūl programming language`
 
+  // What a search result shows under the title, so a task's address does not describe itself as
+  // the documentation in general.
+  document.querySelector('meta[name="description"]')?.setAttribute('content', task
+    ? `${task.title} in ghūl: a solution to the Rosetta Code task, runnable in your browser.`
+    : 'ghūl solutions to Rosetta Code tasks, runnable in your browser.')
+
   if (slug !== previous?.[0]) {
     if (previous) window.goatcounter?.count?.()
 
