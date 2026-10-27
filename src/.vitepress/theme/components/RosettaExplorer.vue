@@ -5,7 +5,7 @@ import PlaygroundFrame from './PlaygroundFrame.vue'
 import RosettaControls from './RosettaControls.vue'
 import RosettaOnward from './RosettaOnward.vue'
 import RosettaList from './RosettaList.vue'
-import { countEvent } from '../events'
+import { countEvent, watchReach } from '../events'
 import { tokenise } from '../rosetta-highlight'
 import { shownSlug, shownFilter, showAt, replaceAt } from '../rosetta-route'
 import { corpus, query, chosen, toggleTag } from '../rosetta-filter'
@@ -346,6 +346,13 @@ function browse() {
           <GhulExample v-else :key="current.id" :name="current.name" :data="current.data" />
         </template>
 
+        <!-- What the language is, for a reader who arrived at a task from Rosetta Code and has not
+             seen the rest of the site. Under the result, where they look once it has run. -->
+        <p :ref="el => watchReach(el, 'rosetta-reach/about')" class="rosetta-about">
+          ghūl is a statically typed language that compiles to .NET, WebAssembly and native
+          executables. <a href="/#what-is-distinctive" @click="countEvent('rosetta-link/about', 'about ghūl')">What is distinctive about it</a>
+        </p>
+
         <!-- Under the result, where somebody who has just watched a program run is looking - on a
              screen without an aside. On a wide one the same paths sit beside the playground. -->
         <RosettaOnward
@@ -434,6 +441,12 @@ function browse() {
 .rosetta-browse {
   margin: 0.25rem 0 0.75rem;
   font-size: 0.8rem;
+}
+
+.rosetta-about {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
 }
 
 .rosetta-newer {
