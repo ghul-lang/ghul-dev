@@ -83,6 +83,11 @@ async function part(entry) {
 // strip above the panel, which replaces the panel where it stands.
 const selected = ref(null)
 
+// Whether the task's summary is shown in full rather than cut to one line. Each task opens cut.
+const summaryOpen = ref(false)
+
+watch(shownSlug, () => { summaryOpen.value = false })
+
 watch(parts, list => {
   selected.value = (list.find(entry => entry.playground) ?? list[0])?.id ?? null
 })
@@ -289,10 +294,26 @@ function browse() {
         <header>
           <h2 :id="shown.slug">{{ shown.title }}</h2>
 
-          <a class="rosetta-wiki" :href="shown.url" target="_blank" rel="noreferrer">on Rosetta Code</a>
+          <a
+            class="rosetta-wiki"
+            :href="shown.url"
+            :title="shown.aheadOfWiki ? 'The solution here is newer than the one on Rosetta Code.' : undefined"
+            target="_blank"
+            rel="noreferrer"
+          >on Rosetta Code</a>
         </header>
 
-        <p v-if="shown.aheadOfWiki" class="rosetta-newer">The solution here is newer than the one on Rosetta Code.</p>
+        <!-- What the task asks for, on one line cut short with an ellipsis until it is clicked:
+             every line here is a line less of the playground panel, whose height is what is left
+             of the window, and on a phone a summary wrapped in full would push the panel's output
+             below it. The whole sentence is in the page either way. -->
+        <p
+          v-if="shown.summary"
+          class="rosetta-summary"
+          :class="{ 'is-open': summaryOpen }"
+          :title="summaryOpen ? undefined : shown.summary"
+          @click="summaryOpen = !summaryOpen"
+        >{{ shown.summary }}</p>
 
         <p class="rosetta-featured-tags">
           <button
@@ -351,10 +372,6 @@ function browse() {
 
           <GhulExample v-else :key="current.id" :name="current.name" :data="current.data" />
         </template>
-
-        <!-- What the task asks for, under the result rather than above it: above, it would take
-             lines from the playground panel, whose height is what is left of the window. -->
-        <p v-if="shown.summary" class="rosetta-summary">{{ shown.summary }}</p>
 
         <!-- What the language is, for a reader who arrived at a task from Rosetta Code and has not
              seen the rest of the site. Under the result, where they look once it has run. -->
@@ -453,20 +470,24 @@ function browse() {
   font-size: 0.8rem;
 }
 
-.rosetta-summary {
-  margin: 0.75rem 0 0;
-}
-
 .rosetta-about {
   margin: 0.75rem 0 0;
   font-size: 0.9rem;
   color: var(--vp-c-text-2);
 }
 
-.rosetta-newer {
+.rosetta-summary {
   margin: 0.25rem 0 0;
   font-size: 0.85rem;
   color: var(--vp-c-text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.rosetta-summary.is-open {
+  white-space: normal;
 }
 
 .rosetta-featured-tags {
