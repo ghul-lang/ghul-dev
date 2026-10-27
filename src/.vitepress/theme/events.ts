@@ -10,6 +10,7 @@
 // local build, and when the reader has opted out.
 
 import { pageTimer } from './time-on-page.js'
+import { reachTracker, partOf, isInSite } from './reach.js'
 
 // Two ways to not be counted, and both are the reader's rather than ours.
 //
@@ -192,5 +193,91 @@ export function countOutboundLinks() {
     const name = destination(anchor.getAttribute('href') ?? '')
 
     if (name) countEvent(`outbound/${name}`, 'outbound link')
+  })
+}
+
+// How far down a page a reader got - see reach.js. One observer for the whole
+// site, and the elements it watches, each with the path it counts.
+const tracker = reachTracker(path => countEvent(path, path.slice(0, path.indexOf('/'))))
+
+const watched = new Map<Element, string>()
+
+let observer: IntersectionObserver | null = null
+
+function reachObserver(): IntersectionObserver | null {
+  if (observer || typeof IntersectionObserver === 'undefined') return observer
+
+  observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      const path = watched.get(entry.target)
+
+      if (entry.isIntersecting && path) tracker.seen(path)
+    }
+  })
+
+  return observer
+}
+
+// Count `path` the first time `element` comes into sight in this page view. For
+// a part a component renders, which may arrive after the page itself.
+export function watchReach(element: Element | null, path: string) {
+  if (!element || suppressed() || watched.get(element) === path) return
+
+  watched.set(element, path)
+  reachObserver()?.observe(element)
+}
+
+// The parts of the home page: each section by its heading, the examples, and
+// the last thing on the page.
+function homeParts() {
+  const doc = document.querySelector('.vp-doc')
+
+  if (!doc) return
+
+  for (const heading of doc.querySelectorAll('h2[id]')) watchReach(heading, `home-reach/${heading.id}`)
+
+  watchReach(doc.querySelector('.ghul-switcher'), 'home-reach/examples')
+
+  const blocks = doc.querySelectorAll(':scope > div > *')
+
+  watchReach(blocks[blocks.length - 1] ?? null, 'home-reach/end')
+}
+
+// A page view has begun at `path`. Every watched part is counted again, which
+// an observer only does for an element it is newly given; the home page's own
+// parts are found afresh, since its content is replaced on each visit.
+export function beginReach(path: string) {
+  if (typeof document === 'undefined' || suppressed()) return
+
+  tracker.view()
+  observer?.disconnect()
+
+  for (const element of [...watched.keys()]) {
+    if (element.isConnected) observer?.observe(element)
+    else watched.delete(element)
+  }
+
+  if (path === '/') homeParts()
+}
+
+// A link from the home page to another page on the site, counted under the part
+// it was in: the next page view says where it went, and this says which part of
+// the home page sent the reader there.
+export function countHomeLinks() {
+  if (typeof document === 'undefined') return
+
+  document.addEventListener('click', event => {
+    if (location.pathname !== '/') return
+
+    const anchor = (event.target as Element | null)?.closest?.('.vp-doc a[href]')
+    const href = anchor?.getAttribute('href') ?? ''
+
+    if (!anchor || href.startsWith('#') || !isInSite(href, location.origin)) return
+
+    const headings = [...document.querySelectorAll('.vp-doc h2[id]')]
+    const part = partOf(headings, heading =>
+      (heading.compareDocumentPosition(anchor) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0)
+
+    countEvent(`home-link/${part}`, 'home page link')
   })
 }

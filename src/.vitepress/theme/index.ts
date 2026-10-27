@@ -8,7 +8,7 @@ import PlaygroundFrame from './components/PlaygroundFrame.vue'
 import Layout from './Layout.vue'
 import { installRosettaRouting } from './rosetta-route'
 import { refreshPackageVersions } from './package-versions'
-import { countOutboundLinks, countTimeOnPages } from './events'
+import { beginReach, countHomeLinks, countOutboundLinks, countTimeOnPages } from './events'
 import './style.css'
 
 export default {
@@ -23,6 +23,7 @@ export default {
     // of its own to hang a handler, and client-side navigation keeps this page
     // alive across every route.
     onMounted(countOutboundLinks)
+    onMounted(countHomeLinks)
     watch(() => route.path, () => nextTick(refreshPackageVersions))
 
     // In-site navigation is client-side and the counter only records a
@@ -32,7 +33,10 @@ export default {
     let counted_path = typeof location !== 'undefined' ? location.pathname : ''
     let page_changed = (_path: string) => {}
 
-    onMounted(() => { page_changed = countTimeOnPages(location.pathname) })
+    onMounted(() => {
+      page_changed = countTimeOnPages(location.pathname)
+      beginReach(location.pathname)
+    })
 
     watch(() => route.path, () =>
       nextTick(() => {
@@ -40,6 +44,7 @@ export default {
         counted_path = location.pathname
         window.goatcounter?.count?.()
         page_changed(location.pathname)
+        beginReach(location.pathname)
       }))
   },
   enhanceApp({ app, router }) {
