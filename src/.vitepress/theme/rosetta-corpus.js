@@ -56,6 +56,8 @@ function task(raw) {
     slug: raw.slug,
     title: raw.title,
     url: raw.url,
+    // One sentence saying what the task asks for, empty in an index from before there were any.
+    summary: raw.summary ?? '',
     tags: raw.tags ?? [],
     runsOn: raw.runs_on ?? [],
     interest: raw.interest ?? 1,

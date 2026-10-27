@@ -145,7 +145,7 @@ watch([() => shownSlug.value, shown], ([slug, task], previous) => {
   // What a search result shows under the title, so a task's address does not describe itself as
   // the documentation in general.
   document.querySelector('meta[name="description"]')?.setAttribute('content', task
-    ? `${task.title} in ghūl: a solution to the Rosetta Code task, runnable in your browser.`
+    ? `${task.title} in ghūl. ${task.summary || 'A solution to the Rosetta Code task.'} Runnable in your browser.`
     : 'ghūl solutions to Rosetta Code tasks, runnable in your browser.')
 
   if (slug !== previous?.[0]) {
@@ -352,6 +352,10 @@ function browse() {
           <GhulExample v-else :key="current.id" :name="current.name" :data="current.data" />
         </template>
 
+        <!-- What the task asks for, under the result rather than above it: above, it would take
+             lines from the playground panel, whose height is what is left of the window. -->
+        <p v-if="shown.summary" class="rosetta-summary">{{ shown.summary }}</p>
+
         <!-- What the language is, for a reader who arrived at a task from Rosetta Code and has not
              seen the rest of the site. Under the result, where they look once it has run. -->
         <p :ref="el => watchReach(el, 'rosetta-reach/about')" class="rosetta-about">
@@ -447,6 +451,10 @@ function browse() {
 .rosetta-browse {
   margin: 0.25rem 0 0.75rem;
   font-size: 0.8rem;
+}
+
+.rosetta-summary {
+  margin: 0.75rem 0 0;
 }
 
 .rosetta-about {
