@@ -13,4 +13,9 @@ let cached = slow |> memo()
 write_line("first pass: {cached}")
 write_line("second pass: {cached}")
 write_line("elements pulled from the source: {pulled}")
+
+// the cache is a list, read from its source only as far as it is indexed
+let squares = from(1) |> map(n => n * n) |> memo()
+
+write_line("the tenth square: {squares[9]}")
 // <<<

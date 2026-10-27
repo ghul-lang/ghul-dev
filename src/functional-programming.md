@@ -254,7 +254,9 @@ A sequence that never ends needs a stage that stops reading it, such as
 <GhulExample name="functional-programming-29" />
 
 A pipe computes its elements again each time it is read. `memo` reads its
-source once, keeps the elements, and replays them on every later read:
+source once, keeps the elements, and replays them on every later read. Its
+result is a list that reads from the source only as far as it is indexed, so
+it can stand for an unbounded pipe:
 
 <GhulExample name="functional-programming-30" />
 
