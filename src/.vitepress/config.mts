@@ -6,6 +6,7 @@ import { createHighlighter } from 'shiki'
 import { FALLBACK_VERSIONS, fetchLatestStable } from './nuget-versions'
 import { SECTIONS } from './pages'
 import { renderText } from './render-text'
+import { INDEX_URL } from './theme/rosetta-corpus.js'
 
 // src/, the directory the pages live in: this file sits in src/.vitepress/.
 const SRC_DIR = fileURLToPath(new URL('..', import.meta.url))
@@ -217,6 +218,30 @@ export default defineConfig({
   description: 'documentation for the ghūl programming language',
   lang: 'en-US',
   cleanUrls: true,
+
+  // The Rosetta Code tasks are shown in place by one page, so the site's own
+  // pages do not include them, and a crawler finds a task only by following a
+  // link to it. Their addresses are read from the published index when the site
+  // is built. A build that cannot reach it still succeeds, with a sitemap of the
+  // site's own pages: the deploy is not worth losing over one.
+  sitemap: {
+    hostname: 'https://ghul.dev',
+    async transformItems(items) {
+      try {
+        const response = await fetch(INDEX_URL)
+
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+
+        const { tasks } = await response.json()
+
+        return [...items, ...tasks.map(task => ({ url: `rosetta/${task.slug}` }))]
+      } catch (error) {
+        console.warn(`sitemap: no Rosetta Code tasks (${error.message})`)
+
+        return items
+      }
+    },
+  },
 
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
