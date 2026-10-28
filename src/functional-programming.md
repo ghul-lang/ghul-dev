@@ -276,7 +276,7 @@ and `<<` in namespace `Ghul`, so a file that composes functions needs
 Namespace `Ghul` also has the common function combinators. `curry` turns a
 two-argument function into one that takes its arguments one at a time, and
 `uncurry` turns it back. `apply` calls a function with the rest of its own
-arguments. `memoize` returns a function that computes its result once for
+arguments. `memo` returns a function that computes its result once for
 each distinct set of arguments and returns the stored result for repeated
 calls. `retry` returns a function that calls the original again when it
 throws, up to a given number of attempts:
@@ -311,5 +311,5 @@ to call it with:
 A pack holds at most seven arguments, the size of the largest tuple. Declare
 the `T..` formal last, since it takes every argument after it. A caller that
 already holds the tuple can pass it in place of the separate arguments. The
-runtime's `apply`, `memoize` and `retry` take their functions this way, and
+runtime's `apply`, `memo` and `retry` take their functions this way, and
 so do the pipe stages that take a function.

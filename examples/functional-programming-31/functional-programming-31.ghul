@@ -11,10 +11,10 @@ write_line("add_3(4): {add_3(4)}")
 // apply calls a function with the rest of its own arguments
 write_line("apply(add, 1, 2): {apply(add, 1, 2)}")
 
-// memoize computes once per distinct argument
+// memo computes once per distinct argument
 let calls mut = 0
 let slow_square = (n: int) -> int => ( calls = calls + 1; n * n )
-let square = memoize(slow_square)
+let square = memo(slow_square)
 
 write_line("{square(9)} {square(9)} {square(3)}, computed {calls} times")
 // <<<
