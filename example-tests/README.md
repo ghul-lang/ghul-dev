@@ -91,7 +91,7 @@ the examples that do: built with `--target wasm` and run under Node, each prints
 what its `run.expected` says it prints on .NET. The example data carries the
 answer as each example's `"wasm"` flag, which `npm test` checks against the list.
 
-The build uses the newest compiler, ghul-core and ghul-runtime, as ghul-cli
+The build uses the newest compiler and ghul-runtime, as ghul-cli
 always does. The playground's compile service builds with its own compiler,
 which can be older, so run this again when that moves:
 

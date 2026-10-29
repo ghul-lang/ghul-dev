@@ -3,7 +3,7 @@
 A ghūl program can be compiled to WebAssembly as well as to .NET. The compiler writes a WasmGC module and a small JavaScript loader beside it. The program runs under [Node.js](https://nodejs.org) 22.19 or later on the 22 line, 24.15 or later on the 24 line, or 25 or later, or in a browser that supports WasmGC. Node 23 can't run it. The same source builds for the [native target](/native) as well.
 
 ::: warning work in progress
-The WebAssembly target doesn't yet compile the whole language, and it has ghūl's own libraries in place of .NET's. [What works today](#what-works-today) lists what is missing. The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks it.
+The WebAssembly target doesn't yet compile the whole language, and it has ghūl's own library in place of .NET's. [What works today](#what-works-today) lists what is missing. The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks it.
 :::
 
 ## installing
@@ -41,8 +41,7 @@ The new directory holds the manifest:
     "sources": ["src/**/*.ghul"],
     "tools": { "compiler": ">=66.11.0" },
     "dependencies": {
-        "ghul-core": { "version": ">=1.0.0" },
-        "ghul-runtime": { "version": ">=29.2.0" }
+        "ghul-runtime": { "version": ">=34.1.0" }
     }
 }
 ```
@@ -57,7 +56,7 @@ entry() is
 si
 ```
 
-The manifest declares the two libraries a WebAssembly build compiles in. Each takes a version range: `>=`{:text} is a floor that admits newer releases, `^1.0.0`{:text} stays within version 1, and a bare `1.0.0`{:text} is exactly that release. `ghul new`{:sh} writes the releases in use when it ran as floors.
+The manifest declares the library a WebAssembly build compiles in. It takes a version range: `>=`{:text} is a floor that admits newer releases, `^1.0.0`{:text} stays within version 1, and a bare `1.0.0`{:text} is exactly that release. `ghul new`{:sh} writes the releases in use when it ran as floors.
 
 `ghul run`{:sh} builds the project into `out/wasm/`{:text} and runs it:
 
@@ -65,7 +64,7 @@ The manifest declares the two libraries a WebAssembly build compiles in. Each ta
 ghul run      # runs out/wasm/hello.mjs under Node.js
 ```
 
-The first build installs the compiler if there isn't one, and fetches the libraries. Later builds reuse them. Each file in a project imports what it calls with `use`{:text}, or starts with `use default`{:text} for `write_line`, the pipes and the collections.
+The first build installs the compiler if there isn't one, and fetches the library. Later builds reuse it. Each file in a project imports what it calls with `use`{:text}, or starts with `use default`{:text} for `write_line`, the pipes and the collections.
 
 `ghul build`{:sh} builds without running. The [ghul-cli README](https://github.com/ghul-lang/ghul-cli#projects) covers the manifest in full.
 
@@ -79,7 +78,7 @@ Not yet:
 - an interpolated number formatted other than by the standard formats `D`, `E`, `F`, `G`, `N`, `R` and `X` or a custom pattern of `0`, `#`, `.` and `,`, and an interpolated enum given any format
 - reflection beyond a subset: a program that reflects on its types is built with `--rtti`{:sh}, and without it reflection throws `NotSupportedException`
 
-A WebAssembly program uses ghūl's own libraries, and the .NET libraries aren't available: there are no regular expressions, HTTP, sockets or culture-aware formatting, and a program can't call a library that already exists. A program run by Node reads and writes the real file system. In a browser there is no file system to reach, so `File` and `Directory` work on one held in memory, which starts empty. A program can call JavaScript only through `@extern`{:text}: each function it declares is looked up in the `externs`{:text} object the script that loads the module passes to the loader's `run`{:text}, and a program that declares one the script doesn't supply fails to start.
+A WebAssembly program uses ghūl's own library, and the .NET libraries aren't available: there are no regular expressions, HTTP, sockets or culture-aware formatting, and a program can't call a library that already exists. A program run by Node reads and writes the real file system. In a browser there is no file system to reach, so `File` and `Directory` work on one held in memory, which starts empty. A program can call JavaScript only through `@extern`{:text}: each function it declares is looked up in the `externs`{:text} object the script that loads the module passes to the loader's `run`{:text}, and a program that declares one the script doesn't supply fails to start.
 
 The [WebAssembly epic](https://github.com/ghul-lang/ghul/issues/3177) tracks what is still to come. Run `ghul update`{:sh} to pick up each release as it adds to the list.
 
@@ -87,7 +86,7 @@ An exception nothing catches ends the program with `Unhandled exception.`, its t
 
 ## the same program on .NET
 
-The program above is ordinary ghūl, and the .NET target builds it into an ordinary .NET executable, with the .NET SDK and a `.ghulproj`{:text} project rather than `ghul`{:sh}. WebAssembly has no .NET base class library. Two libraries compiled into the module from source take its place: [ghul-core](https://github.com/ghul-lang/ghul-core), which gives the built-in types their members and declares the collections, and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for .NET, unless it keeps those calls to the .NET build.
+The program above is ordinary ghūl, and the .NET target builds it into an ordinary .NET executable, with the .NET SDK and a `.ghulproj`{:text} project rather than `ghul`{:sh}. WebAssembly has no .NET base class library. One library compiled into the module from source takes its place: [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which gives the built-in types their members, declares the collections, and supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for .NET, unless it keeps those calls to the .NET build.
 
 Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
 

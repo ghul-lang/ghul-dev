@@ -4,9 +4,9 @@ ghūl is hosted on and targets .NET 10 and can consume most types in .NET assemb
 
 ## available on .NET only
 
-The WebAssembly and native targets compile against ghūl's own libraries, [ghul-core](https://github.com/ghul-lang/ghul-core) and [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), in place of the .NET base class library. These are available on .NET only:
+The WebAssembly and native targets compile against ghūl's own library, [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), in place of the .NET base class library. These are available on .NET only:
 
-- any .NET API outside the ones ghul-core declares, such as regular expressions, HTTP and sockets, and culture-aware formatting
+- any .NET API outside the ones ghul-runtime declares, such as regular expressions, HTTP and sockets, and culture-aware formatting
 - NuGet packages, and `PackageReference`{:text} and `ProjectReference`{:text} in a project file
 - `decimal`{:text}, which neither of the other targets compiles yet
 - reflection: WebAssembly supports a subset in a build with `--rtti`{:sh}, and native doesn't support it yet

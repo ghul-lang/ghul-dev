@@ -3,7 +3,7 @@
 # .NET is built with --target wasm and run under Node, and is listed when it
 # prints what example-tests/<name>/run.expected says it prints on .NET.
 #
-# The build uses the newest compiler, ghul-core and ghul-runtime, as ghul-cli
+# The build uses the newest compiler and ghul-runtime, as ghul-cli
 # always does. The embedded editor compiles with the compile service's own
 # compiler, which can be older, so run this again when that moves.
 #
@@ -61,7 +61,6 @@ for name in "${names[@]}"; do
     "targets": ["wasm"],
     "sources": ["*.ghul"],
     "dependencies": {
-        "ghul-core": { "version": ">=0.0.0" },
         "ghul-runtime": { "version": ">=0.0.0" }
     }
 }

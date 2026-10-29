@@ -27,7 +27,7 @@ ghul new hello --target llvm
 cd hello
 ```
 
-The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target and declaring ghul-core and ghul-runtime, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
+The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target and declaring ghul-runtime, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
 
 ```ghul
 use IO.Std.write_line
