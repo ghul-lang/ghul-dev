@@ -3,7 +3,7 @@
 A ghūl program can be compiled to a native executable for Linux on x64 or arm64, as well as to .NET and WebAssembly. The compiler writes an LLVM module and links it into a single statically linked file, which runs on its own.
 
 ::: warning work in progress
-The native target doesn't yet compile the whole language, and it has ghūl's own libraries in place of .NET's. [What works today](#what-works-today) lists what is missing. The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks it.
+The native target doesn't yet compile the whole language, and it has ghūl's own library in place of .NET's. [What works today](#what-works-today) lists what is missing. The [native target epic](https://github.com/ghul-lang/ghul/issues/3454) tracks it.
 :::
 
 ## installing
@@ -27,7 +27,7 @@ ghul new hello --target llvm
 cd hello
 ```
 
-The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target and declaring ghul-core and ghul-runtime, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
+The new directory holds a `ghul-project.json`{:text} manifest listing the `llvm`{:text} target and declaring ghul-runtime, a `.gitignore`{:text} for the build output in `out/`{:text}, and the program, as `src/main.ghul`{:text}:
 
 ```ghul
 use IO.Std.write_line
