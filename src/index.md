@@ -33,7 +33,7 @@ The `ghul`{:sh} command builds the WebAssembly and native targets and doesn't ne
 | --- | --- | --- | --- |
 | build with | `dotnet build`{:sh} | `ghul build`{:sh} | `ghul build`{:sh} |
 | runs on | the .NET 10 runtime | Node.js, or a browser | Linux x64 and arm64 |
-| libraries | all of .NET and NuGet | ghūl's own libraries | ghūl's own libraries |
+| libraries | all of .NET and NuGet | ghūl's own library | ghūl's own library |
 | calls into | any .NET API | functions the loading script supplies, with `@extern`{:text} | C, with `@extern`{:text} |
 
 WebAssembly and native programs use ghūl's own library, [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), about 22,000 lines of ghūl, in place of .NET's. It builds the compiler and runs most of the [Rosetta Code](/rosetta/) solutions on this site. It doesn't include regular expressions, HTTP, sockets or culture-aware formatting, `decimal`{:text} isn't supported on either, and a program can't call a library that already exists. A WebAssembly program calls JavaScript through its `@extern`{:text} declarations, and the functions available are the ones the script that loads it supplies. [WebAssembly](/webassembly) and [native executables](/native) list what each target supports, and [.NET integration](/dotnet-integration#available-on-net-only) lists what only .NET provides.
