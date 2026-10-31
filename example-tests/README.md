@@ -76,13 +76,6 @@ by a test, and the site reads them from there when a reader opens the section. T
 here would mean this repository holding an output it does not own, and a solution improved upstream
 would then arrive as a failing test rather than as a better example.
 
-`functional-programming-26` uses the function composition operators `ghul.runtime` supplies
-in the `Ghul` namespace. A projectless compile here resolves the `ghul-runtime.dll` bundled
-beside the pinned `ghul.compiler` tool, and the compiler versions published so far bundle a
-runtime from before those operators existed, so the snippet does not compile in this suite.
-It is still compiled and run on every pull, by `example-tool`, against the runtime this
-repository pins.
-
 ## running on WebAssembly
 
 The embedded editor runs an example on WebAssembly, in the browser, where the
