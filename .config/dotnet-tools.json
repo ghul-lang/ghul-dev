@@ -3,21 +3,21 @@
   "isRoot": true,
   "tools": {
     "ghul.compiler": {
-      "version": "67.4.15",
+      "version": "67.4.16",
       "commands": [
         "ghul-compiler"
       ],
       "rollForward": false
     },
     "ghul.test": {
-      "version": "8.4.0",
+      "version": "9.0.0",
       "commands": [
         "ghul-test"
       ],
       "rollForward": false
     },
     "ghul.cli": {
-      "version": "9.5.1",
+      "version": "9.5.5",
       "commands": [
         "ghul"
       ],
