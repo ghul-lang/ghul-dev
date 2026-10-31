@@ -265,8 +265,8 @@ it can stand for an unbounded pipe:
 ### composition
 
 The runtime supplies function composition in both reading orders, as `>>`
-and `<<` in namespace `Ghul`, so a file that composes functions needs
-`use Ghul`. `f >> g` applies `f` and then `g`, in the same direction as `|>`.
+and `<<` in namespace `Ghul.Functional`, so a file that composes functions needs
+`use Ghul.Functional`. `f >> g` applies `f` and then `g`, in the same direction as `|>`.
 `f << g` applies `g` and then `f`, the order used in mathematics:
 
 <GhulExample name="functional-programming-26" />
