@@ -273,7 +273,7 @@ and `<<` in namespace `Ghul.Functional`, so a file that composes functions needs
 
 ### combinators
 
-Namespace `Ghul` also has the common function combinators. `curry` turns a
+Namespace `Ghul.Functional` has the common function combinators. `curry` turns a
 two-argument function into one that takes its arguments one at a time, and
 `uncurry` turns it back. `apply` calls a function with the rest of its own
 arguments. `memo` returns a function that computes its result once for
