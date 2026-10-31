@@ -87,7 +87,7 @@ An ordinary pragma applies to the one definition written after it. A pragma writ
 
 ## imports
 
-A file sees the built-in types, such as `int` and `string`, and the operators on them without any `use`: they are declared in the namespace `Ghul.Intrinsics`, which every file imports implicitly. Everything else the runtime library provides is imported like any other library, with `use Ghul` for the function combinators and `use Ghul.Pipes` for the pipe functions. The rest of `use` is covered under [definitions](/definitions.html#importing-symbols-with-use).
+A file sees the built-in types, such as `int` and `string`, and the operators on them without any `use`: they are declared in the namespace `Ghul.Intrinsics`, which every file imports implicitly. Everything else the runtime library provides is imported like any other library, with `use Ghul.Functional` for the function combinators and `use Ghul.Pipes` for the pipe functions. The rest of `use` is covered under [definitions](/definitions.html#importing-symbols-with-use).
 
 ### `use default`
 

@@ -265,15 +265,15 @@ it can stand for an unbounded pipe:
 ### composition
 
 The runtime supplies function composition in both reading orders, as `>>`
-and `<<` in namespace `Ghul`, so a file that composes functions needs
-`use Ghul`. `f >> g` applies `f` and then `g`, in the same direction as `|>`.
+and `<<` in namespace `Ghul.Functional`, so a file that composes functions needs
+`use Ghul.Functional`. `f >> g` applies `f` and then `g`, in the same direction as `|>`.
 `f << g` applies `g` and then `f`, the order used in mathematics:
 
 <GhulExample name="functional-programming-26" />
 
 ### combinators
 
-Namespace `Ghul` also has the common function combinators. `curry` turns a
+Namespace `Ghul.Functional` has the common function combinators. `curry` turns a
 two-argument function into one that takes its arguments one at a time, and
 `uncurry` turns it back. `apply` calls a function with the rest of its own
 arguments. `memo` returns a function that computes its result once for

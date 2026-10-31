@@ -16,7 +16,7 @@
     { "startLine": 4, "startColumn": 17, "endLine": 4, "endColumn": 25, "text": "factorial: bigint", "signature": "factorial: bigint", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 29, "endLine": 4, "endColumn": 34, "text": "bigint.init(value: int)", "signature": "bigint.init(value: int)", "kindLabel": "constructor" },
     { "startLine": 4, "startColumn": 36, "endLine": 4, "endColumn": 36, "text": "i: int", "signature": "i: int", "kindLabel": "local value" },
-    { "startLine": 4, "startColumn": 27, "endLine": 4, "endColumn": 27, "text": "bigint.*(left: bigint, right: bigint) -> bigint", "signature": "bigint.*(left: bigint, right: bigint) -> bigint", "kindLabel": "class method" },
+    { "startLine": 4, "startColumn": 27, "endLine": 4, "endColumn": 27, "text": "bigint.*(left: bigint, right: bigint) -> bigint", "signature": "bigint.*(left: bigint, right: bigint) -> bigint", "kindLabel": "pure class method" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 13, "text": "factorial: bigint", "signature": "factorial: bigint", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 7, "startColumn": 14, "endLine": 7, "endColumn": 22, "text": "factorial: bigint", "signature": "factorial: bigint", "kindLabel": "global variable" }

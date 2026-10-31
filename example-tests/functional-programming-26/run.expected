@@ -1,0 +1,2 @@
+times_2_then_add_1(5): 11
+pipeline(5): [11]
