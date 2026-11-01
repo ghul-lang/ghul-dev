@@ -10,7 +10,7 @@
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 7, "text": "windows[T](source: T{}, size: int) -> List[T]{}", "signature": "windows[T](source: T{}, size: int) -> List[T]{}", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 7, "text": "windows[T](source: T{}, size: int) -> T[]{}", "signature": "windows[T](source: T{}, size: int) -> T[]{}", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 9, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },

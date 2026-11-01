@@ -3,7 +3,7 @@ use Ghul
 
 // >>>
 class GREETING(name: string): Renderable is
-    representations() -> Collections.Iterable[(mime: string, content: ubyte[])] pure =>
+    representations() -> Collections.Iterable[(mime: string, content: ARRAY[ubyte])] pure =>
         [
             (mime = "text/markdown", content = System.Text.Encoding.utf8.get_bytes("**hello** {name}")),
             (mime = "text/plain", content = System.Text.Encoding.utf8.get_bytes("hello {name}"))

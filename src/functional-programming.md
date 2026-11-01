@@ -185,7 +185,7 @@ Each `for` clause iterates over its sequence the way a `for` loop does, so it ac
 
 An `if` clause narrows what it tests, as an `if` statement does: in `[name.length for name in names if name?]`, `name` has type `string` in the element.
 
-The result is an array. Its element type is the type of the element expression, or the element type of the array the context expects. The closing bracket ends the comprehension, so you can use one on either side of `|>`.
+The result is an array. Its element type is the type of the element expression, or the element type of the list or array the context expects. The closing bracket ends the comprehension, so you can use one on either side of `|>`.
 
 A comprehension's loops are its own. You can't `break` or `continue` out of one, and it can't contain a `yield`, an `await` or a `try`. A function literal inside a comprehension is a separate function body, so these restrictions don't apply inside it.
 

@@ -10,7 +10,7 @@
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "text": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (List[T], List[T])", "signature": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (List[T], List[T])", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 9, "text": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (T[], T[])", "signature": "partition[T..](\n    source: T{},\n    predicate: T.. -> bool pure\n) -> (T[], T[])", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 11, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 22, "endLine": 2, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },

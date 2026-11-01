@@ -10,19 +10,19 @@
   "output": "chunk:  1, 2, 3\nchunk:  4, 5, 6\nchunk:  7\nwindow: 1, 2, 3\nwindow: 2, 3, 4\nwindow: 3, 4, 5\nwindow: 4, 5, 6\nwindow: 5, 6, 7\n",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
-    { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 9, "text": "group: Collections.List[int]", "signature": "group: Collections.List[int]", "kindLabel": "local value" },
-    { "startLine": 6, "startColumn": 25, "endLine": 6, "endColumn": 29, "text": "Ghul.Pipes.chunk[int](\n    source: int{},\n    size: int\n) -> Collections.List[int]{}", "signature": "Ghul.Pipes.chunk[int](\n    source: int{},\n    size: int\n) -> Collections.List[int]{}", "kindLabel": "pure global function" },
-    { "startLine": 6, "startColumn": 14, "endLine": 6, "endColumn": 20, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
-    { "startLine": 13, "startColumn": 5, "endLine": 13, "endColumn": 10, "text": "window: Collections.List[int]", "signature": "window: Collections.List[int]", "kindLabel": "local value" },
-    { "startLine": 13, "startColumn": 26, "endLine": 13, "endColumn": 32, "text": "Ghul.Pipes.windows[int](\n    source: int{},\n    size: int\n) -> Collections.List[int]{}", "signature": "Ghul.Pipes.windows[int](\n    source: int{},\n    size: int\n) -> Collections.List[int]{}", "kindLabel": "pure global function" },
-    { "startLine": 13, "startColumn": 15, "endLine": 13, "endColumn": 21, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "numbers: ARRAY[int]", "signature": "numbers: ARRAY[int]", "kindLabel": "global variable" },
+    { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 9, "text": "group: int[]", "signature": "group: int[]", "kindLabel": "local value" },
+    { "startLine": 6, "startColumn": 25, "endLine": 6, "endColumn": 29, "text": "Ghul.Pipes.chunk[int](source: int{}, size: int) -> int[]{}", "signature": "Ghul.Pipes.chunk[int](source: int{}, size: int) -> int[]{}", "kindLabel": "pure global function" },
+    { "startLine": 6, "startColumn": 14, "endLine": 6, "endColumn": 20, "text": "numbers: ARRAY[int]", "signature": "numbers: ARRAY[int]", "kindLabel": "global variable" },
+    { "startLine": 13, "startColumn": 5, "endLine": 13, "endColumn": 10, "text": "window: int[]", "signature": "window: int[]", "kindLabel": "local value" },
+    { "startLine": 13, "startColumn": 26, "endLine": 13, "endColumn": 32, "text": "Ghul.Pipes.windows[int](source: int{}, size: int) -> int[]{}", "signature": "Ghul.Pipes.windows[int](source: int{}, size: int) -> int[]{}", "kindLabel": "pure global function" },
+    { "startLine": 13, "startColumn": 15, "endLine": 13, "endColumn": 21, "text": "numbers: ARRAY[int]", "signature": "numbers: ARRAY[int]", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 7, "startColumn": 35, "endLine": 7, "endColumn": 38, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
-    { "startLine": 7, "startColumn": 26, "endLine": 7, "endColumn": 30, "text": "group: Collections.List[int]", "signature": "group: Collections.List[int]", "kindLabel": "local value" },
+    { "startLine": 7, "startColumn": 26, "endLine": 7, "endColumn": 30, "text": "group: int[]", "signature": "group: int[]", "kindLabel": "local value" },
     { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 14, "startColumn": 36, "endLine": 14, "endColumn": 39, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
-    { "startLine": 14, "startColumn": 26, "endLine": 14, "endColumn": 31, "text": "window: Collections.List[int]", "signature": "window: Collections.List[int]", "kindLabel": "local value" }
+    { "startLine": 14, "startColumn": 26, "endLine": 14, "endColumn": 31, "text": "window: int[]", "signature": "window: int[]", "kindLabel": "local value" }
   ],
   "inlayHints": [],
   "semanticTokens": [

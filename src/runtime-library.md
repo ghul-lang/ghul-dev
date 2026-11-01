@@ -377,7 +377,7 @@ The collecting combinators differ in what they hand back:
 
 ### collect
 
-Collects into an array, `T[]`, which is a read-only `Collections.List[T]`. `collect_mutable` gives back the mutable `LIST[T]` instead, and the others collect into a set or a map.
+Collects into an array, `ARRAY[T]`, which is a read-only list, `T[]`. `collect_mutable` gives back the mutable `LIST[T]` instead, and the others collect into a set or a map.
 
 Each collecting function is a [collection constructor](/functional-programming.html#filter-map-reduce) written as a function: `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)`, `collect_set` is `SET(p)`, `collect_mutable_map` is `MAP(p)`, and `join` is `string(p, separator)`. `collect_map` has no constructor of its own, because it gives back the read-only `Map[K, V]`.
 

@@ -44,7 +44,7 @@
     { "startLine": 28, "startColumn": 45, "endLine": 28, "endColumn": 49, "text": "count: int", "signature": "count: int", "kindLabel": "local value" },
     { "startLine": 28, "startColumn": 53, "endLine": 28, "endColumn": 56, "text": "word: string", "signature": "word: string", "kindLabel": "local value" },
     { "startLine": 13, "startColumn": 5, "endLine": 13, "endColumn": 8, "text": "text: string", "signature": "text: string", "kindLabel": "global variable" },
-    { "startLine": 13, "startColumn": 10, "endLine": 13, "endColumn": 14, "text": "string.split(separator: char[]?) -> string[]", "signature": "string.split(separator: char[]?) -> string[]", "kindLabel": "pure method" },
+    { "startLine": 13, "startColumn": 10, "endLine": 13, "endColumn": 14, "text": "string.split(separator: ARRAY[char]?) -> ARRAY[string]", "signature": "string.split(separator: ARRAY[char]?) -> ARRAY[string]", "kindLabel": "pure method" },
     { "startLine": 20, "startColumn": 24, "endLine": 20, "endColumn": 29, "text": "counts: MAP[string,int]", "signature": "counts: MAP[string,int]", "kindLabel": "global variable" },
     { "startLine": 20, "startColumn": 31, "endLine": 20, "endColumn": 42, "text": "MAP[string,int].contains_key(key: string) -> bool", "signature": "MAP[string,int].contains_key(key: string) -> bool", "kindLabel": "pure method" },
     { "startLine": 20, "startColumn": 44, "endLine": 20, "endColumn": 47, "text": "word: string", "signature": "word: string", "kindLabel": "local value" },

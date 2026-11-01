@@ -12,7 +12,7 @@
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 12, "text": "a_string: string", "signature": "a_string: string", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "an_int: int", "signature": "an_int: int", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 16, "text": "an_int_array: int[]", "signature": "an_int_array: int[]", "kindLabel": "global variable" }
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 16, "text": "an_int_array: ARRAY[int]", "signature": "an_int_array: ARRAY[int]", "kindLabel": "global variable" }
   ],
   "inlayHints": [],
   "semanticTokens": [

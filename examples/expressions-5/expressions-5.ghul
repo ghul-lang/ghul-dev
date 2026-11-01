@@ -1,5 +1,5 @@
 // >>>
-let animals = ["frog", "bat", "elephant"] // string[]
-let things = ["frog", 1234, 12.5] // object[]
-let lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // int[][]
+let animals = ["frog", "bat", "elephant"] // ARRAY[string]
+let things = ["frog", 1234, 12.5] // ARRAY[object]
+let lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // ARRAY[ARRAY[int]]
 // <<<

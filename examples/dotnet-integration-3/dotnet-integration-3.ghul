@@ -7,7 +7,7 @@ trait Clock is
 si
 
 test_uses_a_stubbed_clock() static is
-    // Substitute.for takes the constructor arguments as an object[]; a
+    // Substitute.for takes the constructor arguments as an ARRAY[object]; a
     // trait has none, so pass an empty array.
     let clock = Substitute.`for[Clock]([])
 

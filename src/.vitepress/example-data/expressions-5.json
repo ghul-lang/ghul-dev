@@ -2,17 +2,17 @@
   "name": "expressions-5",
   "snippet": false,
   "wasm": false,
-  "code": "let animals = [\"frog\", \"bat\", \"elephant\"] // string[]\nlet things = [\"frog\", 1234, 12.5] // object[]\nlet lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // int[][]",
-  "fullSource": "let animals = [\"frog\", \"bat\", \"elephant\"] // string[]\nlet things = [\"frog\", 1234, 12.5] // object[]\nlet lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // int[][]\n",
+  "code": "let animals = [\"frog\", \"bat\", \"elephant\"] // ARRAY[string]\nlet things = [\"frog\", 1234, 12.5] // ARRAY[object]\nlet lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // ARRAY[ARRAY[int]]",
+  "fullSource": "let animals = [\"frog\", \"bat\", \"elephant\"] // ARRAY[string]\nlet things = [\"frog\", 1234, 12.5] // ARRAY[object]\nlet lists = [[1, 2], [3, 4], [5, 6], [7, 7]] // ARRAY[ARRAY[int]]\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "animals: string[]", "signature": "animals: string[]", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "things: object[]", "signature": "things: object[]", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 9, "text": "lists: int[][]", "signature": "lists: int[][]", "kindLabel": "global variable" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "animals: ARRAY[string]", "signature": "animals: ARRAY[string]", "kindLabel": "global variable" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "things: ARRAY[object]", "signature": "things: ARRAY[object]", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 9, "text": "lists: ARRAY[ARRAY[int]]", "signature": "lists: ARRAY[ARRAY[int]]", "kindLabel": "global variable" }
   ],
   "inlayHints": [],
   "semanticTokens": [

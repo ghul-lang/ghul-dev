@@ -8,7 +8,7 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-collect[T](source: Iterable[T]) -> T[] pure
+collect[T](source: Iterable[T]) -> ARRAY[T] pure
 // <<<
 
 entry() is si

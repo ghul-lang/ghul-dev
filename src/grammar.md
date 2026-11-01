@@ -340,12 +340,12 @@ TypeExpression ::= PrimaryType TypeSuffix*
 
 PrimaryType ::= QualifiedIdentifier
               | QualifiedIdentifier "[" TypeList "]"   /* generic type */
-              | QualifiedIdentifier "[" "]"            /* array type */
+              | QualifiedIdentifier "[" "]"            /* list type */
               | Identifier ":" TypeExpression          /* named tuple element */
               | "(" TypeList ")"                       /* tuple, or grouping */
               | "(" TypeList? ")" "->" TypeExpression  /* function type */
 
-TypeSuffix ::= "[]"                  /* array */
+TypeSuffix ::= "[]"                  /* list: Collections.List[T] */
              | "ref"                 /* by-reference */
              | "ptr"                 /* pointer */
              | "?"                   /* nullable */
