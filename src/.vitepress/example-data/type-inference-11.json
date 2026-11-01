@@ -10,8 +10,8 @@
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 14, "text": "int_string: (int, string)[]", "signature": "int_string: (int, string)[]", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 14, "text": "int_object: (int, object)[]", "signature": "int_object: (int, object)[]", "kindLabel": "global variable" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 14, "text": "int_string: ARRAY[(int, string)]", "signature": "int_string: ARRAY[(int, string)]", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 14, "text": "int_object: ARRAY[(int, object)]", "signature": "int_object: ARRAY[(int, object)]", "kindLabel": "global variable" }
   ],
   "inlayHints": [],
   "semanticTokens": [

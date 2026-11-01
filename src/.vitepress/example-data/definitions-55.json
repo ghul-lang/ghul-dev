@@ -20,7 +20,7 @@
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 10, "text": "class IO.Std", "signature": "class IO.Std", "kindLabel": "class" },
     { "startLine": 2, "startColumn": 12, "endLine": 2, "endColumn": 21, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 2, "startColumn": 25, "endLine": 2, "endColumn": 28, "text": "args: string[]", "signature": "args: string[]", "kindLabel": "local argument" },
-    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 34, "text": "ARRAY[string].count: int", "signature": "ARRAY[string].count: int", "kindLabel": "pure instance property" },
+    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 34, "text": "string[].count: int", "signature": "string[].count: int", "kindLabel": "pure instance property" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 6, "text": "namespace IO", "signature": "namespace IO", "kindLabel": "" },
     { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 10, "text": "class IO.Std", "signature": "class IO.Std", "kindLabel": "class" },
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 21, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },

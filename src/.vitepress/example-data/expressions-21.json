@@ -11,7 +11,7 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 17, "text": "first_element: int", "signature": "first_element: int", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 32, "text": "Collections.List[int].get_Item(index: int) -> int", "signature": "Collections.List[int].get_Item(index: int) -> int", "kindLabel": "pure abstract method" }
+    { "startLine": 1, "startColumn": 30, "endLine": 1, "endColumn": 32, "text": "int[].get_Item(index: int) -> int", "signature": "int[].get_Item(index: int) -> int", "kindLabel": "pure abstract method" }
   ],
   "inlayHints": [],
   "semanticTokens": [

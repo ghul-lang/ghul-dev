@@ -10,10 +10,10 @@
   "output": "found 1 pears\n",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "text": "rows: (string, int)[]", "signature": "rows: (string, int)[]", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "text": "rows: ARRAY[(string, int)]", "signature": "rows: ARRAY[(string, int)]", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "wanted: string", "signature": "wanted: string", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 7, "text": "row: (string, int)", "signature": "row: (string, int)", "kindLabel": "local value" },
-    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 15, "text": "rows: (string, int)[]", "signature": "rows: (string, int)[]", "kindLabel": "global variable" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 15, "text": "rows: ARRAY[(string, int)]", "signature": "rows: ARRAY[(string, int)]", "kindLabel": "global variable" },
     { "startLine": 7, "startColumn": 22, "endLine": 7, "endColumn": 26, "text": "count: int", "signature": "count: int", "kindLabel": "local value" },
     { "startLine": 7, "startColumn": 31, "endLine": 7, "endColumn": 33, "text": "row: (string, int)", "signature": "row: (string, int)", "kindLabel": "local value" },
     { "startLine": 7, "startColumn": 14, "endLine": 7, "endColumn": 19, "text": "wanted: string", "signature": "wanted: string", "kindLabel": "global variable" },

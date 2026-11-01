@@ -220,5 +220,5 @@ The .NET base libraries include no mocking framework; [NSubstitute](https://nsub
 
 <GhulExample name="dotnet-integration-3" />
 
-`for` is a reserved word, so the example escapes it with a backtick. Its argument is the substitute's constructor arguments as an `object[]`; a trait has none, so the argument is an empty array. Where a full framework isn't warranted, a hand-written trait implementation is the zero-dependency alternative.
+`for` is a reserved word, so the example escapes it with a backtick. Its argument is the substitute's constructor arguments as an `ARRAY[object]`; a trait has none, so the argument is an empty array. Where a full framework isn't warranted, a hand-written trait implementation is the zero-dependency alternative.
 

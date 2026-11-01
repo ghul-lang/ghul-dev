@@ -20,7 +20,7 @@ Integer literals consist of an optional radix (base), followed by a sequence of 
 <GhulExample name="expressions-4" />
 
 ### array
-Array literals are constructed from a comma separated list of element values enclosed in `[` and `]`. The array element type is inferred as the most specific type compatible with all elements (which may be `object` if no more specific ancestor type exists). The resulting array type is `E[]` where `E` is the inferred element type. 
+Array literals are constructed from a comma separated list of element values enclosed in `[` and `]`. The array element type is inferred as the most specific type compatible with all elements (which may be `object` if no more specific ancestor type exists). The resulting type is `ARRAY[E]`, where `E` is the inferred element type. An array is a read-only list, so it can be used wherever an `E[]` is expected: `E[]` is `Collections.List[E]`, the type of anything with a `count` and a read-only indexer. 
 
 <GhulExample name="expressions-5" />
 

@@ -10,7 +10,7 @@
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 8, "text": "group_by[T..,K](\n    source: T{},\n    key_selector: T.. -> K pure\n) -> Map[K,List[T]]", "signature": "group_by[T..,K](\n    source: T{},\n    key_selector: T.. -> K pure\n) -> Map[K,List[T]]", "kindLabel": "pure global function" },
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 8, "text": "group_by[T..,K](\n    source: T{},\n    key_selector: T.. -> K pure\n) -> Map[K,T[]]", "signature": "group_by[T..,K](\n    source: T{},\n    key_selector: T.. -> K pure\n) -> Map[K,T[]]", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 10, "endLine": 1, "endColumn": 10, "text": "T", "signature": "T", "kindLabel": "type variable" },
     { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 14, "text": "K", "signature": "K", "kindLabel": "type variable" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 10, "text": "source: T{}", "signature": "source: T{}", "kindLabel": "local argument" },
