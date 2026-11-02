@@ -91,7 +91,7 @@ A file sees the built-in types, such as `int` and `string`, and the operators on
 
 ### `use default`
 
-`use default` imports the names most programs want before they want anything else: `IO.Std.write_line`, the pipe functions in `Ghul.Pipes`, and the collections in `Collections`:
+`use default` imports the names most programs want before they want anything else: `IO.Std.write_line`, the pipe functions in `Ghul.Pipes`, the collections in `Collections`, the maths functions in `Ghul.Math`, the number theory functions in `Ghul.NumberTheory` and the function combinators in `Ghul.Functional`:
 
 <GhulExample name="syntax-5" />
 
