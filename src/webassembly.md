@@ -64,7 +64,7 @@ The manifest declares the library a WebAssembly build compiles in. It takes a ve
 ghul run      # runs out/wasm/hello.mjs under Node.js
 ```
 
-The first build installs the compiler if there isn't one, and fetches the library. Later builds reuse it. Each file in a project imports what it calls with `use`{:text}, or starts with `use default`{:text} for `write_line`, the pipes and the collections.
+The first build installs the compiler if there isn't one, and fetches the library. Later builds reuse it. Each file in a project imports what it calls with `use`{:text}, or starts with `use default`{:text} for `write_line`, the pipes, the collections and the maths functions.
 
 `ghul build`{:sh} builds without running. The [ghul-cli README](https://github.com/ghul-lang/ghul-cli#projects) covers the manifest in full.
 
