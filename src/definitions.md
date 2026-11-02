@@ -163,7 +163,7 @@ A union can declare a primary-constructor header for state shared across every v
 
 <GhulExample name="definitions-42" />
 
-Unions can only be defined at global scope. Union names should be in `PascalCase` and variant names should be in `MACRO_CASE`.
+Unions can only be defined at global scope. Union names should be in `PascalCase` and variant names should be in `UPPER_SNAKE_CASE`.
 
 ### enums
 
@@ -171,7 +171,7 @@ An enum consists of a name and then an enum body, which contains one or more ele
 
 <GhulExample name="definitions-20" />
 
-Enums can only be defined at global scope. An enum type name should be in `PascalCase`, and its members in `MACRO_CASE`.
+Enums can only be defined at global scope. An enum type name should be in `PascalCase`, and its members in `UPPER_SNAKE_CASE`.
 
 Enum values compare for equality and order: `=~` and `==` compare by the underlying integer, and `<`, `<=`, `>` and `>=` order by it. `=~` works over an optional enum as it does over any other optional. An individual member can be imported by name - `use Some.Namespace.Suit.HEARTS` - as well as reached through the type.
 

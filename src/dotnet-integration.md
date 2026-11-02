@@ -54,7 +54,7 @@ When consuming C# code the ghūl compiler transforms symbol names to better matc
 
 - Class, struct and trait (=interface) names are left unchanged
 - .NET's generic arity suffix is removed, so `KeyValuePair<K, V>` is `Collections.KeyValuePair[K, V]`
-- Enum names and enum member names are transformed to `MACRO_CASE`
+- Enum member names are transformed to `UPPER_SNAKE_CASE`; enum type names are left unchanged, so `System.StringSplitOptions.RemoveEmptyEntries` is `StringSplitOptions.REMOVE_EMPTY_ENTRIES`
 - Method, property and field names are transformed to `snake_case`
 - A name that collides with a ghūl keyword is left unchanged too. The backtick is how you write such a name where the keyword reading would otherwise win, as in ``` `class ```; it is not part of the name, and after a `.` none is needed
 
