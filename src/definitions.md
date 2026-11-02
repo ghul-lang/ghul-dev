@@ -99,7 +99,7 @@ A class has no `=~` unless it defines one. `@equality()` before a class asks the
 
 Two values are equal only when they are the same class. A subclass of a class that asks for equality has to ask for its own, or define `=~` and `get_hash_code` itself. `@equality()` cannot be used on an `open` class, or on one that already defines any of `=~`, `<>`, `get_hash_code` or `equals`.
 
-Classes can only be defined at global scope. Classes can be generic, which will be covered later. Concrete class names should be in `UPPER_SNAKE_CASE`. Abstract class names should be in `PascalCase`.
+Classes can only be defined at global scope. Classes can be generic, which will be covered later. A concrete class name can be in `PascalCase` or `UPPER_SNAKE_CASE`. Abstract class and exception class names should be in `PascalCase`.
 
 ### structs
 
@@ -118,7 +118,7 @@ A struct defines a new value type. Assigning a struct copies all of its fields, 
 
 The compiler doesn't synthesize these for a struct with a non-public member, or for one that declares any of `=~`, `<>`, `get_hash_code` or `equals`. Define that struct's equality as described under [defining operators](#operators) and, for the .NET side, under [making your own types work with .NET](/dotnet-integration.html#equality).
 
-Structs can only be defined at global scope. Structs can be generic, which will be covered later. Struct names should be in `UPPER_SNAKE_CASE`.
+Structs can only be defined at global scope. Structs can be generic, which will be covered later. A struct name can be in `PascalCase` or `UPPER_SNAKE_CASE`.
 
 ### traits
 
@@ -351,7 +351,7 @@ Note that `use` only applies within the current `namespace` definition. It does 
 
 ## visibility of symbols
 
-In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. A class with only `static` members is a utility container that is never constructed, and accepts either `PascalCase` or `UPPER_SNAKE_CASE`.
+In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. `non-upper-snake-case-name` also covers a concrete class or struct whose name is neither `PascalCase` nor `UPPER_SNAKE_CASE`. A name of more than one letter is `PascalCase` only if it has a lower-case letter, so an all-caps trait such as `TREE` draws `non-pascal-case-name`.
 
 ### global symbols
 

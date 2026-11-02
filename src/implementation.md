@@ -222,9 +222,9 @@ has created them, and reports any `use` that still doesn't resolve to anything.
 
 Reports a warning for each declaration whose name does not follow the
 naming convention for its kind: `snake_case` for variables, functions and
-properties, `PascalCase` for traits, abstract classes, unions and enums,
-`UPPER_SNAKE_CASE` for concrete classes, structs, variants and enum
-members. It runs after `declare-members`{:text} so it can read each
+properties, `PascalCase` for traits, abstract classes, exception
+classes, unions and enums, `UPPER_SNAKE_CASE` for variants and enum
+members, and either for concrete classes and structs. It runs after `declare-members`{:text} so it can read each
 class's computed abstractness - explicit or implied by a body-less
 method - rather than just the written modifier.
 
