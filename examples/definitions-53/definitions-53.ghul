@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-class RECTANGLE(width: int, height: int) is
+class Rectangle(width: int, height: int) is
     // a method body ends the same way a function body does
     area() -> int is
         width * height
@@ -16,4 +16,4 @@ class RECTANGLE(width: int, height: int) is
 si
 // <<<
 
-write_line(RECTANGLE(3, 4).describe())
+write_line(Rectangle(3, 4).describe())

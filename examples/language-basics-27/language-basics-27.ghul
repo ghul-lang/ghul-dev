@@ -1,12 +1,12 @@
 use IO.Std.write_line
 
-class BOX is
+class Box is
     property: int public
 
     init() is si
 si
 
-let thing = BOX()
+let thing = Box()
 // >>>
 let i mut = 0
 let j = 10

@@ -52,7 +52,7 @@ write_line(reader.read_to_end())
 ## name mangling
 When consuming C# code the ghūl compiler transforms symbol names to better match ghūl conventions:
 
-- Class, struct and trait (=interface) names are left unchanged
+- Class, struct and trait (=interface) names keep their .NET names, except a short list of core types that ghūl names in `UPPER_SNAKE_CASE` (`LIST`, `MAP`, `SET`, `STRING_BUILDER`, `RANDOM`, `TASK`, ...)
 - .NET's generic arity suffix is removed, so `KeyValuePair<K, V>` is `Collections.KeyValuePair[K, V]`
 - Enum member names are transformed to `UPPER_SNAKE_CASE`; enum type names are left unchanged, so `System.StringSplitOptions.RemoveEmptyEntries` is `StringSplitOptions.REMOVE_EMPTY_ENTRIES`
 - Method, property and field names are transformed to `snake_case`
@@ -126,13 +126,13 @@ The mappings above are about reaching into .NET. This section is the other direc
 
 ### equality
 
-.NET collections compare values with `Equals` and `GetHashCode`. A `MAP` or a `SET` finds a key by its hash and then checks it with `Equals`; `contains` on a list checks each element with `Equals`. A ghūl type defines its equality with `=~` and its hash with `get_hash_code`. When a type defines both, the compiler synthesises an `Equals` override that calls `=~`, so .NET collections compare the type the way ghūl code does:
+.NET collections compare values with `Equals` and `GetHashCode`. A `MAP` or a `SET` finds a key by its hash and then checks it with `Equals`; `contains` on a list checks each element with `Equals`. A ghūl type defines its equality with `=~` and its hash with `get_hash_code`. When a type defines both, the compiler synthesizes an `Equals` override that calls `=~`, so .NET collections compare the type the way ghūl code does:
 
 <GhulExample name="dotnet-integration-4" />
 
 Build the hash from the members `=~` compares. `System.HashCode.combine` does this.
 
-When a type defines `=~` but not `get_hash_code`, the compiler reports an `equality-without-hash` warning and doesn't synthesise an `Equals` override. .NET collections then compare a class by reference and a struct member by member, whatever its `=~` says. The compiler does not synthesise the hash itself, because `=~` can ignore some members, and a hash of all of them would then disagree with it. The exception is a class marked [`@equality()`](/definitions.html) or a struct whose members are all public: there the compiler synthesises both `=~` and a matching `get_hash_code`.
+When a type defines `=~` but not `get_hash_code`, the compiler reports an `equality-without-hash` warning and doesn't synthesize an `Equals` override. .NET collections then compare a class by reference and a struct member by member, whatever its `=~` says. The compiler does not synthesize the hash itself, because `=~` can ignore some members, and a hash of all of them would then disagree with it. The exception is a class marked [`@equality()`](/definitions.html) or a struct whose members are all public: there the compiler synthesizes both `=~` and a matching `get_hash_code`.
 
 ### ordering
 

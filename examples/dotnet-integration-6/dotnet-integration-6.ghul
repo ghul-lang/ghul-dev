@@ -1,13 +1,13 @@
 use IO.Std.write_line
 
 // >>>
-class SCOPE(name: string): Ghul.Disposable is
+class Scope(name: string): Ghul.Disposable is
     dispose() is
         write_line("closing {name}")
     si
 si
 
-let scope = use SCOPE("file")
+let scope = use Scope("file")
 
 write_line("inside the scope")
 // <<<

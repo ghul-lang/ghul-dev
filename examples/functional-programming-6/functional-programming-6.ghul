@@ -1,7 +1,7 @@
 // expect: error
 use Collections.List
 
-struct THING(name: string)
+struct Thing(name: string)
 
 // >>>
 let total = 10
@@ -13,7 +13,7 @@ numbers[0] = 6
 let pair = (1, "one")
 pair.`0 = 2
 
-let thing = THING("a thing")
+let thing = Thing("a thing")
 thing.name = "another thing"
 
 add_one(names: List[string]) is

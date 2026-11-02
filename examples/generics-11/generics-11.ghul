@@ -9,7 +9,7 @@ trait Sized is
     size: int
 si
 
-class CRATE: Named, Sized is
+class Crate: Named, Sized is
     name: string
     size: int
 
@@ -23,5 +23,5 @@ si
 label[T: Named /\ Sized](x: T) -> string =>
     "{x.name} holds {x.size}"
 
-write_line(label(CRATE("bolts", 500)))
+write_line(label(Crate("bolts", 500)))
 // <<<

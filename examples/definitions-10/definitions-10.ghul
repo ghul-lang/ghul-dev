@@ -1,5 +1,5 @@
 // >>>
-struct POINT(x: double, y: double) is
+struct Point(x: double, y: double) is
 si
 // <<<
 

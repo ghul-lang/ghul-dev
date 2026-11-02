@@ -2,19 +2,19 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(name: string): Animal is
+class Cat(name: string): Animal is
     purr() -> string => "{name} purrs"
 si
 
-class DOG(name: string): Animal is
+class Dog(name: string): Animal is
     bark() -> string => "{name} barks"
 si
 
-let a: Animal = DOG("rover")
+let a: Animal = Dog("rover")
 // >>>
-if let c: CAT = a then
+if let c: Cat = a then
     write_line(c.purr())
-elif let d: DOG = a then
+elif let d: Dog = a then
     write_line(d.bark())
 else
     write_line("some other animal")

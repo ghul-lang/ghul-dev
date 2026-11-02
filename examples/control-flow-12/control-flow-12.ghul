@@ -2,13 +2,13 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(name: string): Animal is
+class Cat(name: string): Animal is
     purr() -> string => "{name} purrs"
 si
 
-let a: Animal = CAT("whiskers")
+let a: Animal = Cat("whiskers")
 // >>>
-let c = cast CAT?(a)
+let c = cast Cat?(a)
 
 if c? then
     write_line(c.purr())

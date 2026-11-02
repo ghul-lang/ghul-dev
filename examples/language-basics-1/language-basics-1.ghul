@@ -9,7 +9,7 @@ si
 
 print_something("a hello")
 
-class PERSON is
+class Person is
     name: string
     age: int
 si

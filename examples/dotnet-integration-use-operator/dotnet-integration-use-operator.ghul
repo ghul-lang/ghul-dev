@@ -1,6 +1,6 @@
 use IO.Std.write_line
 
-class SCOPE(name: string): Ghul.Disposable is
+class Scope(name: string): Ghul.Disposable is
     dispose() is
         write_line("closing {name}")
     si
@@ -9,7 +9,7 @@ class SCOPE(name: string): Ghul.Disposable is
 si
 
 // >>>
-let length = (let use scope = SCOPE("second") in scope.read().length)
+let length = (let use scope = Scope("second") in scope.read().length)
 
 write_line("length {length}")
 // <<<

@@ -3,14 +3,14 @@
   "snippet": false,
   "wasm": true,
   "code": "// a pure method only reads: callers keep narrowing facts across a call to it\ndoubled() -> int pure => _count * 2",
-  "fullSource": "use IO.Std.write_line\n\nclass COUNTER is\n    _count: int\n    init(count: int) is _count = count; si\n    // a pure method only reads: callers keep narrowing facts across a call to it\n    doubled() -> int pure => _count * 2\nsi\n\nlet c = COUNTER(21)\nwrite_line(c.doubled())\n",
+  "fullSource": "use IO.Std.write_line\n\nclass Counter is\n    _count: int\n    init(count: int) is _count = count; si\n    // a pure method only reads: callers keep narrowing facts across a call to it\n    doubled() -> int pure => _count * 2\nsi\n\nlet c = Counter(21)\nwrite_line(c.doubled())\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
   "output": "42\n",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 7, "text": "COUNTER.doubled() -> int", "signature": "COUNTER.doubled() -> int", "kindLabel": "pure method" },
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 7, "text": "Counter.doubled() -> int", "signature": "Counter.doubled() -> int", "kindLabel": "pure method" },
     { "startLine": 2, "startColumn": 14, "endLine": 2, "endColumn": 16, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 2, "startColumn": 26, "endLine": 2, "endColumn": 31, "text": "_count: int", "signature": "_count: int", "kindLabel": "private field" },
     { "startLine": 2, "startColumn": 33, "endLine": 2, "endColumn": 33, "text": "int.*(a: int, b: int) -> int", "signature": "int.*(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.mul" }

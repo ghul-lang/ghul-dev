@@ -2,18 +2,18 @@
   "name": "definitions-11",
   "snippet": false,
   "wasm": false,
-  "code": "let origin = POINT(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = POINT(1.0D, 0.0D)",
-  "fullSource": "struct POINT(x: double, y: double)\n\nlet origin = POINT(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = POINT(1.0D, 0.0D)\n",
+  "code": "let origin = Point(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = Point(1.0D, 0.0D)",
+  "fullSource": "struct Point(x: double, y: double)\n\nlet origin = Point(0.0D, 0.0D)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = Point(1.0D, 0.0D)\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 10, "text": "origin: POINT", "signature": "origin: POINT", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 18, "text": "POINT.init(x: double, y: double)", "signature": "POINT.init(x: double, y: double)", "kindLabel": "constructor" },
-    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 9, "text": "right: POINT", "signature": "right: POINT", "kindLabel": "global variable" },
-    { "startLine": 5, "startColumn": 13, "endLine": 5, "endColumn": 17, "text": "POINT.init(x: double, y: double)", "signature": "POINT.init(x: double, y: double)", "kindLabel": "constructor" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 10, "text": "origin: Point", "signature": "origin: Point", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 18, "text": "Point.init(x: double, y: double)", "signature": "Point.init(x: double, y: double)", "kindLabel": "constructor" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 9, "text": "right: Point", "signature": "right: Point", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 13, "endLine": 5, "endColumn": 17, "text": "Point.init(x: double, y: double)", "signature": "Point.init(x: double, y: double)", "kindLabel": "constructor" }
   ],
   "inlayHints": [],
   "semanticTokens": [

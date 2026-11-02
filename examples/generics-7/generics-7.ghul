@@ -10,9 +10,9 @@ greet[T: Greetable](x: T) is
     write_line("hello, {x.name}")
 si
 
-class CAT(name: string): Greetable
+class Cat(name: string): Greetable
 // <<<
 
 // >>>
-greet(CAT("whiskers"))
+greet(Cat("whiskers"))
 // <<<

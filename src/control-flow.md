@@ -64,7 +64,7 @@ An `if` condition that proves something stronger about a value - an `isa` test o
 
 <GhulExample name="control-flow-13" />
 
-A type on the variable (`c: CAT`) makes it a type test. `elif let` chains these, so a sequence of type tests reads as one construct:
+A type on the variable (`c: Cat`) makes it a type test. `elif let` chains these, so a sequence of type tests reads as one construct:
 
 <GhulExample name="control-flow-14" />
 
@@ -90,7 +90,7 @@ A leaf can instead match against a value that already exists: prefixing a name w
 
 As with literal leaves, the comparison is the one `=~` would make, so strings match by content. A leading `~` is rejected where a leaf can only bind - a formal argument or an anonymous function's parameter list.
 
-When the tested value is a member path and the local should take the path's last name, the `name =` can be dropped: `if let order.customer` introduces `customer` holding `order.customer` and enters the branch when it is present, and `if let zoo.pet: CAT` does the same with a type test. A trailing `?` on the presence form (`if let order.customer?`) is accepted but not required.
+When the tested value is a member path and the local should take the path's last name, the `name =` can be dropped: `if let order.customer` introduces `customer` holding `order.customer` and enters the branch when it is present, and `if let zoo.pet: Cat` does the same with a type test. A trailing `?` on the presence form (`if let order.customer?`) is accepted but not required.
 
 <GhulExample name="control-flow-58" />
 
@@ -130,7 +130,7 @@ This loop skips the call to `write_line` when counter is 3.
 
 <GhulExample name="control-flow-52" />
 
-A `while` condition also narrows its body the same way an `if` condition narrows its then-branch, so `while isa CAT(a) do a.purr() od` reaches a `CAT`-only member without an inner cast.
+A `while` condition also narrows its body the same way an `if` condition narrows its then-branch, so `while isa Cat(a) do a.purr() od` reaches a `Cat`-only member without an inner cast.
 
 ## for statement
 

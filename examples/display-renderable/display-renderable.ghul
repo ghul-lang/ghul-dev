@@ -2,7 +2,7 @@ use IO.Std.write_line
 use Ghul
 
 // >>>
-class GREETING(name: string): Renderable is
+class Greeting(name: string): Renderable is
     representations() -> Collections.Iterable[(mime: string, content: ARRAY[ubyte])] pure =>
         [
             (mime = "text/markdown", content = System.Text.Encoding.utf8.get_bytes("**hello** {name}")),
@@ -10,7 +10,7 @@ class GREETING(name: string): Renderable is
         ]
 si
 
-for (mime, content) in GREETING("world").representations() do
+for (mime, content) in Greeting("world").representations() do
     write_line("{mime}: {content.count} bytes")
 od
 // <<<

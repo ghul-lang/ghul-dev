@@ -121,7 +121,7 @@ error for each of these assignments:
 - A tuple's elements can't be assigned. A tuple is a value type, so code you
   pass a tuple to gets a copy.
 - A property can be assigned only inside the type that declares it, unless it
-  is declared `public`. The members a primary constructor synthesises are
+  is declared `public`. The members a primary constructor synthesizes are
   properties too, so the same applies to them.
 - `List[T]`, `Map[K, V]` and `Set[T]` have no members that change the
   collection. The mutable `LIST`, `MAP` and `SET` implement them, so a

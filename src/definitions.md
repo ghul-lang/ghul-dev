@@ -84,7 +84,7 @@ A class defines a new reference type, instances of which are assignment compatib
 Instances of classes are created via a constructor expression, which consists of a type expression followed by a parenthesis delimited list of actual constructor arguments. For a class, the type expression is the class name, qualified with any namespaces if needed:
 <GhulExample name="definitions-9" />
 
-A class can also declare its constructor parameters directly in the header. Each parameter becomes a parameter of the synthesised constructor, and a synthesised same-named field or property holds the supplied value:
+A class can also declare its constructor parameters directly in the header. Each parameter becomes a parameter of the synthesized constructor, and a synthesized same-named field or property holds the supplied value:
 <GhulExample name="definitions-8a" />
 
 The two forms are equivalent. The primary form is the shorter shape when every field is initialized from a constructor argument; the classic form is the better fit when the body owns extra fields or properties beyond what the constructor takes. See [constructors](#constructors) for more on primary constructors.
@@ -93,13 +93,13 @@ Two postfix modifiers control the class hierarchy. Without `open`, a class can b
 
 Because the compiler knows every subclass of a closed class, an `isa` test can narrow in the else branch too: ruling out the tested subclass leaves the others, and when an `abstract` root has exactly two subclasses, ruling out one leaves the other. See [type narrowing](/type-narrowing.html).
 
-A class has no `=~` unless it defines one. `@equality()` before a class asks the compiler to synthesise `=~` and a matching `get_hash_code`, comparing the members that hold the class's state, so .NET collections find an equal value as well as the same object:
+A class has no `=~` unless it defines one. `@equality()` before a class asks the compiler to synthesize `=~` and a matching `get_hash_code`, comparing the members that hold the class's state, so .NET collections find an equal value as well as the same object:
 
 <GhulExample name="definitions-57" />
 
 Two values are equal only when they are the same class. A subclass of a class that asks for equality has to ask for its own, or define `=~` and `get_hash_code` itself. `@equality()` cannot be used on an `open` class, or on one that already defines any of `=~`, `<>`, `get_hash_code` or `equals`.
 
-Classes can only be defined at global scope. Classes can be generic, which will be covered later. Concrete class names should be in `UPPER_SNAKE_CASE`. Abstract class names should be in `PascalCase`.
+Classes can only be defined at global scope. Classes can be generic, which will be covered later. A concrete class name can be in `PascalCase` or `UPPER_SNAKE_CASE`. Abstract class and exception class names should be in `PascalCase`.
 
 ### structs
 
@@ -112,13 +112,13 @@ Structs are constructed the same way as classes, with a constructor expression:
 A struct defines a new value type. Assigning a struct copies all of its fields, so the copy and the original are independent afterwards:
 <GhulExample name="definitions-12" />
 
-`==` is not defined for structs: it would compare the bytes of the value rather than its members. `=~` compares structs instead. For a struct whose members are all public and that declares no equality of its own, the compiler synthesises `=~` and a matching `get_hash_code`, comparing its members one by one:
+`==` is not defined for structs: it would compare the bytes of the value rather than its members. `=~` compares structs instead. For a struct whose members are all public and that declares no equality of its own, the compiler synthesizes `=~` and a matching `get_hash_code`, comparing its members one by one:
 
 <GhulExample name="definitions-58" />
 
-The compiler doesn't synthesise these for a struct with a non-public member, or for one that declares any of `=~`, `<>`, `get_hash_code` or `equals`. Define that struct's equality as described under [defining operators](#operators) and, for the .NET side, under [making your own types work with .NET](/dotnet-integration.html#equality).
+The compiler doesn't synthesize these for a struct with a non-public member, or for one that declares any of `=~`, `<>`, `get_hash_code` or `equals`. Define that struct's equality as described under [defining operators](#operators) and, for the .NET side, under [making your own types work with .NET](/dotnet-integration.html#equality).
 
-Structs can only be defined at global scope. Structs can be generic, which will be covered later. Struct names should be in `UPPER_SNAKE_CASE`.
+Structs can only be defined at global scope. Structs can be generic, which will be covered later. A struct name can be in `PascalCase` or `UPPER_SNAKE_CASE`.
 
 ### traits
 
@@ -129,7 +129,7 @@ A trait consists of a name, the types of any parent traits that must also be imp
 Traits are similar to interfaces in other languages. Trait methods and properties without a default implementation must be implemented by any class, struct, or union that declares the trait:
 <GhulExample name="definitions-14" />
 
-A trait method or property can provide a default body. Implementing classes inherit the default and only need to override it to change the behaviour:
+A trait method or property can provide a default body. Implementing classes inherit the default and only need to override it to change the behavior:
 
 <GhulExample name="definitions-15" />
 
@@ -155,7 +155,7 @@ Unions support structural equality through the `=~` operator. Two union referenc
 
 <GhulExample name="definitions-19" />
 
-A variant with no fields is a *unit variant*. It is referenced by name, without parentheses, and all uses of a unit variant share one value. When exactly one variant of a union has fields, the union behaves as an option type: `u?` tests whether `u` holds that variant, and `u!` unwraps its value. A union where several variants have fields can mark one of them `default` to get the same behaviour:
+A variant with no fields is a *unit variant*. It is referenced by name, without parentheses, and all uses of a unit variant share one value. When exactly one variant of a union has fields, the union behaves as an option type: `u?` tests whether `u` holds that variant, and `u!` unwraps its value. A union where several variants have fields can mark one of them `default` to get the same behavior:
 
 <GhulExample name="definitions-41" />
 
@@ -239,7 +239,7 @@ An operator is a function or method whose name is an operator symbol rather than
 
 <GhulExample name="definitions-46" />
 
-Written as a global function or a `static` member instead, an operator takes both operands as parameters: `+(a: VECTOR, b: VECTOR) -> VECTOR`. A prefix operator is always a one-parameter function, defined globally or in the operand's type.
+Written as a global function or a `static` member instead, an operator takes both operands as parameters: `+(a: Vector, b: Vector) -> Vector`. A prefix operator is always a one-parameter function, defined globally or in the operand's type.
 
 Every operator has a precedence taken from its first character, so an operator starting with `*` binds tighter than one starting with `+`, with no declaration needed. Unicode symbols count as operator characters and take the precedence of the ASCII operator they resemble, so `⊗` binds like `*` and `⊕` like `+`:
 
@@ -269,7 +269,7 @@ An assignment counts if it happens on every path through the constructor: either
 
 ### primary constructors
 
-When the constructor only assigns its arguments to same-named fields, the class or struct header can declare those parameters directly. The compiler synthesises the matching `init` and a same-named field or property for each parameter:
+When the constructor only assigns its arguments to same-named fields, the class or struct header can declare those parameters directly. The compiler synthesizes the matching `init` and a same-named field or property for each parameter:
 
 <GhulExample name="definitions-37" />
 
@@ -281,7 +281,7 @@ A trailing modifier on a primary parameter overrides the default visibility:
 - `_x: int` - private field, named `_x`.
 - `x: int init` - no field is generated; `x` is in scope only inside `init`.
 
-An explicit field or property declaration whose name matches a primary parameter, either exactly or as `_x` matching parameter `x`, replaces the synthesised member; the constructor assigns the parameter's value to it. Declaring `_x;` for a parameter `x` is also how to give the underlying storage a different name without a modifier suffix:
+An explicit field or property declaration whose name matches a primary parameter, either exactly or as `_x` matching parameter `x`, replaces the synthesized member; the constructor assigns the parameter's value to it. Declaring `_x;` for a parameter `x` is also how to give the underlying storage a different name without a modifier suffix:
 
 <GhulExample name="definitions-38" />
 
@@ -289,7 +289,7 @@ A class with a primary header can also include a `super(...)` body declaration t
 
 <GhulExample name="definitions-39" />
 
-A primary-constructor class or struct also gets a synthesised `deconstruct` built from its public-readable parameters, so `let (x, y) = POINT(3, 4)` destructures without writing one out.
+A primary-constructor class or struct also gets a synthesized `deconstruct` built from its public-readable parameters, so `let (x, y) = Point(3, 4)` destructures without writing one out.
 
 A class or struct with a primary header and no body declarations can end with a terminating `;` instead of `is ... si`:
 
@@ -322,7 +322,7 @@ A namespace definition is an instance of that namespace. Namespace instances are
 
 ### definitions outside any namespace
 
-If a source file contains no namespaces, then all definitions in the file are placed in a namespace the compiler synthesises, private to that source file, and the file can have [top-level statements](/syntax.html#top-level-statements) that run as the program's entry point. This is useful for examples and tests:
+If a source file contains no namespaces, then all definitions in the file are placed in a namespace the compiler synthesizes, private to that source file, and the file can have [top-level statements](/syntax.html#top-level-statements) that run as the program's entry point. This is useful for examples and tests:
 
 <GhulExample name="definitions-29" />
 For definitions to be visible from other files, they must be placed in an explicitly declared namespace.
@@ -351,7 +351,7 @@ Note that `use` only applies within the current `namespace` definition. It does 
 
 ## visibility of symbols
 
-In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. A class with only `static` members is a utility container that is never constructed, and accepts either `PascalCase` or `UPPER_SNAKE_CASE`.
+In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. `non-upper-snake-case-name` also covers a concrete class or struct whose name is neither `PascalCase` nor `UPPER_SNAKE_CASE`. A name of more than one letter is `PascalCase` only if it has a lower-case letter, so the compiler reports `non-pascal-case-name` for an all-caps trait such as `TREE`.
 
 ### global symbols
 

@@ -2,16 +2,16 @@
   "name": "definitions-9",
   "snippet": false,
   "wasm": false,
-  "code": "let a_thing = THING()",
-  "fullSource": "class THING()\n\nlet a_thing = THING()\n",
+  "code": "let a_thing = Thing()",
+  "fullSource": "class Thing()\n\nlet a_thing = Thing()\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "a_thing: THING", "signature": "a_thing: THING", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 19, "text": "THING.init()", "signature": "THING.init()", "kindLabel": "constructor" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "a_thing: Thing", "signature": "a_thing: Thing", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 19, "text": "Thing.init()", "signature": "Thing.init()", "kindLabel": "constructor" }
   ],
   "inlayHints": [],
   "semanticTokens": [

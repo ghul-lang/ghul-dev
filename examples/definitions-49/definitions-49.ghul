@@ -1,6 +1,6 @@
 // expect: warning
 // >>>
-class LABEL is
+class Label is
     text: string
     size: int
 

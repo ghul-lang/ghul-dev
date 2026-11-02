@@ -158,7 +158,7 @@ The `_` expression evaluates to the default value of a type: `null` for referenc
 
 <GhulExample name="expressions-24" />
 
-`let a = _` initialises a local to its type's default value, where the type is inferred from how the local is later used.
+`let a = _` initializes a local to its type's default value, where the type is inferred from how the local is later used.
 
 ## let in
 

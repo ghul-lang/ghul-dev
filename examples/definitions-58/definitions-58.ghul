@@ -1,9 +1,9 @@
 use IO.Std.write_line
 
 // >>>
-struct MONEY(amount: int, currency: string)
+struct Money(amount: int, currency: string)
 
-let price = MONEY(10, "EUR")
+let price = Money(10, "EUR")
 
-write_line("{price =~ MONEY(10, "EUR")} {price =~ MONEY(10, "GBP")}")
+write_line("{price =~ Money(10, "EUR")} {price =~ Money(10, "GBP")}")
 // <<<

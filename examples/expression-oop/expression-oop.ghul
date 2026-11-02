@@ -13,29 +13,29 @@ class Expr: Renderable is
     render() -> string
 si
 
-class NUM(value: int): Expr is
+class Num(value: int): Expr is
     eval() -> int => value
     render() -> string => "{value}"
 si
 
-class ADD(left: Expr, right: Expr): Expr is
+class Add(left: Expr, right: Expr): Expr is
     eval() -> int => left.eval() + right.eval()
     render() -> string => "({left.render()} + {right.render()})"
 si
 
-class MUL(left: Expr, right: Expr): Expr is
+class Mul(left: Expr, right: Expr): Expr is
     eval() -> int => left.eval() * right.eval()
     render() -> string => "({left.render()} * {right.render()})"
 si
 
 // (2 * (3 + 4)) = 14
-let expression = MUL(NUM(2), ADD(NUM(3), NUM(4)))
+let expression = Mul(Num(2), Add(Num(3), Num(4)))
 
 write_line("{expression.render()} = {expression.eval()}")
 
 // any of the classes above satisfies Renderable, so a
 // value held at the trait renders whatever it really is
-let renderables: Renderable[] = [NUM(7), expression]
+let renderables: Renderable[] = [Num(7), expression]
 
 for r in renderables do
     write_line(r.render())

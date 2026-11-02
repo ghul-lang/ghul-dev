@@ -2,19 +2,19 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(): Animal is
+class Cat(): Animal is
     purr() -> string => "purr"
 si
 
 // >>>
-class CARRIER(occupant: Animal)
-describe(carrier: CARRIER) is
-    if isa CAT(carrier.occupant) then
-        // carrier.occupant is a CAT within this branch,
+class Carrier(occupant: Animal)
+describe(carrier: Carrier) is
+    if isa Cat(carrier.occupant) then
+        // carrier.occupant is a Cat within this branch,
         // so its purr() is reachable directly
         write_line(carrier.occupant.purr())
     fi
 si
 
-describe(CARRIER(CAT()))
+describe(Carrier(Cat()))
 // <<<

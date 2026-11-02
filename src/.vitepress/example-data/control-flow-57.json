@@ -2,22 +2,22 @@
   "name": "control-flow-57",
   "snippet": false,
   "wasm": true,
-  "code": "pet = CAT()\n// assigning a CAT narrows pet to CAT, so purr() is in reach\nwrite_line(pet.purr())",
-  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass CAT: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\nany_animal() -> Animal => CAT()\n\nlet pet mut = any_animal()\npet = CAT()\n// assigning a CAT narrows pet to CAT, so purr() is in reach\nwrite_line(pet.purr())\n",
+  "code": "pet = Cat()\n// assigning a Cat narrows pet to Cat, so purr() is in reach\nwrite_line(pet.purr())",
+  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass Cat: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\nany_animal() -> Animal => Cat()\n\nlet pet mut = any_animal()\npet = Cat()\n// assigning a Cat narrows pet to Cat, so purr() is in reach\nwrite_line(pet.purr())\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "purr\n",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 9, "text": "CAT.init()", "signature": "CAT.init()", "kindLabel": "constructor" },
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 9, "text": "Cat.init()", "signature": "Cat.init()", "kindLabel": "constructor" },
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 3, "text": "pet: Animal", "signature": "pet: Animal", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 14, "text": "pet: Animal\n    ► CAT", "signature": "pet: Animal\n    ► CAT", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 19, "text": "CAT.purr() -> string", "signature": "CAT.purr() -> string", "kindLabel": "pure method" }
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 14, "text": "pet: Animal\n    ► Cat", "signature": "pet: Animal\n    ► Cat", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 19, "text": "Cat.purr() -> string", "signature": "Cat.purr() -> string", "kindLabel": "pure method" }
   ],
   "inlayHints": [
-    { "line": 1, "column": 1, "label": "►", "detail": "► CAT", "code": "narrowing-assign" }
+    { "line": 1, "column": 1, "label": "►", "detail": "► Cat", "code": "narrowing-assign" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 3, "tokenType": "property" },

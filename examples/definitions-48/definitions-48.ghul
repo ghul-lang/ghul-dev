@@ -1,6 +1,6 @@
 use IO.Std.write_line
 
-class REPORT is
+class Report is
     _summary: string?
 
     // >>>
@@ -24,4 +24,4 @@ class REPORT is
     // <<<
 si
 
-REPORT().describe()
+Report().describe()

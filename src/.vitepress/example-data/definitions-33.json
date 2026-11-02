@@ -2,8 +2,8 @@
   "name": "definitions-33",
   "snippet": false,
   "wasm": false,
-  "code": "namespace UseExample is\n    use Example\n\n    class ANOTHER_TEST: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YET_ANOTHER_TEST: Example.Test is\n        run() is si\n    si\nsi",
-  "fullSource": "namespace Example is\n    trait Test is\n        run()\n    si\nsi\n\nnamespace UseExample is\n    use Example\n\n    class ANOTHER_TEST: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YET_ANOTHER_TEST: Example.Test is\n        run() is si\n    si\nsi\n\nnamespace Demo is\n    entry() is si\nsi\n",
+  "code": "namespace UseExample is\n    use Example\n\n    class AnotherTest: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YetAnotherTest: Example.Test is\n        run() is si\n    si\nsi",
+  "fullSource": "namespace Example is\n    trait Test is\n        run()\n    si\nsi\n\nnamespace UseExample is\n    use Example\n\n    class AnotherTest: Test is\n        run() is si\n    si\nsi\n\nnamespace UseExample is\n    // Test still needs qualification here\n    class YetAnotherTest: Example.Test is\n        run() is si\n    si\nsi\n\nnamespace Demo is\n    entry() is si\nsi\n",
   "hiddenBefore": true,
   "hiddenAfter": true,
   "hiddenGapsAfterLine": [],
@@ -11,13 +11,13 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 20, "text": "namespace UseExample", "signature": "namespace UseExample", "kindLabel": "" },
-    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 22, "text": "class ANOTHER_TEST", "signature": "class ANOTHER_TEST", "kindLabel": "class" },
-    { "startLine": 4, "startColumn": 25, "endLine": 4, "endColumn": 28, "text": "trait Test", "signature": "trait Test", "kindLabel": "trait" },
-    { "startLine": 11, "startColumn": 11, "endLine": 11, "endColumn": 26, "text": "class YET_ANOTHER_TEST", "signature": "class YET_ANOTHER_TEST", "kindLabel": "class" },
-    { "startLine": 11, "startColumn": 37, "endLine": 11, "endColumn": 40, "text": "trait Example.Test", "signature": "trait Example.Test", "kindLabel": "trait" },
+    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 21, "text": "class AnotherTest", "signature": "class AnotherTest", "kindLabel": "class" },
+    { "startLine": 4, "startColumn": 24, "endLine": 4, "endColumn": 27, "text": "trait Test", "signature": "trait Test", "kindLabel": "trait" },
+    { "startLine": 11, "startColumn": 11, "endLine": 11, "endColumn": 24, "text": "class YetAnotherTest", "signature": "class YetAnotherTest", "kindLabel": "class" },
+    { "startLine": 11, "startColumn": 35, "endLine": 11, "endColumn": 38, "text": "trait Example.Test", "signature": "trait Example.Test", "kindLabel": "trait" },
     { "startLine": 2, "startColumn": 9, "endLine": 2, "endColumn": 15, "text": "namespace Example", "signature": "namespace Example", "kindLabel": "" },
-    { "startLine": 5, "startColumn": 9, "endLine": 5, "endColumn": 11, "text": "ANOTHER_TEST.run() -> void", "signature": "ANOTHER_TEST.run() -> void", "kindLabel": "pure method" },
-    { "startLine": 12, "startColumn": 9, "endLine": 12, "endColumn": 11, "text": "YET_ANOTHER_TEST.run() -> void", "signature": "YET_ANOTHER_TEST.run() -> void", "kindLabel": "pure method" }
+    { "startLine": 5, "startColumn": 9, "endLine": 5, "endColumn": 11, "text": "AnotherTest.run() -> void", "signature": "AnotherTest.run() -> void", "kindLabel": "pure method" },
+    { "startLine": 12, "startColumn": 9, "endLine": 12, "endColumn": 11, "text": "YetAnotherTest.run() -> void", "signature": "YetAnotherTest.run() -> void", "kindLabel": "pure method" }
   ],
   "inlayHints": [
     { "line": 5, "column": 9, "label": "▲", "detail": "run\n\n- ▲ overrides `Test.run() -> void`", "code": "definition-virtuality" },
@@ -26,11 +26,11 @@
   "semanticTokens": [
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 20, "tokenType": "namespace" },
     { "startLine": 2, "startColumn": 9, "endLine": 2, "endColumn": 15, "tokenType": "namespace" },
-    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 22, "tokenType": "class" },
-    { "startLine": 4, "startColumn": 25, "endLine": 4, "endColumn": 28, "tokenType": "interface" },
+    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 21, "tokenType": "class" },
+    { "startLine": 4, "startColumn": 24, "endLine": 4, "endColumn": 27, "tokenType": "interface" },
     { "startLine": 5, "startColumn": 9, "endLine": 5, "endColumn": 11, "tokenType": "method" },
-    { "startLine": 11, "startColumn": 11, "endLine": 11, "endColumn": 26, "tokenType": "class" },
-    { "startLine": 11, "startColumn": 37, "endLine": 11, "endColumn": 40, "tokenType": "interface" },
+    { "startLine": 11, "startColumn": 11, "endLine": 11, "endColumn": 24, "tokenType": "class" },
+    { "startLine": 11, "startColumn": 35, "endLine": 11, "endColumn": 38, "tokenType": "interface" },
     { "startLine": 12, "startColumn": 9, "endLine": 12, "endColumn": 11, "tokenType": "method" }
   ]
 }

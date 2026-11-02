@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-class POINT(x: int, y: int) is
+class Point(x: int, y: int) is
     // capture the primary parameters as renamed private fields
     _x
     _y
@@ -11,11 +11,11 @@ class POINT(x: int, y: int) is
     si
 si
 
-class BOX(width: int public, height: int field, _depth: int) is
+class Box(width: int public, height: int field, _depth: int) is
     // width is a public read-write property
     // height is a plain field
     // _depth is a private field
 si
 
-POINT(10, 20).show()
+Point(10, 20).show()
 // <<<

@@ -5,20 +5,20 @@ class Animal abstract is
     init() is si
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is super.init(); si
     purr() -> string => "purr"
 si
 
-class CARRIER(occupant: Animal) is
+class Carrier(occupant: Animal) is
     swap(a: Animal) is
         occupant = a
     si
 si
 
 // >>>
-describe(carrier: CARRIER, other: Animal) is
-    if isa CAT(carrier.occupant) then
+describe(carrier: Carrier, other: Animal) is
+    if isa Cat(carrier.occupant) then
         carrier.swap(other)
         // the narrowing ends at the call: swap() can change
         // occupant, so it reads as an Animal from here on
@@ -26,5 +26,5 @@ describe(carrier: CARRIER, other: Animal) is
     fi
 si
 
-describe(CARRIER(CAT()), CAT())
+describe(Carrier(Cat()), Cat())
 // <<<

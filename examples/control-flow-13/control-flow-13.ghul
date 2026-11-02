@@ -2,14 +2,14 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(name: string): Animal is
+class Cat(name: string): Animal is
     purr() -> string => "{name} purrs"
 si
 
-let a: Animal = CAT("whiskers")
+let a: Animal = Cat("whiskers")
 // >>>
-if let c: CAT = a then
-    // c has type CAT here; it is not in scope in
+if let c: Cat = a then
+    // c has type Cat here; it is not in scope in
     // the else branch, or after the fi
     write_line(c.purr())
 else

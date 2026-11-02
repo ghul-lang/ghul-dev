@@ -1,6 +1,6 @@
 use IO.Std.write_line
 
-class COUNTDOWN is
+class Countdown is
     _n: int
     init(n: int) is _n = n; si
 
@@ -14,7 +14,7 @@ class COUNTDOWN is
     si
 si
 
-let c = COUNTDOWN(3)
+let c = Countdown(3)
 // >>>
 while let n = c.next() do
     write_line(n)

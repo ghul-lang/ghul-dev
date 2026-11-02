@@ -2,8 +2,8 @@
   "name": "generics-7",
   "snippet": false,
   "wasm": true,
-  "code": "trait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass CAT(name: string): Greetable\ngreet(CAT(\"whiskers\"))",
-  "fullSource": "use IO.Std.write_line\n\ntrait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass CAT(name: string): Greetable\n\ngreet(CAT(\"whiskers\"))\n",
+  "code": "trait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass Cat(name: string): Greetable\ngreet(Cat(\"whiskers\"))",
+  "fullSource": "use IO.Std.write_line\n\ntrait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass Cat(name: string): Greetable\n\ngreet(Cat(\"whiskers\"))\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [10],
@@ -11,9 +11,9 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 15, "text": "trait Greetable", "signature": "trait Greetable", "kindLabel": "trait" },
-    { "startLine": 10, "startColumn": 7, "endLine": 10, "endColumn": 9, "text": "class CAT(name: string)", "signature": "class CAT(name: string)", "kindLabel": "class" },
-    { "startLine": 10, "startColumn": 11, "endLine": 10, "endColumn": 14, "text": "CAT.name: string", "signature": "CAT.name: string", "kindLabel": "pure instance property" },
-    { "startLine": 10, "startColumn": 7, "endLine": 10, "endColumn": 22, "text": "CAT.init(name: string)", "signature": "CAT.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 10, "startColumn": 7, "endLine": 10, "endColumn": 9, "text": "class Cat(name: string)", "signature": "class Cat(name: string)", "kindLabel": "class" },
+    { "startLine": 10, "startColumn": 11, "endLine": 10, "endColumn": 14, "text": "Cat.name: string", "signature": "Cat.name: string", "kindLabel": "pure instance property" },
+    { "startLine": 10, "startColumn": 7, "endLine": 10, "endColumn": 22, "text": "Cat.init(name: string)", "signature": "Cat.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 10, "startColumn": 11, "endLine": 10, "endColumn": 22, "text": "$$value: string", "signature": "$$value: string", "kindLabel": "local argument" },
     { "startLine": 10, "startColumn": 26, "endLine": 10, "endColumn": 34, "text": "trait Greetable", "signature": "trait Greetable", "kindLabel": "trait" },
     { "startLine": 10, "startColumn": 17, "endLine": 10, "endColumn": 22, "text": "class string", "signature": "class string", "kindLabel": "class" },
@@ -24,15 +24,15 @@
     { "startLine": 6, "startColumn": 21, "endLine": 6, "endColumn": 21, "text": "x: T", "signature": "x: T", "kindLabel": "local argument" },
     { "startLine": 6, "startColumn": 10, "endLine": 6, "endColumn": 18, "text": "trait Greetable", "signature": "trait Greetable", "kindLabel": "trait" },
     { "startLine": 6, "startColumn": 24, "endLine": 6, "endColumn": 24, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 5, "text": "greet[CAT](x: CAT) -> void", "signature": "greet[CAT](x: CAT) -> void", "kindLabel": "pure global function" },
-    { "startLine": 11, "startColumn": 7, "endLine": 11, "endColumn": 9, "text": "CAT.init(name: string)", "signature": "CAT.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 5, "text": "greet[Cat](x: Cat) -> void", "signature": "greet[Cat](x: Cat) -> void", "kindLabel": "pure global function" },
+    { "startLine": 11, "startColumn": 7, "endLine": 11, "endColumn": 9, "text": "Cat.init(name: string)", "signature": "Cat.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 7, "startColumn": 25, "endLine": 7, "endColumn": 25, "text": "x: T", "signature": "x: T", "kindLabel": "local argument" },
     { "startLine": 7, "startColumn": 27, "endLine": 7, "endColumn": 30, "text": "Greetable.name: string", "signature": "Greetable.name: string", "kindLabel": "pure instance property" }
   ],
   "inlayHints": [
-    { "line": 2, "column": 5, "label": "◆▼", "detail": "name\n\n- get ◆ abstract\n- get ▼ overridden by `CAT.name: string`", "code": "definition-virtuality-get" },
-    { "line": 1, "column": 7, "label": "▼", "detail": "Greetable\n\n- ▼ implemented by `CAT`", "code": "definition-virtuality" },
+    { "line": 2, "column": 5, "label": "◆▼", "detail": "name\n\n- get ◆ abstract\n- get ▼ overridden by `Cat.name: string`", "code": "definition-virtuality-get" },
+    { "line": 1, "column": 7, "label": "▼", "detail": "Greetable\n\n- ▼ implemented by `Cat`", "code": "definition-virtuality" },
     { "line": 10, "column": 11, "label": "▲", "detail": "name\n\n- get ▲ overrides `Greetable.name: string`", "code": "definition-virtuality-get" }
   ],
   "semanticTokens": [

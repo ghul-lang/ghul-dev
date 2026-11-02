@@ -3,7 +3,7 @@
   "snippet": false,
   "wasm": true,
   "code": "if let line = reader.read_line() then\n    // reader.read_line() yields string?\n    // line is string here\n    write_line(\"read: {line}\")\nelse\n    write_line(\"end of input\")\nfi",
-  "fullSource": "use IO.Std.write_line\nuse Collections\n\nclass STRING_READER is\n    _lines: List[string]\n    _index: int\n\n    init(lines: List[string]) is\n        _lines = lines\n    si\n\n    read_line() -> string? is\n        if _index < _lines.count then\n            let line = _lines[_index]\n            _index = _index + 1\n            return line\n        fi\n\n        return null\n    si\nsi\n\nlet reader = STRING_READER([\"the only line\"])\nif let line = reader.read_line() then\n    // reader.read_line() yields string?\n    // line is string here\n    write_line(\"read: {line}\")\nelse\n    write_line(\"end of input\")\nfi\n",
+  "fullSource": "use IO.Std.write_line\nuse Collections\n\nclass StringReader is\n    _lines: List[string]\n    _index: int\n\n    init(lines: List[string]) is\n        _lines = lines\n    si\n\n    read_line() -> string? is\n        if _index < _lines.count then\n            let line = _lines[_index]\n            _index = _index + 1\n            return line\n        fi\n\n        return null\n    si\nsi\n\nlet reader = StringReader([\"the only line\"])\nif let line = reader.read_line() then\n    // reader.read_line() yields string?\n    // line is string here\n    write_line(\"read: {line}\")\nelse\n    write_line(\"end of input\")\nfi\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -11,8 +11,8 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 11, "text": "line: string?", "signature": "line: string?", "kindLabel": "local value" },
-    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 20, "text": "reader: STRING_READER", "signature": "reader: STRING_READER", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 30, "text": "STRING_READER.read_line() -> string?", "signature": "STRING_READER.read_line() -> string?", "kindLabel": "method" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 20, "text": "reader: StringReader", "signature": "reader: StringReader", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 30, "text": "StringReader.read_line() -> string?", "signature": "StringReader.read_line() -> string?", "kindLabel": "method" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 4, "startColumn": 24, "endLine": 4, "endColumn": 27, "text": "line: string?\n    ► string", "signature": "line: string?\n    ► string", "kindLabel": "local value" },
     { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" }

@@ -1,7 +1,7 @@
 // expect: error
-class BOX[T](value: T)
+class Box[T](value: T)
 
 // >>>
 // a generic type named without its type arguments is an error
-let boxes = Collections.LIST[BOX]()
+let boxes = Collections.LIST[Box]()
 // <<<

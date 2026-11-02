@@ -3,7 +3,7 @@
   "snippet": false,
   "wasm": true,
   "code": "while let n = c.next() do\n    write_line(n)\nod",
-  "fullSource": "use IO.Std.write_line\n\nclass COUNTDOWN is\n    _n: int\n    init(n: int) is _n = n; si\n\n    next() -> int? is\n        if _n <= 0 then\n            return null\n        fi\n        let v = _n\n        _n = _n - 1\n        return v\n    si\nsi\n\nlet c = COUNTDOWN(3)\nwhile let n = c.next() do\n    write_line(n)\nod\n",
+  "fullSource": "use IO.Std.write_line\n\nclass Countdown is\n    _n: int\n    init(n: int) is _n = n; si\n\n    next() -> int? is\n        if _n <= 0 then\n            return null\n        fi\n        let v = _n\n        _n = _n - 1\n        return v\n    si\nsi\n\nlet c = Countdown(3)\nwhile let n = c.next() do\n    write_line(n)\nod\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -11,8 +11,8 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 11, "text": "n: int", "signature": "n: int", "kindLabel": "local value" },
-    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 15, "text": "c: COUNTDOWN", "signature": "c: COUNTDOWN", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 20, "text": "COUNTDOWN.next() -> int?", "signature": "COUNTDOWN.next() -> int?", "kindLabel": "method" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 15, "text": "c: Countdown", "signature": "c: Countdown", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 20, "text": "Countdown.next() -> int?", "signature": "Countdown.next() -> int?", "kindLabel": "method" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 14, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
     { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 16, "text": "n: int", "signature": "n: int", "kindLabel": "local value" }
   ],

@@ -3,7 +3,7 @@
   "snippet": false,
   "wasm": true,
   "code": "let i mut = 0\nlet j = 10\nlet s mut = \"Hello\"\n\ni = i + j\ns = \"{s} World!\"\n\nthing.property = i + j\n\nwrite_line(\"i = {i}, s = {s}, thing.property = {thing.property}\")",
-  "fullSource": "use IO.Std.write_line\n\nclass BOX is\n    property: int public\n\n    init() is si\nsi\n\nlet thing = BOX()\nlet i mut = 0\nlet j = 10\nlet s mut = \"Hello\"\n\ni = i + j\ns = \"{s} World!\"\n\nthing.property = i + j\n\nwrite_line(\"i = {i}, s = {s}, thing.property = {thing.property}\")\n",
+  "fullSource": "use IO.Std.write_line\n\nclass Box is\n    property: int public\n\n    init() is si\nsi\n\nlet thing = Box()\nlet i mut = 0\nlet j = 10\nlet s mut = \"Hello\"\n\ni = i + j\ns = \"{s} World!\"\n\nthing.property = i + j\n\nwrite_line(\"i = {i}, s = {s}, thing.property = {thing.property}\")\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -22,13 +22,13 @@
     { "startLine": 8, "startColumn": 18, "endLine": 8, "endColumn": 18, "text": "i: int", "signature": "i: int", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 22, "endLine": 8, "endColumn": 22, "text": "j: int", "signature": "j: int", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 20, "text": "int.+(a: int, b: int) -> int", "signature": "int.+(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.add" },
-    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 5, "text": "thing: BOX", "signature": "thing: BOX", "kindLabel": "global variable" },
-    { "startLine": 8, "startColumn": 7, "endLine": 8, "endColumn": 14, "text": "BOX.property: int", "signature": "BOX.property: int", "kindLabel": "pure instance property" },
+    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 5, "text": "thing: Box", "signature": "thing: Box", "kindLabel": "global variable" },
+    { "startLine": 8, "startColumn": 7, "endLine": 8, "endColumn": 14, "text": "Box.property: int", "signature": "Box.property: int", "kindLabel": "pure instance property" },
     { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 10, "startColumn": 18, "endLine": 10, "endColumn": 18, "text": "i: int", "signature": "i: int", "kindLabel": "global variable" },
     { "startLine": 10, "startColumn": 27, "endLine": 10, "endColumn": 27, "text": "s: string", "signature": "s: string", "kindLabel": "global variable" },
-    { "startLine": 10, "startColumn": 49, "endLine": 10, "endColumn": 53, "text": "thing: BOX", "signature": "thing: BOX", "kindLabel": "global variable" },
-    { "startLine": 10, "startColumn": 55, "endLine": 10, "endColumn": 62, "text": "BOX.property: int", "signature": "BOX.property: int", "kindLabel": "pure instance property" }
+    { "startLine": 10, "startColumn": 49, "endLine": 10, "endColumn": 53, "text": "thing: Box", "signature": "thing: Box", "kindLabel": "global variable" },
+    { "startLine": 10, "startColumn": 55, "endLine": 10, "endColumn": 62, "text": "Box.property: int", "signature": "Box.property: int", "kindLabel": "pure instance property" }
   ],
   "inlayHints": [],
   "semanticTokens": [

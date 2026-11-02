@@ -3,7 +3,7 @@ use IO.Std.write_line
 // >>>
 // no declared relationship to T? or Ghul.Maybe[T] - ghūl looks for
 // has_value and value structurally
-struct PERCENTAGE is
+struct Percentage is
     has_value: bool
     value: double
 
@@ -18,8 +18,8 @@ struct PERCENTAGE is
     si
 si
 
-let full = PERCENTAGE(87.5d)
-let empty = PERCENTAGE()
+let full = Percentage(87.5d)
+let empty = Percentage()
 
 if full? then
     write_line("full: {full!}%")

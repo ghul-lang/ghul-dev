@@ -8,14 +8,14 @@ si
 namespace UseExample is
     use Example
 
-    class ANOTHER_TEST: Test is
+    class AnotherTest: Test is
         run() is si
     si
 si
 
 namespace UseExample is
     // Test still needs qualification here
-    class YET_ANOTHER_TEST: Example.Test is
+    class YetAnotherTest: Example.Test is
         run() is si
     si
 si

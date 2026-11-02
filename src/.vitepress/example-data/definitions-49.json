@@ -2,8 +2,8 @@
   "name": "definitions-49",
   "snippet": false,
   "wasm": false,
-  "code": "class LABEL is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi",
-  "fullSource": "// expect: warning\nclass LABEL is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi\n",
+  "code": "class Label is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi",
+  "fullSource": "// expect: warning\nclass Label is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -12,18 +12,18 @@
     { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 9, "severity": "warning", "message": "[field-definite-assignment] text is not assigned on every path out of this constructor [text declared here: definitions-49.ghul: 4,5..4,9]" }
   ],
   "hovers": [
-    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 11, "text": "class LABEL", "signature": "class LABEL", "kindLabel": "class" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 8, "text": "LABEL.text: string", "signature": "LABEL.text: string", "kindLabel": "pure instance property" },
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 11, "text": "class Label", "signature": "class Label", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 8, "text": "Label.text: string", "signature": "Label.text: string", "kindLabel": "pure instance property" },
     { "startLine": 2, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "$$value: string", "signature": "$$value: string", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 11, "endLine": 2, "endColumn": 16, "text": "class string", "signature": "class string", "kindLabel": "class" },
-    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "LABEL.size: int", "signature": "LABEL.size: int", "kindLabel": "pure instance property" },
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "Label.size: int", "signature": "Label.size: int", "kindLabel": "pure instance property" },
     { "startLine": 3, "startColumn": 5, "endLine": 5, "endColumn": 8, "text": "$$value: int", "signature": "$$value: int", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 13, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
-    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 8, "text": "LABEL.init(size: int)", "signature": "LABEL.init(size: int)", "kindLabel": "constructor" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 8, "text": "Label.init(size: int)", "signature": "Label.init(size: int)", "kindLabel": "constructor" },
     { "startLine": 5, "startColumn": 10, "endLine": 5, "endColumn": 13, "text": "size: int", "signature": "size: int", "kindLabel": "local argument" },
     { "startLine": 5, "startColumn": 16, "endLine": 5, "endColumn": 18, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 6, "startColumn": 21, "endLine": 6, "endColumn": 24, "text": "size: int", "signature": "size: int", "kindLabel": "local argument" },
-    { "startLine": 6, "startColumn": 14, "endLine": 6, "endColumn": 17, "text": "LABEL.size: int", "signature": "LABEL.size: int", "kindLabel": "pure instance property" }
+    { "startLine": 6, "startColumn": 14, "endLine": 6, "endColumn": 17, "text": "Label.size: int", "signature": "Label.size: int", "kindLabel": "pure instance property" }
   ],
   "inlayHints": [],
   "semanticTokens": [

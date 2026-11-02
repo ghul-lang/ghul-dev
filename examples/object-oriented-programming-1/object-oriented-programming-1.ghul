@@ -2,12 +2,12 @@ use IO.Std.write_line
 use Ghul.Pipes
 use Collections
 
-let int_calculator = CALCULATOR(
+let int_calculator = Calculator(
     [
-        ("+", INTEGER_ADDITION()),
-        ("-", INTEGER_SUBTRACTION()),
-        ("*", INTEGER_MULTIPLICATION()),
-        ("/", INTEGER_DIVISION())
+        ("+", IntegerAddition()),
+        ("-", IntegerSubtraction()),
+        ("*", IntegerMultiplication()),
+        ("/", IntegerDivision())
     ]
 )
 
@@ -28,10 +28,10 @@ let from_memory =
     int_calculator.calculate_from_memory("-", 3)
 write_line("1 + 2 - 3 = {from_memory}")
 
-let string_calculator = CALCULATOR(
+let string_calculator = Calculator(
     [
-        ("+", STRING_CONCATENATION()),
-        ("-", STRING_SUBTRACTION())
+        ("+", StringConcatenation()),
+        ("-", StringSubtraction())
     ]
 )
 
@@ -53,7 +53,7 @@ trait Operation[T] is
     execute(left: T, right: T) -> T
 si
 
-class CALCULATOR[T] is
+class Calculator[T] is
     _operations: MAP[string, Operation[T]]
 
     memory: T
@@ -100,19 +100,19 @@ class CALCULATOR[T] is
     si
 si
 
-class INTEGER_ADDITION(): Operation[int] is
+class IntegerAddition(): Operation[int] is
     execute(left: int, right: int) -> int => left + right
 si
 
-class INTEGER_SUBTRACTION(): Operation[int] is
+class IntegerSubtraction(): Operation[int] is
     execute(left: int, right: int) -> int => left - right
 si
 
-class INTEGER_MULTIPLICATION(): Operation[int] is
+class IntegerMultiplication(): Operation[int] is
     execute(left: int, right: int) -> int => left * right
 si
 
-class INTEGER_DIVISION(): Operation[int] is
+class IntegerDivision(): Operation[int] is
     execute(left: int, right: int) -> int =>
         if right == 0 then
             throw System.InvalidOperationException(
@@ -123,12 +123,12 @@ class INTEGER_DIVISION(): Operation[int] is
         fi
 si
 
-class STRING_CONCATENATION(): Operation[string] is
+class StringConcatenation(): Operation[string] is
     execute(left: string, right: string) -> string =>
         "{left}{right}"
 si
 
-class STRING_SUBTRACTION(): Operation[string] is
+class StringSubtraction(): Operation[string] is
     execute(left: string, right: string) -> string =>
         left.replace(right, "")
 si

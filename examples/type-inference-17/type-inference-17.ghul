@@ -1,4 +1,4 @@
-class BOX[T] is
+class Box[T] is
     _value: T
 
     init() is
@@ -13,11 +13,11 @@ class BOX[T] is
 si
 
 // >>>
-// m is BOX[?] here; the type argument is not
+// m is Box[?] here; the type argument is not
 // yet known
-let m = BOX()
+let m = Box()
 
-// the set call takes an int, so m is BOX[int]
+// the set call takes an int, so m is Box[int]
 m.set(42)
 
 let x = m.get()

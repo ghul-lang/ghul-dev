@@ -2,14 +2,14 @@
   "name": "generics-14",
   "snippet": false,
   "wasm": false,
-  "code": "// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[BOX]()",
-  "fullSource": "// expect: error\nclass BOX[T](value: T)\n\n// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[BOX]()\n",
+  "code": "// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[Box]()",
+  "fullSource": "// expect: error\nclass Box[T](value: T)\n\n// a generic type named without its type arguments is an error\nlet boxes = Collections.LIST[Box]()\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 33, "severity": "error", "message": "type BOX requires 1 type argument" }
+    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 33, "severity": "error", "message": "type Box requires 1 type argument" }
   ],
   "hovers": [
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "text": "boxes: Collections.LIST[!!!]", "signature": "boxes: Collections.LIST[!!!]", "kindLabel": "global variable" },

@@ -1,9 +1,9 @@
 use IO.Std.write_line
 
-class ORDER(customer: string?)
+class Order(customer: string?)
 
 // >>>
-describe(order: ORDER) is
+describe(order: Order) is
     if order.customer? then
         // a presence test narrows the path itself:
         // within this branch order.customer is the
@@ -13,5 +13,5 @@ describe(order: ORDER) is
     fi
 si
 
-describe(ORDER("alice"))
+describe(Order("alice"))
 // <<<

@@ -1,5 +1,5 @@
 // >>>
-class THING is
+class Thing is
     do_something_public() is
     si
 

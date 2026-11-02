@@ -4,17 +4,17 @@ class Animal abstract is
     name() -> string
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is si
     name() -> string => "cat"
     purr() -> string => "purr"
 si
 
-any_animal() -> Animal => CAT()
+any_animal() -> Animal => Cat()
 
 let pet mut = any_animal()
 // >>>
-pet = CAT()
-// assigning a CAT narrows pet to CAT, so purr() is in reach
+pet = Cat()
+// assigning a Cat narrows pet to Cat, so purr() is in reach
 write_line(pet.purr())
 // <<<

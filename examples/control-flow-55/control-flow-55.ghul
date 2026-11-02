@@ -1,6 +1,6 @@
 use IO.Std.write_line
 
-class CAT is
+class Cat is
     name: string
     is_friendly: bool
     init(name: string, is_friendly: bool) is
@@ -9,10 +9,10 @@ class CAT is
     si
 si
 
-find() -> CAT? => CAT("Tom", true)
+find() -> Cat? => Cat("Tom", true)
 
 // >>>
-if let c: CAT = find() /\ c.is_friendly then
+if let c: Cat = find() /\ c.is_friendly then
     write_line("friendly cat: {c.name}")
 fi
 // <<<

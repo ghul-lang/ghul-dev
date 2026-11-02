@@ -1,5 +1,5 @@
 // >>>
-class POINT(x: int, y: int) is
+class Point(x: int, y: int) is
 si
 // <<<
 

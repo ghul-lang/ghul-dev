@@ -2,18 +2,18 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(): Animal is
+class Cat(): Animal is
     purr() -> string => "purr"
 si
 
-class CARRIER(occupant: Animal)
+class Carrier(occupant: Animal)
 
 // >>>
-describe(carrier: CARRIER) is
-    if let cat: CAT = carrier.occupant then
+describe(carrier: Carrier) is
+    if let cat: Cat = carrier.occupant then
         write_line(cat.purr())
     fi
 si
 
-describe(CARRIER(CAT()))
+describe(Carrier(Cat()))
 // <<<

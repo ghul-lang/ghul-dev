@@ -1,5 +1,5 @@
 // >>>
-class PUBLIC is
+class Public is
 si
 
 public_function() -> int => 0

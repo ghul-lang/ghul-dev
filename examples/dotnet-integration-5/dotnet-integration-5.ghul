@@ -3,18 +3,18 @@ use Collections.LIST
 use Ghul.Pipes
 
 // >>>
-class VERSION(major: int, minor: int): Ghul.Comparable[VERSION] is
-    <>(other: VERSION) -> int =>
+class Version(major: int, minor: int): Ghul.Comparable[Version] is
+    <>(other: Version) -> int =>
         if major != other.major then major - other.major else minor - other.minor fi
 
     to_string() -> string => "{major}.{minor}"
 si
 
-let versions = LIST[VERSION]()
-versions.add(VERSION(2, 1))
-versions.add(VERSION(1, 9))
+let versions = LIST[Version]()
+versions.add(Version(2, 1))
+versions.add(Version(1, 9))
 versions.sort()
 
 write_line("sorted: {versions |> map(v => v.to_string()) |> join(", ")}")
-write_line("1.0 < 1.1: {VERSION(1, 0) < VERSION(1, 1)}")
+write_line("1.0 < 1.1: {Version(1, 0) < Version(1, 1)}")
 // <<<

@@ -1,1 +1,1 @@
-test.ghul: 13,7..13,14: warn: [equality-without-hash] NO_HASH defines =~ but no get_hash_code, so .NET comparisons will not use the operator
+test.ghul: 13,7..13,13: warn: [equality-without-hash] NoHash defines =~ but no get_hash_code, so .NET comparisons will not use the operator

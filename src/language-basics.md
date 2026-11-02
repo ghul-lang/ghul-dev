@@ -6,7 +6,7 @@ ghūl syntax is inspired by a number of non-brace languages, including ALGOL 68 
 
 ### identifiers and keywords
 
-Identifiers in ghūl follow the convention of `snake_case` for variables, functions, methods, and properties, `PascalCase` for namespaces, traits, abstract classes, unions, and enums, and `UPPER_SNAKE_CASE` for concrete classes, structs, variants, and enum members. ghūl keywords are lowercase.
+Identifiers in ghūl follow the convention of `snake_case` for variables, functions, methods, and properties, `PascalCase` for namespaces, traits, abstract classes, exception classes, unions, and enums, and `UPPER_SNAKE_CASE` for union variants and enum members. A concrete class or struct can be either `PascalCase` or `UPPER_SNAKE_CASE`: the standard library writes its own in `UPPER_SNAKE_CASE` (`LIST`, `MAP`, `STRING_BUILDER`), and the examples here write theirs in `PascalCase` (`Order`, `Point`). ghūl keywords are lowercase.
 
 An identifier can be written in any script. A letter starts one, and a letter, a digit, a combining mark or a connecting punctuation mark continues one. The compiler reports a format character inside an identifier - a zero-width joiner, a bidirectional control - as an error, because such a character renders as nothing and a name that contains one reads as a name it is not. The compiler accepts characters from the basic multilingual plane only: a character above that plane is written as a surrogate pair, and the compiler reads a surrogate pair as two characters.
 

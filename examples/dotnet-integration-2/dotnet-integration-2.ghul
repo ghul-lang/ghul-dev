@@ -4,7 +4,7 @@ use Microsoft.EntityFrameworkCore.DbContextOptions
 
 // >>>
 // @IL.name maps these onto the PascalCase names EF Core's conventions expect.
-class PRODUCT is
+class Product is
     @IL.name("Id")
     id: int public
 
@@ -14,16 +14,16 @@ class PRODUCT is
     init() is si
 si
 
-class STORE_CONTEXT: DbContext is
+class StoreContext: DbContext is
     @IL.name("Products")
-    products: DbSet[PRODUCT]
+    products: DbSet[Product]
 
     init(options: DbContextOptions) is
         super.init(options)
     si
 si
 
-add_product(context: STORE_CONTEXT, product: PRODUCT) -> Tasks.TASK is
+add_product(context: StoreContext, product: Product) -> Tasks.TASK is
     context.products.add(product)
 
     await context.save_changes_async(System.Threading.CancellationToken.none)

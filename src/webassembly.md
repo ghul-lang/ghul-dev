@@ -88,7 +88,7 @@ An exception nothing catches ends the program with `Unhandled exception.`, its t
 
 The program above is ordinary ghūl, and the .NET target builds it into an ordinary .NET executable, with the .NET SDK and a `.ghulproj`{:text} project rather than `ghul`{:sh}. WebAssembly has no .NET base class library. One library compiled into the module from source takes its place: [ghul-runtime](https://github.com/ghul-lang/ghul-runtime), which gives the built-in types their members, declares the collections, and supplies the pipes and the rest of `Ghul`{:text}. A program that calls .NET APIs directly builds only for .NET, unless it keeps those calls to the .NET build.
 
-Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
+Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behavior by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
 
 ## code for one target
 

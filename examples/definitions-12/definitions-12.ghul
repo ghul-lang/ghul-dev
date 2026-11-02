@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-struct COUNTER is
+struct Counter is
     _n: int field
 
     init(n: int) is _n = n; si
@@ -11,7 +11,7 @@ struct COUNTER is
     value: int => _n
 si
 
-let original = COUNTER(0)
+let original = Counter(0)
 let copy mut = original
 
 copy.bump()

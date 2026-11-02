@@ -12,7 +12,7 @@ The [online REPL](https://ghul.dev/repl/) runs ghūl a submission at a time inst
 
 The [ghūl scratchpad](https://github.com/ghul-lang/ghul-scratchpad) is a minimal one-file project: open it in a GitHub Codespace and it arrives with the .NET SDK, the compiler and the language extension ready to go. Paste any example from this site into `main.ghul`{:text} and `dotnet run`{:sh}. This needs only a GitHub account.
 
-The [examples repository](https://github.com/ghul-lang/ghul-examples) works the same way, with fuller, runnable examples organised by topic.
+The [examples repository](https://github.com/ghul-lang/ghul-examples) works the same way, with fuller, runnable examples organized by topic.
 
 Both repositories are configured as [dev containers](https://containers.dev), so the same ready-made environment also opens in VS Code with the Dev Containers extension, or in any other tool that supports them.
 

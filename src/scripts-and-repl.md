@@ -152,7 +152,7 @@ Tab completes the name being typed from everything the session has defined; wher
 
 Ctrl-C while a submission is running interrupts it and brings the prompt back with the session intact. At the prompt, Ctrl-C sets aside what you have typed: it stays on the screen marked `^C`{:text}, a new prompt with the same number takes its place, and Up brings it back from history. Ctrl-D in an empty submission leaves.
 
-What you type is coloured as you type it, in the same colours as the examples on this site, and so is the line an error points at. `ghul repl --theme dark`{:sh}, `--theme light`{:sh} or `--theme none`{:sh} chooses the colours, and setting `NO_COLOR`{:text} turns them off.
+What you type is colored as you type it, in the same colors as the examples on this site, and so is the line an error points at. `ghul repl --theme dark`{:sh}, `--theme light`{:sh} or `--theme none`{:sh} chooses the colors, and setting `NO_COLOR`{:text} turns them off.
 
 ### commands
 

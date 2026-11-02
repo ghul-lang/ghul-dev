@@ -2,8 +2,8 @@
   "name": "control-flow-11",
   "snippet": false,
   "wasm": true,
-  "code": "classify(a: Animal) is\n    if !isa CAT(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-CAT has returned, so a is\n    // narrowed to CAT from here on\n    write_line(a.purr())\nsi\n\nclassify(CAT(\"whiskers\"))\nclassify(DOG())",
-  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nclass DOG(): Animal\n\nclassify(a: Animal) is\n    if !isa CAT(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-CAT has returned, so a is\n    // narrowed to CAT from here on\n    write_line(a.purr())\nsi\n\nclassify(CAT(\"whiskers\"))\nclassify(DOG())\n",
+  "code": "classify(a: Animal) is\n    if !isa Cat(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-Cat has returned, so a is\n    // narrowed to Cat from here on\n    write_line(a.purr())\nsi\n\nclassify(Cat(\"whiskers\"))\nclassify(Dog())",
+  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass Cat(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nclass Dog(): Animal\n\nclassify(a: Animal) is\n    if !isa Cat(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-Cat has returned, so a is\n    // narrowed to Cat from here on\n    write_line(a.purr())\nsi\n\nclassify(Cat(\"whiskers\"))\nclassify(Dog())\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -13,20 +13,20 @@
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 8, "text": "classify(a: Animal) -> void", "signature": "classify(a: Animal) -> void", "kindLabel": "pure global function" },
     { "startLine": 1, "startColumn": 10, "endLine": 1, "endColumn": 10, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 13, "endLine": 1, "endColumn": 18, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
-    { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 15, "text": "class CAT(name: string)", "signature": "class CAT(name: string)", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 13, "endLine": 2, "endColumn": 15, "text": "class Cat(name: string)", "signature": "class Cat(name: string)", "kindLabel": "class" },
     { "startLine": 2, "startColumn": 17, "endLine": 2, "endColumn": 17, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "local argument" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 8, "text": "!(a: bool) -> bool", "signature": "!(a: bool) -> bool", "kindLabel": "innate function bool.not" },
     { "startLine": 12, "startColumn": 1, "endLine": 12, "endColumn": 8, "text": "classify(a: Animal) -> void", "signature": "classify(a: Animal) -> void", "kindLabel": "pure global function" },
-    { "startLine": 12, "startColumn": 10, "endLine": 12, "endColumn": 12, "text": "CAT.init(name: string)", "signature": "CAT.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 12, "startColumn": 10, "endLine": 12, "endColumn": 12, "text": "Cat.init(name: string)", "signature": "Cat.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 13, "startColumn": 1, "endLine": 13, "endColumn": 8, "text": "classify(a: Animal) -> void", "signature": "classify(a: Animal) -> void", "kindLabel": "pure global function" },
-    { "startLine": 13, "startColumn": 10, "endLine": 13, "endColumn": 12, "text": "DOG.init()", "signature": "DOG.init()", "kindLabel": "constructor" },
+    { "startLine": 13, "startColumn": 10, "endLine": 13, "endColumn": 12, "text": "Dog.init()", "signature": "Dog.init()", "kindLabel": "constructor" },
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 18, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 9, "startColumn": 5, "endLine": 9, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 9, "startColumn": 16, "endLine": 9, "endColumn": 16, "text": "a: Animal\n    ► CAT", "signature": "a: Animal\n    ► CAT", "kindLabel": "local argument" },
-    { "startLine": 9, "startColumn": 18, "endLine": 9, "endColumn": 21, "text": "CAT.purr() -> string", "signature": "CAT.purr() -> string", "kindLabel": "pure method" }
+    { "startLine": 9, "startColumn": 16, "endLine": 9, "endColumn": 16, "text": "a: Animal\n    ► Cat", "signature": "a: Animal\n    ► Cat", "kindLabel": "local argument" },
+    { "startLine": 9, "startColumn": 18, "endLine": 9, "endColumn": 21, "text": "Cat.purr() -> string", "signature": "Cat.purr() -> string", "kindLabel": "pure method" }
   ],
   "inlayHints": [
-    { "line": 2, "column": 17, "label": "►", "detail": "► CAT\n> DOG", "code": "narrowing-isa" }
+    { "line": 2, "column": 17, "label": "►", "detail": "► Cat\n> Dog", "code": "narrowing-isa" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 8, "tokenType": "function" },

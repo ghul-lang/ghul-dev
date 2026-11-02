@@ -4,12 +4,12 @@ class Animal abstract is
     init() is si
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is super.init(); si
     purr() -> string => "purr"
 si
 
-class CARRIER(occupant: Animal) is
+class Carrier(occupant: Animal) is
     handled: int
 
     handle() is
@@ -18,8 +18,8 @@ class CARRIER(occupant: Animal) is
 si
 
 // >>>
-describe(carrier: CARRIER) is
-    if isa CAT(carrier.occupant) then
+describe(carrier: Carrier) is
+    if isa Cat(carrier.occupant) then
         carrier.handle()
         // handle() writes only 'handled', so the compiler can
         // see it leaves the narrow on occupant alone
@@ -27,5 +27,5 @@ describe(carrier: CARRIER) is
     fi
 si
 
-describe(CARRIER(CAT()))
+describe(Carrier(Cat()))
 // <<<

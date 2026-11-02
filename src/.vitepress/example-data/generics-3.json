@@ -2,26 +2,26 @@
   "name": "generics-3",
   "snippet": false,
   "wasm": false,
-  "code": "struct HOLD_SOMETHING[T](value: T)",
-  "fullSource": "struct HOLD_SOMETHING[T](value: T)\n\n",
+  "code": "struct HoldSomething[T](value: T)",
+  "fullSource": "struct HoldSomething[T](value: T)\n\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 21, "text": "struct HOLD_SOMETHING[T](value: T)", "signature": "struct HOLD_SOMETHING[T](value: T)", "kindLabel": "struct" },
-    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 23, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 30, "text": "HOLD_SOMETHING[T].value: T", "signature": "HOLD_SOMETHING[T].value: T", "kindLabel": "pure instance property" },
-    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 33, "text": "HOLD_SOMETHING[T].init(value: T)", "signature": "HOLD_SOMETHING[T].init(value: T)", "kindLabel": "constructor" },
-    { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 33, "text": "$$value: T", "signature": "$$value: T", "kindLabel": "local argument" },
-    { "startLine": 1, "startColumn": 33, "endLine": 1, "endColumn": 33, "text": "T", "signature": "T", "kindLabel": "type variable" }
+    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 20, "text": "struct HoldSomething[T](value: T)", "signature": "struct HoldSomething[T](value: T)", "kindLabel": "struct" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 22, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 29, "text": "HoldSomething[T].value: T", "signature": "HoldSomething[T].value: T", "kindLabel": "pure instance property" },
+    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 32, "text": "HoldSomething[T].init(value: T)", "signature": "HoldSomething[T].init(value: T)", "kindLabel": "constructor" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 32, "text": "$$value: T", "signature": "$$value: T", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 32, "endLine": 1, "endColumn": 32, "text": "T", "signature": "T", "kindLabel": "type variable" }
   ],
   "inlayHints": [],
   "semanticTokens": [
-    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 21, "tokenType": "struct" },
-    { "startLine": 1, "startColumn": 23, "endLine": 1, "endColumn": 23, "tokenType": "typeParameter" },
-    { "startLine": 1, "startColumn": 26, "endLine": 1, "endColumn": 30, "tokenType": "property" },
-    { "startLine": 1, "startColumn": 33, "endLine": 1, "endColumn": 33, "tokenType": "typeParameter" }
+    { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 20, "tokenType": "struct" },
+    { "startLine": 1, "startColumn": 22, "endLine": 1, "endColumn": 22, "tokenType": "typeParameter" },
+    { "startLine": 1, "startColumn": 25, "endLine": 1, "endColumn": 29, "tokenType": "property" },
+    { "startLine": 1, "startColumn": 32, "endLine": 1, "endColumn": 32, "tokenType": "typeParameter" }
   ]
 }

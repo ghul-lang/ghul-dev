@@ -3,13 +3,13 @@ class Animal abstract is
     speak() -> string => "animal"
 si
 
-class CAT(): Animal
+class Cat(): Animal
 
-class DOG(): Animal
+class Dog(): Animal
 
 merge[T](a: T, b: T) -> T => a
 // <<<
 
 // >>>
-let a = merge(CAT(), DOG())
+let a = merge(Cat(), Dog())
 // <<<

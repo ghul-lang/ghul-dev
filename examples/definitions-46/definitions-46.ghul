@@ -1,6 +1,6 @@
 use IO.Std.write_line
 // >>>
-class VECTOR is
+class Vector is
     x: int
     y: int
 
@@ -10,9 +10,9 @@ class VECTOR is
     si
 
     // a binary operator as an instance method takes one parameter, the right operand:
-    +(other: VECTOR) -> VECTOR => VECTOR(x + other.x, y + other.y)
+    +(other: Vector) -> Vector => Vector(x + other.x, y + other.y)
 si
 
-let sum = VECTOR(1, 2) + VECTOR(3, 4)
+let sum = Vector(1, 2) + Vector(3, 4)
 write_line("({sum.x}, {sum.y})")
 // <<<

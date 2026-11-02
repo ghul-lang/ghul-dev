@@ -2,16 +2,16 @@
   "name": "expressions-22",
   "snippet": false,
   "wasm": false,
-  "code": "let point = POINT(10, 20)",
-  "fullSource": "class POINT(x: int, y: int)\n\nlet point = POINT(10, 20)\n",
+  "code": "let point = Point(10, 20)",
+  "fullSource": "class Point(x: int, y: int)\n\nlet point = Point(10, 20)\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 9, "text": "point: POINT", "signature": "point: POINT", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 13, "endLine": 1, "endColumn": 17, "text": "POINT.init(x: int, y: int)", "signature": "POINT.init(x: int, y: int)", "kindLabel": "constructor" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 9, "text": "point: Point", "signature": "point: Point", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 13, "endLine": 1, "endColumn": 17, "text": "Point.init(x: int, y: int)", "signature": "Point.init(x: int, y: int)", "kindLabel": "constructor" }
   ],
   "inlayHints": [],
   "semanticTokens": [

@@ -1,5 +1,5 @@
 // >>>
-class COUNTER is
+class Counter is
     count: int
 
     init() is
@@ -14,8 +14,8 @@ si
 
 // >>>
 // calls the parameterless overload of init()
-let c = COUNTER()
+let c = Counter()
 
 // calls init(initial_count: int)
-let d = COUNTER(50)
+let d = Counter(50)
 // <<<

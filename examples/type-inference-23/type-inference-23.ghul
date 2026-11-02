@@ -4,28 +4,28 @@ class Animal abstract is
     init() is si
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is super.init(); si
     purr() -> string => "purr"
 si
 
-class CARRIER(occupant: Animal) is
+class Carrier(occupant: Animal) is
     swap(a: Animal) is
         occupant = a
     si
 si
 
 // >>>
-describe(carrier: CARRIER, other: Animal) is
+describe(carrier: Carrier, other: Animal) is
     // a local holds one value, which no other function can
     // reach - its narrowing survives any call
     let cat = carrier.occupant
 
-    if isa CAT(cat) then
+    if isa Cat(cat) then
         carrier.swap(other)
         write_line(cat.purr())
     fi
 si
 
-describe(CARRIER(CAT()), CAT())
+describe(Carrier(Cat()), Cat())
 // <<<
