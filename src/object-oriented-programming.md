@@ -10,7 +10,7 @@ ghūl is a class-based object-oriented language. Classes and structs hold state 
 
 ## classes and objects
 
-A [class](/definitions.html#classes) defines a reference type: fields and properties for its state, methods for its behavior, and one or more `init` constructors. An object is an instance of a class, created by calling the class like a function, as in `POINT(3, 4)`. `self` refers to the current instance inside a method. A class with no declared superclass extends `object`, and `==` compares objects by reference identity. A class compares by value with `=~` only when it defines `=~` or asks for it with `@equality()`.
+A [class](/definitions.html#classes) defines a reference type: fields and properties for its state, methods for its behavior, and one or more `init` constructors. An object is an instance of a class, created by calling the class like a function, as in `Point(3, 4)`. `self` refers to the current instance inside a method. A class with no declared superclass extends `object`, and `==` compares objects by reference identity. A class compares by value with `=~` only when it defines `=~` or asks for it with `@equality()`.
 
 ## encapsulation
 

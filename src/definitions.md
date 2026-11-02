@@ -351,7 +351,7 @@ Note that `use` only applies within the current `namespace` definition. It does 
 
 ## visibility of symbols
 
-In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. `non-upper-snake-case-name` also covers a concrete class or struct whose name is neither `PascalCase` nor `UPPER_SNAKE_CASE`. A name of more than one letter is `PascalCase` only if it has a lower-case letter, so an all-caps trait such as `TREE` draws `non-pascal-case-name`.
+In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. `non-upper-snake-case-name` also covers a concrete class or struct whose name is neither `PascalCase` nor `UPPER_SNAKE_CASE`. A name of more than one letter is `PascalCase` only if it has a lower-case letter, so the compiler reports `non-pascal-case-name` for an all-caps trait such as `TREE`.
 
 ### global symbols
 
