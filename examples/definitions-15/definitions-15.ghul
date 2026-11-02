@@ -8,17 +8,17 @@ trait Logged is
     si
 si
 
-class PLAIN(): Logged is
+class Plain(): Logged is
     // no override - uses the trait default
 si
 
-class LOUD(): Logged is
+class Loud(): Logged is
     // override the default, while still calling through to it with super
     log(message: string) is
         super.log(message.to_upper())
     si
 si
 
-PLAIN().log("hello")
-LOUD().log("hello")
+Plain().log("hello")
+Loud().log("hello")
 // <<<

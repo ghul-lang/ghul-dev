@@ -2,24 +2,24 @@
   "name": "generics-4",
   "snippet": false,
   "wasm": false,
-  "code": "let holds_int = HOLD_SOMETHING(1234)\nlet holds_string = HOLD_SOMETHING(\"hello\")",
-  "fullSource": "struct HOLD_SOMETHING[T](value: T)\n\nlet holds_int = HOLD_SOMETHING(1234)\nlet holds_string = HOLD_SOMETHING(\"hello\")\n",
+  "code": "let holds_int = HoldSomething(1234)\nlet holds_string = HoldSomething(\"hello\")",
+  "fullSource": "struct HoldSomething[T](value: T)\n\nlet holds_int = HoldSomething(1234)\nlet holds_string = HoldSomething(\"hello\")\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 13, "text": "holds_int: HOLD_SOMETHING[int]", "signature": "holds_int: HOLD_SOMETHING[int]", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 30, "text": "HOLD_SOMETHING[int].init(value: int)", "signature": "HOLD_SOMETHING[int].init(value: int)", "kindLabel": "constructor" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 16, "text": "holds_string: HOLD_SOMETHING[string]", "signature": "holds_string: HOLD_SOMETHING[string]", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 33, "text": "HOLD_SOMETHING[string].init(value: string)", "signature": "HOLD_SOMETHING[string].init(value: string)", "kindLabel": "constructor" }
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 13, "text": "holds_int: HoldSomething[int]", "signature": "holds_int: HoldSomething[int]", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 29, "text": "HoldSomething[int].init(value: int)", "signature": "HoldSomething[int].init(value: int)", "kindLabel": "constructor" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 16, "text": "holds_string: HoldSomething[string]", "signature": "holds_string: HoldSomething[string]", "kindLabel": "global variable" },
+    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 32, "text": "HoldSomething[string].init(value: string)", "signature": "HoldSomething[string].init(value: string)", "kindLabel": "constructor" }
   ],
   "inlayHints": [],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 13, "tokenType": "property" },
-    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 30, "tokenType": "method" },
+    { "startLine": 1, "startColumn": 17, "endLine": 1, "endColumn": 29, "tokenType": "method" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 16, "tokenType": "property" },
-    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 33, "tokenType": "method" }
+    { "startLine": 2, "startColumn": 20, "endLine": 2, "endColumn": 32, "tokenType": "method" }
   ]
 }

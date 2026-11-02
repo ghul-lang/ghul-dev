@@ -2,15 +2,15 @@
   "name": "definitions-8",
   "snippet": false,
   "wasm": false,
-  "code": "class THING is\n    // class body\nsi",
-  "fullSource": "class THING is\n    // class body\nsi\n\n",
+  "code": "class Thing is\n    // class body\nsi",
+  "fullSource": "class Thing is\n    // class body\nsi\n\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 11, "text": "class THING", "signature": "class THING", "kindLabel": "class" }
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 11, "text": "class Thing", "signature": "class Thing", "kindLabel": "class" }
   ],
   "inlayHints": [],
   "semanticTokens": [

@@ -42,15 +42,15 @@ them is an error:
 
 An open generic is a generic type before any type argument is supplied.
 Only reflection can hold one, so it can only be named as the operand of a
-`typeof`. `BOX[_]` names the open generic, with one `_` for each type
+`typeof`. `Box[_]` names the open generic, with one `_` for each type
 argument the type takes, and it is the type `get_generic_type_definition()`
-returns for any `BOX[T]`:
+returns for any `Box[T]`:
 
 <GhulExample name="generics-13" />
 
-A name can be declared at more than one generic arity, `BOX` and `BOX[T]`,
-in which case a bare `BOX` in a `typeof` names the one that takes no type
-arguments. `BOX[_]` names the generic one whatever other declarations
+A name can be declared at more than one generic arity, `Box` and `Box[T]`,
+in which case a bare `Box` in a `typeof` names the one that takes no type
+arguments. `Box[_]` names the generic one whatever other declarations
 there are.
 
 ## type-parameter constraints
@@ -81,7 +81,7 @@ Without that `use` the operator is not in scope, and importing one leaves the bu
 
 ### kind constraint
 
-A kind constraint requires the type argument to be a particular kind of type. Four keywords are recognised:
+A kind constraint requires the type argument to be a particular kind of type. Four keywords are recognized:
 
 - `class`: a reference type
 - `struct`: a value type
@@ -107,8 +107,8 @@ The `init` constraint requires the type argument to expose an accessible paramet
 
 Type variance is declared on a *trait*'s type parameters (the CLR permits variance only on interfaces, which is what a ghūl trait compiles to). A `class` or `struct` cannot declare variant type parameters.
 
-- `[T: out]`: covariant. `Producer[CAT]` is assignable to `Producer[ANIMAL]` when `CAT` derives from `ANIMAL`. Only legal when `T` appears in *output* positions (return types).
-- `[T: in]`: contravariant. `Consumer[ANIMAL]` is assignable to `Consumer[CAT]`. Only legal when `T` appears in *input* positions (parameter types).
+- `[T: out]`: covariant. `Producer[Cat]` is assignable to `Producer[Animal]` when `Cat` derives from `Animal`. Only legal when `T` appears in *output* positions (return types).
+- `[T: in]`: contravariant. `Consumer[Animal]` is assignable to `Consumer[Cat]`. Only legal when `T` appears in *input* positions (parameter types).
 
 <GhulExample name="generics-8" />
 

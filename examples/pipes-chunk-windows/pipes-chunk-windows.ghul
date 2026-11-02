@@ -11,7 +11,7 @@ for group in numbers |> chunk(3) do
     write_line("chunk:  {group |> join(", ")}")
 od
 
-// windows: every run of three neighbouring elements, so each
+// windows: every run of three neighboring elements, so each
 // group shares two elements with the one before it. a group is
 // always three long
 for window in numbers |> windows(3) do

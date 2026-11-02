@@ -2,7 +2,7 @@
 use IO.Std.write_line
 
 // >>>
-struct VALUE is
+struct Value is
     public_property: int
 
     _private_property: string
@@ -15,7 +15,7 @@ si
 // <<<
 
 // >>>
-let v = VALUE(1234)
+let v = Value(1234)
 
 // OK: public_property is publicly readable
 write_line(v.public_property)

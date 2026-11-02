@@ -3,22 +3,22 @@ use IO.Std.write_line
 use Collections.SET
 
 // >>>
-class WITH_HASH(x: int) is
-    =~(other: WITH_HASH) -> bool => x == other.x
+class WithHash(x: int) is
+    =~(other: WithHash) -> bool => x == other.x
 
     get_hash_code() -> int => x.get_hash_code()
 si
 
 // only =~, so .NET keeps comparing by identity:
-class NO_HASH(x: int) is
-    =~(other: NO_HASH) -> bool => x == other.x
+class NoHash(x: int) is
+    =~(other: NoHash) -> bool => x == other.x
 si
 
-let with_hash = SET[WITH_HASH]()
-with_hash.add(WITH_HASH(1))
-write_line("with get_hash_code: {with_hash.contains(WITH_HASH(1))}")
+let with_hash = SET[WithHash]()
+with_hash.add(WithHash(1))
+write_line("with get_hash_code: {with_hash.contains(WithHash(1))}")
 
-let no_hash = SET[NO_HASH]()
-no_hash.add(NO_HASH(1))
-write_line("without get_hash_code: {no_hash.contains(NO_HASH(1))}")
+let no_hash = SET[NoHash]()
+no_hash.add(NoHash(1))
+write_line("without get_hash_code: {no_hash.contains(NoHash(1))}")
 // <<<

@@ -2,7 +2,7 @@ use IO.Std.write_line
 use Ghul
 
 // >>>
-class SCORE(points: int): Displayable is
+class Score(points: int): Displayable is
     display(state: DISPLAY_STATE) is
         state.append("[")
         state.render(points)
@@ -10,7 +10,7 @@ class SCORE(points: int): Displayable is
     si
 si
 
-write_line($(SCORE(3)))
-write_line(inspect(SCORE(3)))
-write_line($([SCORE(1), SCORE(2)]))
+write_line($(Score(3)))
+write_line(inspect(Score(3)))
+write_line($([Score(1), Score(2)]))
 // <<<

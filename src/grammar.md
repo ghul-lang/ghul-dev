@@ -80,7 +80,7 @@ try       typeof    union     use       val       when      while
 yield     yrt
 ```
 
-A few words are *contextual*: they look like identifiers to the tokenizer but the parser recognises them in specific positions: `optional` as a type-parameter kind constraint, `out` as a type-parameter variance modifier, `open` as a class extensibility modifier.
+A few words are *contextual*: they look like identifiers to the tokenizer but the parser recognizes them in specific positions: `optional` as a type-parameter kind constraint, `out` as a type-parameter variance modifier, `open` as a class extensibility modifier.
 
 ### numeric literals
 
@@ -154,7 +154,7 @@ operator, with one exception: a `.` immediately after a leading `!` or `?` ends
 the operator, so that `x!.foo` and `x?.foo` parse as a member access on an
 unwrap/has-value, not as the operators `!.` or `?.`.
 
-A handful of operator spellings are recognised as dedicated tokens rather than
+A handful of operator spellings are recognized as dedicated tokens rather than
 general operators: `=`, `:`, `.`, `->`, `=>`, `?` and `@`.
 
 ## compilation unit
@@ -232,9 +232,9 @@ SuperCallDeclaration ::= "super" "(" ExpressionList? ")" ";"
 
 A type parameter has zero or more constraints: a *type bound* (which the actual type argument must derive from), a *kind constraint* (`class` / `struct` / `optional`), a *constructor constraint* (`init`), and on a trait a *variance* modifier (`out` for covariant, `in` for contravariant) - in that order. Several type bounds can be joined with `/\`. Variance is only legal on a trait's type parameters.
 
-`PrimaryParameters` declare a class or struct's primary constructor inline. Each parameter becomes a parameter of the synthesised `init` and a synthesised field or property of the same name and declared type. A trailing modifier on a parameter overrides the default visibility - `public` for a public read-write property, `field` for a plain field, `init` to suppress field generation. A parameter named `_x` produces a private field; a body field or property declaration matching the parameter (under the same `_x`/`x` rule) replaces the synthesised member.
+`PrimaryParameters` declare a class or struct's primary constructor inline. Each parameter becomes a parameter of the synthesized `init` and a synthesized field or property of the same name and declared type. A trailing modifier on a parameter overrides the default visibility - `public` for a public read-write property, `field` for a plain field, `init` to suppress field generation. A parameter named `_x` produces a private field; a body field or property declaration matching the parameter (under the same `_x`/`x` rule) replaces the synthesized member.
 
-A `SuperCallDeclaration` is a class-body shorthand for calling the superclass `init` with the given expressions. Each expression resolves with the primary parameters in scope. Primary parameters consumed by `super(...)` get no synthesised member. A secondary `init(.., extras)` overload uses `..` to splice the primary parameters into its argument list; an implicit chain to the primary `init` runs before the secondary's body.
+A `SuperCallDeclaration` is a class-body shorthand for calling the superclass `init` with the given expressions. Each expression resolves with the primary parameters in scope. Primary parameters consumed by `super(...)` get no synthesized member. A secondary `init(.., extras)` overload uses `..` to splice the primary parameters into its argument list; an implicit chain to the primary `init` runs before the secondary's body.
 
 ### union
 
@@ -623,9 +623,9 @@ as `??`, which are right-associative. Prefix unary operators, member access,
 calls and indexing bind more tightly than any binary operator.
 
 A user-defined operator (any operator not in the table above) is assigned a
-precedence from its **first character**, modelled on OCaml and F#: operators
+precedence from its **first character**, modeled on OCaml and F#: operators
 starting with `*` `/` `%` bind as multiplication, `+` `-` as addition, and so on;
-an operator with no recognised first character defaults to user&#8209;5. The
+an operator with no recognized first character defaults to user&#8209;5. The
 `@precedence("op", "level")` pragma overrides the precedence of a named operator.
 Both arguments must be string literals (a numeric `level` is not accepted),
 and `level` names a precedence level: `user-1` … `user-8`, or one of the built-in

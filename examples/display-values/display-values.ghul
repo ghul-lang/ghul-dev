@@ -2,14 +2,14 @@ use IO.Std.write_line
 use Ghul.inspect
 
 // >>>
-struct POINT(x: int public, y: int public)
+struct Point(x: int public, y: int public)
 
 let words = ["one", "two"]
 
 write_line($(words))
 write_line(inspect(words))
 write_line(inspect("top"))
-write_line($(POINT(3, 4)))
+write_line($(Point(3, 4)))
 write_line(inspect((1, "one", 'c', true)))
 
 let cycle = Collections.LIST[object]()

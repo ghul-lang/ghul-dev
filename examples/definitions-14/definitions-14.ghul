@@ -5,7 +5,7 @@ trait Printable is
 si
 
 // >>>
-class BOOK(title: string, author: string): Printable is
+class Book(title: string, author: string): Printable is
     print() is
         write_line("Title: {title}, Author: {author}")
     si

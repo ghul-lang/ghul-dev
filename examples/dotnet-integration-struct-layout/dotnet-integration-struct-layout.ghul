@@ -3,7 +3,7 @@ use System.Runtime.InteropServices.LayoutKind
 
 // >>>
 @System.Runtime.InteropServices.StructLayout(LayoutKind.EXPLICIT)
-struct WORD_BYTES is
+struct WordBytes is
     @System.Runtime.InteropServices.FieldOffset(0)
     word: ushort field
 
@@ -15,7 +15,7 @@ struct WORD_BYTES is
     si
 si
 
-let bytes = WORD_BYTES(0x1234us)
+let bytes = WordBytes(0x1234us)
 
 write_line("{bytes.low:X2}")
 // <<<

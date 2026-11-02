@@ -1,11 +1,11 @@
 use IO.Std.write_line
 
 // >>>
-class PERSON(name: string, age: int) is
+class Person(name: string, age: int) is
     describe() is
         write_line("{name} is {age} years old")
     si
 si
 
-PERSON("alice", 30).describe()
+Person("alice", 30).describe()
 // <<<

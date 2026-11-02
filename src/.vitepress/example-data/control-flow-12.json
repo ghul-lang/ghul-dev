@@ -2,24 +2,24 @@
   "name": "control-flow-12",
   "snippet": false,
   "wasm": true,
-  "code": "let c = cast CAT?(a)\n\nif c? then\n    write_line(c.purr())\nfi",
-  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet a: Animal = CAT(\"whiskers\")\nlet c = cast CAT?(a)\n\nif c? then\n    write_line(c.purr())\nfi\n",
+  "code": "let c = cast Cat?(a)\n\nif c? then\n    write_line(c.purr())\nfi",
+  "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass Cat(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet a: Animal = Cat(\"whiskers\")\nlet c = cast Cat?(a)\n\nif c? then\n    write_line(c.purr())\nfi\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "whiskers purrs\n",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 5, "text": "c: CAT?", "signature": "c: CAT?", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "text": "class CAT(name: string)", "signature": "class CAT(name: string)", "kindLabel": "class" },
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 5, "text": "c: Cat?", "signature": "c: Cat?", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "text": "class Cat(name: string)", "signature": "class Cat(name: string)", "kindLabel": "class" },
     { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 19, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 4, "endLine": 3, "endColumn": 4, "text": "c: CAT?", "signature": "c: CAT?", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 4, "endLine": 3, "endColumn": 4, "text": "c: Cat?", "signature": "c: Cat?", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 16, "text": "c: CAT?\n    ► CAT", "signature": "c: CAT?\n    ► CAT", "kindLabel": "global variable" },
-    { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 21, "text": "CAT.purr() -> string", "signature": "CAT.purr() -> string", "kindLabel": "pure method" }
+    { "startLine": 4, "startColumn": 16, "endLine": 4, "endColumn": 16, "text": "c: Cat?\n    ► Cat", "signature": "c: Cat?\n    ► Cat", "kindLabel": "global variable" },
+    { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 21, "text": "Cat.purr() -> string", "signature": "Cat.purr() -> string", "kindLabel": "pure method" }
   ],
   "inlayHints": [
-    { "line": 3, "column": 4, "label": "►", "detail": "► CAT", "code": "narrowing-presence" }
+    { "line": 3, "column": 4, "label": "►", "detail": "► Cat", "code": "narrowing-presence" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 5, "tokenType": "property" },

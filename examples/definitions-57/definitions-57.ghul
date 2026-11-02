@@ -2,13 +2,13 @@ use IO.Std.write_line
 
 // >>>
 @equality()
-class POINT(x: int, y: int)
+class Point(x: int, y: int)
 
-let a = POINT(1, 2)
-let b = POINT(1, 2)
+let a = Point(1, 2)
+let b = Point(1, 2)
 
 write_line("{a =~ b} {a == b}")
 
 // .NET finds an equal value, not only the same object
-write_line("{Collections.LIST[POINT]([a]).contains(b)}")
+write_line("{Collections.LIST[Point]([a]).contains(b)}")
 // <<<

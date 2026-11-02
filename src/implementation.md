@@ -24,7 +24,7 @@ passes incrementally as the user edits.
 
 ## source layout
 
-The compiler's source is organised around the stages above. Each top-level
+The compiler's source is organized around the stages above. Each top-level
 folder under `src/`{:text} in the compiler repository covers one
 concern:
 
@@ -44,7 +44,7 @@ concern:
 | `logging/`{:text}    | Diagnostic reporting and per-pass timers. All compiler messages flow through `Logger` so that the IDE can intercept them. |
 
 The boundaries are deliberately ordinary: anyone who has worked on a
-classical compiler will recognise most of them. The interesting parts are
+classical compiler will recognize most of them. The interesting parts are
 inside `syntax/process/`{:text} and `semantic/`{:text}.
 
 ## from source to tokens
@@ -94,8 +94,8 @@ The full pass list, in the order `COMPILER` runs them:
 | Pass                                  | What it does |
 |---------------------------------------|--------------|
 | `conditional-compilation`{:text}      | Nullifies any definition or statement disabled by its `@IF.flag()` pragma. |
-| `collect-modifier-keyword-locations`{:text} | Records the source location of every contextually-lexed modifier keyword before a later rewrite consumes it, for the editor's semantic-token colouring. |
-| `rewrite-syntax-trees`{:text}         | Light syntax-tree rewrites that simplify later passes: expanding dotted namespace names into nested form, synthesising accessor methods for properties, indexers and union variants, and spilling operand-position subexpressions sitting to the left of an `await` so their values survive the suspend. |
+| `collect-modifier-keyword-locations`{:text} | Records the source location of every contextually-lexed modifier keyword before a later rewrite consumes it, for the editor's semantic-token coloring. |
+| `rewrite-syntax-trees`{:text}         | Light syntax-tree rewrites that simplify later passes: expanding dotted namespace names into nested form, synthesizing accessor methods for properties, indexers and union variants, and spilling operand-position subexpressions sitting to the left of an `await` so their values survive the suspend. |
 | `collect-suppress-pragmas`{:text}     | Registers a suppression region for each `@suppress("slug")`{:text} pragma, covering the definition or statement it wraps. |
 | `declare-symbols`{:text}              | Registers the type-level skeleton in the symbol table: namespaces, types, variants and their generic type parameters - everything a type expression can name. |
 | `resolve-uses`{:text}                 | First round of `use` resolution: binds imports of namespaces and types, so short type names work in subsequent passes. |
@@ -104,8 +104,8 @@ The full pass list, in the order `COMPILER` runs them:
 | `check-name-conventions`{:text}       | Warns where a declaration's name does not follow the naming convention for its kind. |
 | `resolve-type-expressions`{:text}     | Turns type annotations in declarations, signatures, and in expression-position uses like `cast`, `isa`, `typeof` and `_` into the semantic `Type` objects later passes use. |
 | `resolve-ancestors`{:text}            | Attaches base classes, trait parents and default ancestors to classes, traits, structs, unions and enums, and validates the inheritance constraints. |
-| `synthesize-class-equality`{:text}   | Settles the `=~` and `get_hash_code` synthesised for an `@equality()` class once its ancestors are known: the class joins a synthesised base's operator, and keeps an equality it inherits from elsewhere instead of its own. |
-| `synthesize-iterator-reset`{:text}   | A type implementing `Collections.Iterator[T]` that declares no `reset` gets a synthesised one that throws `System.NotSupportedException`. |
+| `synthesize-class-equality`{:text}   | Settles the `=~` and `get_hash_code` synthesized for an `@equality()` class once its ancestors are known: the class joins a synthesized base's operator, and keeps an equality it inherits from elsewhere instead of its own. |
+| `synthesize-iterator-reset`{:text}   | A type implementing `Collections.Iterator[T]` that declares no `reset` gets a synthesized one that throws `System.NotSupportedException`. |
 | `resolve-explicit-types`{:text}       | Registers each variable's, property's and parameter's declared type on its symbol, so the declared type is available to constrain inference later. |
 | `check-type-argument-bounds`{:text}   | Checks each type argument written in a type-expression position against its type parameter's declared bound. |
 | `resolve-overrides`{:text}            | Pulls inherited symbols down into each container type's scope; for every method whose signature matches an ancestor's virtual or abstract method, records the override link and checks the override is consistent. Reports duplicate top-level functions. |
@@ -142,7 +142,7 @@ them.
 Records the source location of every contextually-lexed modifier keyword -
 currently `init` and `open`. A later rewrite consumes some of these
 tokens, so the locations are captured up front for the editor's
-semantic-token colouring, which lights them as keywords. Hard keywords
+semantic-token coloring, which lights them as keywords. Hard keywords
 like `abstract` don't need any help; only the contextually-lexed modifiers do.
 
 ### `rewrite-syntax-trees`{:text}
@@ -153,7 +153,7 @@ handle everywhere afterwards. The notable ones are:
 - **expand namespaces** - expands dotted namespace names like
   `namespace Foo.Bar is …` into explicitly nested form
   `namespace Foo is namespace Bar is … si si`.
-- **add accessors** - synthesises the getter and setter methods that a
+- **add accessors** - synthesizes the getter and setter methods that a
   property declaration stands for, and (despite the historical name) the
   equivalent accessors for indexers and for union variants (the per-variant
   `=~`, `get_hash_code`, `value` and `has_value` members).
@@ -171,7 +171,7 @@ handle everywhere afterwards. The notable ones are:
 Finds every `@suppress("slug", …)`{:text} pragma and registers a
 suppression region for each slug, covering the definition or statement
 the pragma wraps. The diagnostics store consults the regions whenever a
-coded warning is about to be reported, so every warning honours
+coded warning is about to be reported, so every warning honors
 `@suppress` without each pass handling it separately.
 
 ### `declare-symbols`{:text}
@@ -448,7 +448,7 @@ the innermost is typically a block scope, inside a method scope, inside a
 class scope, inside a namespace scope. Name resolution walks outwards
 through the chain of scopes until it finds a match.
 
-The base `Scope` and its specialisations (`BLOCK_SCOPE`,
+The base `Scope` and its specializations (`BLOCK_SCOPE`,
 `NAMESPACE_SCOPE`) live under `semantic/scope/`{:text}.
 
 ### types
@@ -552,7 +552,7 @@ object on one line, discriminated by a `command`{:text} field -
 `complete`{:text} and so on - and each response is a single object
 discriminated by a `kind`{:text} field. JSON escapes any newline inside
 a string, so reading a line is a complete framing operation on either
-end. At startup the analyser answers a `listen`{:text} request with the
+end. At startup the analyzer answers a `listen`{:text} request with the
 capabilities it supports, and a client sends a newer request only after
 seeing the matching capability, so either side can be upgraded first.
 
@@ -583,7 +583,7 @@ compute diagnostics the edit has already made stale.
 
 ### incremental analysis
 
-An `edit`{:text} does not rebuild the project from scratch. The analyser
+An `edit`{:text} does not rebuild the project from scratch. The analyzer
 retains the whole compiled state between requests - syntax trees, symbol
 table, scopes, types - and how much of it an edit invalidates depends on
 what the edit changed:
@@ -603,7 +603,7 @@ what the edit changed:
 The splice relies on a language rule doing structural work: a function's
 signature is always explicit and inference never escapes a body, so a
 body-only edit provably cannot change anything another file can see.
-Where any guard on the incremental path fails, the analyser falls back
+Where any guard on the incremental path fails, the analyzer falls back
 to the full rebuild, which is slower.
 
 ### batch requests and lifetime
@@ -611,16 +611,16 @@ to the full rebuild, which is slower.
 Two convenience requests, `hover_map`{:text} and
 `semantic_tokens`{:text}, dump every recorded hover or every recorded
 symbol use for a file in one batch. They are mainly used by the example
-pipeline on this website, which feeds each example through the analyser
-and uses the results to drive hover popups and semantic-token colouring
+pipeline on this website, which feeds each example through the analyzer
+and uses the results to drive hover popups and semantic-token coloring
 in the rendered output.
 
 The compiler runs as a long-lived process. A `WATCHDOG` component watches
 for sustained handler failures or excessive heap growth and asks the IDE
 to recycle the process when either threshold is crossed; the extension
 schedules recycles during idle periods so the user rarely notices. The
-analyser also exits of its own accord after half an hour without a
-request: a warm analyser retains the whole symbol table, so an editor
+analyzer also exits of its own accord after half an hour without a
+request: a warm analyzer retains the whole symbol table, so an editor
 window left open overnight would otherwise hold hundreds of megabytes while
 answering no requests, and the cold rebuild the next request pays is the
 cheaper side of that trade. Even with the recycles, the long-lived shape

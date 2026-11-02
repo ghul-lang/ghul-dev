@@ -2,24 +2,24 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(name: string): Animal is
+class Cat(name: string): Animal is
     purr() -> string => "{name} purrs"
 si
 
-class DOG(): Animal
+class Dog(): Animal
 
 // >>>
 classify(a: Animal) is
-    if !isa CAT(a) then
+    if !isa Cat(a) then
         write_line("not a cat")
         return
     fi
 
-    // every non-CAT has returned, so a is
-    // narrowed to CAT from here on
+    // every non-Cat has returned, so a is
+    // narrowed to Cat from here on
     write_line(a.purr())
 si
 
-classify(CAT("whiskers"))
-classify(DOG())
+classify(Cat("whiskers"))
+classify(Dog())
 // <<<

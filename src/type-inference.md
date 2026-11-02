@@ -21,7 +21,7 @@ Within a function, types are inferred for:
 - anonymous function return types
 - generic type arguments on calls to constructors, methods, static methods and global functions
 
-In each case the inferred type is concrete. The compiler does not introduce new type parameters during inference, so an anonymous function literal takes a single concrete function type from its context - it cannot itself be generic. For polymorphic behaviour, declare a generic global function or method and pass it where the function value is needed.
+In each case the inferred type is concrete. The compiler does not introduce new type parameters during inference, so an anonymous function literal takes a single concrete function type from its context - it cannot itself be generic. For polymorphic behavior, declare a generic global function or method and pass it where the function value is needed.
 
 ghūl also performs [type narrowing](/type-narrowing.html) - within parts of a function a value can be observed at a more specific type than the one it was declared with. Inference and narrowing work together: the inferred type is the widest type a variable has, and narrowing gives it a more specific type wherever the control flow proves one.
 

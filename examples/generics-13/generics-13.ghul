@@ -1,12 +1,12 @@
 use IO.Std.write_line
 
-class BOX[T](value: T)
+class Box[T](value: T)
 
 // >>>
-let closed = typeof BOX[int]
+let closed = typeof Box[int]
 
-// BOX[_] names the open generic, before any type argument is supplied
-let open = typeof BOX[_]
+// Box[_] names the open generic, before any type argument is supplied
+let open = typeof Box[_]
 
 write_line("closed: {closed.name}, generic: {closed.is_generic_type}")
 write_line("open: {open.name}, definition: {open.is_generic_type_definition}")

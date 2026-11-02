@@ -1,5 +1,5 @@
 // >>>
-class SCALER is
+class Scaler is
     _scale: double
 
     scale(value: double) -> double => value * _scale

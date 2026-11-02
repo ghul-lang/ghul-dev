@@ -1,10 +1,10 @@
 // >>>
-class BASE()
+class Base()
 
-class DERIVED(): BASE
+class Derived(): Base
 
 do_something[T](a: T, b: T) -> T => a
-let base = do_something(BASE(), DERIVED())
-let derived = do_something(DERIVED(), DERIVED())
-let obj = do_something(object(), DERIVED())
+let base = do_something(Base(), Derived())
+let derived = do_something(Derived(), Derived())
+let obj = do_something(object(), Derived())
 // <<<

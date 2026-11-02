@@ -7,14 +7,14 @@ enum Suit is
     SPADES
 si
 
-class LIMITS is
+class Limits is
     lowest: int static => 1
     highest: int static => 13
 si
 
 // >>>
 use Suit.*
-use LIMITS.*
+use Limits.*
 
 write_line("{HEARTS} and {SPADES} run from {lowest} to {highest}")
 // <<<

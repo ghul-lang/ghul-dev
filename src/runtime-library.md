@@ -162,13 +162,13 @@ The first `size` elements, then the next `size`, and so on, each element appeari
 
 ### windows
 
-Every run of `size` neighbouring elements: the first `size`, then the same run moved along by one, and so on. Each window therefore shares all but one of its elements with the window before it. A window is always `size` long, so a source with fewer than `size` elements produces none.
+Every run of `size` neighboring elements: the first `size`, then the same run moved along by one, and so on. Each window therefore shares all but one of its elements with the window before it. A window is always `size` long, so a source with fewer than `size` elements produces none.
 
 <GhulExample name="pipes-ref-windows-function" signature />
 
 ### group
 
-Runs of neighbouring equal elements, each a read-only list, compared with `=~`. A new run starts wherever an element differs from the one before it, so equal elements that are not neighbours go into separate runs. Compare `group_by`, below, which gathers every element with the same key wherever it appears.
+Runs of neighboring equal elements, each a read-only list, compared with `=~`. A new run starts wherever an element differs from the one before it, so equal elements that are not neighbors go into separate runs. Compare `group_by`, below, which gathers every element with the same key wherever it appears.
 
 <GhulExample name="pipes-group" />
 
@@ -460,7 +460,7 @@ At the top, a string or character is the whole answer, so both functions write i
 - They write a tuple as its parts in parentheses, and a map entry as `(key, value)`.
 - They write a value whose type declares its own `to_string` with that `to_string`, even when the value is also a sequence. The runtime's own pipes, and generators, are the exception: their `to_string` writes their elements.
 - They write a sequence, such as an array, a list or a pipe, as its elements in brackets.
-- They write a class, struct or union variant with no `to_string` of its own as its type and members, such as `POINT(x = 3, y = 4)`.
+- They write a class, struct or union variant with no `to_string` of its own as its type and members, such as `Point(x = 3, y = 4)`.
 - They write a value of a type from another language with no `to_string` of its own as its .NET type name. They do not read its properties, because a property getter can run any code: reading a task's result waits for the task.
 
 They stop a sequence after 100 elements and end it with `, ...]`, so they can write an unbounded pipe. Stopping there leaves nothing behind for the next read of the pipe. Where a value contains itself, they write `<cycle>` at the point it recurs. The same value appearing in two places is not a cycle, and they write it in full both times.
@@ -475,7 +475,7 @@ A `DISPLAY_STATE` can also be created directly, with a mode and a different elem
 
 <GhulExample name="display-show" />
 
-`Displayable` customises the text `$` and `inspect` produce for a value. `Renderable` offers other media for the same value, such as an image, which a host can show in place of that text. Its `representations()` method gives each as a MIME type and its content, best first:
+`Displayable` customizes the text `$` and `inspect` produce for a value. `Renderable` offers other media for the same value, such as an image, which a host can show in place of that text. Its `representations()` method gives each as a MIME type and its content, best first:
 
 <GhulExample name="display-renderable" />
 

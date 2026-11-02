@@ -1,9 +1,9 @@
 // >>>
-class COUNTER is
+class Counter is
     count: int
 si
 
-class SIZED is
+class Sized is
     _size: int
 
     size: int => _size,

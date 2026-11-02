@@ -2,8 +2,8 @@
   "name": "control-flow-8",
   "snippet": false,
   "wasm": true,
-  "code": "union Maybe[T] is\n    YES(value: T)\n    NO\nsi\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = CAT(\"whiskers\")\nif isa CAT(a) then\n    // a is narrowed to CAT inside the branch\n    write_line(a.purr())\nfi",
-  "fullSource": "use IO.Std.write_line\n\nunion Maybe[T] is\n    YES(value: T)\n    NO\nsi\n\nclass Animal abstract is si\n\nclass CAT(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = CAT(\"whiskers\")\nif isa CAT(a) then\n    // a is narrowed to CAT inside the branch\n    write_line(a.purr())\nfi\n",
+  "code": "union Maybe[T] is\n    YES(value: T)\n    NO\nsi\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = Cat(\"whiskers\")\nif isa Cat(a) then\n    // a is narrowed to Cat inside the branch\n    write_line(a.purr())\nfi",
+  "fullSource": "use IO.Std.write_line\n\nunion Maybe[T] is\n    YES(value: T)\n    NO\nsi\n\nclass Animal abstract is si\n\nclass Cat(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nlet m: Maybe[int] = Maybe.YES(42)\n\nif isa Maybe.YES(m) then\n    // m is narrowed to Maybe.YES inside the branch,\n    // so m.value is in scope\n    write_line(\"got value {m.value}\")\nfi\n\nlet a: Animal = Cat(\"whiskers\")\nif isa Cat(a) then\n    // a is narrowed to Cat inside the branch\n    write_line(a.purr())\nfi\n",
   "hiddenBefore": true,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [4],
@@ -24,22 +24,22 @@
     { "startLine": 5, "startColumn": 27, "endLine": 5, "endColumn": 29, "text": "Maybe.YES[int].init(value: int)", "signature": "Maybe.YES[int].init(value: int)", "kindLabel": "constructor" },
     { "startLine": 13, "startColumn": 5, "endLine": 13, "endColumn": 5, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "global variable" },
     { "startLine": 13, "startColumn": 8, "endLine": 13, "endColumn": 13, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
-    { "startLine": 13, "startColumn": 17, "endLine": 13, "endColumn": 19, "text": "CAT.init(name: string)", "signature": "CAT.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 13, "startColumn": 17, "endLine": 13, "endColumn": 19, "text": "Cat.init(name: string)", "signature": "Cat.init(name: string)", "kindLabel": "constructor" },
     { "startLine": 7, "startColumn": 14, "endLine": 7, "endColumn": 16, "text": "Maybe.YES[T](value: T)", "signature": "Maybe.YES[T](value: T)", "kindLabel": "variant" },
     { "startLine": 7, "startColumn": 8, "endLine": 7, "endColumn": 12, "text": "union Maybe[T]", "signature": "union Maybe[T]", "kindLabel": "union" },
     { "startLine": 7, "startColumn": 18, "endLine": 7, "endColumn": 18, "text": "m: Maybe[int]", "signature": "m: Maybe[int]", "kindLabel": "global variable" },
-    { "startLine": 14, "startColumn": 8, "endLine": 14, "endColumn": 10, "text": "class CAT(name: string)", "signature": "class CAT(name: string)", "kindLabel": "class" },
+    { "startLine": 14, "startColumn": 8, "endLine": 14, "endColumn": 10, "text": "class Cat(name: string)", "signature": "class Cat(name: string)", "kindLabel": "class" },
     { "startLine": 14, "startColumn": 12, "endLine": 14, "endColumn": 12, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "global variable" },
     { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 10, "startColumn": 28, "endLine": 10, "endColumn": 28, "text": "m: Maybe[int]\n    ► Maybe.YES[int]", "signature": "m: Maybe[int]\n    ► Maybe.YES[int]", "kindLabel": "global variable" },
     { "startLine": 10, "startColumn": 30, "endLine": 10, "endColumn": 34, "text": "Maybe.YES[int].value: int", "signature": "Maybe.YES[int].value: int", "kindLabel": "variant field" },
     { "startLine": 16, "startColumn": 5, "endLine": 16, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 16, "startColumn": 16, "endLine": 16, "endColumn": 16, "text": "a: Animal\n    ► CAT", "signature": "a: Animal\n    ► CAT", "kindLabel": "global variable" },
-    { "startLine": 16, "startColumn": 18, "endLine": 16, "endColumn": 21, "text": "CAT.purr() -> string", "signature": "CAT.purr() -> string", "kindLabel": "pure method" }
+    { "startLine": 16, "startColumn": 16, "endLine": 16, "endColumn": 16, "text": "a: Animal\n    ► Cat", "signature": "a: Animal\n    ► Cat", "kindLabel": "global variable" },
+    { "startLine": 16, "startColumn": 18, "endLine": 16, "endColumn": 21, "text": "Cat.purr() -> string", "signature": "Cat.purr() -> string", "kindLabel": "pure method" }
   ],
   "inlayHints": [
     { "line": 7, "column": 18, "label": "►", "detail": "► Maybe.YES[int]\n> Maybe.NO[int]", "code": "narrowing-isa" },
-    { "line": 14, "column": 12, "label": "►", "detail": "► CAT", "code": "narrowing-isa" }
+    { "line": 14, "column": 12, "label": "►", "detail": "► Cat", "code": "narrowing-isa" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 11, "tokenType": "class" },

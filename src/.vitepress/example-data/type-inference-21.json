@@ -2,8 +2,8 @@
   "name": "type-inference-21",
   "snippet": false,
   "wasm": false,
-  "code": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass CAT(): Animal\n\nclass DOG(): Animal\n\nmerge[T](a: T, b: T) -> T => a\nlet a = merge(CAT(), DOG())",
-  "fullSource": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass CAT(): Animal\n\nclass DOG(): Animal\n\nmerge[T](a: T, b: T) -> T => a\n\nlet a = merge(CAT(), DOG())\n",
+  "code": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass Cat(): Animal\n\nclass Dog(): Animal\n\nmerge[T](a: T, b: T) -> T => a\nlet a = merge(Cat(), Dog())",
+  "fullSource": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass Cat(): Animal\n\nclass Dog(): Animal\n\nmerge[T](a: T, b: T) -> T => a\n\nlet a = merge(Cat(), Dog())\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [9],
@@ -11,16 +11,16 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
-    { "startLine": 5, "startColumn": 7, "endLine": 5, "endColumn": 9, "text": "class CAT", "signature": "class CAT", "kindLabel": "class" },
-    { "startLine": 5, "startColumn": 7, "endLine": 5, "endColumn": 11, "text": "CAT.init()", "signature": "CAT.init()", "kindLabel": "constructor" },
+    { "startLine": 5, "startColumn": 7, "endLine": 5, "endColumn": 9, "text": "class Cat", "signature": "class Cat", "kindLabel": "class" },
+    { "startLine": 5, "startColumn": 7, "endLine": 5, "endColumn": 11, "text": "Cat.init()", "signature": "Cat.init()", "kindLabel": "constructor" },
     { "startLine": 5, "startColumn": 14, "endLine": 5, "endColumn": 19, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
-    { "startLine": 7, "startColumn": 7, "endLine": 7, "endColumn": 9, "text": "class DOG", "signature": "class DOG", "kindLabel": "class" },
-    { "startLine": 7, "startColumn": 7, "endLine": 7, "endColumn": 11, "text": "DOG.init()", "signature": "DOG.init()", "kindLabel": "constructor" },
+    { "startLine": 7, "startColumn": 7, "endLine": 7, "endColumn": 9, "text": "class Dog", "signature": "class Dog", "kindLabel": "class" },
+    { "startLine": 7, "startColumn": 7, "endLine": 7, "endColumn": 11, "text": "Dog.init()", "signature": "Dog.init()", "kindLabel": "constructor" },
     { "startLine": 7, "startColumn": 14, "endLine": 7, "endColumn": 19, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
     { "startLine": 10, "startColumn": 5, "endLine": 10, "endColumn": 5, "text": "a: Animal", "signature": "a: Animal", "kindLabel": "global variable" },
     { "startLine": 10, "startColumn": 9, "endLine": 10, "endColumn": 13, "text": "merge[Animal](a: Animal, b: Animal) -> Animal", "signature": "merge[Animal](a: Animal, b: Animal) -> Animal", "kindLabel": "pure global function" },
-    { "startLine": 10, "startColumn": 15, "endLine": 10, "endColumn": 17, "text": "CAT.init()", "signature": "CAT.init()", "kindLabel": "constructor" },
-    { "startLine": 10, "startColumn": 22, "endLine": 10, "endColumn": 24, "text": "DOG.init()", "signature": "DOG.init()", "kindLabel": "constructor" },
+    { "startLine": 10, "startColumn": 15, "endLine": 10, "endColumn": 17, "text": "Cat.init()", "signature": "Cat.init()", "kindLabel": "constructor" },
+    { "startLine": 10, "startColumn": 22, "endLine": 10, "endColumn": 24, "text": "Dog.init()", "signature": "Dog.init()", "kindLabel": "constructor" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "text": "Animal.speak() -> string", "signature": "Animal.speak() -> string", "kindLabel": "pure method" },
     { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 21, "text": "class string", "signature": "class string", "kindLabel": "class" },
     { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 5, "text": "merge[T](a: T, b: T) -> T", "signature": "merge[T](a: T, b: T) -> T", "kindLabel": "pure global function" },
@@ -33,7 +33,7 @@
     { "startLine": 9, "startColumn": 30, "endLine": 9, "endColumn": 30, "text": "a: T", "signature": "a: T", "kindLabel": "local argument" }
   ],
   "inlayHints": [
-    { "line": 1, "column": 7, "label": "▼", "detail": "Animal\n\n- ▼ extended by `CAT`, `DOG`", "code": "definition-virtuality" }
+    { "line": 1, "column": 7, "label": "▼", "detail": "Animal\n\n- ▼ extended by `Cat`, `Dog`", "code": "definition-virtuality" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "tokenType": "class" },

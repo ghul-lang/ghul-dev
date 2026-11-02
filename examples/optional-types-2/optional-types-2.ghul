@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-class SLOT[T] is
+class Slot[T] is
     _stored: T?
 
     init() is si
@@ -15,7 +15,7 @@ class SLOT[T] is
     si
 si
 
-let s = SLOT[int]()
+let s = Slot[int]()
 s.put(42)
 write_line("{s.take() ?? -1}")
 write_line("{s.take() ?? -1}")

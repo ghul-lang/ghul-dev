@@ -1,2 +1,2 @@
 test.ghul: 23,12..23,31: error: _private_property: string is not accessible here
-test.ghul: 25,1..25,18: error: VALUE.public_property: int is not publicly assignable
+test.ghul: 25,1..25,18: error: Value.public_property: int is not publicly assignable

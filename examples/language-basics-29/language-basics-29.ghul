@@ -1,11 +1,11 @@
 use IO.Std.write_line
 
-class PERSON is
+class Person is
     name: string
     init(name: string) is self.name = name; si
 si
 
-find() -> PERSON? => null
+find() -> Person? => null
 
 // >>>
 let p = find()

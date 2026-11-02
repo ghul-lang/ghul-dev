@@ -65,13 +65,13 @@ At its top level a ghūl source file contains [definitions](/definitions.html) a
 
 <GhulExample name="syntax-2" />
 
-The definitions in a file can be global functions, properties, classes, structs, traits, unions and enums, or `namespace` blocks that group definitions under a name. A definition is visible to the rest of the project regardless of which file it appears in, so how source is split across files is purely a matter of organisation.
+The definitions in a file can be global functions, properties, classes, structs, traits, unions and enums, or `namespace` blocks that group definitions under a name. A definition is visible to the rest of the project regardless of which file it appears in, so how source is split across files is purely a matter of organization.
 
 A file that declares any `namespace` must place all of its definitions inside namespaces. A file with no namespace at all has its definitions placed in a private namespace of their own, which is convenient for small programs and tests. Namespaces, `use` and symbol visibility are covered in full under [definitions](/definitions.html#namespaces).
 
 ### a `#!` first line
 
-A file can begin with a `#!` line naming an interpreter, as a shell script does. The compiler recognises it only as the very first line, and skips it:
+A file can begin with a `#!` line naming an interpreter, as a shell script does. The compiler recognizes it only as the very first line, and skips it:
 
 <GhulExample name="syntax-4" />
 

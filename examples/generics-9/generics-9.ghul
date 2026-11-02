@@ -4,11 +4,11 @@ use IO.Std.write_line
 // T: init requires the caller to pass a type with a parameterless constructor
 echo[T: init](x: T) -> T => x
 
-class WIDGET() is
+class Widget() is
     describe() -> string => "a widget"
 si
 
-let w = echo(WIDGET())   // OK: WIDGET has init()
+let w = echo(Widget())   // OK: Widget has init()
 
 write_line(w.describe())
 // <<<

@@ -1,4 +1,4 @@
 // >>>
-struct HOLD_SOMETHING[T](value: T)
+struct HoldSomething[T](value: T)
 // <<<
 

@@ -4,12 +4,12 @@ class Animal abstract is
     init() is si
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is super.init(); si
     meow() -> string => "meow"
 si
 
-class DOG: Animal is
+class Dog: Animal is
     init() is super.init(); si
     bark() -> string => "woof"
 si
@@ -17,9 +17,9 @@ si
 describe(a: Animal) -> string =>
 // >>>
     case a
-    when c: CAT then c.meow()
-    when d: DOG then d.bark()
+    when c: Cat then c.meow()
+    when d: Dog then d.bark()
     esac
 
-write_line(describe(CAT()))
+write_line(describe(Cat()))
 // <<<

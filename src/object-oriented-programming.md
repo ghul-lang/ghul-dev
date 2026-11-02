@@ -6,11 +6,11 @@ Every example on this page can be edited and run here: click the pencil to open 
 The [object-oriented examples](/examples/object-oriented) are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
-ghūl is a class-based object-oriented language. Classes and structs hold state and behaviour, traits describe shared behaviour, and a value can be used at the type of any ancestor class or trait it satisfies. The [definitions](/definitions.html#types) page has the syntax for each in isolation.
+ghūl is a class-based object-oriented language. Classes and structs hold state and behavior, traits describe shared behavior, and a value can be used at the type of any ancestor class or trait it satisfies. The [definitions](/definitions.html#types) page has the syntax for each in isolation.
 
 ## classes and objects
 
-A [class](/definitions.html#classes) defines a reference type: fields and properties for its state, methods for its behaviour, and one or more `init` constructors. An object is an instance of a class, created by calling the class like a function, as in `POINT(3, 4)`. `self` refers to the current instance inside a method. A class with no declared superclass extends `object`, and `==` compares objects by reference identity. A class compares by value with `=~` only when it defines `=~` or asks for it with `@equality()`.
+A [class](/definitions.html#classes) defines a reference type: fields and properties for its state, methods for its behavior, and one or more `init` constructors. An object is an instance of a class, created by calling the class like a function, as in `POINT(3, 4)`. `self` refers to the current instance inside a method. A class with no declared superclass extends `object`, and `==` compares objects by reference identity. A class compares by value with `=~` only when it defines `=~` or asks for it with `@equality()`.
 
 ## encapsulation
 
@@ -22,7 +22,7 @@ A class extends at most one superclass, named after a colon in the header, and i
 
 <GhulExample name="object-oriented-programming-2" />
 
-Calling `describe` through the `Animal[]` is polymorphism: the static type is `Animal`, the behaviour is each subclass's overriding `speak`.
+Calling `describe` through the `Animal[]` is polymorphism: the static type is `Animal`, the behavior is each subclass's overriding `speak`.
 
 ## abstract and closed classes
 
@@ -34,7 +34,7 @@ By default a class is closed to subclassing outside its own assembly; the postfi
 
 A [trait](/definitions.html#traits) is ghūl's interface: a set of members a type promises to provide. A class, struct, or union implements a trait by naming it in the header, and the value can then be used at the trait's type wherever the trait is expected. A class extends one superclass but implements any number of traits. A type can also implement a trait from a separate [`impl … for` block](/definitions.html#partial-and-impl-blocks) instead of naming it in the header, which is how a union gains trait methods.
 
-A trait member can provide a default body. An implementing type inherits the default, and can override it with different behaviour, reaching the default with `super`. Traits combine with generics: a generic trait like `Operation[T]` gives a whole family of implementations one shared shape.
+A trait member can provide a default body. An implementing type inherits the default, and can override it with different behavior, reaching the default with `super`. Traits combine with generics: a generic trait like `Operation[T]` gives a whole family of implementations one shared shape.
 
 ## narrowing
 

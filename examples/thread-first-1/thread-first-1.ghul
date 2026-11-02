@@ -1,11 +1,11 @@
 use IO.Std.write_line
 
-class BOX(value: int)
+class Box(value: int)
 
 twice(x: int) -> int => x * 2
-describe(b: BOX) -> string => "box of {b.value}"
+describe(b: Box) -> string => "box of {b.value}"
 
 // '|>' threads its left side in as the first argument of the call on
 // its right, so a chain reads left-to-right instead of nesting
-// inside-out. This line means write_line(describe(BOX(twice(21)))).
-21 |> twice() |> BOX() |> describe() |> write_line()
+// inside-out. This line means write_line(describe(Box(twice(21)))).
+21 |> twice() |> Box() |> describe() |> write_line()

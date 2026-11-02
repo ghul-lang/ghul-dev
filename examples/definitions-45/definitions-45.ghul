@@ -1,6 +1,6 @@
 use IO.Std.write_line
 
-class COUNTER is
+class Counter is
     _count: int
     init(count: int) is _count = count; si
 // >>>
@@ -9,5 +9,5 @@ class COUNTER is
 // <<<
 si
 
-let c = COUNTER(21)
+let c = Counter(21)
 write_line(c.doubled())

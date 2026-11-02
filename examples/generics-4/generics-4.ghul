@@ -1,6 +1,6 @@
-struct HOLD_SOMETHING[T](value: T)
+struct HoldSomething[T](value: T)
 
 // >>>
-let holds_int = HOLD_SOMETHING(1234)
-let holds_string = HOLD_SOMETHING("hello")
+let holds_int = HoldSomething(1234)
+let holds_string = HoldSomething("hello")
 // <<<

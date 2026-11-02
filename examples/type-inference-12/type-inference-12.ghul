@@ -1,19 +1,19 @@
 // >>>
-class BASE()
+class Base()
 
-class DERIVED(): BASE
+class Derived(): Base
 
 let derived =
     if true then
-        DERIVED()
+        Derived()
     else
-        DERIVED()
+        Derived()
     fi
 
 let base =
     if true then
-        DERIVED()
+        Derived()
     else
-        BASE()
+        Base()
     fi
 // <<<

@@ -1,5 +1,5 @@
 // >>>
-class COUNTER is
+class Counter is
     count: int // a property - its type is declared
 
     init() is
@@ -15,4 +15,4 @@ class COUNTER is
 si
 // <<<
 
-COUNTER().tick()
+Counter().tick()

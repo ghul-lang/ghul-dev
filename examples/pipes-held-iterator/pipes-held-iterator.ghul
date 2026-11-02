@@ -1,7 +1,7 @@
 use IO.Std.write_line
 use Ghul.Pipes
 
-class LINES(lines: string[]): Collections.Iterator[string] is
+class Lines(lines: string[]): Collections.Iterator[string] is
     _index: int field
 
     init(..) is
@@ -20,7 +20,7 @@ class LINES(lines: string[]): Collections.Iterator[string] is
     si
 si
 
-open_lines() -> Collections.Iterator[string] => LINES(["a", "few", "longer", "lines"])
+open_lines() -> Collections.Iterator[string] => Lines(["a", "few", "longer", "lines"])
 
 // >>>
 first_long_line() -> string? =>

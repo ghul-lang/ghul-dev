@@ -9,7 +9,7 @@ apply_twice[T](f: T -> T, x: T) -> T => f(f(x))
 twice[T](f: T -> T) -> T -> T => x => f(f(x))
 
 // a generic method that takes a function
-class SHELF[T](items: List[T]) is
+class Shelf[T](items: List[T]) is
     map_all[U](f: T -> U) -> List[U] => [f(item) for item in items]
 si
 
@@ -21,6 +21,6 @@ write_line("apply_twice on text: {apply_twice(s => "<{s}>", "x")}")
 let quadruple = twice(times_2)
 write_line("quadruple(5): {quadruple(5)}")
 
-let lengths = SHELF(["one", "three", "seven"]).map_all(s => s.length)
+let lengths = Shelf(["one", "three", "seven"]).map_all(s => s.length)
 write_line("lengths: {lengths}")
 // <<<

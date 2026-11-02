@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-class TEMPERATURA is
+class Temperatura is
     grados: double
 
     init(grados: double) is
@@ -13,7 +13,7 @@ si
 
 面積(幅: double, 高さ: double) -> double => 幅 * 高さ
 
-let máxima = TEMPERATURA(21.5)
+let máxima = Temperatura(21.5)
 
 write_line("{máxima.en_fahrenheit()}")
 write_line("{面積(3.0, 4.0)}")

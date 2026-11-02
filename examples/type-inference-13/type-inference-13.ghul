@@ -1,8 +1,8 @@
 // >>>
-class THING[T](value: T)
+class Thing[T](value: T)
 // <<<
 
 // >>>
-let int_thing = THING(1234)
-let string_thing = THING("hello")
+let int_thing = Thing(1234)
+let string_thing = Thing("hello")
 // <<<

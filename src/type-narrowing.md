@@ -28,7 +28,7 @@ For a two-variant union, the `else` branch is narrowed to the complementary vari
 
 The `else` narrowing extends to a class hierarchy declared in the current assembly without `open`: the compiler knows every subclass, so ruling out the tested one narrows the `else` branch to the others. When an `abstract` root has exactly two subclasses, ruling out one leaves the other. The [object oriented programming](/object-oriented-programming) page covers open, closed, and abstract classes.
 
-A `while` condition narrows its body the same way an `if` condition narrows its then-branch, so `while isa CAT(a) do a.purr() od` reaches a `CAT`-only member without an inner cast.
+A `while` condition narrows its body the same way an `if` condition narrows its then-branch, so `while isa Cat(a) do a.purr() od` reaches a `Cat`-only member without an inner cast.
 
 ## flow-sensitive narrowing
 
@@ -64,7 +64,7 @@ If the local is already narrowed, assigning a value of a different type cancels 
 
 ## how long a narrowing lasts
 
-A narrowing is a fact about a value at a point in the program, and values change: one that was present can be reassigned to null, and one that was a `CAT` can be replaced by some other `Animal`. So a narrowing has a lifetime, and the compiler works out where it ends.
+A narrowing is a fact about a value at a point in the program, and values change: one that was present can be reassigned to null, and one that was a `Cat` can be replaced by some other `Animal`. So a narrowing has a lifetime, and the compiler works out where it ends.
 
 A narrowing lasts at most to the end of the code the test covers - the then or else arm of the `if`, the loop body, or the rest of the block after a guard. It can end earlier, because the value can change before the block ends: by an explicit reassignment, or because a call to a function or method changes it, directly or indirectly.
 

@@ -4,7 +4,7 @@ use IO.Std.write_line
 // expression-bodied free function:
 square(n: int) -> int => n * n
 
-class COUNTER is
+class Counter is
     _count: int
 
     init() is si
@@ -18,7 +18,7 @@ si
 
 write_line("square(6) = {square(6)}")
 
-let c = COUNTER()
+let c = Counter()
 write_line("bump = {c.bump()}")
 write_line("bump = {c.bump()}")
 

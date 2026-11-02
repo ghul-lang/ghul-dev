@@ -2,18 +2,18 @@ use IO.Std.write_line
 
 class Animal abstract is si
 
-class CAT(): Animal is
+class Cat(): Animal is
     purr() -> string => "purr"
 si
 
 // >>>
 greet(a: Animal) is
-    if isa CAT(a) then
-        // a is a parameter of greet, narrowed to CAT
+    if isa Cat(a) then
+        // a is a parameter of greet, narrowed to Cat
         // in this branch
         write_line(a.purr())
     fi
 si
 
-greet(CAT())
+greet(Cat())
 // <<<

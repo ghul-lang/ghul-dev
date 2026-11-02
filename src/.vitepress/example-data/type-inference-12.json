@@ -2,28 +2,28 @@
   "name": "type-inference-12",
   "snippet": false,
   "wasm": false,
-  "code": "class BASE()\n\nclass DERIVED(): BASE\n\nlet derived =\n    if true then\n        DERIVED()\n    else\n        DERIVED()\n    fi\n\nlet base =\n    if true then\n        DERIVED()\n    else\n        BASE()\n    fi",
-  "fullSource": "class BASE()\n\nclass DERIVED(): BASE\n\nlet derived =\n    if true then\n        DERIVED()\n    else\n        DERIVED()\n    fi\n\nlet base =\n    if true then\n        DERIVED()\n    else\n        BASE()\n    fi\n",
+  "code": "class Base()\n\nclass Derived(): Base\n\nlet derived =\n    if true then\n        Derived()\n    else\n        Derived()\n    fi\n\nlet base =\n    if true then\n        Derived()\n    else\n        Base()\n    fi",
+  "fullSource": "class Base()\n\nclass Derived(): Base\n\nlet derived =\n    if true then\n        Derived()\n    else\n        Derived()\n    fi\n\nlet base =\n    if true then\n        Derived()\n    else\n        Base()\n    fi\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [],
   "hovers": [
-    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 10, "text": "class BASE", "signature": "class BASE", "kindLabel": "class" },
-    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "text": "BASE.init()", "signature": "BASE.init()", "kindLabel": "constructor" },
-    { "startLine": 3, "startColumn": 7, "endLine": 3, "endColumn": 13, "text": "class DERIVED", "signature": "class DERIVED", "kindLabel": "class" },
-    { "startLine": 3, "startColumn": 7, "endLine": 3, "endColumn": 15, "text": "DERIVED.init()", "signature": "DERIVED.init()", "kindLabel": "constructor" },
-    { "startLine": 3, "startColumn": 18, "endLine": 3, "endColumn": 21, "text": "class BASE", "signature": "class BASE", "kindLabel": "class" },
-    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 11, "text": "derived: DERIVED", "signature": "derived: DERIVED", "kindLabel": "global variable" },
-    { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 8, "text": "base: BASE", "signature": "base: BASE", "kindLabel": "global variable" },
-    { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 15, "text": "DERIVED.init()", "signature": "DERIVED.init()", "kindLabel": "constructor" },
-    { "startLine": 9, "startColumn": 9, "endLine": 9, "endColumn": 15, "text": "DERIVED.init()", "signature": "DERIVED.init()", "kindLabel": "constructor" },
-    { "startLine": 14, "startColumn": 9, "endLine": 14, "endColumn": 15, "text": "DERIVED.init()", "signature": "DERIVED.init()", "kindLabel": "constructor" },
-    { "startLine": 16, "startColumn": 9, "endLine": 16, "endColumn": 12, "text": "BASE.init()", "signature": "BASE.init()", "kindLabel": "constructor" }
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 10, "text": "class Base", "signature": "class Base", "kindLabel": "class" },
+    { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "text": "Base.init()", "signature": "Base.init()", "kindLabel": "constructor" },
+    { "startLine": 3, "startColumn": 7, "endLine": 3, "endColumn": 13, "text": "class Derived", "signature": "class Derived", "kindLabel": "class" },
+    { "startLine": 3, "startColumn": 7, "endLine": 3, "endColumn": 15, "text": "Derived.init()", "signature": "Derived.init()", "kindLabel": "constructor" },
+    { "startLine": 3, "startColumn": 18, "endLine": 3, "endColumn": 21, "text": "class Base", "signature": "class Base", "kindLabel": "class" },
+    { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 11, "text": "derived: Derived", "signature": "derived: Derived", "kindLabel": "global variable" },
+    { "startLine": 12, "startColumn": 5, "endLine": 12, "endColumn": 8, "text": "base: Base", "signature": "base: Base", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 9, "endLine": 7, "endColumn": 15, "text": "Derived.init()", "signature": "Derived.init()", "kindLabel": "constructor" },
+    { "startLine": 9, "startColumn": 9, "endLine": 9, "endColumn": 15, "text": "Derived.init()", "signature": "Derived.init()", "kindLabel": "constructor" },
+    { "startLine": 14, "startColumn": 9, "endLine": 14, "endColumn": 15, "text": "Derived.init()", "signature": "Derived.init()", "kindLabel": "constructor" },
+    { "startLine": 16, "startColumn": 9, "endLine": 16, "endColumn": 12, "text": "Base.init()", "signature": "Base.init()", "kindLabel": "constructor" }
   ],
   "inlayHints": [
-    { "line": 1, "column": 7, "label": "▼", "detail": "BASE\n\n- ▼ extended by `DERIVED`", "code": "definition-virtuality" }
+    { "line": 1, "column": 7, "label": "▼", "detail": "Base\n\n- ▼ extended by `Derived`", "code": "definition-virtuality" }
   ],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 10, "tokenType": "class" },

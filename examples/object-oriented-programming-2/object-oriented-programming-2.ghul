@@ -9,17 +9,17 @@ class Animal is
     describe() -> string => "{_name} says {speak()}"
 si
 
-class DOG: Animal is
+class Dog: Animal is
     init(name: string) is super.init(name); si
     speak() -> string => "woof"
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init(name: string) is super.init(name); si
     speak() -> string => "meow"
 si
 
-let animals: Animal[] = [DOG("Rex"), CAT("Tom")]
+let animals: Animal[] = [Dog("Rex"), Cat("Tom")]
 
 for a in animals do
     write_line(a.describe()) // describe calls the overriding speak

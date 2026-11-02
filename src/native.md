@@ -65,14 +65,14 @@ ghul repl --target llvm
 ghul build --debug
 ```
 
-A debug build is unoptimised and has line tables and variables, so a debugger and a crash's backtrace name ghūl files, lines and variables. `objdump`{:sh} shows the source beside the machine code, and `gdb`{:sh} steps through it:
+A debug build is unoptimized and has line tables and variables, so a debugger and a crash's backtrace name ghūl files, lines and variables. `objdump`{:sh} shows the source beside the machine code, and `gdb`{:sh} steps through it:
 
 ```sh
 objdump -d -S out/llvm-debug/hello
 gdb out/llvm-debug/hello
 ```
 
-`--optimise <0-3>`{:sh} sets the optimisation level, which is otherwise 2, or 0 for a debug build. A build at another level goes into a directory of its own, such as `out/llvm-O3/`{:text}, or `out/llvm-debug-O2/`{:text} for an optimised build with debug information. The manifest's `options`{:text} can name a default level, as `"optimise": 3`{:text}.
+`--optimise <0-3>`{:sh} sets the optimization level, which is otherwise 2, or 0 for a debug build. A build at another level goes into a directory of its own, such as `out/llvm-O3/`{:text}, or `out/llvm-debug-O2/`{:text} for an optimized build with debug information. The manifest's `options`{:text} can name a default level, as `"optimise": 3`{:text}.
 
 ## what works today
 
@@ -80,7 +80,7 @@ With the latest compiler, a native build compiles classes, structs, traits and u
 
 A native program fails the way a .NET one does: reading through a null reference throws `NullReferenceException`, a failed cast throws `InvalidCastException`, an array index out of range throws `IndexOutOfRangeException`, and an integer division by zero throws `DivideByZeroException`, each of which a `try` can catch.
 
-Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behaviour by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
+Strings, numbers and dates behave as they do in a .NET program configured for invariant globalization: strings compare and sort by UTF-16 code unit, and numbers and dates format the same way whatever the culture of the machine. A .NET program gets the same behavior by setting `<InvariantGlobalization>true</InvariantGlobalization>` in its project.
 
 Not yet:
 

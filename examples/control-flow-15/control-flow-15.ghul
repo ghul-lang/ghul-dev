@@ -1,7 +1,7 @@
 use IO.Std.write_line
 use Collections
 
-class STRING_READER is
+class StringReader is
     _lines: List[string]
     _index: int
 
@@ -20,7 +20,7 @@ class STRING_READER is
     si
 si
 
-let reader = STRING_READER(["the only line"])
+let reader = StringReader(["the only line"])
 // >>>
 if let line = reader.read_line() then
     // reader.read_line() yields string?

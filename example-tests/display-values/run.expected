@@ -1,6 +1,6 @@
 [one, two]
 ["one", "two"]
 top
-POINT(x = 3, y = 4)
+Point(x = 3, y = 4)
 (1, "one", 'c', true)
 [<cycle>]

@@ -4,27 +4,27 @@ class Animal abstract is
     name() -> string
 si
 
-class CAT: Animal is
+class Cat: Animal is
     init() is si
     name() -> string => "cat"
     purr() -> string => "purr"
 si
 
-class DOG: Animal is
+class Dog: Animal is
     init() is si
     name() -> string => "dog"
 si
 
-any_animal() -> Animal => CAT()
+any_animal() -> Animal => Cat()
 
 let pet mut = any_animal()
 // >>>
-if isa CAT(pet) then
+if isa Cat(pet) then
     write_line(pet.purr())
 
-    pet = DOG()
-    // reassigning cancels the CAT narrowing and
-    // introduces a DOG one: pet is DOG here
+    pet = Dog()
+    // reassigning cancels the Cat narrowing and
+    // introduces a Dog one: pet is Dog here
     write_line(pet.name())
 fi
 // <<<

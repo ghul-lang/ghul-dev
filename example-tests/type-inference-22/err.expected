@@ -1,1 +1,1 @@
-test.ghul: 25,37..25,41: error: member purr not found in Animal [the narrowing of carrier.occupant to CAT ended at this call: test.ghul: 22,9..22,28]
+test.ghul: 25,37..25,41: error: member purr not found in Animal [the narrowing of carrier.occupant to Cat ended at this call: test.ghul: 22,9..22,28]
