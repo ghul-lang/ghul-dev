@@ -18,7 +18,7 @@ struct Percentage is
     si
 si
 
-let full = Percentage(87.5d)
+let full = Percentage(87.5)
 let empty = Percentage()
 
 if full? then

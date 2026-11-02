@@ -1,9 +1,9 @@
 struct Point(x: double, y: double)
 
 // >>>
-let origin = Point(0.0D, 0.0D)
+let origin = Point(0.0, 0.0)
 
 // or up, or down, or even left, depending on
 // your co-ordinate system!
-let right = Point(1.0D, 0.0D)
+let right = Point(1.0, 0.0)
 // <<<

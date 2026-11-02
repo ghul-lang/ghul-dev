@@ -13,10 +13,10 @@ area(s: Shape) -> double =>
     // case over a union is checked for exhaustiveness: every variant
     // is covered here, so no else arm is needed
     case s
-    when c: CIRCLE then 3.14159d * c.radius * c.radius
+    when c: CIRCLE then 3.14159 * c.radius * c.radius
     when q: SQUARE then q.side * q.side
     esac
 
-write_line("{area(CIRCLE(2.0d))}")
-write_line("{area(SQUARE(3.0d))}")
+write_line("{area(CIRCLE(2.0))}")
+write_line("{area(SQUARE(3.0))}")
 // <<<
