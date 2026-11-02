@@ -1,6 +1,6 @@
 // >>>
 let my_int: int = 42
-let my_float: double = 3.14d
+let my_float: double = 3.14
 let my_decimal: decimal = 19.99m
 let my_bool: bool = true
 let my_char: char = 'A'

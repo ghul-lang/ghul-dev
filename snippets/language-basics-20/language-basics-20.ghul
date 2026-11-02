@@ -1,12 +1,12 @@
 // OK: both addends are type double
-let d = 1.0d + 1.0d
+let d = 1.0 + 1.0
 
 // compile time error: addends are mixed types
 // (double vs int)
-let e = 1.0d + 1
+let e = 1.0 + 1
 
 // OK with explicit cast
-let e = 1.0d + cast double(1)
+let e = 1.0 + cast double(1)
 
 // OK: "hello" is a string, and string derives
 // from object

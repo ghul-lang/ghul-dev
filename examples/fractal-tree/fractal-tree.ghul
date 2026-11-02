@@ -1,8 +1,8 @@
 use Ghul.Math
 use Raster.IMAGE
 
-let spread = 0.4D
-let shrink = 0.76D
+let spread = 0.4
+let shrink = 0.76
 
 let image = IMAGE(500, 500)
 
@@ -18,17 +18,17 @@ branch(
     let tip_x = x + length * cos(angle)
     let tip_y = y + length * sin(angle)
 
-    image.stroke(0.6D * cast double(depth))
+    image.stroke(0.6 * cast double(depth))
     image.line(x, y, tip_x, tip_y)
 
     branch(tip_x, tip_y, angle - spread, length * shrink, depth - 1)
     branch(tip_x, tip_y, angle + spread, length * shrink, depth - 1)
 si
 
-image.view(0.0D, 0.0D, 500.0D, 500.0D)
+image.view(0.0, 0.0, 500.0, 500.0)
 image.color(60ub, 40ub, 20ub)
 
-branch(250.0D, 10.0D, pi / 2.0D, 110.0D, 10)
+branch(250.0, 10.0, pi / 2.0, 110.0, 10)
 
 image.write("tree.png")
 
