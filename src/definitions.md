@@ -99,7 +99,7 @@ A class has no `=~` unless it defines one. `@equality()` before a class asks the
 
 Two values are equal only when they are the same class. A subclass of a class that asks for equality has to ask for its own, or define `=~` and `get_hash_code` itself. `@equality()` cannot be used on an `open` class, or on one that already defines any of `=~`, `<>`, `get_hash_code` or `equals`.
 
-Classes can only be defined at global scope. Classes can be generic, which will be covered later. Concrete class names should be in `MACRO_CASE`. Abstract class names should be in `PascalCase`.
+Classes can only be defined at global scope. Classes can be generic, which will be covered later. Concrete class names should be in `UPPER_SNAKE_CASE`. Abstract class names should be in `PascalCase`.
 
 ### structs
 
@@ -118,7 +118,7 @@ A struct defines a new value type. Assigning a struct copies all of its fields, 
 
 The compiler doesn't synthesise these for a struct with a non-public member, or for one that declares any of `=~`, `<>`, `get_hash_code` or `equals`. Define that struct's equality as described under [defining operators](#operators) and, for the .NET side, under [making your own types work with .NET](/dotnet-integration.html#equality).
 
-Structs can only be defined at global scope. Structs can be generic, which will be covered later. Struct names should be in `MACRO_CASE`.
+Structs can only be defined at global scope. Structs can be generic, which will be covered later. Struct names should be in `UPPER_SNAKE_CASE`.
 
 ### traits
 
@@ -163,7 +163,7 @@ A union can declare a primary-constructor header for state shared across every v
 
 <GhulExample name="definitions-42" />
 
-Unions can only be defined at global scope. Union names should be in `PascalCase` and variant names should be in `MACRO_CASE`.
+Unions can only be defined at global scope. Union names should be in `PascalCase` and variant names should be in `UPPER_SNAKE_CASE`.
 
 ### enums
 
@@ -171,7 +171,7 @@ An enum consists of a name and then an enum body, which contains one or more ele
 
 <GhulExample name="definitions-20" />
 
-Enums can only be defined at global scope. An enum type name should be in `PascalCase`, and its members in `MACRO_CASE`.
+Enums can only be defined at global scope. An enum type name should be in `PascalCase`, and its members in `UPPER_SNAKE_CASE`.
 
 Enum values compare for equality and order: `=~` and `==` compare by the underlying integer, and `<`, `<=`, `>` and `>=` order by it. `=~` works over an optional enum as it does over any other optional. An individual member can be imported by name - `use Some.Namespace.Suit.HEARTS` - as well as reached through the type.
 
@@ -351,7 +351,7 @@ Note that `use` only applies within the current `namespace` definition. It does 
 
 ## visibility of symbols
 
-In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. A class with only `static` members is a utility container that is never constructed, and accepts either `PascalCase` or `MACRO_CASE`.
+In ghūl, the visibility of symbols outside their defining scope is managed by a naming convention which is partially enforced by the compiler. The compiler also warns when a declaration's name doesn't match the convention for its kind - `non-snake-case-name`, `non-pascal-case-name`, or `non-upper-snake-case-name` - each suppressible per declaration, per file, or project-wide. A class with only `static` members is a utility container that is never constructed, and accepts either `PascalCase` or `UPPER_SNAKE_CASE`.
 
 ### global symbols
 
