@@ -1,1 +1,1 @@
---dotnet
+--dotnet --warn-as-hint file-private-function

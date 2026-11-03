@@ -288,8 +288,9 @@ namespace ExampleTool is
             // not the one this tool just provisioned above). Passing `-a`
             // for our own runtime keeps this in step, but it also opts out
             // of that canned default entirely, so the base class library
-            // DLLs have to be spelled out here too.
-            let reference_flags = _sdk_and_runtime_reference_flags(sdk_ref_path)
+            // DLLs have to be spelled out here too. A function private to its
+            // file is how a page example is written, so that warning is a hint.
+            let reference_flags = "{_sdk_and_runtime_reference_flags(sdk_ref_path)} --warn-as-hint file-private-function"
 
             let compile mut = run_process(
                 "dotnet",
