@@ -1,7 +1,7 @@
 {
   "name": "functional-programming-17",
   "snippet": false,
-  "wasm": true,
+  "wasm": false,
   "code": "use IO.Std.write_line\n\nunion Option[T] is\n    SOME(value: T)\n    NONE\nsi\n\nunion List[T] is\n    NIL\n    CONS(head: T, tail: List[T])\nsi\n\nunion Tree[T] is\n    LEAF(value: T)\n    NODE(left: Tree[T], right: Tree[T])\nsi\n\nuse Option.SOME\nuse Option.NONE\nuse List.NIL\nuse List.CONS\nuse Tree.LEAF\nuse Tree.NODE\n\ntest_option()\ntest_list()\ntest_tree()\n\ntest_option() is\n    let some_int = SOME(42)\n    let none_int = NONE()\n\n    let stringify_option = o rec =>\n        if isa SOME(o) then\n            \"{o.value}\"\n        else\n            \"none\"\n        fi\n\n    write_line(stringify_option(some_int))\n    write_line(stringify_option(none_int))\nsi\n\ntest_list() is\n    let list = CONS(1, CONS(2, CONS(3, NIL())))\n\n    let stringify_list = l rec =>\n        if isa CONS(l) then\n            let (head, tail) = l in\n            \"{head}, {rec(tail)}\"\n        else\n            \"nil\"\n        fi\n\n    write_line(stringify_list(list))\nsi\n\ntest_tree() is\n    let tree = NODE(\n        NODE(\n            LEAF(1),\n            LEAF(2)\n        ),\n        NODE(\n            LEAF(3),\n            LEAF(4)\n        )\n    )\n\n    let stringify_tree = t rec =>\n        if isa NODE(t) then\n            let (left, right) = t in\n            \"({rec(left)}, {rec(right)})\"\n        else\n            \"{t.value}\"\n        fi\n\n    write_line(stringify_tree(tree))\nsi",
   "fullSource": "use IO.Std.write_line\n\nunion Option[T] is\n    SOME(value: T)\n    NONE\nsi\n\nunion List[T] is\n    NIL\n    CONS(head: T, tail: List[T])\nsi\n\nunion Tree[T] is\n    LEAF(value: T)\n    NODE(left: Tree[T], right: Tree[T])\nsi\n\nuse Option.SOME\nuse Option.NONE\nuse List.NIL\nuse List.CONS\nuse Tree.LEAF\nuse Tree.NODE\n\ntest_option()\ntest_list()\ntest_tree()\n\ntest_option() is\n    let some_int = SOME(42)\n    let none_int = NONE()\n\n    let stringify_option = o rec =>\n        if isa SOME(o) then\n            \"{o.value}\"\n        else\n            \"none\"\n        fi\n\n    write_line(stringify_option(some_int))\n    write_line(stringify_option(none_int))\nsi\n\ntest_list() is\n    let list = CONS(1, CONS(2, CONS(3, NIL())))\n\n    let stringify_list = l rec =>\n        if isa CONS(l) then\n            let (head, tail) = l in\n            \"{head}, {rec(tail)}\"\n        else\n            \"nil\"\n        fi\n\n    write_line(stringify_list(list))\nsi\n\ntest_tree() is\n    let tree = NODE(\n        NODE(\n            LEAF(1),\n            LEAF(2)\n        ),\n        NODE(\n            LEAF(3),\n            LEAF(4)\n        )\n    )\n\n    let stringify_tree = t rec =>\n        if isa NODE(t) then\n            let (left, right) = t in\n            \"({rec(left)}, {rec(right)})\"\n        else\n            \"{t.value}\"\n        fi\n\n    write_line(stringify_tree(tree))\nsi\n",
   "hiddenBefore": false,
@@ -57,7 +57,7 @@
     { "startLine": 31, "startColumn": 20, "endLine": 31, "endColumn": 23, "text": "NONE[int].init()", "signature": "NONE[int].init()", "kindLabel": "constructor" },
     { "startLine": 33, "startColumn": 28, "endLine": 33, "endColumn": 28, "text": "o: Option[int]", "signature": "o: Option[int]", "kindLabel": "local argument" },
     { "startLine": 33, "startColumn": 9, "endLine": 33, "endColumn": 24, "text": "stringify_option: Option[int] -> string pure", "signature": "stringify_option: Option[int] -> string pure", "kindLabel": "local value" },
-    { "startLine": 29, "startColumn": 1, "endLine": 29, "endColumn": 11, "text": "test_option: () -> void", "signature": "test_option: () -> void", "kindLabel": "nested function" },
+    { "startLine": 29, "startColumn": 1, "endLine": 29, "endColumn": 11, "text": "test_option() -> void", "signature": "test_option() -> void", "kindLabel": "pure global function" },
     { "startLine": 45, "startColumn": 9, "endLine": 45, "endColumn": 12, "text": "list: CONS[int]", "signature": "list: CONS[int]", "kindLabel": "local value" },
     { "startLine": 45, "startColumn": 16, "endLine": 45, "endColumn": 19, "text": "CONS[int].init(head: int, tail: List[int])", "signature": "CONS[int].init(head: int, tail: List[int])", "kindLabel": "constructor" },
     { "startLine": 45, "startColumn": 24, "endLine": 45, "endColumn": 27, "text": "CONS[int].init(head: int, tail: List[int])", "signature": "CONS[int].init(head: int, tail: List[int])", "kindLabel": "constructor" },
@@ -68,7 +68,7 @@
     { "startLine": 49, "startColumn": 18, "endLine": 49, "endColumn": 21, "text": "head: int", "signature": "head: int", "kindLabel": "local value" },
     { "startLine": 49, "startColumn": 24, "endLine": 49, "endColumn": 27, "text": "tail: List[int]", "signature": "tail: List[int]", "kindLabel": "local value" },
     { "startLine": 49, "startColumn": 32, "endLine": 49, "endColumn": 32, "text": "l: List[int]\n    ► CONS[int]", "signature": "l: List[int]\n    ► CONS[int]", "kindLabel": "local argument" },
-    { "startLine": 44, "startColumn": 1, "endLine": 44, "endColumn": 9, "text": "test_list: () -> void", "signature": "test_list: () -> void", "kindLabel": "nested function" },
+    { "startLine": 44, "startColumn": 1, "endLine": 44, "endColumn": 9, "text": "test_list() -> void", "signature": "test_list() -> void", "kindLabel": "pure global function" },
     { "startLine": 59, "startColumn": 9, "endLine": 59, "endColumn": 12, "text": "tree: NODE[int]", "signature": "tree: NODE[int]", "kindLabel": "local value" },
     { "startLine": 59, "startColumn": 16, "endLine": 59, "endColumn": 19, "text": "NODE[int].init(left: Tree[int], right: Tree[int])", "signature": "NODE[int].init(left: Tree[int], right: Tree[int])", "kindLabel": "constructor" },
     { "startLine": 70, "startColumn": 26, "endLine": 70, "endColumn": 26, "text": "t: Tree[int]", "signature": "t: Tree[int]", "kindLabel": "local argument" },
@@ -76,7 +76,7 @@
     { "startLine": 72, "startColumn": 18, "endLine": 72, "endColumn": 21, "text": "left: Tree[int]", "signature": "left: Tree[int]", "kindLabel": "local value" },
     { "startLine": 72, "startColumn": 24, "endLine": 72, "endColumn": 28, "text": "right: Tree[int]", "signature": "right: Tree[int]", "kindLabel": "local value" },
     { "startLine": 72, "startColumn": 33, "endLine": 72, "endColumn": 33, "text": "t: Tree[int]\n    ► NODE[int]", "signature": "t: Tree[int]\n    ► NODE[int]", "kindLabel": "local argument" },
-    { "startLine": 58, "startColumn": 1, "endLine": 58, "endColumn": 9, "text": "test_tree: () -> void", "signature": "test_tree: () -> void", "kindLabel": "nested function" },
+    { "startLine": 58, "startColumn": 1, "endLine": 58, "endColumn": 9, "text": "test_tree() -> void", "signature": "test_tree() -> void", "kindLabel": "pure global function" },
     { "startLine": 34, "startColumn": 16, "endLine": 34, "endColumn": 19, "text": "SOME[T](value: T)", "signature": "SOME[T](value: T)", "kindLabel": "variant" },
     { "startLine": 34, "startColumn": 21, "endLine": 34, "endColumn": 21, "text": "o: Option[int]", "signature": "o: Option[int]", "kindLabel": "local argument" },
     { "startLine": 48, "startColumn": 16, "endLine": 48, "endColumn": 19, "text": "CONS[T](head: T, tail: List[T])", "signature": "CONS[T](head: T, tail: List[T])", "kindLabel": "variant" },
@@ -109,9 +109,9 @@
     { "startLine": 78, "startColumn": 5, "endLine": 78, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 78, "startColumn": 16, "endLine": 78, "endColumn": 29, "text": "stringify_tree: Tree[int] -> string", "signature": "stringify_tree: Tree[int] -> string", "kindLabel": "local value" },
     { "startLine": 78, "startColumn": 31, "endLine": 78, "endColumn": 34, "text": "tree: NODE[int]", "signature": "tree: NODE[int]", "kindLabel": "local value" },
-    { "startLine": 25, "startColumn": 1, "endLine": 25, "endColumn": 11, "text": "test_option: () -> void", "signature": "test_option: () -> void", "kindLabel": "nested function" },
-    { "startLine": 26, "startColumn": 1, "endLine": 26, "endColumn": 9, "text": "test_list: () -> void", "signature": "test_list: () -> void", "kindLabel": "nested function" },
-    { "startLine": 27, "startColumn": 1, "endLine": 27, "endColumn": 9, "text": "test_tree: () -> void", "signature": "test_tree: () -> void", "kindLabel": "nested function" }
+    { "startLine": 25, "startColumn": 1, "endLine": 25, "endColumn": 11, "text": "test_option() -> void", "signature": "test_option() -> void", "kindLabel": "pure global function" },
+    { "startLine": 26, "startColumn": 1, "endLine": 26, "endColumn": 9, "text": "test_list() -> void", "signature": "test_list() -> void", "kindLabel": "pure global function" },
+    { "startLine": 27, "startColumn": 1, "endLine": 27, "endColumn": 9, "text": "test_tree() -> void", "signature": "test_tree() -> void", "kindLabel": "pure global function" }
   ],
   "inlayHints": [
     { "line": 34, "column": 21, "label": "►", "detail": "► SOME[int]\n> NONE[int]", "code": "narrowing-isa" },

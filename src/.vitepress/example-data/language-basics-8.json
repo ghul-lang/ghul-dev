@@ -2,8 +2,8 @@
   "name": "language-basics-8",
   "snippet": false,
   "wasm": false,
-  "code": "let numbers: int[] = [1, 2, 3]",
-  "fullSource": "let numbers: int[] = [1, 2, 3]\n",
+  "code": "let numbers: int[] = [1, 2, 3]\nlet fixed: ARRAY[int] = [4, 5, 6]",
+  "fullSource": "let numbers: int[] = [1, 2, 3]\nlet fixed: ARRAY[int] = [4, 5, 6]\n",
   "hiddenBefore": false,
   "hiddenAfter": false,
   "hiddenGapsAfterLine": [],
@@ -11,11 +11,17 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "text": "numbers: int[]", "signature": "numbers: int[]", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "text": "struct int", "signature": "struct int", "kindLabel": "struct" }
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "text": "fixed: ARRAY[int]", "signature": "fixed: ARRAY[int]", "kindLabel": "global variable" },
+    { "startLine": 2, "startColumn": 18, "endLine": 2, "endColumn": 20, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
+    { "startLine": 2, "startColumn": 12, "endLine": 2, "endColumn": 16, "text": "trait ARRAY[E]", "signature": "trait ARRAY[E]", "kindLabel": "trait" }
   ],
   "inlayHints": [],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 11, "tokenType": "property" },
-    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "tokenType": "struct" }
+    { "startLine": 1, "startColumn": 14, "endLine": 1, "endColumn": 16, "tokenType": "struct" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "tokenType": "property" },
+    { "startLine": 2, "startColumn": 12, "endLine": 2, "endColumn": 16, "tokenType": "interface" },
+    { "startLine": 2, "startColumn": 18, "endLine": 2, "endColumn": 20, "tokenType": "struct" }
   ]
 }
