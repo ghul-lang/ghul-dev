@@ -1,0 +1,16 @@
+use default
+
+// >>>
+// a pipe that never ends: the pattern reads only the elements it needs
+let squares = from(1) |> map(n => n * n)
+
+if let [a, b, ..rest] = squares then
+    write_line("{a} {b}, then {rest |> take(3) |> join(", ")}")
+fi
+
+// a string is a sequence of its chars
+case "ghūl"
+when [first, ..rest] then write_line("starts with {first}")
+else write_line("empty")
+esac
+// <<<

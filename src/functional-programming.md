@@ -33,6 +33,13 @@ operator is not an identifier. A static member operator is named through its
 type, as in ``V.`+``, and so is a built-in operator on a scalar type, as in
 ``int.`+``.
 
+A bare operator, such as `` `+ ``, names whichever `+` the expression `a + b`
+would choose for the parameter types of the function it's expected as, by the
+same overload resolution. A bare operator can also head a call with `*` in
+place of an operand, so `` `-(10, *) `` is `x => 10 - x`:
+
+<GhulExample name="functional-programming-37" />
+
 ## closures
 
 A function literal captures the variables of the scope it is written in. An
@@ -259,6 +266,14 @@ result is a list that reads from the source only as far as it is indexed, so
 it can stand for an unbounded pipe:
 
 <GhulExample name="functional-programming-30" />
+
+## memoized functions
+
+A function declared `memo` caches its results by its arguments. Every call goes through the cache, including the function's calls to itself, so the plain recursive definition is the memoized one. A function literal is memoized the same way: write `memo` with its `rec` and `pure` markers, in any order, before `=>` or `is`:
+
+<GhulExample name="functional-programming-38" />
+
+The key is the argument, or the tuple of the arguments when there are several, compared with `=~`. A global function's cache lasts for the life of the program, an instance method's cache belongs to its instance, and each value a function literal makes has a cache of its own. `memo` doesn't change the function's signature, so callers see an ordinary function.
 
 ## combining functions
 

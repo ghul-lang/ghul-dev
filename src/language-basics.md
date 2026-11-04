@@ -70,16 +70,17 @@ These types are used to represent basic values in ghūl programs.
 
 As with the other numeric types, the operands of an arithmetic operator must have the same type: `total * 2` is rejected where `total` is a `bigint`, and `total * 2n` is the way to write it.
 
-### arrays
+### lists and arrays
 
-ghūl supports arrays, which are fixed-size, **read-only** collections of elements of the same type. Array types are denoted using square brackets [] after the element type.
+A list of `E` is written `E[]`: anything with a `count` and a read-only indexer. An array is a list with a fixed size, and its type is written `ARRAY[E]`. Write `E[]` wherever a value is only read, such as a parameter, a field or a return type, and `ARRAY[E]` where the value must be an array, such as for a .NET method that takes or returns one:
 
 <GhulExample name="language-basics-8" />
 
-Arrays can be constructed with an [array literal](/expressions.html#array)
+An [array literal](/expressions.html#array) builds an array:
+
 <GhulExample name="language-basics-9" />
 
-Array elements can be read with indexer syntax
+List and array elements can be read with indexer syntax:
 <GhulExample name="language-basics-10" />
 
 Indexing with a range takes a slice rather than a single element. `..` excludes its end and `::` includes it, as they do everywhere else. `..<` counts its end back from the end of the source, and `..<<` counts both ends back, so `..<0` runs to the end:

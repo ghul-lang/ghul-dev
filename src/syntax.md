@@ -119,7 +119,13 @@ A file with no `namespace` can also have statements at its top level. They run i
 
 <GhulExample name="top-level-statements-1" />
 
-Definitions in the same file are still hoisted, so a top-level statement can use a function or type declared anywhere in the file. Top-level statements and a `namespace` cannot appear in the same file.
+Definitions in the same file are still hoisted, so a top-level statement can use a function or type declared anywhere in the file. A file with top-level statements can't declare a namespace block, but its namespace can be a [whole-file namespace](/definitions.html#namespaces).
+
+In a file with top-level statements, a function can be written with no types in its signature. It's compiled as a nested function of the top-level statements: its parameter types come from its calls, its return type from its body, and a top-level `let` it uses takes its type from those uses too:
+
+<GhulExample name="top-level-statements-2" />
+
+Such a function is private to the file. So is a function with types in its signature that calls one, unless a class, a trait or a function that stays global uses it. A class, a trait, a generic function, an operator or another file can't call either kind, so a function used from any of them needs the types in its signature, and so does everything it calls. The functions can be written in any order, and they can call each other. Like a function literal, such a function can be marked `memo` or `pure`.
 
 Otherwise, execution of a program begins at a function named `entry`.
 

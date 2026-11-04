@@ -8,7 +8,7 @@ The [type inference examples](/examples/type-inference) are whole programs you c
 
 Inside a function body, you rarely need to write a type. Local variables, loop variables, destructured variables, anonymous function parameters and generic type arguments are all inferred - from initializers, from the context an expression sits in, and from how a value is used later in the same body. You get the checking of static types without typing most of them: in the compiler's own source, over 90% of local variables have no type annotation, and most of the annotations that remain are deliberate - declaring a variable at a wider type than its initializer, or as reassignable before it has a value - rather than places inference needed help.
 
-A function's parameter and return types are always explicit, and so are fields, properties and global variables declared at namespace scope. Keeping them explicit is what keeps inference **function-local** - types inferred within one function are not visible outside it, and a type error always points into the body being edited rather than into another function entirely.
+A function's parameter and return types are written out, and so are fields, properties and global variables declared at namespace scope. The exception is a function written with no types in a file with [top-level statements](/syntax.html#top-level-statements): it's a nested function of those statements, and its signature is inferred. Keeping them explicit is what keeps inference **function-local** - types inferred within one function are not visible outside it, and a type error always points into the body being edited rather than into another function entirely.
 
 Mechanically it is bidirectional, constraint-based inference: types flow up from expressions and down from the contexts that use them, and the compiler re-walks each function body until every inferred type is known. The [implementation page](/implementation#type-inference) describes how.
 
@@ -29,7 +29,7 @@ The examples below leave inferred types unannotated; hover over any variable to 
 
 ## what stays explicit
 
-Type inference is local to a function body. The signature of a global function or a method is always written out in full:
+Type inference is local to a function body. The signature of a method is always written out in full, and so is the signature of a global function anywhere except a file with top-level statements:
 
 <GhulExample name="type-inference-1" />
 
@@ -44,6 +44,12 @@ Fields and properties belong to a type rather than to a function body, so their 
 When no explicit type is given for a variable in a let statement or expression, its type is inferred from the initializer, provided one is present.
 
 <GhulExample name="type-inference-7" />
+
+A `mut` variable with an initializer and no written type takes the join of the types of its initializer and of every value assigned to it later. So a variable initialized to one subclass can be assigned a sibling subclass, and one initialized to a `LIST` can be assigned an array:
+
+<GhulExample name="type-inference-24" />
+
+Where the join would be `object` or `System.ValueType`, or where the initializer or an assigned value is a value type, the variable keeps the type of its initializer, and assigning a value that type doesn't accept is an error. So `let i mut = 0; i = 1L` is an error. A written type, such as `let pet: Animal mut = Cat("tom")`, fixes the type either way.
 
 ### destructuring variables
 

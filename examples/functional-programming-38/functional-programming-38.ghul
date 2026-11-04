@@ -1,0 +1,11 @@
+use default
+
+// >>>
+fib(n: int) -> long memo =>
+    if n < 2 then long(n) else fib(n - 1) + fib(n - 2) fi
+
+let paths = (r: int, c: int) -> long rec memo =>
+    if r == 0 \/ c == 0 then 1L else rec(r - 1, c) + rec(r, c - 1) fi
+
+write_line("{fib(80)} {paths(16, 16)}")
+// <<<

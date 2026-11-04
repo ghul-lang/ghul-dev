@@ -1,0 +1,15 @@
+use IO.Std.write_line
+
+// >>>
+parity(n: int) -> string is
+    // called before it is written, and each calls the other:
+    if is_even(n) then return "even" fi
+
+    is_even(k: int) -> bool => if k == 0 then true else is_odd(k - 1) fi
+    is_odd(k: int) -> bool => if k == 0 then false else is_even(k - 1) fi
+
+    "odd"
+si
+// <<<
+
+write_line("{parity(10)} {parity(7)}")

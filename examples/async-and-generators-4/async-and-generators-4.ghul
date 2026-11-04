@@ -1,0 +1,24 @@
+use default
+
+class Animal(name: string public) is
+si
+
+class Cat(name: string): Animal is
+    super(name)
+si
+
+class Dog(name: string): Animal is
+    super(name)
+si
+
+// >>>
+// a sequence of Animal, the join of the two yields
+let pets = () is
+    yield Cat("tom")
+    yield Dog("rex")
+si
+
+for pet in pets() do
+    write_line(pet.name)
+od
+// <<<
