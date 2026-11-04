@@ -214,6 +214,18 @@ A `when` arm can take a pattern instead of an equality list, mirroring [`if let`
 
 Narrowing works like `if let`'s: an arm's type test narrows the scrutinee within its body, and so does a test made by the arm's own guard.
 
+### sequence patterns
+
+A pattern in square brackets matches a list or an array by its length, and defines its elements by position. `[a, b]` matches exactly two elements. `..name` as the last element defines `name` as the rest, so `[x, ..rest]` matches one or more. The rest is a view onto the source, not a copy. A sequence pattern can be used anywhere a destructure can: in a `case` arm, an `if let`, a `while let`, a `let`, a `for` loop variable, a parameter, or the left side of an assignment:
+
+<GhulExample name="control-flow-62" />
+
+`[]` and `[x, ..rest]` together cover every list, so the `case` doesn't need an `else`. Where the pattern can't fail to match, as in a `let`, a list of the wrong length throws `Ghul.AssertFailedException`.
+
+A sequence pattern also matches a lazy sequence, such as a pipe, a generator's result or a string. The match reads only the elements the pattern needs, so a sequence that never ends can be matched, and the rest is a lazy sequence of the elements that follow:
+
+<GhulExample name="control-flow-63" />
+
 ### exhaustiveness
 
 A `case` over a closed domain - a union's variants, `bool`, an enum, or a class hierarchy closed to the assembly - is checked for exhaustiveness. A missing case in a `case` statement warns (`non-exhaustive-case`); in a `case` expression it is an error. An arm that doesn't match anything the earlier arms left warns (`redundant-case-arm`), and an `else` that can never run warns (`dead-case-else`). An expression-position `case` over an open domain needs an `else`, unless the expected type has a default value to fall back on.

@@ -1,0 +1,33 @@
+{
+  "name": "async-and-generators-4",
+  "snippet": false,
+  "wasm": false,
+  "code": "// a sequence of Animal, the join of the two yields\nlet pets = () is\n    yield Cat(\"tom\")\n    yield Dog(\"rex\")\nsi\n\nfor pet in pets() do\n    write_line(pet.name)\nod",
+  "fullSource": "use default\n\nclass Animal(name: string public) is\nsi\n\nclass Cat(name: string): Animal is\n    super(name)\nsi\n\nclass Dog(name: string): Animal is\n    super(name)\nsi\n\n// a sequence of Animal, the join of the two yields\nlet pets = () is\n    yield Cat(\"tom\")\n    yield Dog(\"rex\")\nsi\n\nfor pet in pets() do\n    write_line(pet.name)\nod\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "tom\nrex\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 8, "text": "pets: () -> Pipe[Animal]", "signature": "pets: () -> Pipe[Animal]", "kindLabel": "global variable" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 7, "text": "pet: Animal", "signature": "pet: Animal", "kindLabel": "local value" },
+    { "startLine": 7, "startColumn": 12, "endLine": 7, "endColumn": 15, "text": "pets: () -> Pipe[Animal]", "signature": "pets: () -> Pipe[Animal]", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 13, "text": "Cat.init(name: string)", "signature": "Cat.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 13, "text": "Dog.init(name: string)", "signature": "Dog.init(name: string)", "kindLabel": "constructor" },
+    { "startLine": 8, "startColumn": 5, "endLine": 8, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 8, "startColumn": 16, "endLine": 8, "endColumn": 18, "text": "pet: Animal", "signature": "pet: Animal", "kindLabel": "local value" },
+    { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 23, "text": "Animal.name: string", "signature": "Animal.name: string", "kindLabel": "pure instance property" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 8, "tokenType": "property" },
+    { "startLine": 3, "startColumn": 11, "endLine": 3, "endColumn": 13, "tokenType": "method" },
+    { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 13, "tokenType": "method" },
+    { "startLine": 7, "startColumn": 5, "endLine": 7, "endColumn": 7, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 7, "startColumn": 12, "endLine": 7, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 8, "startColumn": 5, "endLine": 8, "endColumn": 14, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 8, "startColumn": 16, "endLine": 8, "endColumn": 18, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 23, "tokenType": "property" }
+  ]
+}

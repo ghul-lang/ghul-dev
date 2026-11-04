@@ -1,0 +1,11 @@
+use default
+
+// >>>
+let xs = [1, 2, 3, 4]
+
+let total = xs |> reduce(0, `+)
+let from_ten = xs |> map(`-(10, *)) |> join(", ")
+let pair_sums = [(1, 2), (3, 4)] |> map(`+) |> join(", ")
+
+write_line("{total}; {from_ten}; {pair_sums}")
+// <<<

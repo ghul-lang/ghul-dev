@@ -76,4 +76,8 @@ consumer asks for them, so a recursive generator reads naturally:
 
 `return;` ends the sequence early; falling off the end of the body has the same effect.
 
+A function literal that contains `yield` is a generator too. Its element type is its declared return type if it has one, or else the element type of the slot it's assigned to. Otherwise it's the join of the types its `yield`s produce, as a function's return type is the join of its `return`s:
+
+<GhulExample name="async-and-generators-4" />
+
 As with `await`, a `yield` inside a `catch` or `finally` handler is not yet supported, and a function cannot be both a generator and asynchronous.

@@ -368,9 +368,10 @@ body and:
 
 Inference inside this pass is bidirectional: information flows up from
 inner expressions, and back down from contexts that constrain what an
-expression's type can be. A function's signature is always explicit, so
-inference is confined to function bodies and never changes anything
-visible from outside the function.
+expression's type can be. Every signature that can be seen outside a
+body is written out: a function written with no types is a nested
+function of a file's top-level statements. So inference is confined to
+function bodies and never changes anything visible from outside the body.
 
 ### `infer-effects`{:text}
 
@@ -499,8 +500,8 @@ IDE.
 ## type inference
 
 Type inference runs inside `compile-expressions`{:text} and stays within
-function bodies; every declared signature is explicit, so inference never
-changes anything visible from outside a function. The [type inference](/type-inference)
+function bodies; every signature visible outside a body is written out, so
+inference never changes anything visible from outside the body it runs in. The [type inference](/type-inference)
 page covers what is and isn't inferred; this section is the mechanism.
 
 It is bidirectional. Bottom-up, an expression's type is computed from its
@@ -601,8 +602,9 @@ what the edit changed:
   project are picked up by the next whole-project `compile`{:text}.
 
 The splice relies on a language rule doing structural work: a function's
-signature is always explicit and inference never escapes a body, so a
-body-only edit provably cannot change anything another file can see.
+signature that another file can see is always written out, and inference
+never escapes a body, so a body-only edit provably cannot change anything
+another file can see.
 Where any guard on the incremental path fails, the analyzer falls back
 to the full rebuild, which is slower.
 

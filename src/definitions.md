@@ -42,9 +42,15 @@ To return a value from a block body, you can end the body on it instead of writi
 
 <GhulExample name="definitions-53" />
 
-A function can also be written among the statements of a body, with a name. It is a local variable holding a function literal, so its argument and return types can be inferred as a literal's are, and it can call itself by its own name:
+A function can also be written among the statements of a body, with a name. It's a local of that body: its argument and return types can be inferred as a function literal's are, and it can call itself by its own name:
 
 <GhulExample name="definitions-54" />
+
+Nested functions can be written in any order: a body can call a nested function written below the call, and nested functions can call each other:
+
+<GhulExample name="definitions-61" />
+
+A nested function that uses a local the body declares further down exists only from just after that local.
 
 A function declared at namespace scope can be overloaded on its argument types, and each call goes to the overload whose parameters fit its arguments best. Where a generic and a non-generic overload fit equally well, the compiler chooses the non-generic one if each of its parameters is at least as specific as the generic's, once the generic's type arguments are known: `f(items: List[string])` is chosen over `f[T](items: Iterable[T])` for a `string[]`, and `f(items: object)` is not.
 
@@ -309,6 +315,10 @@ Namespaces can be nested inside other namespaces:
 A dotted namespace name is shorthand for nesting namespaces:
 
 <GhulExample name="definitions-26" />
+
+A `namespace` declaration with no `is` after the name covers the rest of the file. It must be the first declaration in the file, and it can't be nested inside another namespace:
+
+<GhulExample name="definitions-62" />
 
 ### namespace aggregation
 

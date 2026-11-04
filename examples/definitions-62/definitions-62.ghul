@@ -1,0 +1,13 @@
+// >>>
+namespace Geometry
+
+use IO.Std.write_line
+
+class Circle(radius: double public) is
+    area() -> double => 3.14159 * radius * radius
+si
+
+entry() is
+    write_line("{Circle(2.0).area()}")
+si
+// <<<

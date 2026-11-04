@@ -1,0 +1,23 @@
+use default
+
+let seen = SET()
+
+// parameter and return types come from the calls and the body
+visit(n) is
+    seen.add(n)
+si
+
+collatz_steps(n) =>
+    if n == 1 then 0
+    elif n % 2 == 0 then 1 + collatz_steps(n / 2)
+    else 1 + collatz_steps(3 * n + 1)
+    fi
+
+fib(n) memo => if n < 2 then n else fib(n - 1) + fib(n - 2) fi
+
+for n in 1::5 do
+    visit(collatz_steps(n))
+od
+
+write_line("{seen.count} distinct step counts")
+write_line("fib(40) is {fib(40)}")

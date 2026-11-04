@@ -1,0 +1,28 @@
+use default
+
+class Animal(name: string public) is
+si
+
+class Cat(name: string): Animal is
+    super(name)
+si
+
+class Dog(name: string): Animal is
+    super(name)
+si
+
+joins() is
+// >>>
+    // Animal, the join of Cat and Dog
+    let pet mut = Cat("tom")
+    pet = Dog("rex")
+
+    // int[], the list type both implement
+    let xs mut = LIST([1, 2])
+    xs = [3, 4]
+// <<<
+
+    write_line("{pet.name} {xs.count}")
+si
+
+joins()

@@ -1,0 +1,23 @@
+use default
+
+// >>>
+describe(xs: int[]) -> string =>
+    case xs
+    when [] then "empty"
+    when [x] then "one: {x}"
+    when [x, ..more] then "{x} and {more.count} more"
+    esac
+
+sum(xs: int[]) -> int =>
+    case xs
+    when [] then 0
+    when [x, ..rest] then x + sum(rest)
+    esac
+
+let [first, second, ..others] = [10, 20, 30, 40]
+
+write_line(describe([]))
+write_line(describe([7]))
+write_line(describe([1, 2, 3]))
+write_line("{sum([1, 2, 3, 4])} {first} {second} {others.count}")
+// <<<
