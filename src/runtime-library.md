@@ -271,18 +271,6 @@ Calls `mapper` on each element in turn and returns the first present result. `fi
 
 <GhulExample name="pipes-ref-find_map-function" signature />
 
-### find_or_throw
-
-As `find`, throwing instead of returning absent when no element matches.
-
-<GhulExample name="pipes-ref-find_or_throw-function" signature />
-
-### find_map_or_throw
-
-As `find_map`, throwing instead of returning absent when no element maps.
-
-<GhulExample name="pipes-ref-find_map_or_throw-function" signature />
-
 ### first
 
 The leading element, absent when the source is empty.
@@ -295,18 +283,6 @@ Calls `mapper` on the leading element only. Compare `find_map`, above, which kee
 
 <GhulExample name="pipes-ref-first_map-function" signature />
 
-### first_or_throw
-
-As `first`, throwing instead of returning absent when the source is empty.
-
-<GhulExample name="pipes-ref-first_or_throw-function" signature />
-
-### first_map_or_throw
-
-As `first_map`, throwing instead of returning absent.
-
-<GhulExample name="pipes-ref-first_map_or_throw-function" signature />
-
 ### last
 
 The final element, absent when the source is empty. `last` reads the whole source to find it.
@@ -315,7 +291,7 @@ The final element, absent when the source is empty. `last` reads the whole sourc
 
 ### only
 
-The single element the source holds, throwing when it is empty or holds more than one.
+The single element the source holds, or absent when it is empty or holds more than one.
 
 <GhulExample name="pipes-ref-only-function" signature />
 
