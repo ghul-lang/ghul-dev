@@ -254,8 +254,8 @@ finding a single element, collecting the elements into a container, and folding
 or consuming the sequence as a whole.
 
 The searching combinators come in pairs. `find`-style ones take a predicate or
-a mapper and scan; `first`-style ones look only at the leading element. Each has a
-variant returning `T?` and one that throws instead:
+a mapper and scan; `first`-style ones look only at the leading element. Each
+returns `T?`, absent when there is nothing to return:
 
 <GhulExample name="pipes-searching" />
 
