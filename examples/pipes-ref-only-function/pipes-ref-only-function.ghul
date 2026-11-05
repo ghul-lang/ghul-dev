@@ -8,7 +8,7 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-only[T](source: Iterable[T]) -> T pure
+only[T](source: Iterable[T]) -> T? pure
 // <<<
 
 entry() is si
