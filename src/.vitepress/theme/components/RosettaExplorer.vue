@@ -5,7 +5,7 @@ import PlaygroundFrame from './PlaygroundFrame.vue'
 import RosettaControls from './RosettaControls.vue'
 import RosettaOnward from './RosettaOnward.vue'
 import RosettaList from './RosettaList.vue'
-import { countEvent, watchReach } from '../events'
+import { countEvent, suppressed, watchReach } from '../events'
 import { tokenise } from '../rosetta-highlight'
 import { shownSlug, shownFilter, showAt, replaceAt } from '../rosetta-route'
 import { corpus, query, chosen, toggleTag } from '../rosetta-filter'
@@ -154,7 +154,7 @@ watch([() => shownSlug.value, shown], ([slug, task], previous) => {
     : 'ghūl solutions to Rosetta Code tasks, runnable in your browser.')
 
   if (slug !== previous?.[0]) {
-    if (previous) window.goatcounter?.count?.()
+    if (previous && !suppressed()) window.goatcounter?.count?.()
 
     // The task as well as the pageview: every task answers from this one page,
     // and the slug is the only thing that says which one a reader was shown.

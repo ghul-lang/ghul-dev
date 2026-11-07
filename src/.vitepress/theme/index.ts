@@ -8,7 +8,7 @@ import PlaygroundFrame from './components/PlaygroundFrame.vue'
 import Layout from './Layout.vue'
 import { installRosettaRouting } from './rosetta-route'
 import { refreshPackageVersions } from './package-versions'
-import { beginReach, countHomeLinks, countOutboundLinks, countTimeOnPages } from './events'
+import { beginReach, countHomeLinks, countOutboundLinks, countTimeOnPages, suppressed } from './events'
 import './style.css'
 
 export default {
@@ -42,7 +42,7 @@ export default {
       nextTick(() => {
         if (location.pathname === counted_path) return
         counted_path = location.pathname
-        window.goatcounter?.count?.()
+        if (!suppressed()) window.goatcounter?.count?.()
         page_changed(location.pathname)
         beginReach(location.pathname)
       }))
