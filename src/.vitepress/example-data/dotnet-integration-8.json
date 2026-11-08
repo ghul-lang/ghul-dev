@@ -10,19 +10,19 @@
   "output": "1.5 1.5\n",
   "diagnostics": [],
   "hovers": [
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 11, "text": "conversions() -> void", "signature": "conversions() -> void", "kindLabel": "global function" },
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 9, "text": "h: System.Half", "signature": "h: System.Half", "kindLabel": "local value" },
     { "startLine": 3, "startColumn": 25, "endLine": 3, "endColumn": 28, "text": "struct System.Half", "signature": "struct System.Half", "kindLabel": "struct" },
     { "startLine": 4, "startColumn": 9, "endLine": 4, "endColumn": 9, "text": "f: single", "signature": "f: single", "kindLabel": "local value" },
     { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 23, "text": "struct single", "signature": "struct single", "kindLabel": "struct" },
     { "startLine": 4, "startColumn": 25, "endLine": 4, "endColumn": 25, "text": "h: System.Half", "signature": "h: System.Half", "kindLabel": "local value" },
-    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 11, "text": "conversions() -> void", "signature": "conversions() -> void", "kindLabel": "global function" },
     { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 6, "startColumn": 18, "endLine": 6, "endColumn": 18, "text": "h: System.Half", "signature": "h: System.Half", "kindLabel": "local value" },
     { "startLine": 6, "startColumn": 22, "endLine": 6, "endColumn": 22, "text": "f: single", "signature": "f: single", "kindLabel": "local value" }
   ],
   "inlayHints": [],
   "semanticTokens": [
-    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 11, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 11, "tokenType": "function" },
     { "startLine": 3, "startColumn": 9, "endLine": 3, "endColumn": 9, "tokenType": "variable", "modifiers": "readonly" },
     { "startLine": 3, "startColumn": 25, "endLine": 3, "endColumn": 28, "tokenType": "struct" },
     { "startLine": 4, "startColumn": 9, "endLine": 4, "endColumn": 9, "tokenType": "variable", "modifiers": "readonly" },
