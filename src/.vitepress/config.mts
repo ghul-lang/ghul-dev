@@ -252,7 +252,10 @@ export default defineConfig({
     // self-hosted GoatCounter, proxied by this site at /stats/. Both halves
     // have to be the same origin as each other: count.js reads the endpoint
     // out of the data attribute, and pointing one at a host that is not
-    // serving the other silently records nothing.
+    // serving the other silently records nothing. The inline script before
+    // it tells the counter not to count the pageview when the browser is
+    // automated, matching events.ts, which sends such a browser nothing.
+    ['script', {}, 'if (typeof navigator !== "undefined" && navigator.webdriver) window.goatcounter = { no_onload: true }'],
     ['script', { 'data-goatcounter': 'https://ghul.dev/stats/count', async: '', src: 'https://ghul.dev/stats/count.js' }],
   ],
 

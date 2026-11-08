@@ -12,15 +12,24 @@
 import { pageTimer } from './time-on-page.js'
 import { reachTracker, partOf, isInSite } from './reach.js'
 
-// Two ways to not be counted, and both are the reader's rather than ours.
+// Three ways to not be counted. Two are the reader's rather than ours.
 //
 // `skipgc` is the counter's own opt-out, set by visiting #toggle-goatcounter, and
 // count.js honours it by itself; reading it here only avoids the call.
 //
 // `?notrack` on the URL is for tests that drive a real browser against the real
 // site and would otherwise count themselves.
-function suppressed() {
+//
+// An automated browser is not a reader: `navigator.webdriver` is set in a
+// browser that is being driven rather than used, and never in one a person is
+// sitting at, so what it does is not counted at all. A driver that clears the
+// flag gets around this, as it gets around every such check; this only keeps
+// the default headless browsers out of the figures. The initial pageview is
+// the counter's own business, and it is told not to count it in config.mts.
+export function suppressed() {
   if (typeof window === 'undefined') return true
+
+  if (typeof navigator !== 'undefined' && navigator.webdriver) return true
 
   try {
     if (new URLSearchParams(location.search).has('notrack')) return true
