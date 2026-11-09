@@ -15,6 +15,20 @@
        url('/FiraCode-VF.woff') format('woff');
 }
 
+/* The face the runnable example component draws a terminal screen in: a
+   subset of Noto Sans Mono CJK JP (SIL Open Font License, fonts/OFL.txt)
+   covering ASCII, box drawing and half-width katakana, every glyph half an em
+   wide so the columns line up. Noto draws box drawing a full em wide, so in
+   the subset those glyphs are narrowed to half, keeping their stroke widths.
+   It is fetched only when a terminal screen is shown. */
+@font-face {
+  font-family: 'ghul terminal';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/ghul-terminal.woff2') format('woff2');
+}
+
 /* ghūl brand green, carried over from the previous VuePress palette. */
 :root {
   --vp-c-brand-1: #338b63;
