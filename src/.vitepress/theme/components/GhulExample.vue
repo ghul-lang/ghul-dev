@@ -361,6 +361,11 @@ const frameReady = ref(false)
 const analyser = ref('connecting')
 const runState = ref(null)
 const liveOutput = ref('')
+
+// Output that used escape sequences, as the playground drew it on a terminal
+// screen: { before, lines, after }, each line runs of text in one style.
+// Null for any other output, which is shown as its text.
+const liveScreen = ref(null)
 const liveDiagnostics = ref([])
 
 // What a running program drew, as { name, url } with a data URL each, and
@@ -419,6 +424,28 @@ const recordedOutput = computed(() => props.runToSee ? '' : example.value?.outpu
 const recordedImages = computed(() => props.runToSee ? [] : example.value?.images ?? [])
 
 const shownOutput = computed(() => editing.value ? liveOutput.value : recordedOutput.value)
+const shownScreen = computed(() => editing.value ? liveScreen.value : null)
+
+function terminalColor(index, fallback) {
+  return index < 0 ? fallback : `var(--ghul-terminal-${index})`
+}
+
+// A run of screen text drawn in its style; inverse swaps the two colors, the
+// defaults included.
+function runStyle(run) {
+  const color = run.inverse
+    ? terminalColor(run.background, 'var(--vp-c-bg)')
+    : terminalColor(run.foreground, '')
+  const background = run.inverse
+    ? terminalColor(run.foreground, 'var(--vp-c-text-1)')
+    : terminalColor(run.background, '')
+
+  return {
+    ...(color ? { color } : {}),
+    ...(background ? { backgroundColor: background } : {}),
+    ...(run.bold ? { fontWeight: 'bold' } : {})
+  }
+}
 
 // The pictures follow the same rule: what the example is recorded as drawing,
 // until the reader runs their own version.
@@ -475,7 +502,11 @@ function onFrameMessage(event) {
   }
   if (message.type === 'height') { frameHeight.value = message.height; return }
   if (message.type === 'analyser') { analyser.value = message.state; return }
-  if (message.type === 'output') { liveOutput.value = message.text ?? ''; return }
+  if (message.type === 'output') {
+    liveOutput.value = message.text ?? ''
+    liveScreen.value = message.screen ?? null
+    return
+  }
   if (message.type === 'images') { liveImages.value = message.images ?? []; return }
   if (message.type === 'input-wanted') {
     inputWanted.value = true
@@ -520,6 +551,7 @@ function startEditing() {
   // Start from the recorded output, so the panel is not empty before the
   // reader has run anything.
   liveOutput.value = recordedOutput.value
+  liveScreen.value = null
   liveImages.value = recordedImages.value
   liveDiagnostics.value = diagnostics.value
 
@@ -757,7 +789,9 @@ onBeforeUnmount(() => {
           <DiagnosticIcon :severity="d.severity" />
           <span class="ghul-example-diag-text">{{ d.message }}</span>
         </div>
-        <pre v-if="shownOutput">{{ shownOutput }}</pre>
+        <!-- one line, since whitespace between the tags would be shown -->
+        <pre v-if="shownScreen" class="ghul-example-terminal">{{ shownScreen.before }}<template v-for="(line, l) in shownScreen.lines" :key="l"><span v-for="(run, r) in line" :key="r" :style="runStyle(run)">{{ run.text }}</span>{{ '\n' }}</template>{{ shownScreen.after }}</pre>
+        <pre v-else-if="shownOutput">{{ shownOutput }}</pre>
         <form
           v-if="editing && inputWanted"
           class="ghul-example-input"
@@ -1342,5 +1376,19 @@ onBeforeUnmount(() => {
 /* When both halves show, a divider sits between them. */
 .ghul-example-tooltip-diagnostic + .ghul-example-tooltip-hover {
   border-top: 1px solid var(--vp-c-divider);
+}
+
+.ghul-example-terminal {
+  --ghul-terminal-0: #000000; --ghul-terminal-1: #cd3131; --ghul-terminal-2: #00bc00; --ghul-terminal-3: #949800;
+  --ghul-terminal-4: #0451a5; --ghul-terminal-5: #bc05bc; --ghul-terminal-6: #0598bc; --ghul-terminal-7: #555555;
+  --ghul-terminal-8: #666666; --ghul-terminal-9: #cd3131; --ghul-terminal-10: #14ce14; --ghul-terminal-11: #b5ba00;
+  --ghul-terminal-12: #0451a5; --ghul-terminal-13: #bc05bc; --ghul-terminal-14: #0598bc; --ghul-terminal-15: #a5a5a5;
+}
+
+:global(.dark) .ghul-example-terminal {
+  --ghul-terminal-0: #000000; --ghul-terminal-1: #cd3131; --ghul-terminal-2: #0dbc79; --ghul-terminal-3: #e5e510;
+  --ghul-terminal-4: #2472c8; --ghul-terminal-5: #bc3fbc; --ghul-terminal-6: #11a8cd; --ghul-terminal-7: #e5e5e5;
+  --ghul-terminal-8: #666666; --ghul-terminal-9: #f14c4c; --ghul-terminal-10: #23d18b; --ghul-terminal-11: #f5f543;
+  --ghul-terminal-12: #3b8eea; --ghul-terminal-13: #d670d6; --ghul-terminal-14: #29b8db; --ghul-terminal-15: #ffffff;
 }
 </style>
