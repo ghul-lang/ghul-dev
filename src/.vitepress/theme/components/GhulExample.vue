@@ -1378,6 +1378,12 @@ onBeforeUnmount(() => {
   border-top: 1px solid var(--vp-c-divider);
 }
 
+/* A terminal screen is a grid of equal columns: its face draws ASCII, box
+   drawing and half-width katakana all half an em wide (see style.css). */
+.ghul-example-output-body pre.ghul-example-terminal {
+  font-family: 'ghul terminal', var(--vp-font-family-mono);
+}
+
 .ghul-example-terminal {
   --ghul-terminal-0: #000000; --ghul-terminal-1: #cd3131; --ghul-terminal-2: #00bc00; --ghul-terminal-3: #949800;
   --ghul-terminal-4: #0451a5; --ghul-terminal-5: #bc05bc; --ghul-terminal-6: #0598bc; --ghul-terminal-7: #555555;
