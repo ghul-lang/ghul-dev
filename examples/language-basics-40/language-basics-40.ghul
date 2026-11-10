@@ -1,0 +1,21 @@
+use IO.Std.write_line
+use Ghul.Pipes.repeat
+use Ghul.Pipes.from
+use Ghul.Pipes.join
+use Collections.MATRIX
+
+// >>>
+let board = repeat('.') |> MATRIX(3, 4)
+board[1, 2] = '#'
+
+for row in board do
+    write_line(row |> join(""))
+od
+
+let cube = from(1) |> MATRIX(2, 3, 4)      // planes, rows, columns
+write_line(cube[1, 2, 3])
+
+let copy = MATRIX([[1, 2], [3, 4]])
+copy[0, 0] = 10
+write_line(copy.elements |> join(" "))
+// <<<
