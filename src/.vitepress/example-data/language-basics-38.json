@@ -1,0 +1,39 @@
+{
+  "name": "language-basics-38",
+  "snippet": false,
+  "wasm": false,
+  "code": "let grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nwrite_line(grid[1, 2])      // row 1, column 2\nwrite_line(grid.lengths)    // (rows, columns)\nwrite_line(grid.count)      // the number of rows",
+  "fullSource": "use IO.Std.write_line\n\nlet grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nwrite_line(grid[1, 2])      // row 1, column 2\nwrite_line(grid.lengths)    // (rows, columns)\nwrite_line(grid.count)      // the number of rows\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "6\n(2, 3)\n2\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 13, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
+    { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 10, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 21, "text": "int[,].get_Item(row: int, column: int) -> int", "signature": "int[,].get_Item(row: int, column: int) -> int", "kindLabel": "default trait method" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 10, "text": "IO.Std.write_line(value: object?) -> void", "signature": "IO.Std.write_line(value: object?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 4, "startColumn": 17, "endLine": 4, "endColumn": 23, "text": "int[,].lengths: (rows: int, columns: int)", "signature": "int[,].lengths: (rows: int, columns: int)", "kindLabel": "instance property" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 10, "text": "IO.Std.write_line(value: int) -> void", "signature": "IO.Std.write_line(value: int) -> void", "kindLabel": "pure class method" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 17, "endLine": 5, "endColumn": 21, "text": "int[,].count: int", "signature": "int[,].count: int", "kindLabel": "pure instance property" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 8, "tokenType": "property" },
+    { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 13, "tokenType": "struct" },
+    { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 3, "startColumn": 16, "endLine": 3, "endColumn": 21, "tokenType": "method" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 4, "startColumn": 17, "endLine": 4, "endColumn": 23, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 17, "endLine": 5, "endColumn": 21, "tokenType": "property" }
+  ]
+}

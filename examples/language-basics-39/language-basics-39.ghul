@@ -1,0 +1,13 @@
+use IO.Std.write_line
+use Ghul.Pipes.join
+
+let grid: int[,] = [[1, 2, 3], [4, 5, 6]]
+
+// >>>
+for row in grid do
+    write_line(row |> join(" "))
+od
+
+write_line(grid[1] |> join(" "))           // one row
+write_line(grid.elements |> join(" "))     // every element, row by row
+// <<<

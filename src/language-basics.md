@@ -89,6 +89,28 @@ Indexing with a range takes a slice rather than a single element. `..` excludes 
 
 A slice is a view onto the source, not a copy. Arrays, strings and lists can all be sliced; slicing a string gives back a string.
 
+### multidimensional arrays
+
+A two-dimensional array of `E` is written `E[,]`, and a three-dimensional one `E[,,]`. An array literal of rows builds an `E[,]` where the context expects one, such as from a type annotation, a parameter or a return type. Every row must have the same length. An element is read with one index per dimension:
+
+<GhulExample name="language-basics-38" />
+
+Without an `E[,]` in the context, the same literal builds an array of arrays.
+
+An `E[,]` is a list of its rows. Iterating it gives each row, and indexing it with a single index gives one row as an `E[]`. `elements` walks every element, row by row:
+
+<GhulExample name="language-basics-39" />
+
+`E[,]` and `E[,,]` are read-only. `MATRIX` builds a mutable one, which `m[i, j] = v` assigns to. `MATRIX` takes the rows (or planes) to copy, or it can be the end of a pipe with the extents as its arguments. It fills the array row by row, reading only as many elements as it needs:
+
+<GhulExample name="language-basics-40" />
+
+Write `E[,]` for a value that is only read, and `MATRIX_2[E]` (or `MATRIX_3[E]`) for one that is assigned through. A `MATRIX_2[E]` can be passed where an `E[,]` is expected. `ARRAY_2` and `ARRAY_3` build read-only arrays and take the same arguments as `MATRIX`:
+
+<GhulExample name="language-basics-41" />
+
+A .NET multidimensional array is a different type. A .NET member whose signature has one, such as a method taking a C# `int[,]`, can't be used from ghūl.
+
 ### tuples
 Tuples in ghūl are lightweight, immutable data structures that can hold a fixed number of elements of different types. Tuple types use parentheses `(` `)`, with elements separated by commas. Tuple literals are similarly constructed with `(` `)` and comma delimited elements. Tuples compare by structural equality: two tuples are equal when their corresponding elements are.
 

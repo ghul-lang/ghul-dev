@@ -1,0 +1,28 @@
+use IO.Std.write_line
+use Ghul.Pipes.sum
+use Ghul.Pipes.repeat
+use Collections.MATRIX
+use Collections.MATRIX_2
+use Collections.ARRAY_2
+
+// >>>
+total(m: int[,]) -> int => m.elements |> sum()
+
+fill(m: MATRIX_2[int], value: int) is
+    let (rows, columns) = m.lengths
+
+    for i in 0..rows do
+        for j in 0..columns do
+            m[i, j] = value
+        od
+    od
+si
+
+let fixed: int[,] = [[1, 2], [3, 4]]
+let counts = repeat(0) |> MATRIX(2, 3)
+fill(counts, 5)
+
+let numbered = [1, 2, 3, 4, 5, 6] |> ARRAY_2(3, 2)
+
+write_line("{total(fixed)} {total(counts)} {numbered[2, 0]}")
+// <<<

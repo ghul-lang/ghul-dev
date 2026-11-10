@@ -1,0 +1,43 @@
+{
+  "name": "language-basics-39",
+  "snippet": false,
+  "wasm": false,
+  "code": "for row in grid do\n    write_line(row |> join(\" \"))\nod\n\nwrite_line(grid[1] |> join(\" \"))           // one row\nwrite_line(grid.elements |> join(\" \"))     // every element, row by row",
+  "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes.join\n\nlet grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nfor row in grid do\n    write_line(row |> join(\" \"))\nod\n\nwrite_line(grid[1] |> join(\" \"))           // one row\nwrite_line(grid.elements |> join(\" \"))     // every element, row by row\n",
+  "hiddenBefore": true,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "1 2 3\n4 5 6\n4 5 6\n1 2 3 4 5 6\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 7, "text": "row: int[]", "signature": "row: int[]", "kindLabel": "local value" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 26, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 18, "text": "row: int[]", "signature": "row: int[]", "kindLabel": "local value" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 5, "startColumn": 23, "endLine": 5, "endColumn": 26, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 5, "startColumn": 16, "endLine": 5, "endColumn": 18, "text": "int[][].get_Item(index: int) -> int[]", "signature": "int[][].get_Item(index: int) -> int[]", "kindLabel": "pure abstract method" },
+    { "startLine": 6, "startColumn": 1, "endLine": 6, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
+    { "startLine": 6, "startColumn": 29, "endLine": 6, "endColumn": 32, "text": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "signature": "Ghul.Pipes.join[int](\n    source: int{},\n    separator: string\n) -> string", "kindLabel": "pure global function" },
+    { "startLine": 6, "startColumn": 12, "endLine": 6, "endColumn": 15, "text": "grid: int[,]", "signature": "grid: int[,]", "kindLabel": "global variable" },
+    { "startLine": 6, "startColumn": 17, "endLine": 6, "endColumn": 24, "text": "int[,].elements: int{}", "signature": "int[,].elements: int{}", "kindLabel": "instance property" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 7, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 14, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 2, "startColumn": 16, "endLine": 2, "endColumn": 18, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 26, "tokenType": "function" },
+    { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 5, "startColumn": 12, "endLine": 5, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 5, "startColumn": 16, "endLine": 5, "endColumn": 18, "tokenType": "method" },
+    { "startLine": 5, "startColumn": 23, "endLine": 5, "endColumn": 26, "tokenType": "function" },
+    { "startLine": 6, "startColumn": 1, "endLine": 6, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 6, "startColumn": 12, "endLine": 6, "endColumn": 15, "tokenType": "property" },
+    { "startLine": 6, "startColumn": 17, "endLine": 6, "endColumn": 24, "tokenType": "property" },
+    { "startLine": 6, "startColumn": 29, "endLine": 6, "endColumn": 32, "tokenType": "function" }
+  ]
+}
