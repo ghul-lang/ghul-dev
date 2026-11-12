@@ -11,16 +11,20 @@
   "diagnostics": [],
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 16, "text": "path_with_id: (path: string, id: int)", "signature": "path_with_id: (path: string, id: int)", "kindLabel": "global variable" },
+    { "startLine": 1, "startColumn": 21, "endLine": 1, "endColumn": 24, "text": "(path: string, id: int).path: string", "signature": "(path: string, id: int).path: string", "kindLabel": "tuple element" },
+    { "startLine": 1, "startColumn": 48, "endLine": 1, "endColumn": 49, "text": "(path: string, id: int).id: int", "signature": "(path: string, id: int).id: int", "kindLabel": "tuple element" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "path: string", "signature": "path: string", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 23, "text": "path_with_id: (path: string, id: int)", "signature": "path_with_id: (path: string, id: int)", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 25, "endLine": 3, "endColumn": 28, "text": "TUPLE_2[string,int].0: string", "signature": "TUPLE_2[string,int].0: string", "kindLabel": "field" },
+    { "startLine": 3, "startColumn": 25, "endLine": 3, "endColumn": 28, "text": "(path: string, id: int).path: string", "signature": "(path: string, id: int).path: string", "kindLabel": "tuple element" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 6, "text": "id: int", "signature": "id: int", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 10, "endLine": 4, "endColumn": 21, "text": "path_with_id: (path: string, id: int)", "signature": "path_with_id: (path: string, id: int)", "kindLabel": "global variable" },
-    { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 24, "text": "TUPLE_2[string,int].1: int", "signature": "TUPLE_2[string,int].1: int", "kindLabel": "field" }
+    { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 24, "text": "(path: string, id: int).id: int", "signature": "(path: string, id: int).id: int", "kindLabel": "tuple element" }
   ],
   "inlayHints": [],
   "semanticTokens": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 16, "tokenType": "property" },
+    { "startLine": 1, "startColumn": 21, "endLine": 1, "endColumn": 24, "tokenType": "property" },
+    { "startLine": 1, "startColumn": 48, "endLine": 1, "endColumn": 49, "tokenType": "property" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "tokenType": "property" },
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 23, "tokenType": "property" },
     { "startLine": 3, "startColumn": 25, "endLine": 3, "endColumn": 28, "tokenType": "property" },

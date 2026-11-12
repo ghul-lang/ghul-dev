@@ -13,10 +13,10 @@
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 10, "text": "things: (string, double)", "signature": "things: (string, double)", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "name: string", "signature": "name: string", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 17, "text": "things: (string, double)", "signature": "things: (string, double)", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 20, "text": "TUPLE_2[string,double].0: string", "signature": "TUPLE_2[string,double].0: string", "kindLabel": "field" },
+    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 20, "text": "(string, double).`0: string", "signature": "(string, double).`0: string", "kindLabel": "tuple element" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 10, "text": "weight: double", "signature": "weight: double", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 14, "endLine": 4, "endColumn": 19, "text": "things: (string, double)", "signature": "things: (string, double)", "kindLabel": "global variable" },
-    { "startLine": 4, "startColumn": 21, "endLine": 4, "endColumn": 22, "text": "TUPLE_2[string,double].1: double", "signature": "TUPLE_2[string,double].1: double", "kindLabel": "field" }
+    { "startLine": 4, "startColumn": 21, "endLine": 4, "endColumn": 22, "text": "(string, double).`1: double", "signature": "(string, double).`1: double", "kindLabel": "tuple element" }
   ],
   "inlayHints": [],
   "semanticTokens": [
