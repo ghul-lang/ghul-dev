@@ -130,8 +130,6 @@ Removes duplicates, keeping the first occurrence of each element. The set operat
 
 `left | right` is every element of both sources, taking the left source's elements first. `left & right` is the elements the two have in common, in the order the left source has them. `left -- right` is the elements of the left source that the right source doesn't have. Each reads its sources lazily.
 
-`|` and `&` share one precedence level and bind tighter than a range, so `(1::3) | (2::5)` needs its parentheses. `--` has the precedence of `++`.
-
 ### intersect
 
 The function form of `&`, for use in a pipe.
