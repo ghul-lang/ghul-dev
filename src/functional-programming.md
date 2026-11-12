@@ -226,24 +226,18 @@ type parameters, and the result is a `T{}`, so the state is hidden from
 whatever reads the sequence:
 
 ```ghul
-union STREAM[T, S] is
-    DONE
-    YIELD(value: T, state: S)
-si
-
 stream[T, S..](
     initial: S,
-    advance: S.. -> STREAM[T, S]
+    advance: S.. -> (T, S)?
 ) -> T{}
 ```
 
 `S..` makes `S` an [argument pack](#argument-packs), so when the state is a
 tuple, the step function can take its elements as separate parameters.
 
-`advance` takes the current state and returns either `DONE`, which ends the
-sequence, or `YIELD(value, next_state)`, which produces an element and the
-state for the next step. The `||` infix constructs a `YIELD`, so a step
-usually reads `value || next_state`:
+`advance` takes the current state and returns either `null`, which ends the
+sequence, or a tuple `(value, next_state)`, which produces an element and the
+state for the next step:
 
 <GhulExample name="functional-programming-22" />
 

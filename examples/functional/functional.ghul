@@ -3,11 +3,11 @@ use Ghul.Pipes
 
 // lazily generates an infinite sequence of
 // fibonacci numbers. the state is a (prev, current)
-// tuple; each step yields prev and builds the next state:
+// tuple; each step gives prev and builds the next state:
 let fibonacci_sequence = stream(
     (0, 1),
     ((prev, current)) =>
-        prev || (current, prev + current)
+        (prev, (current, prev + current))
 )
 
 // lazily generates an infinite sequence of
@@ -15,7 +15,7 @@ let fibonacci_sequence = stream(
 let factorial_sequence = stream(
     (0, 1),
     ((n, current)) =>
-        current || (n + 1, current * (n + 1))
+        (current, (n + 1, current * (n + 1)))
 )
 
 let first_10_fib = fibonacci_sequence |> take(10)

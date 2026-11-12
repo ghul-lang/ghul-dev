@@ -494,9 +494,6 @@ gives the flat structure.
 Expression ::= UnaryExpression ( Operator UnaryExpression )*
 ```
 
-`||` is the *yield infix* used to produce a value from a generator step; it has the
-lowest precedence and does not chain.
-
 ### unary expressions
 
 ```ebnf
