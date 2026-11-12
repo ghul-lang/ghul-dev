@@ -4,9 +4,9 @@ use Ghul.Pipes
 // <<<
 
 // >>>
-// counting down. State and output are both int.
-// This one is here to show a stream ending: the
-// step returns null when the state reaches zero.
+// counting down. State and output are both int
+// here to show a stream ending: the step returns
+// null when the state reaches zero
 let counting = (n: int) =>
     stream(
         n,
