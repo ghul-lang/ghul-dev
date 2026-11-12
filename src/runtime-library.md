@@ -116,31 +116,31 @@ Maps each element to an iterable and runs the results together into one sequence
 
 <GhulExample name="pipes-ref-take_while-function" signature />
 
-The four set operations that follow all discard duplicates. This is what they do to the same pair of sources:
+`distinct` and the set operators `|`, `&` and `--` all discard duplicates. This is what they do to the same pair of sources:
 
 <GhulExample name="pipes-set-operations" />
 
 ### distinct
 
-Removes duplicates, keeping the first occurrence of each element. `distinct`, `union_with`, `intersect_with` and `except` all do this, so each produces a sequence with no repeats, in the order first seen. Elements are compared with `=~` and `get_hash_code`, so a type used with these needs [both](/dotnet-integration.html#equality).
+Removes duplicates, keeping the first occurrence of each element. The set operators, `intersect` and `except` all do this too, so each produces a sequence with no repeats, in the order first seen. Elements are compared with `=~` and `get_hash_code`, so a type used with these needs [both](/dotnet-integration.html#equality).
 
 <GhulExample name="pipes-ref-distinct-function" signature />
 
-### union_with
+### Set operators
 
-Every element of both sources with duplicates removed, taking the left source's elements first.
+`left | right` is every element of both sources, taking the left source's elements first. `left & right` is the elements the two have in common, in the order the left source has them. `left -- right` is the elements of the left source that the right source doesn't have. Each reads its sources lazily.
 
-<GhulExample name="pipes-ref-union_with-function" signature />
+`|` and `&` share one precedence level and bind tighter than a range, so `(1::3) | (2::5)` needs its parentheses. `--` has the precedence of `++`.
 
-### intersect_with
+### intersect
 
-Elements the left and right sources have in common, in the order the left source has them.
+The function form of `&`, for use in a pipe.
 
-<GhulExample name="pipes-ref-intersect_with-function" signature />
+<GhulExample name="pipes-ref-intersect-function" signature />
 
 ### except
 
-Elements of the left source that the right source doesn't have.
+The function form of `--`, for use in a pipe.
 
 <GhulExample name="pipes-ref-except-function" signature />
 

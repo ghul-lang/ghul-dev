@@ -1,4 +1,4 @@
-distinct:       [1, 2, 3, 4]
-union_with:     [1, 2, 3, 4, 5]
-intersect_with: [3, 4]
-except:         [1, 2]
+distinct:      [1, 2, 3, 4]
+left | right:  [1, 2, 3, 4, 5]
+left & right:  [3, 4]
+left -- right: [1, 2]

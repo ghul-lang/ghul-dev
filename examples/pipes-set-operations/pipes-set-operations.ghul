@@ -7,8 +7,8 @@ let right = [3, 4, 5]
 
 // all four remove duplicates, keeping the first occurrence
 // of each element
-write_line("distinct:       {left |> distinct()}")
-write_line("union_with:     {left |> union_with(right)}")
-write_line("intersect_with: {left |> intersect_with(right)}")
-write_line("except:         {left |> except(right)}")
+write_line("distinct:      {left |> distinct()}")
+write_line("left | right:  {left | right}")
+write_line("left & right:  {left & right}")
+write_line("left -- right: {left -- right}")
 // <<<

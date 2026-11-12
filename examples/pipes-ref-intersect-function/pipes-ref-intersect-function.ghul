@@ -8,7 +8,7 @@ use Ghul.Pipes.INDEXED_VALUE
 use Ghul.Pipes.Pipe
 
 // >>>
-intersect_with[T](
+intersect[T](
     source: Iterable[T],
     right: Iterable[T]
 ) -> Iterable[T] pure
