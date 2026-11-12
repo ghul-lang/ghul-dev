@@ -11,7 +11,7 @@
   "diagnostics": [
     { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 6, "severity": "error", "message": "top-level value cannot be reassigned" },
     { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 11, "severity": "error", "message": "indexer is read-only in ARRAY[int]" },
-    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 8, "severity": "error", "message": "0: int is not publicly assignable" },
+    { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 8, "severity": "error", "message": "`0: int is not publicly assignable" },
     { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 11, "severity": "error", "message": "Thing.name: string is not publicly assignable" },
     { "startLine": 14, "startColumn": 11, "endLine": 14, "endColumn": 14, "severity": "error", "message": "member add not found in string[]" }
   ],
@@ -28,7 +28,7 @@
     { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 5, "text": "total: int", "signature": "total: int", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 1, "endLine": 5, "endColumn": 7, "text": "numbers: ARRAY[int]", "signature": "numbers: ARRAY[int]", "kindLabel": "global variable" },
     { "startLine": 8, "startColumn": 1, "endLine": 8, "endColumn": 4, "text": "pair: (int, string)", "signature": "pair: (int, string)", "kindLabel": "global variable" },
-    { "startLine": 8, "startColumn": 6, "endLine": 8, "endColumn": 7, "text": "TUPLE_2[int,string].0: int", "signature": "TUPLE_2[int,string].0: int", "kindLabel": "field" },
+    { "startLine": 8, "startColumn": 6, "endLine": 8, "endColumn": 7, "text": "(int, string).`0: int", "signature": "(int, string).`0: int", "kindLabel": "tuple element" },
     { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 5, "text": "thing: Thing", "signature": "thing: Thing", "kindLabel": "global variable" },
     { "startLine": 11, "startColumn": 7, "endLine": 11, "endColumn": 10, "text": "Thing.name: string", "signature": "Thing.name: string", "kindLabel": "pure instance property" },
     { "startLine": 14, "startColumn": 5, "endLine": 14, "endColumn": 9, "text": "names: string[]", "signature": "names: string[]", "kindLabel": "local argument" }

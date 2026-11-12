@@ -13,7 +13,7 @@
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 12, "text": "class Timing", "signature": "class Timing", "kindLabel": "class" },
     { "startLine": 6, "startColumn": 5, "endLine": 6, "endColumn": 10, "text": "method: System.Reflection.MethodInfo", "signature": "method: System.Reflection.MethodInfo", "kindLabel": "global variable" },
     { "startLine": 6, "startColumn": 22, "endLine": 6, "endColumn": 27, "text": "class Timing", "signature": "class Timing", "kindLabel": "class" },
-    { "startLine": 6, "startColumn": 30, "endLine": 6, "endColumn": 39, "text": "System.Type.get_method(\n    name: string\n) -> System.Reflection.MethodInfo?", "signature": "System.Type.get_method(\n    name: string\n) -> System.Reflection.MethodInfo?", "kindLabel": "method" },
+    { "startLine": 6, "startColumn": 30, "endLine": 6, "endColumn": 39, "text": "Ghul.Type.get_method(\n    name: string\n) -> System.Reflection.MethodInfo?", "signature": "Ghul.Type.get_method(\n    name: string\n) -> System.Reflection.MethodInfo?", "kindLabel": "method" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 12, "text": "Timing.measured(x: int) -> int", "signature": "Timing.measured(x: int) -> int", "kindLabel": "pure class method" },
     { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "x: int", "signature": "x: int", "kindLabel": "local argument" },
     { "startLine": 3, "startColumn": 17, "endLine": 3, "endColumn": 19, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },

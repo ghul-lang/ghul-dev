@@ -12,16 +12,16 @@
   "hovers": [
     { "startLine": 1, "startColumn": 5, "endLine": 1, "endColumn": 5, "text": "x: int", "signature": "x: int", "kindLabel": "global variable" },
     { "startLine": 1, "startColumn": 9, "endLine": 1, "endColumn": 13, "text": "point: (int, int)", "signature": "point: (int, int)", "kindLabel": "global variable" },
-    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 16, "text": "TUPLE_2[int,int].0: int", "signature": "TUPLE_2[int,int].0: int", "kindLabel": "field" },
+    { "startLine": 1, "startColumn": 15, "endLine": 1, "endColumn": 16, "text": "(int, int).`0: int", "signature": "(int, int).`0: int", "kindLabel": "tuple element" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 5, "text": "y: int", "signature": "y: int", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 9, "endLine": 2, "endColumn": 13, "text": "point: (int, int)", "signature": "point: (int, int)", "kindLabel": "global variable" },
-    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 16, "text": "TUPLE_2[int,int].1: int", "signature": "TUPLE_2[int,int].1: int", "kindLabel": "field" },
+    { "startLine": 2, "startColumn": 15, "endLine": 2, "endColumn": 16, "text": "(int, int).`1: int", "signature": "(int, int).`1: int", "kindLabel": "tuple element" },
     { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 8, "text": "name: string", "signature": "name: string", "kindLabel": "global variable" },
     { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 17, "text": "person: (string, int)", "signature": "person: (string, int)", "kindLabel": "global variable" },
-    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 20, "text": "TUPLE_2[string,int].0: string", "signature": "TUPLE_2[string,int].0: string", "kindLabel": "field" },
+    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 20, "text": "(string, int).`0: string", "signature": "(string, int).`0: string", "kindLabel": "tuple element" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 7, "text": "age: int", "signature": "age: int", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 11, "endLine": 4, "endColumn": 16, "text": "person: (string, int)", "signature": "person: (string, int)", "kindLabel": "global variable" },
-    { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 19, "text": "TUPLE_2[string,int].1: int", "signature": "TUPLE_2[string,int].1: int", "kindLabel": "field" }
+    { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 19, "text": "(string, int).`1: int", "signature": "(string, int).`1: int", "kindLabel": "tuple element" }
   ],
   "inlayHints": [],
   "semanticTokens": [
