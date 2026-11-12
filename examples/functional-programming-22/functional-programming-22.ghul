@@ -4,8 +4,9 @@ use Ghul.Pipes
 // <<<
 
 // >>>
-// counting down. State and output are both int
-// the sequence ends when the state reaches zero.
+// counting down. State and output are both int.
+// This one is here to show a stream ending: the
+// step returns null when the state reaches zero.
 let counting = (n: int) =>
     stream(
         n,
@@ -22,7 +23,7 @@ let counting = (n: int) =>
 // output types differ.
 let fibonacci = stream(
     (prev = 1, current = 1),
-    ((prev, current)) =>
+    (prev, current) =>
         (
             current,
             (prev = current, current = prev + current)
@@ -32,7 +33,7 @@ let fibonacci = stream(
 // factorial. State is (n, prev); output is int.
 let factorial = stream(
     (n = 1, prev = 1),
-    ((n, prev)) =>
+    (n, prev) =>
         let next_n = n + 1, next = prev * next_n in
         (next, (n = next_n, prev = next))
 )

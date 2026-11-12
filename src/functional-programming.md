@@ -244,6 +244,11 @@ state for the next step:
 The type arguments to `stream` are inferred from the initial state and from
 what the step function yields.
 
+When each element is also the state for the next step, `iterate(seed, next)`
+is simpler: it reads `seed`, then `next(seed)`, and so on, without end. A tuple
+seed is spread over `next`'s parameters, so `iterate((0, 1), (a, b) => (b, a + b))`
+reads `(0, 1)`, `(1, 1)`, `(1, 2)`, `(2, 3)` and onwards.
+
 ### seeds and caching
 
 `from(start)` counts upwards from `start` without end, and
