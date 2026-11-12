@@ -126,7 +126,7 @@ Removes duplicates, keeping the first occurrence of each element. The set operat
 
 <GhulExample name="pipes-ref-distinct-function" signature />
 
-### Set operators
+### set operators
 
 `left | right` is every element of both sources, taking the left source's elements first. `left & right` is the elements the two have in common, in the order the left source has them. `left -- right` is the elements of the left source that the right source doesn't have. Each reads its sources lazily.
 
