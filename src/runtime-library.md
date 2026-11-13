@@ -351,7 +351,7 @@ The collection constructors and the collecting combinators differ in what they h
 
 ### collect
 
-`collect`, `collect_mutable` and `collect_set` are older names for the [collection constructors](/functional-programming.html#filter-map-reduce): `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)` and `collect_set` is `SET(p)`, and new code writes the constructor. The same holds for `collect_map` and `collect_mutable_map` given a sequence of key and value pairs: they are `MAP(p)`. Given a key function and a value function, the two map functions build a map from each element's key and value, and the constructors take no functions. `join` is `string(p, separator)`.
+`collect`, `collect_mutable` and `collect_set` are older names for the [collection constructors](/functional-programming.html#filter-map-reduce): `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)` and `collect_set` is `SET(p)`, and new code writes the constructor. Given a sequence of key and value pairs, `collect_mutable_map` is `MAP(p)`; `collect_map` has no constructor of its own, because it gives back the read-only `Map[K, V]`. Given a key function and a value function, the two map functions build a map from each element's key and value, which no constructor does. `join` is `string(p, separator)`.
 
 <GhulExample name="pipes-ref-collect-function" signature />
 
