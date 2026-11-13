@@ -180,7 +180,7 @@ To keep a sequence's elements, construct a collection from it. `ARRAY(p)`, `LIST
 
 <GhulExample name="pipes-constructors" />
 
-The [collecting functions](/runtime-library.html#collect) do the same job written as functions.
+To build a map from a key function and a value function, give both to [`collect_map`](/runtime-library.html#collect) or `collect_mutable_map`.
 
 ### list comprehensions
 

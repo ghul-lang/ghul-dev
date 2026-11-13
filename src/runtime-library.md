@@ -345,15 +345,13 @@ The smallest element, absent when the source is empty.
 
 <GhulExample name="pipes-ref-max_by-function" signature />
 
-The collecting combinators differ in what they hand back:
+The collection constructors and the collecting combinators differ in what they hand back:
 
 <GhulExample name="pipes-collecting" />
 
 ### collect
 
-Collects into an array, `ARRAY[T]`, which is a read-only list, `T[]`. `collect_mutable` gives back the mutable `LIST[T]` instead, and the others collect into a set or a map.
-
-Each collecting function is a [collection constructor](/functional-programming.html#filter-map-reduce) written as a function: `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)`, `collect_set` is `SET(p)`, `collect_mutable_map` is `MAP(p)`, and `join` is `string(p, separator)`. `collect_map` has no constructor of its own, because it gives back the read-only `Map[K, V]`.
+`collect`, `collect_mutable` and `collect_set` are older names for the [collection constructors](/functional-programming.html#filter-map-reduce): `collect` is `ARRAY(p)`, `collect_mutable` is `LIST(p)` and `collect_set` is `SET(p)`, and new code writes the constructor. The same holds for `collect_map` and `collect_mutable_map` given a sequence of key and value pairs: they are `MAP(p)`. Given a key function and a value function, the two map functions build a map from each element's key and value, and the constructors take no functions. `join` is `string(p, separator)`.
 
 <GhulExample name="pipes-ref-collect-function" signature />
 
@@ -367,7 +365,7 @@ Each collecting function is a [collection constructor](/functional-programming.h
 
 ### collect_map
 
-The first form takes each element's key and value from two functions. The second collects a sequence of key and value pairs, which is how a map with fixed contents is written: `[("a", 1), ("b", 2)] |> collect_map()`.
+The first form takes each element's key and value from two functions. The second takes a sequence of key and value pairs, as `MAP(p)` does, and `MAP` is how a map with fixed contents is written: `MAP([("a", 1), ("b", 2)])`.
 
 <GhulExample name="pipes-ref-collect_map-function" signature />
 

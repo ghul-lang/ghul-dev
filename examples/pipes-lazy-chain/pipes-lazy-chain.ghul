@@ -1,5 +1,6 @@
 use IO.Std.write_line
 use Ghul.Pipes
+use Collections
 
 // >>>
 let numbers = [1, 2, 3, 4, 5, 6]
@@ -13,8 +14,8 @@ let stages = numbers
 
 write_line("pipe built - nothing has run yet")
 
-// collect_mutable is a terminal, so it asks for the elements
-let result = stages |> collect_mutable()
+// LIST builds a list from the pipe, so it asks for the elements
+let result = stages |> LIST()
 
 write_line("result: {result |> join(", ")}")
 // <<<
