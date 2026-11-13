@@ -154,6 +154,8 @@ A type that holds something to release implements `Ghul.Disposable`, which is .N
 
 <GhulExample name="dotnet-integration-6" />
 
+A `use` in the header of a control construct belongs to that construct instead: in a `for` source it is disposed when the loop ends, in a `while` condition at the end of each iteration, and in an `if`, `elif` or `case` header after the whole `if` or `case`.
+
 `use` gives back the value it disposes, so it can go wherever the expression could: an initializer, an argument, an operand. `let use x = E` is the older spelling of `let x = use E`.
 
 `let use x = E in` disposes its local sooner: once the statement holding it has run, rather than when the block ends:
