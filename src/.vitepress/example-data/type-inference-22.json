@@ -9,7 +9,7 @@
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 6, "startColumn": 37, "endLine": 6, "endColumn": 41, "severity": "error", "message": "member purr not found in Animal [the narrowing of carrier.occupant to Cat ended at this call: type-inference-22.ghul: 22,9..22,28]" }
+    { "startLine": 6, "startColumn": 37, "endLine": 6, "endColumn": 41, "severity": "error", "message": "member 'purr' not found in 'Animal' [the narrowing of carrier.occupant to Cat ended at this call: type-inference-22.ghul: 22,9..22,28]" }
   ],
   "hovers": [
     { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 8, "text": "describe(carrier: Carrier, other: Animal) -> void", "signature": "describe(carrier: Carrier, other: Animal) -> void", "kindLabel": "global function" },

@@ -137,7 +137,7 @@ Types are defined the same way, and a mistake is reported with the line it point
 13> [Shape.CIRCLE(1.0), Shape.RECT(3.0, 4.0)] |> map(area)
 [3.14159, 12]
 14> area(Shape.SQUARE(2.0))
-cell-14: 1,12..1,18: error: member SQUARE not found in Shape
+cell-14: 1,12..1,18: error: member 'SQUARE' not found in 'Shape'
  1 | area(Shape.SQUARE(2.0))
    |            ^^^^^^
 ```

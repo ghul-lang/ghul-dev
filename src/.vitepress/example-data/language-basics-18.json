@@ -9,8 +9,8 @@
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 26, "severity": "error", "message": "string? is not assignable to string" },
-    { "startLine": 2, "startColumn": 21, "endLine": 2, "endColumn": 26, "severity": "warning", "message": "[non-optional] string expected but maybe may not hold a value" }
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 26, "severity": "error", "message": "'string?' is not assignable to 'string'" },
+    { "startLine": 2, "startColumn": 21, "endLine": 2, "endColumn": 26, "severity": "warning", "message": "[non-optional] 'string' expected but 'maybe' may not hold a value" }
   ],
   "hovers": [
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "text": "title: string", "signature": "title: string", "kindLabel": "global variable" },

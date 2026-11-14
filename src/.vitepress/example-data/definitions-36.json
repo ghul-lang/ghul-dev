@@ -9,8 +9,8 @@
   "hiddenGapsAfterLine": [10],
   "output": "",
   "diagnostics": [
-    { "startLine": 16, "startColumn": 12, "endLine": 16, "endColumn": 31, "severity": "error", "message": "_private_property: string is not accessible here" },
-    { "startLine": 18, "startColumn": 1, "endLine": 18, "endColumn": 18, "severity": "error", "message": "Value.public_property: int is not publicly assignable" }
+    { "startLine": 16, "startColumn": 12, "endLine": 16, "endColumn": 31, "severity": "error", "message": "'_private_property: string' is not accessible here" },
+    { "startLine": 18, "startColumn": 1, "endLine": 18, "endColumn": 18, "severity": "error", "message": "'Value.public_property: int' is not publicly assignable" }
   ],
   "hovers": [
     { "startLine": 1, "startColumn": 8, "endLine": 1, "endColumn": 12, "text": "struct Value", "signature": "struct Value", "kindLabel": "struct" },

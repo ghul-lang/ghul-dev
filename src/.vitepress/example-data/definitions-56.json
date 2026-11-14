@@ -9,7 +9,7 @@
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 6, "severity": "error", "message": "cannot start at entry: the parameter type is neither string[] nor Ghul.Environment" }
+    { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 6, "severity": "error", "message": "cannot start at 'entry': the parameter type is neither string[] nor Ghul.Environment" }
   ],
   "hovers": [
     { "startLine": 2, "startColumn": 1, "endLine": 2, "endColumn": 5, "text": "entry(count: int) -> void", "signature": "entry(count: int) -> void", "kindLabel": "pure global function" },
