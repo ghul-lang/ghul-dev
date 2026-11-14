@@ -9,7 +9,7 @@
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 20, "severity": "error", "message": "== cannot be applied to values of type (int, string) [help: use =~ to compare by value]" }
+    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 20, "severity": "error", "message": "'==' cannot be applied to values of type '(int, string)' [help: use '=~' to compare by value]" }
   ],
   "hovers": [
     { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 10, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },

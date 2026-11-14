@@ -9,7 +9,7 @@
   "hiddenGapsAfterLine": [],
   "output": "",
   "diagnostics": [
-    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 33, "severity": "error", "message": "type Box requires 1 type argument" }
+    { "startLine": 2, "startColumn": 30, "endLine": 2, "endColumn": 33, "severity": "error", "message": "type 'Box' requires 1 type argument" }
   ],
   "hovers": [
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 9, "text": "boxes: Collections.LIST[!!!]", "signature": "boxes: Collections.LIST[!!!]", "kindLabel": "global variable" },

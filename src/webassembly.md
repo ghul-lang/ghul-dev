@@ -120,14 +120,14 @@ The same pragma works with names of your own, which the compiler's `--define <na
 A call to a .NET API that the core library doesn't declare is reported the way any other missing name is:
 
 ```text
-main.ghul: 11,23..11,34: error: member Environment not found in System
+main.ghul: 11,23..11,34: error: member 'Environment' not found in 'System'
 ```
 
 Something the WebAssembly target can't support at all is reported where it's written, such as a pointer type or an `IL.`{:text} pragma:
 
 ```text
-main.ghul: 20,15..20,22: error: pointer types not supported on the wasm target
-main.ghul: 4,6..4,13: error: pragma IL.name not supported on the wasm target
+main.ghul: 20,15..20,22: error: pointer types not supported on the 'wasm' target
+main.ghul: 4,6..4,13: error: pragma 'IL.name' not supported on the 'wasm' target
 ```
 
 Something the target will support but can't compile yet is reported at the function holding it:

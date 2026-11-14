@@ -9,7 +9,7 @@
   "hiddenGapsAfterLine": [],
   "output": "with get_hash_code: true\nwithout get_hash_code: false\n",
   "diagnostics": [
-    { "startLine": 8, "startColumn": 7, "endLine": 8, "endColumn": 13, "severity": "warning", "message": "[equality-without-hash] NoHash defines =~ but no get_hash_code, so .NET comparisons will not use the operator" }
+    { "startLine": 8, "startColumn": 7, "endLine": 8, "endColumn": 13, "severity": "warning", "message": "[equality-without-hash] 'NoHash' defines '=~' but no 'get_hash_code', so .NET comparisons will not use the operator" }
   ],
   "hovers": [
     { "startLine": 1, "startColumn": 7, "endLine": 1, "endColumn": 14, "text": "class WithHash(x: int)", "signature": "class WithHash(x: int)", "kindLabel": "class" },
