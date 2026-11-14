@@ -19,7 +19,7 @@
     { "startLine": 3, "startColumn": 51, "endLine": 3, "endColumn": 51, "text": "int.+(a: int, b: int) -> int", "signature": "int.+(a: int, b: int) -> int", "kindLabel": "innate function arithmetic.add" },
     { "startLine": 3, "startColumn": 35, "endLine": 3, "endColumn": 40, "text": "pulled: int", "signature": "pulled: int", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 8, "text": "slow: int{}", "signature": "slow: int{}", "kindLabel": "global variable" },
-    { "startLine": 4, "startColumn": 34, "endLine": 4, "endColumn": 37, "text": "Ghul.Pipes.peek[int](\n    source: int{},\n    action: int.. -> void\n) -> int{}", "signature": "Ghul.Pipes.peek[int](\n    source: int{},\n    action: int.. -> void\n) -> int{}", "kindLabel": "pure global function" },
+    { "startLine": 4, "startColumn": 34, "endLine": 4, "endColumn": 37, "text": "Ghul.Pipes.peek[int](\n    source: int{},\n    action: int.. -> void\n) -> int{}", "signature": "Ghul.Pipes.peek[int](\n    source: int{},\n    action: int.. -> void\n) -> int{}", "kindLabel": "global function" },
     { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 26, "text": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "signature": "Ghul.Pipes.take[int](source: int{}, count: int) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 4, "startColumn": 12, "endLine": 4, "endColumn": 15, "text": "Ghul.Pipes.from(start: int) -> int{}", "signature": "Ghul.Pipes.from(start: int) -> int{}", "kindLabel": "pure global function" },
     { "startLine": 4, "startColumn": 39, "endLine": 4, "endColumn": 45, "text": "counted: int -> void", "signature": "counted: int -> void", "kindLabel": "global variable" },

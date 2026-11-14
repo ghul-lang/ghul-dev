@@ -51,7 +51,7 @@
     { "startLine": 29, "startColumn": 1, "endLine": 29, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
     { "startLine": 29, "startColumn": 7, "endLine": 29, "endColumn": 11, "text": "IMAGE.color(red: ubyte, green: ubyte, blue: ubyte) -> void", "signature": "IMAGE.color(red: ubyte, green: ubyte, blue: ubyte) -> void", "kindLabel": "method" },
     { "startLine": 31, "startColumn": 1, "endLine": 31, "endColumn": 6, "text": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "signature": "branch(\n    x: double,\n    y: double,\n    angle: double,\n    length: double,\n    depth: int\n) -> void", "kindLabel": "global function" },
-    { "startLine": 31, "startColumn": 21, "endLine": 31, "endColumn": 22, "text": "pi: double", "signature": "pi: double", "kindLabel": "global property" },
+    { "startLine": 31, "startColumn": 21, "endLine": 31, "endColumn": 22, "text": "pi: double", "signature": "pi: double", "kindLabel": "pure global property" },
     { "startLine": 31, "startColumn": 24, "endLine": 31, "endColumn": 24, "text": "double./(a: double, b: double) -> double", "signature": "double./(a: double, b: double) -> double", "kindLabel": "innate function arithmetic.div" },
     { "startLine": 33, "startColumn": 1, "endLine": 33, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
     { "startLine": 33, "startColumn": 7, "endLine": 33, "endColumn": 11, "text": "IMAGE.write(path: string) -> void", "signature": "IMAGE.write(path: string) -> void", "kindLabel": "method" },
