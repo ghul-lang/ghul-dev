@@ -15,11 +15,11 @@
     { "startLine": 1, "startColumn": 28, "endLine": 1, "endColumn": 32, "text": "other: Animal", "signature": "other: Animal", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 19, "endLine": 1, "endColumn": 25, "text": "class Carrier(occupant: Animal)", "signature": "class Carrier(occupant: Animal)", "kindLabel": "class" },
     { "startLine": 1, "startColumn": 35, "endLine": 1, "endColumn": 40, "text": "class Animal", "signature": "class Animal", "kindLabel": "class" },
-    { "startLine": 4, "startColumn": 9, "endLine": 4, "endColumn": 11, "text": "cat: Animal", "signature": "cat: Animal", "kindLabel": "local value" },
+    { "startLine": 4, "startColumn": 9, "endLine": 4, "endColumn": 11, "text": "cat: Animal", "signature": "cat: Animal", "kindLabel": "local variable" },
     { "startLine": 4, "startColumn": 15, "endLine": 4, "endColumn": 21, "text": "carrier: Carrier", "signature": "carrier: Carrier", "kindLabel": "local argument" },
     { "startLine": 4, "startColumn": 23, "endLine": 4, "endColumn": 30, "text": "Carrier.occupant: Animal", "signature": "Carrier.occupant: Animal", "kindLabel": "pure instance property" },
     { "startLine": 6, "startColumn": 12, "endLine": 6, "endColumn": 14, "text": "class Cat", "signature": "class Cat", "kindLabel": "class" },
-    { "startLine": 6, "startColumn": 16, "endLine": 6, "endColumn": 18, "text": "cat: Animal", "signature": "cat: Animal", "kindLabel": "local value" },
+    { "startLine": 6, "startColumn": 16, "endLine": 6, "endColumn": 18, "text": "cat: Animal", "signature": "cat: Animal", "kindLabel": "local variable" },
     { "startLine": 12, "startColumn": 1, "endLine": 12, "endColumn": 8, "text": "describe(carrier: Carrier, other: Animal) -> void", "signature": "describe(carrier: Carrier, other: Animal) -> void", "kindLabel": "global function" },
     { "startLine": 12, "startColumn": 10, "endLine": 12, "endColumn": 16, "text": "Carrier.init(occupant: Animal)", "signature": "Carrier.init(occupant: Animal)", "kindLabel": "constructor" },
     { "startLine": 12, "startColumn": 18, "endLine": 12, "endColumn": 20, "text": "Cat.init()", "signature": "Cat.init()", "kindLabel": "constructor" },
@@ -28,7 +28,7 @@
     { "startLine": 7, "startColumn": 17, "endLine": 7, "endColumn": 20, "text": "Carrier.swap(a: Animal) -> void", "signature": "Carrier.swap(a: Animal) -> void", "kindLabel": "method" },
     { "startLine": 7, "startColumn": 22, "endLine": 7, "endColumn": 26, "text": "other: Animal", "signature": "other: Animal", "kindLabel": "local argument" },
     { "startLine": 8, "startColumn": 9, "endLine": 8, "endColumn": 18, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 22, "text": "cat: Animal\n    ► Cat", "signature": "cat: Animal\n    ► Cat", "kindLabel": "local value" },
+    { "startLine": 8, "startColumn": 20, "endLine": 8, "endColumn": 22, "text": "cat: Animal\n    ► Cat", "signature": "cat: Animal\n    ► Cat", "kindLabel": "local variable" },
     { "startLine": 8, "startColumn": 24, "endLine": 8, "endColumn": 27, "text": "Cat.purr() -> string", "signature": "Cat.purr() -> string", "kindLabel": "pure method" }
   ],
   "inlayHints": [

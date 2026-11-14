@@ -37,7 +37,7 @@
     { "startLine": 5, "startColumn": 9, "endLine": 5, "endColumn": 13, "text": "state: DISPLAY_STATE", "signature": "state: DISPLAY_STATE", "kindLabel": "local argument" },
     { "startLine": 5, "startColumn": 15, "endLine": 5, "endColumn": 20, "text": "DISPLAY_STATE.append(text: string) -> void", "signature": "DISPLAY_STATE.append(text: string) -> void", "kindLabel": "method" },
     { "startLine": 5, "startColumn": 25, "endLine": 5, "endColumn": 29, "text": "state: DISPLAY_STATE", "signature": "state: DISPLAY_STATE", "kindLabel": "local argument" },
-    { "startLine": 5, "startColumn": 31, "endLine": 5, "endColumn": 34, "text": "DISPLAY_STATE.mode: DisplayMode", "signature": "DISPLAY_STATE.mode: DisplayMode", "kindLabel": "instance property" },
+    { "startLine": 5, "startColumn": 31, "endLine": 5, "endColumn": 34, "text": "DISPLAY_STATE.mode: DisplayMode", "signature": "DISPLAY_STATE.mode: DisplayMode", "kindLabel": "pure instance property" },
     { "startLine": 5, "startColumn": 39, "endLine": 5, "endColumn": 49, "text": "enum DisplayMode", "signature": "enum DisplayMode", "kindLabel": "enum" },
     { "startLine": 5, "startColumn": 51, "endLine": 5, "endColumn": 58, "text": "DisplayMode.DETAILED = 1", "signature": "DisplayMode.DETAILED = 1", "kindLabel": "enum member" },
     { "startLine": 5, "startColumn": 36, "endLine": 5, "endColumn": 37, "text": "==[DisplayMode](a: DisplayMode, b: DisplayMode) -> bool", "signature": "==[DisplayMode](a: DisplayMode, b: DisplayMode) -> bool", "kindLabel": "innate function compare.value" }

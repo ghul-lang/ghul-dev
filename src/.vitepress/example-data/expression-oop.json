@@ -48,7 +48,7 @@
     { "startLine": 38, "startColumn": 18, "endLine": 38, "endColumn": 27, "text": "trait Renderable", "signature": "trait Renderable", "kindLabel": "trait" },
     { "startLine": 38, "startColumn": 34, "endLine": 38, "endColumn": 36, "text": "Num.init(value: int)", "signature": "Num.init(value: int)", "kindLabel": "constructor" },
     { "startLine": 38, "startColumn": 42, "endLine": 38, "endColumn": 51, "text": "expression: Mul", "signature": "expression: Mul", "kindLabel": "global variable" },
-    { "startLine": 40, "startColumn": 5, "endLine": 40, "endColumn": 5, "text": "r: Renderable", "signature": "r: Renderable", "kindLabel": "local value" },
+    { "startLine": 40, "startColumn": 5, "endLine": 40, "endColumn": 5, "text": "r: Renderable", "signature": "r: Renderable", "kindLabel": "local variable" },
     { "startLine": 40, "startColumn": 10, "endLine": 40, "endColumn": 20, "text": "renderables: Renderable[]", "signature": "renderables: Renderable[]", "kindLabel": "global variable" },
     { "startLine": 5, "startColumn": 5, "endLine": 5, "endColumn": 10, "text": "Renderable.render() -> string", "signature": "Renderable.render() -> string", "kindLabel": "pure abstract method" },
     { "startLine": 5, "startColumn": 17, "endLine": 5, "endColumn": 22, "text": "class string", "signature": "class string", "kindLabel": "class" },
@@ -94,7 +94,7 @@
     { "startLine": 34, "startColumn": 38, "endLine": 34, "endColumn": 47, "text": "expression: Mul", "signature": "expression: Mul", "kindLabel": "global variable" },
     { "startLine": 34, "startColumn": 49, "endLine": 34, "endColumn": 52, "text": "Mul.eval() -> int", "signature": "Mul.eval() -> int", "kindLabel": "pure method" },
     { "startLine": 41, "startColumn": 5, "endLine": 41, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
-    { "startLine": 41, "startColumn": 16, "endLine": 41, "endColumn": 16, "text": "r: Renderable", "signature": "r: Renderable", "kindLabel": "local value" },
+    { "startLine": 41, "startColumn": 16, "endLine": 41, "endColumn": 16, "text": "r: Renderable", "signature": "r: Renderable", "kindLabel": "local variable" },
     { "startLine": 41, "startColumn": 18, "endLine": 41, "endColumn": 23, "text": "Renderable.render() -> string", "signature": "Renderable.render() -> string", "kindLabel": "pure abstract method" }
   ],
   "inlayHints": [
