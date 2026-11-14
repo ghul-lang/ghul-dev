@@ -28,7 +28,7 @@
     { "startLine": 13, "startColumn": 12, "endLine": 13, "endColumn": 21, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 13, "startColumn": 41, "endLine": 13, "endColumn": 45, "text": "clock: Clock", "signature": "clock: Clock", "kindLabel": "local value" },
     { "startLine": 13, "startColumn": 47, "endLine": 13, "endColumn": 49, "text": "Clock.now() -> Time.DATE_TIME", "signature": "Clock.now() -> Time.DATE_TIME", "kindLabel": "pure abstract method" },
-    { "startLine": 13, "startColumn": 53, "endLine": 13, "endColumn": 56, "text": "Time.DATE_TIME.hour: int", "signature": "Time.DATE_TIME.hour: int", "kindLabel": "instance property" }
+    { "startLine": 13, "startColumn": 53, "endLine": 13, "endColumn": 56, "text": "Time.DATE_TIME.hour: int", "signature": "Time.DATE_TIME.hour: int", "kindLabel": "pure instance property" }
   ],
   "inlayHints": [
     { "line": 2, "column": 5, "label": "◆", "detail": "now\n\n- ◆ abstract", "code": "definition-virtuality" }
