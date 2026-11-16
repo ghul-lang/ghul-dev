@@ -1,0 +1,19 @@
+use IO.Std.write_line
+
+use Ghul.Interop.PINNER
+use Ghul.Interop.read_utf8
+
+// strtok keeps a pointer into the text from one call to the next, so the
+// text has to stay where it is until the last call:
+@extern("libc", "strtok")
+next_token(text: word, separators: string) -> word
+
+let use pins = PINNER()
+let text = pins.pin_utf8("one,two,,three")
+
+let token mut = next_token(text, ",")
+
+while token != 0w do
+    write_line(read_utf8(token) ?? "")
+    token = next_token(0w, ",")
+od

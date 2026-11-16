@@ -1,0 +1,42 @@
+{
+  "name": "calling-c-3",
+  "snippet": false,
+  "wasm": false,
+  "native": true,
+  "code": "use IO.Std.write_line\n\n// frexp splits a number into a fraction and a power of two, and writes the\n// power through its int * parameter:\n@extern(\"libc\", \"frexp\")\nsplit(value: double, exponent: int ref) -> double\n\nlet exponent mut = 0\nlet fraction = split(48.0, exponent ref)\n\nwrite_line(\"48 = {fraction} * 2^{exponent}\")",
+  "fullSource": "use IO.Std.write_line\n\n// frexp splits a number into a fraction and a power of two, and writes the\n// power through its int * parameter:\n@extern(\"libc\", \"frexp\")\nsplit(value: double, exponent: int ref) -> double\n\nlet exponent mut = 0\nlet fraction = split(48.0, exponent ref)\n\nwrite_line(\"48 = {fraction} * 2^{exponent}\")\n",
+  "hiddenBefore": false,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "48 = 0.75 * 2^6\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 8, "startColumn": 5, "endLine": 8, "endColumn": 12, "text": "exponent: int", "signature": "exponent: int", "kindLabel": "global variable" },
+    { "startLine": 9, "startColumn": 5, "endLine": 9, "endColumn": 12, "text": "fraction: double", "signature": "fraction: double", "kindLabel": "global variable" },
+    { "startLine": 9, "startColumn": 16, "endLine": 9, "endColumn": 20, "text": "split(value: double, exponent: int ref) -> double", "signature": "split(value: double, exponent: int ref) -> double", "kindLabel": "pure global function" },
+    { "startLine": 9, "startColumn": 28, "endLine": 9, "endColumn": 35, "text": "exponent: int", "signature": "exponent: int", "kindLabel": "global variable" },
+    { "startLine": 6, "startColumn": 1, "endLine": 6, "endColumn": 5, "text": "split(value: double, exponent: int ref) -> double", "signature": "split(value: double, exponent: int ref) -> double", "kindLabel": "pure global function" },
+    { "startLine": 6, "startColumn": 7, "endLine": 6, "endColumn": 11, "text": "value: double", "signature": "value: double", "kindLabel": "local argument" },
+    { "startLine": 6, "startColumn": 22, "endLine": 6, "endColumn": 29, "text": "exponent: int ref", "signature": "exponent: int ref", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 11, "startColumn": 19, "endLine": 11, "endColumn": 26, "text": "fraction: double", "signature": "fraction: double", "kindLabel": "global variable" },
+    { "startLine": 11, "startColumn": 34, "endLine": 11, "endColumn": 41, "text": "exponent: int", "signature": "exponent: int", "kindLabel": "global variable" }
+  ],
+  "inlayHints": [
+    { "line": 6, "column": 1, "label": "◆", "detail": "split\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "tokenType": "function" },
+    { "startLine": 6, "startColumn": 1, "endLine": 6, "endColumn": 5, "tokenType": "function" },
+    { "startLine": 6, "startColumn": 7, "endLine": 6, "endColumn": 11, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 6, "startColumn": 22, "endLine": 6, "endColumn": 29, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 8, "startColumn": 5, "endLine": 8, "endColumn": 12, "tokenType": "property" },
+    { "startLine": 9, "startColumn": 5, "endLine": 9, "endColumn": 12, "tokenType": "property" },
+    { "startLine": 9, "startColumn": 16, "endLine": 9, "endColumn": 20, "tokenType": "function" },
+    { "startLine": 9, "startColumn": 28, "endLine": 9, "endColumn": 35, "tokenType": "property" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 11, "startColumn": 19, "endLine": 11, "endColumn": 26, "tokenType": "property" },
+    { "startLine": 11, "startColumn": 34, "endLine": 11, "endColumn": 41, "tokenType": "property" }
+  ]
+}

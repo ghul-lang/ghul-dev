@@ -1,0 +1,42 @@
+use IO.Std.write_line
+
+use Ghul.Interop.HANDLE
+
+@extern("libc", "tmpfile")
+_temporary_file() -> word
+
+@extern("libc", "fclose")
+_close(file: word) -> int
+
+@extern("libc", "fputs")
+_put(text: string, file: word) -> int
+
+@extern("libc", "rewind")
+_rewind(file: word)
+
+@extern("libc", "fgets")
+_get(buffer: ARRAY[ubyte], size: int, file: word) -> word
+
+// a C FILE *, closed exactly once with fclose:
+class CFile: HANDLE is
+    init() is super.init(_temporary_file()); si
+
+    release(address: word) is _close(address); si
+
+    write(text: string) is _put(text, address); si
+
+    read_line() -> string is
+        _rewind(address)
+
+        let buffer = Ghul.Pipes.repeat(0ub, 64) |> ARRAY()
+        _get(buffer, buffer.count, address)
+
+        let text = Text.Encoding.utf8.get_string(buffer)
+        return text.substring(0, text.index_of('\n'))
+    si
+si
+
+let use file = CFile()
+
+file.write("written through C\n")
+write_line(file.read_line())

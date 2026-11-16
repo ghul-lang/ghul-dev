@@ -1,0 +1,11 @@
+use IO.Std.write_line
+
+// frexp splits a number into a fraction and a power of two, and writes the
+// power through its int * parameter:
+@extern("libc", "frexp")
+split(value: double, exponent: int ref) -> double
+
+let exponent mut = 0
+let fraction = split(48.0, exponent ref)
+
+write_line("48 = {fraction} * 2^{exponent}")

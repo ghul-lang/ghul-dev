@@ -1,0 +1,30 @@
+use IO.Std.write_line
+
+// struct tm from time.h, field for field:
+@layout("c")
+struct TimeParts is
+    second: int field public
+    minute: int field public
+    hour: int field public
+    day: int field public
+    month: int field public
+    year: int field public
+    weekday: int field public
+    yearday: int field public
+    is_dst: int field public
+    gmt_offset: long field public
+    zone: word field public
+
+    init() is si
+si
+
+@extern("libc", "gmtime_r")
+gmtime(time: long ref, result: TimeParts ref) -> word
+
+let seconds mut = 1_000_000_000L
+let parts mut = TimeParts()
+
+gmtime(seconds ref, parts ref)
+
+write_line("{parts.year + 1900}-{parts.month + 1}-{parts.day} {parts.hour}:{parts.minute}:{parts.second}")
+write_line("struct tm is {Ghul.Interop.size_of[TimeParts]()} bytes")

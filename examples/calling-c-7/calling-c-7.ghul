@@ -1,0 +1,19 @@
+use IO.Std.write_line
+
+use Ghul.Interop.read
+use Ghul.Interop.read_utf8
+
+// getenv answers a pointer into the environment, which the program reads
+// itself:
+@extern("libc", "getenv")
+environment_pointer(name: string) -> word
+
+@extern("libc", "setenv")
+set_environment(name: string, value: string, overwrite: int) -> int
+
+set_environment("GREETING", "hello", 1)
+
+let address = environment_pointer("GREETING")
+
+write_line(read_utf8(address) ?? "absent")
+write_line("first byte {read[ubyte](address, 0)}, second {read[ubyte](address, 1)}")

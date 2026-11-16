@@ -1,0 +1,11 @@
+use IO.Std.write_line
+
+// snprintf is variadic: the parameters from the third on are passed as C
+// passes variadic arguments.
+@extern("libc", "snprintf", variadic = 3)
+format_into(buffer: ARRAY[ubyte], size: word, format: string, value: double) -> int
+
+let buffer = Ghul.Pipes.repeat(0ub, 32) |> ARRAY()
+let length = format_into(buffer, word(buffer.count), "%08.3f", 3.14159)
+
+write_line(Text.Encoding.utf8.get_string(buffer, 0, length))
