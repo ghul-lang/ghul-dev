@@ -5,7 +5,12 @@ src/.vitepress/cache/
 # project-backed example build artifacts
 examples/*/bin/
 examples/*/obj/
+
+# native example build output, written by ghul-cli
+examples/*/out/
+native-example-tests/*/out/
 **/.assemblies.json
 
 # test-run artifacts left beside an example test
 example-tests/**/compiler.trim
+native-example-tests/**/warn.sort

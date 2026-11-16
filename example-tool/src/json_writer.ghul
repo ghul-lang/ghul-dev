@@ -46,7 +46,8 @@ namespace ExampleTool is
         semantic_tokens: Iterable[SEMANTIC_TOKEN],
         inlay_hints: Iterable[INLAY_HINT],
         snippet: bool,
-        wasm: bool
+        wasm: bool,
+        native: bool
     ) -> string is
         let b = StringBuilder()
 
@@ -54,6 +55,7 @@ namespace ExampleTool is
         b.append("  \"name\": "); b.append(_json_string(name)); b.append(",\n")
         b.append("  \"snippet\": "); b.append(if snippet then "true" else "false" fi); b.append(",\n")
         b.append("  \"wasm\": "); b.append(if wasm then "true" else "false" fi); b.append(",\n")
+        b.append("  \"native\": "); b.append(if native then "true" else "false" fi); b.append(",\n")
         b.append("  \"code\": "); b.append(_json_string(code)); b.append(",\n")
         b.append("  \"fullSource\": "); b.append(_json_string(full_source)); b.append(",\n")
         b.append("  \"hiddenBefore\": "); b.append(if hidden_before then "true" else "false" fi); b.append(",\n")

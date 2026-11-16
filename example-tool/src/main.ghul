@@ -13,7 +13,9 @@ namespace ExampleTool is
 
     // Generates a rendered-example artifact (<name>.json) for every example
     // directory under the given root. An example directory holds a single
-    // `<dirname>.ghul` source file — nothing else.
+    // `<dirname>.ghul` source file, and beside it either a `.ghulproj`, for
+    // an example built against .NET packages, or a `ghul-project.json`, for a
+    // native example: a ghul-cli project for the llvm target.
     //
     // Per example, driving the pinned compiler directly (no ghul-test, no
     // MSBuild): compile it, run the compiled binary capturing its output,
@@ -96,7 +98,7 @@ namespace ExampleTool is
             region.hidden_before, region.hidden_after, region.hidden_gaps_after_line,
             Collections.LIST[HOVER](), "", Collections.LIST[DIAGNOSTIC](),
             Collections.LIST[SEMANTIC_TOKEN](), Collections.LIST[INLAY_HINT](),
-            true, false
+            true, false, false
         )
         File.write_all_text(Path.combine(output_dir, "{name}.json"), json)
 
@@ -255,8 +257,40 @@ namespace ExampleTool is
         let reference_arguments: string mut
         let error_output: string mut
         let output: string mut
+        let analyser_program mut = "dotnet"
+        let analyser_arguments mut = ""
+        let native = File.exists(Path.combine(example_dir, "ghul-project.json"))
 
-        if project? then
+        if native then
+            // A native example: a ghul-cli project for the llvm target, built
+            // with ghul-cli as a reader would build it, run here, and analysed
+            // as an editor analyses it, through the compiler and the
+            // response file ghul-cli names for the project. Only what it
+            // printed is recorded; nothing runs it anywhere else.
+            let build = run_process("dotnet", "ghul build --target llvm", example_dir)
+            let full_output = "{build.standard_error}\n{build.standard_output}"
+            let source_path = Path.get_full_path(Path.combine(example_dir, source_file))
+            let executable = Path.combine(example_dir, "out", "llvm", _manifest_name(example_dir))
+
+            raw_diagnostics = _parse_diagnostics(full_output, source_path)
+            compiled = build.exit_code == 0 /\ File.exists(executable)
+            reference_arguments = ""
+            error_output = full_output
+            output = if compiled then run_process(executable, "", example_dir).standard_output else "" fi
+
+            let response_file = Path.combine(Path.get_temp_path(), "example-tool-{name}-{System.Environment.process_id}.rsp")
+            let written = run_process("dotnet", "ghul project response-file --target llvm --output \"{response_file}\"", example_dir)
+            let compiler = run_process("dotnet", "ghul project compiler --target llvm", example_dir)
+
+            if written.exit_code != 0 \/ compiler.exit_code != 0 then
+                Std.error.write_line("FAILED example '{name}': ghul-cli could not say how to analyse it")
+                Std.error.write_line("{written.standard_error}{compiler.standard_error}")
+                return false
+            fi
+
+            analyser_program = compiler.standard_output.trim()
+            analyser_arguments = "--analyse @\"{response_file}\""
+        elif project? then
             // Project-backed example: MSBuild restores its packages and
             // compiles it against the real assemblies, then
             // GenerateAssembliesJson writes .assemblies.json with the full
@@ -273,6 +307,7 @@ namespace ExampleTool is
             raw_diagnostics = _parse_diagnostics(full_output, source_path)
             compiled = build.exit_code == 0
             reference_arguments = _assembly_reference_arguments(example_dir)
+            analyser_arguments = "ghul-compiler --analyse --v3 --test-run {reference_arguments}"
             error_output = full_output
             // The example demonstrates wiring against a framework it can't
             // start here, so there is no run output to capture.
@@ -323,6 +358,7 @@ namespace ExampleTool is
                     File.exists(Path.combine(example_dir, "binary.exe"))
                 fi
             reference_arguments = "--sdk-ref-path \"{sdk_ref_path}\" {reference_flags}"
+            analyser_arguments = "ghul-compiler --analyse --v3 --test-run {reference_arguments}"
             error_output = compile.standard_error
 
             // No binary for a deliberate-error example — only diagnostics. The
@@ -360,7 +396,7 @@ namespace ExampleTool is
             return false
         fi
 
-        let collected = _collect_hovers_and_tokens(example_dir, source_file, source, reference_arguments)
+        let collected = _collect_hovers_and_tokens(example_dir, source_file, source, analyser_program, analyser_arguments)
 
         let diagnostics = LIST[DIAGNOSTIC]()
         for diagnostic in raw_diagnostics do
@@ -375,7 +411,7 @@ namespace ExampleTool is
             collected.region.hidden_before, collected.region.hidden_after,
             collected.region.hidden_gaps_after_line,
             collected.hovers, output, diagnostics, collected.semantic_tokens,
-            collected.inlay_hints, false, _runs_on_wasm(example_dir, name)
+            collected.inlay_hints, false, !native /\ _runs_on_wasm(example_dir, name), native
         )
         File.write_all_text(Path.combine(output_dir, "{name}.json"), json)
 
@@ -395,14 +431,14 @@ namespace ExampleTool is
     // the edit so the analyser records this file's editor-only inlay hints
     // during compile-expressions.
     _collect_hovers_and_tokens(
-        example_dir: string, source_file: string, source: string, reference_arguments: string
+        example_dir: string, source_file: string, source: string, analyser_program: string, analyser_arguments: string
     ) -> (
         region: VISIBLE_REGION,
         hovers: LIST[HOVER],
         semantic_tokens: LIST[SEMANTIC_TOKEN],
         inlay_hints: LIST[INLAY_HINT]
     ) is
-        let use analyser = ANALYSER_PROCESS(example_dir, reference_arguments)
+        let use analyser = ANALYSER_PROCESS(example_dir, analyser_program, analyser_arguments)
 
         analyser.send_set_open_files(source_file)
 
@@ -503,6 +539,20 @@ namespace ExampleTool is
         flags.append("-a \"ghul-runtime.dll\"")
 
         return flags.to_string()
+    si
+
+    // The name a native example's manifest gives its program, which names
+    // the executable ghul-cli writes to out/llvm/.
+    _manifest_name(example_dir: string) -> string is
+        let text = File.read_all_text(Path.combine(example_dir, "ghul-project.json"))
+        let use document = System.Text.Json.JsonDocument.parse(text, _)
+        let element: System.Text.Json.JsonElement mut
+
+        if document.root_element.try_get_property("name", element ref) then
+            return element.get_string() ?? Path.get_file_name(example_dir)!
+        fi
+
+        return Path.get_file_name(example_dir)!
     si
 
     // The .ghulproj in an example directory, or null for a bare-source

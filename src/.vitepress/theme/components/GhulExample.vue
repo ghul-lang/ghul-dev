@@ -410,8 +410,12 @@ const edited = ref(retainedEdit(props.name) !== null)
 // nothing to edit or run. A snippet is a syntax skeleton written with
 // placeholders (`if condition then`, `catch e: SomeExceptionType`) rather
 // than a program, so opening one in the editor would only produce a wall of
-// errors about the placeholders.
-if (!props.signature && !isSnippet.value && example.value?.playground !== false) {
+// errors about the placeholders. A native example is built and run for the
+// llvm target, which the playground doesn't compile for: it shows the output
+// its build recorded, and isn't opened in the playground at all.
+const isNative = computed(() => example.value?.native === true)
+
+if (!props.signature && !isSnippet.value && !isNative.value && example.value?.playground !== false) {
   playgroundAvailable().then(available => { canEdit.value = available })
 }
 

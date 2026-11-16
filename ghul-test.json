@@ -10,6 +10,16 @@
                 "package": "ghul.runtime",
                 "pinned_in": "example-tool/Directory.Packages.props"
             }
+        },
+
+        // The native examples: each a ghul-cli project for the llvm target,
+        // built with the ghul-cli the tool manifest pins and run as a native
+        // executable, with whatever compiler and libraries the project's
+        // manifest names.
+        "native": {
+            "build": "ghul-cli",
+            "ghul": "dotnet ghul",
+            "ghul_target": "llvm"
         }
     }
 }
