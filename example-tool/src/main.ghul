@@ -263,10 +263,10 @@ namespace ExampleTool is
 
         if native then
             // A native example: a ghul-cli project for the llvm target, built
-            // with ghul-cli as a reader would build it, run here, and analysed
-            // as an editor analyses it, through the compiler and the
-            // response file ghul-cli names for the project. Only what it
-            // printed is recorded; nothing runs it anywhere else.
+            // with ghul-cli as a reader would build it, run here for the
+            // output the artifact records, and analysed as an editor analyses
+            // it, through the compiler and the response file ghul-cli names
+            // for the project.
             let build = run_process("dotnet", "ghul build --target llvm", example_dir)
             let full_output = "{build.standard_error}\n{build.standard_output}"
             let source_path = Path.get_full_path(Path.combine(example_dir, source_file))

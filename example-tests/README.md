@@ -105,8 +105,8 @@ dotnet ghul-test --config native native-example-tests
 
 The build uses the compiler and libraries the manifest names, the newest
 releases unless it says otherwise, and ghul-cli fetches them, with ghul-llvm,
-on first use. A native example is never compiled or run anywhere but where the
-example tool or these tests run: the site deploys only the recorded output.
+on first use. A native example is compiled and run only by the example tool and
+by these tests, and the site deploys only the output the example tool recorded.
 
 ## running on WebAssembly
 
