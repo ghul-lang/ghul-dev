@@ -1,0 +1,39 @@
+{
+  "name": "calling-c-2",
+  "snippet": false,
+  "wasm": false,
+  "native": true,
+  "code": "use IO.Std.write_line\n\n@extern(\"libc\", \"getenv\", result = \"copy\")\nenvironment_variable(name: string) -> string?\n\n@extern(\"libc\", \"strdup\", result = \"take\")\nduplicate(text: string) -> string?\n\nwrite_line(environment_variable(\"NO_SUCH_VARIABLE_HERE\") ?? \"not set\")\nwrite_line(duplicate(\"héllo, wörld\") ?? \"absent\")",
+  "fullSource": "use IO.Std.write_line\n\n@extern(\"libc\", \"getenv\", result = \"copy\")\nenvironment_variable(name: string) -> string?\n\n@extern(\"libc\", \"strdup\", result = \"take\")\nduplicate(text: string) -> string?\n\nwrite_line(environment_variable(\"NO_SUCH_VARIABLE_HERE\") ?? \"not set\")\nwrite_line(duplicate(\"héllo, wörld\") ?? \"absent\")\n",
+  "hiddenBefore": false,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "not set\nhéllo, wörld\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 20, "text": "environment_variable(name: string) -> string?", "signature": "environment_variable(name: string) -> string?", "kindLabel": "pure global function" },
+    { "startLine": 4, "startColumn": 22, "endLine": 4, "endColumn": 25, "text": "name: string", "signature": "name: string", "kindLabel": "local argument" },
+    { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "text": "duplicate(text: string) -> string?", "signature": "duplicate(text: string) -> string?", "kindLabel": "pure global function" },
+    { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "text": "text: string", "signature": "text: string", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 9, "startColumn": 12, "endLine": 9, "endColumn": 31, "text": "environment_variable(name: string) -> string?", "signature": "environment_variable(name: string) -> string?", "kindLabel": "pure global function" },
+    { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 10, "startColumn": 12, "endLine": 10, "endColumn": 20, "text": "duplicate(text: string) -> string?", "signature": "duplicate(text: string) -> string?", "kindLabel": "pure global function" }
+  ],
+  "inlayHints": [
+    { "line": 4, "column": 1, "label": "◆", "detail": "environment_variable\n\n- ◆ abstract", "code": "definition-virtuality" },
+    { "line": 7, "column": 1, "label": "◆", "detail": "duplicate\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "tokenType": "function" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 20, "tokenType": "function" },
+    { "startLine": 4, "startColumn": 22, "endLine": 4, "endColumn": 25, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "tokenType": "function" },
+    { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 9, "startColumn": 12, "endLine": 9, "endColumn": 31, "tokenType": "function" },
+    { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 10, "startColumn": 12, "endLine": 10, "endColumn": 20, "tokenType": "function" }
+  ]
+}

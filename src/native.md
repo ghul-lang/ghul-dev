@@ -55,7 +55,7 @@ ghul repl --target llvm
 
 ## calling C
 
-`@extern("libc", "abs")`{:text} before a function with no body declares a C function the program is linked with, and the ghūl signature is the whole declaration. The scalar types cross as the C types of the same width, and a string argument crosses as a NUL-terminated UTF-8 copy. Pointers and `ref` arguments don't cross on this target. The program links statically against musl, so a library it names has to be available as a static archive built for musl, which `--native-library <name>`{:sh} and `--native-library-path <dir>`{:sh} point at. The [language reference](https://github.com/ghul-lang/ghul/blob/main/GHUL.md) describes `@extern`{:text} for each target.
+`@extern("libc", "abs")`{:text} before a function with no body declares a C function the program is linked with, and the ghūl signature is the whole declaration. A native program can link statically against a C library built for musl, or dynamically against the system's shared libraries. [Calling C libraries](/calling-c) covers declaring C functions, strings, out-parameters, buffers, C structs, memory C keeps, and linking.
 
 ## debugging
 

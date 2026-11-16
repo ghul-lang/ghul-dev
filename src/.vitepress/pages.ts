@@ -39,6 +39,7 @@ export const SECTIONS = [
       { text: 'scripts, the REPL and notebooks', link: '/scripts-and-repl' },
       { text: 'WebAssembly', link: '/webassembly' },
       { text: 'native executables', link: '/native' },
+      { text: 'calling C libraries', link: '/calling-c' },
       { text: 'tooling', link: '/tooling' },
     ],
   },

@@ -1,0 +1,10 @@
+use IO.Std.write_line
+
+@extern("libc", "getenv", result = "copy")
+environment_variable(name: string) -> string?
+
+@extern("libc", "strdup", result = "take")
+duplicate(text: string) -> string?
+
+write_line(environment_variable("NO_SUCH_VARIABLE_HERE") ?? "not set")
+write_line(duplicate("héllo, wörld") ?? "absent")

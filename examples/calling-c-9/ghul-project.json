@@ -1,0 +1,7 @@
+{
+    "name": "calling-c-9",
+    "kind": "program",
+    "targets": ["llvm"],
+    "sources": ["calling-c-9.ghul"],
+    "dependencies": { "ghul-runtime": { "version": ">=42.7.0" } }
+}

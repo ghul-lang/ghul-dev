@@ -1,0 +1,10 @@
+use IO.Std.write_line
+use Ghul.Result
+
+@extern("libc", "close", errno = -1)
+close(fd: int) -> Result[int, int]
+
+case close(-1)
+when ok: Result.OK then write_line("closed")
+when failed: Result.ERROR then write_line("close failed: {Ghul.Interop.error_text(failed.error)}")
+esac

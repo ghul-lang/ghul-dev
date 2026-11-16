@@ -1,0 +1,14 @@
+use IO.Std.write_line
+
+@extern("z", "zlibVersion", result = "copy")
+zlib_version() -> string?
+
+@extern("z", "crc32")
+crc32(crc: ulong, buffer: ARRAY[ubyte], length: uint) -> ulong
+
+let data = Text.Encoding.utf8.get_bytes("hello")
+
+// zlib answers its own version, which can be newer than the one the program
+// was built against:
+write_line("zlib 1.x: {(zlib_version() ?? "").starts_with("1.")}")
+write_line("crc32 of hello: {crc32(ulong(0), data, uint(data.count)):X8}")

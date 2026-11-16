@@ -1,0 +1,13 @@
+{
+    "name": "calling-c-10",
+    "kind": "program",
+    "targets": ["llvm"],
+    "sources": ["calling-c-10.ghul"],
+    "dependencies": { "ghul-runtime": { "version": ">=42.7.0" } },
+    "llvm": {
+        "link-mode": "dynamic",
+        "native": {
+            "zlib": { "soname": "libz.so.1", "version": "^1.2.11", "libraries": ["z"], "install": { "debian": "zlib1g" } }
+        }
+    }
+}
