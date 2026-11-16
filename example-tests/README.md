@@ -67,7 +67,8 @@ variation itself.
 ## what is not covered
 
 The three `dotnet-integration-*` examples build against ASP.NET through a
-`.ghulproj` and are never run, so they are left out. `snippets/` is illustrative
+`.ghulproj` and are never run, so they are left out. The native examples are
+tested in `native-example-tests/` instead (see "native examples"). `snippets/` is illustrative
 and is not compiled at all.
 
 The Rosetta Code solutions are not here at all. They are written, compiled and run in
@@ -75,6 +76,37 @@ The Rosetta Code solutions are not here at all. They are written, compiled and r
 by a test, and the site reads them from there when a reader opens the section. Testing them again
 here would mean this repository holding an output it does not own, and a solution improved upstream
 would then arrive as a failing test rather than as a better example.
+
+## native examples
+
+An example whose directory holds a `ghul-project.json` beside its source is
+native: a ghul-cli project for the llvm target, for pages about what only a
+native build can do, such as calling C. The example tool builds it with the
+pinned ghul-cli, runs the executable, and records what it printed, and it
+analyses the example for the llvm target, through the compiler and the
+response file ghul-cli gives for the project, for its hovers. The embedded
+editor doesn't open a native example: the page shows the recorded output.
+
+Native examples are tested in `native-example-tests/`, under the `native`
+configuration in `ghul-test.json`, which builds each with ghul-cli. One
+directory per example, holding symlinks to the example's source and manifest
+and the output it prints:
+
+```
+native-example-tests/calling-c-1/
+├── calling-c-1.ghul   -> ../../examples/calling-c-1/calling-c-1.ghul
+├── ghul-project.json  -> ../../examples/calling-c-1/ghul-project.json
+└── run.expected       what the program prints
+```
+
+```sh
+dotnet ghul-test --config native native-example-tests
+```
+
+The build uses the compiler and libraries the manifest names, the newest
+releases unless it says otherwise, and ghul-cli fetches them, with ghul-llvm,
+on first use. A native example is compiled and run only by the example tool and
+by these tests, and the site deploys only the output the example tool recorded.
 
 ## running on WebAssembly
 

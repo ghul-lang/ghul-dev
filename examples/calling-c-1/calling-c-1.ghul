@@ -1,0 +1,9 @@
+use IO.Std.write_line
+
+@extern("libc", "abs")
+absolute(value: int) -> int
+
+@extern("libc", "strlen")
+length_of(text: string) -> word
+
+write_line("{absolute(-42)} {length_of("héllo")}")

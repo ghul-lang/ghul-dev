@@ -1,0 +1,39 @@
+{
+  "name": "calling-c-1",
+  "snippet": false,
+  "wasm": false,
+  "native": true,
+  "code": "use IO.Std.write_line\n\n@extern(\"libc\", \"abs\")\nabsolute(value: int) -> int\n\n@extern(\"libc\", \"strlen\")\nlength_of(text: string) -> word\n\nwrite_line(\"{absolute(-42)} {length_of(\"héllo\")}\")",
+  "fullSource": "use IO.Std.write_line\n\n@extern(\"libc\", \"abs\")\nabsolute(value: int) -> int\n\n@extern(\"libc\", \"strlen\")\nlength_of(text: string) -> word\n\nwrite_line(\"{absolute(-42)} {length_of(\"héllo\")}\")\n",
+  "hiddenBefore": false,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "42 6\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 8, "text": "absolute(value: int) -> int", "signature": "absolute(value: int) -> int", "kindLabel": "pure global function" },
+    { "startLine": 4, "startColumn": 10, "endLine": 4, "endColumn": 14, "text": "value: int", "signature": "value: int", "kindLabel": "local argument" },
+    { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "text": "length_of(text: string) -> word", "signature": "length_of(text: string) -> word", "kindLabel": "pure global function" },
+    { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "text": "text: string", "signature": "text: string", "kindLabel": "local argument" },
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 9, "startColumn": 14, "endLine": 9, "endColumn": 21, "text": "absolute(value: int) -> int", "signature": "absolute(value: int) -> int", "kindLabel": "pure global function" },
+    { "startLine": 9, "startColumn": 23, "endLine": 9, "endColumn": 23, "text": "int.-(a: int) -> int", "signature": "int.-(a: int) -> int", "kindLabel": "innate function arithmetic.neg" },
+    { "startLine": 9, "startColumn": 30, "endLine": 9, "endColumn": 38, "text": "length_of(text: string) -> word", "signature": "length_of(text: string) -> word", "kindLabel": "pure global function" }
+  ],
+  "inlayHints": [
+    { "line": 4, "column": 1, "label": "◆", "detail": "absolute\n\n- ◆ abstract", "code": "definition-virtuality" },
+    { "line": 7, "column": 1, "label": "◆", "detail": "length_of\n\n- ◆ abstract", "code": "definition-virtuality" }
+  ],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "tokenType": "function" },
+    { "startLine": 4, "startColumn": 1, "endLine": 4, "endColumn": 8, "tokenType": "function" },
+    { "startLine": 4, "startColumn": 10, "endLine": 4, "endColumn": 14, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "tokenType": "function" },
+    { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "tokenType": "variable", "modifiers": "readonly" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "tokenType": "method", "modifiers": "static" },
+    { "startLine": 9, "startColumn": 14, "endLine": 9, "endColumn": 21, "tokenType": "function" },
+    { "startLine": 9, "startColumn": 23, "endLine": 9, "endColumn": 23, "tokenType": "operator" },
+    { "startLine": 9, "startColumn": 30, "endLine": 9, "endColumn": 38, "tokenType": "function" }
+  ]
+}

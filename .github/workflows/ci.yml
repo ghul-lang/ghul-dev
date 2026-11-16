@@ -55,6 +55,13 @@ jobs:
     - name: Compile and run every example
       run: dotnet ghul-test example-tests
 
+    # The native examples are ghul-cli projects for the llvm target. The
+    # pinned ghul-cli fetches the compiler, ghul-runtime and ghul-llvm they
+    # need, and each is built and run here as a native executable. Only what
+    # they print reaches the site, recorded in the example data.
+    - name: Build and run every native example
+      run: dotnet ghul-test --config native native-example-tests
+
     # The examples are what the site teaches, so they are written in the
     # terminator-free style the compiler infers. A `;` a line break would
     # infer anyway is the compiler's own redundant-semicolon warning, but
