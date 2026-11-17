@@ -2,6 +2,7 @@
   "name": "definitions-40",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// a primary header with no body declarations:\nclass Point(x: int, y: int)\n\n// is equivalent to an explicit empty 'is' / 'si' body:\nclass Vector(dx: int, dy: int) is\nsi",
   "fullSource": "// a primary header with no body declarations:\nclass Point(x: int, y: int)\n\n// is equivalent to an explicit empty 'is' / 'si' body:\nclass Vector(dx: int, dy: int) is\nsi\n\n",
   "hiddenBefore": false,

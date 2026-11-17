@@ -2,6 +2,7 @@
   "name": "functional-programming-37",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let xs = [1, 2, 3, 4]\n\nlet total = xs |> reduce(0, `+)\nlet from_ten = xs |> map(`-(10, *)) |> join(\", \")\nlet pair_sums = [(1, 2), (3, 4)] |> map(`+) |> join(\", \")\n\nwrite_line(\"{total}; {from_ten}; {pair_sums}\")",
   "fullSource": "use default\n\nlet xs = [1, 2, 3, 4]\n\nlet total = xs |> reduce(0, `+)\nlet from_ten = xs |> map(`-(10, *)) |> join(\", \")\nlet pair_sums = [(1, 2), (3, 4)] |> map(`+) |> join(\", \")\n\nwrite_line(\"{total}; {from_ten}; {pair_sums}\")\n",
   "hiddenBefore": true,

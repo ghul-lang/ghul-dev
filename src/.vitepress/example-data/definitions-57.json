@@ -2,6 +2,7 @@
   "name": "definitions-57",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "@equality()\nclass Point(x: int, y: int)\n\nlet a = Point(1, 2)\nlet b = Point(1, 2)\n\nwrite_line(\"{a =~ b} {a == b}\")\n\n// .NET finds an equal value, not only the same object\nwrite_line(\"{Collections.LIST[Point]([a]).contains(b)}\")",
   "fullSource": "use IO.Std.write_line\n\n@equality()\nclass Point(x: int, y: int)\n\nlet a = Point(1, 2)\nlet b = Point(1, 2)\n\nwrite_line(\"{a =~ b} {a == b}\")\n\n// .NET finds an equal value, not only the same object\nwrite_line(\"{Collections.LIST[Point]([a]).contains(b)}\")\n",
   "hiddenBefore": true,

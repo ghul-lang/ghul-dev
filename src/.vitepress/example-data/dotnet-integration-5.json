@@ -2,6 +2,7 @@
   "name": "dotnet-integration-5",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Version(major: int, minor: int): Ghul.Comparable[Version] is\n    <>(other: Version) -> int =>\n        if major != other.major then major - other.major else minor - other.minor fi\n\n    to_string() -> string => \"{major}.{minor}\"\nsi\n\nlet versions = LIST[Version]()\nversions.add(Version(2, 1))\nversions.add(Version(1, 9))\nversions.sort()\n\nwrite_line(\"sorted: {versions |> map(v => v.to_string()) |> join(\", \")}\")\nwrite_line(\"1.0 < 1.1: {Version(1, 0) < Version(1, 1)}\")",
   "fullSource": "use IO.Std.write_line\nuse Collections.LIST\nuse Ghul.Pipes\n\nclass Version(major: int, minor: int): Ghul.Comparable[Version] is\n    <>(other: Version) -> int =>\n        if major != other.major then major - other.major else minor - other.minor fi\n\n    to_string() -> string => \"{major}.{minor}\"\nsi\n\nlet versions = LIST[Version]()\nversions.add(Version(2, 1))\nversions.add(Version(1, 9))\nversions.sort()\n\nwrite_line(\"sorted: {versions |> map(v => v.to_string()) |> join(\", \")}\")\nwrite_line(\"1.0 < 1.1: {Version(1, 0) < Version(1, 1)}\")\n",
   "hiddenBefore": true,

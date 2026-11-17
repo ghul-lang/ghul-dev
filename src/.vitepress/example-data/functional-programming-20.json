@@ -2,6 +2,7 @@
   "name": "functional-programming-20",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// * stands for the argument the new function takes\nlet add_5 = add(5, *)\nwrite_line(\"add_5(3): {add_5(3)}\")\n\n// the fixed arguments are evaluated once, here\nwrite_line(\"add 10 to each: {[1, 2, 3] |> map(add(10, *))}\")\n\n// a built-in operator, with both operands open\nwrite_line(\"product: {[2, 3, 4] |> reduce(1, int.`*(*, *))}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes\n\nadd(x: int, y: int) -> int => x + y\n\n// * stands for the argument the new function takes\nlet add_5 = add(5, *)\nwrite_line(\"add_5(3): {add_5(3)}\")\n\n// the fixed arguments are evaluated once, here\nwrite_line(\"add 10 to each: {[1, 2, 3] |> map(add(10, *))}\")\n\n// a built-in operator, with both operands open\nwrite_line(\"product: {[2, 3, 4] |> reduce(1, int.`*(*, *))}\")\n",
   "hiddenBefore": true,

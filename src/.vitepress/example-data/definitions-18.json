@@ -2,6 +2,7 @@
   "name": "definitions-18",
   "snippet": true,
   "wasm": false,
+  "native": false,
   "code": "if isa Tree.NODE(tree) then\n    write_line(\n        \"left {tree.left}, right {tree.right}\"\n    )\nelif isa Tree.LEAF(tree) then\n    write_line(\"leaf value {tree.value}\")\nfi",
   "fullSource": "if isa Tree.NODE(tree) then\n    write_line(\n        \"left {tree.left}, right {tree.right}\"\n    )\nelif isa Tree.LEAF(tree) then\n    write_line(\"leaf value {tree.value}\")\nfi\n",
   "hiddenBefore": false,

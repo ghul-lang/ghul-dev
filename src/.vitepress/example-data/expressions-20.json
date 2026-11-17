@@ -2,6 +2,7 @@
   "name": "expressions-20",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let length = \"Hello\".length",
   "fullSource": "let length = \"Hello\".length\n",
   "hiddenBefore": false,

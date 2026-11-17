@@ -2,6 +2,7 @@
   "name": "object-oriented-programming-2",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "use IO.Std.write_line\n\nclass Animal is\n    _name: string\n    init(name: string) is _name = name; si\n\n    name: string => _name\n    speak() -> string                     // body-less: Animal is implicitly abstract\n    describe() -> string => \"{_name} says {speak()}\"\nsi\n\nclass Dog: Animal is\n    init(name: string) is super.init(name); si\n    speak() -> string => \"woof\"\nsi\n\nclass Cat: Animal is\n    init(name: string) is super.init(name); si\n    speak() -> string => \"meow\"\nsi\n\nlet animals: Animal[] = [Dog(\"Rex\"), Cat(\"Tom\")]\n\nfor a in animals do\n    write_line(a.describe()) // describe calls the overriding speak\nod",
   "fullSource": "use IO.Std.write_line\n\nclass Animal is\n    _name: string\n    init(name: string) is _name = name; si\n\n    name: string => _name\n    speak() -> string                     // body-less: Animal is implicitly abstract\n    describe() -> string => \"{_name} says {speak()}\"\nsi\n\nclass Dog: Animal is\n    init(name: string) is super.init(name); si\n    speak() -> string => \"woof\"\nsi\n\nclass Cat: Animal is\n    init(name: string) is super.init(name); si\n    speak() -> string => \"meow\"\nsi\n\nlet animals: Animal[] = [Dog(\"Rex\"), Cat(\"Tom\")]\n\nfor a in animals do\n    write_line(a.describe()) // describe calls the overriding speak\nod\n",
   "hiddenBefore": false,

@@ -2,6 +2,7 @@
   "name": "definitions-37",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "class Person(name: string, age: int) is\n    describe() is\n        write_line(\"{name} is {age} years old\")\n    si\nsi\n\nPerson(\"alice\", 30).describe()",
   "fullSource": "use IO.Std.write_line\n\nclass Person(name: string, age: int) is\n    describe() is\n        write_line(\"{name} is {age} years old\")\n    si\nsi\n\nPerson(\"alice\", 30).describe()\n",
   "hiddenBefore": true,

@@ -2,6 +2,7 @@
   "name": "control-flow-55",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "if let c: Cat = find() /\\ c.is_friendly then\n    write_line(\"friendly cat: {c.name}\")\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass Cat is\n    name: string\n    is_friendly: bool\n    init(name: string, is_friendly: bool) is\n        self.name = name\n        self.is_friendly = is_friendly\n    si\nsi\n\nfind() -> Cat? => Cat(\"Tom\", true)\n\nif let c: Cat = find() /\\ c.is_friendly then\n    write_line(\"friendly cat: {c.name}\")\nfi\n",
   "hiddenBefore": true,

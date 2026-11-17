@@ -2,6 +2,7 @@
   "name": "control-flow-62",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "describe(xs: int[]) -> string =>\n    case xs\n    when [] then \"empty\"\n    when [x] then \"one: {x}\"\n    when [x, ..more] then \"{x} and {more.count} more\"\n    esac\n\nsum(xs: int[]) -> int =>\n    case xs\n    when [] then 0\n    when [x, ..rest] then x + sum(rest)\n    esac\n\nlet [first, second, ..others] = [10, 20, 30, 40]\n\nwrite_line(describe([]))\nwrite_line(describe([7]))\nwrite_line(describe([1, 2, 3]))\nwrite_line(\"{sum([1, 2, 3, 4])} {first} {second} {others.count}\")",
   "fullSource": "use default\n\ndescribe(xs: int[]) -> string =>\n    case xs\n    when [] then \"empty\"\n    when [x] then \"one: {x}\"\n    when [x, ..more] then \"{x} and {more.count} more\"\n    esac\n\nsum(xs: int[]) -> int =>\n    case xs\n    when [] then 0\n    when [x, ..rest] then x + sum(rest)\n    esac\n\nlet [first, second, ..others] = [10, 20, 30, 40]\n\nwrite_line(describe([]))\nwrite_line(describe([7]))\nwrite_line(describe([1, 2, 3]))\nwrite_line(\"{sum([1, 2, 3, 4])} {first} {second} {others.count}\")\n",
   "hiddenBefore": true,

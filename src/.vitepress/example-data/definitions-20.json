@@ -2,6 +2,7 @@
   "name": "definitions-20",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "enum Suits is\n    SPADES,\n    HEARTS,\n    DIAMONDS,\n    CLUBS\nsi",
   "fullSource": "enum Suits is\n    SPADES,\n    HEARTS,\n    DIAMONDS,\n    CLUBS\nsi\n\n",
   "hiddenBefore": false,

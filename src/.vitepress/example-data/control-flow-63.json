@@ -2,6 +2,7 @@
   "name": "control-flow-63",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// a pipe that never ends: the pattern reads only the elements it needs\nlet squares = from(1) |> map(n => n * n)\n\nif let [a, b, ..rest] = squares then\n    write_line(\"{a} {b}, then {rest |> take(3) |> join(\", \")}\")\nfi\n\n// a string is a sequence of its chars\ncase \"ghūl\"\nwhen [first, ..rest] then write_line(\"starts with {first}\")\nelse write_line(\"empty\")\nesac",
   "fullSource": "use default\n\n// a pipe that never ends: the pattern reads only the elements it needs\nlet squares = from(1) |> map(n => n * n)\n\nif let [a, b, ..rest] = squares then\n    write_line(\"{a} {b}, then {rest |> take(3) |> join(\", \")}\")\nfi\n\n// a string is a sequence of its chars\ncase \"ghūl\"\nwhen [first, ..rest] then write_line(\"starts with {first}\")\nelse write_line(\"empty\")\nesac\n",
   "hiddenBefore": true,

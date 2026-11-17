@@ -2,6 +2,7 @@
   "name": "definitions-35",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Thing is\n    do_something_public() is\n    si\n\n    _do_something_private() is\n    si\nsi",
   "fullSource": "class Thing is\n    do_something_public() is\n    si\n\n    _do_something_private() is\n    si\nsi\n\n",
   "hiddenBefore": false,

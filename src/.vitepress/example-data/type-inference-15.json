@@ -2,6 +2,7 @@
   "name": "type-inference-15",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let returns_int = (i: int) => i * 2\nlet returns_string = (s: string) => \"{s}{s}\"",
   "fullSource": "let returns_int = (i: int) => i * 2\nlet returns_string = (s: string) => \"{s}{s}\"\n",
   "hiddenBefore": false,

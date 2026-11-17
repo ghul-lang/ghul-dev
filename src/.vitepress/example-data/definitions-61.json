@@ -2,6 +2,7 @@
   "name": "definitions-61",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "parity(n: int) -> string is\n    // called before it is written, and each calls the other:\n    if is_even(n) then return \"even\" fi\n\n    is_even(k: int) -> bool => if k == 0 then true else is_odd(k - 1) fi\n    is_odd(k: int) -> bool => if k == 0 then false else is_even(k - 1) fi\n\n    \"odd\"\nsi",
   "fullSource": "use IO.Std.write_line\n\nparity(n: int) -> string is\n    // called before it is written, and each calls the other:\n    if is_even(n) then return \"even\" fi\n\n    is_even(k: int) -> bool => if k == 0 then true else is_odd(k - 1) fi\n    is_odd(k: int) -> bool => if k == 0 then false else is_even(k - 1) fi\n\n    \"odd\"\nsi\n\nwrite_line(\"{parity(10)} {parity(7)}\")\n",
   "hiddenBefore": true,

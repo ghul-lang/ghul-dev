@@ -2,6 +2,7 @@
   "name": "dotnet-integration-6",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Scope(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet scope = use Scope(\"file\")\n\nwrite_line(\"inside the scope\")",
   "fullSource": "use IO.Std.write_line\n\nclass Scope(name: string): Ghul.Disposable is\n    dispose() is\n        write_line(\"closing {name}\")\n    si\nsi\n\nlet scope = use Scope(\"file\")\n\nwrite_line(\"inside the scope\")\n",
   "hiddenBefore": true,

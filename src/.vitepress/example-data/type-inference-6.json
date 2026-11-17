@@ -2,6 +2,7 @@
   "name": "type-inference-6",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "describe(carrier: Carrier) is\n    if let cat: Cat = carrier.occupant then\n        write_line(cat.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass Cat(): Animal is\n    purr() -> string => \"purr\"\nsi\n\nclass Carrier(occupant: Animal)\n\ndescribe(carrier: Carrier) is\n    if let cat: Cat = carrier.occupant then\n        write_line(cat.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()))\n",
   "hiddenBefore": true,

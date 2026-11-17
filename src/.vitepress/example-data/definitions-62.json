@@ -2,6 +2,7 @@
   "name": "definitions-62",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "namespace Geometry\n\nuse IO.Std.write_line\n\nclass Circle(radius: double public) is\n    area() -> double => 3.14159 * radius * radius\nsi\n\nentry() is\n    write_line(\"{Circle(2.0).area()}\")\nsi",
   "fullSource": "namespace Geometry\n\nuse IO.Std.write_line\n\nclass Circle(radius: double public) is\n    area() -> double => 3.14159 * radius * radius\nsi\n\nentry() is\n    write_line(\"{Circle(2.0).area()}\")\nsi\n",
   "hiddenBefore": false,

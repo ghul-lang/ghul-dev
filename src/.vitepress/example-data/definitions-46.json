@@ -2,6 +2,7 @@
   "name": "definitions-46",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "class Vector is\n    x: int\n    y: int\n\n    init(x: int, y: int) is\n        self.x = x\n        self.y = y\n    si\n\n    // a binary operator as an instance method takes one parameter, the right operand:\n    +(other: Vector) -> Vector => Vector(x + other.x, y + other.y)\nsi\n\nlet sum = Vector(1, 2) + Vector(3, 4)\nwrite_line(\"({sum.x}, {sum.y})\")",
   "fullSource": "use IO.Std.write_line\nclass Vector is\n    x: int\n    y: int\n\n    init(x: int, y: int) is\n        self.x = x\n        self.y = y\n    si\n\n    // a binary operator as an instance method takes one parameter, the right operand:\n    +(other: Vector) -> Vector => Vector(x + other.x, y + other.y)\nsi\n\nlet sum = Vector(1, 2) + Vector(3, 4)\nwrite_line(\"({sum.x}, {sum.y})\")\n",
   "hiddenBefore": true,

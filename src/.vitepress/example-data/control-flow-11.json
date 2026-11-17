@@ -2,6 +2,7 @@
   "name": "control-flow-11",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "classify(a: Animal) is\n    if !isa Cat(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-Cat has returned, so a is\n    // narrowed to Cat from here on\n    write_line(a.purr())\nsi\n\nclassify(Cat(\"whiskers\"))\nclassify(Dog())",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is si\n\nclass Cat(name: string): Animal is\n    purr() -> string => \"{name} purrs\"\nsi\n\nclass Dog(): Animal\n\nclassify(a: Animal) is\n    if !isa Cat(a) then\n        write_line(\"not a cat\")\n        return\n    fi\n\n    // every non-Cat has returned, so a is\n    // narrowed to Cat from here on\n    write_line(a.purr())\nsi\n\nclassify(Cat(\"whiskers\"))\nclassify(Dog())\n",
   "hiddenBefore": true,

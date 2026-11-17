@@ -19,7 +19,7 @@
     { "startLine": 6, "startColumn": 7, "endLine": 6, "endColumn": 11, "text": "value: double", "signature": "value: double", "kindLabel": "local argument" },
     { "startLine": 6, "startColumn": 22, "endLine": 6, "endColumn": 29, "text": "exponent: int ref", "signature": "exponent: int ref", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
-    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 11, "startColumn": 19, "endLine": 11, "endColumn": 26, "text": "fraction: double", "signature": "fraction: double", "kindLabel": "global variable" },
     { "startLine": 11, "startColumn": 34, "endLine": 11, "endColumn": 41, "text": "exponent: int", "signature": "exponent: int", "kindLabel": "global variable" }
   ],

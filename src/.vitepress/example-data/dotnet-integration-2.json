@@ -2,6 +2,7 @@
   "name": "dotnet-integration-2",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// @IL.name maps these onto the PascalCase names EF Core's conventions expect.\nclass Product is\n    @IL.name(\"Id\")\n    id: int public\n\n    @IL.name(\"Name\")\n    name: string public\n\n    init() is si\nsi\n\nclass StoreContext: DbContext is\n    @IL.name(\"Products\")\n    products: DbSet[Product]\n\n    init(options: DbContextOptions) is\n        super.init(options)\n    si\nsi\n\nadd_product(context: StoreContext, product: Product) -> Tasks.TASK is\n    context.products.add(product)\n\n    await context.save_changes_async(System.Threading.CancellationToken.none)\n\n    return\nsi",
   "fullSource": "use Microsoft.EntityFrameworkCore.DbContext\nuse Microsoft.EntityFrameworkCore.DbSet\nuse Microsoft.EntityFrameworkCore.DbContextOptions\n\n// @IL.name maps these onto the PascalCase names EF Core's conventions expect.\nclass Product is\n    @IL.name(\"Id\")\n    id: int public\n\n    @IL.name(\"Name\")\n    name: string public\n\n    init() is si\nsi\n\nclass StoreContext: DbContext is\n    @IL.name(\"Products\")\n    products: DbSet[Product]\n\n    init(options: DbContextOptions) is\n        super.init(options)\n    si\nsi\n\nadd_product(context: StoreContext, product: Product) -> Tasks.TASK is\n    context.products.add(product)\n\n    await context.save_changes_async(System.Threading.CancellationToken.none)\n\n    return\nsi\n\nentry() is si\n",
   "hiddenBefore": true,

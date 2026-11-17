@@ -2,6 +2,7 @@
   "name": "expressions-23",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let integer_value = cast int(3.14)",
   "fullSource": "let integer_value = cast int(3.14)\n",
   "hiddenBefore": false,

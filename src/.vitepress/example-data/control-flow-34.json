@@ -2,6 +2,7 @@
   "name": "control-flow-34",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class InsufficientFundsException(message: string): System.Exception is\n    super(message)\nsi",
   "fullSource": "class InsufficientFundsException(message: string): System.Exception is\n    super(message)\nsi\n\n",
   "hiddenBefore": false,

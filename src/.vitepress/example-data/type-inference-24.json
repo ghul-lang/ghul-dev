@@ -2,6 +2,7 @@
   "name": "type-inference-24",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// Animal, the join of Cat and Dog\nlet pet mut = Cat(\"tom\")\npet = Dog(\"rex\")\n\n// int[], the list type both implement\nlet xs mut = LIST([1, 2])\nxs = [3, 4]",
   "fullSource": "use default\n\nclass Animal(name: string public) is\nsi\n\nclass Cat(name: string): Animal is\n    super(name)\nsi\n\nclass Dog(name: string): Animal is\n    super(name)\nsi\n\njoins() is\n    // Animal, the join of Cat and Dog\n    let pet mut = Cat(\"tom\")\n    pet = Dog(\"rex\")\n\n    // int[], the list type both implement\n    let xs mut = LIST([1, 2])\n    xs = [3, 4]\n\n    write_line(\"{pet.name} {xs.count}\")\nsi\n\njoins()\n",
   "hiddenBefore": true,

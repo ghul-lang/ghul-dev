@@ -2,6 +2,7 @@
   "name": "language-basics-20",
   "snippet": true,
   "wasm": false,
+  "native": false,
   "code": "// OK: both addends are type double\nlet d = 1.0 + 1.0\n\n// compile time error: addends are mixed types\n// (double vs int)\nlet e = 1.0 + 1\n\n// OK with explicit cast\nlet e = 1.0 + cast double(1)\n\n// OK: \"hello\" is a string, and string derives\n// from object\nlet o: object = \"hello\"",
   "fullSource": "// OK: both addends are type double\nlet d = 1.0 + 1.0\n\n// compile time error: addends are mixed types\n// (double vs int)\nlet e = 1.0 + 1\n\n// OK with explicit cast\nlet e = 1.0 + cast double(1)\n\n// OK: \"hello\" is a string, and string derives\n// from object\nlet o: object = \"hello\"\n",
   "hiddenBefore": false,

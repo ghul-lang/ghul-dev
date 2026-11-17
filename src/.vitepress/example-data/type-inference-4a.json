@@ -2,6 +2,7 @@
   "name": "type-inference-4a",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "describe(order: Order) is\n    if order.customer? then\n        // a presence test narrows the path itself:\n        // within this branch order.customer is the\n        // non-optional string, so .length is\n        // reachable directly\n        write_line(\"customer name has {order.customer.length} chars\")\n    fi\nsi\n\ndescribe(Order(\"alice\"))",
   "fullSource": "use IO.Std.write_line\n\nclass Order(customer: string?)\n\ndescribe(order: Order) is\n    if order.customer? then\n        // a presence test narrows the path itself:\n        // within this branch order.customer is the\n        // non-optional string, so .length is\n        // reachable directly\n        write_line(\"customer name has {order.customer.length} chars\")\n    fi\nsi\n\ndescribe(Order(\"alice\"))\n",
   "hiddenBefore": true,
