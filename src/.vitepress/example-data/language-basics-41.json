@@ -2,6 +2,7 @@
   "name": "language-basics-41",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "total(m: int[,]) -> int => m.elements |> sum()\n\nfill(m: MATRIX_2[int], value: int) is\n    let (rows, columns) = m.lengths\n\n    for i in 0..rows do\n        for j in 0..columns do\n            m[i, j] = value\n        od\n    od\nsi\n\nlet fixed: int[,] = [[1, 2], [3, 4]]\nlet counts = repeat(0) |> MATRIX(2, 3)\nfill(counts, 5)\n\nlet numbered = [1, 2, 3, 4, 5, 6] |> ARRAY_2(3, 2)\n\nwrite_line(\"{total(fixed)} {total(counts)} {numbered[2, 0]}\")",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes.sum\nuse Ghul.Pipes.repeat\nuse Collections.MATRIX\nuse Collections.MATRIX_2\nuse Collections.ARRAY_2\n\ntotal(m: int[,]) -> int => m.elements |> sum()\n\nfill(m: MATRIX_2[int], value: int) is\n    let (rows, columns) = m.lengths\n\n    for i in 0..rows do\n        for j in 0..columns do\n            m[i, j] = value\n        od\n    od\nsi\n\nlet fixed: int[,] = [[1, 2], [3, 4]]\nlet counts = repeat(0) |> MATRIX(2, 3)\nfill(counts, 5)\n\nlet numbered = [1, 2, 3, 4, 5, 6] |> ARRAY_2(3, 2)\n\nwrite_line(\"{total(fixed)} {total(counts)} {numbered[2, 0]}\")\n",
   "hiddenBefore": true,

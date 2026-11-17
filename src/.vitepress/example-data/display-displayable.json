@@ -2,6 +2,7 @@
   "name": "display-displayable",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "class Score(points: int): Displayable is\n    display(state: DISPLAY_STATE) is\n        state.append(\"[\")\n        state.render(points)\n        state.append(if state.mode == DisplayMode.DETAILED then \" points]\" else \"]\" fi)\n    si\nsi\n\nwrite_line($(Score(3)))\nwrite_line(inspect(Score(3)))\nwrite_line($([Score(1), Score(2)]))",
   "fullSource": "use IO.Std.write_line\nuse Ghul\n\nclass Score(points: int): Displayable is\n    display(state: DISPLAY_STATE) is\n        state.append(\"[\")\n        state.render(points)\n        state.append(if state.mode == DisplayMode.DETAILED then \" points]\" else \"]\" fi)\n    si\nsi\n\nwrite_line($(Score(3)))\nwrite_line(inspect(Score(3)))\nwrite_line($([Score(1), Score(2)]))\n",
   "hiddenBefore": true,

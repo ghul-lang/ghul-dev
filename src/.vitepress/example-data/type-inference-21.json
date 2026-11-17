@@ -2,6 +2,7 @@
   "name": "type-inference-21",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass Cat(): Animal\n\nclass Dog(): Animal\n\nmerge[T](a: T, b: T) -> T => a\nlet a = merge(Cat(), Dog())",
   "fullSource": "class Animal abstract is\n    speak() -> string => \"animal\"\nsi\n\nclass Cat(): Animal\n\nclass Dog(): Animal\n\nmerge[T](a: T, b: T) -> T => a\n\nlet a = merge(Cat(), Dog())\n",
   "hiddenBefore": false,

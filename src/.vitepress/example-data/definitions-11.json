@@ -2,6 +2,7 @@
   "name": "definitions-11",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let origin = Point(0.0, 0.0)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = Point(1.0, 0.0)",
   "fullSource": "struct Point(x: double, y: double)\n\nlet origin = Point(0.0, 0.0)\n\n// or up, or down, or even left, depending on\n// your co-ordinate system!\nlet right = Point(1.0, 0.0)\n",
   "hiddenBefore": true,

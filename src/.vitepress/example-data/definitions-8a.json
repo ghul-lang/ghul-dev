@@ -2,6 +2,7 @@
   "name": "definitions-8a",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Point(x: int, y: int) is\nsi",
   "fullSource": "class Point(x: int, y: int) is\nsi\n\n",
   "hiddenBefore": false,

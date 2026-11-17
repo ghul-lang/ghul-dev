@@ -2,6 +2,7 @@
   "name": "type-inference-17",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// m is Box[?] here; the type argument is not\n// yet known\nlet m = Box()\n\n// the set call takes an int, so m is Box[int]\nm.set(42)\n\nlet x = m.get()",
   "fullSource": "class Box[T] is\n    _value: T\n\n    init() is\n        _value = _\n    si\n\n    set(value: T) is\n        _value = value\n    si\n\n    get() -> T => _value\nsi\n\n// m is Box[?] here; the type argument is not\n// yet known\nlet m = Box()\n\n// the set call takes an int, so m is Box[int]\nm.set(42)\n\nlet x = m.get()\n",
   "hiddenBefore": true,

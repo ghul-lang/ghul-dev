@@ -2,6 +2,7 @@
   "name": "type-inference-13",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Thing[T](value: T)\nlet int_thing = Thing(1234)\nlet string_thing = Thing(\"hello\")",
   "fullSource": "class Thing[T](value: T)\n\nlet int_thing = Thing(1234)\nlet string_thing = Thing(\"hello\")\n",
   "hiddenBefore": false,

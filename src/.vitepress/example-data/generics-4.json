@@ -2,6 +2,7 @@
   "name": "generics-4",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let holds_int = HoldSomething(1234)\nlet holds_string = HoldSomething(\"hello\")",
   "fullSource": "struct HoldSomething[T](value: T)\n\nlet holds_int = HoldSomething(1234)\nlet holds_string = HoldSomething(\"hello\")\n",
   "hiddenBefore": true,

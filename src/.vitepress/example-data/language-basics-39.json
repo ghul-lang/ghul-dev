@@ -2,6 +2,7 @@
   "name": "language-basics-39",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "for row in grid do\n    write_line(row |> join(\" \"))\nod\n\nwrite_line(grid[1] |> join(\" \"))           // one row\nwrite_line(grid.elements |> join(\" \"))     // every element, row by row",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes.join\n\nlet grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nfor row in grid do\n    write_line(row |> join(\" \"))\nod\n\nwrite_line(grid[1] |> join(\" \"))           // one row\nwrite_line(grid.elements |> join(\" \"))     // every element, row by row\n",
   "hiddenBefore": true,

@@ -2,6 +2,7 @@
   "name": "language-basics-22",
   "snippet": true,
   "wasm": false,
+  "native": false,
   "code": "some_function(argument: type)",
   "fullSource": "some_function(argument: type)\n",
   "hiddenBefore": false,

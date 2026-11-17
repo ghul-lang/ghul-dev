@@ -54,7 +54,7 @@
     { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
     { "startLine": 41, "startColumn": 1, "endLine": 41, "endColumn": 4, "text": "file: CFile", "signature": "file: CFile", "kindLabel": "global variable" },
     { "startLine": 41, "startColumn": 6, "endLine": 41, "endColumn": 10, "text": "CFile.write(text: string) -> void", "signature": "CFile.write(text: string) -> void", "kindLabel": "method" },
-    { "startLine": 42, "startColumn": 1, "endLine": 42, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 42, "startColumn": 1, "endLine": 42, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 42, "startColumn": 12, "endLine": 42, "endColumn": 15, "text": "file: CFile", "signature": "file: CFile", "kindLabel": "global variable" },
     { "startLine": 42, "startColumn": 17, "endLine": 42, "endColumn": 25, "text": "CFile.read_line() -> string", "signature": "CFile.read_line() -> string", "kindLabel": "method" },
     { "startLine": 29, "startColumn": 9, "endLine": 29, "endColumn": 15, "text": "_rewind(file: word) -> void", "signature": "_rewind(file: word) -> void", "kindLabel": "pure global function" },

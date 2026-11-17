@@ -2,6 +2,7 @@
   "name": "language-basics-40",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let board = repeat('.') |> MATRIX(3, 4)\nboard[1, 2] = '#'\n\nfor row in board do\n    write_line(row |> join(\"\"))\nod\n\nlet cube = from(1) |> MATRIX(2, 3, 4)      // planes, rows, columns\nwrite_line(cube[1, 2, 3])\n\nlet copy = MATRIX([[1, 2], [3, 4]])\ncopy[0, 0] = 10\nwrite_line(copy.elements |> join(\" \"))",
   "fullSource": "use IO.Std.write_line\nuse Ghul.Pipes.repeat\nuse Ghul.Pipes.from\nuse Ghul.Pipes.join\nuse Collections.MATRIX\n\nlet board = repeat('.') |> MATRIX(3, 4)\nboard[1, 2] = '#'\n\nfor row in board do\n    write_line(row |> join(\"\"))\nod\n\nlet cube = from(1) |> MATRIX(2, 3, 4)      // planes, rows, columns\nwrite_line(cube[1, 2, 3])\n\nlet copy = MATRIX([[1, 2], [3, 4]])\ncopy[0, 0] = 10\nwrite_line(copy.elements |> join(\" \"))\n",
   "hiddenBefore": true,

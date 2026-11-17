@@ -2,6 +2,7 @@
   "name": "definitions-13",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "trait Printable is\n    print()\nsi",
   "fullSource": "trait Printable is\n    print()\nsi\n\n",
   "hiddenBefore": false,

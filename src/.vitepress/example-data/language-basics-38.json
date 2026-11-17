@@ -2,6 +2,7 @@
   "name": "language-basics-38",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nwrite_line(grid[1, 2])      // row 1, column 2\nwrite_line(grid.lengths)    // (rows, columns)\nwrite_line(grid.count)      // the number of rows",
   "fullSource": "use IO.Std.write_line\n\nlet grid: int[,] = [[1, 2, 3], [4, 5, 6]]\n\nwrite_line(grid[1, 2])      // row 1, column 2\nwrite_line(grid.lengths)    // (rows, columns)\nwrite_line(grid.count)      // the number of rows\n",
   "hiddenBefore": true,

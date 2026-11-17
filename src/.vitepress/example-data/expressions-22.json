@@ -2,6 +2,7 @@
   "name": "expressions-22",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let point = Point(10, 20)",
   "fullSource": "class Point(x: int, y: int)\n\nlet point = Point(10, 20)\n",
   "hiddenBefore": true,

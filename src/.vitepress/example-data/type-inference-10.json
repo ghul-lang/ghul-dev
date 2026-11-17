@@ -2,6 +2,7 @@
   "name": "type-inference-10",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Base()\n\nclass Derived(): Base\nlet array_of_base = [Base(), Derived()]\nlet array_of_object = [Base(), Derived(), object()]\nlet array_of_int = [1, 2, 3, 4, 5]",
   "fullSource": "class Base()\n\nclass Derived(): Base\n\nlet array_of_base = [Base(), Derived()]\nlet array_of_object = [Base(), Derived(), object()]\nlet array_of_int = [1, 2, 3, 4, 5]\n",
   "hiddenBefore": false,

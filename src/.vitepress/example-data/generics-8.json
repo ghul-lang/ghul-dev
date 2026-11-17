@@ -2,6 +2,7 @@
   "name": "generics-8",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "// T: out marks Box[T] as covariant in T - a Box[Cat] is also a Box[Animal]\ntrait Box[T: out] is\n    contents() -> T\nsi\nlet cats: Box[Cat] = CatBox()\nlet animals: Box[Animal] = cats   // covariance\n\nwrite_line(animals.contents().speak())",
   "fullSource": "use IO.Std.write_line\n\n// T: out marks Box[T] as covariant in T - a Box[Cat] is also a Box[Animal]\ntrait Box[T: out] is\n    contents() -> T\nsi\n\ntrait Animal is\n    speak() -> string\nsi\n\nclass Cat(): Animal is\n    speak() -> string => \"meow\"\nsi\n\nclass CatBox(): Box[Cat] is\n    contents() -> Cat => Cat()\nsi\n\nlet cats: Box[Cat] = CatBox()\nlet animals: Box[Animal] = cats   // covariance\n\nwrite_line(animals.contents().speak())\n",
   "hiddenBefore": true,

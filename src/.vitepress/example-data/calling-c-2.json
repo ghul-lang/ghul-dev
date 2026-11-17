@@ -16,9 +16,9 @@
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "text": "duplicate(text: string) -> string?", "signature": "duplicate(text: string) -> string?", "kindLabel": "pure global function" },
     { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "text": "text: string", "signature": "text: string", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
-    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 9, "startColumn": 12, "endLine": 9, "endColumn": 31, "text": "environment_variable(name: string) -> string?", "signature": "environment_variable(name: string) -> string?", "kindLabel": "pure global function" },
-    { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 10, "startColumn": 1, "endLine": 10, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 10, "startColumn": 12, "endLine": 10, "endColumn": 20, "text": "duplicate(text: string) -> string?", "signature": "duplicate(text: string) -> string?", "kindLabel": "pure global function" }
   ],
   "inlayHints": [

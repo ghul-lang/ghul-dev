@@ -2,6 +2,7 @@
   "name": "definitions-22",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Scaler is\n    _scale: double\n\n    scale(value: double) -> double => value * _scale\nsi",
   "fullSource": "class Scaler is\n    _scale: double\n\n    scale(value: double) -> double => value * _scale\nsi\n\n",
   "hiddenBefore": false,

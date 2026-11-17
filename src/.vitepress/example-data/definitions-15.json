@@ -2,6 +2,7 @@
   "name": "definitions-15",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "trait Logged is\n    log(message: string) is\n        // the default body writes the message with a [log] prefix\n        write_line(\"[log] {message}\")\n    si\nsi\n\nclass Plain(): Logged is\n    // no override - uses the trait default\nsi\n\nclass Loud(): Logged is\n    // override the default, while still calling through to it with super\n    log(message: string) is\n        super.log(message.to_upper())\n    si\nsi\n\nPlain().log(\"hello\")\nLoud().log(\"hello\")",
   "fullSource": "use IO.Std.write_line\n\ntrait Logged is\n    log(message: string) is\n        // the default body writes the message with a [log] prefix\n        write_line(\"[log] {message}\")\n    si\nsi\n\nclass Plain(): Logged is\n    // no override - uses the trait default\nsi\n\nclass Loud(): Logged is\n    // override the default, while still calling through to it with super\n    log(message: string) is\n        super.log(message.to_upper())\n    si\nsi\n\nPlain().log(\"hello\")\nLoud().log(\"hello\")\n",
   "hiddenBefore": true,

@@ -2,6 +2,7 @@
   "name": "type-inference-14",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Base()\n\nclass Derived(): Base\n\ndo_something[T](a: T, b: T) -> T => a\nlet base = do_something(Base(), Derived())\nlet derived = do_something(Derived(), Derived())\nlet obj = do_something(object(), Derived())",
   "fullSource": "class Base()\n\nclass Derived(): Base\n\ndo_something[T](a: T, b: T) -> T => a\nlet base = do_something(Base(), Derived())\nlet derived = do_something(Derived(), Derived())\nlet obj = do_something(object(), Derived())\n",
   "hiddenBefore": false,

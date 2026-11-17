@@ -2,6 +2,7 @@
   "name": "definitions-49",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Label is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi",
   "fullSource": "// expect: warning\nclass Label is\n    text: string\n    size: int\n\n    init(size: int) is\n        self.size = size    // text is never assigned\n    si\nsi\n",
   "hiddenBefore": true,

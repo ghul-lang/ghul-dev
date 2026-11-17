@@ -2,6 +2,7 @@
   "name": "type-inference-23",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "describe(carrier: Carrier, other: Animal) is\n    // a local holds one value, which no other function can\n    // reach - its narrowing survives any call\n    let cat = carrier.occupant\n\n    if isa Cat(cat) then\n        carrier.swap(other)\n        write_line(cat.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()), Cat())",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    init() is si\nsi\n\nclass Cat: Animal is\n    init() is super.init(); si\n    purr() -> string => \"purr\"\nsi\n\nclass Carrier(occupant: Animal) is\n    swap(a: Animal) is\n        occupant = a\n    si\nsi\n\ndescribe(carrier: Carrier, other: Animal) is\n    // a local holds one value, which no other function can\n    // reach - its narrowing survives any call\n    let cat = carrier.occupant\n\n    if isa Cat(cat) then\n        carrier.swap(other)\n        write_line(cat.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()), Cat())\n",
   "hiddenBefore": true,

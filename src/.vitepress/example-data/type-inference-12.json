@@ -2,6 +2,7 @@
   "name": "type-inference-12",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Base()\n\nclass Derived(): Base\n\nlet derived =\n    if true then\n        Derived()\n    else\n        Derived()\n    fi\n\nlet base =\n    if true then\n        Derived()\n    else\n        Base()\n    fi",
   "fullSource": "class Base()\n\nclass Derived(): Base\n\nlet derived =\n    if true then\n        Derived()\n    else\n        Derived()\n    fi\n\nlet base =\n    if true then\n        Derived()\n    else\n        Base()\n    fi\n",
   "hiddenBefore": false,

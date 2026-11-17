@@ -16,7 +16,7 @@
     { "startLine": 7, "startColumn": 1, "endLine": 7, "endColumn": 9, "text": "length_of(text: string) -> word", "signature": "length_of(text: string) -> word", "kindLabel": "pure global function" },
     { "startLine": 7, "startColumn": 11, "endLine": 7, "endColumn": 14, "text": "text: string", "signature": "text: string", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
-    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 9, "startColumn": 1, "endLine": 9, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 9, "startColumn": 14, "endLine": 9, "endColumn": 21, "text": "absolute(value: int) -> int", "signature": "absolute(value: int) -> int", "kindLabel": "pure global function" },
     { "startLine": 9, "startColumn": 23, "endLine": 9, "endColumn": 23, "text": "int.-(a: int) -> int", "signature": "int.-(a: int) -> int", "kindLabel": "innate function arithmetic.neg" },
     { "startLine": 9, "startColumn": 30, "endLine": 9, "endColumn": 38, "text": "length_of(text: string) -> word", "signature": "length_of(text: string) -> word", "kindLabel": "pure global function" }

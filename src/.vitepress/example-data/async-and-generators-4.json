@@ -2,6 +2,7 @@
   "name": "async-and-generators-4",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "// a sequence of Animal, the join of the two yields\nlet pets = () is\n    yield Cat(\"tom\")\n    yield Dog(\"rex\")\nsi\n\nfor pet in pets() do\n    write_line(pet.name)\nod",
   "fullSource": "use default\n\nclass Animal(name: string public) is\nsi\n\nclass Cat(name: string): Animal is\n    super(name)\nsi\n\nclass Dog(name: string): Animal is\n    super(name)\nsi\n\n// a sequence of Animal, the join of the two yields\nlet pets = () is\n    yield Cat(\"tom\")\n    yield Dog(\"rex\")\nsi\n\nfor pet in pets() do\n    write_line(pet.name)\nod\n",
   "hiddenBefore": true,

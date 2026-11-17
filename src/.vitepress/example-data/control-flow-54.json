@@ -2,6 +2,7 @@
   "name": "control-flow-54",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "    case a\n    when c: Cat then c.meow()\n    when d: Dog then d.bark()\n    esac\n\nwrite_line(describe(Cat()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    init() is si\nsi\n\nclass Cat: Animal is\n    init() is super.init(); si\n    meow() -> string => \"meow\"\nsi\n\nclass Dog: Animal is\n    init() is super.init(); si\n    bark() -> string => \"woof\"\nsi\n\ndescribe(a: Animal) -> string =>\n    case a\n    when c: Cat then c.meow()\n    when d: Dog then d.bark()\n    esac\n\nwrite_line(describe(Cat()))\n",
   "hiddenBefore": true,

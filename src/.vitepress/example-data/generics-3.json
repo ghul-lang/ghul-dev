@@ -2,6 +2,7 @@
   "name": "generics-3",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "struct HoldSomething[T](value: T)",
   "fullSource": "struct HoldSomething[T](value: T)\n\n",
   "hiddenBefore": false,

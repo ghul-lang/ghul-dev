@@ -2,6 +2,7 @@
   "name": "functional-programming-38",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "fib(n: int) -> long memo =>\n    if n < 2 then long(n) else fib(n - 1) + fib(n - 2) fi\n\nlet paths = (r: int, c: int) -> long rec memo =>\n    if r == 0 \\/ c == 0 then 1L else rec(r - 1, c) + rec(r, c - 1) fi\n\nwrite_line(\"{fib(80)} {paths(16, 16)}\")",
   "fullSource": "use default\n\nfib(n: int) -> long memo =>\n    if n < 2 then long(n) else fib(n - 1) + fib(n - 2) fi\n\nlet paths = (r: int, c: int) -> long rec memo =>\n    if r == 0 \\/ c == 0 then 1L else rec(r - 1, c) + rec(r, c - 1) fi\n\nwrite_line(\"{fib(80)} {paths(16, 16)}\")\n",
   "hiddenBefore": true,

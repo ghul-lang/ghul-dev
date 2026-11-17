@@ -2,6 +2,7 @@
   "name": "syntax-6",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "use Suit.*\nuse Limits.*\n\nwrite_line(\"{HEARTS} and {SPADES} run from {lowest} to {highest}\")",
   "fullSource": "use IO.Std.write_line\n\nenum Suit is\n    HEARTS,\n    DIAMONDS,\n    CLUBS,\n    SPADES\nsi\n\nclass Limits is\n    lowest: int static => 1\n    highest: int static => 13\nsi\n\nuse Suit.*\nuse Limits.*\n\nwrite_line(\"{HEARTS} and {SPADES} run from {lowest} to {highest}\")\n",
   "hiddenBefore": true,

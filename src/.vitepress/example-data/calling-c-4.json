@@ -26,7 +26,7 @@
     { "startLine": 6, "startColumn": 47, "endLine": 6, "endColumn": 52, "text": "format: string", "signature": "format: string", "kindLabel": "local argument" },
     { "startLine": 6, "startColumn": 63, "endLine": 6, "endColumn": 67, "text": "value: double", "signature": "value: double", "kindLabel": "local argument" },
     { "startLine": 1, "startColumn": 12, "endLine": 1, "endColumn": 21, "text": "IO.Std.write_line(...)", "signature": "IO.Std.write_line(...)", "kindLabel": "function group" },
-    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 11, "startColumn": 1, "endLine": 11, "endColumn": 10, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 11, "startColumn": 12, "endLine": 11, "endColumn": 15, "text": "namespace Text", "signature": "namespace Text", "kindLabel": "" },
     { "startLine": 11, "startColumn": 17, "endLine": 11, "endColumn": 24, "text": "class Text.Encoding", "signature": "class Text.Encoding", "kindLabel": "class" },
     { "startLine": 11, "startColumn": 26, "endLine": 11, "endColumn": 29, "text": "Text.Encoding.utf8: Text.Encoding", "signature": "Text.Encoding.utf8: Text.Encoding", "kindLabel": "pure class property" },

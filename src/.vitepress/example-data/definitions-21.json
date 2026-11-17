@@ -2,6 +2,7 @@
   "name": "definitions-21",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "class Counter is\n    count: int\nsi\n\nclass Sized is\n    _size: int\n\n    size: int => _size,\n        = new_size is\n            assert new_size > 0\n\n            _size = new_size\n        si\nsi",
   "fullSource": "class Counter is\n    count: int\nsi\n\nclass Sized is\n    _size: int\n\n    size: int => _size,\n        = new_size is\n            assert new_size > 0\n\n            _size = new_size\n        si\nsi\n\n",
   "hiddenBefore": false,

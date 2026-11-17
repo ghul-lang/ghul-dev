@@ -2,6 +2,7 @@
   "name": "control-flow-56",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "if isa Cat(pet) then\n    write_line(pet.purr())\n\n    pet = Dog()\n    // reassigning cancels the Cat narrowing and\n    // introduces a Dog one: pet is Dog here\n    write_line(pet.name())\nfi",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    name() -> string\nsi\n\nclass Cat: Animal is\n    init() is si\n    name() -> string => \"cat\"\n    purr() -> string => \"purr\"\nsi\n\nclass Dog: Animal is\n    init() is si\n    name() -> string => \"dog\"\nsi\n\nany_animal() -> Animal => Cat()\n\nlet pet mut = any_animal()\nif isa Cat(pet) then\n    write_line(pet.purr())\n\n    pet = Dog()\n    // reassigning cancels the Cat narrowing and\n    // introduces a Dog one: pet is Dog here\n    write_line(pet.name())\nfi\n",
   "hiddenBefore": true,

@@ -2,6 +2,7 @@
   "name": "definitions-9",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let a_thing = Thing()",
   "fullSource": "class Thing()\n\nlet a_thing = Thing()\n",
   "hiddenBefore": true,

@@ -2,6 +2,7 @@
   "name": "generics-7",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "trait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass Cat(name: string): Greetable\ngreet(Cat(\"whiskers\"))",
   "fullSource": "use IO.Std.write_line\n\ntrait Greetable is\n    name: string\nsi\n\n// T must derive from Greetable, so .name is available on T\ngreet[T: Greetable](x: T) is\n    write_line(\"hello, {x.name}\")\nsi\n\nclass Cat(name: string): Greetable\n\ngreet(Cat(\"whiskers\"))\n",
   "hiddenBefore": true,

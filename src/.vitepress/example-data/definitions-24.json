@@ -2,6 +2,7 @@
   "name": "definitions-24",
   "snippet": true,
   "wasm": false,
+  "native": false,
   "code": "namespace Example is\n    ...\nsi",
   "fullSource": "namespace Example is\n    ...\nsi\n",
   "hiddenBefore": false,

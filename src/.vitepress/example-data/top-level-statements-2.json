@@ -2,6 +2,7 @@
   "name": "top-level-statements-2",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "use default\n\nlet seen = SET()\n\n// parameter and return types come from the calls and the body\nvisit(n) is\n    seen.add(n)\nsi\n\ncollatz_steps(n) =>\n    if n == 1 then 0\n    elif n % 2 == 0 then 1 + collatz_steps(n / 2)\n    else 1 + collatz_steps(3 * n + 1)\n    fi\n\nfib(n) memo => if n < 2 then n else fib(n - 1) + fib(n - 2) fi\n\nfor n in 1::5 do\n    visit(collatz_steps(n))\nod\n\nwrite_line(\"{seen.count} distinct step counts\")\nwrite_line(\"fib(40) is {fib(40)}\")",
   "fullSource": "use default\n\nlet seen = SET()\n\n// parameter and return types come from the calls and the body\nvisit(n) is\n    seen.add(n)\nsi\n\ncollatz_steps(n) =>\n    if n == 1 then 0\n    elif n % 2 == 0 then 1 + collatz_steps(n / 2)\n    else 1 + collatz_steps(3 * n + 1)\n    fi\n\nfib(n) memo => if n < 2 then n else fib(n - 1) + fib(n - 2) fi\n\nfor n in 1::5 do\n    visit(collatz_steps(n))\nod\n\nwrite_line(\"{seen.count} distinct step counts\")\nwrite_line(\"fib(40) is {fib(40)}\")\n",
   "hiddenBefore": false,

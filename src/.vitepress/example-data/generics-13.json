@@ -2,6 +2,7 @@
   "name": "generics-13",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let closed = typeof Box[int]\n\n// Box[_] names the open generic, before any type argument is supplied\nlet open = typeof Box[_]\n\nwrite_line(\"closed: {closed.name}, generic: {closed.is_generic_type}\")\nwrite_line(\"open: {open.name}, definition: {open.is_generic_type_definition}\")\nwrite_line(\"same definition: {closed.get_generic_type_definition() == open}\")",
   "fullSource": "use IO.Std.write_line\n\nclass Box[T](value: T)\n\nlet closed = typeof Box[int]\n\n// Box[_] names the open generic, before any type argument is supplied\nlet open = typeof Box[_]\n\nwrite_line(\"closed: {closed.name}, generic: {closed.is_generic_type}\")\nwrite_line(\"open: {open.name}, definition: {open.is_generic_type_definition}\")\nwrite_line(\"same definition: {closed.get_generic_type_definition() == open}\")\n",
   "hiddenBefore": true,

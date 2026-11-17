@@ -2,6 +2,7 @@
   "name": "type-inference-5",
   "snippet": false,
   "wasm": true,
+  "native": false,
   "code": "describe(carrier: Carrier) is\n    if isa Cat(carrier.occupant) then\n        carrier.handle()\n        // handle() writes only 'handled', so the compiler can\n        // see it leaves the narrow on occupant alone\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()))",
   "fullSource": "use IO.Std.write_line\n\nclass Animal abstract is\n    init() is si\nsi\n\nclass Cat: Animal is\n    init() is super.init(); si\n    purr() -> string => \"purr\"\nsi\n\nclass Carrier(occupant: Animal) is\n    handled: int\n\n    handle() is\n        handled = handled + 1\n    si\nsi\n\ndescribe(carrier: Carrier) is\n    if isa Cat(carrier.occupant) then\n        carrier.handle()\n        // handle() writes only 'handled', so the compiler can\n        // see it leaves the narrow on occupant alone\n        write_line(carrier.occupant.purr())\n    fi\nsi\n\ndescribe(Carrier(Cat()))\n",
   "hiddenBefore": true,

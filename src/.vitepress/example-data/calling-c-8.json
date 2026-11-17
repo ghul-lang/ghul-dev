@@ -27,7 +27,7 @@
     { "startLine": 4, "startColumn": 18, "endLine": 4, "endColumn": 26, "text": "Ghul.Interop.read_utf8(...)", "signature": "Ghul.Interop.read_utf8(...)", "kindLabel": "function group" },
     { "startLine": 16, "startColumn": 7, "endLine": 16, "endColumn": 11, "text": "token: word", "signature": "token: word", "kindLabel": "global variable" },
     { "startLine": 16, "startColumn": 13, "endLine": 16, "endColumn": 14, "text": "==[word](a: word, b: word) -> bool", "signature": "==[word](a: word, b: word) -> bool", "kindLabel": "innate function compare.value" },
-    { "startLine": 17, "startColumn": 5, "endLine": 17, "endColumn": 14, "text": "IO.Std.write_line(text: string) -> void", "signature": "IO.Std.write_line(text: string) -> void", "kindLabel": "pure class method" },
+    { "startLine": 17, "startColumn": 5, "endLine": 17, "endColumn": 14, "text": "IO.Std.write_line(text: string?) -> void", "signature": "IO.Std.write_line(text: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 17, "startColumn": 16, "endLine": 17, "endColumn": 24, "text": "Ghul.Interop.read_utf8(address: word) -> string?", "signature": "Ghul.Interop.read_utf8(address: word) -> string?", "kindLabel": "global function" },
     { "startLine": 17, "startColumn": 26, "endLine": 17, "endColumn": 30, "text": "token: word", "signature": "token: word", "kindLabel": "global variable" },
     { "startLine": 18, "startColumn": 13, "endLine": 18, "endColumn": 22, "text": "next_token(text: word, separators: string) -> word", "signature": "next_token(text: word, separators: string) -> word", "kindLabel": "pure global function" },

@@ -2,6 +2,7 @@
   "name": "expressions-2",
   "snippet": false,
   "wasm": false,
+  "native": false,
   "code": "let c = 'c'\nlet u_macron = 'ū'",
   "fullSource": "let c = 'c'\nlet u_macron = 'ū'\n",
   "hiddenBefore": false,
