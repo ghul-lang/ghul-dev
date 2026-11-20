@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <GhulSources Include="*.ghul" />
-    <PackageReference Include="ghul.runtime" Version="8.0.1" />
+    <PackageReference Include="ghul.runtime" Version="50.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
   </ItemGroup>
 </Project>

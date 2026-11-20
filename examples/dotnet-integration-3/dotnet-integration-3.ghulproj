@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <GhulSources Include="*.ghul" />
-    <PackageReference Include="ghul.runtime" Version="8.0.1" />
+    <PackageReference Include="ghul.runtime" Version="50.3.1" />
     <PackageReference Include="NSubstitute" Version="5.3.0" />
   </ItemGroup>
 </Project>
