@@ -9,7 +9,7 @@ use Ghul.Pipes.Pipe
 use Ghul.Math.Number
 
 // >>>
-sum_by[T..,N: INumber[N]](
+sum_by[T..,N: Number[N]](
     source: Iterable[T],
     selector: T.. -> N pure
 ) -> N pure
