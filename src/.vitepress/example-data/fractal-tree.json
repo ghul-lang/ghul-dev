@@ -57,7 +57,7 @@
     { "startLine": 33, "startColumn": 1, "endLine": 33, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
     { "startLine": 33, "startColumn": 7, "endLine": 33, "endColumn": 11, "text": "IMAGE.write(path: string) -> void", "signature": "IMAGE.write(path: string) -> void", "kindLabel": "method" },
     { "startLine": 35, "startColumn": 1, "endLine": 35, "endColumn": 5, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
-    { "startLine": 35, "startColumn": 7, "endLine": 35, "endColumn": 10, "text": "IMAGE.show(path: string) -> void", "signature": "IMAGE.show(path: string) -> void", "kindLabel": "method" },
+    { "startLine": 35, "startColumn": 7, "endLine": 35, "endColumn": 10, "text": "IMAGE.show(path: string) -> void", "signature": "IMAGE.show(path: string) -> void", "kindLabel": "pure method" },
     { "startLine": 14, "startColumn": 8, "endLine": 14, "endColumn": 12, "text": "depth: int", "signature": "depth: int", "kindLabel": "local argument" },
     { "startLine": 14, "startColumn": 14, "endLine": 14, "endColumn": 15, "text": "==[int](a: int, b: int) -> bool", "signature": "==[int](a: int, b: int) -> bool", "kindLabel": "innate function compare.value" },
     { "startLine": 22, "startColumn": 5, "endLine": 22, "endColumn": 9, "text": "image: IMAGE", "signature": "image: IMAGE", "kindLabel": "global variable" },
