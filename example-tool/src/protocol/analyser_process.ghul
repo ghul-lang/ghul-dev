@@ -1,9 +1,9 @@
 namespace Analysis.Protocol is
-    use System.Exception
+    use Ghul.Exception
     use System.Diagnostics.Process
     use System.Diagnostics.ProcessStartInfo
-    use System.Text.StringBuilder
-    use System.Text.UTF8Encoding
+    use Text.StringBuilder
+    use Text.UTF8_ENCODING
     use System.Text.Json.JsonSerializer
     use System.Text.Json.JsonSerializerOptions
     use Ghul

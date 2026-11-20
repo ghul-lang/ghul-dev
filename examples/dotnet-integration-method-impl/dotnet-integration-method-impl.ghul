@@ -1,5 +1,5 @@
 use IO.Std.write_line
-use System.Runtime.CompilerServices.MethodImplOptions
+use Ghul.MethodImplOptions
 
 // >>>
 class Timing is

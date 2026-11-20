@@ -37,7 +37,7 @@ and `Tasks.TASK.yield()` both qualify, and the `await` takes the type
 An `await` over a value that does not follow the pattern is reported,
 naming the first member it lacks.
 
-A `try` / `catch` / `finally` around awaiting code works as expected, including a `return` from inside the `try`. What is not yet supported is an `await` inside a `catch` or `finally` handler itself. A faulted task can also be handled at the call site: reading `.result` on a returned task throws the fault as a `System.AggregateException`.
+A `try` / `catch` / `finally` around awaiting code works as expected, including a `return` from inside the `try`. What is not yet supported is an `await` inside a `catch` or `finally` handler itself. A faulted task can also be handled at the call site: reading `.result` on a returned task throws the fault as a `Ghul.AggregateException`.
 
 ## coroutines
 
@@ -46,7 +46,7 @@ Any type carrying .NET's `AsyncMethodBuilderAttribute` can be the return
 type: the attribute names a builder type, and the compiler drives that
 builder instead of the one for tasks. The runtime's `Ghul.Coroutines`
 namespace uses this for cooperative coroutines. A function returning
-`COROUTINE` or `COROUTINE[T]` is a coroutine: calling it runs its body
+`Coroutine` or `Coroutine[T]` is a coroutine: calling it runs its body
 until the first `await`, `pause()` gives up its turn, and `run()` resumes
 waiting coroutines one at a time until none remain. Everything runs on one
 thread:
@@ -54,7 +54,7 @@ thread:
 <GhulExample name="async-and-generators-3" />
 
 `sleep(milliseconds)` gives up the turn until a deadline has passed, and
-`CHANNEL[T]`, `MUTEX` and `SEMAPHORE` pass values between coroutines and
+`Channel[T]`, `MUTEX` and `Semaphore` pass values between coroutines and
 guard what they share. A coroutine can also await a task, and `run()`
 resumes it on its own thread when the task completes.
 

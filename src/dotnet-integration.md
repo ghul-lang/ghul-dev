@@ -41,7 +41,7 @@ file name. A `LogicalName` on the item replaces that name. The program reads
 the resource back through reflection:
 
 ```ghul
-let assembly = System.Reflection.Assembly.get_executing_assembly()
+let assembly = Ghul.Reflection.Assembly.get_executing_assembly()
 
 let use stream = assembly.get_manifest_resource_stream("Greeter.data.greeting.txt")!
 let use reader = IO.StreamReader(stream)
@@ -54,7 +54,7 @@ When consuming C# code the ghūl compiler transforms symbol names to better matc
 
 - Class, struct and trait (=interface) names keep their .NET names, except a short list of core types that ghūl names in `UPPER_SNAKE_CASE` (`LIST`, `MAP`, `SET`, `STRING_BUILDER`, `RANDOM`, `TASK`, ...)
 - .NET's generic arity suffix is removed, so `KeyValuePair<K, V>` is `Collections.KeyValuePair[K, V]`
-- Enum member names are transformed to `UPPER_SNAKE_CASE`; enum type names are left unchanged, so `System.StringSplitOptions.RemoveEmptyEntries` is `StringSplitOptions.REMOVE_EMPTY_ENTRIES`
+- Enum member names are transformed to `UPPER_SNAKE_CASE`; enum type names are left unchanged, so `Text.StringSplitOptions.RemoveEmptyEntries` is `StringSplitOptions.REMOVE_EMPTY_ENTRIES`
 - Method, property and field names are transformed to `snake_case`
 - A name that collides with a ghūl keyword is left unchanged too. The backtick is how you write such a name where the keyword reading would otherwise win, as in ``` `class ```; it is not part of the name, and after a `.` none is needed
 

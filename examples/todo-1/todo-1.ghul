@@ -1,4 +1,4 @@
-use System.Exception
+use Ghul.Exception
 
 do_something_risky(i: int) -> int => i
 

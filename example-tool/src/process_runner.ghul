@@ -32,7 +32,7 @@ namespace ExampleTool is
         let process = Process.start(start_info)
 
         if !process? then
-            throw System.Exception("failed to start {file_name}")
+            throw Ghul.Exception("failed to start {file_name}")
         fi
 
         let standard_output = process.standard_output.read_to_end()

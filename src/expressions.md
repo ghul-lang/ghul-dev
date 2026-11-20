@@ -148,7 +148,7 @@ The target type can be left out when the surrounding expression already determin
 
 `cast(v)` is rejected where the position supplies no type at all, or where more than one overload or operator would accept it.
 
-A cast written with an optional target yields rather than throwing: `cast T?(x)` is the absent value when `x` is not a `T`, which is the form [`if let`](/control-flow.html#if-let) builds on. Without the `?` the cast is checked: a failed one raises `System.InvalidCastException` at the point of the cast, and a `cast-may-throw` warning says so at the site.
+A cast written with an optional target yields rather than throwing: `cast T?(x)` is the absent value when `x` is not a `T`, which is the form [`if let`](/control-flow.html#if-let) builds on. Without the `?` the cast is checked: a failed one raises `Ghul.InvalidCastException` at the point of the cast, and a `cast-may-throw` warning says so at the site.
 
 ## default value (`_`)
 

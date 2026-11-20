@@ -1,7 +1,7 @@
 namespace ExampleTool is
     use Collections.LIST
     use Collections.MAP
-    use System.Text.StringBuilder
+    use Text.StringBuilder
 
     // A `// >>>` line opens a visible region; `// <<<` closes it. The marker
     // lines and everything outside a region are scaffold — compiled and run,

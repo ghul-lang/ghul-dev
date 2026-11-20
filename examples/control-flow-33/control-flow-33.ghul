@@ -1,7 +1,7 @@
 // >>>
 withdraw(balance: int, amount: int) -> int is
     if amount > balance then
-        throw System.InvalidOperationException(
+        throw Ghul.InvalidOperationException(
             "insufficient funds"
         )
     fi

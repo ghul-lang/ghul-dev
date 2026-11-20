@@ -1,5 +1,5 @@
 // >>>
-class InsufficientFundsException(message: string): System.Exception is
+class InsufficientFundsException(message: string): Ghul.Exception is
     super(message)
 si
 // <<<

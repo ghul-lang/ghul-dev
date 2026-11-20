@@ -6,7 +6,7 @@ assert true else "all bets are off" // does not throw
 let list = [1, 2, 3, 4, 5]
 
 assert 3 < list.count
-    else System.ArgumentOutOfRangeException("list")
+    else Ghul.ArgumentOutOfRangeException("list")
 
 write_line("ok: {list.count} elements")
 // <<<

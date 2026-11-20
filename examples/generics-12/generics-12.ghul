@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
-use System.Numerics.INumber
-use System.Numerics.IAdditionOperators.`+
+use Ghul.Math.Number
+use Ghul.Math.AdditionOperators.`+
 
 // >>>
 // '+' resolves through the bound once it has been imported
