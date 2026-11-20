@@ -56,7 +56,7 @@ An `if` condition that proves something stronger about a value - an `isa` test o
 
 ### if let
 
-`cast T?(x)` views `x` as type `T`, and yields the absent value (rather than throwing) when `x` is not a `T`. A cast followed by a presence test is therefore a safe, explicit type test. Written without the `?`, the cast is checked instead: a value that is not a `T` raises `System.InvalidCastException` there, and a `cast-may-throw` warning says so at the site. See [type cast](/expressions.html#type-cast) for the other forms of cast.
+`cast T?(x)` views `x` as type `T`, and yields the absent value (rather than throwing) when `x` is not a `T`. A cast followed by a presence test is therefore a safe, explicit type test. Written without the `?`, the cast is checked instead: a value that is not a `T` raises `Ghul.InvalidCastException` there, and a `cast-may-throw` warning says so at the site. See [type cast](/expressions.html#type-cast) for the other forms of cast.
 
 <GhulExample name="control-flow-12" />
 
@@ -241,11 +241,11 @@ The `throw` statement raises an exception. Control leaves the current block imme
 
 <GhulExample name="control-flow-33" />
 
-The thrown value must be an exception: `System.Exception`, or a type derived from it.
+The thrown value must be an exception: `Ghul.Exception`, or a type derived from it.
 
 ### exception types
 
-An exception is any class that derives from `System.Exception`, or from a more specific exception type:
+An exception is any class that derives from `Ghul.Exception`, or from a more specific exception type:
 
 <GhulExample name="control-flow-34" />
 

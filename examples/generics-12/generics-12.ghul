@@ -1,11 +1,11 @@
 use IO.Std.write_line
 
-use System.Numerics.INumber
-use System.Numerics.IAdditionOperators.`+
+use Ghul.Math.Number
+use Ghul.Math.AdditionOperators.`+
 
 // >>>
 // '+' resolves through the bound once it has been imported
-total[T: INumber[T]](a: T, b: T) -> T => a + b
+total[T: Number[T]](a: T, b: T) -> T => a + b
 
 write_line("{total(2, 3)} {total(1.5, 2.5)}")
 // <<<

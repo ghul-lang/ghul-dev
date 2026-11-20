@@ -235,7 +235,7 @@ namespace ExampleTool is
                 severity,
                 message
             )
-        catch ex: System.FormatException
+        catch ex: Ghul.FormatException
             return null
         yrt
     si
@@ -510,7 +510,7 @@ namespace ExampleTool is
     // Copy the tool's own ghul-runtime.dll (from its ghul.runtime package
     // reference) into the example directory, overwriting any stale copy.
     _provision_runtime(example_dir: string) is
-        let tool_dir = Path.get_directory_name(System.Reflection.Assembly.get_executing_assembly().location)!
+        let tool_dir = Path.get_directory_name(Ghul.Reflection.Assembly.get_executing_assembly().location)!
         let source = Path.combine(tool_dir, "ghul-runtime.dll")
         let target = Path.combine(example_dir, "ghul-runtime.dll")
 
@@ -530,7 +530,7 @@ namespace ExampleTool is
     // pack that gains an assembly a built-in type maps to needs no change
     // here. Sorted, so the load order does not depend on the file system.
     _sdk_and_runtime_reference_flags(sdk_ref_path: string) -> string is
-        let flags = System.Text.StringBuilder()
+        let flags = Text.StringBuilder()
 
         for path in Directory.get_files(sdk_ref_path, "*.dll") |> sort() do
             flags.append("-a \"{path}\" ")
@@ -588,7 +588,7 @@ namespace ExampleTool is
 
         let body = json.substring(open_bracket + 1, close_bracket - open_bracket - 1)
 
-        let arguments = System.Text.StringBuilder()
+        let arguments = Text.StringBuilder()
 
         for raw in body.split([',']) do
             let path = raw.trim().trim(['"'])

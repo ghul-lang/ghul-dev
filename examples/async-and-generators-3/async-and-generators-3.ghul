@@ -2,8 +2,8 @@ use IO.Std.write_line
 use Ghul.Coroutines
 
 // >>>
-// a coroutine is an asynchronous function returning COROUTINE
-worker(name: string, steps: int) -> COROUTINE is
+// a coroutine is an asynchronous function returning Coroutine
+worker(name: string, steps: int) -> Coroutine is
     for step in 1::steps do
         write_line("{name} step {step}")
 

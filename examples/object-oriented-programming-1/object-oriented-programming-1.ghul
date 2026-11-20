@@ -75,7 +75,7 @@ class Calculator[T] is
 
             memory
         else
-            throw System.InvalidOperationException(
+            throw Ghul.InvalidOperationException(
                 "invalid operation {operation_name}"
             )
         fi
@@ -90,7 +90,7 @@ class Calculator[T] is
 
             memory
         else
-            throw System.InvalidOperationException(
+            throw Ghul.InvalidOperationException(
                 "invalid operation {operation_name}"
             )
         fi
@@ -115,7 +115,7 @@ si
 class IntegerDivision(): Operation[int] is
     execute(left: int, right: int) -> int =>
         if right == 0 then
-            throw System.InvalidOperationException(
+            throw Ghul.InvalidOperationException(
                 "division by zero"
             )
         else

@@ -1,8 +1,8 @@
 namespace ExampleTool is
-    use System.Exception
+    use Ghul.Exception
     use System.Diagnostics.Process
     use System.Diagnostics.ProcessStartInfo
-    use System.Text.StringBuilder
+    use Text.StringBuilder
 
     use IO.File
     use IO.Directory
@@ -45,7 +45,7 @@ namespace ExampleTool is
     si
 
     _get_target_framework() -> string is
-        let assembly = System.Reflection.Assembly.get_executing_assembly()
+        let assembly = Ghul.Reflection.Assembly.get_executing_assembly()
         let assembly_path = Path.get_full_path(assembly.location)
         let directory = Path.get_directory_name(assembly_path)
 

@@ -4,12 +4,12 @@ use Collections.List
 use Collections.MAP
 use Collections.Map
 use Collections.SET
-use Ghul.Pipes.INDEXED_VALUE
+use Ghul.Pipes.IndexedValue
 use Ghul.Pipes.Pipe
-use System.Numerics.INumber
+use Ghul.Math.Number
 
 // >>>
-sum_by[T..,N: INumber[N]](
+sum_by[T..,N: Number[N]](
     source: Iterable[T],
     selector: T.. -> N pure
 ) -> N pure

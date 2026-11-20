@@ -186,7 +186,7 @@ Concatenation: every element of the left source, then every element of the right
 
 ### index
 
-Pairs each element with its index. `INDEXED_VALUE[T]` has `index` and `value`, and destructures positionally, so `for (i, x) in xs |> index() do` reads the pair apart. The second form starts the index at a given number rather than at 0.
+Pairs each element with its index. `IndexedValue[T]` has `index` and `value`, and destructures positionally, so `for (i, x) in xs |> index() do` reads the pair apart. The second form starts the index at a given number rather than at 0.
 
 <GhulExample name="pipes-ref-index-function" signature />
 

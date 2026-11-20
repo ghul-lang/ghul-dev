@@ -105,14 +105,14 @@ The full pass list, in the order `COMPILER` runs them:
 | `resolve-type-expressions`{:text}     | Turns type annotations in declarations, signatures, and in expression-position uses like `cast`, `isa`, `typeof` and `_` into the semantic `Type` objects later passes use. |
 | `resolve-ancestors`{:text}            | Attaches base classes, trait parents and default ancestors to classes, traits, structs, unions and enums, and validates the inheritance constraints. |
 | `synthesize-class-equality`{:text}   | Settles the `=~` and `get_hash_code` synthesized for an `@equality()` class once its ancestors are known: the class joins a synthesized base's operator, and keeps an equality it inherits from elsewhere instead of its own. |
-| `synthesize-iterator-reset`{:text}   | A type implementing `Collections.Iterator[T]` that declares no `reset` gets a synthesized one that throws `System.NotSupportedException`. |
+| `synthesize-iterator-reset`{:text}   | A type implementing `Collections.Iterator[T]` that declares no `reset` gets a synthesized one that throws `Ghul.NotSupportedException`. |
 | `resolve-explicit-types`{:text}       | Registers each variable's, property's and parameter's declared type on its symbol, so the declared type is available to constrain inference later. |
 | `check-type-argument-bounds`{:text}   | Checks each type argument written in a type-expression position against its type parameter's declared bound. |
 | `resolve-overrides`{:text}            | Pulls inherited symbols down into each container type's scope; for every method whose signature matches an ancestor's virtual or abstract method, records the override link and checks the override is consistent. Reports duplicate top-level functions. |
 | `definition-virtuality`{:text}        | Editor-only: reports each declaration's place in the dispatch hierarchy as an inlay hint. |
 | `register-source-intrinsics`{:text}   | Registers an intrinsic handler for each built-in operator the compilation itself declares in source, so the runtime library can be built. |
 | `record-type-argument-uses`{:text}    | For every closure body, records which of the enclosing scope's generic type parameters the body references, so the closure frame can plumb them through at runtime. |
-| `mark-boxed-locals`{:text}            | Marks `let mut` locals (and parameters) that are both captured by an anonymous function and reassigned, so the IL pass wraps them in a `Ghul.BOX[T]` cell shared between the enclosing scope and every capturer. |
+| `mark-boxed-locals`{:text}            | Marks `let mut` locals (and parameters) that are both captured by an anonymous function and reassigned, so the IL pass wraps them in a `Ghul.Box[T]` cell shared between the enclosing scope and every capturer. |
 | `compile-expressions`{:text}          | The largest pass. Walks every expression in every function body, working out its type, resolving operator and method overloads, running type inference, applying flow-sensitive narrowing, and producing IR values that describe what the IL should look like. |
 | `infer-effects`{:text}                | Re-walks every body with resolved types, solves which members each function can read and write, and judges every use of a flow-narrowed value against the calls recorded across its narrowing. |
 | `verify-compile-state`{:text}        | Checks that the state `compile-expressions`{:text} left is complete before `generate-il`{:text} reads it: every type settled, and every function literal's argument and return types known. A gap is reported as an internal error. |
@@ -338,7 +338,7 @@ reassigned has to be shared between the enclosing scope and every
 capturer; if it stayed in a normal local slot, the two would see
 independent copies. This pass walks the syntax tree and marks each such
 local (and parameter that meets the same conditions) so the IL pass
-wraps it in a `Ghul.BOX[T]` cell - one heap-allocated holder that every
+wraps it in a `Ghul.Box[T]` cell - one heap-allocated holder that every
 party reads and writes through.
 
 That is the whole job of the pass. Generator and async functions are

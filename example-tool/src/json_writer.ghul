@@ -1,5 +1,5 @@
 namespace ExampleTool is
-    use System.Text.StringBuilder
+    use Text.StringBuilder
     use Collections.Iterable
 
     _json_string(s: string) -> string is

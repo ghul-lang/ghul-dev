@@ -70,7 +70,7 @@ A foreign argument is valid for the call only. Memory the C library keeps a poin
 
 <GhulExample name="calling-c-8" />
 
-`pin_struct` copies a struct into pinned memory, for a struct the library keeps the address of across calls, and answers a `PINNED` whose `value` reads back what the library wrote. A pointer the library holds after its pinner is disposed is a use-after-free, which nothing checks, so dispose the pinner only after releasing whatever C resource holds the pointers.
+`pin_struct` copies a struct into pinned memory, for a struct the library keeps the address of across calls, and answers a `Pinned` whose `value` reads back what the library wrote. A pointer the library holds after its pinner is disposed is a use-after-free, which nothing checks, so dispose the pinner only after releasing whatever C resource holds the pointers.
 
 The garbage collector doesn't scan memory the C library allocated with `malloc`, so a ghūl object referred to only from there isn't kept alive. That is why the pin is needed.
 
