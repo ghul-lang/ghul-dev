@@ -56,6 +56,7 @@ ghūl provides the following primitive data types:
 * integer types: `byte`, `ubyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `word`, `uword`
 * arbitrary-precision integer type: `bigint`
 * floating-point types: `single`, `double`
+* complex number type: `complex`
 * decimal floating-point type: `decimal`
 * boolean type: `bool`
 * character type: `char`
@@ -68,7 +69,11 @@ These types are used to represent basic values in ghūl programs.
 
 <GhulExample name="language-basics-31" />
 
-As with the other numeric types, the operands of an arithmetic operator must have the same type: `total * 2` is rejected where `total` is a `bigint`, and `total * 2n` is the way to write it.
+No operand widens to or from a `bigint`: `total * 2` is rejected where `total` is a `bigint`, and `total * 2n` is the way to write it.
+
+`complex` is a complex number with `double` parts. It is .NET's `System.Numerics.Complex` under a built-in name. A literal with an `r` suffix is a real number and one with a `j` suffix an imaginary one, so `3r + 4j` is a `complex`. An `int`, `long`, `single` or `double` operand widens to `complex`, and `complex(x)` makes one from a real number:
+
+<GhulExample name="language-basics-complex" />
 
 ### lists and arrays
 
@@ -150,7 +155,13 @@ To pass a `T?` where a `T` is wanted, make the value present first: narrow it wi
 
 ### type conversions
 
-ghūl does not perform implicit type conversion (coercion) between scalar types; all scalar type conversions must be explicitly cast. However, ghūl supports polymorphic behavior by allowing upcasting, where instances of derived classes or interfaces can be automatically coerced to compatible ancestor types in the class/interface hierarchy.
+ghūl converts between scalar types implicitly in one place: an arithmetic or ordering operator whose operands are two of `int`, `long`, `single` and `double` widens the narrower operand and works in the wider type. `int` widens to `long`, `single` and `double`, `long` to `single` and `double`, `single` to `double`, and each of them to `complex`. Where two results are reachable, the narrower one wins, so `long * single` is a `single`. `%` widens between `int` and `long`, and shifts and the bitwise operators never widen:
+
+<GhulExample name="language-basics-widening" />
+
+Equality doesn't widen. Ordering compares magnitudes, so it widens; `==` compares representation, so its operand types must already match. To compare an `int` with a `double` by value, convert one of them first, as in `double(n) == d`. Any other mixed operands, such as a `decimal` and an `int`, are rejected and need an explicit cast.
+
+Upcasting is implicit: an instance of a class or trait converts to any of its ancestor types.
 
 <GhulExample name="language-basics-20" />
 
