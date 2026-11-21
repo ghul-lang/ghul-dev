@@ -1,7 +1,7 @@
 use IO.Std.write_line
 
 // >>>
-@System.Flags()
+@Ghul.Flags()
 enum Access is
     READ = 1,
     WRITE = 2,
