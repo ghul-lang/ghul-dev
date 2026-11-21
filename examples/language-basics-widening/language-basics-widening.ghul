@@ -1,0 +1,19 @@
+use IO.Std.write_line
+
+// >>>
+let n = 3
+let big = 3_000_000_000L
+
+// the narrower operand widens to the wider type
+let half = n * 0.5
+let total = n + big
+let below = n < 3.5
+
+// the narrower of the reachable results: single
+let scaled = big * 2.0s
+
+// equality doesn't widen: convert explicitly
+let same = double(n) == 3.0
+
+write_line("{half} {total} {below} {scaled} {same}")
+// <<<

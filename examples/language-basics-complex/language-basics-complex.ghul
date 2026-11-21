@@ -1,0 +1,12 @@
+use IO.Std.write_line
+
+// >>>
+let z = 3r + 4j
+
+// a real operand widens to complex
+let doubled = z * 2
+let shifted = 1.5 + z
+
+write_line("{z * z} {z.magnitude} {complex.sqrt(-4r)}")
+write_line("{doubled} {shifted} {complex(2.5)}")
+// <<<
