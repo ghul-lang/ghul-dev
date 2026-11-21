@@ -178,15 +178,15 @@ A pragma whose name isn't one of the compiler's own names a .NET attribute, and 
 
 ### deprecation
 
-`System.Obsolete` marks a declaration as deprecated. The compiler reports every use of the declaration as a `deprecated` warning, with the attribute's message when it has one:
+`Ghul.Obsolete` marks a declaration as deprecated. The compiler reports every use of the declaration as a `deprecated` warning, with the attribute's message when it has one:
 
 <GhulExample name="dotnet-integration-deprecated" />
 
-With `true` as its second argument, `@System.Obsolete("removed", true)`, the attribute makes each use an error instead. The compiler reads the attribute on a declaration from another assembly too, whichever language it was written in, and a call to a class's constructor counts as a use of the class. A use written inside a declaration that is itself deprecated is not reported, so an old member can go on calling another. Where a use is deliberate, `@suppress("deprecated")` silences the warning like any other. In the editor, hover shows the message under the signature and completion marks the item as deprecated.
+With `true` as its second argument, `@Ghul.Obsolete("removed", true)`, the attribute makes each use an error instead. The compiler reads the attribute on a declaration from another assembly too, whichever language it was written in, and a call to a class's constructor counts as a use of the class. A use written inside a declaration that is itself deprecated is not reported, so an old member can go on calling another. Where a use is deliberate, `@suppress("deprecated")` silences the warning like any other. In the editor, hover shows the message under the signature and completion marks the item as deprecated.
 
 ### method implementation flags
 
-`System.Runtime.CompilerServices.MethodImpl` tells the runtime how to treat the method it is written on. Its options become the method's implementation flags rather than an attribute the method has, because the flags are where the runtime reads them: `NO_INLINING` keeps the method out of the inliner, and `SYNCHRONIZED` takes a lock around it. Reflection reads them back with `get_method_implementation_flags`:
+`Ghul.MethodImpl` tells the runtime how to treat the method it is written on. Its options become the method's implementation flags rather than an attribute the method has, because the flags are where the runtime reads them: `NO_INLINING` keeps the method out of the inliner, and `SYNCHRONIZED` takes a lock around it. Reflection reads them back with `get_method_implementation_flags`:
 
 <GhulExample name="dotnet-integration-method-impl" />
 

@@ -3,7 +3,7 @@ use Ghul.MethodImplOptions
 
 // >>>
 class Timing is
-    @System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.NO_INLINING)
+    @Ghul.MethodImpl(MethodImplOptions.NO_INLINING)
     measured(x: int) -> int static => x + 1
 si
 

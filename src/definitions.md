@@ -181,7 +181,7 @@ Enums can only be defined at global scope. An enum type name should be in `Pasca
 
 Enum values compare for equality and order: `=~` and `==` compare by the underlying integer, and `<`, `<=`, `>` and `>=` order by it. `=~` works over an optional enum as it does over any other optional. An individual member can be imported by name - `use Some.Namespace.Suit.HEARTS` - as well as reached through the type.
 
-An enum marked `@System.Flags()` also gets the bitwise operators `&`, `|`, `^` and the unary `\`, each taking and returning the enum's own type, and its values print as the names they combine:
+An enum marked `@Ghul.Flags()` also gets the bitwise operators `&`, `|`, `^` and the unary `\`, each taking and returning the enum's own type, and its values print as the names they combine:
 
 <GhulExample name="definitions-59" />
 
