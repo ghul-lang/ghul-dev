@@ -1,5 +1,5 @@
 # Artifacts ghul-test produces while running a case. Only the test definition
-# is committed: the symlink to the example source, ghulflags, and the captured
+# is committed: the symlink to the example source, test.json, and the captured
 # *.expected snapshots.
 #
 # A `failed` marker left behind by a failing run is what capture.sh looks for,

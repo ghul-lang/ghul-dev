@@ -12,8 +12,8 @@ editing an example is editing what runs - there is no copy to fall out of step:
 ```
 example-tests/control-flow-8/
 ├── test.ghul      -> ../../examples/control-flow-8/control-flow-8.ghul
-├── ghulflags      compiler flags: --dotnet, plus --library where the example
-│                  declares no entry point
+├── test.json      how it is built: {}, or { "library": true } where the
+│                  example declares no entry point
 └── run.expected   what the program prints
 ```
 
@@ -50,7 +50,7 @@ Create the case, then let a failing run write the snapshot:
 ```sh
 mkdir example-tests/<name>
 ln -s ../../examples/<name>/<name>.ghul example-tests/<name>/test.ghul
-echo --dotnet > example-tests/<name>/ghulflags
+echo '{}' > example-tests/<name>/test.json
 dotnet ghul-test example-tests/<name>          # fails; leaves run.out
 mv example-tests/<name>/run.out example-tests/<name>/run.expected
 ```

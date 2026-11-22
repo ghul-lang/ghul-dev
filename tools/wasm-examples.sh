@@ -47,7 +47,7 @@ for name in "${names[@]}"; do
     # An example that only compiles, or is meant to fail, has no output to
     # compare; one built as a library has no entry point to run.
     if [ ! -f "$dir/run.expected" ] || [ -f "$dir/fail.expected" ] ||
-        grep -q -- '--library' "$dir/ghulflags" 2> /dev/null; then
+        grep -q '"library": true' "$dir/test.json" 2> /dev/null; then
         continue
     fi
 
