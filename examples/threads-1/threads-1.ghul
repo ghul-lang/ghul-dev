@@ -1,0 +1,16 @@
+use IO.Std.write_line
+use Ghul.Threads
+
+let squares = [start(() => n * n) for n in 1::4]
+
+for t in squares do
+    write_line("{t.join()}")
+od
+
+let failing = start(() -> int is throw Ghul.InvalidOperationException("no answer") si)
+
+try
+    failing.join()
+catch e: Ghul.InvalidOperationException
+    write_line("join threw: {e.message}")
+yrt
