@@ -14,7 +14,7 @@ Threads run on the [native target](/native) and on .NET. WebAssembly runs one th
 
 A `Mutex` is a lock one thread holds at a time. `hold(body)` takes it, runs `body` and releases it, also where `body` throws; `lock()` and `unlock()` do the same in two steps. A mutex is not reentrant: `lock()` throws where the calling thread already holds it.
 
-`AtomicInt`, `AtomicLong`, `AtomicBool` and `Atomic[T]` hold one value that several threads can read and change without a mutex. Each operation on one is a single atomic instruction of the processor, which no other thread's operation can interleave with, so no thread ever waits for another. Each has `load`, `store`, `exchange` and `compare_exchange`, and the two integer types add `add` and `increment`:
+`AtomicInt`, `AtomicLong`, `AtomicBool` and `Atomic[T]` hold one value that several threads can read and change without a mutex. Each operation on one is indivisible: built on the processor's atomic instructions, it is never seen half done by another thread, and it takes no lock. Each has `load`, `store`, `exchange` and `compare_exchange`, and the two integer types add `add` and `increment`:
 
 <GhulExample name="threads-2" />
 
