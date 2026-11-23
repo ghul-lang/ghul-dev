@@ -1,0 +1,20 @@
+use IO.Std.write_line
+use Ghul.Threads
+
+let lock = Mutex()
+let names = Collections.LIST[string]()
+let hits = AtomicInt(0)
+
+let workers = [start(() is
+    for i in 0..1000 do
+        hits.increment()
+    od
+
+    lock.hold(() is names.add("worker {w}") si)
+si) for w in 0..4]
+
+for w in workers do
+    w.join()
+od
+
+write_line("{hits.load()} hits from {names.count} workers")

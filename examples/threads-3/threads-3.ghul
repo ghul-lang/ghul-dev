@@ -1,0 +1,13 @@
+use IO.Std.write_line
+use Ghul.Threads
+use Ghul.Pipes.sum
+
+total() -> Tasks.TASK[int] is
+    let halves = [start(() => (1::500) |> sum()), start(() => (501::1000) |> sum())]
+    let first = await halves[0]
+    let second = await halves[1]
+
+    return first + second
+si
+
+write_line("{total().result}")

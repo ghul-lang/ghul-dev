@@ -1,0 +1,17 @@
+use IO.Std.write_line
+use Ghul.Threads
+
+let ready = AtomicBool(false)
+
+// queued task work, run by this thread when it next waits
+Tasks.TASK.run(() is ready.store(true) si)
+
+let worker = start(() -> string is
+    while !ready.load() do
+        Tasks.Thread.sleep(1)
+    od
+
+    return "the queued work ran during the join"
+si)
+
+write_line(worker.join())

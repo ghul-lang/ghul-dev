@@ -29,6 +29,7 @@ export const SECTIONS = [
       { text: 'generics', link: '/generics' },
       { text: 'optional types and narrowing', link: '/optionals-and-narrowing' },
       { text: 'async and generators', link: '/async-and-generators' },
+      { text: 'threads', link: '/threads' },
       { text: '.NET integration', link: '/dotnet-integration' },
     ],
   },

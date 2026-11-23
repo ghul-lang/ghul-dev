@@ -1,0 +1,7 @@
+{
+    "name": "threads-3",
+    "kind": "program",
+    "targets": ["llvm"],
+    "sources": ["threads-3.ghul"],
+    "dependencies": { "ghul-runtime": { "version": ">=53.2.0" } }
+}
