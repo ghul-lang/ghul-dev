@@ -33,6 +33,7 @@ jobs:
     uses: ghul-lang/ghul-code-review/.github/workflows/review.yml@v11
     with:
       pull-request-number: ${{ inputs.pull-request-number }}
+      provider: ${{ vars.CODE_REVIEW_PROVIDER }}
       runner: ubuntu-latest
       idle-timeout-seconds: ${{ fromJSON(vars.CLAUDE_REVIEW_IDLE_TIMEOUT_SECONDS || '90') }}
       max-attempts: ${{ fromJSON(vars.CLAUDE_REVIEW_MAX_ATTEMPTS || '3') }}
