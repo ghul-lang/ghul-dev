@@ -1,9 +1,9 @@
 use IO.Std.write_line
 
-fetch_async(x: int) -> Tasks.TASK[int] => x * x
+fetch_async(x: int) -> Tasks.Future[int] => x * x
 
 // >>>
-sum_of_squares(xs: Collections.List[int]) -> Tasks.TASK[int] is
+sum_of_squares(xs: Collections.List[int]) -> Tasks.Future[int] is
     let total mut = 0
 
     for x in xs do

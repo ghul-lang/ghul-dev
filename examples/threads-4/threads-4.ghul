@@ -4,7 +4,7 @@ use Ghul.Threads
 let ready = AtomicBool(false)
 
 // queued task work, run by this thread when it next waits
-Tasks.TASK.run(() is ready.store(true) si)
+Tasks.Future.run(() is ready.store(true) si)
 
 let worker = start(() -> string is
     while !ready.load() do

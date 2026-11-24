@@ -6,11 +6,11 @@ Every example on this page can be edited and run here: click the pencil to open 
 The [async-await](/examples/async-await) and [generators](/examples/generators) examples are whole programs you can run here, or build from the [ghul-examples repository](https://github.com/ghul-lang/ghul-examples).
 :::
 
-Two kinds of ghūl function can return control to their caller partway through and later carry on from the same point: an asynchronous function does so at an `await` whose task hasn't completed, so the thread isn't blocked while it waits, and a generator does so at each `yield`, producing its sequence one element per request. An asynchronous function is marked by its return type, `Tasks.TASK[T]`, and a generator by returning `Pipe[T]` and containing `yield`; the body reads top to bottom either way.
+Two kinds of ghūl function can return control to their caller partway through and later carry on from the same point: an asynchronous function does so at an `await` whose task hasn't completed, so the thread isn't blocked while it waits, and a generator does so at each `yield`, producing its sequence one element per request. An asynchronous function is marked by its return type, `Tasks.Future[T]`, and a generator by returning `Pipe[T]` and containing `yield`; the body reads top to bottom either way.
 
 ## asynchronous code
 
-A function is asynchronous when its declared return type is `Tasks.TASK[T]` (or `Tasks.TASK`, for one that produces no value).
+A function is asynchronous when its declared return type is `Tasks.Future[T]` (or `Tasks.Future`, for one that produces no value).
 
 Inside such a function, `await e` evaluates to the result of the task `e` once it completes. `let x = await e;` defines a local variable holding the result, and the rest of the function continues:
 
@@ -29,7 +29,7 @@ pattern can be awaited: a type with a parameterless `get_awaiter()` whose
 result has a `bool` property `is_completed`, a parameterless
 `get_result()`, and implements
 `System.Runtime.CompilerServices.INotifyCompletion`. `Tasks.ValueTask[T]`
-and `Tasks.TASK.yield()` both qualify, and the `await` takes the type
+and `Tasks.Future.yield()` both qualify, and the `await` takes the type
 `get_result` returns:
 
 <GhulExample name="async-and-generators-2" />
@@ -41,7 +41,7 @@ A `try` / `catch` / `finally` around awaiting code works as expected, including 
 
 ## coroutines
 
-What an asynchronous function returns is not fixed to `Tasks.TASK` either.
+What an asynchronous function returns is not fixed to `Tasks.Future` either.
 Any type carrying .NET's `AsyncMethodBuilderAttribute` can be the return
 type: the attribute names a builder type, and the compiler drives that
 builder instead of the one for tasks. The runtime's `Ghul.Coroutines`
