@@ -52,7 +52,7 @@ write_line(reader.read_to_end())
 ## name mangling
 When consuming C# code the ghūl compiler transforms symbol names to better match ghūl conventions:
 
-- Class, struct and trait (=interface) names keep their .NET names, except a short list of core types that ghūl names in `UPPER_SNAKE_CASE` (`LIST`, `MAP`, `SET`, `QUEUE`, `STACK`, `TASK`, ...)
+- Class, struct and trait (=interface) names keep their .NET names, except a short list of core types that ghūl names in `UPPER_SNAKE_CASE` (`LIST`, `MAP`, `SET`, `QUEUE`, `STACK`, ...)
 - .NET's generic arity suffix is removed, so `KeyValuePair<K, V>` is `Collections.KeyValuePair[K, V]`
 - Enum member names are transformed to `UPPER_SNAKE_CASE`; enum type names are left unchanged, so `Text.StringSplitOptions.RemoveEmptyEntries` is `StringSplitOptions.REMOVE_EMPTY_ENTRIES`
 - Method, property and field names are transformed to `snake_case`
@@ -91,8 +91,8 @@ Some commonly used namespace and type names are re-mapped in line with ghūl con
 | `System.Collections.Generic.Comparer`                | `Collections.ComparerBase`          |
 | `System.Collections.Generic.EqualityComparer`        | `Collections.EqualityComparerBase`  |
 | `System.Collections.Generic.Stack`                   | `Collections.STACK`                 |
-| `System.Threading.Tasks.Task`                        | `Tasks.TASK`                        |
-| `System.Threading.Tasks.Task<T>`                     | `Tasks.TASK[T]`                     |
+| `System.Threading.Tasks.Task`                        | `Tasks.Future`                      |
+| `System.Threading.Tasks.Task<T>`                     | `Tasks.Future[T]`                   |
 
 ### primitive types
 
