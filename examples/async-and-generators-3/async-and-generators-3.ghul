@@ -1,20 +1,14 @@
 use IO.Std.write_line
-use Ghul.Coroutines
+use Concurrency
 
-// >>>
-// a coroutine is an asynchronous function returning Coroutine
-worker(name: string, steps: int) -> Coroutine is
+// an asynchronous function returns Future
+worker(name: string, steps: int) -> Future is
     for step in 1::steps do
         write_line("{name} step {step}")
-
-        // give the other coroutines a turn
-        await pause()
     od
 si
 
-worker("a", 3)
-worker("b", 2)
+let a = worker("a", 3)
+let b = worker("b", 2)
 
-// resume parked coroutines until none remain
-run()
-// <<<
+run(() => Future.when_all([a, b]))
