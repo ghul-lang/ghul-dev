@@ -5,9 +5,6 @@ use Concurrency
 worker(name: string, steps: int) -> Future is
     for step in 1::steps do
         write_line("{name} step {step}")
-
-        // give the other workers a turn
-        await pause()
     od
 si
 
