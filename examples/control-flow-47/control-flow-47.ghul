@@ -1,13 +1,13 @@
 use IO.Std.write_line
 
-side_effect(label: string) -> Tasks.TASK is
+side_effect(label: string) -> Tasks.Future is
     write_line("side effect: {label}")
 
-    return Tasks.TASK.completed_task
+    return Tasks.Future.completed_task
 si
 
 // >>>
-run_side_effects() -> Tasks.TASK is
+run_side_effects() -> Tasks.Future is
     await side_effect("first")
     await side_effect("second")
 

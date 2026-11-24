@@ -5,8 +5,8 @@ use IO.Std.write_line
 // be awaited like a Task
 half(n: int) -> Tasks.ValueTask[int] => Tasks.ValueTask[int](n / 2)
 
-compute() -> Tasks.TASK[int] is
-    await Tasks.TASK.yield()
+compute() -> Tasks.Future[int] is
+    await Tasks.Future.yield()
 
     let a = await half(84)
 
