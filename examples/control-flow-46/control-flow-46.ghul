@@ -1,11 +1,11 @@
 use IO.Std.write_line
 
-double_async(x: int) -> Tasks.Future[int] => x * 2
+double_async(x: int) -> Concurrency.Future[int] => x * 2
 
-add_async(x: int, y: int) -> Tasks.Future[int] => x + y
+add_async(x: int, y: int) -> Concurrency.Future[int] => x + y
 
 // >>>
-compute() -> Tasks.Future[int] is
+compute() -> Concurrency.Future[int] is
     let a = await double_async(10)   // a = 20
     let b = await double_async(a)    // b = 40
     let c = await add_async(a, b)    // c = 60

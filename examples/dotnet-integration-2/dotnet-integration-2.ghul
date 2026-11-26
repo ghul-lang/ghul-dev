@@ -23,7 +23,7 @@ class StoreContext: DbContext is
     si
 si
 
-add_product(context: StoreContext, product: Product) -> Tasks.Future is
+add_product(context: StoreContext, product: Product) -> Concurrency.Future is
     context.products.add(product)
 
     await context.save_changes_async(System.Threading.CancellationToken.none)

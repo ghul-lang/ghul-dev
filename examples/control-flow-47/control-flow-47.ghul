@@ -1,13 +1,13 @@
 use IO.Std.write_line
 
-side_effect(label: string) -> Tasks.Future is
+side_effect(label: string) -> Concurrency.Future is
     write_line("side effect: {label}")
 
-    return Tasks.Future.completed_task
+    return Concurrency.Future.completed_task
 si
 
 // >>>
-run_side_effects() -> Tasks.Future is
+run_side_effects() -> Concurrency.Future is
     await side_effect("first")
     await side_effect("second")
 
