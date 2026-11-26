@@ -504,7 +504,7 @@ UnaryExpression ::= Operator UnaryExpression      /* prefix operator */
 
 An `await E` expression is permitted only inside an
 [asynchronous function](/async-and-generators.html#asynchronous-code), one whose
-return type is `Tasks.Future[T]` (or `Tasks.Future`), and evaluates to the result
+return type is `Concurrency.Future[T]` (or `Concurrency.Future`), and evaluates to the result
 of the awaited task once it completes. Used as the right-hand side of `let`, as
 a bare statement (`await E;`), or in any operand position.
 
