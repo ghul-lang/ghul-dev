@@ -8,7 +8,7 @@ Threads run on the [native target](/native) and on .NET. WebAssembly runs one th
 
 <GhulExample name="threads-1" />
 
-`start` and the other names on this page are in `Ghul.Threads`. A thread's stack is 8 MB; `start(body, stack_size)` gives it `stack_size` bytes instead.
+`start` and the other names on this page are in `Concurrency`. A thread's stack is 8 MB; `start(body, stack_size)` gives it `stack_size` bytes instead.
 
 ## sharing state
 

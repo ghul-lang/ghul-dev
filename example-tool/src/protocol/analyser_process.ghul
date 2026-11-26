@@ -57,7 +57,7 @@ namespace Analysis.Protocol is
 
             // Drain stderr in the background so a chatty analyser can't fill
             // its stderr pipe and block.
-            Tasks.TASK.run(
+            Concurrency.Future.run(
                 () is
                     try
                         do

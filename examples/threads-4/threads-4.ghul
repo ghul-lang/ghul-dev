@@ -1,14 +1,14 @@
 use IO.Std.write_line
-use Ghul.Threads
+use Concurrency
 
 let ready = AtomicBool(false)
 
 // queued task work, run by this thread when it next waits
-Tasks.Future.run(() is ready.store(true) si)
+Concurrency.Future.run(() is ready.store(true) si)
 
 let worker = start(() -> string is
     while !ready.load() do
-        Tasks.Thread.sleep(1)
+        Concurrency.sleep(1)
     od
 
     return "the queued work ran during the join"

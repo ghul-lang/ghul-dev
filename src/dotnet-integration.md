@@ -91,8 +91,8 @@ Some commonly used namespace and type names are re-mapped in line with ghūl con
 | `System.Collections.Generic.Comparer`                | `Collections.ComparerBase`          |
 | `System.Collections.Generic.EqualityComparer`        | `Collections.EqualityComparerBase`  |
 | `System.Collections.Generic.Stack`                   | `Collections.STACK`                 |
-| `System.Threading.Tasks.Task`                        | `Tasks.Future`                      |
-| `System.Threading.Tasks.Task<T>`                     | `Tasks.Future[T]`                   |
+| `System.Threading.Tasks.Task`                        | `Concurrency.Future`                      |
+| `System.Threading.Tasks.Task<T>`                     | `Concurrency.Future[T]`                   |
 
 ### primitive types
 
