@@ -15,10 +15,11 @@
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 13, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 5, "text": "b: string?", "signature": "b: string?", "kindLabel": "global variable" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 13, "text": "class string", "signature": "class string", "kindLabel": "class" },
-    { "startLine": 2, "startColumn": 18, "endLine": 3, "endColumn": 4, "text": "class string", "signature": "class string", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 18, "endLine": 2, "endColumn": 18, "text": "class string", "signature": "class string", "kindLabel": "class" },
     { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 4, "text": "zero[T]() -> T", "signature": "zero[T]() -> T", "kindLabel": "pure global function" },
     { "startLine": 3, "startColumn": 6, "endLine": 3, "endColumn": 6, "text": "T", "signature": "T", "kindLabel": "type variable" },
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "T", "signature": "T", "kindLabel": "type variable" }
+    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "text": "T", "signature": "T", "kindLabel": "type variable" },
+    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 19, "text": "T", "signature": "T", "kindLabel": "type variable" }
   ],
   "inlayHints": [],
   "semanticTokens": [
@@ -26,8 +27,10 @@
     { "startLine": 1, "startColumn": 11, "endLine": 1, "endColumn": 13, "tokenType": "struct" },
     { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 5, "tokenType": "property" },
     { "startLine": 2, "startColumn": 8, "endLine": 2, "endColumn": 13, "tokenType": "class" },
+    { "startLine": 2, "startColumn": 18, "endLine": 2, "endColumn": 18, "tokenType": "class" },
     { "startLine": 3, "startColumn": 1, "endLine": 3, "endColumn": 4, "tokenType": "function" },
     { "startLine": 3, "startColumn": 6, "endLine": 3, "endColumn": 6, "tokenType": "typeParameter" },
-    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "tokenType": "typeParameter" }
+    { "startLine": 3, "startColumn": 14, "endLine": 3, "endColumn": 14, "tokenType": "typeParameter" },
+    { "startLine": 3, "startColumn": 19, "endLine": 3, "endColumn": 19, "tokenType": "typeParameter" }
   ]
 }

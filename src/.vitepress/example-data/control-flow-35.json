@@ -13,7 +13,7 @@
   "hovers": [
     { "startLine": 3, "startColumn": 7, "endLine": 3, "endColumn": 7, "text": "e: InsufficientFundsException", "signature": "e: InsufficientFundsException", "kindLabel": "local value" },
     { "startLine": 3, "startColumn": 10, "endLine": 3, "endColumn": 35, "text": "class InsufficientFundsException(message: string)", "signature": "class InsufficientFundsException(message: string)", "kindLabel": "class" },
-    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 12, "text": "withdraw(account: int, amount: int) -> int", "signature": "withdraw(account: int, amount: int) -> int", "kindLabel": "global function" },
+    { "startLine": 2, "startColumn": 5, "endLine": 2, "endColumn": 12, "text": "withdraw(account: int, amount: int) -> int", "signature": "withdraw(account: int, amount: int) -> int", "kindLabel": "pure global function" },
     { "startLine": 2, "startColumn": 14, "endLine": 2, "endColumn": 20, "text": "account: int", "signature": "account: int", "kindLabel": "global variable" },
     { "startLine": 4, "startColumn": 5, "endLine": 4, "endColumn": 14, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" },
     { "startLine": 4, "startColumn": 28, "endLine": 4, "endColumn": 28, "text": "e: InsufficientFundsException", "signature": "e: InsufficientFundsException", "kindLabel": "local value" },
