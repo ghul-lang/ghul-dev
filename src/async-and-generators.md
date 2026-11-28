@@ -44,19 +44,20 @@ A `try` / `catch` / `finally` around awaiting code works as expected, including 
 What an asynchronous function returns is not fixed to `Concurrency.Future` either.
 Any type carrying .NET's `AsyncMethodBuilderAttribute` can be the return
 type: the attribute names a builder type, and the compiler drives that
-builder instead of the one for tasks. The runtime's `Ghul.Coroutines`
-namespace uses this for cooperative coroutines. A function returning
-`Coroutine` or `Coroutine[T]` is a coroutine: calling it runs its body
-until the first `await`, `pause()` gives up its turn, and `run()` resumes
-waiting coroutines one at a time until none remain. Everything runs on one
-thread:
+builder instead of the one for tasks.
+
+The `Concurrency` namespace uses this for cooperative coroutines: each
+thread runs its asynchronous code on its own event loop, made the first
+time the thread asks for one, work queued on it runs one piece at a time,
+and futures resume on the thread that awaited them. `run` drives the
+calling thread's loop until a future completes:
 
 <GhulExample name="async-and-generators-3" />
 
-`sleep(milliseconds)` gives up the turn until a deadline has passed, and
-`Channel[T]`, `MUTEX` and `Semaphore` pass values between coroutines and
-guard what they share. A coroutine can also await a task, and `run()`
-resumes it on its own thread when the task completes.
+`pause` gives up the turn until the event loop has run the other work
+already queued, and `sleep(milliseconds)` waits until a deadline has
+passed. `Channel[T]`, `Mutex` and `Semaphore` pass values between futures
+on the thread and guard what they share.
 
 ## generators
 
