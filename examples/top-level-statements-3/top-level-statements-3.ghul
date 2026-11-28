@@ -1,0 +1,15 @@
+use IO.Std.write_line
+
+doubled_later(n: int) -> Concurrency.Future[int] is
+    await Concurrency.sleep(10)
+
+    return n * 2
+si
+
+// >>>
+write_line("starting")
+
+let result = await doubled_later(21)
+
+write_line("result: {result}")
+// <<<

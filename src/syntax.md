@@ -121,6 +121,10 @@ A file with no `namespace` can also have statements at its top level. They run i
 
 Definitions in the same file are still hoisted, so a top-level statement can use a function or type declared anywhere in the file. A file with top-level statements can't declare a namespace block, but its namespace can be a [whole-file namespace](/definitions.html#namespaces).
 
+Top-level statements can `await`. The program then runs them until the last one finishes:
+
+<GhulExample name="top-level-statements-3" />
+
 In a file with top-level statements, a function can be written with no types in its signature. It's compiled as a nested function of the top-level statements: its parameter types come from its calls, its return type from its body, and a top-level `let` it uses takes its type from those uses too:
 
 <GhulExample name="top-level-statements-2" />
