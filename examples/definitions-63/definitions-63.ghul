@@ -1,0 +1,8 @@
+// >>>
+entry() -> Concurrency.Future[int] is
+    await Concurrency.sleep(10)
+    IO.Std.write_line("finished waiting")
+
+    return 0
+si
+// <<<

@@ -62,6 +62,10 @@ A program starts at a function named `entry`, or at the statements written at th
 
 <GhulExample name="definitions-55" />
 
+An `entry` that awaits returns `Concurrency.Future`, or `Concurrency.Future[int]` to give an exit status. The program runs it until its task completes:
+
+<GhulExample name="definitions-63" />
+
 Top-level statements see the same two values as `args` and `env`.
 
 A function that the program would start at but that has any other shape is reported, naming what rules it out:

@@ -10,7 +10,7 @@ Two kinds of ghūl function can return control to their caller partway through a
 
 ## asynchronous code
 
-A function is asynchronous when its declared return type is `Concurrency.Future[T]` (or `Concurrency.Future`, for one that produces no value).
+A function is asynchronous when its declared return type is `Concurrency.Future[T]` (or `Concurrency.Future`, for one that produces no value). [Top-level statements](/syntax.html#top-level-statements) can `await` as well, and so can an [`entry` function](/definitions.html#the-entry-point) that returns a `Concurrency.Future`: the program runs them until their task completes.
 
 Inside such a function, `await e` evaluates to the result of the task `e` once it completes. `let x = await e;` defines a local variable holding the result, and the rest of the function continues:
 

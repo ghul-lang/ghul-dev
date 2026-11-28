@@ -1,0 +1,34 @@
+{
+  "name": "definitions-63",
+  "snippet": false,
+  "wasm": false,
+  "native": false,
+  "code": "entry() -> Concurrency.Future[int] is\n    await Concurrency.sleep(10)\n    IO.Std.write_line(\"finished waiting\")\n\n    return 0\nsi",
+  "fullSource": "entry() -> Concurrency.Future[int] is\n    await Concurrency.sleep(10)\n    IO.Std.write_line(\"finished waiting\")\n\n    return 0\nsi\n",
+  "hiddenBefore": false,
+  "hiddenAfter": false,
+  "hiddenGapsAfterLine": [],
+  "output": "finished waiting\n",
+  "diagnostics": [],
+  "hovers": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 5, "text": "entry() -> Concurrency.Future[int]", "signature": "entry() -> Concurrency.Future[int]", "kindLabel": "global async" },
+    { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 33, "text": "struct int", "signature": "struct int", "kindLabel": "struct" },
+    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 29, "text": "class Concurrency.Future[TResult]", "signature": "class Concurrency.Future[TResult]", "kindLabel": "class" },
+    { "startLine": 2, "startColumn": 11, "endLine": 2, "endColumn": 21, "text": "namespace Concurrency", "signature": "namespace Concurrency", "kindLabel": "" },
+    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 27, "text": "Concurrency.sleep(milliseconds: int) -> Concurrency.Future", "signature": "Concurrency.sleep(milliseconds: int) -> Concurrency.Future", "kindLabel": "pure global function" },
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 6, "text": "namespace IO", "signature": "namespace IO", "kindLabel": "" },
+    { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 10, "text": "class IO.Std", "signature": "class IO.Std", "kindLabel": "class" },
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 21, "text": "IO.Std.write_line(value: string?) -> void", "signature": "IO.Std.write_line(value: string?) -> void", "kindLabel": "pure class method" }
+  ],
+  "inlayHints": [],
+  "semanticTokens": [
+    { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 5, "tokenType": "function" },
+    { "startLine": 1, "startColumn": 24, "endLine": 1, "endColumn": 29, "tokenType": "class" },
+    { "startLine": 1, "startColumn": 31, "endLine": 1, "endColumn": 33, "tokenType": "struct" },
+    { "startLine": 2, "startColumn": 11, "endLine": 2, "endColumn": 21, "tokenType": "namespace" },
+    { "startLine": 2, "startColumn": 23, "endLine": 2, "endColumn": 27, "tokenType": "function" },
+    { "startLine": 3, "startColumn": 5, "endLine": 3, "endColumn": 6, "tokenType": "namespace" },
+    { "startLine": 3, "startColumn": 8, "endLine": 3, "endColumn": 10, "tokenType": "class" },
+    { "startLine": 3, "startColumn": 12, "endLine": 3, "endColumn": 21, "tokenType": "method", "modifiers": "static" }
+  ]
+}
